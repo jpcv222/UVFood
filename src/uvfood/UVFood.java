@@ -5,6 +5,11 @@
  */
 package uvfood;
 
+import java.sql.Connection;
+import javax.swing.JOptionPane;
+import managers.DBcontrol;
+import views.index;
+
 /**
  *
  * @author invitado
@@ -16,6 +21,26 @@ public class UVFood {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-    }
+        
+        // index view call
+        // conexion DB call
+        
+                index miIndex = new index();
+        miIndex.setVisible(true);
+        
+          
+           Connection miconexion;
+        miconexion=DBcontrol.GetConnection();
+        
+        
+        if(miconexion !=null){
+            
+            JOptionPane.showMessageDialog(null,"Succes");
+    } else {
+            
+            JOptionPane.showMessageDialog(null,"Server error");
+        }
+    
+}
     
 }
