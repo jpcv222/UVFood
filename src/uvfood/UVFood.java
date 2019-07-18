@@ -7,7 +7,7 @@ package uvfood;
 
 import java.sql.Connection;
 import javax.swing.JOptionPane;
-import managers.DBcontrol;
+import classes.DBcontrol;
 import views.index;
 
 /**
