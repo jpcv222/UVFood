@@ -334,7 +334,7 @@ public class VistaCliente extends javax.swing.JFrame {
         setColor(jLabel1);
         resetColor(jLabel3);
         resetColor(jLabel4);
-        rSPanelsSlider1.setPanelSlider(15, jPanelIndexCliente, RSPanelsSlider.DIRECT.RIGHT);
+        rSPanelsSlider1.setPanelSlider(5, jPanelIndexCliente, RSPanelsSlider.DIRECT.RIGHT);
         
     }//GEN-LAST:event_jLabel1MouseClicked
 
@@ -343,7 +343,7 @@ public class VistaCliente extends javax.swing.JFrame {
         setColor(jLabel2);
         resetColor(jLabel3);
         resetColor(jLabel4);
-        rSPanelsSlider1.setPanelSlider(15, jPanelPerfilCliente, RSPanelsSlider.DIRECT.RIGHT);
+        rSPanelsSlider1.setPanelSlider(5, jPanelPerfilCliente, RSPanelsSlider.DIRECT.RIGHT);
     }//GEN-LAST:event_jLabel2MouseClicked
 
     private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
