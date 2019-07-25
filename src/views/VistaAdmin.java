@@ -5,6 +5,9 @@
  */
 package views;
 
+import java.awt.Image;
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
 import java.awt.Color;
 import java.awt.Frame;
 import javax.swing.JLabel;
@@ -12,24 +15,36 @@ import rojerusan.RSPanelsSlider;
 
 /**
  *
- * @author STH_1F_GCB_PC16
+ * @author webMaster
  */
-public class VistaCliente extends javax.swing.JFrame {
+public class VistaAdmin extends javax.swing.JFrame {
 
     /**
-     * Creates new form VistaCliente
+     * Creates new form VistaAdmin
      */
     int xMouse;
     int yMouse;
-    public VistaCliente() {
+    public VistaAdmin() {
+        
         initComponents();
         this.setLocationRelativeTo(null);
-        jLabel1.setOpaque(true);
-        jLabel1.setBackground(new Color(255,51,51));
+        jLabelHome.setOpaque(true);
+        jLabelHome.setBackground(new Color(255,51,51));
+        
+        ImageIcon imagen = new ImageIcon("src/images/buscar.jpg");
+        Icon icono = new ImageIcon(imagen.getImage().getScaledInstance(jLabel9.getWidth(), jLabel9.getHeight(), Image.SCALE_DEFAULT));
+        jLabel9.setIcon(icono);
+        this.repaint();
+        
+        ImageIcon imagen1 = new ImageIcon("src/images/LabelInicio.png");
+        Icon icono1 = new ImageIcon(imagen1.getImage().getScaledInstance(jLabelHome.getWidth(), jLabelHome.getHeight(), Image.SCALE_DEFAULT));
+        jLabelHome.setIcon(icono1);
+        this.repaint();
+        
+        
     }
     
-    
-    public void resetColor(JLabel item) {
+      public void resetColor(JLabel item) {
         item.setOpaque(false);
         item.setBackground(new Color(205,31,50));
     }
@@ -49,39 +64,41 @@ public class VistaCliente extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanelMenu = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
+        jLabelHome = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        rSPanelsSlider1 = new rojerusan.RSPanelsSlider();
-        jPanelIndexCliente = new javax.swing.JPanel();
-        jLabel7 = new javax.swing.JLabel();
-        jPanelPerfilCliente = new javax.swing.JPanel();
-        jLabel8 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
         jPanelbtn = new javax.swing.JPanel();
         btnCerrar = new javax.swing.JButton();
         btnMiminize = new javax.swing.JButton();
         jPanelHeader = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
+        jTextField1 = new javax.swing.JTextField();
+        jLabel9 = new javax.swing.JLabel();
+        rSPanelsSlider1 = new rojerusan.RSPanelsSlider();
+        jPanelIndexAdmin = new javax.swing.JPanel();
+        jLabel7 = new javax.swing.JLabel();
+        jPanelPerfilAdmin = new javax.swing.JPanel();
+        jLabel8 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
 
         jPanelMenu.setBackground(new java.awt.Color(205, 31, 50));
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("   Opcion 1");
-        jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
+        jLabelHome.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabelHome.setForeground(new java.awt.Color(255, 255, 255));
+        jLabelHome.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel1MouseClicked(evt);
+                jLabelHomeMouseClicked(evt);
             }
         });
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("   Opcion 1");
+        jLabel2.setText("Perfil");
         jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel2MouseClicked(evt);
@@ -90,7 +107,7 @@ public class VistaCliente extends javax.swing.JFrame {
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setText("   Opcion 1");
+        jLabel3.setText("Gestión de Usuarios");
         jLabel3.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel3MouseClicked(evt);
@@ -99,10 +116,19 @@ public class VistaCliente extends javax.swing.JFrame {
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setText("   Opcion 1");
+        jLabel4.setText("Gestión de Interfaz");
         jLabel4.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel4MouseClicked(evt);
+            }
+        });
+
+        jLabel10.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel10.setText("Gestión de Tiquetes");
+        jLabel10.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel10MouseClicked(evt);
             }
         });
 
@@ -110,74 +136,27 @@ public class VistaCliente extends javax.swing.JFrame {
         jPanelMenu.setLayout(jPanelMenuLayout);
         jPanelMenuLayout.setHorizontalGroup(
             jPanelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 218, Short.MAX_VALUE)
+            .addComponent(jLabelHome, javax.swing.GroupLayout.DEFAULT_SIZE, 218, Short.MAX_VALUE)
             .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanelMenuLayout.setVerticalGroup(
             jPanelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelMenuLayout.createSequentialGroup()
                 .addGap(215, 215, 215)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jLabelHome, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-
-        rSPanelsSlider1.setBackground(new java.awt.Color(255, 255, 255));
-
-        jPanelIndexCliente.setBackground(new java.awt.Color(255, 255, 255));
-        jPanelIndexCliente.setName("jPanelIndexCliente"); // NOI18N
-
-        jLabel7.setText("Index");
-
-        javax.swing.GroupLayout jPanelIndexClienteLayout = new javax.swing.GroupLayout(jPanelIndexCliente);
-        jPanelIndexCliente.setLayout(jPanelIndexClienteLayout);
-        jPanelIndexClienteLayout.setHorizontalGroup(
-            jPanelIndexClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelIndexClienteLayout.createSequentialGroup()
-                .addGap(352, 352, 352)
-                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 321, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(317, Short.MAX_VALUE))
-        );
-        jPanelIndexClienteLayout.setVerticalGroup(
-            jPanelIndexClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelIndexClienteLayout.createSequentialGroup()
-                .addGap(236, 236, 236)
-                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(369, Short.MAX_VALUE))
-        );
-
-        rSPanelsSlider1.add(jPanelIndexCliente, "card2");
-
-        jPanelPerfilCliente.setBackground(new java.awt.Color(255, 255, 255));
-        jPanelPerfilCliente.setName("jPanelPerfilCliente"); // NOI18N
-
-        jLabel8.setText("Perfil");
-
-        javax.swing.GroupLayout jPanelPerfilClienteLayout = new javax.swing.GroupLayout(jPanelPerfilCliente);
-        jPanelPerfilCliente.setLayout(jPanelPerfilClienteLayout);
-        jPanelPerfilClienteLayout.setHorizontalGroup(
-            jPanelPerfilClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelPerfilClienteLayout.createSequentialGroup()
-                .addGap(199, 199, 199)
-                .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 544, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(247, Short.MAX_VALUE))
-        );
-        jPanelPerfilClienteLayout.setVerticalGroup(
-            jPanelPerfilClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelPerfilClienteLayout.createSequentialGroup()
-                .addGap(325, 325, 325)
-                .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(339, Short.MAX_VALUE))
-        );
-
-        rSPanelsSlider1.add(jPanelPerfilCliente, "card3");
 
         jPanelbtn.setBackground(new java.awt.Color(255, 255, 255));
         jPanelbtn.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
@@ -249,6 +228,10 @@ public class VistaCliente extends javax.swing.JFrame {
 
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/univalle.jpg"))); // NOI18N
 
+        jTextField1.setText("Search");
+
+        jLabel9.setText("Lupa");
+
         javax.swing.GroupLayout jPanelHeaderLayout = new javax.swing.GroupLayout(jPanelHeader);
         jPanelHeader.setLayout(jPanelHeaderLayout);
         jPanelHeaderLayout.setHorizontalGroup(
@@ -256,16 +239,74 @@ public class VistaCliente extends javax.swing.JFrame {
             .addGroup(jPanelHeaderLayout.createSequentialGroup()
                 .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 323, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel5)
-                .addContainerGap())
+                .addGroup(jPanelHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelHeaderLayout.createSequentialGroup()
+                        .addComponent(jLabel5)
+                        .addContainerGap())
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelHeaderLayout.createSequentialGroup()
+                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(127, 127, 127))))
         );
         jPanelHeaderLayout.setVerticalGroup(
             jPanelHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelHeaderLayout.createSequentialGroup()
                 .addComponent(jLabel5)
-                .addGap(0, 38, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanelHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, 32, Short.MAX_VALUE)
+                    .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
             .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
         );
+
+        rSPanelsSlider1.setBackground(new java.awt.Color(255, 255, 255));
+
+        jPanelIndexAdmin.setBackground(new java.awt.Color(255, 255, 255));
+        jPanelIndexAdmin.setName("jPanelIndexAdmin"); // NOI18N
+
+        jLabel7.setText("Index");
+
+        javax.swing.GroupLayout jPanelIndexAdminLayout = new javax.swing.GroupLayout(jPanelIndexAdmin);
+        jPanelIndexAdmin.setLayout(jPanelIndexAdminLayout);
+        jPanelIndexAdminLayout.setHorizontalGroup(
+            jPanelIndexAdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelIndexAdminLayout.createSequentialGroup()
+                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 831, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 130, Short.MAX_VALUE))
+        );
+        jPanelIndexAdminLayout.setVerticalGroup(
+            jPanelIndexAdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelIndexAdminLayout.createSequentialGroup()
+                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 440, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 264, Short.MAX_VALUE))
+        );
+
+        rSPanelsSlider1.add(jPanelIndexAdmin, "card2");
+
+        jPanelPerfilAdmin.setBackground(new java.awt.Color(255, 255, 255));
+        jPanelPerfilAdmin.setName("jPanelPerfilAdmin"); // NOI18N
+
+        jLabel8.setText("Perfil");
+
+        javax.swing.GroupLayout jPanelPerfilAdminLayout = new javax.swing.GroupLayout(jPanelPerfilAdmin);
+        jPanelPerfilAdmin.setLayout(jPanelPerfilAdminLayout);
+        jPanelPerfilAdminLayout.setHorizontalGroup(
+            jPanelPerfilAdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelPerfilAdminLayout.createSequentialGroup()
+                .addGap(199, 199, 199)
+                .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 544, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanelPerfilAdminLayout.setVerticalGroup(
+            jPanelPerfilAdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelPerfilAdminLayout.createSequentialGroup()
+                .addGap(327, 327, 327)
+                .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(337, Short.MAX_VALUE))
+        );
+
+        rSPanelsSlider1.add(jPanelPerfilAdmin, "card3");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -293,6 +334,31 @@ public class VistaCliente extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jLabelHomeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelHomeMouseClicked
+        resetColor(jLabel2);
+        setColor(jLabelHome);
+        resetColor(jLabel3);
+        resetColor(jLabel4);
+        rSPanelsSlider1.setPanelSlider(15, jPanelIndexAdmin, RSPanelsSlider.DIRECT.RIGHT);
+
+    }//GEN-LAST:event_jLabelHomeMouseClicked
+
+    private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
+        resetColor(jLabelHome);
+        setColor(jLabel2);
+        resetColor(jLabel3);
+        resetColor(jLabel4);
+        rSPanelsSlider1.setPanelSlider(15, jPanelPerfilAdmin, RSPanelsSlider.DIRECT.RIGHT);
+    }//GEN-LAST:event_jLabel2MouseClicked
+
+    private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jLabel3MouseClicked
+
+    private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jLabel4MouseClicked
 
     private void btnCerrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCerrarMouseClicked
         System.exit(0);
@@ -329,30 +395,13 @@ public class VistaCliente extends javax.swing.JFrame {
         yMouse = evt.getY();
     }//GEN-LAST:event_jPanelbtnMousePressed
 
-    private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
-        resetColor(jLabel2);
-        setColor(jLabel1);
-        resetColor(jLabel3);
-        resetColor(jLabel4);
-        rSPanelsSlider1.setPanelSlider(15, jPanelIndexCliente, RSPanelsSlider.DIRECT.RIGHT);
-        
-    }//GEN-LAST:event_jLabel1MouseClicked
-
-    private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
-        resetColor(jLabel1);
-        setColor(jLabel2);
-        resetColor(jLabel3);
-        resetColor(jLabel4);
-        rSPanelsSlider1.setPanelSlider(15, jPanelPerfilCliente, RSPanelsSlider.DIRECT.RIGHT);
-    }//GEN-LAST:event_jLabel2MouseClicked
-
-    private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
+    private void jLabel10MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel10MouseClicked
         // TODO add your handling code here:
-    }//GEN-LAST:event_jLabel3MouseClicked
+    }//GEN-LAST:event_jLabel10MouseClicked
 
-    private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jLabel4MouseClicked
+    ImageIcon imagen = new ImageIcon(getClass().getResource("/images/buscar.jpg"));
+    Icon icono;
+    
 
     /**
      * @param args the command line arguments
@@ -371,20 +420,20 @@ public class VistaCliente extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(VistaCliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VistaAdmin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(VistaCliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VistaAdmin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(VistaCliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VistaAdmin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(VistaCliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VistaAdmin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new VistaCliente().setVisible(true);
+                new VistaAdmin().setVisible(true);
             }
         });
     }
@@ -392,7 +441,7 @@ public class VistaCliente extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCerrar;
     private javax.swing.JButton btnMiminize;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -400,11 +449,18 @@ public class VistaCliente extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JLabel jLabelHome;
     private javax.swing.JPanel jPanelHeader;
-    private javax.swing.JPanel jPanelIndexCliente;
+    private javax.swing.JPanel jPanelIndexAdmin;
     private javax.swing.JPanel jPanelMenu;
-    private javax.swing.JPanel jPanelPerfilCliente;
+    private javax.swing.JPanel jPanelPerfilAdmin;
     private javax.swing.JPanel jPanelbtn;
+    private javax.swing.JTextField jTextField1;
     private rojerusan.RSPanelsSlider rSPanelsSlider1;
     // End of variables declaration//GEN-END:variables
+
+
+
+
 }
