@@ -28,8 +28,7 @@ public class VistaAdmin extends javax.swing.JFrame {
         
         initComponents();
         this.setLocationRelativeTo(null);
-        jLabelHome.setOpaque(true);
-        jLabelHome.setBackground(new Color(255,51,51));
+        resetColor(jLabelHome, "inicio.jpg");
         
         ImageIcon imagen = new ImageIcon("src/images/buscar.jpg");
         Icon icono = new ImageIcon(imagen.getImage().getScaledInstance(jLabel9.getWidth(), jLabel9.getHeight(), Image.SCALE_DEFAULT));
@@ -40,7 +39,7 @@ public class VistaAdmin extends javax.swing.JFrame {
         Icon icono1 = new ImageIcon(imagen1.getImage().getScaledInstance(jLabelHome.getWidth(), jLabelHome.getHeight(), Image.SCALE_DEFAULT));
         jLabelHome.setIcon(icono1);
         this.repaint();
-        
+       
         ImageIcon imagen2 = new ImageIcon("src/images/Perfil.jpg");
         Icon icono2 = new ImageIcon(imagen2.getImage().getScaledInstance(jLabelPerfil.getWidth(), jLabelPerfil.getHeight(), Image.SCALE_DEFAULT));
         jLabelPerfil.setIcon(icono2);
@@ -63,16 +62,32 @@ public class VistaAdmin extends javax.swing.JFrame {
         
     }
     
-      public void resetColor(JLabel item) {
+     /* public void resetColor(JLabel item) {
         item.setOpaque(false);
         item.setBackground(new Color(205,31,50));
+    }*/
+     public void resetColor(JLabel item, String image) {
+        ImageIcon imagen = new ImageIcon("src/images/"+image);
+        Icon icono = new ImageIcon(imagen.getImage().getScaledInstance(item.getWidth(), item.getHeight(), Image.SCALE_DEFAULT));
+        item.setIcon(icono);
+        this.repaint();
     }
+
 
     public void setColor(JLabel item) {
         item.setOpaque(true);
-        item.setBackground(new Color(255,51,51));
+        item.setBackground(new Color(205,41,55));
     }
-
+    
+    public void changeImage(String nombreNueva, JLabel label){
+        ImageIcon image = new ImageIcon("src/images/"+nombreNueva);
+        Icon icono = new ImageIcon(image.getImage().getScaledInstance(label.getWidth(), label.getHeight(), Image.SCALE_DEFAULT));
+        label.setIcon(icono);
+        this.repaint();
+        
+    }
+    
+   
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -107,7 +122,7 @@ public class VistaAdmin extends javax.swing.JFrame {
 
         jPanelMenu.setBackground(new java.awt.Color(205, 31, 50));
 
-        jLabelHome.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabelHome.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
         jLabelHome.setForeground(new java.awt.Color(255, 255, 255));
         jLabelHome.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -351,19 +366,22 @@ public class VistaAdmin extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jLabelHomeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelHomeMouseClicked
-        resetColor(jLabelPerfil);
+        resetColor(jLabelPerfil, "Perfil.jpg" );
         setColor(jLabelHome);
-        resetColor(jLabelUser);
-        resetColor(jLabelinterfaz);
+        /*resetColor(jLabelUser);
+        resetColor(jLabelinterfaz);*/
+        changeImage("inicio-clic.jpg",jLabelHome);
         rSPanelsSlider1.setPanelSlider(15, jPanelIndexAdmin, RSPanelsSlider.DIRECT.RIGHT);
 
     }//GEN-LAST:event_jLabelHomeMouseClicked
 
     private void jLabelPerfilMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelPerfilMouseClicked
-        resetColor(jLabelHome);
-        setColor(jLabelPerfil);
+        resetColor(jLabelHome, "inicio.jpg");
+       /* setColor(jLabelPerfil);
         resetColor(jLabelUser);
-        resetColor(jLabelinterfaz);
+        resetColor(jLabelinterfaz);*/
+       changeImage("perfil-clic.jpg",jLabelPerfil);
+       
         rSPanelsSlider1.setPanelSlider(15, jPanelPerfilAdmin, RSPanelsSlider.DIRECT.RIGHT);
     }//GEN-LAST:event_jLabelPerfilMouseClicked
 
@@ -414,9 +432,7 @@ public class VistaAdmin extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jLabelticketMouseClicked
 
-    ImageIcon imagen = new ImageIcon(getClass().getResource("/images/buscar.jpg"));
-    Icon icono;
-    
+  
 
     /**
      * @param args the command line arguments
