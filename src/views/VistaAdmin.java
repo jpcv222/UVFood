@@ -367,6 +367,9 @@ public class VistaAdmin extends javax.swing.JFrame {
 
     private void jLabelHomeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelHomeMouseClicked
         resetColor(jLabelPerfil, "Perfil.jpg" );
+        resetColor(jLabelinterfaz, "GestionInterfaz.jpg");
+        resetColor(jLabelUser, "GestionUser.jpg");
+        resetColor(jLabelticket, "GestionTicket.jpg");
         setColor(jLabelHome);
         /*resetColor(jLabelUser);
         resetColor(jLabelinterfaz);*/
@@ -377,6 +380,9 @@ public class VistaAdmin extends javax.swing.JFrame {
 
     private void jLabelPerfilMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelPerfilMouseClicked
         resetColor(jLabelHome, "inicio.jpg");
+        resetColor(jLabelinterfaz, "GestionInterfaz.jpg");
+        resetColor(jLabelUser, "GestionUser.jpg");
+        resetColor(jLabelticket, "GestionTicket.jpg");
        /* setColor(jLabelPerfil);
         resetColor(jLabelUser);
         resetColor(jLabelinterfaz);*/
@@ -386,11 +392,19 @@ public class VistaAdmin extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabelPerfilMouseClicked
 
     private void jLabelUserMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelUserMouseClicked
-        // TODO add your handling code here:
+        resetColor(jLabelPerfil, "Perfil.jpg" );
+        resetColor(jLabelHome, "inicio.jpg");
+        resetColor(jLabelinterfaz, "GestionInterfaz.jpg");
+        resetColor(jLabelticket, "GestionTicket.jpg");
+        changeImage("User-clic.jpg",jLabelUser);
     }//GEN-LAST:event_jLabelUserMouseClicked
 
     private void jLabelinterfazMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelinterfazMouseClicked
-        // TODO add your handling code here:
+        resetColor(jLabelPerfil, "Perfil.jpg" );
+        resetColor(jLabelHome, "inicio.jpg");
+        resetColor(jLabelUser, "GestionUser.jpg");
+        resetColor(jLabelticket, "GestionTicket.jpg");
+        changeImage("interfaz-clic.jpg",jLabelinterfaz);
     }//GEN-LAST:event_jLabelinterfazMouseClicked
 
     private void btnCerrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCerrarMouseClicked
@@ -429,7 +443,11 @@ public class VistaAdmin extends javax.swing.JFrame {
     }//GEN-LAST:event_jPanelbtnMousePressed
 
     private void jLabelticketMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelticketMouseClicked
-        // TODO add your handling code here:
+        resetColor(jLabelHome, "inicio.jpg");
+        resetColor(jLabelPerfil, "Perfil.jpg" );
+        resetColor(jLabelinterfaz, "GestionInterfaz.jpg");
+        resetColor(jLabelUser, "GestionUser.jpg");
+        changeImage("Ticket-clic.jpg",jLabelticket);
     }//GEN-LAST:event_jLabelticketMouseClicked
 
   
