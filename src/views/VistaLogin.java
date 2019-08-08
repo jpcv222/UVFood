@@ -290,7 +290,14 @@ public class VistaLogin extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonIniciarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonIniciarSesionActionPerformed
-        JOptionPane.showMessageDialog(null, "hhgghghghgh");
+        String cuenta = jTextField1.getText();
+        char[] contra = jPasswordField1.getPassword();
+        String pass = new String(contra);
+        JOptionPane.showMessageDialog(null, cuenta + "\n"+ pass);
+        if(pass.equals("123") && cuenta.equalsIgnoreCase("A123")){
+            JOptionPane.showMessageDialog(null, "Login exitoso");
+        }
+        
     }//GEN-LAST:event_jButtonIniciarSesionActionPerformed
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
