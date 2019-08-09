@@ -8,6 +8,9 @@ package views;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Frame;
+import java.awt.Image;
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import rojerusan.RSPanelsSlider;
 
@@ -34,17 +37,45 @@ public class VistaCliente extends javax.swing.JFrame {
         jTable1.getTableHeader().setForeground(new Color(255,255,255));
         jTable1.setRowHeight(25);
         
+        ImageIcon imagen1 = new ImageIcon("src/images/inicio.jpg");
+        Icon icono1 = new ImageIcon(imagen1.getImage().getScaledInstance(jLabel1.getWidth(), jLabel1.getHeight(), Image.SCALE_DEFAULT));
+        jLabel1.setIcon(icono1);
+        this.repaint();
+       
+        ImageIcon imagen2 = new ImageIcon("src/images/Perfil.jpg");
+        Icon icono2 = new ImageIcon(imagen2.getImage().getScaledInstance(jLabel2.getWidth(), jLabel2.getHeight(), Image.SCALE_DEFAULT));
+        jLabel2.setIcon(icono2);
+        this.repaint();
+        
+        ImageIcon imagen4 = new ImageIcon("src/images/compraTicket.jpg");
+        Icon icono4 = new ImageIcon(imagen4.getImage().getScaledInstance(jLabel4.getWidth(), jLabel4.getHeight(), Image.SCALE_DEFAULT));
+        jLabel4.setIcon(icono4);
+        this.repaint();
+        
     }
     
     
-    public void resetColor(JLabel item) {
+    /*public void resetColor(JLabel item) {
         item.setOpaque(false);
         item.setBackground(new Color(205,31,50));
+    }*/
+    public void resetColor(JLabel item, String image) {
+        ImageIcon imagen = new ImageIcon("src/images/"+image);
+        Icon icono = new ImageIcon(imagen.getImage().getScaledInstance(item.getWidth(), item.getHeight(), Image.SCALE_DEFAULT));
+        item.setIcon(icono);
+        this.repaint();
     }
 
     public void setColor(JLabel item) {
         item.setOpaque(true);
         item.setBackground(new Color(1,198,83));
+    }
+    
+    public void changeImage(String nombreNueva, JLabel label){
+        ImageIcon image = new ImageIcon("src/images/"+nombreNueva);
+        Icon icono = new ImageIcon(image.getImage().getScaledInstance(label.getWidth(), label.getHeight(), Image.SCALE_DEFAULT));
+        label.setIcon(icono);
+        this.repaint();
     }
 
     /**
@@ -86,7 +117,6 @@ public class VistaCliente extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("   Inicio");
         jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel1MouseClicked(evt);
@@ -95,7 +125,6 @@ public class VistaCliente extends javax.swing.JFrame {
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("   Perfil");
         jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel2MouseClicked(evt);
@@ -113,7 +142,6 @@ public class VistaCliente extends javax.swing.JFrame {
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setText("   Comprar Tiquete");
         jLabel4.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel4MouseClicked(evt);
@@ -383,6 +411,7 @@ public class VistaCliente extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addComponent(jPanelbtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
                 .addComponent(jPanelHeader, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -429,29 +458,35 @@ public class VistaCliente extends javax.swing.JFrame {
     }//GEN-LAST:event_jPanelbtnMousePressed
 
     private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
-        
-        resetColor(jLabel2);
-        setColor(jLabel1);
-        resetColor(jLabel3);
-        resetColor(jLabel4);
+        resetColor(jLabel2, "Perfil.jpg" );
+        resetColor(jLabel4, "compraTicket.jpg" );
+        //resetColor(jLabel2);
+        //setColor(jLabel1);
+        //resetColor(jLabel3);
+        //resetColor(jLabel4);
+        changeImage("inicio-clic.jpg",jLabel1);
         rSPanelsSlider1.setPanelSlider(5, jPanelIndexCliente, RSPanelsSlider.DIRECT.RIGHT);
         
     }//GEN-LAST:event_jLabel1MouseClicked
 
     private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
-        resetColor(jLabel1);
+        resetColor(jLabel1, "inicio.jpg");
+        resetColor(jLabel4, "compraTicket.jpg" );
         setColor(jLabel2);
-        resetColor(jLabel3);
-        resetColor(jLabel4);
+       // resetColor(jLabel3);
+        //resetColor(jLabel4);
+        changeImage("perfil-clic.jpg",jLabel2);
         rSPanelsSlider1.setPanelSlider(5, jPanelPerfilCliente, RSPanelsSlider.DIRECT.RIGHT);
     }//GEN-LAST:event_jLabel2MouseClicked
 
     private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_jLabel3MouseClicked
 
     private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
-        // TODO add your handling code here:
+        resetColor(jLabel2, "Perfil.jpg" );
+        resetColor(jLabel1, "inicio.jpg");
+        changeImage("compra-clic.jpg",jLabel4);
     }//GEN-LAST:event_jLabel4MouseClicked
 
     private void jLabel9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel9MouseClicked
