@@ -14,33 +14,33 @@ import views.index;
  *
  * @author invitado
  */
-public class UVFood {
+public class UVFood extends DBcontrol {
 
-    /**
-     * @param args the command line arguments
-     */
+    Connection miconexion = Conexion();
+
+    public void CheckServer() {
+        if (miconexion != null) {
+
+            JOptionPane.showMessageDialog(null, "Succes");
+        } else {
+
+            JOptionPane.showMessageDialog(null, "Server error");
+        }
+
+    }
+
     public static void main(String[] args) {
+        UVFood server = new UVFood();
         // TODO code application logic here
-        
+
         // index view call
         // conexion DB call
-        
-                index miIndex = new index();
+        index miIndex = new index();
         miIndex.setVisible(true);
         
-          
-           Connection miconexion;
-        miconexion=DBcontrol.GetConnection();
+        server.CheckServer();
         
-        
-        if(miconexion !=null){
-            
-            JOptionPane.showMessageDialog(null,"Succes");
-    } else {
-            
-            JOptionPane.showMessageDialog(null,"Server error");
-        }
-    
-}
-    
+
+    }
+
 }

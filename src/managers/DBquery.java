@@ -5,11 +5,17 @@
  */
 package managers;
 
+import classes.DBcontrol;
+
 /**
  *
  * @author sp
  */
-public class DBquery {
+public class DBquery extends DBcontrol{
     
     //Manager query
+    
+    //Ejemplo consulta
+    
+    
 }

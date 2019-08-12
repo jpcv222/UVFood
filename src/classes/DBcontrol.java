@@ -8,8 +8,7 @@ package classes;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+
 
 
 /**
@@ -17,28 +16,22 @@ import java.util.logging.Logger;
  * @author sp
  */
 public class DBcontrol {
-    
-        public static Connection GetConnection(){
-        
-        Connection conexion = null;
-        try {
-            Class.forName("com.mysql.jdbc.Driver"); 
-            
-            
-            String server = "jdbc:mysql://localhost/vetmajapipetsbd";
-            
-            
-            String userBD= "root";
-            String passwordBD="";
-            
-            conexion = (Connection) DriverManager.getConnection(server, userBD, passwordBD);
-            
-            
-        } catch (ClassNotFoundException | SQLException ex) {
-            Logger.getLogger(DBcontrol.class.getName()).log(Level.SEVERE, null, ex);
+
+        private String url = "jdbc:postgresql://localhost:5432/nombreBD";
+        private String user = "usuario";
+        private String password = "clave";
+        private Connection conn = null;
+
+        public Connection Conexion() {           
+            try {
+                conn = DriverManager.getConnection(this.url, this.user, this.password);
+                System.out.println("Conexion exitosa");
+            } catch (SQLException e) {
+                System.out.println(e.getMessage());
+            }
+
+            return conn;
         }
-    
-        return conexion;
-    }
-    
 }
+    
+
