@@ -6,12 +6,15 @@
 package managers;
 
 import classes.DBcontrol;
+import java.sql.Connection;
 
 /**
  *
  * @author sp
  */
 public class DBquery extends DBcontrol{
+    
+    Connection conn = Conexion();
     
     //Manager query
     
