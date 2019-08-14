@@ -5,11 +5,20 @@
  */
 package managers;
 
+import classes.DBcontrol;
+import java.sql.Connection;
+
 /**
  *
  * @author sp
  */
-public class DBquery {
+public class DBquery extends DBcontrol{
+    
+    Connection conn = Conexion();
     
     //Manager query
+    
+    //Ejemplo consulta
+    
+    
 }
