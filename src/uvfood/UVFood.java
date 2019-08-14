@@ -7,40 +7,37 @@ package uvfood;
 
 import java.sql.Connection;
 import javax.swing.JOptionPane;
-import classes.DBcontrol;
+import classes.ConexionBD;
 import views.index;
 
 /**
  *
  * @author invitado
  */
-public class UVFood {
+public class UVFood extends ConexionBD {
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        // TODO code application logic here
-        
-        // index view call
-        // conexion DB call
-        
-                index miIndex = new index();
-        miIndex.setVisible(true);
-        
-          
-           Connection miconexion;
-        miconexion=DBcontrol.GetConnection();
-        
-        
-        if(miconexion !=null){
-            
-            JOptionPane.showMessageDialog(null,"Succes");
-    } else {
-            
-            JOptionPane.showMessageDialog(null,"Server error");
+    Connection miconexion = Conexion();
+
+    public void CheckServer() {
+        if (miconexion != null) {
+
+            System.out.println("Conexion exitosa");
+        } else {
+
+            System.out.println("Server error");
         }
-    
-}
-    
+
+    }
+
+    public static void main(String[] args) {
+        UVFood server = new UVFood();
+        server.CheckServer();
+        
+        /*
+        llamadas a los constructores de los controladores pasandole los objetos previamente creados
+        */
+        
+
+    }
+
 }

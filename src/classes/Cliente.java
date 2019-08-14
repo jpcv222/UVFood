@@ -3,13 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package managers;
+package classes;
 
 /**
  *
- * @author sp
+ * @author STH_1F_GCB_PC16
  */
-public class DBquery {
+public class Cliente {
     
-    //Manager query
 }
