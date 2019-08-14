@@ -8,6 +8,12 @@ package classes;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+ 
 
 
 
@@ -17,9 +23,9 @@ import java.sql.SQLException;
  */
 public class DBcontrol {
 
-        private String url = "jdbc:postgresql://localhost:5432/nombreBD";
-        private String user = "usuario";
-        private String password = "clave";
+        private String url = "jdbc:postgresql://localhost:5432/prueba";
+        private String user = "postgres";
+        private String password = "root";
         private Connection conn = null;
 
         public Connection Conexion() {           
@@ -33,5 +39,6 @@ public class DBcontrol {
             return conn;
         }
 }
+
     
 

@@ -21,10 +21,10 @@ public class UVFood extends DBcontrol {
     public void CheckServer() {
         if (miconexion != null) {
 
-            JOptionPane.showMessageDialog(null, "Succes");
+            System.out.println("Conexion exitosa");
         } else {
 
-            JOptionPane.showMessageDialog(null, "Server error");
+            System.out.println("Server error");
         }
 
     }
