@@ -31,14 +31,11 @@ public class UVFood extends ConexionBD {
 
     public static void main(String[] args) {
         UVFood server = new UVFood();
-        // TODO code application logic here
-
-        // index view call
-        // conexion DB call
-        index miIndex = new index();
-        miIndex.setVisible(true);
-        
         server.CheckServer();
+        
+        /*
+        llamadas a los constructores de los controladores pasandole los objetos previamente creados
+        */
         
 
     }
