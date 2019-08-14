@@ -7,14 +7,14 @@ package uvfood;
 
 import java.sql.Connection;
 import javax.swing.JOptionPane;
-import classes.DBcontrol;
+import classes.ConexionBD;
 import views.index;
 
 /**
  *
  * @author invitado
  */
-public class UVFood extends DBcontrol {
+public class UVFood extends ConexionBD {
 
     Connection miconexion = Conexion();
 
@@ -31,14 +31,11 @@ public class UVFood extends DBcontrol {
 
     public static void main(String[] args) {
         UVFood server = new UVFood();
-        // TODO code application logic here
-
-        // index view call
-        // conexion DB call
-        index miIndex = new index();
-        miIndex.setVisible(true);
-        
         server.CheckServer();
+        
+        /*
+        llamadas a los constructores de los controladores pasandole los objetos previamente creados
+        */
         
 
     }
