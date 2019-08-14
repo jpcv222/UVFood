@@ -7,14 +7,14 @@ package uvfood;
 
 import java.sql.Connection;
 import javax.swing.JOptionPane;
-import classes.DBcontrol;
+import classes.ConexionBD;
 import views.index;
 
 /**
  *
  * @author invitado
  */
-public class UVFood extends DBcontrol {
+public class UVFood extends ConexionBD {
 
     Connection miconexion = Conexion();
 
