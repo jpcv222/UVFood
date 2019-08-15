@@ -8,6 +8,11 @@ package uvfood;
 import java.sql.Connection;
 import javax.swing.JOptionPane;
 import classes.ConexionBD;
+import classes.ConsultasCliente;
+import classes.Usuario;
+import managers.ControladorCliente;
+import views.VistaCliente;
+import views.VistaLogin;
 import views.index;
 
 /**
@@ -36,7 +41,14 @@ public class UVFood extends ConexionBD {
         /*
         llamadas a los constructores de los controladores pasandole los objetos previamente creados
         */
+        Usuario usuario = new Usuario();
+        VistaCliente vistaCliente = new VistaCliente();
+        VistaLogin vistaLogin = new VistaLogin();
+        ConsultasCliente consultasCliente = new ConsultasCliente();
         
+        ControladorCliente controladorCliente = new ControladorCliente(vistaCliente, vistaLogin, consultasCliente, usuario);
+        controladorCliente.iniciar();
+        vistaLogin.setVisible(true);
 
     }
 

@@ -16,7 +16,7 @@ import java.sql.SQLException;
  */
 public class ConexionBD {
 
-    private String url = "jdbc:postgresql://localhost:5432/prueba";
+    private String url = "jdbc:postgresql://localhost:5432/pruebauvfood";
     private String user = "postgres";
     private String password = "root";
     private Connection conn = null;
