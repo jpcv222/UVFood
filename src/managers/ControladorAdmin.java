@@ -10,7 +10,8 @@ import views.VistaAdmin;
 
 /**
  *
- * @author jpcv2
+ * @author Juan Pablo Castro    2019
+ * GitHub: jpcv222
  */
 public class ControladorAdmin {
     
