@@ -18,7 +18,7 @@ public class ConexionBD {
 
     private String url = "jdbc:postgresql://localhost:5432/pruebauvfood";
     private String user = "postgres";
-    private String password = "root";
+    private String password = "pgsql";
     private Connection conn = null;
 
     public Connection Conexion() {
