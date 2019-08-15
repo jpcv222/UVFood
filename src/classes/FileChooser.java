@@ -42,7 +42,6 @@ public class FileChooser {
             System.out.println(e.getMessage());
         } 
         
-        
         setRuta(ruta);
     }
 
