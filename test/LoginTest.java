@@ -16,10 +16,13 @@ import static org.junit.Assert.*;
  * @author Monitor-Sistemas
  */
 public class LoginTest {
-    
+   
     @Test
     public void testLogin() {
-     //  String resultado =  views.VistaLogin.
+       boolean resultado = views.VistaLogin.Login("A123", "123");
+       boolean esperado = true;
+        assertEquals((Object) esperado, (Object) resultado);
+       
     }
     
 
