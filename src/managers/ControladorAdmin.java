@@ -5,7 +5,7 @@
  */
 package managers;
 
-import classes.Cliente;
+import classes.Usuario;
 import classes.FileChooser;
 import com.opencsv.CSVReader;
 import java.awt.event.ActionEvent;
@@ -19,18 +19,18 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JPanel;
 import views.VistaAdmin;
-import classes.Ficheros;
+import classes.Logs;
 import classes.KeyValidate;
 
 /**
  *
  * @author Juan Pablo Castro 2019 GitHub: jpcv222
  */
-public class ControladorAdmin implements ActionListener {
+public class ControladorAdmin /*implements ActionListener */{
 
     private VistaAdmin interfazPrincipalAdmin;
     private FileChooser file = new FileChooser();
-    private Ficheros logs = new Ficheros();
+    private Logs logs = new Logs();
     private KeyValidate keyvalidate = new KeyValidate();
     //private Cliente modeloCliente;
 
@@ -64,8 +64,10 @@ public class ControladorAdmin implements ActionListener {
         }
     }
 
-    public void readCSVFile(String url_file) {
-        String archCSV = url_file;
+    public void readCSVFile() {
+        if(keyvalidate.haveKey("action-method-name","user-id")){
+        String archCSV = null;
+        archCSV = file.getRuta();
         try {
             CSVReader csvReader = new CSVReader(new FileReader(archCSV));
             String[] fila = null;
@@ -75,19 +77,23 @@ public class ControladorAdmin implements ActionListener {
                         + " |  " + fila[2]);
             }
         } catch (FileNotFoundException ex) {
-            Logger.getLogger(ControladorAdmin.class.getName()).log(Level.SEVERE, null, ex);
-            logs.escribirExceptionLogs( "//ControladorAdmin//readCSVFile// " + ex.getMessage());
+            logs.escribirExceptionLogs( "//ControladorAdmin//readCSVFile// " +  ex.getMessage());
         } catch (IOException   ioe){
-            Logger.getLogger(ControladorAdmin.class.getName()).log(Level.SEVERE, null, ioe);
             logs.escribirExceptionLogs( "//ControladorAdmin//readCSVFile// " + ioe.getMessage());
         }
-    }
-    
-    @Override
-    public void actionPerformed(ActionEvent ae) {
-        if (ae.getSource() == interfazPrincipalAdmin.jButtonCargar) {
-            readCSVFile(file.getRuta());
+        }else{
+        //Show error key message
         }
     }
 
+    /*
+    @Override
+    public void actionPerformed(ActionEvent ae) {
+          if (ae.getSource() == interfazPrincipalAdmin.jButtonCargar) {
+            System.out.println("HOLA");
+            readCSVFile();
+        }
+    }
+
+*/
 }

@@ -10,11 +10,11 @@ package classes;
  *
  * @author jpcv2
  */
-public class Ficheros {
+public class Logs {
     
     private String directorioRaiz;
     private String exceptionLogsFile;
-    public Ficheros() {
+    public Logs() {
         this.directorioRaiz = System.getProperty("user.dir");
         this.exceptionLogsFile = directorioRaiz+"/src/logs/exception.txt";
     }
@@ -25,12 +25,10 @@ public class Ficheros {
         PrintWriter pw = null;
         try
         {
-            fichero = new FileWriter(exceptionLogsFile);
+            fichero = new FileWriter(exceptionLogsFile, true);
             pw = new PrintWriter(fichero);
-
-            for (int i = 0; i < 10; i++)
-                pw.println("Linea " + i);
-
+            pw.println(message);
+            
         } catch (Exception e) {
             e.printStackTrace();
         } finally {

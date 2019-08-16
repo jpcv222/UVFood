@@ -595,6 +595,11 @@ public class VistaAdmin extends javax.swing.JFrame {
         jButtonCargar.setText("Cargar");
         jButtonCargar.setBorder(null);
         jButtonCargar.setEnabled(false);
+        jButtonCargar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonCargarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanelModuleUserRegisterLayout = new javax.swing.GroupLayout(jPanelModuleUserRegister);
         jPanelModuleUserRegister.setLayout(jPanelModuleUserRegisterLayout);
@@ -806,6 +811,11 @@ public class VistaAdmin extends javax.swing.JFrame {
         // TODO add your handling code here:
         manager.selectFile("user.upload"); 
     }//GEN-LAST:event_jPanelSelectCSVUserMouseClicked
+
+    private void jButtonCargarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCargarActionPerformed
+        // TODO add your handling code here:
+        manager.readCSVFile();
+    }//GEN-LAST:event_jButtonCargarActionPerformed
 
   
 

@@ -19,7 +19,7 @@ import javax.swing.JFileChooser;
 public class FileChooser {
     
     String ruta;
-    private Ficheros logs = new Ficheros();
+    private Logs logs = new Logs();
     
     public FileChooser() {
         ruta = null;
@@ -42,10 +42,8 @@ public class FileChooser {
                 System.out.println(ruta);
             
         } catch (NullPointerException e) {
-            Logger.getLogger(FileChooser.class.getName()).log(Level.SEVERE, null, e);
             logs.escribirExceptionLogs( "//FileChooser//calcularRutaArchivo// " + e.getMessage());
         } catch (Exception ex) {
-            Logger.getLogger(FileChooser.class.getName()).log(Level.SEVERE, null, ex);
             logs.escribirExceptionLogs( "//FileChooser//calcularRutaArchivo// " + ex.getMessage());
         } 
         
