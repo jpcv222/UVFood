@@ -6,7 +6,10 @@
 package classes;
 
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JFileChooser;
+
 
 /**
  *
@@ -16,6 +19,7 @@ import javax.swing.JFileChooser;
 public class FileChooser {
     
     String ruta;
+    private Ficheros logs = new Ficheros();
     
     public FileChooser() {
         ruta = null;
@@ -38,9 +42,11 @@ public class FileChooser {
                 System.out.println(ruta);
             
         } catch (NullPointerException e) {
-            System.out.println("No se ha seleccionado ningún fichero");
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
+            Logger.getLogger(FileChooser.class.getName()).log(Level.SEVERE, null, e);
+            logs.escribirExceptionLogs( "//FileChooser//calcularRutaArchivo// " + e.getMessage());
+        } catch (Exception ex) {
+            Logger.getLogger(FileChooser.class.getName()).log(Level.SEVERE, null, ex);
+            logs.escribirExceptionLogs( "//FileChooser//calcularRutaArchivo// " + ex.getMessage());
         } 
         
         setRuta(ruta);

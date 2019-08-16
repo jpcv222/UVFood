@@ -36,10 +36,11 @@ public class VistaAdmin extends javax.swing.JFrame {
     ControladorAdmin managerAdmin;
     int xMouse;
     int yMouse;
+    ControladorAdmin manager;
     
     public VistaAdmin() {
         
-        managerAdmin = new ControladorAdmin(this);
+        manager =  new ControladorAdmin(this);
         
         item_menu_exited = new Color(205,31,50);
         item_bottom_exited = new Color(240,240,240);
@@ -145,19 +146,18 @@ public class VistaAdmin extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jPanelUserReportsItem = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
-        rSPanelsSlider2 = new rojerusan.RSPanelsSlider();
+        jPanelModuleUserReports = new javax.swing.JPanel();
+        jLabel4 = new javax.swing.JLabel();
+        jSeparator2 = new javax.swing.JSeparator();
         jPanelModuleUserRegister = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
-        jPanelSelectCSV = new javax.swing.JPanel();
+        jPanelSelectCSVUser = new javax.swing.JPanel();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jLabelRutaArchivo = new javax.swing.JLabel();
         jButtonCargar = new javax.swing.JButton();
-        jPanelModuleUserReports = new javax.swing.JPanel();
-        jLabel4 = new javax.swing.JLabel();
-        jSeparator2 = new javax.swing.JSeparator();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -345,7 +345,7 @@ public class VistaAdmin extends javax.swing.JFrame {
             jPanelIndexAdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelIndexAdminLayout.createSequentialGroup()
                 .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 831, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 158, Short.MAX_VALUE))
+                .addGap(0, 170, Short.MAX_VALUE))
         );
         jPanelIndexAdminLayout.setVerticalGroup(
             jPanelIndexAdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -385,10 +385,12 @@ public class VistaAdmin extends javax.swing.JFrame {
         jPanelModuleUserAdmin.setPreferredSize(new java.awt.Dimension(961, 704));
         jPanelModuleUserAdmin.setRequestFocusEnabled(false);
         jPanelModuleUserAdmin.setVerifyInputWhenFocusTarget(false);
+        jPanelModuleUserAdmin.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanelMenuOptionsModuleUser.setBackground(new java.awt.Color(205, 31, 50));
 
         jPanelUserRegisterItem.setBackground(new java.awt.Color(205, 31, 50));
+        jPanelUserRegisterItem.setName("jPanelUserRegisterItem"); // NOI18N
         jPanelUserRegisterItem.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jPanelUserRegisterItemMouseClicked(evt);
@@ -405,6 +407,11 @@ public class VistaAdmin extends javax.swing.JFrame {
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("Registro de usuarios");
+        jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel2MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanelUserRegisterItemLayout = new javax.swing.GroupLayout(jPanelUserRegisterItem);
         jPanelUserRegisterItem.setLayout(jPanelUserRegisterItemLayout);
@@ -413,7 +420,7 @@ public class VistaAdmin extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelUserRegisterItemLayout.createSequentialGroup()
                 .addContainerGap(40, Short.MAX_VALUE)
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(37, 37, 37))
+                .addGap(34, 34, 34))
         );
         jPanelUserRegisterItemLayout.setVerticalGroup(
             jPanelUserRegisterItemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -424,6 +431,7 @@ public class VistaAdmin extends javax.swing.JFrame {
         );
 
         jPanelUserReportsItem.setBackground(new java.awt.Color(205, 31, 50));
+        jPanelUserReportsItem.setName("jPanelUserReportsItem"); // NOI18N
         jPanelUserReportsItem.setPreferredSize(new java.awt.Dimension(320, 55));
         jPanelUserReportsItem.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -467,7 +475,7 @@ public class VistaAdmin extends javax.swing.JFrame {
                 .addComponent(jPanelUserRegisterItem, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanelUserReportsItem, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 342, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanelMenuOptionsModuleUserLayout.setVerticalGroup(
             jPanelMenuOptionsModuleUserLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -477,24 +485,63 @@ public class VistaAdmin extends javax.swing.JFrame {
             .addComponent(jPanelUserRegisterItem, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        rSPanelsSlider2.setBackground(new java.awt.Color(255, 255, 255));
+        jPanelModuleUserAdmin.add(jPanelMenuOptionsModuleUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1001, -1));
+
+        jPanelModuleUserReports.setBackground(new java.awt.Color(255, 255, 255));
+        jPanelModuleUserReports.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 0, 0), 2, true));
+        jPanelModuleUserReports.setAlignmentY(1.0F);
+        jPanelModuleUserReports.setPreferredSize(new java.awt.Dimension(977, 635));
+        jPanelModuleUserReports.setRequestFocusEnabled(false);
+        jPanelModuleUserReports.setVerifyInputWhenFocusTarget(false);
+
+        jLabel4.setFont(new java.awt.Font("Tahoma", 0, 40)); // NOI18N
+        jLabel4.setText("Reporte de usuarios");
+
+        javax.swing.GroupLayout jPanelModuleUserReportsLayout = new javax.swing.GroupLayout(jPanelModuleUserReports);
+        jPanelModuleUserReports.setLayout(jPanelModuleUserReportsLayout);
+        jPanelModuleUserReportsLayout.setHorizontalGroup(
+            jPanelModuleUserReportsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelModuleUserReportsLayout.createSequentialGroup()
+                .addGroup(jPanelModuleUserReportsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanelModuleUserReportsLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jSeparator2))
+                    .addGroup(jPanelModuleUserReportsLayout.createSequentialGroup()
+                        .addGap(21, 21, 21)
+                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 399, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
+        );
+        jPanelModuleUserReportsLayout.setVerticalGroup(
+            jPanelModuleUserReportsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelModuleUserReportsLayout.createSequentialGroup()
+                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(11, 11, 11)
+                .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 557, Short.MAX_VALUE))
+        );
+
+        jPanelModuleUserAdmin.add(jPanelModuleUserReports, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 72, -1, 620));
+        jPanelModuleUserReports.getAccessibleContext().setAccessibleName("jPanelModuleUserReports");
 
         jPanelModuleUserRegister.setBackground(new java.awt.Color(255, 255, 255));
         jPanelModuleUserRegister.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 0, 0), 2, true));
         jPanelModuleUserRegister.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jPanelModuleUserRegister.setRequestFocusEnabled(false);
+        jPanelModuleUserRegister.setVerifyInputWhenFocusTarget(false);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 40)); // NOI18N
         jLabel1.setText("Registro de usuarios");
 
-        jPanelSelectCSV.addMouseListener(new java.awt.event.MouseAdapter() {
+        jPanelSelectCSVUser.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jPanelSelectCSVMouseClicked(evt);
+                jPanelSelectCSVUserMouseClicked(evt);
             }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                jPanelSelectCSVMouseEntered(evt);
+                jPanelSelectCSVUserMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                jPanelSelectCSVMouseExited(evt);
+                jPanelSelectCSVUserMouseExited(evt);
             }
         });
 
@@ -505,19 +552,19 @@ public class VistaAdmin extends javax.swing.JFrame {
         jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/open-document.png"))); // NOI18N
 
-        javax.swing.GroupLayout jPanelSelectCSVLayout = new javax.swing.GroupLayout(jPanelSelectCSV);
-        jPanelSelectCSV.setLayout(jPanelSelectCSVLayout);
-        jPanelSelectCSVLayout.setHorizontalGroup(
-            jPanelSelectCSVLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelSelectCSVLayout.createSequentialGroup()
+        javax.swing.GroupLayout jPanelSelectCSVUserLayout = new javax.swing.GroupLayout(jPanelSelectCSVUser);
+        jPanelSelectCSVUser.setLayout(jPanelSelectCSVUserLayout);
+        jPanelSelectCSVUserLayout.setHorizontalGroup(
+            jPanelSelectCSVUserLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelSelectCSVUserLayout.createSequentialGroup()
                 .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
-        jPanelSelectCSVLayout.setVerticalGroup(
-            jPanelSelectCSVLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelSelectCSVLayout.createSequentialGroup()
-                .addGroup(jPanelSelectCSVLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+        jPanelSelectCSVUserLayout.setVerticalGroup(
+            jPanelSelectCSVUserLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelSelectCSVUserLayout.createSequentialGroup()
+                .addGroup(jPanelSelectCSVUserLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addComponent(jLabel11, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 51, Short.MAX_VALUE)
                     .addComponent(jLabel10, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(0, 0, Short.MAX_VALUE))
@@ -548,11 +595,6 @@ public class VistaAdmin extends javax.swing.JFrame {
         jButtonCargar.setText("Cargar");
         jButtonCargar.setBorder(null);
         jButtonCargar.setEnabled(false);
-        jButtonCargar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonCargarActionPerformed(evt);
-            }
-        });
 
         javax.swing.GroupLayout jPanelModuleUserRegisterLayout = new javax.swing.GroupLayout(jPanelModuleUserRegister);
         jPanelModuleUserRegister.setLayout(jPanelModuleUserRegisterLayout);
@@ -568,10 +610,10 @@ public class VistaAdmin extends javax.swing.JFrame {
                             .addGroup(jPanelModuleUserRegisterLayout.createSequentialGroup()
                                 .addGroup(jPanelModuleUserRegisterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                     .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 392, Short.MAX_VALUE)
-                                    .addComponent(jPanelSelectCSV, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                    .addComponent(jPanelSelectCSVUser, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jButtonCargar, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 424, Short.MAX_VALUE)))
+                        .addGap(0, 436, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanelModuleUserRegisterLayout.setVerticalGroup(
@@ -581,71 +623,17 @@ public class VistaAdmin extends javax.swing.JFrame {
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 25, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
                 .addGroup(jPanelModuleUserRegisterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jButtonCargar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanelSelectCSV, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jPanelSelectCSVUser, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(455, 455, 455))
         );
 
-        rSPanelsSlider2.add(jPanelModuleUserRegister, "card2");
-
-        jPanelModuleUserReports.setBackground(new java.awt.Color(255, 255, 255));
-        jPanelModuleUserReports.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 0, 0), 2, true));
-
-        jLabel4.setFont(new java.awt.Font("Tahoma", 0, 40)); // NOI18N
-        jLabel4.setText("Registro de usuarios");
-
-        javax.swing.GroupLayout jPanelModuleUserReportsLayout = new javax.swing.GroupLayout(jPanelModuleUserReports);
-        jPanelModuleUserReports.setLayout(jPanelModuleUserReportsLayout);
-        jPanelModuleUserReportsLayout.setHorizontalGroup(
-            jPanelModuleUserReportsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelModuleUserReportsLayout.createSequentialGroup()
-                .addGroup(jPanelModuleUserReportsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanelModuleUserReportsLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jSeparator2))
-                    .addGroup(jPanelModuleUserReportsLayout.createSequentialGroup()
-                        .addGap(21, 21, 21)
-                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 399, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
-        );
-        jPanelModuleUserReportsLayout.setVerticalGroup(
-            jPanelModuleUserReportsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelModuleUserReportsLayout.createSequentialGroup()
-                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(11, 11, 11)
-                .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 565, Short.MAX_VALUE))
-        );
-
-        rSPanelsSlider2.add(jPanelModuleUserReports, "card3");
-
-        javax.swing.GroupLayout jPanelModuleUserAdminLayout = new javax.swing.GroupLayout(jPanelModuleUserAdmin);
-        jPanelModuleUserAdmin.setLayout(jPanelModuleUserAdminLayout);
-        jPanelModuleUserAdminLayout.setHorizontalGroup(
-            jPanelModuleUserAdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanelMenuOptionsModuleUser, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(jPanelModuleUserAdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanelModuleUserAdminLayout.createSequentialGroup()
-                    .addContainerGap()
-                    .addComponent(rSPanelsSlider2, javax.swing.GroupLayout.PREFERRED_SIZE, 965, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-        );
-        jPanelModuleUserAdminLayout.setVerticalGroup(
-            jPanelModuleUserAdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelModuleUserAdminLayout.createSequentialGroup()
-                .addComponent(jPanelMenuOptionsModuleUser, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(649, Short.MAX_VALUE))
-            .addGroup(jPanelModuleUserAdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelModuleUserAdminLayout.createSequentialGroup()
-                    .addContainerGap(63, Short.MAX_VALUE)
-                    .addComponent(rSPanelsSlider2, javax.swing.GroupLayout.PREFERRED_SIZE, 628, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap()))
-        );
+        jPanelModuleUserAdmin.add(jPanelModuleUserRegister, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 73, -1, 620));
+        jPanelModuleUserRegister.getAccessibleContext().setAccessibleName("jPanelModuleUserRegister");
 
         rSPanelsSlider1.add(jPanelModuleUserAdmin, "card3");
 
@@ -708,7 +696,9 @@ public class VistaAdmin extends javax.swing.JFrame {
         resetColor(jLabelinterfaz, "GestionInterfaz.jpg");
         resetColor(jLabelticket, "GestionTicket.jpg");
         changeImage("User-clic.jpg",jLabelUser);
-         rSPanelsSlider1.setPanelSlider(15, jPanelModuleUserAdmin, RSPanelsSlider.DIRECT.RIGHT);
+        rSPanelsSlider1.setPanelSlider(15, jPanelModuleUserAdmin, RSPanelsSlider.DIRECT.RIGHT);
+        jPanelModuleUserRegister.setVisible(true);
+        jPanelModuleUserReports.setVisible(false);
     }//GEN-LAST:event_jLabelUserMouseClicked
 
     private void jLabelinterfazMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelinterfazMouseClicked
@@ -776,14 +766,16 @@ public class VistaAdmin extends javax.swing.JFrame {
         // TODO add your handling code here:
         jPanelUserRegisterItem.setBorder(border_clicked);
         jPanelUserReportsItem.setBorder(null);
-        rSPanelsSlider2.setPanelSlider(15, jPanelModuleUserRegister, RSPanelsSlider.DIRECT.RIGHT);
+        jPanelModuleUserRegister.setVisible(true);
+        jPanelModuleUserReports.setVisible(false);
     }//GEN-LAST:event_jPanelUserRegisterItemMouseClicked
 
     private void jPanelUserReportsItemMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelUserReportsItemMouseClicked
         // TODO add your handling code here:
          jPanelUserReportsItem.setBorder(border_clicked);
          jPanelUserRegisterItem.setBorder(null);
-         rSPanelsSlider2.setPanelSlider(15, jPanelModuleUserReports, RSPanelsSlider.DIRECT.RIGHT);
+         jPanelModuleUserRegister.setVisible(false);
+         jPanelModuleUserReports.setVisible(true);
     }//GEN-LAST:event_jPanelUserReportsItemMouseClicked
 
     private void jPanelUserReportsItemMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelUserReportsItemMouseEntered
@@ -796,25 +788,24 @@ public class VistaAdmin extends javax.swing.JFrame {
          jPanelUserReportsItem.setBackground(item_menu_exited);
     }//GEN-LAST:event_jPanelUserReportsItemMouseExited
 
-    private void jPanelSelectCSVMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelSelectCSVMouseClicked
+    private void jPanelSelectCSVUserMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelSelectCSVUserMouseEntered
         // TODO add your handling code here:
-        managerAdmin.selectFile();
-        managerAdmin.validateBtCargar();
-    }//GEN-LAST:event_jPanelSelectCSVMouseClicked
+        jPanelSelectCSVUser.setBackground(item_bottom_entered);
+    }//GEN-LAST:event_jPanelSelectCSVUserMouseEntered
 
-    private void jPanelSelectCSVMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelSelectCSVMouseEntered
+    private void jPanelSelectCSVUserMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelSelectCSVUserMouseExited
         // TODO add your handling code here:
-        jPanelSelectCSV.setBackground(item_bottom_entered);
-    }//GEN-LAST:event_jPanelSelectCSVMouseEntered
+        jPanelSelectCSVUser.setBackground(item_bottom_exited);
+    }//GEN-LAST:event_jPanelSelectCSVUserMouseExited
 
-    private void jPanelSelectCSVMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelSelectCSVMouseExited
+    private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
         // TODO add your handling code here:
-        jPanelSelectCSV.setBackground(item_bottom_exited);
-    }//GEN-LAST:event_jPanelSelectCSVMouseExited
+    }//GEN-LAST:event_jLabel2MouseClicked
 
-    private void jButtonCargarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCargarActionPerformed
+    private void jPanelSelectCSVUserMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelSelectCSVUserMouseClicked
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButtonCargarActionPerformed
+        manager.selectFile("user.upload"); 
+    }//GEN-LAST:event_jPanelSelectCSVUserMouseClicked
 
   
 
@@ -880,10 +871,10 @@ public class VistaAdmin extends javax.swing.JFrame {
     private javax.swing.JPanel jPanelMenu;
     private javax.swing.JPanel jPanelMenuOptionsModuleUser;
     private javax.swing.JPanel jPanelModuleUserAdmin;
-    private javax.swing.JPanel jPanelModuleUserRegister;
-    private javax.swing.JPanel jPanelModuleUserReports;
+    public javax.swing.JPanel jPanelModuleUserRegister;
+    public javax.swing.JPanel jPanelModuleUserReports;
     private javax.swing.JPanel jPanelPerfilAdmin;
-    private javax.swing.JPanel jPanelSelectCSV;
+    public javax.swing.JPanel jPanelSelectCSVUser;
     private javax.swing.JPanel jPanelUserRegisterItem;
     private javax.swing.JPanel jPanelUserReportsItem;
     private javax.swing.JPanel jPanelbtn;
@@ -891,7 +882,6 @@ public class VistaAdmin extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JTextField jTextField1;
     private rojerusan.RSPanelsSlider rSPanelsSlider1;
-    private rojerusan.RSPanelsSlider rSPanelsSlider2;
     // End of variables declaration//GEN-END:variables
 
 
