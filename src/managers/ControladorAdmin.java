@@ -30,9 +30,8 @@ public class ControladorAdmin /*implements ActionListener */{
 
     private VistaAdmin interfazPrincipalAdmin;
     private FileChooser file = new FileChooser();
-    private Logs logs = new Logs();
+    private Logs logs = new Logs(Thread.currentThread().getStackTrace()[1].getClassName());
     private KeyValidate keyvalidate = new KeyValidate();
-    String sClassName  = Thread.currentThread().getStackTrace()[1].getClassName();
 
     //private Cliente modeloCliente;
 
@@ -79,7 +78,7 @@ public class ControladorAdmin /*implements ActionListener */{
                         + " |  " + fila[2]);
             }
         } catch (Exception ex) {
-            logs.escribirExceptionLogs( sClassName + "//"+ Thread.currentThread().getStackTrace()[1].getMethodName() +"// "+  ex.getMessage() +" "+ ex.toString());
+            logs.escribirExceptionLogs( logs.getClassName() + "//"+ Thread.currentThread().getStackTrace()[1].getMethodName() +"// "+  ex.getMessage() +" "+ ex.toString());
         } 
         }else{
         //Show error key message

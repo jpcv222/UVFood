@@ -14,9 +14,19 @@ public class Logs {
     
     private String directorioRaiz;
     private String exceptionLogsFile;
-    public Logs() {
+    private String className;
+    public Logs(String  className) {
+        this.className = className;
         this.directorioRaiz = System.getProperty("user.dir");
         this.exceptionLogsFile = directorioRaiz+"/src/logs/exception.txt";
+    }
+
+    public String getClassName() {
+        return className;
+    }
+
+    public void setClassName(String className) {
+        this.className = className;
     }
 
     public void escribirExceptionLogs(String message)

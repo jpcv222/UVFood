@@ -1,2 +1,3 @@
 managers.ControladorAdmin//readCSVFile// null
 managers.ControladorAdmin//readCSVFile// nulljava.lang.NullPointerException
+managers.ControladorAdmin//readCSVFile// null java.lang.NullPointerException

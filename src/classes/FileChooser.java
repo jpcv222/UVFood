@@ -19,9 +19,8 @@ import javax.swing.JFileChooser;
 public class FileChooser {
     
     String ruta;
-    private Logs logs = new Logs();
-    String sClassName  = Thread.currentThread().getStackTrace()[1].getClassName();
-    
+    private Logs logs = new Logs(Thread.currentThread().getStackTrace()[1].getClassName());
+
     public FileChooser() {
         ruta = null;
     }
@@ -41,7 +40,7 @@ public class FileChooser {
         try {
              result_ruta = fileChooser.getSelectedFile().getAbsolutePath();
         } catch (Exception e) {
-            logs.escribirExceptionLogs( sClassName + "//"+ Thread.currentThread().getStackTrace()[1].getMethodName() +"// "+  e.getMessage()+" "+e.toString());
+            logs.escribirExceptionLogs( logs.getClassName() + "//"+ Thread.currentThread().getStackTrace()[1].getMethodName() +"// "+  e.getMessage()+" "+e.toString());
         }
         
         setRuta(result_ruta);
