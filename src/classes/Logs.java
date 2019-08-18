@@ -6,6 +6,7 @@
 package classes;
 
  import java.io.*;
+import java.time.LocalDateTime;
 /**
  *
  * @author jpcv2
@@ -15,6 +16,7 @@ public class Logs {
     private String directorioRaiz;
     private String exceptionLogsFile;
     private String className;
+    
     public Logs(String  className) {
         this.className = className;
         this.directorioRaiz = System.getProperty("user.dir");
@@ -33,11 +35,12 @@ public class Logs {
     {
         FileWriter fichero = null;
         PrintWriter pw = null;
+        LocalDateTime now = LocalDateTime.now();  
         try
         {
             fichero = new FileWriter(exceptionLogsFile, true);
             pw = new PrintWriter(fichero);
-            pw.println(message);
+            pw.println(this.getClassName() + "//"+ message + "// "+ now);
             
         } catch (Exception e) {
             e.printStackTrace();

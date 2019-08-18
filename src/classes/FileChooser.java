@@ -40,7 +40,7 @@ public class FileChooser {
         try {
              result_ruta = fileChooser.getSelectedFile().getAbsolutePath();
         } catch (Exception e) {
-            logs.escribirExceptionLogs( logs.getClassName() + "//"+ Thread.currentThread().getStackTrace()[1].getMethodName() +"// "+  e.getMessage()+" "+e.toString());
+            logs.escribirExceptionLogs(Thread.currentThread().getStackTrace()[1].getMethodName() +"// "+  e.getMessage()+" "+e.toString());
         }
         
         setRuta(result_ruta);

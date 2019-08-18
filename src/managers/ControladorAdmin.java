@@ -78,7 +78,7 @@ public class ControladorAdmin /*implements ActionListener */{
                         + " |  " + fila[2]);
             }
         } catch (Exception ex) {
-            logs.escribirExceptionLogs( logs.getClassName() + "//"+ Thread.currentThread().getStackTrace()[1].getMethodName() +"// "+  ex.getMessage() +" "+ ex.toString());
+            logs.escribirExceptionLogs(Thread.currentThread().getStackTrace()[1].getMethodName() +"// "+  ex.getMessage() +" "+ ex.toString());
         } 
         }else{
         //Show error key message
