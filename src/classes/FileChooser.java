@@ -20,6 +20,7 @@ public class FileChooser {
     
     String ruta;
     private Logs logs = new Logs();
+    String sClassName  = Thread.currentThread().getStackTrace()[1].getClassName();
     
     public FileChooser() {
         ruta = null;
@@ -36,18 +37,14 @@ public class FileChooser {
     public void calcularRutaArchivo() {
         JFileChooser fileChooser = new JFileChooser();
         fileChooser.showOpenDialog(fileChooser);
-        String ruta = null;
+        String result_ruta = null;
         try {
-             ruta = fileChooser.getSelectedFile().getAbsolutePath();
-                System.out.println(ruta);
-            
-        } catch (NullPointerException e) {
-            logs.escribirExceptionLogs( "//FileChooser//calcularRutaArchivo// " + e.getMessage());
-        } catch (Exception ex) {
-            logs.escribirExceptionLogs( "//FileChooser//calcularRutaArchivo// " + ex.getMessage());
-        } 
+             result_ruta = fileChooser.getSelectedFile().getAbsolutePath();
+        } catch (Exception e) {
+            logs.escribirExceptionLogs( sClassName + "//"+ Thread.currentThread().getStackTrace()[1].getMethodName() +"// "+  e.getMessage()+" "+e.toString());
+        }
         
-        setRuta(ruta);
+        setRuta(result_ruta);
     }
 
 }

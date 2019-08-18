@@ -32,6 +32,8 @@ public class ControladorAdmin /*implements ActionListener */{
     private FileChooser file = new FileChooser();
     private Logs logs = new Logs();
     private KeyValidate keyvalidate = new KeyValidate();
+    String sClassName  = Thread.currentThread().getStackTrace()[1].getClassName();
+
     //private Cliente modeloCliente;
 
     public ControladorAdmin(VistaAdmin interfazPrincipalAdmin) {
@@ -47,7 +49,7 @@ public class ControladorAdmin /*implements ActionListener */{
         if (ruta != null) {
             interfazPrincipalAdmin.jLabelRutaArchivo.setText(ruta);
         } else {
-            interfazPrincipalAdmin.jLabelRutaArchivo.setText("Archivo CSV");
+            interfazPrincipalAdmin.jLabelRutaArchivo.setText("Archivo CSV, ruta errónea");
         }
         validateBtCargar(); 
         }else{
@@ -67,7 +69,7 @@ public class ControladorAdmin /*implements ActionListener */{
     public void readCSVFile() {
         if(keyvalidate.haveKey("action-method-name","user-id")){
         String archCSV = null;
-        archCSV = file.getRuta();
+        archCSV = null;
         try {
             CSVReader csvReader = new CSVReader(new FileReader(archCSV));
             String[] fila = null;
@@ -76,11 +78,9 @@ public class ControladorAdmin /*implements ActionListener */{
                         + " | " + fila[1]
                         + " |  " + fila[2]);
             }
-        } catch (FileNotFoundException ex) {
-            logs.escribirExceptionLogs( "//ControladorAdmin//readCSVFile// " +  ex.getMessage());
-        } catch (IOException   ioe){
-            logs.escribirExceptionLogs( "//ControladorAdmin//readCSVFile// " + ioe.getMessage());
-        }
+        } catch (Exception ex) {
+            logs.escribirExceptionLogs( sClassName + "//"+ Thread.currentThread().getStackTrace()[1].getMethodName() +"// "+  ex.getMessage() +" "+ ex.toString());
+        } 
         }else{
         //Show error key message
         }
