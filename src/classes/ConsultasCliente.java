@@ -19,12 +19,13 @@ import views.VistaLogin;
  * @author sp
  */
 public class ConsultasCliente extends ConexionBD {
+     private Logs logs = new Logs(Thread.currentThread().getStackTrace()[1].getClassName());
 
     public boolean login(Usuario modeloCliente, VistaLogin vista) {
         PreparedStatement ps = null;
         Connection conn = Conexion();
         ResultSet rs = null;
-
+       
         String sql = "SELECT * FROM uvfood_usuario WHERE username = ?";
 
         try {
@@ -62,6 +63,7 @@ public class ConsultasCliente extends ConexionBD {
 
         } catch (SQLException e) {
             System.out.println(e.getMessage());
+            logs.escribirExceptionLogs(Thread.currentThread().getStackTrace()[1].getMethodName() +"// "+  e.getMessage() +" "+ e.toString());
             return false;
 
         }

@@ -16,10 +16,11 @@ import java.sql.SQLException;
  */
 public class ConexionBD {
 
-    private String url = "jdbc:postgresql://localhost:5432/pruebauvfood";
+    private String url = "jdbc:postgresql://localhost:5432/uvfood";
     private String user = "postgres";
-    private String password = "root";
+    private String password = "pgsql";
     private Connection conn = null;
+    private Logs logs = new Logs(Thread.currentThread().getStackTrace()[1].getClassName());
 
     public Connection Conexion() {
         try {
@@ -27,6 +28,7 @@ public class ConexionBD {
             System.out.println("Conexion exitosa");
         } catch (SQLException e) {
             System.out.println(e.getMessage());
+            logs.escribirExceptionLogs(Thread.currentThread().getStackTrace()[1].getMethodName() +"// "+  e.getMessage() +" "+ e.toString());
         }
 
         return conn;
@@ -39,6 +41,7 @@ public class ConexionBD {
             }
         } catch (SQLException ex) {
             System.out.println("Error al cerrar la conexion " + ex.getMessage());
+            logs.escribirExceptionLogs(Thread.currentThread().getStackTrace()[1].getMethodName() +"// "+  ex.getMessage() +" "+ ex.toString());
             System.exit(1);
         }
     }
