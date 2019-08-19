@@ -9,6 +9,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import validations.Validations;
 import views.VistaLogin;
 
 //libreria para encriptar
@@ -48,17 +49,14 @@ public class ConsultasCliente extends ConexionBD {
                     modeloCliente.setEmail(rs.getString(6));
 
                     return true;
-
                 } else {
-                    vista.jLabelError.removeAll();
-                    vista.jLabelError.repaint();
-                    vista.jLabelError.setText("La contraseña no coincide con el usuario");
+                    Validations validation = new Validations();
+                    validation.alert("La contraseña no coincide con el usuario", "danger", vista.jPanelError, vista.jLabelError);
                     return false;
                 }
             } else {
-                vista.jLabelError.removeAll();
-                vista.jLabelError.repaint();
-                vista.jLabelError.setText("El usuario no existe");
+                Validations validation = new Validations();
+                validation.alert("El usuario no existe", "danger", vista.jPanelError, vista.jLabelError);
                 return false;
             }
 
