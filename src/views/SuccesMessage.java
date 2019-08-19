@@ -100,19 +100,19 @@ public class SuccesMessage extends javax.swing.JFrame {
         jLabelBodyModal3.setForeground(new java.awt.Color(102, 102, 102));
         jLabelBodyModal3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabelBodyModal3.setText("Cuerpo del aviso 3.");
-        jPanel1.add(jLabelBodyModal3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 230, 340, 40));
+        jPanel1.add(jLabelBodyModal3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 240, 400, 40));
 
         jLabelBodyModal1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabelBodyModal1.setForeground(new java.awt.Color(102, 102, 102));
         jLabelBodyModal1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabelBodyModal1.setText("Cuerpo del aviso 1.");
-        jPanel1.add(jLabelBodyModal1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 180, 340, 40));
+        jPanel1.add(jLabelBodyModal1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 180, 400, 40));
 
         jLabelBodyModal2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabelBodyModal2.setForeground(new java.awt.Color(102, 102, 102));
         jLabelBodyModal2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabelBodyModal2.setText("Cuerpo del aviso 2.");
-        jPanel1.add(jLabelBodyModal2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 210, 340, 30));
+        jPanel1.add(jLabelBodyModal2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 220, 400, 30));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 400, 370));
 

@@ -51,18 +51,16 @@ public class ConsultasCliente extends ConexionBD {
 
                     return true;
                 } else {
-                    Validations validation = new Validations();
-                    validation.alert("La contraseña no coincide con el usuario", "danger", vista.jPanelError, vista.jLabelError);
+                    modal.error_message("Error", "Algo anda mal","La contraseña no coincide con el usuario","Por Favor intenta con otros datos", null);
                     return false;
                 }
             } else {
-                Validations validation = new Validations();
-                validation.alert("El usuario no existe", "danger", vista.jPanelError, vista.jLabelError);
+                modal.error_message("Error", "Algo anda mal","El usuario no existe","Por Favor intenta con otros datos", null);
                 return false;
             }
 
         } catch (SQLException e) {
-            System.out.println(e.getMessage());
+            modal.error_message("Error", "Algo anda mal", "El servidor esta presentado problemas", "Por Favor intenta mas tarde", "O reportanos que ocurre");
             logs.escribirExceptionLogs(Thread.currentThread().getStackTrace()[1].getMethodName() +"// "+  e.getMessage() +" "+ e.toString());
             return false;
 

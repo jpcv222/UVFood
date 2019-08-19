@@ -7,6 +7,7 @@ package managers;
 
 import classes.Usuario;
 import classes.ConsultasCliente;
+import components.UVFoodDialogs;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import static java.util.Objects.hash;
@@ -26,6 +27,7 @@ public class ControladorCliente implements ActionListener {
     private ConsultasCliente consultasCliente;
     private Usuario modeloCliente;
     Validations validations = new Validations();
+    UVFoodDialogs modal = new UVFoodDialogs();
 
     public ControladorCliente(VistaCliente vistaCliente, VistaLogin vistaLogin, ConsultasCliente consultasCliente, Usuario modeloCliente) {
         this.vistaCliente = vistaCliente;
@@ -58,7 +60,7 @@ public class ControladorCliente implements ActionListener {
                 }
 
             }else{
-                validations.alert("Todos los campos son obligatorios", "danger", vistaLogin.jPanelError, vistaLogin.jLabelError);
+                modal.error_message("Error", "Campos obligatorios", "Debes llenar todos los campos", null, null);
             }
 
         }
