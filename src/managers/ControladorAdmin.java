@@ -21,6 +21,7 @@ import javax.swing.JPanel;
 import views.VistaAdmin;
 import classes.Logs;
 import classes.KeyValidate;
+import components.UVFoodDialogs;
 
 /**
  *
@@ -32,6 +33,7 @@ public class ControladorAdmin /*implements ActionListener */{
     private FileChooser file = new FileChooser();
     private Logs logs = new Logs(Thread.currentThread().getStackTrace()[1].getClassName());
     private KeyValidate keyvalidate = new KeyValidate();
+    private UVFoodDialogs modal = new UVFoodDialogs();
 
     //private Cliente modeloCliente;
 
@@ -68,7 +70,7 @@ public class ControladorAdmin /*implements ActionListener */{
     public void readCSVFile() {
         if(keyvalidate.haveKey("action-method-name","user-id")){
         String archCSV = null;
-        archCSV = null;
+        archCSV = file.getRuta();
         try {
             CSVReader csvReader = new CSVReader(new FileReader(archCSV));
             String[] fila = null;
@@ -77,9 +79,16 @@ public class ControladorAdmin /*implements ActionListener */{
                         + " | " + fila[1]
                         + " |  " + fila[2]);
             }
-        } catch (Exception ex) {
+            modal.succes_message("Carga masiva de usuarios.", "Éxito al cargar archivo.", "Los usuarios fueron cargados con éxito.", null, null);
+        } catch (IOException ex) {
             logs.escribirExceptionLogs(Thread.currentThread().getStackTrace()[1].getMethodName() +"// "+  ex.getMessage() +" "+ ex.toString());
-        } 
+        } catch (NoClassDefFoundError ex){
+            logs.escribirExceptionLogs(Thread.currentThread().getStackTrace()[1].getMethodName() +"// "+  ex.getMessage() +" "+ ex.toString());
+            modal.error_message("Error fatal.", "Lectura archivo CSV errónea.", "Librería de lectura de archivo extraviada.", "Comuníquese con el área de sistemas.", null);
+        } catch (NullPointerException ex){
+            logs.escribirExceptionLogs(Thread.currentThread().getStackTrace()[1].getMethodName() +"// "+  ex.getMessage() +" "+ ex.toString());
+            modal.error_message("Carga masiva usuarios.", "Lectura archivo CSV errónea.", "El archivo CSV es null.", null, null);
+        }
         }else{
         //Show error key message
         }
