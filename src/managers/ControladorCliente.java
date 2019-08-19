@@ -11,6 +11,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import static java.util.Objects.hash;
 import org.apache.commons.codec.digest.DigestUtils;
+import validations.Validations;
 import views.VistaCliente;
 import views.VistaLogin;
 
@@ -24,6 +25,7 @@ public class ControladorCliente implements ActionListener {
     private VistaLogin vistaLogin;
     private ConsultasCliente consultasCliente;
     private Usuario modeloCliente;
+    Validations validations = new Validations();
 
     public ControladorCliente(VistaCliente vistaCliente, VistaLogin vistaLogin, ConsultasCliente consultasCliente, Usuario modeloCliente) {
         this.vistaCliente = vistaCliente;
@@ -44,17 +46,19 @@ public class ControladorCliente implements ActionListener {
             String clave = new String(vistaLogin.jPasswordField.getPassword());
             String claveEn = DigestUtils.sha1Hex(clave);
 
-            modeloCliente.setUsername(vistaLogin.jTextField1.getText());
-            modeloCliente.setPassword_user(clave);
+            if (validations.campoVacio(vistaLogin.jPasswordField) && validations.campoVacio(vistaLogin.jTextField1)) {
+                modeloCliente.setUsername(vistaLogin.jTextField1.getText());
+                modeloCliente.setPassword_user(clave);
 
-            if (consultasCliente.login(modeloCliente, vistaLogin)) {
-                vistaLogin.dispose();
-                
-                VistaCliente home = new VistaCliente();
-                home.setVisible(true);
-            } else {
-                
+                if (consultasCliente.login(modeloCliente, vistaLogin)) {
+                    vistaLogin.dispose();
 
+                    VistaCliente home = new VistaCliente();
+                    home.setVisible(true);
+                }
+
+            }else{
+                validations.alert("Todos los campos son obligatorios", "danger", vistaLogin.jPanelError, vistaLogin.jLabelError);
             }
 
         }

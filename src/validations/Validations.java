@@ -8,6 +8,7 @@ package validations;
 import java.awt.Color;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JTextField;
 import javax.swing.Timer;
 
 /**
@@ -20,8 +21,8 @@ public class Validations {
         panel.setVisible(true);
 
         if (tipo.equalsIgnoreCase("success")) {
-            panel.setBackground(new Color(212,237,218));
-            label.setForeground(new Color(21,87,36));
+            panel.setBackground(new Color(212, 237, 218));
+            label.setForeground(new Color(21, 87, 36));
             label.setText(mensaje);
 
         } else if (tipo.equalsIgnoreCase("danger")) {
@@ -36,6 +37,13 @@ public class Validations {
         timer.setRepeats(false);
         timer.start();
 
+    }
+    
+    public boolean campoVacio(JTextField campo){
+        if (campo.getText().equalsIgnoreCase("")) {
+            return false;
+        }
+        return true;
     }
 
 }
