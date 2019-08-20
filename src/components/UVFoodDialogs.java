@@ -31,18 +31,19 @@ public class UVFoodDialogs {
             error_message.jLabelBodyModal2.setVisible(true);
             error_message.jLabelBodyModal3.setVisible(true);
             error_message.jLabelBodyModal2.setText(body2);
-            error_message.jLabelBodyModal3.setText(body3); 
-            if(body2 == null){
+            error_message.jLabelBodyModal3.setText(body3);
+            if (body2 == null) {
                 error_message.jLabelBodyModal2.setVisible(false);
             }
-            if(body3 == null){
+            if (body3 == null) {
                 error_message.jLabelBodyModal3.setVisible(false);
             }
             error_message.setVisible(true);
+            error_message.setAlwaysOnTop(true);
         }
     }
-    
-     public void succes_message(String title, String subtitle, String body1, String body2, String body3) {
+
+    public void succes_message(String title, String subtitle, String body1, String body2, String body3) {
 
         if (validate_message(title, subtitle, body1)) {
             succes_message.jLabelTitleModal.setText(title);
@@ -51,14 +52,15 @@ public class UVFoodDialogs {
             succes_message.jLabelBodyModal2.setVisible(true);
             succes_message.jLabelBodyModal3.setVisible(true);
             succes_message.jLabelBodyModal2.setText(body2);
-            succes_message.jLabelBodyModal3.setText(body3); 
-            if(body2 == null || body2.isEmpty()){
+            succes_message.jLabelBodyModal3.setText(body3);
+            if (body2 == null || body2.isEmpty()) {
                 succes_message.jLabelBodyModal2.setVisible(false);
             }
-            if(body3 == null || body3.isEmpty()){
+            if (body3 == null || body3.isEmpty()) {
                 succes_message.jLabelBodyModal3.setVisible(false);
             }
             succes_message.setVisible(true);
+            succes_message.setAlwaysOnTop(true);
         }
     }
 

@@ -6,14 +6,16 @@
 package uvfood;
 
 import java.sql.Connection;
-import javax.swing.JOptionPane;
 import classes.ConexionBD;
+import classes.ConsultasAdmin;
 import classes.ConsultasCliente;
 import classes.Usuario;
+import components.UVFoodDialogs;
+import managers.ControladorAdmin;
 import managers.ControladorCliente;
+import views.VistaAdmin;
 import views.VistaCliente;
 import views.VistaLogin;
-import views.index;
 
 /**
  *
@@ -22,14 +24,14 @@ import views.index;
 public class UVFood extends ConexionBD {
 
     Connection miconexion = Conexion();
+    UVFoodDialogs modal = new UVFoodDialogs();
 
     public void CheckServer() {
         if (miconexion != null) {
-
             System.out.println("Conexion exitosa");
         } else {
 
-            System.out.println("Server error");
+            modal.error_message("Error", "Algo anda mal", "El servidor esta presentado problemas", "Por Favor intenta mas tarde", "O reportanos que ocurre");
         }
 
     }
@@ -43,12 +45,16 @@ public class UVFood extends ConexionBD {
         */
         Usuario usuario = new Usuario();
         VistaCliente vistaCliente = new VistaCliente();
+        VistaAdmin vistaAdmin = new VistaAdmin();
         VistaLogin vistaLogin = new VistaLogin();
         ConsultasCliente consultasCliente = new ConsultasCliente();
+        ConsultasAdmin consultasAdmin = new ConsultasAdmin();
         
         ControladorCliente controladorCliente = new ControladorCliente(vistaCliente, vistaLogin, consultasCliente, usuario);
         controladorCliente.iniciar();
         vistaLogin.setVisible(true);
+        
+        ControladorAdmin controladorAdmin = new ControladorAdmin(vistaAdmin, consultasAdmin);
 
     }
 

@@ -37,81 +37,78 @@ public class VistaAdmin extends javax.swing.JFrame {
     int xMouse;
     int yMouse;
     ControladorAdmin manager;
-    
+
     public VistaAdmin() {
-        
-        manager =  new ControladorAdmin(this);
-        
-        item_menu_exited = new Color(205,31,50);
-        item_bottom_exited = new Color(240,240,240);
-        item_menu_entered = new Color(157,0,0);
-        item_bottom_entered = new Color(153,153,153);
-        item_menu_clicked = new Color(157,0,0);
+
+        manager = new ControladorAdmin(this);
+
+        item_menu_exited = new Color(205, 31, 50);
+        item_bottom_exited = new Color(240, 240, 240);
+        item_menu_entered = new Color(157, 0, 0);
+        item_bottom_entered = new Color(153, 153, 153);
+        item_menu_clicked = new Color(157, 0, 0);
         border_clicked = new BevelBorder(BevelBorder.RAISED);
-        
-        
+
         initComponents();
         this.setLocationRelativeTo(null);
         resetColor(jLabelHome, "inicio.jpg");
-        
-        ImageIcon imagen = new ImageIcon("src/images/buscar.jpg");
+
+        /*ImageIcon imagen = new ImageIcon("src/images/buscar.jpg");
         Icon icono = new ImageIcon(imagen.getImage().getScaledInstance(jLabel9.getWidth(), jLabel9.getHeight(), Image.SCALE_DEFAULT));
         jLabel9.setIcon(icono);
-        this.repaint();
-        
+        this.repaint();*/
+
         ImageIcon imagen1 = new ImageIcon("src/images/inicio.jpg");
         Icon icono1 = new ImageIcon(imagen1.getImage().getScaledInstance(jLabelHome.getWidth(), jLabelHome.getHeight(), Image.SCALE_DEFAULT));
         jLabelHome.setIcon(icono1);
         this.repaint();
-       
+
         ImageIcon imagen2 = new ImageIcon("src/images/Perfil.jpg");
         Icon icono2 = new ImageIcon(imagen2.getImage().getScaledInstance(jLabelPerfil.getWidth(), jLabelPerfil.getHeight(), Image.SCALE_DEFAULT));
         jLabelPerfil.setIcon(icono2);
         this.repaint();
-        
+
         ImageIcon imagen3 = new ImageIcon("src/images/GestionInterfaz.jpg");
         Icon icono3 = new ImageIcon(imagen3.getImage().getScaledInstance(jLabelinterfaz.getWidth(), jLabelinterfaz.getHeight(), Image.SCALE_DEFAULT));
         jLabelinterfaz.setIcon(icono3);
         this.repaint();
-        
+
         ImageIcon imagen4 = new ImageIcon("src/images/GestionUser.jpg");
         Icon icono4 = new ImageIcon(imagen4.getImage().getScaledInstance(jLabelUser.getWidth(), jLabelUser.getHeight(), Image.SCALE_DEFAULT));
         jLabelUser.setIcon(icono4);
         this.repaint();
-        
+
         ImageIcon imagen5 = new ImageIcon("src/images/GestionTicket.jpg");
         Icon icono5 = new ImageIcon(imagen5.getImage().getScaledInstance(jLabelticket.getWidth(), jLabelticket.getHeight(), Image.SCALE_DEFAULT));
         jLabelticket.setIcon(icono5);
         this.repaint();
-        
+
     }
-    
-     /* public void resetColor(JLabel item) {
+
+    /* public void resetColor(JLabel item) {
         item.setOpaque(false);
         item.setBackground(new Color(205,31,50));
     }*/
-     public void resetColor(JLabel item, String image) {
-        ImageIcon imagen = new ImageIcon("src/images/"+image);
+    public void resetColor(JLabel item, String image) {
+        ImageIcon imagen = new ImageIcon("src/images/" + image);
         Icon icono = new ImageIcon(imagen.getImage().getScaledInstance(item.getWidth(), item.getHeight(), Image.SCALE_DEFAULT));
         item.setIcon(icono);
         this.repaint();
     }
 
-
     public void setColor(JLabel item) {
         item.setOpaque(true);
-        item.setBackground(new Color(205,41,55));
+        item.setBackground(new Color(205, 41, 55));
     }
-    
-    public void changeImage(String nombreNueva, JLabel label){
-        ImageIcon image = new ImageIcon("src/images/"+nombreNueva);
+
+    public void changeImage(String nombreNueva, JLabel label) {
+        ImageIcon image = new ImageIcon("src/images/" + nombreNueva);
         Icon icono = new ImageIcon(image.getImage().getScaledInstance(label.getWidth(), label.getHeight(), Image.SCALE_DEFAULT));
         label.setIcon(icono);
         this.repaint();
-        
+
     }
-    
-   
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -133,8 +130,6 @@ public class VistaAdmin extends javax.swing.JFrame {
         jPanelHeader = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jLabel9 = new javax.swing.JLabel();
         rSPanelsSlider1 = new rojerusan.RSPanelsSlider();
         jPanelIndexAdmin = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
@@ -144,11 +139,14 @@ public class VistaAdmin extends javax.swing.JFrame {
         jPanelMenuOptionsModuleUser = new javax.swing.JPanel();
         jPanelUserRegisterItem = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
-        jPanelUserReportsItem = new javax.swing.JPanel();
-        jLabel3 = new javax.swing.JLabel();
+        btnConsultaUser = new javax.swing.JButton();
         jPanelModuleUserReports = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         jSeparator2 = new javax.swing.JSeparator();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTableUsers = new javax.swing.JTable();
+        jTextFieldBuscarUser = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
         jPanelModuleUserRegister = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
@@ -258,6 +256,11 @@ public class VistaAdmin extends javax.swing.JFrame {
                 btnCerrarMouseExited(evt);
             }
         });
+        btnCerrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCerrarActionPerformed(evt);
+            }
+        });
 
         btnMiminize.setBackground(new java.awt.Color(255, 255, 255));
         btnMiminize.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Minimize.png"))); // NOI18N
@@ -300,10 +303,6 @@ public class VistaAdmin extends javax.swing.JFrame {
 
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/univalle.jpg"))); // NOI18N
 
-        jTextField1.setText("Search");
-
-        jLabel9.setText("Lupa");
-
         javax.swing.GroupLayout jPanelHeaderLayout = new javax.swing.GroupLayout(jPanelHeader);
         jPanelHeader.setLayout(jPanelHeaderLayout);
         jPanelHeaderLayout.setHorizontalGroup(
@@ -311,24 +310,14 @@ public class VistaAdmin extends javax.swing.JFrame {
             .addGroup(jPanelHeaderLayout.createSequentialGroup()
                 .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 323, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanelHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelHeaderLayout.createSequentialGroup()
-                        .addComponent(jLabel5)
-                        .addContainerGap())
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelHeaderLayout.createSequentialGroup()
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(127, 127, 127))))
+                .addComponent(jLabel5)
+                .addContainerGap())
         );
         jPanelHeaderLayout.setVerticalGroup(
             jPanelHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelHeaderLayout.createSequentialGroup()
                 .addComponent(jLabel5)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanelHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, 32, Short.MAX_VALUE)
-                    .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addGap(0, 38, Short.MAX_VALUE))
             .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
         );
 
@@ -426,46 +415,32 @@ public class VistaAdmin extends javax.swing.JFrame {
             jPanelUserRegisterItemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelUserRegisterItemLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 39, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
-        jPanelUserReportsItem.setBackground(new java.awt.Color(205, 31, 50));
-        jPanelUserReportsItem.setName("jPanelUserReportsItem"); // NOI18N
-        jPanelUserReportsItem.setPreferredSize(new java.awt.Dimension(320, 55));
-        jPanelUserReportsItem.addMouseListener(new java.awt.event.MouseAdapter() {
+        btnConsultaUser.setBackground(new java.awt.Color(205, 31, 50));
+        btnConsultaUser.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        btnConsultaUser.setForeground(new java.awt.Color(255, 255, 255));
+        btnConsultaUser.setText("Consulta de usuarios");
+        btnConsultaUser.setContentAreaFilled(false);
+        btnConsultaUser.setOpaque(true);
+        btnConsultaUser.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jPanelUserReportsItemMouseClicked(evt);
+                btnConsultaUserMouseClicked(evt);
             }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                jPanelUserReportsItemMouseEntered(evt);
+                btnConsultaUserMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                jPanelUserReportsItemMouseExited(evt);
+                btnConsultaUserMouseExited(evt);
             }
         });
-
-        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel3.setText("Consulta de usuarios");
-
-        javax.swing.GroupLayout jPanelUserReportsItemLayout = new javax.swing.GroupLayout(jPanelUserReportsItem);
-        jPanelUserReportsItem.setLayout(jPanelUserReportsItemLayout);
-        jPanelUserReportsItemLayout.setHorizontalGroup(
-            jPanelUserReportsItemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelUserReportsItemLayout.createSequentialGroup()
-                .addContainerGap(40, Short.MAX_VALUE)
-                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(37, 37, 37))
-        );
-        jPanelUserReportsItemLayout.setVerticalGroup(
-            jPanelUserReportsItemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelUserReportsItemLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
-        );
+        btnConsultaUser.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnConsultaUserActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanelMenuOptionsModuleUserLayout = new javax.swing.GroupLayout(jPanelMenuOptionsModuleUser);
         jPanelMenuOptionsModuleUser.setLayout(jPanelMenuOptionsModuleUserLayout);
@@ -474,15 +449,13 @@ public class VistaAdmin extends javax.swing.JFrame {
             .addGroup(jPanelMenuOptionsModuleUserLayout.createSequentialGroup()
                 .addComponent(jPanelUserRegisterItem, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanelUserReportsItem, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addComponent(btnConsultaUser, javax.swing.GroupLayout.PREFERRED_SIZE, 279, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 399, Short.MAX_VALUE))
         );
         jPanelMenuOptionsModuleUserLayout.setVerticalGroup(
             jPanelMenuOptionsModuleUserLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelMenuOptionsModuleUserLayout.createSequentialGroup()
-                .addComponent(jPanelUserReportsItem, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
             .addComponent(jPanelUserRegisterItem, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(btnConsultaUser, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         jPanelModuleUserAdmin.add(jPanelMenuOptionsModuleUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1001, -1));
@@ -494,31 +467,91 @@ public class VistaAdmin extends javax.swing.JFrame {
         jPanelModuleUserReports.setRequestFocusEnabled(false);
         jPanelModuleUserReports.setVerifyInputWhenFocusTarget(false);
 
-        jLabel4.setFont(new java.awt.Font("Tahoma", 0, 40)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jLabel4.setText("Reporte de usuarios");
+
+        jTableUsers.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Id", "Usuario", "Nombre", "Apellido", "Fecha de nacimiento", "Email", "Fecha de creacion"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jTableUsers.getTableHeader().setReorderingAllowed(false);
+        jScrollPane1.setViewportView(jTableUsers);
+        if (jTableUsers.getColumnModel().getColumnCount() > 0) {
+            jTableUsers.getColumnModel().getColumn(0).setResizable(false);
+            jTableUsers.getColumnModel().getColumn(1).setResizable(false);
+            jTableUsers.getColumnModel().getColumn(2).setResizable(false);
+            jTableUsers.getColumnModel().getColumn(3).setResizable(false);
+            jTableUsers.getColumnModel().getColumn(4).setResizable(false);
+            jTableUsers.getColumnModel().getColumn(5).setResizable(false);
+            jTableUsers.getColumnModel().getColumn(6).setResizable(false);
+        }
+
+        jTextFieldBuscarUser.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldBuscarUserActionPerformed(evt);
+            }
+        });
+        jTextFieldBuscarUser.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                jTextFieldBuscarUserKeyReleased(evt);
+            }
+        });
+
+        jLabel3.setText("Buscar");
 
         javax.swing.GroupLayout jPanelModuleUserReportsLayout = new javax.swing.GroupLayout(jPanelModuleUserReports);
         jPanelModuleUserReports.setLayout(jPanelModuleUserReportsLayout);
         jPanelModuleUserReportsLayout.setHorizontalGroup(
             jPanelModuleUserReportsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jSeparator2, javax.swing.GroupLayout.DEFAULT_SIZE, 973, Short.MAX_VALUE)
             .addGroup(jPanelModuleUserReportsLayout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(jPanelModuleUserReportsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanelModuleUserReportsLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jSeparator2))
-                    .addGroup(jPanelModuleUserReportsLayout.createSequentialGroup()
-                        .addGap(21, 21, 21)
                         .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 399, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelModuleUserReportsLayout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGroup(jPanelModuleUserReportsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(jPanelModuleUserReportsLayout.createSequentialGroup()
+                                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jTextFieldBuscarUser, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 882, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(40, 40, 40))))
         );
         jPanelModuleUserReportsLayout.setVerticalGroup(
             jPanelModuleUserReportsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelModuleUserReportsLayout.createSequentialGroup()
-                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(11, 11, 11)
+                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 557, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanelModuleUserReportsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jTextFieldBuscarUser, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel3))
+                .addGap(10, 10, 10)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(431, Short.MAX_VALUE))
         );
 
         jPanelModuleUserAdmin.add(jPanelModuleUserReports, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 72, -1, 620));
@@ -670,14 +703,14 @@ public class VistaAdmin extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jLabelHomeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelHomeMouseClicked
-        resetColor(jLabelPerfil, "Perfil.jpg" );
+        resetColor(jLabelPerfil, "Perfil.jpg");
         resetColor(jLabelinterfaz, "GestionInterfaz.jpg");
         resetColor(jLabelUser, "GestionUser.jpg");
         resetColor(jLabelticket, "GestionTicket.jpg");
         setColor(jLabelHome);
         /*resetColor(jLabelUser);
         resetColor(jLabelinterfaz);*/
-        changeImage("inicio-clic.jpg",jLabelHome);
+        changeImage("inicio-clic.jpg", jLabelHome);
         rSPanelsSlider1.setPanelSlider(15, jPanelIndexAdmin, RSPanelsSlider.DIRECT.RIGHT);
 
     }//GEN-LAST:event_jLabelHomeMouseClicked
@@ -687,31 +720,31 @@ public class VistaAdmin extends javax.swing.JFrame {
         resetColor(jLabelinterfaz, "GestionInterfaz.jpg");
         resetColor(jLabelUser, "GestionUser.jpg");
         resetColor(jLabelticket, "GestionTicket.jpg");
-       /* setColor(jLabelPerfil);
+        /* setColor(jLabelPerfil);
         resetColor(jLabelUser);
         resetColor(jLabelinterfaz);*/
-       changeImage("perfil-clic.jpg",jLabelPerfil);
-       
+        changeImage("perfil-clic.jpg", jLabelPerfil);
+
         rSPanelsSlider1.setPanelSlider(15, jPanelPerfilAdmin, RSPanelsSlider.DIRECT.RIGHT);
     }//GEN-LAST:event_jLabelPerfilMouseClicked
 
     private void jLabelUserMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelUserMouseClicked
-        resetColor(jLabelPerfil, "Perfil.jpg" );
+        resetColor(jLabelPerfil, "Perfil.jpg");
         resetColor(jLabelHome, "inicio.jpg");
         resetColor(jLabelinterfaz, "GestionInterfaz.jpg");
         resetColor(jLabelticket, "GestionTicket.jpg");
-        changeImage("User-clic.jpg",jLabelUser);
+        changeImage("User-clic.jpg", jLabelUser);
         rSPanelsSlider1.setPanelSlider(15, jPanelModuleUserAdmin, RSPanelsSlider.DIRECT.RIGHT);
         jPanelModuleUserRegister.setVisible(true);
         jPanelModuleUserReports.setVisible(false);
     }//GEN-LAST:event_jLabelUserMouseClicked
 
     private void jLabelinterfazMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelinterfazMouseClicked
-        resetColor(jLabelPerfil, "Perfil.jpg" );
+        resetColor(jLabelPerfil, "Perfil.jpg");
         resetColor(jLabelHome, "inicio.jpg");
         resetColor(jLabelUser, "GestionUser.jpg");
         resetColor(jLabelticket, "GestionTicket.jpg");
-        changeImage("interfaz-clic.jpg",jLabelinterfaz);
+        changeImage("interfaz-clic.jpg", jLabelinterfaz);
     }//GEN-LAST:event_jLabelinterfazMouseClicked
 
     private void btnCerrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCerrarMouseClicked
@@ -741,20 +774,20 @@ public class VistaAdmin extends javax.swing.JFrame {
     private void jPanelbtnMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelbtnMouseDragged
         int x = evt.getXOnScreen();
         int y = evt.getYOnScreen();
-        this.setLocation(x-xMouse , y-yMouse);
+        this.setLocation(x - xMouse, y - yMouse);
     }//GEN-LAST:event_jPanelbtnMouseDragged
 
     private void jPanelbtnMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelbtnMousePressed
-        xMouse  = evt.getX();
+        xMouse = evt.getX();
         yMouse = evt.getY();
     }//GEN-LAST:event_jPanelbtnMousePressed
 
     private void jLabelticketMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelticketMouseClicked
         resetColor(jLabelHome, "inicio.jpg");
-        resetColor(jLabelPerfil, "Perfil.jpg" );
+        resetColor(jLabelPerfil, "Perfil.jpg");
         resetColor(jLabelinterfaz, "GestionInterfaz.jpg");
         resetColor(jLabelUser, "GestionUser.jpg");
-        changeImage("Ticket-clic.jpg",jLabelticket);
+        changeImage("Ticket-clic.jpg", jLabelticket);
     }//GEN-LAST:event_jLabelticketMouseClicked
 
     private void jPanelUserRegisterItemMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelUserRegisterItemMouseEntered
@@ -770,28 +803,11 @@ public class VistaAdmin extends javax.swing.JFrame {
     private void jPanelUserRegisterItemMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelUserRegisterItemMouseClicked
         // TODO add your handling code here:
         jPanelUserRegisterItem.setBorder(border_clicked);
-        jPanelUserReportsItem.setBorder(null);
+        btnConsultaUser.setBackground(item_menu_exited);
+        btnConsultaUser.setBorder(null);
         jPanelModuleUserRegister.setVisible(true);
         jPanelModuleUserReports.setVisible(false);
     }//GEN-LAST:event_jPanelUserRegisterItemMouseClicked
-
-    private void jPanelUserReportsItemMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelUserReportsItemMouseClicked
-        // TODO add your handling code here:
-         jPanelUserReportsItem.setBorder(border_clicked);
-         jPanelUserRegisterItem.setBorder(null);
-         jPanelModuleUserRegister.setVisible(false);
-         jPanelModuleUserReports.setVisible(true);
-    }//GEN-LAST:event_jPanelUserReportsItemMouseClicked
-
-    private void jPanelUserReportsItemMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelUserReportsItemMouseEntered
-        // TODO add your handling code here:
-        jPanelUserReportsItem.setBackground(item_menu_entered);
-    }//GEN-LAST:event_jPanelUserReportsItemMouseEntered
-
-    private void jPanelUserReportsItemMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelUserReportsItemMouseExited
-        // TODO add your handling code here:
-         jPanelUserReportsItem.setBackground(item_menu_exited);
-    }//GEN-LAST:event_jPanelUserReportsItemMouseExited
 
     private void jPanelSelectCSVUserMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelSelectCSVUserMouseEntered
         // TODO add your handling code here:
@@ -809,7 +825,7 @@ public class VistaAdmin extends javax.swing.JFrame {
 
     private void jPanelSelectCSVUserMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelSelectCSVUserMouseClicked
         // TODO add your handling code here:
-        manager.selectFile("user.upload"); 
+        manager.selectFile("user.upload");
     }//GEN-LAST:event_jPanelSelectCSVUserMouseClicked
 
     private void jButtonCargarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCargarActionPerformed
@@ -817,7 +833,43 @@ public class VistaAdmin extends javax.swing.JFrame {
         manager.readCSVFile();
     }//GEN-LAST:event_jButtonCargarActionPerformed
 
-  
+    private void btnCerrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCerrarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnCerrarActionPerformed
+
+    private void btnConsultaUserMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnConsultaUserMouseClicked
+        // TODO add your handling code here:
+        btnConsultaUser.setBorder(border_clicked);
+        btnConsultaUser.setBackground(item_menu_entered);
+        jPanelUserRegisterItem.setBorder(null);
+        jPanelModuleUserRegister.setVisible(false);
+        jPanelModuleUserReports.setVisible(true);
+    }//GEN-LAST:event_btnConsultaUserMouseClicked
+
+    private void btnConsultaUserMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnConsultaUserMouseEntered
+        // TODO add your handling code here:
+        //btnConsultaUser.setBackground(item_menu_entered);
+    }//GEN-LAST:event_btnConsultaUserMouseEntered
+
+    private void btnConsultaUserMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnConsultaUserMouseExited
+        // TODO add your handling code here:
+        //btnConsultaUser.setBackground(item_menu_exited);
+    }//GEN-LAST:event_btnConsultaUserMouseExited
+
+    private void btnConsultaUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConsultaUserActionPerformed
+        // TODO add your handling code here:
+
+    }//GEN-LAST:event_btnConsultaUserActionPerformed
+
+    private void jTextFieldBuscarUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldBuscarUserActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldBuscarUserActionPerformed
+
+    private void jTextFieldBuscarUserKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextFieldBuscarUserKeyReleased
+        // TODO add your handling code here:
+        String dato = jTextFieldBuscarUser.getText();
+        manager.gestionBuscarUser(dato, this);
+    }//GEN-LAST:event_jTextFieldBuscarUserKeyReleased
 
     /**
      * @param args the command line arguments
@@ -856,6 +908,7 @@ public class VistaAdmin extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCerrar;
+    public javax.swing.JButton btnConsultaUser;
     private javax.swing.JButton btnMiminize;
     public javax.swing.JButton jButtonCargar;
     private javax.swing.JLabel jLabel1;
@@ -868,7 +921,6 @@ public class VistaAdmin extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JLabel jLabelHome;
     private javax.swing.JLabel jLabelPerfil;
     public javax.swing.JLabel jLabelRutaArchivo;
@@ -886,15 +938,13 @@ public class VistaAdmin extends javax.swing.JFrame {
     private javax.swing.JPanel jPanelPerfilAdmin;
     public javax.swing.JPanel jPanelSelectCSVUser;
     private javax.swing.JPanel jPanelUserRegisterItem;
-    private javax.swing.JPanel jPanelUserReportsItem;
     private javax.swing.JPanel jPanelbtn;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
-    private javax.swing.JTextField jTextField1;
+    public javax.swing.JTable jTableUsers;
+    private javax.swing.JTextField jTextFieldBuscarUser;
     private rojerusan.RSPanelsSlider rSPanelsSlider1;
     // End of variables declaration//GEN-END:variables
-
-
-
 
 }

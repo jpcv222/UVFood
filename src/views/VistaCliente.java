@@ -16,7 +16,7 @@ import rojerusan.RSPanelsSlider;
 
 /**
  *
- * @author STH_1F_GCB_PC16
+ * @author Jeffrey Rios 2019 GitHub: jeffrey2423
  */
 public class VistaCliente extends javax.swing.JFrame {
 
