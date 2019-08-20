@@ -24,7 +24,7 @@ import javax.swing.border.LineBorder;
 
 /**
  *
- * @author STH_1F_MCA_PC27
+ * @author Jeffrey Rios 2019 GitHub: jeffrey2423
  */
 public class VistaLogin extends javax.swing.JFrame {
 

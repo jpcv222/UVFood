@@ -7,10 +7,13 @@ package uvfood;
 
 import java.sql.Connection;
 import classes.ConexionBD;
+import classes.ConsultasAdmin;
 import classes.ConsultasCliente;
 import classes.Usuario;
 import components.UVFoodDialogs;
+import managers.ControladorAdmin;
 import managers.ControladorCliente;
+import views.VistaAdmin;
 import views.VistaCliente;
 import views.VistaLogin;
 
@@ -42,12 +45,16 @@ public class UVFood extends ConexionBD {
         */
         Usuario usuario = new Usuario();
         VistaCliente vistaCliente = new VistaCliente();
+        VistaAdmin vistaAdmin = new VistaAdmin();
         VistaLogin vistaLogin = new VistaLogin();
         ConsultasCliente consultasCliente = new ConsultasCliente();
+        ConsultasAdmin consultasAdmin = new ConsultasAdmin();
         
         ControladorCliente controladorCliente = new ControladorCliente(vistaCliente, vistaLogin, consultasCliente, usuario);
         controladorCliente.iniciar();
         vistaLogin.setVisible(true);
+        
+        ControladorAdmin controladorAdmin = new ControladorAdmin(vistaAdmin, consultasAdmin);
 
     }
 

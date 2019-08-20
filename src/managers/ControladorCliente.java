@@ -18,7 +18,7 @@ import views.VistaLogin;
 
 /**
  *
- * @author Jeffrey Rios
+ * @author Jeffrey Rios 2019 GitHub: jeffrey2423
  */
 public class ControladorCliente implements ActionListener {
 
