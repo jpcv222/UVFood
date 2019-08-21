@@ -5,6 +5,9 @@
  */
 package views;
 
+import java.awt.Color;
+import java.awt.Frame;
+
 /**
  *
  * @author sp
@@ -14,6 +17,9 @@ public class index extends javax.swing.JFrame {
     /**
      * Creates new form index
      */
+    
+    int xMouse;
+    int yMouse;
     public index() {
         initComponents();
     }
@@ -27,21 +33,130 @@ public class index extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanelbtnIndex = new javax.swing.JPanel();
+        btnCerrar = new javax.swing.JButton();
+        btnMiminize = new javax.swing.JButton();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
+        setPreferredSize(new java.awt.Dimension(1212, 817));
+
+        jPanelbtnIndex.setBackground(new java.awt.Color(255, 255, 255));
+        jPanelbtnIndex.setMinimumSize(new java.awt.Dimension(0, 0));
+        jPanelbtnIndex.setPreferredSize(new java.awt.Dimension(70, 25));
+        jPanelbtnIndex.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseDragged(java.awt.event.MouseEvent evt) {
+                jPanelbtnIndexMouseDragged(evt);
+            }
+        });
+        jPanelbtnIndex.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jPanelbtnIndexMousePressed(evt);
+            }
+        });
+
+        btnCerrar.setBackground(new java.awt.Color(255, 255, 255));
+        btnCerrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Exit.png"))); // NOI18N
+        btnCerrar.setContentAreaFilled(false);
+        btnCerrar.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Exit2.png"))); // NOI18N
+        btnCerrar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnCerrarMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnCerrarMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnCerrarMouseExited(evt);
+            }
+        });
+
+        btnMiminize.setBackground(new java.awt.Color(255, 255, 255));
+        btnMiminize.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Minimize.png"))); // NOI18N
+        btnMiminize.setContentAreaFilled(false);
+        btnMiminize.setOpaque(true);
+        btnMiminize.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Minimize (2).png"))); // NOI18N
+        btnMiminize.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnMiminizeMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnMiminizeMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnMiminizeMouseExited(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanelbtnIndexLayout = new javax.swing.GroupLayout(jPanelbtnIndex);
+        jPanelbtnIndex.setLayout(jPanelbtnIndexLayout);
+        jPanelbtnIndexLayout.setHorizontalGroup(
+            jPanelbtnIndexLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelbtnIndexLayout.createSequentialGroup()
+                .addGap(0, 1146, Short.MAX_VALUE)
+                .addComponent(btnMiminize, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnCerrar, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+        jPanelbtnIndexLayout.setVerticalGroup(
+            jPanelbtnIndexLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelbtnIndexLayout.createSequentialGroup()
+                .addGroup(jPanelbtnIndexLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnCerrar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnMiminize, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1230, Short.MAX_VALUE)
+            .addComponent(jPanelbtnIndex, javax.swing.GroupLayout.DEFAULT_SIZE, 1212, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 600, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanelbtnIndex, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 792, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jPanelbtnIndexMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelbtnIndexMouseDragged
+        int x = evt.getXOnScreen();
+        int y = evt.getYOnScreen();
+        this.setLocation(x-xMouse , y-yMouse);
+    }//GEN-LAST:event_jPanelbtnIndexMouseDragged
+
+    private void jPanelbtnIndexMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelbtnIndexMousePressed
+        xMouse  = evt.getX();
+        yMouse = evt.getY();
+    }//GEN-LAST:event_jPanelbtnIndexMousePressed
+
+    private void btnCerrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCerrarMouseClicked
+        System.exit(0);
+    }//GEN-LAST:event_btnCerrarMouseClicked
+
+    private void btnCerrarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCerrarMouseEntered
+        btnCerrar.setBackground(new Color(232, 17, 35));
+    }//GEN-LAST:event_btnCerrarMouseEntered
+
+    private void btnCerrarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCerrarMouseExited
+        btnCerrar.setBackground(new Color(255, 255, 255));
+    }//GEN-LAST:event_btnCerrarMouseExited
+
+    private void btnMiminizeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnMiminizeMouseClicked
+        this.setState(Frame.ICONIFIED);
+    }//GEN-LAST:event_btnMiminizeMouseClicked
+
+    private void btnMiminizeMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnMiminizeMouseEntered
+        btnMiminize.setBackground(new Color(229, 229, 229));
+    }//GEN-LAST:event_btnMiminizeMouseEntered
+
+    private void btnMiminizeMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnMiminizeMouseExited
+       btnMiminize.setBackground(new Color(255, 255, 255));
+    }//GEN-LAST:event_btnMiminizeMouseExited
 
     /**
      * @param args the command line arguments
@@ -79,5 +194,8 @@ public class index extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnCerrar;
+    private javax.swing.JButton btnMiminize;
+    private javax.swing.JPanel jPanelbtnIndex;
     // End of variables declaration//GEN-END:variables
 }
