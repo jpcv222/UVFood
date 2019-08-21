@@ -27,20 +27,19 @@ public class ConsultasAdmin extends ConexionBD {
     public boolean llenarTabla(VistaAdmin vista) {
 
         DefaultTableModel modelo = new DefaultTableModel();
-        vista.jTableUsers.setModel(modelo);
 
         PreparedStatement ps = null;
         Connection conn = Conexion();
         ResultSet rs = null;
 
-        String sql = " select * from uvfood_user";
+        String sql = "SELECT * FROM uvfood_user";
         try {
             ps = conn.prepareStatement(sql);
             rs = ps.executeQuery();
 
             ResultSetMetaData rsMd = rs.getMetaData();
             int cantidadCol = rsMd.getColumnCount();
-            
+
             modelo.addColumn("Id");
             modelo.addColumn("Usuario");
             modelo.addColumn("Nombre");
@@ -58,6 +57,9 @@ public class ConsultasAdmin extends ConexionBD {
                 }
                 modelo.addRow(filas);
             }
+            vista.jTableUsers.setModel(modelo);
+            rs.close();
+            ps.close();
             return true;
         } catch (SQLException ex) {
             logs.escribirExceptionLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// " + ex.getMessage() + " " + ex.toString());
@@ -66,25 +68,26 @@ public class ConsultasAdmin extends ConexionBD {
         }
 
     }
-    
-    public boolean buscarUser(String dato, VistaAdmin vista){
+
+    public boolean buscarUser(String dato, VistaAdmin vista) {
 
         DefaultTableModel modelo = new DefaultTableModel();
-        vista.jTableUsers.setModel(modelo);
 
         PreparedStatement ps = null;
         Connection conn = Conexion();
         ResultSet rs = null;
-        String filtro = "%"+dato+"%";
+        String filtro = "'%" + dato + "%'";
+        
+        //$query = "SELECT * FROM imagenesproductos WHERE nombre LIKE '%$q%' OR descripcion LIKE '%$q%' OR precio LIKE '%$q%' OR categoria LIKE '%$q%'";
 
-        String sql = " select * from uvfood_user where idUser, username, firstname, surname, birth_date, email,creation_date LIKE " +"'"+filtro+"'";
+        String sql = "SELECT * FROM uvfood_user where idUser::text LIKE"+filtro+" OR username::text LIKE"+filtro+" OR firstname::text LIKE"+filtro+" OR surname::text LIKE"+filtro;
         try {
             ps = conn.prepareStatement(sql);
             rs = ps.executeQuery();
 
             ResultSetMetaData rsMd = rs.getMetaData();
             int cantidadCol = rsMd.getColumnCount();
-            
+
             modelo.addColumn("Id");
             modelo.addColumn("Usuario");
             modelo.addColumn("Nombre");
@@ -102,10 +105,14 @@ public class ConsultasAdmin extends ConexionBD {
                 }
                 modelo.addRow(filas);
             }
+            vista.jTableUsers.setModel(modelo);
+            rs.close();
+            ps.close();
             return true;
         } catch (SQLException ex) {
             logs.escribirExceptionLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// " + ex.getMessage() + " " + ex.toString());
             modal.error_message("Error", "Algo anda mal", "El servidor esta presentado problemas", "Por Favor intenta mas tarde", "O reportanos que ocurre");
+           
             return false;
         }
     }

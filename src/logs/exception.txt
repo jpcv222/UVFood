@@ -36,3 +36,142 @@ classes.ConsultasCliente//login// ERROR: no existe la relación «uvfood_usuario
   Position: 15// 2019-08-19T16:27:45.154
 classes.ConexionBD//Conexion// FATAL: la autentificación password falló para el usuario «postgres» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf) org.postgresql.util.PSQLException: FATAL: la autentificación password falló para el usuario «postgres» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf)// 2019-08-20T08:56:52.048
 classes.ConexionBD//Conexion// FATAL: la autentificación password falló para el usuario «postgres» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf) org.postgresql.util.PSQLException: FATAL: la autentificación password falló para el usuario «postgres» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf)// 2019-08-20T11:30:59.135
+classes.ConsultasAdmin//buscarUser// ERROR: error de sintaxis en o cerca de «,»
+  Position: 40 org.postgresql.util.PSQLException: ERROR: error de sintaxis en o cerca de «,»
+  Position: 40// 2019-08-21T09:24:16.865
+classes.ConsultasAdmin//buscarUser// ERROR: error de sintaxis en o cerca de «,»
+  Position: 40 org.postgresql.util.PSQLException: ERROR: error de sintaxis en o cerca de «,»
+  Position: 40// 2019-08-21T09:24:32.076
+classes.ConsultasAdmin//buscarUser// ERROR: error de sintaxis en o cerca de «,»
+  Position: 40 org.postgresql.util.PSQLException: ERROR: error de sintaxis en o cerca de «,»
+  Position: 40// 2019-08-21T09:25:55
+classes.ConsultasAdmin//buscarUser// ERROR: error de sintaxis en o cerca de «,»
+  Position: 40 org.postgresql.util.PSQLException: ERROR: error de sintaxis en o cerca de «,»
+  Position: 40// 2019-08-21T09:35:42.681
+classes.ConsultasAdmin//buscarUser// ERROR: error de sintaxis en o cerca de «,»
+  Position: 40 org.postgresql.util.PSQLException: ERROR: error de sintaxis en o cerca de «,»
+  Position: 40// 2019-08-21T09:36:46.290
+classes.ConsultasAdmin//buscarUser// ERROR: error de sintaxis en o cerca de «,»
+  Position: 40 org.postgresql.util.PSQLException: ERROR: error de sintaxis en o cerca de «,»
+  Position: 40// 2019-08-21T09:36:51.999
+classes.ConsultasAdmin//buscarUser// ERROR: error de sintaxis en o cerca de «,»
+  Position: 40 org.postgresql.util.PSQLException: ERROR: error de sintaxis en o cerca de «,»
+  Position: 40// 2019-08-21T09:37:23.446
+classes.ConsultasAdmin//buscarUser// ERROR: error de sintaxis en o cerca de «,»
+  Position: 40 org.postgresql.util.PSQLException: ERROR: error de sintaxis en o cerca de «,»
+  Position: 40// 2019-08-21T09:37:41.378
+classes.ConsultasAdmin//buscarUser// ERROR: error de sintaxis en o cerca de «,»
+  Position: 40 org.postgresql.util.PSQLException: ERROR: error de sintaxis en o cerca de «,»
+  Position: 40// 2019-08-21T09:37:41.595
+classes.ConsultasAdmin//buscarUser// ERROR: error de sintaxis en o cerca de «,»
+  Position: 40 org.postgresql.util.PSQLException: ERROR: error de sintaxis en o cerca de «,»
+  Position: 40// 2019-08-21T09:45:51.949
+classes.ConsultasAdmin//buscarUser// ERROR: error de sintaxis en o cerca de «,»
+  Position: 40 org.postgresql.util.PSQLException: ERROR: error de sintaxis en o cerca de «,»
+  Position: 40// 2019-08-21T09:45:57.688
+classes.ConsultasAdmin//buscarUser// ERROR: error de sintaxis en o cerca de «,»
+  Position: 40 org.postgresql.util.PSQLException: ERROR: error de sintaxis en o cerca de «,»
+  Position: 40// 2019-08-21T09:46:01.062
+classes.ConsultasAdmin//buscarUser// ERROR: error de sintaxis en o cerca de «,»
+  Position: 40 org.postgresql.util.PSQLException: ERROR: error de sintaxis en o cerca de «,»
+  Position: 40// 2019-08-21T09:46:01.366
+classes.ConsultasAdmin//buscarUser// ERROR: error de sintaxis en o cerca de «,»
+  Position: 40 org.postgresql.util.PSQLException: ERROR: error de sintaxis en o cerca de «,»
+  Position: 40// 2019-08-21T09:46:01.870
+classes.ConsultasAdmin//buscarUser// ERROR: error de sintaxis en o cerca de «,»
+  Position: 40 org.postgresql.util.PSQLException: ERROR: error de sintaxis en o cerca de «,»
+  Position: 40// 2019-08-21T09:46:02.061
+classes.ConsultasAdmin//buscarUser// ERROR: error de sintaxis en o cerca de «,»
+  Position: 40 org.postgresql.util.PSQLException: ERROR: error de sintaxis en o cerca de «,»
+  Position: 40// 2019-08-21T09:46:03.077
+classes.ConsultasAdmin//buscarUser// ERROR: error de sintaxis en o cerca de «,»
+  Position: 40 org.postgresql.util.PSQLException: ERROR: error de sintaxis en o cerca de «,»
+  Position: 40// 2019-08-21T09:46:03.213
+classes.ConsultasAdmin//buscarUser// ERROR: error de sintaxis en o cerca de «,»
+  Position: 40 org.postgresql.util.PSQLException: ERROR: error de sintaxis en o cerca de «,»
+  Position: 40// 2019-08-21T09:46:03.310
+classes.ConsultasAdmin//buscarUser// ERROR: error de sintaxis en o cerca de «,»
+  Position: 40 org.postgresql.util.PSQLException: ERROR: error de sintaxis en o cerca de «,»
+  Position: 40// 2019-08-21T09:46:03.534
+classes.ConsultasAdmin//buscarUser// ERROR: error de sintaxis en o cerca de «,»
+  Position: 40 org.postgresql.util.PSQLException: ERROR: error de sintaxis en o cerca de «,»
+  Position: 40// 2019-08-21T09:46:03.663
+classes.ConsultasAdmin//buscarUser// ERROR: error de sintaxis en o cerca de «,»
+  Position: 40 org.postgresql.util.PSQLException: ERROR: error de sintaxis en o cerca de «,»
+  Position: 40// 2019-08-21T09:46:55.712
+classes.ConsultasAdmin//buscarUser// ERROR: error de sintaxis en o cerca de «,»
+  Position: 40 org.postgresql.util.PSQLException: ERROR: error de sintaxis en o cerca de «,»
+  Position: 40// 2019-08-21T09:46:57.479
+classes.ConsultasAdmin//buscarUser// ERROR: error de sintaxis en o cerca de «,»
+  Position: 40 org.postgresql.util.PSQLException: ERROR: error de sintaxis en o cerca de «,»
+  Position: 40// 2019-08-21T09:47:43.842
+classes.ConsultasCliente//login// ERROR: no existe la relación «uvfood_usuario»
+  Position: 15 org.postgresql.util.PSQLException: ERROR: no existe la relación «uvfood_usuario»
+  Position: 15// 2019-08-21T09:59:49.650
+classes.ConsultasCliente//login// ERROR: no existe la relación «uvfood_usuario»
+  Position: 15 org.postgresql.util.PSQLException: ERROR: no existe la relación «uvfood_usuario»
+  Position: 15// 2019-08-21T10:00:00.991
+classes.ConsultasCliente//login// ERROR: no existe la relación «uvfood_usuario»
+  Position: 15 org.postgresql.util.PSQLException: ERROR: no existe la relación «uvfood_usuario»
+  Position: 15// 2019-08-21T10:00:05.148
+classes.ConsultasAdmin//buscarUser// ERROR: error de sintaxis en o cerca de «,»
+  Position: 39 org.postgresql.util.PSQLException: ERROR: error de sintaxis en o cerca de «,»
+  Position: 39// 2019-08-21T10:45:21.281
+classes.ConsultasAdmin//buscarUser// ERROR: error de sintaxis en o cerca de «%»
+  Position: 51 org.postgresql.util.PSQLException: ERROR: error de sintaxis en o cerca de «%»
+  Position: 51// 2019-08-21T10:46:18.281
+classes.ConsultasAdmin//buscarUser// ERROR: error de sintaxis en o cerca de «%»
+  Position: 51 org.postgresql.util.PSQLException: ERROR: error de sintaxis en o cerca de «%»
+  Position: 51// 2019-08-21T10:46:57.297
+classes.ConsultasAdmin//buscarUser// ERROR: error de sintaxis en o cerca de «%»
+  Position: 51 org.postgresql.util.PSQLException: ERROR: error de sintaxis en o cerca de «%»
+  Position: 51// 2019-08-21T10:46:58.966
+classes.ConsultasAdmin//buscarUser// ERROR: error de sintaxis en o cerca de «%»
+  Position: 51 org.postgresql.util.PSQLException: ERROR: error de sintaxis en o cerca de «%»
+  Position: 51// 2019-08-21T10:46:59.719
+classes.ConsultasAdmin//buscarUser// ERROR: error de sintaxis en o cerca de «%»
+  Position: 51 org.postgresql.util.PSQLException: ERROR: error de sintaxis en o cerca de «%»
+  Position: 51// 2019-08-21T10:47:00.271
+classes.ConsultasAdmin//buscarUser// ERROR: error de sintaxis en o cerca de «%»
+  Position: 51 org.postgresql.util.PSQLException: ERROR: error de sintaxis en o cerca de «%»
+  Position: 51// 2019-08-21T10:47:56.010
+classes.ConsultasAdmin//buscarUser// ERROR: error de sintaxis en o cerca de «%»
+  Position: 51 org.postgresql.util.PSQLException: ERROR: error de sintaxis en o cerca de «%»
+  Position: 51// 2019-08-21T10:48:21.639
+classes.ConsultasAdmin//buscarUser// ERROR: error de sintaxis al final de la entrada
+  Position: 57 org.postgresql.util.PSQLException: ERROR: error de sintaxis al final de la entrada
+  Position: 57// 2019-08-21T10:49:36.725
+classes.ConsultasAdmin//buscarUser// ERROR: error de sintaxis al final de la entrada
+  Position: 56 org.postgresql.util.PSQLException: ERROR: error de sintaxis al final de la entrada
+  Position: 56// 2019-08-21T10:49:44.834
+classes.ConsultasAdmin//buscarUser// ERROR: error de sintaxis en o cerca de «,»
+  Position: 39 org.postgresql.util.PSQLException: ERROR: error de sintaxis en o cerca de «,»
+  Position: 39// 2019-08-21T10:55:10.999
+classes.ConsultasAdmin//buscarUser// ERROR: error de sintaxis en o cerca de «,»
+  Position: 39 org.postgresql.util.PSQLException: ERROR: error de sintaxis en o cerca de «,»
+  Position: 39// 2019-08-21T10:58:57.118
+classes.ConsultasAdmin//buscarUser// ERROR: error de sintaxis en o cerca de «,»
+  Position: 39 org.postgresql.util.PSQLException: ERROR: error de sintaxis en o cerca de «,»
+  Position: 39// 2019-08-21T10:58:58.694
+classes.ConsultasAdmin//buscarUser// ERROR: error de sintaxis en o cerca de «LIKEG»
+  Position: 40 org.postgresql.util.PSQLException: ERROR: error de sintaxis en o cerca de «LIKEG»
+  Position: 40// 2019-08-21T11:03:59.477
+classes.ConsultasAdmin//buscarUser// ERROR: error de sintaxis en o cerca de «creation_date»
+  Position: 159 org.postgresql.util.PSQLException: ERROR: error de sintaxis en o cerca de «creation_date»
+  Position: 159// 2019-08-21T11:05:10.259
+classes.ConsultasAdmin//buscarUser// ERROR: error de sintaxis en o cerca de «creation_date»
+  Position: 153 org.postgresql.util.PSQLException: ERROR: error de sintaxis en o cerca de «creation_date»
+  Position: 153// 2019-08-21T11:05:18.273
+classes.ConsultasAdmin//buscarUser// ERROR: error de sintaxis en o cerca de «creation_date»
+  Position: 159 org.postgresql.util.PSQLException: ERROR: error de sintaxis en o cerca de «creation_date»
+  Position: 159// 2019-08-21T11:05:19.298
+classes.ConsultasAdmin//buscarUser// ERROR: el operador no existe: integer ~~ unknown
+  Hint: Ningún operador coincide en el nombre y tipos de argumentos. Puede ser necesario agregar conversión explícita de tipos.
+  Position: 40 org.postgresql.util.PSQLException: ERROR: el operador no existe: integer ~~ unknown
+  Hint: Ningún operador coincide en el nombre y tipos de argumentos. Puede ser necesario agregar conversión explícita de tipos.
+  Position: 40// 2019-08-21T11:05:48.885
+classes.ConsultasAdmin//buscarUser// ERROR: el operador no existe: integer ~~ unknown
+  Hint: Ningún operador coincide en el nombre y tipos de argumentos. Puede ser necesario agregar conversión explícita de tipos.
+  Position: 40 org.postgresql.util.PSQLException: ERROR: el operador no existe: integer ~~ unknown
+  Hint: Ningún operador coincide en el nombre y tipos de argumentos. Puede ser necesario agregar conversión explícita de tipos.
+  Position: 40// 2019-08-21T11:05:50.917
