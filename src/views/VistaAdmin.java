@@ -8,6 +8,7 @@
  */
 package views;
 
+import classes.ConsultasAdmin;
 import java.awt.Image;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
@@ -856,20 +857,27 @@ public class VistaAdmin extends javax.swing.JFrame {
         //btnConsultaUser.setBackground(item_menu_exited);
     }//GEN-LAST:event_btnConsultaUserMouseExited
 
-    private void btnConsultaUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConsultaUserActionPerformed
-        // TODO add your handling code here:
-
-    }//GEN-LAST:event_btnConsultaUserActionPerformed
-
     private void jTextFieldBuscarUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldBuscarUserActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextFieldBuscarUserActionPerformed
 
     private void jTextFieldBuscarUserKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextFieldBuscarUserKeyReleased
         // TODO add your handling code here:
+        ConsultasAdmin consulAdmin = new ConsultasAdmin();
         String dato = jTextFieldBuscarUser.getText();
-        manager.gestionBuscarUser(dato, this);
+        if (consulAdmin.buscarUser(dato, this)) {
+            
+        }else{
+            
+        }
+        
     }//GEN-LAST:event_jTextFieldBuscarUserKeyReleased
+
+    private void btnConsultaUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConsultaUserActionPerformed
+        // TODO add your handling code here:
+        ConsultasAdmin consulAdmin = new ConsultasAdmin();
+        consulAdmin.llenarTabla(this);
+    }//GEN-LAST:event_btnConsultaUserActionPerformed
 
     /**
      * @param args the command line arguments

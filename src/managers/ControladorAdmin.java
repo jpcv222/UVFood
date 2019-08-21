@@ -102,14 +102,18 @@ public class ControladorAdmin implements ActionListener{
         }
     }
     
-    public void gestionBuscarUser(String gdato, VistaAdmin gvista){
-        consultasAdmin.buscarUser(gdato, gvista);
-    }
+    /*public boolean gestionBuscarUser(String gdato, VistaAdmin gvista){
+        return consultasAdmin.buscarUser(gdato, gvista);        
+    }*/
 
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == interfazPrincipalAdmin.btnConsultaUser) {
-            consultasAdmin.llenarTabla(interfazPrincipalAdmin);
+            if (consultasAdmin.llenarTabla(interfazPrincipalAdmin)) {
+                System.out.println("entro");
+            }else{
+                System.out.println("no entro");
+            }    
             
         }
     }
