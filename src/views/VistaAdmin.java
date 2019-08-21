@@ -157,6 +157,7 @@ public class VistaAdmin extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabelRutaArchivo = new javax.swing.JLabel();
         jButtonCargar = new javax.swing.JButton();
+        jButtonCargar1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -635,6 +636,18 @@ public class VistaAdmin extends javax.swing.JFrame {
             }
         });
 
+        jButtonCargar1.setBackground(new java.awt.Color(205, 31, 50));
+        jButtonCargar1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jButtonCargar1.setForeground(new java.awt.Color(255, 255, 255));
+        jButtonCargar1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/open-document.png"))); // NOI18N
+        jButtonCargar1.setText("Seleccionar archivo CSV");
+        jButtonCargar1.setBorder(null);
+        jButtonCargar1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonCargar1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanelModuleUserRegisterLayout = new javax.swing.GroupLayout(jPanelModuleUserRegister);
         jPanelModuleUserRegister.setLayout(jPanelModuleUserRegisterLayout);
         jPanelModuleUserRegisterLayout.setHorizontalGroup(
@@ -654,6 +667,10 @@ public class VistaAdmin extends javax.swing.JFrame {
                                 .addComponent(jButtonCargar, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(0, 436, Short.MAX_VALUE)))
                 .addContainerGap())
+            .addGroup(jPanelModuleUserRegisterLayout.createSequentialGroup()
+                .addGap(37, 37, 37)
+                .addComponent(jButtonCargar1, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanelModuleUserRegisterLayout.setVerticalGroup(
             jPanelModuleUserRegisterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -662,13 +679,15 @@ public class VistaAdmin extends javax.swing.JFrame {
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
                 .addGroup(jPanelModuleUserRegisterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jButtonCargar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanelSelectCSVUser, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(455, 455, 455))
+                .addGap(29, 29, 29)
+                .addComponent(jButtonCargar1, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(348, 348, 348))
         );
 
         jPanelModuleUserAdmin.add(jPanelModuleUserRegister, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 73, -1, 620));
@@ -879,6 +898,10 @@ public class VistaAdmin extends javax.swing.JFrame {
         consulAdmin.llenarTabla(this);
     }//GEN-LAST:event_btnConsultaUserActionPerformed
 
+    private void jButtonCargar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCargar1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButtonCargar1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -919,6 +942,7 @@ public class VistaAdmin extends javax.swing.JFrame {
     public javax.swing.JButton btnConsultaUser;
     private javax.swing.JButton btnMiminize;
     public javax.swing.JButton jButtonCargar;
+    public javax.swing.JButton jButtonCargar1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
