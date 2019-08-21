@@ -1,0 +1,38 @@
+managers.ControladorAdmin//readCSVFile// null java.lang.NullPointerException// 2019-08-18T18:50:10.122
+managers.ControladorAdmin//readCSVFile// null java.lang.NullPointerException// 2019-08-18T18:50:10.667
+managers.ControladorAdmin//readCSVFile// null java.lang.NullPointerException// 2019-08-18T18:50:10.962
+managers.ControladorAdmin//readCSVFile// null java.lang.NullPointerException// 2019-08-19T02:54:57.422
+managers.ControladorAdmin//readCSVFile// null java.lang.NullPointerException// 2019-08-19T02:55:31.705
+managers.ControladorAdmin//readCSVFile// null java.lang.NullPointerException// 2019-08-19T02:55:34.165
+managers.ControladorAdmin//readCSVFile// null java.lang.NullPointerException// 2019-08-19T02:55:40.516
+managers.ControladorAdmin//readCSVFile// null java.lang.NullPointerException// 2019-08-19T02:55:42.367
+managers.ControladorAdmin//readCSVFile// null java.lang.NullPointerException// 2019-08-19T02:55:44.156
+managers.ControladorAdmin//readCSVFile// null java.lang.NullPointerException// 2019-08-19T03:19:25.644
+managers.ControladorAdmin//readCSVFile// null java.lang.NullPointerException// 2019-08-19T03:19:31.913
+managers.ControladorAdmin//readCSVFile// null java.lang.NullPointerException// 2019-08-19T03:23:46.226
+classes.FileChooser//calcularRutaArchivo// null java.lang.NullPointerException// 2019-08-19T03:34:22.152
+classes.ConexionBD//Conexion// FATAL: database "pruebauvfood" does not exist org.postgresql.util.PSQLException: FATAL: database "pruebauvfood" does not exist// 2019-08-19T04:02:27.141
+classes.ConexionBD//Conexion// FATAL: database "pruebauvfood" does not exist org.postgresql.util.PSQLException: FATAL: database "pruebauvfood" does not exist// 2019-08-19T04:02:32.991
+classes.ConexionBD//Conexion// FATAL: database "pruebauvfood" does not exist org.postgresql.util.PSQLException: FATAL: database "pruebauvfood" does not exist// 2019-08-19T04:05:55.436
+classes.ConexionBD//Conexion// FATAL: database "pruebauvfood" does not exist org.postgresql.util.PSQLException: FATAL: database "pruebauvfood" does not exist// 2019-08-19T04:06:00.391
+classes.ConsultasCliente//login// ERROR: relation "uvfood_usuario" does not exist
+  Position: 15 org.postgresql.util.PSQLException: ERROR: relation "uvfood_usuario" does not exist
+  Position: 15// 2019-08-19T04:09:50.079
+classes.ConexionBD//Conexion// FATAL: la autentificación password falló para el usuario «postgres» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf) org.postgresql.util.PSQLException: FATAL: la autentificación password falló para el usuario «postgres» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf)// 2019-08-19T16:00:38.013
+classes.ConexionBD//Conexion// FATAL: la autentificación password falló para el usuario «postgres» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf) org.postgresql.util.PSQLException: FATAL: la autentificación password falló para el usuario «postgres» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf)// 2019-08-19T16:03:48.113
+classes.ConexionBD//Conexion// FATAL: la autentificación password falló para el usuario «postgres» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf) org.postgresql.util.PSQLException: FATAL: la autentificación password falló para el usuario «postgres» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf)// 2019-08-19T16:05:23.672
+classes.ConexionBD//Conexion// FATAL: la autentificación password falló para el usuario «postgres» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf) org.postgresql.util.PSQLException: FATAL: la autentificación password falló para el usuario «postgres» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf)// 2019-08-19T16:08:12.242
+classes.ConsultasCliente//login// ERROR: no existe la relación «uvfood_usuario»
+  Position: 15 org.postgresql.util.PSQLException: ERROR: no existe la relación «uvfood_usuario»
+  Position: 15// 2019-08-19T16:24:34.045
+classes.ConsultasCliente//login// ERROR: no existe la relación «uvfood_usuario»
+  Position: 15 org.postgresql.util.PSQLException: ERROR: no existe la relación «uvfood_usuario»
+  Position: 15// 2019-08-19T16:27:39.561
+classes.ConsultasCliente//login// ERROR: no existe la relación «uvfood_usuario»
+  Position: 15 org.postgresql.util.PSQLException: ERROR: no existe la relación «uvfood_usuario»
+  Position: 15// 2019-08-19T16:27:41.864
+classes.ConsultasCliente//login// ERROR: no existe la relación «uvfood_usuario»
+  Position: 15 org.postgresql.util.PSQLException: ERROR: no existe la relación «uvfood_usuario»
+  Position: 15// 2019-08-19T16:27:45.154
+classes.ConexionBD//Conexion// FATAL: la autentificación password falló para el usuario «postgres» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf) org.postgresql.util.PSQLException: FATAL: la autentificación password falló para el usuario «postgres» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf)// 2019-08-20T08:56:52.048
+classes.ConexionBD//Conexion// FATAL: la autentificación password falló para el usuario «postgres» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf) org.postgresql.util.PSQLException: FATAL: la autentificación password falló para el usuario «postgres» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf)// 2019-08-20T11:30:59.135

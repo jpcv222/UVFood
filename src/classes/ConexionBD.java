@@ -5,6 +5,7 @@
  */
 package classes;
 
+import components.UVFoodDialogs;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -15,18 +16,21 @@ import java.sql.SQLException;
  * @author sp
  */
 public class ConexionBD {
+    UVFoodDialogs modal = new UVFoodDialogs();
 
     private String url = "jdbc:postgresql://localhost:5432/uvfood";
     private String user = "postgres";
-    private String password = "pgsql";
+    private String password = "root";
     private Connection conn = null;
+    private Logs logs = new Logs(Thread.currentThread().getStackTrace()[1].getClassName());
 
     public Connection Conexion() {
         try {
             conn = DriverManager.getConnection(this.url, this.user, this.password);
             System.out.println("Conexion exitosa");
         } catch (SQLException e) {
-            System.out.println(e.getMessage());
+            modal.error_message("Error", "Algo anda mal", "El servidor esta presentado problemas", "Por Favor intenta mas tarde", "O reportanos que ocurre");
+            logs.escribirExceptionLogs(Thread.currentThread().getStackTrace()[1].getMethodName() +"// "+  e.getMessage() +" "+ e.toString());
         }
 
         return conn;
@@ -38,7 +42,8 @@ public class ConexionBD {
                 conn.close();
             }
         } catch (SQLException ex) {
-            System.out.println("Error al cerrar la conexion " + ex.getMessage());
+            modal.error_message("Error", "Algo anda mal", "El servidor esta presentado problemas", "Por Favor intenta mas tarde", "O reportanos que ocurre");
+            logs.escribirExceptionLogs(Thread.currentThread().getStackTrace()[1].getMethodName() +"// "+  ex.getMessage() +" "+ ex.toString());
             System.exit(1);
         }
     }

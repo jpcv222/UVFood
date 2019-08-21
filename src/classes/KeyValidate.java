@@ -7,8 +7,13 @@ package classes;
 
 /**
  *
- * @author STH_1F_GCB_PC16
+ * @author jpcv2
  */
-public class Cliente {
+public class KeyValidate {
     
+    public boolean haveKey(String action, String userid){
+        boolean result = true;
+        //Pendiente
+        return result;
+    }
 }
