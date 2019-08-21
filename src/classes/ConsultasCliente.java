@@ -25,7 +25,7 @@ public class ConsultasCliente extends ConexionBD {
         Connection conn = Conexion();
         ResultSet rs = null;
        
-        String sql = "SELECT * FROM uvfood_usuario WHERE username = ?";
+        String sql = "SELECT * FROM uvfood_user WHERE username = ?";
 
         try {
             ps = conn.prepareStatement(sql);
