@@ -5,8 +5,12 @@
  */
 package views;
 
+import AppPackage.AnimationClass;
 import java.awt.Color;
 import java.awt.Frame;
+import java.awt.Image;
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
 import javax.swing.border.BevelBorder;
 
 /**
@@ -24,6 +28,8 @@ public class index extends javax.swing.JFrame {
     BevelBorder border_clicked;
     int xMouse;
     int yMouse;
+    boolean slid1, slid2;
+    AnimationClass AC = new AnimationClass();
     public index() {
         initComponents();
         item_menu_exited = new Color(205, 31, 50);
@@ -32,10 +38,98 @@ public class index extends javax.swing.JFrame {
         item_bottom_entered = new Color(153, 153, 153);
         item_menu_clicked = new Color(157, 0, 0);
         border_clicked = new BevelBorder(BevelBorder.RAISED);
+        jLabel1.setForeground(Color.WHITE);
+        jLabel2.setForeground(Color.WHITE);
+        jLabel3.setForeground(Color.WHITE);
+        jLabel4.setForeground(Color.WHITE);
+        jLabel5.setForeground(Color.WHITE);
+        jLabel6.setForeground(Color.WHITE);
+        jLabel7.setForeground(Color.WHITE);
+        jLabel8.setForeground(Color.WHITE);
+        jLabel9.setForeground(Color.WHITE);
+        jLabel10.setForeground(Color.WHITE);
+        jLabel11.setForeground(Color.WHITE);
+        jLabel14.setForeground(Color.WHITE);
+        jLabel15.setForeground(Color.WHITE);
+        jLabel16.setForeground(Color.WHITE);
         this.setLocationRelativeTo(null);
         
+        ImageIcon imagen1 = new ImageIcon("src/images/logo-footer.png");
+        Icon icono1 = new ImageIcon(imagen1.getImage().getScaledInstance(lblfootuv.getWidth(), lblfootuv.getHeight(), Image.SCALE_DEFAULT));
+        lblfootuv.setIcon(icono1);
         
+       
+        this.repaint();
+        
+        slid1 = true;
+        slid2 = true;
+        
+        SlideShow();
     }
+    
+    public void SlideShow(){
+        new Thread(){
+            int count;
+            @Override
+            public void run(){
+                try{
+                    while(true){
+                        switch(count){
+                            case 0:
+                                ImageIcon img1 = new ImageIcon(getClass().getResource("/images/imgIndex1.jpg"));
+                                Slider1.setIcon(img1);
+                                Thread.sleep(5000);   
+                                AC.jLabelXLeft(0, -1240, 20, 10, Slider1);
+                                AC.jLabelXLeft(1240, 0, 20, 10, Slider2);
+                                count = 1;
+                                break;
+                            case 1:
+                                ImageIcon img2 = new ImageIcon(getClass().getResource("/images/imgIndex2.jpg"));
+                                Slider2.setIcon(img2);
+                                Thread.sleep(5000);
+                                AC.jLabelXRight(-1240, 0, 20, 10, Slider1);
+                                AC.jLabelXRight(0, 1240, 20, 10, Slider2);
+                                count = 3;
+                                break;
+                                
+                            case 3:
+                                ImageIcon img3 = new ImageIcon(getClass().getResource("/images/imgIndex3.jpg"));
+                                Slider1.setIcon(img3);
+                                Thread.sleep(5000);   
+                                AC.jLabelXLeft(0, -1240, 20, 10, Slider1);
+                                AC.jLabelXLeft(1240, 0, 20, 10, Slider2);
+                                count = 4;
+                                break;
+                            
+                             case 4:
+                                ImageIcon img4 = new ImageIcon(getClass().getResource("/images/imgIndex4.jpg"));
+                                Slider2.setIcon(img4);
+                                Thread.sleep(5000);   
+                                AC.jLabelXRight(-1240, 0, 20, 10, Slider1);
+                                AC.jLabelXRight(0, 1240, 20, 10, Slider2);
+                                count = 5;
+                                break;
+                                 
+                            case 5:
+                                ImageIcon img5 = new ImageIcon(getClass().getResource("/images/imgIndex1.jpg"));
+                                Slider1.setIcon(img5);
+                                Thread.sleep(5000);   
+                                AC.jLabelXLeft(0, -1240, 20, 10, Slider1);
+                                AC.jLabelXLeft(1240, 0, 20, 10, Slider2);
+                                count = 0;
+                                break;
+                           
+                         
+                              
+                        }
+                    }
+                }catch(Exception e){
+                    
+                }
+            }
+        }.start();
+    }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -52,9 +146,29 @@ public class index extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
+        jPanelfooter = new javax.swing.JPanel();
+        lblfootuv = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
+        Slider1 = new javax.swing.JLabel();
+        Slider2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMinimumSize(new java.awt.Dimension(1240, 802));
         setUndecorated(true);
+        getContentPane().setLayout(null);
 
         jPanelbtnIndex.setBackground(new java.awt.Color(255, 255, 255));
         jPanelbtnIndex.setMinimumSize(new java.awt.Dimension(0, 0));
@@ -122,6 +236,11 @@ public class index extends javax.swing.JFrame {
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
+        getContentPane().add(jPanelbtnIndex);
+        jPanelbtnIndex.setBounds(0, 0, 1240, 25);
+
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+
         jButton1.setText("Iniciar sesión");
 
         jButton2.setText("Sobre nosotros");
@@ -131,36 +250,145 @@ public class index extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(250, 250, 250)
+                .addGap(282, 282, 282)
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 330, Short.MAX_VALUE)
+                .addGap(291, 291, 291)
                 .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(270, 270, 270))
+                .addContainerGap(317, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(20, 20, 20)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(71, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(200, Short.MAX_VALUE))
+                .addGap(56, 56, 56))
         );
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanelbtnIndex, javax.swing.GroupLayout.DEFAULT_SIZE, 1200, Short.MAX_VALUE)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        getContentPane().add(jPanel1);
+        jPanel1.setBounds(0, 432, 1240, 180);
+
+        jPanelfooter.setBackground(new java.awt.Color(255, 0, 51));
+
+        lblfootuv.setText("jLabel1");
+
+        jLabel1.setText("Universidad del Valle:");
+
+        jLabel2.setText("Cali - Colombia");
+
+        jLabel3.setText("Dirección:");
+
+        jLabel4.setText("Ciudad Universitaria Meléndez");
+
+        jLabel5.setText("Calle 13 # 100-00");
+
+        jLabel6.setText("Sede San Fernando ");
+
+        jLabel7.setText("PBX:");
+
+        jLabel8.setText("+57 2 3212100");
+
+        jLabel10.setText("Línea gratuita:");
+
+        jLabel11.setText("018000 22 00 21");
+
+        jLabel9.setText("Calle 4B # 36-00");
+
+        jLabel14.setText("Apartado Aéreo:");
+
+        jLabel15.setText("25360");
+
+        jLabel16.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
+        jLabel16.setText("Institución de educación superior sujeta a inspección y vigilancia por el Ministerio de Educación Nacional");
+
+        javax.swing.GroupLayout jPanelfooterLayout = new javax.swing.GroupLayout(jPanelfooter);
+        jPanelfooter.setLayout(jPanelfooterLayout);
+        jPanelfooterLayout.setHorizontalGroup(
+            jPanelfooterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelfooterLayout.createSequentialGroup()
+                .addGap(198, 198, 198)
+                .addComponent(lblfootuv, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanelfooterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanelfooterLayout.createSequentialGroup()
+                        .addGap(104, 104, 104)
+                        .addGroup(jPanelfooterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanelfooterLayout.createSequentialGroup()
+                                .addComponent(jLabel1)
+                                .addGap(86, 86, 86)
+                                .addComponent(jLabel3))
+                            .addGroup(jPanelfooterLayout.createSequentialGroup()
+                                .addComponent(jLabel2)
+                                .addGap(127, 127, 127)
+                                .addGroup(jPanelfooterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel5)
+                                    .addComponent(jLabel4)
+                                    .addComponent(jLabel9)
+                                    .addComponent(jLabel6))))
+                        .addGroup(jPanelfooterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanelfooterLayout.createSequentialGroup()
+                                .addGap(133, 133, 133)
+                                .addGroup(jPanelfooterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel11)
+                                    .addComponent(jLabel10)
+                                    .addComponent(jLabel14)
+                                    .addComponent(jLabel15)
+                                    .addComponent(jLabel8)))
+                            .addGroup(jPanelfooterLayout.createSequentialGroup()
+                                .addGap(129, 129, 129)
+                                .addComponent(jLabel7))))
+                    .addGroup(jPanelfooterLayout.createSequentialGroup()
+                        .addGap(88, 88, 88)
+                        .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 501, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(1007, 1007, 1007))
         );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanelbtnIndex, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 513, Short.MAX_VALUE)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+        jPanelfooterLayout.setVerticalGroup(
+            jPanelfooterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelfooterLayout.createSequentialGroup()
+                .addGroup(jPanelfooterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanelfooterLayout.createSequentialGroup()
+                        .addContainerGap(22, Short.MAX_VALUE)
+                        .addComponent(lblfootuv, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanelfooterLayout.createSequentialGroup()
+                        .addGap(37, 37, 37)
+                        .addGroup(jPanelfooterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel1)
+                            .addComponent(jLabel3)
+                            .addComponent(jLabel7))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanelfooterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel2)
+                            .addComponent(jLabel4)
+                            .addComponent(jLabel8))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanelfooterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel5)
+                            .addComponent(jLabel10))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanelfooterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel6)
+                            .addComponent(jLabel11))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanelfooterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel9)
+                            .addComponent(jLabel14))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel15)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel16)))
+                .addContainerGap())
         );
+
+        getContentPane().add(jPanelfooter);
+        jPanelfooter.setBounds(0, 598, 1240, 204);
+
+        Slider1.setText("jLabel12");
+        getContentPane().add(Slider1);
+        Slider1.setBounds(0, -6, 1240, 480);
+
+        Slider2.setText("jLabel12");
+        getContentPane().add(Slider2);
+        Slider2.setBounds(1240, -6, 1240, 480);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -236,11 +464,29 @@ public class index extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel Slider1;
+    private javax.swing.JLabel Slider2;
     private javax.swing.JButton btnCerrar;
     private javax.swing.JButton btnMiminize;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanelbtnIndex;
+    private javax.swing.JPanel jPanelfooter;
+    private javax.swing.JLabel lblfootuv;
     // End of variables declaration//GEN-END:variables
 }
