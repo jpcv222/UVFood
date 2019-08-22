@@ -65,6 +65,10 @@ public class ConsultasAdmin extends ConexionBD {
             logs.escribirExceptionLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// " + ex.getMessage() + " " + ex.toString());
             modal.error_message("Error", "Algo anda mal", "El servidor esta presentado problemas", "Por Favor intenta mas tarde", "O reportanos que ocurre");
             return false;
+        } catch (NullPointerException np) {
+            logs.escribirExceptionLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// " + np.getMessage() + " " + np.toString());
+            modal.error_message("Error", "Algo anda mal", "El servidor esta presentado problemas", "Por Favor intenta mas tarde", "O reportanos que ocurre");
+            return false;
         }
 
     }
@@ -77,10 +81,9 @@ public class ConsultasAdmin extends ConexionBD {
         Connection conn = Conexion();
         ResultSet rs = null;
         String filtro = "'%" + dato + "%'";
-        
-        //$query = "SELECT * FROM imagenesproductos WHERE nombre LIKE '%$q%' OR descripcion LIKE '%$q%' OR precio LIKE '%$q%' OR categoria LIKE '%$q%'";
 
-        String sql = "SELECT * FROM uvfood_user where idUser::text LIKE"+filtro+" OR username::text LIKE"+filtro+" OR firstname::text LIKE"+filtro+" OR surname::text LIKE"+filtro;
+        //$query = "SELECT * FROM imagenesproductos WHERE nombre LIKE '%$q%' OR descripcion LIKE '%$q%' OR precio LIKE '%$q%' OR categoria LIKE '%$q%'";
+        String sql = "SELECT * FROM uvfood_user where idUser::text LIKE" + filtro + " OR username::text LIKE" + filtro + " OR firstname::text LIKE" + filtro + " OR surname::text LIKE" + filtro;
         try {
             ps = conn.prepareStatement(sql);
             rs = ps.executeQuery();
@@ -112,7 +115,11 @@ public class ConsultasAdmin extends ConexionBD {
         } catch (SQLException ex) {
             logs.escribirExceptionLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// " + ex.getMessage() + " " + ex.toString());
             modal.error_message("Error", "Algo anda mal", "El servidor esta presentado problemas", "Por Favor intenta mas tarde", "O reportanos que ocurre");
-           
+
+            return false;
+        }catch (NullPointerException np) {
+            logs.escribirExceptionLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// " + np.getMessage() + " " + np.toString());
+            modal.error_message("Error", "Algo anda mal", "El servidor esta presentado problemas", "Por Favor intenta mas tarde", "O reportanos que ocurre");
             return false;
         }
     }
