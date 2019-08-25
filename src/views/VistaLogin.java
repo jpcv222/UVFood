@@ -287,7 +287,18 @@ public class VistaLogin extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonIniciarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonIniciarSesionActionPerformed
+//<<<<<<< HEAD
+        String cuenta = jTextField1.getText();
+        char[] contra = jPasswordField.getPassword();
+        String pass = new String(contra);
+        JOptionPane.showMessageDialog(null, cuenta + "\n"+ pass);
+        if(pass.equals("123") && cuenta.equalsIgnoreCase("A123")){
+            JOptionPane.showMessageDialog(null, "Login exitoso");
+        }
+        
+//=======
 
+//>>>>>>> 1cda799ef8ceb5d883c41de77ca2ec1af3715ffc
     }//GEN-LAST:event_jButtonIniciarSesionActionPerformed
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
@@ -378,6 +389,14 @@ public class VistaLogin extends javax.swing.JFrame {
             }
 
         });
+    }
+    
+    public static boolean Login(String cuenta, String contra){
+        if(cuenta.equalsIgnoreCase("A123") && contra.equals("123")){
+            return true;
+        }else{
+            return false;
+        }
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

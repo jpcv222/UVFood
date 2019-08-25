@@ -20,7 +20,7 @@ public class ConexionBD {
 
     private String url = "jdbc:postgresql://localhost:5432/uvfood";
     private String user = "postgres";
-    private String password = "root";
+    private String password = "atila1994";
     private Connection conn = null;
     private Logs logs = new Logs(Thread.currentThread().getStackTrace()[1].getClassName());
 
