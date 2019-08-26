@@ -3,8 +3,14 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Monitor-Sistemas/Desktop/Hanier/UVFood/UVFood/src/views/index.java</file>
-            <file>file:/C:/Users/Monitor-Sistemas/Desktop/Hanier/UVFood/UVFood/src/views/VistaAdmin.java</file>
+            <file>file:/C:/Users/STH_1F_MCB_PC/Desktop/UVFood/src/classes/ConsultasCliente.java</file>
+            <file>file:/C:/Users/STH_1F_MCB_PC/Desktop/UVFood/src/uvfood/UVFood.java</file>
+            <file>file:/C:/Users/STH_1F_MCB_PC/Desktop/UVFood/src/views/VistaAdmin.java</file>
+            <file>file:/C:/Users/STH_1F_MCB_PC/Desktop/UVFood/src/views/Index.java</file>
+            <file>file:/C:/Users/STH_1F_MCB_PC/Desktop/UVFood/src/managers/ControladorAdmin.java</file>
+            <file>file:/C:/Users/STH_1F_MCB_PC/Desktop/UVFood/src/logs/exception.txt</file>
+            <file>file:/C:/Users/STH_1F_MCB_PC/Desktop/UVFood/src/managers/DBquery.java</file>
+            <file>file:/C:/Users/STH_1F_MCB_PC/Desktop/UVFood/src/managers/ControladorCliente.java</file>
         </group>
     </open-files>
 </project-private>
