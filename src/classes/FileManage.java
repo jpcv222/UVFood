@@ -16,7 +16,7 @@ import javax.swing.JFileChooser;
  */
 public class FileManage {
 
-    String ruta;
+    String  ruta;
     private static Logs logs;
 
     public FileManage() {
@@ -45,10 +45,10 @@ public class FileManage {
         return result_ruta;
     }
 
-    public String selectFile() {
+    public static String selectFile(String ruta_alt) {
         String response;
-        if (this.calcularRutaArchivo() != null) {
-            response = this.getRuta();
+        if (ruta_alt != null) {
+            response = ruta_alt;
         } else {
             response = "Archivo CSV, ruta errónea";
         }

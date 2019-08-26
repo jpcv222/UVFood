@@ -41,7 +41,7 @@ public class ControladorAdmin implements ActionListener {
     public void selectFile(String tipoCarga) {
         if (keyvalidate.haveKey("action-method-name", "user-id")) {
 
-            String response = file.selectFile();
+            String response = file.selectFile(file.calcularRutaArchivo());
             interfazPrincipalAdmin.jLabelRutaArchivo.setText(response);
 
             validateBtCargar();

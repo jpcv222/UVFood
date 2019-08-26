@@ -196,3 +196,5 @@ classes.ConexionBD//Conexion// FATAL: la autentificación password falló para e
 classes.ConsultasAdmin//llenarTabla// null java.lang.NullPointerException// 2019-08-21T21:48:07.679
 classes.FileManage//readCSVFile// null java.lang.NullPointerException// 2019-08-26T00:43:56.165
 classes.FileManage//calcularRutaArchivo// null java.lang.NullPointerException// 2019-08-26T00:46:32.483
+FileManageTest//testLogin// null java.lang.NullPointerException// 2019-08-26T00:53:53.501
+FileManageTest//testLogin// null java.lang.NullPointerException// 2019-08-26T00:54:13.023
