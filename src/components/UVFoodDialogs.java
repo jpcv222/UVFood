@@ -43,7 +43,7 @@ public class UVFoodDialogs {
         }
     }
 
-    public void succes_message(String title, String subtitle, String body1, String body2, String body3) {
+    public void success_message(String title, String subtitle, String body1, String body2, String body3) {
 
         if (validate_message(title, subtitle, body1)) {
             succes_message.jLabelTitleModal.setText(title);

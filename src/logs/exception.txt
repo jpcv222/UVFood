@@ -194,3 +194,5 @@ classes.ConexionBD//Conexion// FATAL: la autentificación password falló para e
 classes.ConsultasAdmin//buscarUser// null java.lang.NullPointerException// 2019-08-21T21:47:53.998
 classes.ConexionBD//Conexion// FATAL: la autentificación password falló para el usuario «postgres» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf) org.postgresql.util.PSQLException: FATAL: la autentificación password falló para el usuario «postgres» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf)// 2019-08-21T21:48:07.670
 classes.ConsultasAdmin//llenarTabla// null java.lang.NullPointerException// 2019-08-21T21:48:07.679
+classes.FileManage//readCSVFile// null java.lang.NullPointerException// 2019-08-26T00:43:56.165
+classes.FileManage//calcularRutaArchivo// null java.lang.NullPointerException// 2019-08-26T00:46:32.483
