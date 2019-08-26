@@ -5,6 +5,9 @@
  */
 package views;
 
+import java.awt.Color;
+import java.awt.Font;
+
 /**
  *
  * @author jpcv2
@@ -14,7 +17,11 @@ public class SuccesMessage extends javax.swing.JFrame {
     /**
      * Creates new form ErrorMessage
      */
+    
+    Color green_success;
+    
     public SuccesMessage() {
+        green_success = new Color (0,153,102);
         initComponents();
         this.setLocationRelativeTo(null);
     }
@@ -34,10 +41,11 @@ public class SuccesMessage extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jLabelSubtitleModal = new javax.swing.JLabel();
         jLabelIconModal = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
         jLabelBodyModal3 = new javax.swing.JLabel();
         jLabelBodyModal1 = new javax.swing.JLabel();
         jLabelBodyModal2 = new javax.swing.JLabel();
+        jPanelAceptar = new javax.swing.JPanel();
+        jLabelAceptar = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -82,20 +90,6 @@ public class SuccesMessage extends javax.swing.JFrame {
         jLabelIconModal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/succes_message.png"))); // NOI18N
         jPanel1.add(jLabelIconModal, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 50, 100, 80));
 
-        jButton2.setBackground(new java.awt.Color(255, 255, 255));
-        jButton2.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(0, 153, 0));
-        jButton2.setText("Aceptar");
-        jButton2.setBorder(javax.swing.BorderFactory.createCompoundBorder(new javax.swing.border.LineBorder(new java.awt.Color(102, 153, 0), 1, true), null));
-        jButton2.setContentAreaFilled(false);
-        jButton2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 300, 180, 50));
-
         jLabelBodyModal3.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabelBodyModal3.setForeground(new java.awt.Color(102, 102, 102));
         jLabelBodyModal3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -114,25 +108,61 @@ public class SuccesMessage extends javax.swing.JFrame {
         jLabelBodyModal2.setText("Cuerpo del aviso 2.");
         jPanel1.add(jLabelBodyModal2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 220, 400, 30));
 
+        jPanelAceptar.setBackground(new java.awt.Color(255, 255, 255));
+        jPanelAceptar.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 153, 102), 2, true));
+        jPanelAceptar.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jPanelAceptar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jPanelAceptarMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jPanelAceptarMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jPanelAceptarMouseExited(evt);
+            }
+        });
+        jPanelAceptar.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabelAceptar.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jLabelAceptar.setForeground(new java.awt.Color(0, 153, 102));
+        jLabelAceptar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabelAceptar.setText("Aceptar");
+        jPanelAceptar.add(jLabelAceptar, new org.netbeans.lib.awtextra.AbsoluteConstraints(37, 6, 140, 40));
+
+        jPanel1.add(jPanelAceptar, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 290, 210, 50));
+
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 400, 370));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
-        this.dispose();
-    }//GEN-LAST:event_jButton2ActionPerformed
-
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         this.dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jPanelAceptarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelAceptarMouseClicked
+        // TODO add your handling code here:
+        this.dispose();
+    }//GEN-LAST:event_jPanelAceptarMouseClicked
+
+    private void jPanelAceptarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelAceptarMouseEntered
+        // TODO add your handling code here:
+        jPanelAceptar.setBackground(green_success);
+        jLabelAceptar.setForeground(Color.white);
+    }//GEN-LAST:event_jPanelAceptarMouseEntered
+
+    private void jPanelAceptarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelAceptarMouseExited
+        // TODO add your handling code here:
+        jPanelAceptar.setBackground(Color.white);
+         jLabelAceptar.setForeground(green_success);
+    }//GEN-LAST:event_jPanelAceptarMouseExited
             
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JLabel jLabelAceptar;
     public javax.swing.JLabel jLabelBodyModal1;
     public javax.swing.JLabel jLabelBodyModal2;
     public javax.swing.JLabel jLabelBodyModal3;
@@ -141,5 +171,6 @@ public class SuccesMessage extends javax.swing.JFrame {
     public javax.swing.JLabel jLabelTitleModal;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanelAceptar;
     // End of variables declaration//GEN-END:variables
 }
