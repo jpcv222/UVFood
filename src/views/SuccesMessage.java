@@ -94,7 +94,7 @@ public class SuccesMessage extends javax.swing.JFrame {
         jLabelBodyModal3.setForeground(new java.awt.Color(102, 102, 102));
         jLabelBodyModal3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabelBodyModal3.setText("Cuerpo del aviso 3.");
-        jPanel1.add(jLabelBodyModal3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 240, 400, 40));
+        jPanel1.add(jLabelBodyModal3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 250, 400, 40));
 
         jLabelBodyModal1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabelBodyModal1.setForeground(new java.awt.Color(102, 102, 102));
@@ -130,7 +130,7 @@ public class SuccesMessage extends javax.swing.JFrame {
         jLabelAceptar.setText("Aceptar");
         jPanelAceptar.add(jLabelAceptar, new org.netbeans.lib.awtextra.AbsoluteConstraints(37, 6, 140, 40));
 
-        jPanel1.add(jPanelAceptar, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 290, 210, 50));
+        jPanel1.add(jPanelAceptar, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 300, 210, 50));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 400, 370));
 
