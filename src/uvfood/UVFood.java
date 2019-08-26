@@ -13,6 +13,7 @@ import classes.Usuario;
 import components.UVFoodDialogs;
 import managers.ControladorAdmin;
 import managers.ControladorCliente;
+import views.Index;
 import views.VistaAdmin;
 import views.VistaCliente;
 import views.VistaLogin;
@@ -47,15 +48,15 @@ public class UVFood extends ConexionBD {
         VistaCliente vistaCliente = new VistaCliente();
         VistaAdmin vistaAdmin = new VistaAdmin();
         VistaLogin vistaLogin = new VistaLogin();
+        Index index = new Index();
+        
         ConsultasCliente consultasCliente = new ConsultasCliente();
         ConsultasAdmin consultasAdmin = new ConsultasAdmin();
         
         ControladorCliente controladorCliente = new ControladorCliente(vistaCliente, vistaLogin, consultasCliente, usuario);
         controladorCliente.iniciar();
-        vistaLogin.setVisible(true);
+        index.setVisible(true);
         
-        ControladorAdmin controladorAdmin = new ControladorAdmin(vistaAdmin, consultasAdmin);
-
     }
 
 }

@@ -17,12 +17,17 @@ import javax.swing.border.BevelBorder;
  *
  * @author sp
  */
-public class index extends javax.swing.JFrame {
+public class Index extends javax.swing.JFrame {
 
     /**
-     * Creates new form index
+     * Creates new form Index
      */
-    Color item_menu_exited, item_bottom_exited;
+    Color item_menu_exited,
+
+    /**
+     * Creates new form Index
+     */
+    item_bottom_exited;
     Color item_menu_entered, item_bottom_entered;
     Color item_menu_clicked;
     BevelBorder border_clicked;
@@ -30,7 +35,9 @@ public class index extends javax.swing.JFrame {
     int yMouse;
     boolean slid1, slid2;
     AnimationClass AC = new AnimationClass();
-    public index() {
+    
+    public static VistaLogin login;
+    public Index() {
         initComponents();
         item_menu_exited = new Color(205, 31, 50);
         item_bottom_exited = new Color(240, 240, 240);
@@ -365,13 +372,15 @@ public class index extends javax.swing.JFrame {
                             .addComponent(jLabel5)
                             .addComponent(jLabel10))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanelfooterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel6)
-                            .addComponent(jLabel11))
+                        .addGroup(jPanelfooterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel11)
+                            .addGroup(jPanelfooterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jLabel6)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanelfooterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addGroup(jPanelfooterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel9)
-                            .addComponent(jLabel14))
+                            .addGroup(jPanelfooterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jLabel14)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel15)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -380,7 +389,7 @@ public class index extends javax.swing.JFrame {
         );
 
         getContentPane().add(jPanelfooter);
-        jPanelfooter.setBounds(0, 598, 1240, 204);
+        jPanelfooter.setBounds(0, 598, 1240, 0);
 
         Slider1.setText("jLabel12");
         getContentPane().add(Slider1);
@@ -445,20 +454,21 @@ public class index extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(index.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Index.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(index.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Index.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(index.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Index.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(index.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Index.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new index().setVisible(true);
+                new Index().setVisible(true);
             }
         });
     }
