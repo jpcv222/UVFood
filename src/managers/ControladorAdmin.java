@@ -12,18 +12,13 @@ import java.awt.event.ActionListener;
 import views.VistaAdmin;
 import classes.KeyValidate;
 import classes.Logs;
+import classes.Usuario;
 import components.UVFoodDialogs;
-import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.nio.file.StandardCopyOption;
 import static java.nio.file.StandardCopyOption.REPLACE_EXISTING;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javafx.stage.FileChooser;
-import javafx.stage.Window;
 
 /**
  *
@@ -32,11 +27,12 @@ import javafx.stage.Window;
  */
 public class ControladorAdmin implements ActionListener {
 
-    private VistaAdmin interfazPrincipalAdmin;
-    private FileManage file = new FileManage();
-    private KeyValidate keyvalidate = new KeyValidate();
-    private UVFoodDialogs modal = new UVFoodDialogs();
+    private final VistaAdmin interfazPrincipalAdmin;
+    private final FileManage file = new FileManage();
+    private final KeyValidate keyvalidate = new KeyValidate();
+    private final UVFoodDialogs modal = new UVFoodDialogs();
     private ConsultasAdmin consultasAdmin;
+    private Usuario user;
 
     private Logs logs = new Logs(Thread.currentThread().getStackTrace()[1].getClassName());
 
@@ -49,7 +45,7 @@ public class ControladorAdmin implements ActionListener {
     public void selectFile(String tipoCarga) {
         if (keyvalidate.haveKey("action-method-name", "user-id")) {
 
-            String response = file.selectFile(file.calcularRutaArchivo());
+            String response = FileManage.selectFile(file.calcularRutaArchivo());
             interfazPrincipalAdmin.jLabelRutaArchivo.setText(response);
 
             validateBtCargar();
@@ -69,7 +65,7 @@ public class ControladorAdmin implements ActionListener {
 
     public void readCSVFile() {
         if (keyvalidate.haveKey("action-method-name", "user-id")) {
-            String response = file.readCSVFile(file.getRuta());
+            String response = FileManage.readCSVFile(file.getRuta());
 
             switch (response) {
                 case "success":
@@ -144,7 +140,6 @@ public class ControladorAdmin implements ActionListener {
             } else {
                 System.out.println("no entro");
             }
-
         }
     }
 

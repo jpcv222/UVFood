@@ -497,8 +497,8 @@ ALTER SEQUENCE public.uvfood_typeuser_id_typeuser_seq OWNED BY public.uvfood_typ
 --
 
 CREATE TABLE public.uvfood_user (
-    iduser integer NOT NULL,
-    username character(7) NOT NULL,
+    iduser serial NOT NULL,
+    username character(20) NOT NULL,
     firstname character varying(200) NOT NULL,
     surname character varying(200) NOT NULL,
     birth_date date,

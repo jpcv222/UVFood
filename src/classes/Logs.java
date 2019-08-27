@@ -20,7 +20,7 @@ public class Logs {
     public Logs(String  className) {
         this.className = className;
         this.directorioRaiz = System.getProperty("user.dir");
-        this.exceptionLogsFile = directorioRaiz+"/src/logs/exception.txt";
+        this.exceptionLogsFile = directorioRaiz+"/src/files/logs/exception.txt";
     }
 
     public String getClassName() {
