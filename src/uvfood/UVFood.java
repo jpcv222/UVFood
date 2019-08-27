@@ -54,7 +54,6 @@ public class UVFood extends ConexionBD {
         ConsultasAdmin consultasAdmin = new ConsultasAdmin();
         
         ControladorCliente controladorCliente = new ControladorCliente(vistaCliente, vistaLogin, consultasCliente, usuario);
-        controladorCliente.iniciar();
         index.setVisible(true);
         
     }

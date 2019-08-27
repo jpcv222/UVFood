@@ -5,6 +5,9 @@
  */
 package views;
 
+import classes.ConsultasCliente;
+import classes.Usuario;
+import components.UVFoodDialogs;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Frame;
@@ -21,6 +24,8 @@ import javax.swing.JPanel;
 import javax.swing.JRootPane;
 import javax.swing.border.Border;
 import javax.swing.border.LineBorder;
+import org.apache.commons.codec.digest.DigestUtils;
+import validations.Validations;
 
 /**
  *
@@ -35,13 +40,17 @@ public class VistaLogin extends javax.swing.JFrame {
     int xMouse;
     int yMouse;
     
+    Validations validations = new Validations();
+    private Usuario modeloCliente = new Usuario();
+    private ConsultasCliente consultasCliente = new ConsultasCliente();
+    UVFoodDialogs modal = new UVFoodDialogs();
+
     public VistaLogin() {
         initComponents();
         this.setLocationRelativeTo(null);
-        jPanelLogin.setLocation(jPanelPrincipal.getHeight()/2, jPanelPrincipal.getWidth()/2);
-        
-    }
+        jPanelLogin.setLocation(jPanelPrincipal.getHeight() / 2, jPanelPrincipal.getWidth() / 2);
 
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -79,6 +88,11 @@ public class VistaLogin extends javax.swing.JFrame {
         addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 formMousePressed(evt);
+            }
+        });
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowClosing(java.awt.event.WindowEvent evt) {
+                formWindowClosing(evt);
             }
         });
 
@@ -286,21 +300,6 @@ public class VistaLogin extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButtonIniciarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonIniciarSesionActionPerformed
-//<<<<<<< HEAD
-        String cuenta = jTextField1.getText();
-        char[] contra = jPasswordField.getPassword();
-        String pass = new String(contra);
-        JOptionPane.showMessageDialog(null, cuenta + "\n"+ pass);
-        if(pass.equals("123") && cuenta.equalsIgnoreCase("A123")){
-            JOptionPane.showMessageDialog(null, "Login exitoso");
-        }
-        
-//=======
-
-//>>>>>>> 1cda799ef8ceb5d883c41de77ca2ec1af3715ffc
-    }//GEN-LAST:event_jButtonIniciarSesionActionPerformed
-
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField1ActionPerformed
@@ -310,7 +309,8 @@ public class VistaLogin extends javax.swing.JFrame {
     }//GEN-LAST:event_btnCerrarMouseEntered
 
     private void btnCerrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCerrarMouseClicked
-        System.exit(0);
+        this.dispose();
+        Index.login = null;
     }//GEN-LAST:event_btnCerrarMouseClicked
 
     private void btnCerrarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCerrarMouseExited
@@ -326,7 +326,7 @@ public class VistaLogin extends javax.swing.JFrame {
     }//GEN-LAST:event_btnMiminizeMouseExited
 
     private void btnMiminizeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnMiminizeMouseClicked
-       this.setState(Frame.ICONIFIED);
+        this.setState(Frame.ICONIFIED);
     }//GEN-LAST:event_btnMiminizeMouseClicked
 
     private void jButtonIniciarSesionMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonIniciarSesionMousePressed
@@ -343,15 +343,46 @@ public class VistaLogin extends javax.swing.JFrame {
     }//GEN-LAST:event_formMouseDragged
 
     private void jPanel1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel1MousePressed
-        xMouse  = evt.getX();
+        xMouse = evt.getX();
         yMouse = evt.getY();
     }//GEN-LAST:event_jPanel1MousePressed
 
     private void jPanel1MouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel1MouseDragged
         int x = evt.getXOnScreen();
         int y = evt.getYOnScreen();
-        this.setLocation(x-xMouse , y-yMouse);
+        this.setLocation(x - xMouse, y - yMouse);
     }//GEN-LAST:event_jPanel1MouseDragged
+
+    private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
+        // TODO add your handling code here:
+
+    }//GEN-LAST:event_formWindowClosing
+
+    private void jButtonIniciarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonIniciarSesionActionPerformed
+        // TODO add your handling code here:
+      
+            String clave = new String(jPasswordField.getPassword());
+            String claveEn = DigestUtils.sha1Hex(clave);
+
+            if (validations.campoVacio(jPasswordField) && validations.campoVacio(jTextField1)) {
+                modeloCliente.setUsername(jTextField1.getText());
+                modeloCliente.setPassword_user(clave);
+
+                if (consultasCliente.login(modeloCliente, this)) {
+                    this.dispose();
+                    Index.login = null;
+
+                    VistaCliente home = new VistaCliente(modeloCliente);
+                    VistaAdmin home2 = new VistaAdmin();
+                    home.setVisible(true);
+                }
+
+            } else {
+                modal.error_message("Error", "Campos obligatorios", "Debes llenar todos los campos", null, null);
+            }
+
+        
+    }//GEN-LAST:event_jButtonIniciarSesionActionPerformed
 
     /**
      * @param args the command line arguments
@@ -384,17 +415,16 @@ public class VistaLogin extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new VistaLogin().setVisible(true);
-                
 
             }
 
         });
     }
-    
-    public static boolean Login(String cuenta, String contra){
-        if(cuenta.equalsIgnoreCase("A123") && contra.equals("123")){
+
+    public static boolean Login(String cuenta, String contra) {
+        if (cuenta.equalsIgnoreCase("A123") && contra.equals("123")) {
             return true;
-        }else{
+        } else {
             return false;
         }
     }

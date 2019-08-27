@@ -37,6 +37,7 @@ public class Index extends javax.swing.JFrame {
     AnimationClass AC = new AnimationClass();
     
     public static VistaLogin login;
+    
     public Index() {
         initComponents();
         item_menu_exited = new Color(205, 31, 50);
@@ -148,11 +149,11 @@ public class Index extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanelbtnIndex = new javax.swing.JPanel();
-        btnCerrar = new javax.swing.JButton();
         btnMiminize = new javax.swing.JButton();
+        btnCerrar = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        btnIniciarSesion = new javax.swing.JButton();
+        btnSobreNosotros = new javax.swing.JButton();
         jPanelfooter = new javax.swing.JPanel();
         lblfootuv = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
@@ -191,22 +192,6 @@ public class Index extends javax.swing.JFrame {
             }
         });
 
-        btnCerrar.setBackground(new java.awt.Color(255, 255, 255));
-        btnCerrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Exit.png"))); // NOI18N
-        btnCerrar.setContentAreaFilled(false);
-        btnCerrar.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Exit2.png"))); // NOI18N
-        btnCerrar.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnCerrarMouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                btnCerrarMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                btnCerrarMouseExited(evt);
-            }
-        });
-
         btnMiminize.setBackground(new java.awt.Color(255, 255, 255));
         btnMiminize.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Minimize.png"))); // NOI18N
         btnMiminize.setContentAreaFilled(false);
@@ -224,22 +209,45 @@ public class Index extends javax.swing.JFrame {
             }
         });
 
+        btnCerrar.setBackground(new java.awt.Color(255, 255, 255));
+        btnCerrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Exit.png"))); // NOI18N
+        btnCerrar.setContentAreaFilled(false);
+        btnCerrar.setOpaque(true);
+        btnCerrar.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Exit2.png"))); // NOI18N
+        btnCerrar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnCerrarMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnCerrarMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnCerrarMouseExited(evt);
+            }
+        });
+        btnCerrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCerrarActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanelbtnIndexLayout = new javax.swing.GroupLayout(jPanelbtnIndex);
         jPanelbtnIndex.setLayout(jPanelbtnIndexLayout);
         jPanelbtnIndexLayout.setHorizontalGroup(
             jPanelbtnIndexLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelbtnIndexLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
+                .addGap(0, 1174, Short.MAX_VALUE)
                 .addComponent(btnMiminize, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnCerrar, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 0, 0)
+                .addComponent(btnCerrar, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(6, 6, 6))
         );
         jPanelbtnIndexLayout.setVerticalGroup(
             jPanelbtnIndexLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelbtnIndexLayout.createSequentialGroup()
                 .addGroup(jPanelbtnIndexLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnCerrar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnMiminize, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(btnMiminize, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnCerrar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
@@ -248,29 +256,60 @@ public class Index extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
-        jButton1.setText("Iniciar sesión");
+        btnIniciarSesion.setBackground(new java.awt.Color(255, 255, 255));
+        btnIniciarSesion.setText("Sobre Nosotros");
+        btnIniciarSesion.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        btnIniciarSesion.setContentAreaFilled(false);
+        btnIniciarSesion.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnIniciarSesion.setOpaque(true);
+        btnIniciarSesion.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnIniciarSesionMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnIniciarSesionMouseExited(evt);
+            }
+        });
 
-        jButton2.setText("Sobre nosotros");
+        btnSobreNosotros.setBackground(new java.awt.Color(255, 255, 255));
+        btnSobreNosotros.setText("Iniciar Sesion");
+        btnSobreNosotros.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        btnSobreNosotros.setContentAreaFilled(false);
+        btnSobreNosotros.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnSobreNosotros.setOpaque(true);
+        btnSobreNosotros.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnSobreNosotrosMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnSobreNosotrosMouseExited(evt);
+            }
+        });
+        btnSobreNosotros.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSobreNosotrosActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(282, 282, 282)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(291, 291, 291)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(317, Short.MAX_VALUE))
+                .addContainerGap(272, Short.MAX_VALUE)
+                .addComponent(btnSobreNosotros, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(234, 234, 234)
+                .addComponent(btnIniciarSesion, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(266, 266, 266))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(71, Short.MAX_VALUE)
+                .addContainerGap(81, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(56, 56, 56))
+                    .addComponent(btnIniciarSesion, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnSobreNosotros, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(52, 52, 52))
         );
 
         getContentPane().add(jPanel1);
@@ -374,13 +413,11 @@ public class Index extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanelfooterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel11)
-                            .addGroup(jPanelfooterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(jLabel6)))
+                            .addComponent(jLabel6))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanelfooterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel9)
-                            .addGroup(jPanelfooterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(jLabel14)))
+                            .addComponent(jLabel14))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel15)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -389,7 +426,7 @@ public class Index extends javax.swing.JFrame {
         );
 
         getContentPane().add(jPanelfooter);
-        jPanelfooter.setBounds(0, 598, 1240, 0);
+        jPanelfooter.setBounds(0, 598, 1240, 204);
 
         Slider1.setText("jLabel12");
         getContentPane().add(Slider1);
@@ -413,6 +450,38 @@ public class Index extends javax.swing.JFrame {
         yMouse = evt.getY();
     }//GEN-LAST:event_jPanelbtnIndexMousePressed
 
+    private void btnMiminizeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnMiminizeMouseClicked
+        this.setState(Frame.ICONIFIED);
+    }//GEN-LAST:event_btnMiminizeMouseClicked
+
+    private void btnMiminizeMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnMiminizeMouseEntered
+        btnMiminize.setBackground(new Color(229, 229, 229));
+    }//GEN-LAST:event_btnMiminizeMouseEntered
+
+    private void btnMiminizeMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnMiminizeMouseExited
+       btnMiminize.setBackground(new Color(255, 255, 255));
+    }//GEN-LAST:event_btnMiminizeMouseExited
+
+    private void btnIniciarSesionMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnIniciarSesionMouseEntered
+        // TODO add your handling code here:
+        btnIniciarSesion.setBackground(new Color(250,250,250));
+    }//GEN-LAST:event_btnIniciarSesionMouseEntered
+
+    private void btnIniciarSesionMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnIniciarSesionMouseExited
+        // TODO add your handling code here:
+        btnIniciarSesion.setBackground(new Color(255,255,255));
+    }//GEN-LAST:event_btnIniciarSesionMouseExited
+
+    private void btnSobreNosotrosMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSobreNosotrosMouseEntered
+        // TODO add your handling code here:
+        btnSobreNosotros.setBackground(new Color(250,250,250));
+    }//GEN-LAST:event_btnSobreNosotrosMouseEntered
+
+    private void btnSobreNosotrosMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSobreNosotrosMouseExited
+        // TODO add your handling code here:
+        btnSobreNosotros.setBackground(new Color(255,255,255));
+    }//GEN-LAST:event_btnSobreNosotrosMouseExited
+
     private void btnCerrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCerrarMouseClicked
         System.exit(0);
     }//GEN-LAST:event_btnCerrarMouseClicked
@@ -425,17 +494,18 @@ public class Index extends javax.swing.JFrame {
         btnCerrar.setBackground(new Color(255, 255, 255));
     }//GEN-LAST:event_btnCerrarMouseExited
 
-    private void btnMiminizeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnMiminizeMouseClicked
-        this.setState(Frame.ICONIFIED);
-    }//GEN-LAST:event_btnMiminizeMouseClicked
+    private void btnCerrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCerrarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnCerrarActionPerformed
 
-    private void btnMiminizeMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnMiminizeMouseEntered
-        btnMiminize.setBackground(new Color(229, 229, 229));
-    }//GEN-LAST:event_btnMiminizeMouseEntered
-
-    private void btnMiminizeMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnMiminizeMouseExited
-       btnMiminize.setBackground(new Color(255, 255, 255));
-    }//GEN-LAST:event_btnMiminizeMouseExited
+    private void btnSobreNosotrosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSobreNosotrosActionPerformed
+        // TODO add your handling code here:
+        if (login == null) {
+            
+            login = new VistaLogin();
+            login.setVisible(true);
+        }
+    }//GEN-LAST:event_btnSobreNosotrosActionPerformed
 
     /**
      * @param args the command line arguments
@@ -477,9 +547,9 @@ public class Index extends javax.swing.JFrame {
     private javax.swing.JLabel Slider1;
     private javax.swing.JLabel Slider2;
     private javax.swing.JButton btnCerrar;
+    public javax.swing.JButton btnIniciarSesion;
     private javax.swing.JButton btnMiminize;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
+    public javax.swing.JButton btnSobreNosotros;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
