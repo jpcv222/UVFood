@@ -26,7 +26,12 @@ public class ConsultasAdmin extends ConexionBD {
 
     public boolean llenarTabla(VistaAdmin vista) {
 
-        DefaultTableModel modelo = new DefaultTableModel();
+        DefaultTableModel modelo = new DefaultTableModel() {
+            @Override
+            public boolean isCellEditable(int row, int col) {
+                return false;
+            }
+        };
 
         PreparedStatement ps = null;
         Connection conn = Conexion();
@@ -75,7 +80,12 @@ public class ConsultasAdmin extends ConexionBD {
 
     public boolean buscarUser(String dato, VistaAdmin vista) {
 
-        DefaultTableModel modelo = new DefaultTableModel();
+        DefaultTableModel modelo = new DefaultTableModel() {
+            @Override
+            public boolean isCellEditable(int row, int col) {
+                return false;
+            }
+        };
 
         PreparedStatement ps = null;
         Connection conn = Conexion();
@@ -117,7 +127,45 @@ public class ConsultasAdmin extends ConexionBD {
             modal.error_message("Error", "Algo anda mal", "El servidor esta presentado problemas", "Por Favor intenta mas tarde", "O reportanos que ocurre");
 
             return false;
-        }catch (NullPointerException np) {
+        } catch (NullPointerException np) {
+            logs.escribirExceptionLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// " + np.getMessage() + " " + np.toString());
+            modal.error_message("Error", "Algo anda mal", "El servidor esta presentado problemas", "Por Favor intenta mas tarde", "O reportanos que ocurre");
+            return false;
+        }
+    }
+    public boolean llenarAcciones(VistaAdmin vista) {
+
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        
+        try {
+            Connection conn = Conexion();
+            
+            int fila = vista.jTableUsers.getSelectedRow();
+            String codigo = vista.jTableUsers.getValueAt(fila, 0).toString();
+            
+            String sql = "SELECT * FROM uvfood_user WHERE iduser=?";
+            ps = conn.prepareStatement(sql);
+            ps.setString(1, codigo);
+            rs = ps.executeQuery();
+
+            while (rs.next()) {
+                vista.jTextFieldUser.setText(rs.getString("username"));
+                vista.jTextFieldName.setText(rs.getString("firstname"));
+                vista.jTextFieldApellido.setText(rs.getString("surname"));
+                vista.jTextFieldEmail.setText(rs.getString("email"));
+                vista.jTextFieldFecNa.setText(rs.getString("birth_date"));
+            }
+            rs.close();
+            ps.close();
+            return true;
+        } catch (SQLException ex) {
+            logs.escribirExceptionLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// " + ex.getMessage() + " " + ex.toString());
+            modal.error_message("Error", "Algo anda mal", "El servidor esta presentado problemas", "Por Favor intenta mas tarde", "O reportanos que ocurre");
+            System.out.println(ex.getMessage());
+
+            return false;
+        } catch (NullPointerException np) {
             logs.escribirExceptionLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// " + np.getMessage() + " " + np.toString());
             modal.error_message("Error", "Algo anda mal", "El servidor esta presentado problemas", "Por Favor intenta mas tarde", "O reportanos que ocurre");
             return false;
