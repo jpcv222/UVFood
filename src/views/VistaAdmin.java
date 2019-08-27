@@ -697,6 +697,14 @@ public class VistaAdmin extends javax.swing.JFrame {
         btnEscogerImg.setContentAreaFilled(false);
         btnEscogerImg.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnEscogerImg.setOpaque(true);
+        btnEscogerImg.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnEscogerImgMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnEscogerImgMouseExited(evt);
+            }
+        });
         btnEscogerImg.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnEscogerImgActionPerformed(evt);
@@ -710,6 +718,14 @@ public class VistaAdmin extends javax.swing.JFrame {
         btnGuardarImg.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnGuardarImg.setEnabled(false);
         btnGuardarImg.setOpaque(true);
+        btnGuardarImg.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnGuardarImgMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnGuardarImgMouseExited(evt);
+            }
+        });
         btnGuardarImg.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnGuardarImgActionPerformed(evt);
@@ -998,6 +1014,26 @@ public class VistaAdmin extends javax.swing.JFrame {
 
 
     }//GEN-LAST:event_btnEscogerImgActionPerformed
+
+    private void btnEscogerImgMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnEscogerImgMouseEntered
+        // TODO add your handling code here:
+        btnEscogerImg.setBackground(new Color(250,250,250));
+    }//GEN-LAST:event_btnEscogerImgMouseEntered
+
+    private void btnEscogerImgMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnEscogerImgMouseExited
+        // TODO add your handling code here:
+        btnEscogerImg.setBackground(new Color(255,255,255));
+    }//GEN-LAST:event_btnEscogerImgMouseExited
+
+    private void btnGuardarImgMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnGuardarImgMouseEntered
+        // TODO add your handling code here:
+        btnGuardarImg.setBackground(new Color(250,250,250));
+    }//GEN-LAST:event_btnGuardarImgMouseEntered
+
+    private void btnGuardarImgMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnGuardarImgMouseExited
+        // TODO add your handling code here:
+        btnGuardarImg.setBackground(new Color(255,255,255));
+    }//GEN-LAST:event_btnGuardarImgMouseExited
 
     /**
      * @param args the command line arguments
