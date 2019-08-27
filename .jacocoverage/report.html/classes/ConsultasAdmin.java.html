@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>ConsultasAdmin.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">JaCoCoverage analysis of project &quot;UVFood&quot; (powered by JaCoCo from EclEmma)</a> &gt; <a href="index.source.html" class="el_package">classes</a> &gt; <span class="el_source">ConsultasAdmin.java</span></div><h1>ConsultasAdmin.java</h1><pre class="source lang-java linenums">/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package classes;
+
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.table.DefaultTableModel;
+import views.VistaAdmin;
+
+/**
+ *
+ * @author STH_1F_MCB_PC09
+ */
+<span class="nc" id="L23">public class ConsultasAdmin extends ConexionBD {</span>
+
+<span class="nc" id="L25">    private Logs logs = new Logs(Thread.currentThread().getStackTrace()[1].getClassName());</span>
+
+    public boolean llenarTabla(VistaAdmin vista) {
+
+<span class="nc" id="L29">        DefaultTableModel modelo = new DefaultTableModel();</span>
+
+<span class="nc" id="L31">        PreparedStatement ps = null;</span>
+<span class="nc" id="L32">        Connection conn = Conexion();</span>
+<span class="nc" id="L33">        ResultSet rs = null;</span>
+
+<span class="nc" id="L35">        String sql = &quot;SELECT * FROM uvfood_user&quot;;</span>
+        try {
+<span class="nc" id="L37">            ps = conn.prepareStatement(sql);</span>
+<span class="nc" id="L38">            rs = ps.executeQuery();</span>
+
+<span class="nc" id="L40">            ResultSetMetaData rsMd = rs.getMetaData();</span>
+<span class="nc" id="L41">            int cantidadCol = rsMd.getColumnCount();</span>
+
+<span class="nc" id="L43">            modelo.addColumn(&quot;Id&quot;);</span>
+<span class="nc" id="L44">            modelo.addColumn(&quot;Usuario&quot;);</span>
+<span class="nc" id="L45">            modelo.addColumn(&quot;Nombre&quot;);</span>
+<span class="nc" id="L46">            modelo.addColumn(&quot;Apellido&quot;);</span>
+<span class="nc" id="L47">            modelo.addColumn(&quot;Fecha de Nacimiento&quot;);</span>
+<span class="nc" id="L48">            modelo.addColumn(&quot;Fecha de creacion&quot;);</span>
+
+<span class="nc bnc" id="L50" title="All 2 branches missed.">            while (rs.next()) {</span>
+
+<span class="nc" id="L52">                Object[] filas = new Object[cantidadCol];</span>
+
+<span class="nc bnc" id="L54" title="All 2 branches missed.">                for (int i = 0; i &lt; cantidadCol; i++) {</span>
+<span class="nc" id="L55">                    filas[i] = rs.getObject(i + 1);</span>
+
+                }
+<span class="nc" id="L58">                modelo.addRow(filas);</span>
+<span class="nc" id="L59">            }</span>
+<span class="nc" id="L60">            vista.jTableUsers.setModel(modelo);</span>
+<span class="nc" id="L61">            rs.close();</span>
+<span class="nc" id="L62">            ps.close();</span>
+<span class="nc" id="L63">            return true;</span>
+<span class="nc" id="L64">        } catch (SQLException ex) {</span>
+<span class="nc" id="L65">            logs.escribirExceptionLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + &quot;// &quot; + ex.getMessage() + &quot; &quot; + ex.toString());</span>
+<span class="nc" id="L66">            modal.error_message(&quot;Error&quot;, &quot;Algo anda mal&quot;, &quot;El servidor esta presentado problemas&quot;, &quot;Por Favor intenta mas tarde&quot;, &quot;O reportanos que ocurre&quot;);</span>
+<span class="nc" id="L67">            return false;</span>
+<span class="nc" id="L68">        } catch (NullPointerException np) {</span>
+<span class="nc" id="L69">            logs.escribirExceptionLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + &quot;// &quot; + np.getMessage() + &quot; &quot; + np.toString());</span>
+<span class="nc" id="L70">            modal.error_message(&quot;Error&quot;, &quot;Algo anda mal&quot;, &quot;El servidor esta presentado problemas&quot;, &quot;Por Favor intenta mas tarde&quot;, &quot;O reportanos que ocurre&quot;);</span>
+<span class="nc" id="L71">            return false;</span>
+        }
+
+    }
+
+    public boolean buscarUser(String dato, VistaAdmin vista) {
+
+<span class="nc" id="L78">        DefaultTableModel modelo = new DefaultTableModel();</span>
+
+<span class="nc" id="L80">        PreparedStatement ps = null;</span>
+<span class="nc" id="L81">        Connection conn = Conexion();</span>
+<span class="nc" id="L82">        ResultSet rs = null;</span>
+<span class="nc" id="L83">        String filtro = &quot;'%&quot; + dato + &quot;%'&quot;;</span>
+
+        //$query = &quot;SELECT * FROM imagenesproductos WHERE nombre LIKE '%$q%' OR descripcion LIKE '%$q%' OR precio LIKE '%$q%' OR categoria LIKE '%$q%'&quot;;
+<span class="nc" id="L86">        String sql = &quot;SELECT * FROM uvfood_user where idUser::text LIKE&quot; + filtro + &quot; OR username::text LIKE&quot; + filtro + &quot; OR firstname::text LIKE&quot; + filtro + &quot; OR surname::text LIKE&quot; + filtro;</span>
+        try {
+<span class="nc" id="L88">            ps = conn.prepareStatement(sql);</span>
+<span class="nc" id="L89">            rs = ps.executeQuery();</span>
+
+<span class="nc" id="L91">            ResultSetMetaData rsMd = rs.getMetaData();</span>
+<span class="nc" id="L92">            int cantidadCol = rsMd.getColumnCount();</span>
+
+<span class="nc" id="L94">            modelo.addColumn(&quot;Id&quot;);</span>
+<span class="nc" id="L95">            modelo.addColumn(&quot;Usuario&quot;);</span>
+<span class="nc" id="L96">            modelo.addColumn(&quot;Nombre&quot;);</span>
+<span class="nc" id="L97">            modelo.addColumn(&quot;Apellido&quot;);</span>
+<span class="nc" id="L98">            modelo.addColumn(&quot;Fecha de Nacimiento&quot;);</span>
+<span class="nc" id="L99">            modelo.addColumn(&quot;Fecha de creacion&quot;);</span>
+
+<span class="nc bnc" id="L101" title="All 2 branches missed.">            while (rs.next()) {</span>
+
+<span class="nc" id="L103">                Object[] filas = new Object[cantidadCol];</span>
+
+<span class="nc bnc" id="L105" title="All 2 branches missed.">                for (int i = 0; i &lt; cantidadCol; i++) {</span>
+<span class="nc" id="L106">                    filas[i] = rs.getObject(i + 1);</span>
+
+                }
+<span class="nc" id="L109">                modelo.addRow(filas);</span>
+<span class="nc" id="L110">            }</span>
+<span class="nc" id="L111">            vista.jTableUsers.setModel(modelo);</span>
+<span class="nc" id="L112">            rs.close();</span>
+<span class="nc" id="L113">            ps.close();</span>
+<span class="nc" id="L114">            return true;</span>
+<span class="nc" id="L115">        } catch (SQLException ex) {</span>
+<span class="nc" id="L116">            logs.escribirExceptionLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + &quot;// &quot; + ex.getMessage() + &quot; &quot; + ex.toString());</span>
+<span class="nc" id="L117">            modal.error_message(&quot;Error&quot;, &quot;Algo anda mal&quot;, &quot;El servidor esta presentado problemas&quot;, &quot;Por Favor intenta mas tarde&quot;, &quot;O reportanos que ocurre&quot;);</span>
+
+<span class="nc" id="L119">            return false;</span>
+<span class="nc" id="L120">        }catch (NullPointerException np) {</span>
+<span class="nc" id="L121">            logs.escribirExceptionLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + &quot;// &quot; + np.getMessage() + &quot; &quot; + np.toString());</span>
+<span class="nc" id="L122">            modal.error_message(&quot;Error&quot;, &quot;Algo anda mal&quot;, &quot;El servidor esta presentado problemas&quot;, &quot;Por Favor intenta mas tarde&quot;, &quot;O reportanos que ocurre&quot;);</span>
+<span class="nc" id="L123">            return false;</span>
+        }
+    }
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.6.201602180812</span></div></body></html>

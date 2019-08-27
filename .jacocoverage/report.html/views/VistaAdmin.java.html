@@ -1,0 +1,959 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>VistaAdmin.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">JaCoCoverage analysis of project &quot;UVFood&quot; (powered by JaCoCo from EclEmma)</a> &gt; <a href="index.source.html" class="el_package">views</a> &gt; <span class="el_source">VistaAdmin.java</span></div><h1>VistaAdmin.java</h1><pre class="source lang-java linenums">/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ *
+ * @author Juan Pablo Castro    2019
+ * GitHub: jpcv222
+ */
+package views;
+
+import classes.ConsultasAdmin;
+import java.awt.Image;
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
+import java.awt.Color;
+import java.awt.Frame;
+import javax.swing.JLabel;
+import javax.swing.border.BevelBorder;
+import javax.swing.border.Border;
+import javax.swing.border.SoftBevelBorder;
+import rojerusan.RSPanelsSlider;
+import managers.ControladorAdmin;
+
+/**
+ *
+ * @author webMaster
+ */
+public class VistaAdmin extends javax.swing.JFrame {
+
+    /**
+     * Creates new form VistaAdmin
+     */
+    Color item_menu_exited, item_bottom_exited;
+    Color item_menu_entered, item_bottom_entered;
+    Color item_menu_clicked;
+    BevelBorder border_clicked;
+    ControladorAdmin managerAdmin;
+    int xMouse;
+    int yMouse;
+    ControladorAdmin manager;
+
+<span class="nc" id="L42">    public VistaAdmin() {</span>
+
+<span class="nc" id="L44">        manager = new ControladorAdmin(this);</span>
+
+<span class="nc" id="L46">        item_menu_exited = new Color(205, 31, 50);</span>
+<span class="nc" id="L47">        item_bottom_exited = new Color(240, 240, 240);</span>
+<span class="nc" id="L48">        item_menu_entered = new Color(157, 0, 0);</span>
+<span class="nc" id="L49">        item_bottom_entered = new Color(153, 153, 153);</span>
+<span class="nc" id="L50">        item_menu_clicked = new Color(157, 0, 0);</span>
+<span class="nc" id="L51">        border_clicked = new BevelBorder(BevelBorder.RAISED);</span>
+
+<span class="nc" id="L53">        initComponents();</span>
+<span class="nc" id="L54">        this.setLocationRelativeTo(null);</span>
+<span class="nc" id="L55">        resetColor(jLabelHome, &quot;inicio.jpg&quot;);</span>
+
+        /*ImageIcon imagen = new ImageIcon(&quot;src/images/buscar.jpg&quot;);
+        Icon icono = new ImageIcon(imagen.getImage().getScaledInstance(jLabel9.getWidth(), jLabel9.getHeight(), Image.SCALE_DEFAULT));
+        jLabel9.setIcon(icono);
+        this.repaint();*/
+
+<span class="nc" id="L62">        ImageIcon imagen1 = new ImageIcon(&quot;src/images/inicio.jpg&quot;);</span>
+<span class="nc" id="L63">        Icon icono1 = new ImageIcon(imagen1.getImage().getScaledInstance(jLabelHome.getWidth(), jLabelHome.getHeight(), Image.SCALE_DEFAULT));</span>
+<span class="nc" id="L64">        jLabelHome.setIcon(icono1);</span>
+<span class="nc" id="L65">        this.repaint();</span>
+
+<span class="nc" id="L67">        ImageIcon imagen2 = new ImageIcon(&quot;src/images/Perfil.jpg&quot;);</span>
+<span class="nc" id="L68">        Icon icono2 = new ImageIcon(imagen2.getImage().getScaledInstance(jLabelPerfil.getWidth(), jLabelPerfil.getHeight(), Image.SCALE_DEFAULT));</span>
+<span class="nc" id="L69">        jLabelPerfil.setIcon(icono2);</span>
+<span class="nc" id="L70">        this.repaint();</span>
+
+<span class="nc" id="L72">        ImageIcon imagen3 = new ImageIcon(&quot;src/images/GestionInterfaz.jpg&quot;);</span>
+<span class="nc" id="L73">        Icon icono3 = new ImageIcon(imagen3.getImage().getScaledInstance(jLabelinterfaz.getWidth(), jLabelinterfaz.getHeight(), Image.SCALE_DEFAULT));</span>
+<span class="nc" id="L74">        jLabelinterfaz.setIcon(icono3);</span>
+<span class="nc" id="L75">        this.repaint();</span>
+
+<span class="nc" id="L77">        ImageIcon imagen4 = new ImageIcon(&quot;src/images/GestionUser.jpg&quot;);</span>
+<span class="nc" id="L78">        Icon icono4 = new ImageIcon(imagen4.getImage().getScaledInstance(jLabelUser.getWidth(), jLabelUser.getHeight(), Image.SCALE_DEFAULT));</span>
+<span class="nc" id="L79">        jLabelUser.setIcon(icono4);</span>
+<span class="nc" id="L80">        this.repaint();</span>
+
+<span class="nc" id="L82">        ImageIcon imagen5 = new ImageIcon(&quot;src/images/GestionTicket.jpg&quot;);</span>
+<span class="nc" id="L83">        Icon icono5 = new ImageIcon(imagen5.getImage().getScaledInstance(jLabelticket.getWidth(), jLabelticket.getHeight(), Image.SCALE_DEFAULT));</span>
+<span class="nc" id="L84">        jLabelticket.setIcon(icono5);</span>
+<span class="nc" id="L85">        this.repaint();</span>
+
+<span class="nc" id="L87">    }</span>
+
+    /* public void resetColor(JLabel item) {
+        item.setOpaque(false);
+        item.setBackground(new Color(205,31,50));
+    }*/
+    public void resetColor(JLabel item, String image) {
+<span class="nc" id="L94">        ImageIcon imagen = new ImageIcon(&quot;src/images/&quot; + image);</span>
+<span class="nc" id="L95">        Icon icono = new ImageIcon(imagen.getImage().getScaledInstance(item.getWidth(), item.getHeight(), Image.SCALE_DEFAULT));</span>
+<span class="nc" id="L96">        item.setIcon(icono);</span>
+<span class="nc" id="L97">        this.repaint();</span>
+<span class="nc" id="L98">    }</span>
+
+    public void setColor(JLabel item) {
+<span class="nc" id="L101">        item.setOpaque(true);</span>
+<span class="nc" id="L102">        item.setBackground(new Color(205, 41, 55));</span>
+<span class="nc" id="L103">    }</span>
+
+    public void changeImage(String nombreNueva, JLabel label) {
+<span class="nc" id="L106">        ImageIcon image = new ImageIcon(&quot;src/images/&quot; + nombreNueva);</span>
+<span class="nc" id="L107">        Icon icono = new ImageIcon(image.getImage().getScaledInstance(label.getWidth(), label.getHeight(), Image.SCALE_DEFAULT));</span>
+<span class="nc" id="L108">        label.setIcon(icono);</span>
+<span class="nc" id="L109">        this.repaint();</span>
+
+<span class="nc" id="L111">    }</span>
+
+    /**
+     * This method is called from within the constructor to initialize the form.
+     * WARNING: Do NOT modify this code. The content of this method is always
+     * regenerated by the Form Editor.
+     */
+    @SuppressWarnings(&quot;unchecked&quot;)
+    // &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents
+    private void initComponents() {
+
+<span class="nc" id="L122">        jPanelMenu = new javax.swing.JPanel();</span>
+<span class="nc" id="L123">        jLabelHome = new javax.swing.JLabel();</span>
+<span class="nc" id="L124">        jLabelPerfil = new javax.swing.JLabel();</span>
+<span class="nc" id="L125">        jLabelUser = new javax.swing.JLabel();</span>
+<span class="nc" id="L126">        jLabelinterfaz = new javax.swing.JLabel();</span>
+<span class="nc" id="L127">        jLabelticket = new javax.swing.JLabel();</span>
+<span class="nc" id="L128">        jPanelbtn = new javax.swing.JPanel();</span>
+<span class="nc" id="L129">        btnCerrar = new javax.swing.JButton();</span>
+<span class="nc" id="L130">        btnMiminize = new javax.swing.JButton();</span>
+<span class="nc" id="L131">        jPanelHeader = new javax.swing.JPanel();</span>
+<span class="nc" id="L132">        jLabel5 = new javax.swing.JLabel();</span>
+<span class="nc" id="L133">        jLabel6 = new javax.swing.JLabel();</span>
+<span class="nc" id="L134">        rSPanelsSlider1 = new rojerusan.RSPanelsSlider();</span>
+<span class="nc" id="L135">        jPanelIndexAdmin = new javax.swing.JPanel();</span>
+<span class="nc" id="L136">        jLabel7 = new javax.swing.JLabel();</span>
+<span class="nc" id="L137">        jPanelPerfilAdmin = new javax.swing.JPanel();</span>
+<span class="nc" id="L138">        jLabel8 = new javax.swing.JLabel();</span>
+<span class="nc" id="L139">        jPanelModuleUserAdmin = new javax.swing.JPanel();</span>
+<span class="nc" id="L140">        jPanelMenuOptionsModuleUser = new javax.swing.JPanel();</span>
+<span class="nc" id="L141">        jPanelUserRegisterItem = new javax.swing.JPanel();</span>
+<span class="nc" id="L142">        jLabel2 = new javax.swing.JLabel();</span>
+<span class="nc" id="L143">        btnConsultaUser = new javax.swing.JButton();</span>
+<span class="nc" id="L144">        jPanelModuleUserReports = new javax.swing.JPanel();</span>
+<span class="nc" id="L145">        jLabel4 = new javax.swing.JLabel();</span>
+<span class="nc" id="L146">        jSeparator2 = new javax.swing.JSeparator();</span>
+<span class="nc" id="L147">        jScrollPane1 = new javax.swing.JScrollPane();</span>
+<span class="nc" id="L148">        jTableUsers = new javax.swing.JTable();</span>
+<span class="nc" id="L149">        jTextFieldBuscarUser = new javax.swing.JTextField();</span>
+<span class="nc" id="L150">        jLabel3 = new javax.swing.JLabel();</span>
+<span class="nc" id="L151">        jPanelModuleUserRegister = new javax.swing.JPanel();</span>
+<span class="nc" id="L152">        jLabel1 = new javax.swing.JLabel();</span>
+<span class="nc" id="L153">        jSeparator1 = new javax.swing.JSeparator();</span>
+<span class="nc" id="L154">        jPanelSelectCSVUser = new javax.swing.JPanel();</span>
+<span class="nc" id="L155">        jLabel10 = new javax.swing.JLabel();</span>
+<span class="nc" id="L156">        jLabel11 = new javax.swing.JLabel();</span>
+<span class="nc" id="L157">        jPanel1 = new javax.swing.JPanel();</span>
+<span class="nc" id="L158">        jLabelRutaArchivo = new javax.swing.JLabel();</span>
+<span class="nc" id="L159">        jButtonCargar = new javax.swing.JButton();</span>
+
+<span class="nc" id="L161">        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);</span>
+<span class="nc" id="L162">        setUndecorated(true);</span>
+
+<span class="nc" id="L164">        jPanelMenu.setBackground(new java.awt.Color(205, 31, 50));</span>
+
+<span class="nc" id="L166">        jLabelHome.setFont(new java.awt.Font(&quot;Century Gothic&quot;, 1, 14)); // NOI18N</span>
+<span class="nc" id="L167">        jLabelHome.setForeground(new java.awt.Color(255, 255, 255));</span>
+<span class="nc" id="L168">        jLabelHome.addMouseListener(new java.awt.event.MouseAdapter() {</span>
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+<span class="nc" id="L170">                jLabelHomeMouseClicked(evt);</span>
+<span class="nc" id="L171">            }</span>
+        });
+
+<span class="nc" id="L174">        jLabelPerfil.setFont(new java.awt.Font(&quot;Tahoma&quot;, 0, 14)); // NOI18N</span>
+<span class="nc" id="L175">        jLabelPerfil.setForeground(new java.awt.Color(255, 255, 255));</span>
+<span class="nc" id="L176">        jLabelPerfil.addMouseListener(new java.awt.event.MouseAdapter() {</span>
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+<span class="nc" id="L178">                jLabelPerfilMouseClicked(evt);</span>
+<span class="nc" id="L179">            }</span>
+        });
+
+<span class="nc" id="L182">        jLabelUser.setFont(new java.awt.Font(&quot;Tahoma&quot;, 0, 14)); // NOI18N</span>
+<span class="nc" id="L183">        jLabelUser.setForeground(new java.awt.Color(255, 255, 255));</span>
+<span class="nc" id="L184">        jLabelUser.addMouseListener(new java.awt.event.MouseAdapter() {</span>
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+<span class="nc" id="L186">                jLabelUserMouseClicked(evt);</span>
+<span class="nc" id="L187">            }</span>
+        });
+
+<span class="nc" id="L190">        jLabelinterfaz.setFont(new java.awt.Font(&quot;Tahoma&quot;, 0, 14)); // NOI18N</span>
+<span class="nc" id="L191">        jLabelinterfaz.setForeground(new java.awt.Color(255, 255, 255));</span>
+<span class="nc" id="L192">        jLabelinterfaz.addMouseListener(new java.awt.event.MouseAdapter() {</span>
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+<span class="nc" id="L194">                jLabelinterfazMouseClicked(evt);</span>
+<span class="nc" id="L195">            }</span>
+        });
+
+<span class="nc" id="L198">        jLabelticket.setFont(new java.awt.Font(&quot;Tahoma&quot;, 0, 14)); // NOI18N</span>
+<span class="nc" id="L199">        jLabelticket.setForeground(new java.awt.Color(255, 255, 255));</span>
+<span class="nc" id="L200">        jLabelticket.addMouseListener(new java.awt.event.MouseAdapter() {</span>
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+<span class="nc" id="L202">                jLabelticketMouseClicked(evt);</span>
+<span class="nc" id="L203">            }</span>
+        });
+
+<span class="nc" id="L206">        javax.swing.GroupLayout jPanelMenuLayout = new javax.swing.GroupLayout(jPanelMenu);</span>
+<span class="nc" id="L207">        jPanelMenu.setLayout(jPanelMenuLayout);</span>
+<span class="nc" id="L208">        jPanelMenuLayout.setHorizontalGroup(</span>
+<span class="nc" id="L209">            jPanelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L210">            .addComponent(jLabelHome, javax.swing.GroupLayout.DEFAULT_SIZE, 218, Short.MAX_VALUE)</span>
+<span class="nc" id="L211">            .addComponent(jLabelPerfil, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)</span>
+<span class="nc" id="L212">            .addComponent(jLabelinterfaz, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)</span>
+<span class="nc" id="L213">            .addComponent(jLabelUser, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)</span>
+<span class="nc" id="L214">            .addComponent(jLabelticket, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)</span>
+        );
+<span class="nc" id="L216">        jPanelMenuLayout.setVerticalGroup(</span>
+<span class="nc" id="L217">            jPanelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L218">            .addGroup(jPanelMenuLayout.createSequentialGroup()</span>
+<span class="nc" id="L219">                .addGap(215, 215, 215)</span>
+<span class="nc" id="L220">                .addComponent(jLabelHome, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L221">                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
+<span class="nc" id="L222">                .addComponent(jLabelPerfil, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L223">                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
+<span class="nc" id="L224">                .addComponent(jLabelinterfaz, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L225">                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
+<span class="nc" id="L226">                .addComponent(jLabelUser, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L227">                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
+<span class="nc" id="L228">                .addComponent(jLabelticket, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L229">                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))</span>
+        );
+
+<span class="nc" id="L232">        jPanelbtn.setBackground(new java.awt.Color(255, 255, 255));</span>
+<span class="nc" id="L233">        jPanelbtn.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {</span>
+            public void mouseDragged(java.awt.event.MouseEvent evt) {
+<span class="nc" id="L235">                jPanelbtnMouseDragged(evt);</span>
+<span class="nc" id="L236">            }</span>
+        });
+<span class="nc" id="L238">        jPanelbtn.addMouseListener(new java.awt.event.MouseAdapter() {</span>
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+<span class="nc" id="L240">                jPanelbtnMousePressed(evt);</span>
+<span class="nc" id="L241">            }</span>
+        });
+
+<span class="nc" id="L244">        btnCerrar.setBackground(new java.awt.Color(255, 255, 255));</span>
+<span class="nc" id="L245">        btnCerrar.setIcon(new javax.swing.ImageIcon(getClass().getResource(&quot;/images/Exit.png&quot;))); // NOI18N</span>
+<span class="nc" id="L246">        btnCerrar.setContentAreaFilled(false);</span>
+<span class="nc" id="L247">        btnCerrar.setOpaque(true);</span>
+<span class="nc" id="L248">        btnCerrar.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource(&quot;/images/Exit2.png&quot;))); // NOI18N</span>
+<span class="nc" id="L249">        btnCerrar.addMouseListener(new java.awt.event.MouseAdapter() {</span>
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+<span class="nc" id="L251">                btnCerrarMouseClicked(evt);</span>
+<span class="nc" id="L252">            }</span>
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+<span class="nc" id="L254">                btnCerrarMouseEntered(evt);</span>
+<span class="nc" id="L255">            }</span>
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+<span class="nc" id="L257">                btnCerrarMouseExited(evt);</span>
+<span class="nc" id="L258">            }</span>
+        });
+<span class="nc" id="L260">        btnCerrar.addActionListener(new java.awt.event.ActionListener() {</span>
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+<span class="nc" id="L262">                btnCerrarActionPerformed(evt);</span>
+<span class="nc" id="L263">            }</span>
+        });
+
+<span class="nc" id="L266">        btnMiminize.setBackground(new java.awt.Color(255, 255, 255));</span>
+<span class="nc" id="L267">        btnMiminize.setIcon(new javax.swing.ImageIcon(getClass().getResource(&quot;/images/Minimize.png&quot;))); // NOI18N</span>
+<span class="nc" id="L268">        btnMiminize.setContentAreaFilled(false);</span>
+<span class="nc" id="L269">        btnMiminize.setOpaque(true);</span>
+<span class="nc" id="L270">        btnMiminize.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource(&quot;/images/Minimize (2).png&quot;))); // NOI18N</span>
+<span class="nc" id="L271">        btnMiminize.addMouseListener(new java.awt.event.MouseAdapter() {</span>
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+<span class="nc" id="L273">                btnMiminizeMouseClicked(evt);</span>
+<span class="nc" id="L274">            }</span>
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+<span class="nc" id="L276">                btnMiminizeMouseEntered(evt);</span>
+<span class="nc" id="L277">            }</span>
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+<span class="nc" id="L279">                btnMiminizeMouseExited(evt);</span>
+<span class="nc" id="L280">            }</span>
+        });
+
+<span class="nc" id="L283">        javax.swing.GroupLayout jPanelbtnLayout = new javax.swing.GroupLayout(jPanelbtn);</span>
+<span class="nc" id="L284">        jPanelbtn.setLayout(jPanelbtnLayout);</span>
+<span class="nc" id="L285">        jPanelbtnLayout.setHorizontalGroup(</span>
+<span class="nc" id="L286">            jPanelbtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L287">            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelbtnLayout.createSequentialGroup()</span>
+<span class="nc" id="L288">                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)</span>
+<span class="nc" id="L289">                .addComponent(btnMiminize, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L290">                .addGap(0, 0, 0)</span>
+<span class="nc" id="L291">                .addComponent(btnCerrar, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))</span>
+        );
+<span class="nc" id="L293">        jPanelbtnLayout.setVerticalGroup(</span>
+<span class="nc" id="L294">            jPanelbtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L295">            .addComponent(btnMiminize, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)</span>
+<span class="nc" id="L296">            .addComponent(btnCerrar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)</span>
+        );
+
+<span class="nc" id="L299">        jPanelHeader.setBackground(new java.awt.Color(250, 250, 250));</span>
+
+<span class="nc" id="L301">        jLabel5.setFont(new java.awt.Font(&quot;Roboto Light&quot;, 0, 18)); // NOI18N</span>
+<span class="nc" id="L302">        jLabel5.setForeground(new java.awt.Color(205, 31, 50));</span>
+<span class="nc" id="L303">        jLabel5.setText(&quot;UV Food&quot;);</span>
+
+<span class="nc" id="L305">        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource(&quot;/images/univalle.jpg&quot;))); // NOI18N</span>
+
+<span class="nc" id="L307">        javax.swing.GroupLayout jPanelHeaderLayout = new javax.swing.GroupLayout(jPanelHeader);</span>
+<span class="nc" id="L308">        jPanelHeader.setLayout(jPanelHeaderLayout);</span>
+<span class="nc" id="L309">        jPanelHeaderLayout.setHorizontalGroup(</span>
+<span class="nc" id="L310">            jPanelHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L311">            .addGroup(jPanelHeaderLayout.createSequentialGroup()</span>
+<span class="nc" id="L312">                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 323, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L313">                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)</span>
+<span class="nc" id="L314">                .addComponent(jLabel5)</span>
+<span class="nc" id="L315">                .addContainerGap())</span>
+        );
+<span class="nc" id="L317">        jPanelHeaderLayout.setVerticalGroup(</span>
+<span class="nc" id="L318">            jPanelHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L319">            .addGroup(jPanelHeaderLayout.createSequentialGroup()</span>
+<span class="nc" id="L320">                .addComponent(jLabel5)</span>
+<span class="nc" id="L321">                .addGap(0, 38, Short.MAX_VALUE))</span>
+<span class="nc" id="L322">            .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)</span>
+        );
+
+<span class="nc" id="L325">        rSPanelsSlider1.setBackground(new java.awt.Color(255, 255, 255));</span>
+
+<span class="nc" id="L327">        jPanelIndexAdmin.setBackground(new java.awt.Color(255, 255, 255));</span>
+<span class="nc" id="L328">        jPanelIndexAdmin.setName(&quot;jPanelIndexAdmin&quot;); // NOI18N</span>
+
+<span class="nc" id="L330">        jLabel7.setText(&quot;Index&quot;);</span>
+
+<span class="nc" id="L332">        javax.swing.GroupLayout jPanelIndexAdminLayout = new javax.swing.GroupLayout(jPanelIndexAdmin);</span>
+<span class="nc" id="L333">        jPanelIndexAdmin.setLayout(jPanelIndexAdminLayout);</span>
+<span class="nc" id="L334">        jPanelIndexAdminLayout.setHorizontalGroup(</span>
+<span class="nc" id="L335">            jPanelIndexAdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L336">            .addGroup(jPanelIndexAdminLayout.createSequentialGroup()</span>
+<span class="nc" id="L337">                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 831, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L338">                .addGap(0, 170, Short.MAX_VALUE))</span>
+        );
+<span class="nc" id="L340">        jPanelIndexAdminLayout.setVerticalGroup(</span>
+<span class="nc" id="L341">            jPanelIndexAdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L342">            .addGroup(jPanelIndexAdminLayout.createSequentialGroup()</span>
+<span class="nc" id="L343">                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 440, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L344">                .addGap(0, 264, Short.MAX_VALUE))</span>
+        );
+
+<span class="nc" id="L347">        rSPanelsSlider1.add(jPanelIndexAdmin, &quot;card2&quot;);</span>
+
+<span class="nc" id="L349">        jPanelPerfilAdmin.setBackground(new java.awt.Color(255, 255, 255));</span>
+<span class="nc" id="L350">        jPanelPerfilAdmin.setName(&quot;jPanelPerfilAdmin&quot;); // NOI18N</span>
+
+<span class="nc" id="L352">        jLabel8.setText(&quot;Perfil&quot;);</span>
+
+<span class="nc" id="L354">        javax.swing.GroupLayout jPanelPerfilAdminLayout = new javax.swing.GroupLayout(jPanelPerfilAdmin);</span>
+<span class="nc" id="L355">        jPanelPerfilAdmin.setLayout(jPanelPerfilAdminLayout);</span>
+<span class="nc" id="L356">        jPanelPerfilAdminLayout.setHorizontalGroup(</span>
+<span class="nc" id="L357">            jPanelPerfilAdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L358">            .addGroup(jPanelPerfilAdminLayout.createSequentialGroup()</span>
+<span class="nc" id="L359">                .addGap(199, 199, 199)</span>
+<span class="nc" id="L360">                .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 544, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L361">                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))</span>
+        );
+<span class="nc" id="L363">        jPanelPerfilAdminLayout.setVerticalGroup(</span>
+<span class="nc" id="L364">            jPanelPerfilAdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L365">            .addGroup(jPanelPerfilAdminLayout.createSequentialGroup()</span>
+<span class="nc" id="L366">                .addGap(327, 327, 327)</span>
+<span class="nc" id="L367">                .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L368">                .addContainerGap(337, Short.MAX_VALUE))</span>
+        );
+
+<span class="nc" id="L371">        rSPanelsSlider1.add(jPanelPerfilAdmin, &quot;card3&quot;);</span>
+
+<span class="nc" id="L373">        jPanelModuleUserAdmin.setBackground(new java.awt.Color(255, 255, 255));</span>
+<span class="nc" id="L374">        jPanelModuleUserAdmin.setName(&quot;jPanelModuleUserAdmin&quot;); // NOI18N</span>
+<span class="nc" id="L375">        jPanelModuleUserAdmin.setPreferredSize(new java.awt.Dimension(961, 704));</span>
+<span class="nc" id="L376">        jPanelModuleUserAdmin.setRequestFocusEnabled(false);</span>
+<span class="nc" id="L377">        jPanelModuleUserAdmin.setVerifyInputWhenFocusTarget(false);</span>
+<span class="nc" id="L378">        jPanelModuleUserAdmin.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());</span>
+
+<span class="nc" id="L380">        jPanelMenuOptionsModuleUser.setBackground(new java.awt.Color(205, 31, 50));</span>
+
+<span class="nc" id="L382">        jPanelUserRegisterItem.setBackground(new java.awt.Color(205, 31, 50));</span>
+<span class="nc" id="L383">        jPanelUserRegisterItem.setName(&quot;jPanelUserRegisterItem&quot;); // NOI18N</span>
+<span class="nc" id="L384">        jPanelUserRegisterItem.addMouseListener(new java.awt.event.MouseAdapter() {</span>
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+<span class="nc" id="L386">                jPanelUserRegisterItemMouseClicked(evt);</span>
+<span class="nc" id="L387">            }</span>
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+<span class="nc" id="L389">                jPanelUserRegisterItemMouseEntered(evt);</span>
+<span class="nc" id="L390">            }</span>
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+<span class="nc" id="L392">                jPanelUserRegisterItemMouseExited(evt);</span>
+<span class="nc" id="L393">            }</span>
+        });
+
+<span class="nc" id="L396">        jLabel2.setFont(new java.awt.Font(&quot;Tahoma&quot;, 0, 24)); // NOI18N</span>
+<span class="nc" id="L397">        jLabel2.setForeground(new java.awt.Color(255, 255, 255));</span>
+<span class="nc" id="L398">        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);</span>
+<span class="nc" id="L399">        jLabel2.setText(&quot;Registro de usuarios&quot;);</span>
+<span class="nc" id="L400">        jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {</span>
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+<span class="nc" id="L402">                jLabel2MouseClicked(evt);</span>
+<span class="nc" id="L403">            }</span>
+        });
+
+<span class="nc" id="L406">        javax.swing.GroupLayout jPanelUserRegisterItemLayout = new javax.swing.GroupLayout(jPanelUserRegisterItem);</span>
+<span class="nc" id="L407">        jPanelUserRegisterItem.setLayout(jPanelUserRegisterItemLayout);</span>
+<span class="nc" id="L408">        jPanelUserRegisterItemLayout.setHorizontalGroup(</span>
+<span class="nc" id="L409">            jPanelUserRegisterItemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L410">            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelUserRegisterItemLayout.createSequentialGroup()</span>
+<span class="nc" id="L411">                .addContainerGap(40, Short.MAX_VALUE)</span>
+<span class="nc" id="L412">                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L413">                .addGap(34, 34, 34))</span>
+        );
+<span class="nc" id="L415">        jPanelUserRegisterItemLayout.setVerticalGroup(</span>
+<span class="nc" id="L416">            jPanelUserRegisterItemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L417">            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelUserRegisterItemLayout.createSequentialGroup()</span>
+<span class="nc" id="L418">                .addContainerGap()</span>
+<span class="nc" id="L419">                .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 39, Short.MAX_VALUE)</span>
+<span class="nc" id="L420">                .addContainerGap())</span>
+        );
+
+<span class="nc" id="L423">        btnConsultaUser.setBackground(new java.awt.Color(205, 31, 50));</span>
+<span class="nc" id="L424">        btnConsultaUser.setFont(new java.awt.Font(&quot;Tahoma&quot;, 0, 24)); // NOI18N</span>
+<span class="nc" id="L425">        btnConsultaUser.setForeground(new java.awt.Color(255, 255, 255));</span>
+<span class="nc" id="L426">        btnConsultaUser.setText(&quot;Consulta de usuarios&quot;);</span>
+<span class="nc" id="L427">        btnConsultaUser.setContentAreaFilled(false);</span>
+<span class="nc" id="L428">        btnConsultaUser.setOpaque(true);</span>
+<span class="nc" id="L429">        btnConsultaUser.addMouseListener(new java.awt.event.MouseAdapter() {</span>
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+<span class="nc" id="L431">                btnConsultaUserMouseClicked(evt);</span>
+<span class="nc" id="L432">            }</span>
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+<span class="nc" id="L434">                btnConsultaUserMouseEntered(evt);</span>
+<span class="nc" id="L435">            }</span>
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+<span class="nc" id="L437">                btnConsultaUserMouseExited(evt);</span>
+<span class="nc" id="L438">            }</span>
+        });
+<span class="nc" id="L440">        btnConsultaUser.addActionListener(new java.awt.event.ActionListener() {</span>
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+<span class="nc" id="L442">                btnConsultaUserActionPerformed(evt);</span>
+<span class="nc" id="L443">            }</span>
+        });
+
+<span class="nc" id="L446">        javax.swing.GroupLayout jPanelMenuOptionsModuleUserLayout = new javax.swing.GroupLayout(jPanelMenuOptionsModuleUser);</span>
+<span class="nc" id="L447">        jPanelMenuOptionsModuleUser.setLayout(jPanelMenuOptionsModuleUserLayout);</span>
+<span class="nc" id="L448">        jPanelMenuOptionsModuleUserLayout.setHorizontalGroup(</span>
+<span class="nc" id="L449">            jPanelMenuOptionsModuleUserLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L450">            .addGroup(jPanelMenuOptionsModuleUserLayout.createSequentialGroup()</span>
+<span class="nc" id="L451">                .addComponent(jPanelUserRegisterItem, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L452">                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
+<span class="nc" id="L453">                .addComponent(btnConsultaUser, javax.swing.GroupLayout.PREFERRED_SIZE, 279, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L454">                .addGap(0, 399, Short.MAX_VALUE))</span>
+        );
+<span class="nc" id="L456">        jPanelMenuOptionsModuleUserLayout.setVerticalGroup(</span>
+<span class="nc" id="L457">            jPanelMenuOptionsModuleUserLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L458">            .addComponent(jPanelUserRegisterItem, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)</span>
+<span class="nc" id="L459">            .addComponent(btnConsultaUser, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)</span>
+        );
+
+<span class="nc" id="L462">        jPanelModuleUserAdmin.add(jPanelMenuOptionsModuleUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1001, -1));</span>
+
+<span class="nc" id="L464">        jPanelModuleUserReports.setBackground(new java.awt.Color(255, 255, 255));</span>
+<span class="nc" id="L465">        jPanelModuleUserReports.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 0, 0), 2, true));</span>
+<span class="nc" id="L466">        jPanelModuleUserReports.setAlignmentY(1.0F);</span>
+<span class="nc" id="L467">        jPanelModuleUserReports.setPreferredSize(new java.awt.Dimension(977, 635));</span>
+<span class="nc" id="L468">        jPanelModuleUserReports.setRequestFocusEnabled(false);</span>
+<span class="nc" id="L469">        jPanelModuleUserReports.setVerifyInputWhenFocusTarget(false);</span>
+
+<span class="nc" id="L471">        jLabel4.setFont(new java.awt.Font(&quot;Tahoma&quot;, 0, 24)); // NOI18N</span>
+<span class="nc" id="L472">        jLabel4.setText(&quot;Reporte de usuarios&quot;);</span>
+
+<span class="nc" id="L474">        jTableUsers.setModel(new javax.swing.table.DefaultTableModel(</span>
+            new Object [][] {
+
+            },
+            new String [] {
+                &quot;Id&quot;, &quot;Usuario&quot;, &quot;Nombre&quot;, &quot;Apellido&quot;, &quot;Fecha de nacimiento&quot;, &quot;Email&quot;, &quot;Fecha de creacion&quot;
+            }
+<span class="nc" id="L481">        ) {</span>
+<span class="nc" id="L482">            Class[] types = new Class [] {</span>
+                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+            };
+<span class="nc" id="L485">            boolean[] canEdit = new boolean [] {</span>
+                false, false, false, false, false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+<span class="nc" id="L490">                return types [columnIndex];</span>
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+<span class="nc" id="L494">                return canEdit [columnIndex];</span>
+            }
+        });
+<span class="nc" id="L497">        jTableUsers.getTableHeader().setReorderingAllowed(false);</span>
+<span class="nc" id="L498">        jScrollPane1.setViewportView(jTableUsers);</span>
+<span class="nc bnc" id="L499" title="All 2 branches missed.">        if (jTableUsers.getColumnModel().getColumnCount() &gt; 0) {</span>
+<span class="nc" id="L500">            jTableUsers.getColumnModel().getColumn(0).setResizable(false);</span>
+<span class="nc" id="L501">            jTableUsers.getColumnModel().getColumn(1).setResizable(false);</span>
+<span class="nc" id="L502">            jTableUsers.getColumnModel().getColumn(2).setResizable(false);</span>
+<span class="nc" id="L503">            jTableUsers.getColumnModel().getColumn(3).setResizable(false);</span>
+<span class="nc" id="L504">            jTableUsers.getColumnModel().getColumn(4).setResizable(false);</span>
+<span class="nc" id="L505">            jTableUsers.getColumnModel().getColumn(5).setResizable(false);</span>
+<span class="nc" id="L506">            jTableUsers.getColumnModel().getColumn(6).setResizable(false);</span>
+        }
+
+<span class="nc" id="L509">        jTextFieldBuscarUser.addActionListener(new java.awt.event.ActionListener() {</span>
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+<span class="nc" id="L511">                jTextFieldBuscarUserActionPerformed(evt);</span>
+<span class="nc" id="L512">            }</span>
+        });
+<span class="nc" id="L514">        jTextFieldBuscarUser.addKeyListener(new java.awt.event.KeyAdapter() {</span>
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+<span class="nc" id="L516">                jTextFieldBuscarUserKeyReleased(evt);</span>
+<span class="nc" id="L517">            }</span>
+        });
+
+<span class="nc" id="L520">        jLabel3.setText(&quot;Buscar&quot;);</span>
+
+<span class="nc" id="L522">        javax.swing.GroupLayout jPanelModuleUserReportsLayout = new javax.swing.GroupLayout(jPanelModuleUserReports);</span>
+<span class="nc" id="L523">        jPanelModuleUserReports.setLayout(jPanelModuleUserReportsLayout);</span>
+<span class="nc" id="L524">        jPanelModuleUserReportsLayout.setHorizontalGroup(</span>
+<span class="nc" id="L525">            jPanelModuleUserReportsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L526">            .addComponent(jSeparator2, javax.swing.GroupLayout.DEFAULT_SIZE, 973, Short.MAX_VALUE)</span>
+<span class="nc" id="L527">            .addGroup(jPanelModuleUserReportsLayout.createSequentialGroup()</span>
+<span class="nc" id="L528">                .addContainerGap()</span>
+<span class="nc" id="L529">                .addGroup(jPanelModuleUserReportsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L530">                    .addGroup(jPanelModuleUserReportsLayout.createSequentialGroup()</span>
+<span class="nc" id="L531">                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 399, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L532">                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))</span>
+<span class="nc" id="L533">                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelModuleUserReportsLayout.createSequentialGroup()</span>
+<span class="nc" id="L534">                        .addGap(0, 0, Short.MAX_VALUE)</span>
+<span class="nc" id="L535">                        .addGroup(jPanelModuleUserReportsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)</span>
+<span class="nc" id="L536">                            .addGroup(jPanelModuleUserReportsLayout.createSequentialGroup()</span>
+<span class="nc" id="L537">                                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L538">                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)</span>
+<span class="nc" id="L539">                                .addComponent(jTextFieldBuscarUser, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE))</span>
+<span class="nc" id="L540">                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 882, javax.swing.GroupLayout.PREFERRED_SIZE))</span>
+<span class="nc" id="L541">                        .addGap(40, 40, 40))))</span>
+        );
+<span class="nc" id="L543">        jPanelModuleUserReportsLayout.setVerticalGroup(</span>
+<span class="nc" id="L544">            jPanelModuleUserReportsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L545">            .addGroup(jPanelModuleUserReportsLayout.createSequentialGroup()</span>
+<span class="nc" id="L546">                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L547">                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
+<span class="nc" id="L548">                .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L549">                .addGap(18, 18, 18)</span>
+<span class="nc" id="L550">                .addGroup(jPanelModuleUserReportsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)</span>
+<span class="nc" id="L551">                    .addComponent(jTextFieldBuscarUser, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L552">                    .addComponent(jLabel3))</span>
+<span class="nc" id="L553">                .addGap(10, 10, 10)</span>
+<span class="nc" id="L554">                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L555">                .addContainerGap(431, Short.MAX_VALUE))</span>
+        );
+
+<span class="nc" id="L558">        jPanelModuleUserAdmin.add(jPanelModuleUserReports, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 72, -1, 620));</span>
+<span class="nc" id="L559">        jPanelModuleUserReports.getAccessibleContext().setAccessibleName(&quot;jPanelModuleUserReports&quot;);</span>
+
+<span class="nc" id="L561">        jPanelModuleUserRegister.setBackground(new java.awt.Color(255, 255, 255));</span>
+<span class="nc" id="L562">        jPanelModuleUserRegister.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 0, 0), 2, true));</span>
+<span class="nc" id="L563">        jPanelModuleUserRegister.setFont(new java.awt.Font(&quot;Tahoma&quot;, 0, 14)); // NOI18N</span>
+<span class="nc" id="L564">        jPanelModuleUserRegister.setRequestFocusEnabled(false);</span>
+<span class="nc" id="L565">        jPanelModuleUserRegister.setVerifyInputWhenFocusTarget(false);</span>
+
+<span class="nc" id="L567">        jLabel1.setFont(new java.awt.Font(&quot;Tahoma&quot;, 0, 40)); // NOI18N</span>
+<span class="nc" id="L568">        jLabel1.setText(&quot;Registro de usuarios&quot;);</span>
+
+<span class="nc" id="L570">        jPanelSelectCSVUser.addMouseListener(new java.awt.event.MouseAdapter() {</span>
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+<span class="nc" id="L572">                jPanelSelectCSVUserMouseClicked(evt);</span>
+<span class="nc" id="L573">            }</span>
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+<span class="nc" id="L575">                jPanelSelectCSVUserMouseEntered(evt);</span>
+<span class="nc" id="L576">            }</span>
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+<span class="nc" id="L578">                jPanelSelectCSVUserMouseExited(evt);</span>
+<span class="nc" id="L579">            }</span>
+        });
+
+<span class="nc" id="L582">        jLabel10.setFont(new java.awt.Font(&quot;Tahoma&quot;, 0, 18)); // NOI18N</span>
+<span class="nc" id="L583">        jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);</span>
+<span class="nc" id="L584">        jLabel10.setText(&quot;Seleccionar archivo CSV&quot;);</span>
+
+<span class="nc" id="L586">        jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);</span>
+<span class="nc" id="L587">        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource(&quot;/images/open-document.png&quot;))); // NOI18N</span>
+
+<span class="nc" id="L589">        javax.swing.GroupLayout jPanelSelectCSVUserLayout = new javax.swing.GroupLayout(jPanelSelectCSVUser);</span>
+<span class="nc" id="L590">        jPanelSelectCSVUser.setLayout(jPanelSelectCSVUserLayout);</span>
+<span class="nc" id="L591">        jPanelSelectCSVUserLayout.setHorizontalGroup(</span>
+<span class="nc" id="L592">            jPanelSelectCSVUserLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L593">            .addGroup(jPanelSelectCSVUserLayout.createSequentialGroup()</span>
+<span class="nc" id="L594">                .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L595">                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)</span>
+<span class="nc" id="L596">                .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE))</span>
+        );
+<span class="nc" id="L598">        jPanelSelectCSVUserLayout.setVerticalGroup(</span>
+<span class="nc" id="L599">            jPanelSelectCSVUserLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L600">            .addGroup(jPanelSelectCSVUserLayout.createSequentialGroup()</span>
+<span class="nc" id="L601">                .addGroup(jPanelSelectCSVUserLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)</span>
+<span class="nc" id="L602">                    .addComponent(jLabel11, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 51, Short.MAX_VALUE)</span>
+<span class="nc" id="L603">                    .addComponent(jLabel10, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))</span>
+<span class="nc" id="L604">                .addGap(0, 0, Short.MAX_VALUE))</span>
+        );
+
+<span class="nc" id="L607">        jPanel1.setBackground(new java.awt.Color(255, 255, 255));</span>
+<span class="nc" id="L608">        jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));</span>
+
+<span class="nc" id="L610">        jLabelRutaArchivo.setText(&quot;Archivo CSV...&quot;);</span>
+
+<span class="nc" id="L612">        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);</span>
+<span class="nc" id="L613">        jPanel1.setLayout(jPanel1Layout);</span>
+<span class="nc" id="L614">        jPanel1Layout.setHorizontalGroup(</span>
+<span class="nc" id="L615">            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L616">            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()</span>
+<span class="nc" id="L617">                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)</span>
+<span class="nc" id="L618">                .addComponent(jLabelRutaArchivo, javax.swing.GroupLayout.PREFERRED_SIZE, 373, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L619">                .addGap(34, 34, 34))</span>
+        );
+<span class="nc" id="L621">        jPanel1Layout.setVerticalGroup(</span>
+<span class="nc" id="L622">            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L623">            .addComponent(jLabelRutaArchivo, javax.swing.GroupLayout.DEFAULT_SIZE, 32, Short.MAX_VALUE)</span>
+        );
+
+<span class="nc" id="L626">        jButtonCargar.setBackground(new java.awt.Color(205, 31, 50));</span>
+<span class="nc" id="L627">        jButtonCargar.setFont(new java.awt.Font(&quot;Tahoma&quot;, 0, 18)); // NOI18N</span>
+<span class="nc" id="L628">        jButtonCargar.setForeground(new java.awt.Color(255, 255, 255));</span>
+<span class="nc" id="L629">        jButtonCargar.setText(&quot;Cargar&quot;);</span>
+<span class="nc" id="L630">        jButtonCargar.setBorder(null);</span>
+<span class="nc" id="L631">        jButtonCargar.setEnabled(false);</span>
+<span class="nc" id="L632">        jButtonCargar.addActionListener(new java.awt.event.ActionListener() {</span>
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+<span class="nc" id="L634">                jButtonCargarActionPerformed(evt);</span>
+<span class="nc" id="L635">            }</span>
+        });
+
+<span class="nc" id="L638">        javax.swing.GroupLayout jPanelModuleUserRegisterLayout = new javax.swing.GroupLayout(jPanelModuleUserRegister);</span>
+<span class="nc" id="L639">        jPanelModuleUserRegister.setLayout(jPanelModuleUserRegisterLayout);</span>
+<span class="nc" id="L640">        jPanelModuleUserRegisterLayout.setHorizontalGroup(</span>
+<span class="nc" id="L641">            jPanelModuleUserRegisterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L642">            .addGroup(jPanelModuleUserRegisterLayout.createSequentialGroup()</span>
+<span class="nc" id="L643">                .addContainerGap()</span>
+<span class="nc" id="L644">                .addGroup(jPanelModuleUserRegisterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L645">                    .addComponent(jSeparator1)</span>
+<span class="nc" id="L646">                    .addGroup(jPanelModuleUserRegisterLayout.createSequentialGroup()</span>
+<span class="nc" id="L647">                        .addGroup(jPanelModuleUserRegisterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L648">                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 399, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L649">                            .addGroup(jPanelModuleUserRegisterLayout.createSequentialGroup()</span>
+<span class="nc" id="L650">                                .addGroup(jPanelModuleUserRegisterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)</span>
+<span class="nc" id="L651">                                    .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 392, Short.MAX_VALUE)</span>
+<span class="nc" id="L652">                                    .addComponent(jPanelSelectCSVUser, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))</span>
+<span class="nc" id="L653">                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
+<span class="nc" id="L654">                                .addComponent(jButtonCargar, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)))</span>
+<span class="nc" id="L655">                        .addGap(0, 436, Short.MAX_VALUE)))</span>
+<span class="nc" id="L656">                .addContainerGap())</span>
+        );
+<span class="nc" id="L658">        jPanelModuleUserRegisterLayout.setVerticalGroup(</span>
+<span class="nc" id="L659">            jPanelModuleUserRegisterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L660">            .addGroup(jPanelModuleUserRegisterLayout.createSequentialGroup()</span>
+<span class="nc" id="L661">                .addGap(4, 4, 4)</span>
+<span class="nc" id="L662">                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L663">                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
+<span class="nc" id="L664">                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L665">                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)</span>
+<span class="nc" id="L666">                .addGroup(jPanelModuleUserRegisterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)</span>
+<span class="nc" id="L667">                    .addComponent(jButtonCargar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)</span>
+<span class="nc" id="L668">                    .addComponent(jPanelSelectCSVUser, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))</span>
+<span class="nc" id="L669">                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
+<span class="nc" id="L670">                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L671">                .addGap(455, 455, 455))</span>
+        );
+
+<span class="nc" id="L674">        jPanelModuleUserAdmin.add(jPanelModuleUserRegister, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 73, -1, 620));</span>
+<span class="nc" id="L675">        jPanelModuleUserRegister.getAccessibleContext().setAccessibleName(&quot;jPanelModuleUserRegister&quot;);</span>
+
+<span class="nc" id="L677">        rSPanelsSlider1.add(jPanelModuleUserAdmin, &quot;card3&quot;);</span>
+
+<span class="nc" id="L679">        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());</span>
+<span class="nc" id="L680">        getContentPane().setLayout(layout);</span>
+<span class="nc" id="L681">        layout.setHorizontalGroup(</span>
+<span class="nc" id="L682">            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L683">            .addGroup(layout.createSequentialGroup()</span>
+<span class="nc" id="L684">                .addComponent(jPanelMenu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L685">                .addGap(0, 0, 0)</span>
+<span class="nc" id="L686">                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L687">                    .addComponent(rSPanelsSlider1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)</span>
+<span class="nc" id="L688">                    .addComponent(jPanelHeader, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))</span>
+<span class="nc" id="L689">            .addComponent(jPanelbtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)</span>
+        );
+<span class="nc" id="L691">        layout.setVerticalGroup(</span>
+<span class="nc" id="L692">            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L693">            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()</span>
+<span class="nc" id="L694">                .addComponent(jPanelbtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L695">                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L696">                    .addComponent(jPanelMenu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)</span>
+<span class="nc" id="L697">                    .addGroup(layout.createSequentialGroup()</span>
+<span class="nc" id="L698">                        .addComponent(jPanelHeader, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L699">                        .addGap(0, 0, Short.MAX_VALUE)</span>
+<span class="nc" id="L700">                        .addComponent(rSPanelsSlider1, javax.swing.GroupLayout.PREFERRED_SIZE, 704, javax.swing.GroupLayout.PREFERRED_SIZE))))</span>
+        );
+
+<span class="nc" id="L703">        pack();</span>
+<span class="nc" id="L704">    }// &lt;/editor-fold&gt;//GEN-END:initComponents</span>
+
+    private void jLabelHomeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelHomeMouseClicked
+<span class="nc" id="L707">        resetColor(jLabelPerfil, &quot;Perfil.jpg&quot;);</span>
+<span class="nc" id="L708">        resetColor(jLabelinterfaz, &quot;GestionInterfaz.jpg&quot;);</span>
+<span class="nc" id="L709">        resetColor(jLabelUser, &quot;GestionUser.jpg&quot;);</span>
+<span class="nc" id="L710">        resetColor(jLabelticket, &quot;GestionTicket.jpg&quot;);</span>
+<span class="nc" id="L711">        setColor(jLabelHome);</span>
+        /*resetColor(jLabelUser);
+        resetColor(jLabelinterfaz);*/
+<span class="nc" id="L714">        changeImage(&quot;inicio-clic.jpg&quot;, jLabelHome);</span>
+<span class="nc" id="L715">        rSPanelsSlider1.setPanelSlider(15, jPanelIndexAdmin, RSPanelsSlider.DIRECT.RIGHT);</span>
+
+<span class="nc" id="L717">    }//GEN-LAST:event_jLabelHomeMouseClicked</span>
+
+    private void jLabelPerfilMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelPerfilMouseClicked
+<span class="nc" id="L720">        resetColor(jLabelHome, &quot;inicio.jpg&quot;);</span>
+<span class="nc" id="L721">        resetColor(jLabelinterfaz, &quot;GestionInterfaz.jpg&quot;);</span>
+<span class="nc" id="L722">        resetColor(jLabelUser, &quot;GestionUser.jpg&quot;);</span>
+<span class="nc" id="L723">        resetColor(jLabelticket, &quot;GestionTicket.jpg&quot;);</span>
+        /* setColor(jLabelPerfil);
+        resetColor(jLabelUser);
+        resetColor(jLabelinterfaz);*/
+<span class="nc" id="L727">        changeImage(&quot;perfil-clic.jpg&quot;, jLabelPerfil);</span>
+
+<span class="nc" id="L729">        rSPanelsSlider1.setPanelSlider(15, jPanelPerfilAdmin, RSPanelsSlider.DIRECT.RIGHT);</span>
+<span class="nc" id="L730">    }//GEN-LAST:event_jLabelPerfilMouseClicked</span>
+
+    private void jLabelUserMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelUserMouseClicked
+<span class="nc" id="L733">        resetColor(jLabelPerfil, &quot;Perfil.jpg&quot;);</span>
+<span class="nc" id="L734">        resetColor(jLabelHome, &quot;inicio.jpg&quot;);</span>
+<span class="nc" id="L735">        resetColor(jLabelinterfaz, &quot;GestionInterfaz.jpg&quot;);</span>
+<span class="nc" id="L736">        resetColor(jLabelticket, &quot;GestionTicket.jpg&quot;);</span>
+<span class="nc" id="L737">        changeImage(&quot;User-clic.jpg&quot;, jLabelUser);</span>
+<span class="nc" id="L738">        rSPanelsSlider1.setPanelSlider(15, jPanelModuleUserAdmin, RSPanelsSlider.DIRECT.RIGHT);</span>
+<span class="nc" id="L739">        jPanelModuleUserRegister.setVisible(true);</span>
+<span class="nc" id="L740">        jPanelModuleUserReports.setVisible(false);</span>
+<span class="nc" id="L741">    }//GEN-LAST:event_jLabelUserMouseClicked</span>
+
+    private void jLabelinterfazMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelinterfazMouseClicked
+<span class="nc" id="L744">        resetColor(jLabelPerfil, &quot;Perfil.jpg&quot;);</span>
+<span class="nc" id="L745">        resetColor(jLabelHome, &quot;inicio.jpg&quot;);</span>
+<span class="nc" id="L746">        resetColor(jLabelUser, &quot;GestionUser.jpg&quot;);</span>
+<span class="nc" id="L747">        resetColor(jLabelticket, &quot;GestionTicket.jpg&quot;);</span>
+<span class="nc" id="L748">        changeImage(&quot;interfaz-clic.jpg&quot;, jLabelinterfaz);</span>
+<span class="nc" id="L749">    }//GEN-LAST:event_jLabelinterfazMouseClicked</span>
+
+    private void btnCerrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCerrarMouseClicked
+<span class="nc" id="L752">        System.exit(0);</span>
+<span class="nc" id="L753">    }//GEN-LAST:event_btnCerrarMouseClicked</span>
+
+    private void btnCerrarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCerrarMouseEntered
+<span class="nc" id="L756">        btnCerrar.setBackground(new Color(232, 17, 35));</span>
+<span class="nc" id="L757">    }//GEN-LAST:event_btnCerrarMouseEntered</span>
+
+    private void btnCerrarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCerrarMouseExited
+<span class="nc" id="L760">        btnCerrar.setBackground(new Color(255, 255, 255));</span>
+<span class="nc" id="L761">    }//GEN-LAST:event_btnCerrarMouseExited</span>
+
+    private void btnMiminizeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnMiminizeMouseClicked
+<span class="nc" id="L764">        this.setState(Frame.ICONIFIED);</span>
+<span class="nc" id="L765">    }//GEN-LAST:event_btnMiminizeMouseClicked</span>
+
+    private void btnMiminizeMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnMiminizeMouseEntered
+<span class="nc" id="L768">        btnMiminize.setBackground(new Color(229, 229, 229));</span>
+<span class="nc" id="L769">    }//GEN-LAST:event_btnMiminizeMouseEntered</span>
+
+    private void btnMiminizeMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnMiminizeMouseExited
+<span class="nc" id="L772">        btnMiminize.setBackground(new Color(255, 255, 255));</span>
+<span class="nc" id="L773">    }//GEN-LAST:event_btnMiminizeMouseExited</span>
+
+    private void jPanelbtnMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelbtnMouseDragged
+<span class="nc" id="L776">        int x = evt.getXOnScreen();</span>
+<span class="nc" id="L777">        int y = evt.getYOnScreen();</span>
+<span class="nc" id="L778">        this.setLocation(x - xMouse, y - yMouse);</span>
+<span class="nc" id="L779">    }//GEN-LAST:event_jPanelbtnMouseDragged</span>
+
+    private void jPanelbtnMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelbtnMousePressed
+<span class="nc" id="L782">        xMouse = evt.getX();</span>
+<span class="nc" id="L783">        yMouse = evt.getY();</span>
+<span class="nc" id="L784">    }//GEN-LAST:event_jPanelbtnMousePressed</span>
+
+    private void jLabelticketMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelticketMouseClicked
+<span class="nc" id="L787">        resetColor(jLabelHome, &quot;inicio.jpg&quot;);</span>
+<span class="nc" id="L788">        resetColor(jLabelPerfil, &quot;Perfil.jpg&quot;);</span>
+<span class="nc" id="L789">        resetColor(jLabelinterfaz, &quot;GestionInterfaz.jpg&quot;);</span>
+<span class="nc" id="L790">        resetColor(jLabelUser, &quot;GestionUser.jpg&quot;);</span>
+<span class="nc" id="L791">        changeImage(&quot;Ticket-clic.jpg&quot;, jLabelticket);</span>
+<span class="nc" id="L792">    }//GEN-LAST:event_jLabelticketMouseClicked</span>
+
+    private void jPanelUserRegisterItemMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelUserRegisterItemMouseEntered
+        // TODO add your handling code here:
+<span class="nc" id="L796">        jPanelUserRegisterItem.setBackground(item_menu_entered);</span>
+<span class="nc" id="L797">    }//GEN-LAST:event_jPanelUserRegisterItemMouseEntered</span>
+
+    private void jPanelUserRegisterItemMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelUserRegisterItemMouseExited
+        // TODO add your handling code here:
+<span class="nc" id="L801">        jPanelUserRegisterItem.setBackground(item_menu_exited);</span>
+<span class="nc" id="L802">    }//GEN-LAST:event_jPanelUserRegisterItemMouseExited</span>
+
+    private void jPanelUserRegisterItemMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelUserRegisterItemMouseClicked
+        // TODO add your handling code here:
+<span class="nc" id="L806">        jPanelUserRegisterItem.setBorder(border_clicked);</span>
+<span class="nc" id="L807">        btnConsultaUser.setBackground(item_menu_exited);</span>
+<span class="nc" id="L808">        btnConsultaUser.setBorder(null);</span>
+<span class="nc" id="L809">        jPanelModuleUserRegister.setVisible(true);</span>
+<span class="nc" id="L810">        jPanelModuleUserReports.setVisible(false);</span>
+<span class="nc" id="L811">    }//GEN-LAST:event_jPanelUserRegisterItemMouseClicked</span>
+
+    private void jPanelSelectCSVUserMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelSelectCSVUserMouseEntered
+        // TODO add your handling code here:
+<span class="nc" id="L815">        jPanelSelectCSVUser.setBackground(item_bottom_entered);</span>
+<span class="nc" id="L816">    }//GEN-LAST:event_jPanelSelectCSVUserMouseEntered</span>
+
+    private void jPanelSelectCSVUserMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelSelectCSVUserMouseExited
+        // TODO add your handling code here:
+<span class="nc" id="L820">        jPanelSelectCSVUser.setBackground(item_bottom_exited);</span>
+<span class="nc" id="L821">    }//GEN-LAST:event_jPanelSelectCSVUserMouseExited</span>
+
+    private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
+        // TODO add your handling code here:
+<span class="nc" id="L825">    }//GEN-LAST:event_jLabel2MouseClicked</span>
+
+    private void jPanelSelectCSVUserMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelSelectCSVUserMouseClicked
+        // TODO add your handling code here:
+<span class="nc" id="L829">        manager.selectFile(&quot;user.upload&quot;);</span>
+<span class="nc" id="L830">    }//GEN-LAST:event_jPanelSelectCSVUserMouseClicked</span>
+
+    private void jButtonCargarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCargarActionPerformed
+        // TODO add your handling code here:
+<span class="nc" id="L834">        manager.readCSVFile();</span>
+<span class="nc" id="L835">    }//GEN-LAST:event_jButtonCargarActionPerformed</span>
+
+    private void btnCerrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCerrarActionPerformed
+        // TODO add your handling code here:
+<span class="nc" id="L839">    }//GEN-LAST:event_btnCerrarActionPerformed</span>
+
+    private void btnConsultaUserMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnConsultaUserMouseClicked
+        // TODO add your handling code here:
+<span class="nc" id="L843">        btnConsultaUser.setBorder(border_clicked);</span>
+<span class="nc" id="L844">        btnConsultaUser.setBackground(item_menu_entered);</span>
+<span class="nc" id="L845">        jPanelUserRegisterItem.setBorder(null);</span>
+<span class="nc" id="L846">        jPanelModuleUserRegister.setVisible(false);</span>
+<span class="nc" id="L847">        jPanelModuleUserReports.setVisible(true);</span>
+<span class="nc" id="L848">    }//GEN-LAST:event_btnConsultaUserMouseClicked</span>
+
+    private void btnConsultaUserMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnConsultaUserMouseEntered
+        // TODO add your handling code here:
+        //btnConsultaUser.setBackground(item_menu_entered);
+<span class="nc" id="L853">    }//GEN-LAST:event_btnConsultaUserMouseEntered</span>
+
+    private void btnConsultaUserMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnConsultaUserMouseExited
+        // TODO add your handling code here:
+        //btnConsultaUser.setBackground(item_menu_exited);
+<span class="nc" id="L858">    }//GEN-LAST:event_btnConsultaUserMouseExited</span>
+
+    private void jTextFieldBuscarUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldBuscarUserActionPerformed
+        // TODO add your handling code here:
+<span class="nc" id="L862">    }//GEN-LAST:event_jTextFieldBuscarUserActionPerformed</span>
+
+    private void jTextFieldBuscarUserKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextFieldBuscarUserKeyReleased
+        // TODO add your handling code here:
+<span class="nc" id="L866">        ConsultasAdmin consulAdmin = new ConsultasAdmin();</span>
+<span class="nc" id="L867">        String dato = jTextFieldBuscarUser.getText();</span>
+<span class="nc bnc" id="L868" title="All 2 branches missed.">        if (consulAdmin.buscarUser(dato, this)) {</span>
+            
+        }else{
+            
+        }
+        
+<span class="nc" id="L874">    }//GEN-LAST:event_jTextFieldBuscarUserKeyReleased</span>
+
+    private void btnConsultaUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConsultaUserActionPerformed
+        // TODO add your handling code here:
+<span class="nc" id="L878">        ConsultasAdmin consulAdmin = new ConsultasAdmin();</span>
+<span class="nc" id="L879">        consulAdmin.llenarTabla(this);</span>
+<span class="nc" id="L880">    }//GEN-LAST:event_btnConsultaUserActionPerformed</span>
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String args[]) {
+        /* Set the Nimbus look and feel */
+        //&lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot; Look and feel setting code (optional) &quot;&gt;
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         */
+        try {
+<span class="nc bnc" id="L892" title="All 2 branches missed.">            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {</span>
+<span class="nc bnc" id="L893" title="All 2 branches missed.">                if (&quot;Nimbus&quot;.equals(info.getName())) {</span>
+<span class="nc" id="L894">                    javax.swing.UIManager.setLookAndFeel(info.getClassName());</span>
+<span class="nc" id="L895">                    break;</span>
+                }
+            }
+<span class="nc" id="L898">        } catch (ClassNotFoundException ex) {</span>
+<span class="nc" id="L899">            java.util.logging.Logger.getLogger(VistaAdmin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);</span>
+<span class="nc" id="L900">        } catch (InstantiationException ex) {</span>
+<span class="nc" id="L901">            java.util.logging.Logger.getLogger(VistaAdmin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);</span>
+<span class="nc" id="L902">        } catch (IllegalAccessException ex) {</span>
+<span class="nc" id="L903">            java.util.logging.Logger.getLogger(VistaAdmin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);</span>
+<span class="nc" id="L904">        } catch (javax.swing.UnsupportedLookAndFeelException ex) {</span>
+<span class="nc" id="L905">            java.util.logging.Logger.getLogger(VistaAdmin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);</span>
+<span class="nc" id="L906">        }</span>
+        //&lt;/editor-fold&gt;
+
+        /* Create and display the form */
+<span class="nc" id="L910">        java.awt.EventQueue.invokeLater(new Runnable() {</span>
+            public void run() {
+<span class="nc" id="L912">                new VistaAdmin().setVisible(true);</span>
+<span class="nc" id="L913">            }</span>
+        });
+<span class="nc" id="L915">    }</span>
+
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnCerrar;
+    public javax.swing.JButton btnConsultaUser;
+    private javax.swing.JButton btnMiminize;
+    public javax.swing.JButton jButtonCargar;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabelHome;
+    private javax.swing.JLabel jLabelPerfil;
+    public javax.swing.JLabel jLabelRutaArchivo;
+    private javax.swing.JLabel jLabelUser;
+    private javax.swing.JLabel jLabelinterfaz;
+    private javax.swing.JLabel jLabelticket;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanelHeader;
+    private javax.swing.JPanel jPanelIndexAdmin;
+    private javax.swing.JPanel jPanelMenu;
+    private javax.swing.JPanel jPanelMenuOptionsModuleUser;
+    private javax.swing.JPanel jPanelModuleUserAdmin;
+    public javax.swing.JPanel jPanelModuleUserRegister;
+    public javax.swing.JPanel jPanelModuleUserReports;
+    private javax.swing.JPanel jPanelPerfilAdmin;
+    public javax.swing.JPanel jPanelSelectCSVUser;
+    private javax.swing.JPanel jPanelUserRegisterItem;
+    private javax.swing.JPanel jPanelbtn;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JSeparator jSeparator2;
+    public javax.swing.JTable jTableUsers;
+    private javax.swing.JTextField jTextFieldBuscarUser;
+    private rojerusan.RSPanelsSlider rSPanelsSlider1;
+    // End of variables declaration//GEN-END:variables
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.6.201602180812</span></div></body></html>

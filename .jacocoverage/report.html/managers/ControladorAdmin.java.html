@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>ControladorAdmin.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">JaCoCoverage analysis of project &quot;UVFood&quot; (powered by JaCoCo from EclEmma)</a> &gt; <a href="index.source.html" class="el_package">managers</a> &gt; <span class="el_source">ControladorAdmin.java</span></div><h1>ControladorAdmin.java</h1><pre class="source lang-java linenums">/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package managers;
+
+import classes.ConsultasAdmin;
+import classes.FileManage;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import views.VistaAdmin;
+import classes.KeyValidate;
+import components.UVFoodDialogs;
+
+/**
+ *
+ * @author Juan Pablo Castro 2019 GitHub: jpcv222
+ * @author Jeffrey Rios 2019 GitHub: jeffrey2423
+ */
+public class ControladorAdmin implements ActionListener {
+
+    private VistaAdmin interfazPrincipalAdmin;
+<span class="nc" id="L24">    private FileManage file = new FileManage();</span>
+<span class="nc" id="L25">    private KeyValidate keyvalidate = new KeyValidate();</span>
+<span class="nc" id="L26">    private UVFoodDialogs modal = new UVFoodDialogs();</span>
+    private ConsultasAdmin consultasAdmin;
+
+    //private Cliente modeloCliente;
+<span class="nc" id="L30">    public ControladorAdmin(VistaAdmin interfazPrincipalAdmin) {</span>
+<span class="nc" id="L31">        this.interfazPrincipalAdmin = interfazPrincipalAdmin;</span>
+        //this.interfazPrincipalAdmin.jButtonCargar.addActionListener(this);
+<span class="nc" id="L33">    }</span>
+
+<span class="nc" id="L35">    public ControladorAdmin(VistaAdmin interfazPrincipalAdmin, ConsultasAdmin consultasAdmin) {</span>
+<span class="nc" id="L36">        this.interfazPrincipalAdmin = interfazPrincipalAdmin;</span>
+<span class="nc" id="L37">        this.consultasAdmin = consultasAdmin;</span>
+<span class="nc" id="L38">        this.interfazPrincipalAdmin.btnConsultaUser.addActionListener(this);</span>
+<span class="nc" id="L39">    }</span>
+
+    public void selectFile(String tipoCarga) {
+<span class="nc bnc" id="L42" title="All 2 branches missed.">        if (keyvalidate.haveKey(&quot;action-method-name&quot;, &quot;user-id&quot;)) {</span>
+
+<span class="nc" id="L44">            String response = file.selectFile(file.calcularRutaArchivo());</span>
+<span class="nc" id="L45">            interfazPrincipalAdmin.jLabelRutaArchivo.setText(response);</span>
+
+<span class="nc" id="L47">            validateBtCargar();</span>
+        } else {
+            //Show error key message
+        }
+<span class="nc" id="L51">    }</span>
+
+    public void validateBtCargar() {
+<span class="nc" id="L54">        String value = interfazPrincipalAdmin.jLabelRutaArchivo.getText();</span>
+<span class="nc bnc" id="L55" title="All 4 branches missed.">        if ((!value.equals(&quot;Archivo CSV&quot;)) &amp;&amp; value.contains(&quot;.csv&quot;)) {</span>
+<span class="nc" id="L56">            interfazPrincipalAdmin.jButtonCargar.setEnabled(true);</span>
+        } else {
+<span class="nc" id="L58">            interfazPrincipalAdmin.jButtonCargar.setEnabled(false);</span>
+        }
+<span class="nc" id="L60">    }</span>
+
+    public void readCSVFile() {
+<span class="nc bnc" id="L63" title="All 2 branches missed.">        if (keyvalidate.haveKey(&quot;action-method-name&quot;, &quot;user-id&quot;)) {</span>
+<span class="nc" id="L64">            String response = file.readCSVFile(file.getRuta());</span>
+
+<span class="nc bnc" id="L66" title="All 18 branches missed.">            switch (response) {</span>
+                case &quot;success&quot;:
+<span class="nc" id="L68">                    modal.success_message(&quot;Carga masiva de usuarios.&quot;, &quot;Éxito al cargar archivo.&quot;, &quot;Los usuarios fueron cargados con éxito.&quot;, null, null);</span>
+<span class="nc" id="L69">                    break;</span>
+                case &quot;error.noclassdeffounderror&quot;:
+<span class="nc" id="L71">                    modal.error_message(&quot;Error fatal.&quot;, &quot;Lectura archivo CSV errónea.&quot;, &quot;Librería de lectura de archivo extraviada.&quot;, &quot;Comuníquese con el área de sistemas.&quot;, null);</span>
+<span class="nc" id="L72">                    break;</span>
+                case &quot;error.nullpointerexception&quot;:
+<span class="nc" id="L74">                    modal.error_message(&quot;Carga masiva usuarios.&quot;, &quot;Lectura archivo CSV errónea.&quot;, &quot;El archivo CSV es null.&quot;, null, null);</span>
+<span class="nc" id="L75">                    break;</span>
+                case &quot;error.unknow&quot;:
+<span class="nc" id="L77">                    modal.error_message(&quot;Carga masiva usuarios.&quot;, &quot;Lectura archivo CSV errónea.&quot;, &quot;Error desconocido.&quot;, &quot;Comuníquese con el área de sistemas.&quot;, null);</span>
+                    break;
+            }
+
+        } else {
+            //Show error key message
+        }
+<span class="nc" id="L84">    }</span>
+
+    /*public boolean gestionBuscarUser(String gdato, VistaAdmin gvista){
+        return consultasAdmin.buscarUser(gdato, gvista);        
+    }*/
+    @Override
+    public void actionPerformed(ActionEvent e) {
+<span class="nc bnc" id="L91" title="All 2 branches missed.">        if (e.getSource() == interfazPrincipalAdmin.btnConsultaUser) {</span>
+<span class="nc bnc" id="L92" title="All 2 branches missed.">            if (consultasAdmin.llenarTabla(interfazPrincipalAdmin)) {</span>
+<span class="nc" id="L93">                System.out.println(&quot;entro&quot;);</span>
+            } else {
+<span class="nc" id="L95">                System.out.println(&quot;no entro&quot;);</span>
+            }
+
+        }
+<span class="nc" id="L99">    }</span>
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.6.201602180812</span></div></body></html>
