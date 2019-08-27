@@ -3,8 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package classes;
+package managers.queries;
 
+import classes.ConexionBD;
+import classes.Logs;
+import classes.Usuario;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -17,10 +20,12 @@ import views.VistaLogin;
  *
  * @author sp
  */
-public class ConsultasCliente extends ConexionBD {
+public class ConsultasLogin extends ConexionBD {
      private Logs logs = new Logs(Thread.currentThread().getStackTrace()[1].getClassName());
 
-    public boolean login(Usuario modeloCliente, VistaLogin vista) {
+    public String login(Usuario modeloCliente, VistaLogin vista) {
+        
+        String result = "error.unknow";
         PreparedStatement ps = null;
         Connection conn = Conexion();
         ResultSet rs = null;
@@ -48,22 +53,21 @@ public class ConsultasCliente extends ConexionBD {
                     modeloCliente.setBirth_date(rs.getDate(5));
                     modeloCliente.setEmail(rs.getString(6));
 
-                    return true;
+                    result = "success";
                 } else {
-                    modal.error_message("Error", "Algo anda mal","La contraseña no coincide con el usuario","Por Favor intenta con otros datos", null);
-                    return false;
+                    result = "error.incorrect_password";
                 }
             } else {
-                modal.error_message("Error", "Algo anda mal","El usuario no existe","Por Favor intenta con otros datos", null);
-                return false;
+                result = "error.incorrect_user";
             }
 
         } catch (SQLException e) {
-            modal.error_message("Error", "Algo anda mal", "El servidor esta presentado problemas", "Por Favor intenta mas tarde", "O reportanos que ocurre");
             logs.escribirExceptionLogs(Thread.currentThread().getStackTrace()[1].getMethodName() +"// "+  e.getMessage() +" "+ e.toString());
-            return false;
+            result = "error.server";
 
         }
+        
+        return result;
 
     }
 

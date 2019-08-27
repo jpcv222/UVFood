@@ -5,71 +5,32 @@
  */
 package managers;
 
+import classes.KeyValidate;
 import classes.Usuario;
-import classes.ConsultasCliente;
+import managers.queries.ConsultasLogin;
 import components.UVFoodDialogs;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
-import static java.util.Objects.hash;
-import org.apache.commons.codec.digest.DigestUtils;
-import validations.Validations;
-import views.Index;
-import views.VistaAdmin;
+import validations.FormValidations;
 import views.VistaCliente;
-import views.VistaLogin;
-
 /**
  *
  * @author Jeffrey Rios 2019 GitHub: jeffrey2423
  */
-public class ControladorCliente implements ActionListener {
+public class ControladorCliente {
 
-    private VistaCliente vistaCliente;
-    private VistaLogin vistaLogin;
-    private ConsultasCliente consultasCliente;
-    private Usuario modeloCliente;
-    Validations validations = new Validations();
-    UVFoodDialogs modal = new UVFoodDialogs();
+    private final VistaCliente vistaCliente;
+    private final ConsultasLogin consultasCliente;
+    private final Usuario modeloCliente;
+    private final KeyValidate keyvalidate;
+    private final FormValidations validations;
+    private final UVFoodDialogs modal;
 
-    public ControladorCliente(VistaCliente vistaCliente, VistaLogin vistaLogin, ConsultasCliente consultasCliente, Usuario modeloCliente) {
+    public ControladorCliente(VistaCliente vistaCliente, ConsultasLogin consultasCliente, Usuario modeloCliente) {
         this.vistaCliente = vistaCliente;
-        this.vistaLogin = vistaLogin;
         this.consultasCliente = consultasCliente;
         this.modeloCliente = modeloCliente;
-        this.vistaLogin.jButtonIniciarSesion.addActionListener(this);
+        this.modal = new UVFoodDialogs();
+        this.validations = new FormValidations();
+        this.keyvalidate = new KeyValidate();
     }
 
-    public void iniciar() {
-        vistaLogin.setTitle("Login");
-
-    }
-
-    @Override
-    public void actionPerformed(ActionEvent e) {
-        if (e.getSource() == vistaLogin.jButtonIniciarSesion) {
-            String clave = new String(vistaLogin.jPasswordField.getPassword());
-            String claveEn = DigestUtils.sha1Hex(clave);
-
-            if (validations.campoVacio(vistaLogin.jPasswordField) && validations.campoVacio(vistaLogin.jTextField1)) {
-                modeloCliente.setUsername(vistaLogin.jTextField1.getText());
-                modeloCliente.setPassword_user(clave);
-
-                if (consultasCliente.login(modeloCliente, vistaLogin)) {
-                    vistaLogin.dispose();
-                    Index.login = null;
-
-                    VistaCliente home = new VistaCliente();
-                    VistaAdmin home2 = new VistaAdmin();
-                    home2.setVisible(true);
-                }
-
-            } else {
-                modal.error_message("Error", "Campos obligatorios", "Debes llenar todos los campos", null, null);
-            }
-
-        }
-    }
-    
 }

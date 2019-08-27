@@ -8,7 +8,6 @@
  */
 package views;
 
-import classes.ConsultasAdmin;
 import java.awt.Image;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
@@ -18,7 +17,6 @@ import java.io.File;
 import javax.swing.JFileChooser;
 import javax.swing.JLabel;
 import javax.swing.border.BevelBorder;
-import javax.swing.table.DefaultTableModel;
 import rojerusan.RSPanelsSlider;
 import managers.ControladorAdmin;
 

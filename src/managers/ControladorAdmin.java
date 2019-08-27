@@ -5,7 +5,7 @@
  */
 package managers;
 
-import classes.ConsultasAdmin;
+import managers.queries.ConsultasAdmin;
 import classes.FileManage;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -28,9 +28,9 @@ import static java.nio.file.StandardCopyOption.REPLACE_EXISTING;
 public class ControladorAdmin implements ActionListener {
 
     private final VistaAdmin interfazPrincipalAdmin;
-    private final FileManage file = new FileManage();
-    private final KeyValidate keyvalidate = new KeyValidate();
-    private final UVFoodDialogs modal = new UVFoodDialogs();
+    private final FileManage file ;
+    private final KeyValidate keyvalidate;
+    private final UVFoodDialogs modal ;
     private ConsultasAdmin consultasAdmin;
     private Usuario user;
 
@@ -39,7 +39,9 @@ public class ControladorAdmin implements ActionListener {
     //private Cliente modeloCliente;
     public ControladorAdmin(VistaAdmin interfazPrincipalAdmin) {
         this.interfazPrincipalAdmin = interfazPrincipalAdmin;
-        //this.interfazPrincipalAdmin.jButtonCargar.addActionListener(this);
+        this.modal = new UVFoodDialogs();
+        this.keyvalidate = new KeyValidate();
+        this.file = new FileManage();
     }
 
     public void selectFile(String tipoCarga) {

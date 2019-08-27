@@ -5,13 +5,10 @@
  */
 package views;
 
-import classes.ConsultasCliente;
-import classes.Usuario;
-import components.UVFoodDialogs;
 import java.awt.Color;
 import java.awt.Frame;
+import managers.ControladorLogin;
 import org.apache.commons.codec.digest.DigestUtils;
-import validations.Validations;
 
 /**
  *
@@ -26,15 +23,14 @@ public class VistaLogin extends javax.swing.JFrame {
     int xMouse;
     int yMouse;
     
-    Validations validations = new Validations();
-    private Usuario modeloCliente = new Usuario();
-    private ConsultasCliente consultasCliente = new ConsultasCliente();
-    UVFoodDialogs modal = new UVFoodDialogs();
+    private ControladorLogin login_manager;
+    
 
     public VistaLogin() {
         initComponents();
         this.setLocationRelativeTo(null);
         jPanelLogin.setLocation(jPanelPrincipal.getHeight() / 2, jPanelPrincipal.getWidth() / 2);
+        login_manager = new ControladorLogin(this);
 
     }
 
@@ -346,28 +342,7 @@ public class VistaLogin extends javax.swing.JFrame {
 
     private void jButtonIniciarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonIniciarSesionActionPerformed
         // TODO add your handling code here:
-      
-            String clave = new String(jPasswordField.getPassword());
-            String claveEn = DigestUtils.sha1Hex(clave);
-
-            if (validations.campoVacio(jPasswordField) && validations.campoVacio(jTextField1)) {
-                modeloCliente.setUsername(jTextField1.getText());
-                modeloCliente.setPassword_user(clave);
-
-                if (consultasCliente.login(modeloCliente, this)) {
-                    this.dispose();
-                    Index.login = null;
-
-                    VistaCliente home = new VistaCliente(modeloCliente);
-                    VistaAdmin home2 = new VistaAdmin();
-                    home.setVisible(true);
-                }
-
-            } else {
-                modal.error_message("Error", "Campos obligatorios", "Debes llenar todos los campos", null, null);
-            }
-
-        
+            login_manager.request_login();
     }//GEN-LAST:event_jButtonIniciarSesionActionPerformed
 
     /**

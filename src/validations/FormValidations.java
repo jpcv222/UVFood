@@ -15,7 +15,7 @@ import javax.swing.Timer;
  *
  * @author jeffr
  */
-public class Validations {
+public class FormValidations {
 
     public void alert(String mensaje, String tipo, JPanel panel, JLabel label) {
         panel.setVisible(true);
