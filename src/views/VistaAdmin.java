@@ -18,6 +18,7 @@ import java.io.File;
 import javax.swing.JFileChooser;
 import javax.swing.JLabel;
 import javax.swing.border.BevelBorder;
+import javax.swing.table.DefaultTableModel;
 import rojerusan.RSPanelsSlider;
 import managers.ControladorAdmin;
 
@@ -88,6 +89,7 @@ public class VistaAdmin extends javax.swing.JFrame {
 
     }
 
+
     /* public void resetColor(JLabel item) {
         item.setOpaque(false);
         item.setBackground(new Color(205,31,50));
@@ -144,12 +146,35 @@ public class VistaAdmin extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         btnConsultaUser = new javax.swing.JButton();
         jPanelModuleUserReports = new javax.swing.JPanel();
+        jPanel3 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
-        jSeparator2 = new javax.swing.JSeparator();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTableUsers = new javax.swing.JTable();
         jTextFieldBuscarUser = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
+        jPanel4 = new javax.swing.JPanel();
+        jLabel12 = new javax.swing.JLabel();
+        jTextFieldUser = new javax.swing.JTextField();
+        jLabel13 = new javax.swing.JLabel();
+        jSeparator2 = new javax.swing.JSeparator();
+        jLabel14 = new javax.swing.JLabel();
+        jPasswordField = new javax.swing.JPasswordField();
+        jSeparator3 = new javax.swing.JSeparator();
+        jLabel15 = new javax.swing.JLabel();
+        jTextFieldName = new javax.swing.JTextField();
+        jSeparator4 = new javax.swing.JSeparator();
+        jTextFieldApellido = new javax.swing.JTextField();
+        jLabel16 = new javax.swing.JLabel();
+        jSeparator5 = new javax.swing.JSeparator();
+        jLabel17 = new javax.swing.JLabel();
+        jTextFieldFecNa = new javax.swing.JTextField();
+        jSeparator6 = new javax.swing.JSeparator();
+        jLabel18 = new javax.swing.JLabel();
+        jTextFieldEmail = new javax.swing.JTextField();
+        jSeparator7 = new javax.swing.JSeparator();
+        btnEscogerImg1 = new javax.swing.JButton();
+        btnEscogerImg2 = new javax.swing.JButton();
+        btnEscogerImg3 = new javax.swing.JButton();
         jPanelModuleUserRegister = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
@@ -470,11 +495,14 @@ public class VistaAdmin extends javax.swing.JFrame {
         jPanelModuleUserAdmin.add(jPanelMenuOptionsModuleUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1001, -1));
 
         jPanelModuleUserReports.setBackground(new java.awt.Color(255, 255, 255));
-        jPanelModuleUserReports.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 0, 0), 2, true));
+        jPanelModuleUserReports.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 0));
         jPanelModuleUserReports.setAlignmentY(1.0F);
         jPanelModuleUserReports.setPreferredSize(new java.awt.Dimension(977, 635));
         jPanelModuleUserReports.setRequestFocusEnabled(false);
         jPanelModuleUserReports.setVerifyInputWhenFocusTarget(false);
+
+        jPanel3.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel3.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(205, 31, 50), 1, true));
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jLabel4.setText("Reporte de usuarios");
@@ -503,6 +531,11 @@ public class VistaAdmin extends javax.swing.JFrame {
             }
         });
         jTableUsers.getTableHeader().setReorderingAllowed(false);
+        jTableUsers.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTableUsersMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(jTableUsers);
         if (jTableUsers.getColumnModel().getColumnCount() > 0) {
             jTableUsers.getColumnModel().getColumn(0).setResizable(false);
@@ -527,40 +560,286 @@ public class VistaAdmin extends javax.swing.JFrame {
 
         jLabel3.setText("Buscar");
 
-        javax.swing.GroupLayout jPanelModuleUserReportsLayout = new javax.swing.GroupLayout(jPanelModuleUserReports);
-        jPanelModuleUserReports.setLayout(jPanelModuleUserReportsLayout);
-        jPanelModuleUserReportsLayout.setHorizontalGroup(
-            jPanelModuleUserReportsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jSeparator2, javax.swing.GroupLayout.DEFAULT_SIZE, 973, Short.MAX_VALUE)
-            .addGroup(jPanelModuleUserReportsLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanelModuleUserReportsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanelModuleUserReportsLayout.createSequentialGroup()
-                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 399, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelModuleUserReportsLayout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addGroup(jPanelModuleUserReportsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(jPanelModuleUserReportsLayout.createSequentialGroup()
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 399, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(35, 35, 35)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(jPanel3Layout.createSequentialGroup()
                                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(jTextFieldBuscarUser, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 882, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(40, 40, 40))))
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 882, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(38, Short.MAX_VALUE))
         );
-        jPanelModuleUserReportsLayout.setVerticalGroup(
-            jPanelModuleUserReportsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelModuleUserReportsLayout.createSequentialGroup()
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
                 .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(jPanelModuleUserReportsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jTextFieldBuscarUser, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3))
                 .addGap(10, 10, 10)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(431, Short.MAX_VALUE))
+                .addGap(0, 40, Short.MAX_VALUE))
+        );
+
+        jPanel4.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel4.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(205, 31, 50), 1, true));
+
+        jLabel12.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jLabel12.setText("Acciones");
+
+        jTextFieldUser.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jTextFieldUser.setBorder(null);
+        jTextFieldUser.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldUserActionPerformed(evt);
+            }
+        });
+
+        jLabel13.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel13.setText("Usuario");
+
+        jLabel14.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel14.setText("Clave");
+
+        jPasswordField.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jPasswordField.setBorder(null);
+
+        jLabel15.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel15.setText("Nombre");
+
+        jTextFieldName.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jTextFieldName.setBorder(null);
+        jTextFieldName.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldNameActionPerformed(evt);
+            }
+        });
+
+        jTextFieldApellido.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jTextFieldApellido.setBorder(null);
+        jTextFieldApellido.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldApellidoActionPerformed(evt);
+            }
+        });
+
+        jLabel16.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel16.setText("Apellido");
+
+        jLabel17.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel17.setText("Fecha nacimiento");
+
+        jTextFieldFecNa.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jTextFieldFecNa.setBorder(null);
+        jTextFieldFecNa.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldFecNaActionPerformed(evt);
+            }
+        });
+
+        jLabel18.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel18.setText("Email");
+
+        jTextFieldEmail.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jTextFieldEmail.setBorder(null);
+        jTextFieldEmail.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldEmailActionPerformed(evt);
+            }
+        });
+
+        btnEscogerImg1.setBackground(new java.awt.Color(255, 255, 255));
+        btnEscogerImg1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/edit_user (1).png"))); // NOI18N
+        btnEscogerImg1.setBorder(null);
+        btnEscogerImg1.setContentAreaFilled(false);
+        btnEscogerImg1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnEscogerImg1.setOpaque(true);
+        btnEscogerImg1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnEscogerImg1MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnEscogerImg1MouseExited(evt);
+            }
+        });
+        btnEscogerImg1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEscogerImg1ActionPerformed(evt);
+            }
+        });
+
+        btnEscogerImg2.setBackground(new java.awt.Color(255, 255, 255));
+        btnEscogerImg2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/add_user (1).png"))); // NOI18N
+        btnEscogerImg2.setBorder(null);
+        btnEscogerImg2.setContentAreaFilled(false);
+        btnEscogerImg2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnEscogerImg2.setOpaque(true);
+        btnEscogerImg2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnEscogerImg2MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnEscogerImg2MouseExited(evt);
+            }
+        });
+        btnEscogerImg2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEscogerImg2ActionPerformed(evt);
+            }
+        });
+
+        btnEscogerImg3.setBackground(new java.awt.Color(255, 255, 255));
+        btnEscogerImg3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/delete_user (1).png"))); // NOI18N
+        btnEscogerImg3.setBorder(null);
+        btnEscogerImg3.setContentAreaFilled(false);
+        btnEscogerImg3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnEscogerImg3.setOpaque(true);
+        btnEscogerImg3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnEscogerImg3MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnEscogerImg3MouseExited(evt);
+            }
+        });
+        btnEscogerImg3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEscogerImg3ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                        .addGap(15, 15, 15)
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(jLabel13, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jSeparator2, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jTextFieldUser, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel17, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jTextFieldFecNa, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jSeparator6, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 280, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(jLabel15, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jTextFieldName, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jSeparator4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(jLabel18, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jTextFieldEmail, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jSeparator7, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(27, 27, 27)
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jPasswordField, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLabel14, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(jLabel16, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jTextFieldApellido, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jSeparator5, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(22, 22, 22))))
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGap(108, 108, 108)
+                .addComponent(btnEscogerImg2)
+                .addGap(216, 216, 216)
+                .addComponent(btnEscogerImg1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnEscogerImg3)
+                .addGap(110, 110, 110))
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jTextFieldApellido, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jSeparator5, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(jPanel4Layout.createSequentialGroup()
+                                .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jTextFieldUser, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel4Layout.createSequentialGroup()
+                                .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jTextFieldName, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jSeparator4, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addGap(39, 39, 39)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jPasswordField, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(7, 7, 7)
+                        .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jTextFieldFecNa, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jSeparator6, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jTextFieldEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jSeparator7, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnEscogerImg2, javax.swing.GroupLayout.DEFAULT_SIZE, 114, Short.MAX_VALUE)
+                    .addComponent(btnEscogerImg1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnEscogerImg3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
+        );
+
+        javax.swing.GroupLayout jPanelModuleUserReportsLayout = new javax.swing.GroupLayout(jPanelModuleUserReports);
+        jPanelModuleUserReports.setLayout(jPanelModuleUserReportsLayout);
+        jPanelModuleUserReportsLayout.setHorizontalGroup(
+            jPanelModuleUserReportsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelModuleUserReportsLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanelModuleUserReportsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
+        );
+        jPanelModuleUserReportsLayout.setVerticalGroup(
+            jPanelModuleUserReportsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelModuleUserReportsLayout.createSequentialGroup()
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         jPanelModuleUserAdmin.add(jPanelModuleUserReports, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 72, -1, 620));
@@ -1017,23 +1296,85 @@ public class VistaAdmin extends javax.swing.JFrame {
 
     private void btnEscogerImgMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnEscogerImgMouseEntered
         // TODO add your handling code here:
-        btnEscogerImg.setBackground(new Color(250,250,250));
+        btnEscogerImg.setBackground(new Color(250, 250, 250));
     }//GEN-LAST:event_btnEscogerImgMouseEntered
 
     private void btnEscogerImgMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnEscogerImgMouseExited
         // TODO add your handling code here:
-        btnEscogerImg.setBackground(new Color(255,255,255));
+        btnEscogerImg.setBackground(new Color(255, 255, 255));
     }//GEN-LAST:event_btnEscogerImgMouseExited
 
     private void btnGuardarImgMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnGuardarImgMouseEntered
         // TODO add your handling code here:
-        btnGuardarImg.setBackground(new Color(250,250,250));
+        btnGuardarImg.setBackground(new Color(250, 250, 250));
     }//GEN-LAST:event_btnGuardarImgMouseEntered
 
     private void btnGuardarImgMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnGuardarImgMouseExited
         // TODO add your handling code here:
-        btnGuardarImg.setBackground(new Color(255,255,255));
+        btnGuardarImg.setBackground(new Color(255, 255, 255));
     }//GEN-LAST:event_btnGuardarImgMouseExited
+
+    private void jTextFieldUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldUserActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldUserActionPerformed
+
+    private void jTextFieldNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldNameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldNameActionPerformed
+
+    private void jTextFieldApellidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldApellidoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldApellidoActionPerformed
+
+    private void jTextFieldFecNaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldFecNaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldFecNaActionPerformed
+
+    private void jTextFieldEmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldEmailActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldEmailActionPerformed
+
+    private void btnEscogerImg1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnEscogerImg1MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnEscogerImg1MouseEntered
+
+    private void btnEscogerImg1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnEscogerImg1MouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnEscogerImg1MouseExited
+
+    private void btnEscogerImg1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEscogerImg1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnEscogerImg1ActionPerformed
+
+    private void btnEscogerImg2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnEscogerImg2MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnEscogerImg2MouseEntered
+
+    private void btnEscogerImg2MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnEscogerImg2MouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnEscogerImg2MouseExited
+
+    private void btnEscogerImg2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEscogerImg2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnEscogerImg2ActionPerformed
+
+    private void btnEscogerImg3MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnEscogerImg3MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnEscogerImg3MouseEntered
+
+    private void btnEscogerImg3MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnEscogerImg3MouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnEscogerImg3MouseExited
+
+    private void btnEscogerImg3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEscogerImg3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnEscogerImg3ActionPerformed
+
+    private void jTableUsersMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTableUsersMouseClicked
+        // TODO add your handling code here:
+        ConsultasAdmin consulAdmin = new ConsultasAdmin();
+        consulAdmin.llenarAcciones(this);
+    }//GEN-LAST:event_jTableUsersMouseClicked
 
     /**
      * @param args the command line arguments
@@ -1082,12 +1423,22 @@ public class VistaAdmin extends javax.swing.JFrame {
     private javax.swing.JButton btnCerrar;
     public javax.swing.JButton btnConsultaUser;
     public javax.swing.JButton btnEscogerImg;
+    public javax.swing.JButton btnEscogerImg1;
+    public javax.swing.JButton btnEscogerImg2;
+    public javax.swing.JButton btnEscogerImg3;
     public javax.swing.JButton btnGuardarImg;
     private javax.swing.JButton btnMiminize;
     public javax.swing.JButton jButtonCargar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -1105,6 +1456,8 @@ public class VistaAdmin extends javax.swing.JFrame {
     private javax.swing.JLabel jLabelticket;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanelGestionInterfaz;
     private javax.swing.JPanel jPanelHeader;
     private javax.swing.JPanel jPanelIndexAdmin;
@@ -1117,11 +1470,22 @@ public class VistaAdmin extends javax.swing.JFrame {
     public javax.swing.JPanel jPanelSelectCSVUser;
     private javax.swing.JPanel jPanelUserRegisterItem;
     private javax.swing.JPanel jPanelbtn;
+    public javax.swing.JPasswordField jPasswordField;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
+    private javax.swing.JSeparator jSeparator3;
+    private javax.swing.JSeparator jSeparator4;
+    private javax.swing.JSeparator jSeparator5;
+    private javax.swing.JSeparator jSeparator6;
+    private javax.swing.JSeparator jSeparator7;
     public javax.swing.JTable jTableUsers;
+    public javax.swing.JTextField jTextFieldApellido;
     private javax.swing.JTextField jTextFieldBuscarUser;
+    public javax.swing.JTextField jTextFieldEmail;
+    public javax.swing.JTextField jTextFieldFecNa;
+    public javax.swing.JTextField jTextFieldName;
+    public javax.swing.JTextField jTextFieldUser;
     private rojerusan.RSPanelsSlider rSPanelsSlider1;
     // End of variables declaration//GEN-END:variables
 
