@@ -11,7 +11,19 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import views.VistaAdmin;
 import classes.KeyValidate;
+import classes.Logs;
 import components.UVFoodDialogs;
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.StandardCopyOption;
+import static java.nio.file.StandardCopyOption.REPLACE_EXISTING;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javafx.stage.FileChooser;
+import javafx.stage.Window;
 
 /**
  *
@@ -26,16 +38,12 @@ public class ControladorAdmin implements ActionListener {
     private UVFoodDialogs modal = new UVFoodDialogs();
     private ConsultasAdmin consultasAdmin;
 
+    private Logs logs = new Logs(Thread.currentThread().getStackTrace()[1].getClassName());
+
     //private Cliente modeloCliente;
     public ControladorAdmin(VistaAdmin interfazPrincipalAdmin) {
         this.interfazPrincipalAdmin = interfazPrincipalAdmin;
         //this.interfazPrincipalAdmin.jButtonCargar.addActionListener(this);
-    }
-
-    public ControladorAdmin(VistaAdmin interfazPrincipalAdmin, ConsultasAdmin consultasAdmin) {
-        this.interfazPrincipalAdmin = interfazPrincipalAdmin;
-        this.consultasAdmin = consultasAdmin;
-        this.interfazPrincipalAdmin.btnConsultaUser.addActionListener(this);
     }
 
     public void selectFile(String tipoCarga) {
@@ -83,9 +91,51 @@ public class ControladorAdmin implements ActionListener {
         }
     }
 
-    /*public boolean gestionBuscarUser(String gdato, VistaAdmin gvista){
-        return consultasAdmin.buscarUser(gdato, gvista);        
-    }*/
+    public void guardarImg() {
+
+            if (interfazPrincipalAdmin.nombreImg != null) {
+                interfazPrincipalAdmin.btnGuardarImg.setEnabled(true);
+                try {
+                    //definimos el destino de la imagen
+                    String dest = System.getProperty("user.dir") + "/src/ImgSlider/" + interfazPrincipalAdmin.nombreImg.getName();
+                    Path destino = Paths.get(dest);
+
+                    //defininimos el origen
+                    String orig = interfazPrincipalAdmin.nombreImg.getPath();
+                    Path origen = Paths.get(orig);
+
+                    //copiamos el archivo
+                    Files.copy(origen, destino, REPLACE_EXISTING);
+
+                    System.out.println("archivo copiado con exito en: " + dest);
+
+                } catch (IOException ex) {
+                    logs.escribirExceptionLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// " + ex.getMessage() + " " + ex.toString());
+                    modal.error_message("Error fatal.", "Carga de imagen erronea.", "Intente con otra imagen o", "Comuníquese con el área de sistemas.", null);
+
+                }
+
+            } else {
+                interfazPrincipalAdmin.btnGuardarImg.setEnabled(false);
+            }
+
+    }
+
+    public boolean validarImg() {
+
+        if (interfazPrincipalAdmin.nombreImg.getName().contains(".jpg")) {
+            interfazPrincipalAdmin.btnGuardarImg.setEnabled(true);
+            return true;
+        } else if (interfazPrincipalAdmin.nombreImg.getName().contains(".png")) {
+            interfazPrincipalAdmin.btnGuardarImg.setEnabled(true);
+            return true;
+        } else {
+            interfazPrincipalAdmin.btnGuardarImg.setEnabled(false);
+            return false;
+        }
+
+    }
+
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == interfazPrincipalAdmin.btnConsultaUser) {

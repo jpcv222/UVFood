@@ -14,10 +14,10 @@ import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import java.awt.Color;
 import java.awt.Frame;
+import java.io.File;
+import javax.swing.JFileChooser;
 import javax.swing.JLabel;
 import javax.swing.border.BevelBorder;
-import javax.swing.border.Border;
-import javax.swing.border.SoftBevelBorder;
 import rojerusan.RSPanelsSlider;
 import managers.ControladorAdmin;
 
@@ -34,13 +34,15 @@ public class VistaAdmin extends javax.swing.JFrame {
     Color item_menu_entered, item_bottom_entered;
     Color item_menu_clicked;
     BevelBorder border_clicked;
-    ControladorAdmin managerAdmin;
     int xMouse;
     int yMouse;
+
+    public JFileChooser fileImg = new JFileChooser();
+    public File nombreImg;
+
     ControladorAdmin manager;
 
     public VistaAdmin() {
-
         manager = new ControladorAdmin(this);
 
         item_menu_exited = new Color(205, 31, 50);
@@ -51,6 +53,7 @@ public class VistaAdmin extends javax.swing.JFrame {
         border_clicked = new BevelBorder(BevelBorder.RAISED);
 
         initComponents();
+        // btnGuardarImg.setEnabled(false);
         this.setLocationRelativeTo(null);
         resetColor(jLabelHome, "inicio.jpg");
 
@@ -58,7 +61,6 @@ public class VistaAdmin extends javax.swing.JFrame {
         Icon icono = new ImageIcon(imagen.getImage().getScaledInstance(jLabel9.getWidth(), jLabel9.getHeight(), Image.SCALE_DEFAULT));
         jLabel9.setIcon(icono);
         this.repaint();*/
-
         ImageIcon imagen1 = new ImageIcon("src/images/inicio.jpg");
         Icon icono1 = new ImageIcon(imagen1.getImage().getScaledInstance(jLabelHome.getWidth(), jLabelHome.getHeight(), Image.SCALE_DEFAULT));
         jLabelHome.setIcon(icono1);
@@ -157,6 +159,12 @@ public class VistaAdmin extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabelRutaArchivo = new javax.swing.JLabel();
         jButtonCargar = new javax.swing.JButton();
+        jPanelGestionInterfaz = new javax.swing.JPanel();
+        jPanel2 = new javax.swing.JPanel();
+        btnEscogerImg = new javax.swing.JButton();
+        btnGuardarImg = new javax.swing.JButton();
+        jLabelEscogerImagen = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -341,7 +349,7 @@ public class VistaAdmin extends javax.swing.JFrame {
             jPanelIndexAdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelIndexAdminLayout.createSequentialGroup()
                 .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 440, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 264, Short.MAX_VALUE))
+                .addGap(0, 272, Short.MAX_VALUE))
         );
 
         rSPanelsSlider1.add(jPanelIndexAdmin, "card2");
@@ -365,7 +373,7 @@ public class VistaAdmin extends javax.swing.JFrame {
             .addGroup(jPanelPerfilAdminLayout.createSequentialGroup()
                 .addGap(327, 327, 327)
                 .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(337, Short.MAX_VALUE))
+                .addContainerGap(345, Short.MAX_VALUE))
         );
 
         rSPanelsSlider1.add(jPanelPerfilAdmin, "card3");
@@ -662,19 +670,126 @@ public class VistaAdmin extends javax.swing.JFrame {
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
                 .addGroup(jPanelModuleUserRegisterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jButtonCargar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanelSelectCSVUser, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(455, 455, 455))
+                .addGap(434, 434, 434))
         );
 
         jPanelModuleUserAdmin.add(jPanelModuleUserRegister, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 73, -1, 620));
         jPanelModuleUserRegister.getAccessibleContext().setAccessibleName("jPanelModuleUserRegister");
 
         rSPanelsSlider1.add(jPanelModuleUserAdmin, "card3");
+
+        jPanelGestionInterfaz.setBackground(new java.awt.Color(255, 255, 255));
+        jPanelGestionInterfaz.setName("jPanelGestionInterfaz"); // NOI18N
+
+        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel2.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(205, 31, 50), 1, true));
+
+        btnEscogerImg.setBackground(new java.awt.Color(255, 255, 255));
+        btnEscogerImg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/img (1).png"))); // NOI18N
+        btnEscogerImg.setText("Escoger Imagen");
+        btnEscogerImg.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        btnEscogerImg.setContentAreaFilled(false);
+        btnEscogerImg.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnEscogerImg.setOpaque(true);
+        btnEscogerImg.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnEscogerImgMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnEscogerImgMouseExited(evt);
+            }
+        });
+        btnEscogerImg.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEscogerImgActionPerformed(evt);
+            }
+        });
+
+        btnGuardarImg.setBackground(new java.awt.Color(255, 255, 255));
+        btnGuardarImg.setText("Guardar imagen");
+        btnGuardarImg.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        btnGuardarImg.setContentAreaFilled(false);
+        btnGuardarImg.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnGuardarImg.setEnabled(false);
+        btnGuardarImg.setOpaque(true);
+        btnGuardarImg.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnGuardarImgMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnGuardarImgMouseExited(evt);
+            }
+        });
+        btnGuardarImg.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGuardarImgActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(50, 50, 50)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnEscogerImg, javax.swing.GroupLayout.PREFERRED_SIZE, 258, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnGuardarImg, javax.swing.GroupLayout.PREFERRED_SIZE, 258, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabelEscogerImagen, javax.swing.GroupLayout.PREFERRED_SIZE, 278, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(62, 62, 62))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(jLabelEscogerImagen, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(btnEscogerImg, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnGuardarImg, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap())
+        );
+
+        jLabel9.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel9.setText("Imagenes Slider Pagina Principal");
+
+        javax.swing.GroupLayout jPanelGestionInterfazLayout = new javax.swing.GroupLayout(jPanelGestionInterfaz);
+        jPanelGestionInterfaz.setLayout(jPanelGestionInterfazLayout);
+        jPanelGestionInterfazLayout.setHorizontalGroup(
+            jPanelGestionInterfazLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelGestionInterfazLayout.createSequentialGroup()
+                .addGroup(jPanelGestionInterfazLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanelGestionInterfazLayout.createSequentialGroup()
+                        .addGap(20, 20, 20)
+                        .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 278, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 693, Short.MAX_VALUE))
+                    .addGroup(jPanelGestionInterfazLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addContainerGap())
+        );
+        jPanelGestionInterfazLayout.setVerticalGroup(
+            jPanelGestionInterfazLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelGestionInterfazLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(437, Short.MAX_VALUE))
+        );
+
+        rSPanelsSlider1.add(jPanelGestionInterfaz, "card5");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -683,21 +798,20 @@ public class VistaAdmin extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanelMenu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(rSPanelsSlider1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanelHeader, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addComponent(rSPanelsSlider1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addComponent(jPanelbtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanelHeader, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addComponent(jPanelbtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanelMenu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jPanelHeader, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(rSPanelsSlider1, javax.swing.GroupLayout.PREFERRED_SIZE, 704, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(0, 0, 0)
+                .addComponent(jPanelHeader, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(rSPanelsSlider1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanelMenu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
 
         pack();
@@ -746,6 +860,7 @@ public class VistaAdmin extends javax.swing.JFrame {
         resetColor(jLabelUser, "GestionUser.jpg");
         resetColor(jLabelticket, "GestionTicket.jpg");
         changeImage("interfaz-clic.jpg", jLabelinterfaz);
+        rSPanelsSlider1.setPanelSlider(15, jPanelGestionInterfaz, RSPanelsSlider.DIRECT.RIGHT);
     }//GEN-LAST:event_jLabelinterfazMouseClicked
 
     private void btnCerrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCerrarMouseClicked
@@ -866,11 +981,11 @@ public class VistaAdmin extends javax.swing.JFrame {
         ConsultasAdmin consulAdmin = new ConsultasAdmin();
         String dato = jTextFieldBuscarUser.getText();
         if (consulAdmin.buscarUser(dato, this)) {
-            
-        }else{
-            
+
+        } else {
+
         }
-        
+
     }//GEN-LAST:event_jTextFieldBuscarUserKeyReleased
 
     private void btnConsultaUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConsultaUserActionPerformed
@@ -878,6 +993,47 @@ public class VistaAdmin extends javax.swing.JFrame {
         ConsultasAdmin consulAdmin = new ConsultasAdmin();
         consulAdmin.llenarTabla(this);
     }//GEN-LAST:event_btnConsultaUserActionPerformed
+
+    private void btnGuardarImgActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarImgActionPerformed
+        // TODO add your handling code here:
+        manager.guardarImg();
+
+    }//GEN-LAST:event_btnGuardarImgActionPerformed
+
+    private void btnEscogerImgActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEscogerImgActionPerformed
+        // TODO add your handling code here:
+        fileImg.showOpenDialog(this);
+        nombreImg = fileImg.getSelectedFile();
+        if (manager.validarImg()) {
+            String rutaImagen = fileImg.getSelectedFile().toString();
+            //metodo de libreria importada RSScaleLabel para mostrar la imagen seleccionada
+            rsscalelabel.RSScaleLabel.setScaleLabel(jLabelEscogerImagen, rutaImagen);
+        } else {
+
+        }
+
+
+    }//GEN-LAST:event_btnEscogerImgActionPerformed
+
+    private void btnEscogerImgMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnEscogerImgMouseEntered
+        // TODO add your handling code here:
+        btnEscogerImg.setBackground(new Color(250,250,250));
+    }//GEN-LAST:event_btnEscogerImgMouseEntered
+
+    private void btnEscogerImgMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnEscogerImgMouseExited
+        // TODO add your handling code here:
+        btnEscogerImg.setBackground(new Color(255,255,255));
+    }//GEN-LAST:event_btnEscogerImgMouseExited
+
+    private void btnGuardarImgMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnGuardarImgMouseEntered
+        // TODO add your handling code here:
+        btnGuardarImg.setBackground(new Color(250,250,250));
+    }//GEN-LAST:event_btnGuardarImgMouseEntered
+
+    private void btnGuardarImgMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnGuardarImgMouseExited
+        // TODO add your handling code here:
+        btnGuardarImg.setBackground(new Color(255,255,255));
+    }//GEN-LAST:event_btnGuardarImgMouseExited
 
     /**
      * @param args the command line arguments
@@ -893,16 +1049,24 @@ public class VistaAdmin extends javax.swing.JFrame {
                 if ("Nimbus".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
+
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(VistaAdmin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VistaAdmin.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
+
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(VistaAdmin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VistaAdmin.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
+
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(VistaAdmin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VistaAdmin.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
+
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(VistaAdmin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VistaAdmin.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
@@ -917,6 +1081,8 @@ public class VistaAdmin extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCerrar;
     public javax.swing.JButton btnConsultaUser;
+    public javax.swing.JButton btnEscogerImg;
+    public javax.swing.JButton btnGuardarImg;
     private javax.swing.JButton btnMiminize;
     public javax.swing.JButton jButtonCargar;
     private javax.swing.JLabel jLabel1;
@@ -929,6 +1095,8 @@ public class VistaAdmin extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
+    public javax.swing.JLabel jLabelEscogerImagen;
     private javax.swing.JLabel jLabelHome;
     private javax.swing.JLabel jLabelPerfil;
     public javax.swing.JLabel jLabelRutaArchivo;
@@ -936,6 +1104,8 @@ public class VistaAdmin extends javax.swing.JFrame {
     private javax.swing.JLabel jLabelinterfaz;
     private javax.swing.JLabel jLabelticket;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanelGestionInterfaz;
     private javax.swing.JPanel jPanelHeader;
     private javax.swing.JPanel jPanelIndexAdmin;
     private javax.swing.JPanel jPanelMenu;
