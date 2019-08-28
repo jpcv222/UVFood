@@ -176,7 +176,55 @@ public class ControladorAdmin {
         }
     }
 
-    public void hablitarEdicion() {
+    public void hablitarEdicionTotal() {
+        switch (VistaAdmin.sePuede) {
+            case "soloEliminar":
+                interfazPrincipalAdmin.btnCrearUser.setEnabled(false);
+                interfazPrincipalAdmin.btnModificarUser.setEnabled(false);
+                interfazPrincipalAdmin.btnEliminarUser.setEnabled(true);
+                break;
+            case "eliminar_modificar":
+                interfazPrincipalAdmin.btnCrearUser.setEnabled(false);
+                interfazPrincipalAdmin.btnModificarUser.setEnabled(true);
+                interfazPrincipalAdmin.btnEliminarUser.setEnabled(true);
+                HablitarEdicion();
+                break;
+            case "solo_crear":
+                interfazPrincipalAdmin.btnCrearUser.setEnabled(true);
+                interfazPrincipalAdmin.btnModificarUser.setEnabled(false);
+                interfazPrincipalAdmin.btnEliminarUser.setEnabled(false);
+                
+                break;
+            default:
+                break;
+        }
+
+    }
+
+    public void desHablitarEdicion() {
+        interfazPrincipalAdmin.btnCrearUser.setEnabled(true);
+        interfazPrincipalAdmin.btnModificarUser.setEnabled(false);
+        interfazPrincipalAdmin.btnEliminarUser.setEnabled(false);
+        
+        interfazPrincipalAdmin.jTextFieldApellido.setEditable(false);
+        interfazPrincipalAdmin.jTextFieldEmail.setEditable(false);
+        interfazPrincipalAdmin.jTextFieldFecNa.setEditable(false);
+        interfazPrincipalAdmin.jTextFieldName.setEditable(false);
+        interfazPrincipalAdmin.jTextFieldRol.setEditable(false);
+        interfazPrincipalAdmin.jTextFieldUser.setEditable(false);
+        interfazPrincipalAdmin.jPasswordField.setEditable(false);
+        interfazPrincipalAdmin.jComboBoxRoles.setEnabled(false);
+
+    }
+
+    public void HablitarEdicion() {
+        interfazPrincipalAdmin.jTextFieldApellido.setEditable(true);
+        interfazPrincipalAdmin.jTextFieldEmail.setEditable(true);
+        interfazPrincipalAdmin.jTextFieldFecNa.setEditable(true);
+        interfazPrincipalAdmin.jTextFieldName.setEditable(true);
+        interfazPrincipalAdmin.jTextFieldUser.setEditable(true);
+        interfazPrincipalAdmin.jPasswordField.setEditable(true);
+        interfazPrincipalAdmin.jComboBoxRoles.setEnabled(true);
 
     }
 

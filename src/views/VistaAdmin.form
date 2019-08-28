@@ -767,11 +767,11 @@
                                                   <Component id="btnLimpiar" alignment="1" min="-2" pref="189" max="-2" attributes="0"/>
                                               </Group>
                                               <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
-                                              <Component id="btnEscogerImg2" min="-2" max="-2" attributes="0"/>
+                                              <Component id="btnCrearUser" min="-2" max="-2" attributes="0"/>
                                               <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
-                                              <Component id="btnEscogerImg1" min="-2" max="-2" attributes="0"/>
+                                              <Component id="btnModificarUser" min="-2" max="-2" attributes="0"/>
                                               <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
-                                              <Component id="btnEscogerImg3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="btnEliminarUser" min="-2" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
                                   </Group>
@@ -860,9 +860,9 @@
                                                   <Group type="102" alignment="1" attributes="0">
                                                       <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
                                                       <Group type="103" groupAlignment="0" attributes="0">
-                                                          <Component id="btnEscogerImg2" pref="108" max="32767" attributes="0"/>
-                                                          <Component id="btnEscogerImg1" alignment="0" max="32767" attributes="0"/>
-                                                          <Component id="btnEscogerImg3" alignment="1" max="32767" attributes="0"/>
+                                                          <Component id="btnCrearUser" pref="108" max="32767" attributes="0"/>
+                                                          <Component id="btnModificarUser" alignment="0" max="32767" attributes="0"/>
+                                                          <Component id="btnEliminarUser" alignment="1" max="32767" attributes="0"/>
                                                       </Group>
                                                   </Group>
                                               </Group>
@@ -1035,7 +1035,7 @@
                     </Component>
                     <Component class="javax.swing.JSeparator" name="jSeparator7">
                     </Component>
-                    <Component class="javax.swing.JButton" name="btnEscogerImg1">
+                    <Component class="javax.swing.JButton" name="btnModificarUser">
                       <Properties>
                         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -1056,7 +1056,7 @@
                         <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
                       </AuxValues>
                     </Component>
-                    <Component class="javax.swing.JButton" name="btnEscogerImg2">
+                    <Component class="javax.swing.JButton" name="btnCrearUser">
                       <Properties>
                         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -1074,13 +1074,13 @@
                         <Property name="opaque" type="boolean" value="true"/>
                       </Properties>
                       <Events>
-                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnEscogerImg2ActionPerformed"/>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCrearUserActionPerformed"/>
                       </Events>
                       <AuxValues>
                         <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
                       </AuxValues>
                     </Component>
-                    <Component class="javax.swing.JButton" name="btnEscogerImg3">
+                    <Component class="javax.swing.JButton" name="btnEliminarUser">
                       <Properties>
                         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -1136,7 +1136,7 @@
                         </Property>
                         <Property name="contentAreaFilled" type="boolean" value="false"/>
                         <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                          <Color id="Cursor Por defecto"/>
+                          <Color id="Cursor de Mano"/>
                         </Property>
                         <Property name="opaque" type="boolean" value="true"/>
                       </Properties>
@@ -1154,7 +1154,7 @@
                         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="ff" green="ff" red="ff" type="rgb"/>
                         </Property>
-                        <Property name="text" type="java.lang.String" value="Habilitar Edicion"/>
+                        <Property name="text" type="java.lang.String" value="Limpiar Campos"/>
                         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                           <Border info="org.netbeans.modules.form.compat2.border.EtchedBorderInfo">
                             <EtchetBorder/>
@@ -1162,7 +1162,7 @@
                         </Property>
                         <Property name="contentAreaFilled" type="boolean" value="false"/>
                         <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                          <Color id="Cursor Por defecto"/>
+                          <Color id="Cursor de Mano"/>
                         </Property>
                         <Property name="opaque" type="boolean" value="true"/>
                       </Properties>

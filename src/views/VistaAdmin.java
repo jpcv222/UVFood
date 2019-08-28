@@ -41,9 +41,10 @@ public class VistaAdmin extends javax.swing.JFrame {
 
     public ControladorAdmin manager;
 
+    public static String sePuede;
+
     public VistaAdmin() {
         initComponents();
-
         item_menu_exited = new Color(205, 31, 50);
         item_bottom_exited = new Color(240, 240, 240);
         item_menu_entered = new Color(157, 0, 0);
@@ -84,6 +85,7 @@ public class VistaAdmin extends javax.swing.JFrame {
         this.repaint();
 
         manager = new ControladorAdmin(this);
+        manager.desHablitarEdicion();
 
     }
 
@@ -170,9 +172,9 @@ public class VistaAdmin extends javax.swing.JFrame {
         jLabel18 = new javax.swing.JLabel();
         jTextFieldEmail = new javax.swing.JTextField();
         jSeparator7 = new javax.swing.JSeparator();
-        btnEscogerImg1 = new javax.swing.JButton();
-        btnEscogerImg2 = new javax.swing.JButton();
-        btnEscogerImg3 = new javax.swing.JButton();
+        btnModificarUser = new javax.swing.JButton();
+        btnCrearUser = new javax.swing.JButton();
+        btnEliminarUser = new javax.swing.JButton();
         jComboBoxRoles = new javax.swing.JComboBox<>();
         jLabel19 = new javax.swing.JLabel();
         btnHabilitarEdicion = new javax.swing.JButton();
@@ -639,31 +641,31 @@ public class VistaAdmin extends javax.swing.JFrame {
         jTextFieldEmail.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jTextFieldEmail.setBorder(null);
 
-        btnEscogerImg1.setBackground(new java.awt.Color(255, 255, 255));
-        btnEscogerImg1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/edit_user (1).png"))); // NOI18N
-        btnEscogerImg1.setBorder(null);
-        btnEscogerImg1.setContentAreaFilled(false);
-        btnEscogerImg1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnEscogerImg1.setOpaque(true);
+        btnModificarUser.setBackground(new java.awt.Color(255, 255, 255));
+        btnModificarUser.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/edit_user (1).png"))); // NOI18N
+        btnModificarUser.setBorder(null);
+        btnModificarUser.setContentAreaFilled(false);
+        btnModificarUser.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnModificarUser.setOpaque(true);
 
-        btnEscogerImg2.setBackground(new java.awt.Color(255, 255, 255));
-        btnEscogerImg2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/add_user (1).png"))); // NOI18N
-        btnEscogerImg2.setBorder(null);
-        btnEscogerImg2.setContentAreaFilled(false);
-        btnEscogerImg2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnEscogerImg2.setOpaque(true);
-        btnEscogerImg2.addActionListener(new java.awt.event.ActionListener() {
+        btnCrearUser.setBackground(new java.awt.Color(255, 255, 255));
+        btnCrearUser.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/add_user (1).png"))); // NOI18N
+        btnCrearUser.setBorder(null);
+        btnCrearUser.setContentAreaFilled(false);
+        btnCrearUser.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnCrearUser.setOpaque(true);
+        btnCrearUser.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnEscogerImg2ActionPerformed(evt);
+                btnCrearUserActionPerformed(evt);
             }
         });
 
-        btnEscogerImg3.setBackground(new java.awt.Color(255, 255, 255));
-        btnEscogerImg3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/delete_user (1).png"))); // NOI18N
-        btnEscogerImg3.setBorder(null);
-        btnEscogerImg3.setContentAreaFilled(false);
-        btnEscogerImg3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnEscogerImg3.setOpaque(true);
+        btnEliminarUser.setBackground(new java.awt.Color(255, 255, 255));
+        btnEliminarUser.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/delete_user (1).png"))); // NOI18N
+        btnEliminarUser.setBorder(null);
+        btnEliminarUser.setContentAreaFilled(false);
+        btnEliminarUser.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnEliminarUser.setOpaque(true);
 
         jComboBoxRoles.setBorder(null);
 
@@ -674,7 +676,7 @@ public class VistaAdmin extends javax.swing.JFrame {
         btnHabilitarEdicion.setText("Habilitar Edicion");
         btnHabilitarEdicion.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         btnHabilitarEdicion.setContentAreaFilled(false);
-        btnHabilitarEdicion.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        btnHabilitarEdicion.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnHabilitarEdicion.setOpaque(true);
         btnHabilitarEdicion.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
@@ -691,10 +693,10 @@ public class VistaAdmin extends javax.swing.JFrame {
         });
 
         btnLimpiar.setBackground(new java.awt.Color(255, 255, 255));
-        btnLimpiar.setText("Habilitar Edicion");
+        btnLimpiar.setText("Limpiar Campos");
         btnLimpiar.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         btnLimpiar.setContentAreaFilled(false);
-        btnLimpiar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        btnLimpiar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnLimpiar.setOpaque(true);
         btnLimpiar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
@@ -758,11 +760,11 @@ public class VistaAdmin extends javax.swing.JFrame {
                                     .addComponent(btnHabilitarEdicion, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(btnLimpiar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(48, 48, 48)
-                                .addComponent(btnEscogerImg2)
+                                .addComponent(btnCrearUser)
                                 .addGap(27, 27, 27)
-                                .addComponent(btnEscogerImg1)
+                                .addComponent(btnModificarUser)
                                 .addGap(28, 28, 28)
-                                .addComponent(btnEscogerImg3))))
+                                .addComponent(btnEliminarUser))))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addComponent(jLabel17, javax.swing.GroupLayout.Alignment.LEADING)
@@ -833,9 +835,9 @@ public class VistaAdmin extends javax.swing.JFrame {
                                     .addGroup(jPanel4Layout.createSequentialGroup()
                                         .addGap(40, 40, 40)
                                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(btnEscogerImg2, javax.swing.GroupLayout.DEFAULT_SIZE, 108, Short.MAX_VALUE)
-                                            .addComponent(btnEscogerImg1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(btnEscogerImg3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                                            .addComponent(btnCrearUser, javax.swing.GroupLayout.DEFAULT_SIZE, 108, Short.MAX_VALUE)
+                                            .addComponent(btnModificarUser, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(btnEliminarUser, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                                 .addContainerGap())))
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -964,7 +966,7 @@ public class VistaAdmin extends javax.swing.JFrame {
                             .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 399, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanelModuleUserRegisterLayout.createSequentialGroup()
                                 .addGroup(jPanelModuleUserRegisterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 392, Short.MAX_VALUE)
+                                    .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 392, Short.MAX_VALUE)
                                     .addComponent(jPanelSelectCSVUser, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jButtonCargar, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -1291,7 +1293,7 @@ public class VistaAdmin extends javax.swing.JFrame {
     private void btnConsultaUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConsultaUserActionPerformed
 
         manager.requestFillTable();
-        
+
     }//GEN-LAST:event_btnConsultaUserActionPerformed
 
     private void btnGuardarImgActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarImgActionPerformed
@@ -1336,36 +1338,54 @@ public class VistaAdmin extends javax.swing.JFrame {
     }//GEN-LAST:event_btnGuardarImgMouseExited
 
     private void jTableUsersMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTableUsersMouseClicked
+        sePuede = "soloEliminar";
         manager.limpiarCampos();
         manager.requestFillFields();
+        manager.hablitarEdicionTotal();
     }//GEN-LAST:event_jTableUsersMouseClicked
 
-    private void btnEscogerImg2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEscogerImg2ActionPerformed
+    private void btnCrearUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCrearUserActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnEscogerImg2ActionPerformed
+    }//GEN-LAST:event_btnCrearUserActionPerformed
 
     private void btnHabilitarEdicionMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnHabilitarEdicionMouseEntered
         // TODO add your handling code here:
+        btnHabilitarEdicion.setBackground(new Color(205, 31, 50));
+        btnHabilitarEdicion.setForeground(Color.white);
+
     }//GEN-LAST:event_btnHabilitarEdicionMouseEntered
 
     private void btnHabilitarEdicionMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnHabilitarEdicionMouseExited
         // TODO add your handling code here:
+        btnHabilitarEdicion.setBackground(new Color(255, 255, 255));
+        btnHabilitarEdicion.setForeground(Color.black);
     }//GEN-LAST:event_btnHabilitarEdicionMouseExited
 
     private void btnHabilitarEdicionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHabilitarEdicionActionPerformed
         // TODO add your handling code here:
+        sePuede = "eliminar_modificar";
+        manager.hablitarEdicionTotal();
     }//GEN-LAST:event_btnHabilitarEdicionActionPerformed
 
     private void btnLimpiarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnLimpiarMouseEntered
         // TODO add your handling code here:
+
+        btnLimpiar.setBackground(new Color(205, 31, 50));
+        btnLimpiar.setForeground(Color.white);
+
     }//GEN-LAST:event_btnLimpiarMouseEntered
 
     private void btnLimpiarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnLimpiarMouseExited
         // TODO add your handling code here:
+        btnLimpiar.setBackground(new Color(255, 255, 255));
+        btnLimpiar.setForeground(Color.black);
     }//GEN-LAST:event_btnLimpiarMouseExited
 
     private void btnLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarActionPerformed
         // TODO add your handling code here:
+        sePuede = "solo_crear";
+        manager.limpiarCampos();
+        manager.hablitarEdicionTotal();
     }//GEN-LAST:event_btnLimpiarActionPerformed
 
     /**
@@ -1414,14 +1434,14 @@ public class VistaAdmin extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCerrar;
     public javax.swing.JButton btnConsultaUser;
+    public javax.swing.JButton btnCrearUser;
+    public javax.swing.JButton btnEliminarUser;
     public javax.swing.JButton btnEscogerImg;
-    public javax.swing.JButton btnEscogerImg1;
-    public javax.swing.JButton btnEscogerImg2;
-    public javax.swing.JButton btnEscogerImg3;
     public javax.swing.JButton btnGuardarImg;
     public javax.swing.JButton btnHabilitarEdicion;
     public javax.swing.JButton btnLimpiar;
     private javax.swing.JButton btnMiminize;
+    public javax.swing.JButton btnModificarUser;
     public javax.swing.JButton jButtonCargar;
     public javax.swing.JComboBox<String> jComboBoxRoles;
     private javax.swing.JLabel jLabel1;
