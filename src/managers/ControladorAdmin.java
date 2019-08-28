@@ -25,9 +25,9 @@ import static java.nio.file.StandardCopyOption.REPLACE_EXISTING;
  * @author Juan Pablo Castro 2019 GitHub: jpcv222
  * @author Jeffrey Rios 2019 GitHub: jeffrey2423
  */
-public class ControladorAdmin implements ActionListener {
+public class ControladorAdmin {
 
-    private final VistaAdmin interfazPrincipalAdmin;
+    private VistaAdmin interfazPrincipalAdmin;
     private final FileManage file;
     private final KeyValidate keyvalidate;
     private final UVFoodDialogs modal;
@@ -42,6 +42,7 @@ public class ControladorAdmin implements ActionListener {
         this.modal = new UVFoodDialogs();
         this.keyvalidate = new KeyValidate(modal);
         this.file = new FileManage();
+        this.consultasAdmin = new ConsultasAdmin();
     }
 
     public void selectFile(String namekey) {
@@ -151,15 +152,105 @@ public class ControladorAdmin implements ActionListener {
 
     }
 
-    @Override
-    public void actionPerformed(ActionEvent e) {
-        if (e.getSource() == interfazPrincipalAdmin.btnConsultaUser) {
-            if (consultasAdmin.llenarTabla(interfazPrincipalAdmin)) {
-                System.out.println("entro");
-            } else {
-                System.out.println("no entro");
-            }
+    public void requestSearchUser() {
+        if (!consultasAdmin.buscarUser(interfazPrincipalAdmin)) {
+            modal.error_message("Error", "Algo anda mal", "No fue exitosa la busqueda", "Por Favor intenta mas tarde", "O reportanos que ocurre");
         }
+    }
+
+    public void requestFillTable() {
+        if (!consultasAdmin.llenarTabla(interfazPrincipalAdmin)) {
+            modal.error_message("Error", "Algo anda mal", "No se pueden mostrar registros de la Base de datos", "Por Favor intenta mas tarde", "O reportanos que ocurre");
+        }
+    }
+
+    public void requestFillFields() {
+        if (!consultasAdmin.llenarAcciones(interfazPrincipalAdmin)) {
+            modal.error_message("Error", "Algo anda mal", "No se pueden mostrar registros de la Base de datos", "Por Favor intenta mas tarde", "O reportanos que ocurre");
+        }
+    }
+
+    public void requestFillCombo() {
+        if (!consultasAdmin.fillCombo(interfazPrincipalAdmin)) {
+            modal.error_message("Error", "Algo anda mal", "No se pueden mostrar registros de la Base de datos", "Por Favor intenta mas tarde", "O reportanos que ocurre");
+        }
+    }
+
+    public void hablitarEdicionTotal() {
+        switch (VistaAdmin.sePuede) {
+            case "soloEliminar":
+                interfazPrincipalAdmin.btnCrearUser.setEnabled(false);
+                interfazPrincipalAdmin.btnModificarUser.setEnabled(false);
+                interfazPrincipalAdmin.btnEliminarUser.setEnabled(true);
+                
+                interfazPrincipalAdmin.btnHabilitarEdicion.setEnabled(false);
+                desHablitarEdicion();
+                break;
+            case "eliminar_modificar":
+                interfazPrincipalAdmin.btnCrearUser.setEnabled(false);
+                interfazPrincipalAdmin.btnModificarUser.setEnabled(true);
+                interfazPrincipalAdmin.btnEliminarUser.setEnabled(true);
+                
+                interfazPrincipalAdmin.btnHabilitarEdicion.setEnabled(true);
+                HablitarEdicion();
+                break;
+            case "solo_crear":
+                interfazPrincipalAdmin.btnCrearUser.setEnabled(true);
+                interfazPrincipalAdmin.btnModificarUser.setEnabled(false);
+                interfazPrincipalAdmin.btnEliminarUser.setEnabled(false);
+                
+                interfazPrincipalAdmin.btnHabilitarEdicion.setEnabled(false);
+                
+                break;
+            default:
+                break;
+        }
+
+    }
+
+    public void desHablitarEdicion() {
+        interfazPrincipalAdmin.btnCrearUser.setEnabled(true);
+        interfazPrincipalAdmin.btnModificarUser.setEnabled(false);
+        interfazPrincipalAdmin.btnEliminarUser.setEnabled(false);
+        
+        interfazPrincipalAdmin.jTextFieldApellido.setEditable(false);
+        interfazPrincipalAdmin.jTextFieldEmail.setEditable(false);
+        interfazPrincipalAdmin.jTextFieldFecNa.setEditable(false);
+        interfazPrincipalAdmin.jTextFieldName.setEditable(false);
+        interfazPrincipalAdmin.jTextFieldRol.setEditable(false);
+        interfazPrincipalAdmin.jTextFieldUser.setEditable(false);
+        interfazPrincipalAdmin.jPasswordField.setEditable(false);
+        interfazPrincipalAdmin.jComboBoxRoles.setEnabled(false);
+
+    }
+    public void desHablitarEdicionBtn() {
+        interfazPrincipalAdmin.btnCrearUser.setEnabled(true);
+        interfazPrincipalAdmin.btnModificarUser.setEnabled(false);
+        interfazPrincipalAdmin.btnEliminarUser.setEnabled(false);
+        interfazPrincipalAdmin.jTextFieldRol.setEditable(false);
+        
+        interfazPrincipalAdmin.btnHabilitarEdicion.setEnabled(false);
+
+    }
+
+    public void HablitarEdicion() {
+        interfazPrincipalAdmin.jTextFieldApellido.setEditable(true);
+        interfazPrincipalAdmin.jTextFieldEmail.setEditable(true);
+        interfazPrincipalAdmin.jTextFieldFecNa.setEditable(true);
+        interfazPrincipalAdmin.jTextFieldName.setEditable(true);
+        interfazPrincipalAdmin.jTextFieldUser.setEditable(true);
+        interfazPrincipalAdmin.jPasswordField.setEditable(true);
+        interfazPrincipalAdmin.jComboBoxRoles.setEnabled(true);
+
+    }
+
+    public void limpiarCampos() {
+        interfazPrincipalAdmin.jTextFieldApellido.setText("");
+        interfazPrincipalAdmin.jTextFieldEmail.setText("");
+        interfazPrincipalAdmin.jTextFieldFecNa.setText("");
+        interfazPrincipalAdmin.jTextFieldName.setText("");
+        interfazPrincipalAdmin.jTextFieldRol.setText("");
+        interfazPrincipalAdmin.jTextFieldUser.setText("");
     }
 
 }
