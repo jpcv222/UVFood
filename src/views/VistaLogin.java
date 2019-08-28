@@ -7,6 +7,7 @@ package views;
 
 import java.awt.Color;
 import java.awt.Frame;
+import java.awt.event.KeyEvent;
 import managers.ControladorLogin;
 
 /**
@@ -111,12 +112,22 @@ public class VistaLogin extends javax.swing.JFrame {
                 jTextField1ActionPerformed(evt);
             }
         });
+        jTextField1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jTextField1KeyPressed(evt);
+            }
+        });
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel3.setText("Contraseña:");
 
         jPasswordField.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jPasswordField.setBorder(null);
+        jPasswordField.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jPasswordFieldKeyPressed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanelLoginLayout = new javax.swing.GroupLayout(jPanelLogin);
         jPanelLogin.setLayout(jPanelLoginLayout);
@@ -341,6 +352,18 @@ public class VistaLogin extends javax.swing.JFrame {
         // TODO add your handling code here:
             login_manager.request_login();
     }//GEN-LAST:event_jButtonIniciarSesionActionPerformed
+
+    private void jPasswordFieldKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jPasswordFieldKeyPressed
+        // TODO add your handling code here:
+        if(evt.getKeyCode() == KeyEvent.VK_ENTER)
+            jButtonIniciarSesion.doClick();
+    }//GEN-LAST:event_jPasswordFieldKeyPressed
+
+    private void jTextField1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField1KeyPressed
+        // TODO add your handling code here:
+        if(evt.getKeyCode() == KeyEvent.VK_ENTER)
+            jButtonIniciarSesion.doClick();
+    }//GEN-LAST:event_jTextField1KeyPressed
 
     /**
      * @param args the command line arguments
