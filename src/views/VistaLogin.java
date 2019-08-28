@@ -5,27 +5,10 @@
  */
 package views;
 
-import classes.ConsultasCliente;
-import classes.Usuario;
-import components.UVFoodDialogs;
-import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Frame;
-import java.awt.Image;
-import java.awt.Point;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseMotionAdapter;
-import javax.swing.BorderFactory;
-import javax.swing.ImageIcon;
-import javax.swing.JLabel;
-import javax.swing.JOptionPane;
-import javax.swing.JPanel;
-import javax.swing.JRootPane;
-import javax.swing.border.Border;
-import javax.swing.border.LineBorder;
-import org.apache.commons.codec.digest.DigestUtils;
-import validations.Validations;
+import java.awt.event.KeyEvent;
+import managers.ControladorLogin;
 
 /**
  *
@@ -40,15 +23,14 @@ public class VistaLogin extends javax.swing.JFrame {
     int xMouse;
     int yMouse;
     
-    Validations validations = new Validations();
-    private Usuario modeloCliente = new Usuario();
-    private ConsultasCliente consultasCliente = new ConsultasCliente();
-    UVFoodDialogs modal = new UVFoodDialogs();
+    private final ControladorLogin login_manager;
+    
 
     public VistaLogin() {
         initComponents();
         this.setLocationRelativeTo(null);
         jPanelLogin.setLocation(jPanelPrincipal.getHeight() / 2, jPanelPrincipal.getWidth() / 2);
+        login_manager = new ControladorLogin(this);
 
     }
 
@@ -100,14 +82,12 @@ public class VistaLogin extends javax.swing.JFrame {
 
         jPanelLogin.setBackground(new java.awt.Color(255, 255, 255));
 
-        jButtonIniciarSesion.setBackground(new java.awt.Color(204, 204, 204));
+        jButtonIniciarSesion.setBackground(new java.awt.Color(255, 255, 255));
         jButtonIniciarSesion.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jButtonIniciarSesion.setText("Iniciar Sesion");
-        jButtonIniciarSesion.setContentAreaFilled(false);
-        jButtonIniciarSesion.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButtonIniciarSesion.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 0, 0)));
+        jButtonIniciarSesion.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jButtonIniciarSesion.setFocusPainted(false);
-        jButtonIniciarSesion.setOpaque(true);
-        jButtonIniciarSesion.setSelected(true);
         jButtonIniciarSesion.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 jButtonIniciarSesionMousePressed(evt);
@@ -132,12 +112,22 @@ public class VistaLogin extends javax.swing.JFrame {
                 jTextField1ActionPerformed(evt);
             }
         });
+        jTextField1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jTextField1KeyPressed(evt);
+            }
+        });
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel3.setText("Contraseña:");
 
         jPasswordField.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jPasswordField.setBorder(null);
+        jPasswordField.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jPasswordFieldKeyPressed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanelLoginLayout = new javax.swing.GroupLayout(jPanelLogin);
         jPanelLogin.setLayout(jPanelLoginLayout);
@@ -360,29 +350,20 @@ public class VistaLogin extends javax.swing.JFrame {
 
     private void jButtonIniciarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonIniciarSesionActionPerformed
         // TODO add your handling code here:
-      
-            String clave = new String(jPasswordField.getPassword());
-            String claveEn = DigestUtils.sha1Hex(clave);
-
-            if (validations.campoVacio(jPasswordField) && validations.campoVacio(jTextField1)) {
-                modeloCliente.setUsername(jTextField1.getText());
-                modeloCliente.setPassword_user(clave);
-
-                if (consultasCliente.login(modeloCliente, this)) {
-                    this.dispose();
-                    Index.login = null;
-
-                    VistaCliente home = new VistaCliente(modeloCliente);
-                    VistaAdmin home2 = new VistaAdmin();
-                    home.setVisible(true);
-                }
-
-            } else {
-                modal.error_message("Error", "Campos obligatorios", "Debes llenar todos los campos", null, null);
-            }
-
-        
+            login_manager.request_login();
     }//GEN-LAST:event_jButtonIniciarSesionActionPerformed
+
+    private void jPasswordFieldKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jPasswordFieldKeyPressed
+        // TODO add your handling code here:
+        if(evt.getKeyCode() == KeyEvent.VK_ENTER)
+            jButtonIniciarSesion.doClick();
+    }//GEN-LAST:event_jPasswordFieldKeyPressed
+
+    private void jTextField1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField1KeyPressed
+        // TODO add your handling code here:
+        if(evt.getKeyCode() == KeyEvent.VK_ENTER)
+            jButtonIniciarSesion.doClick();
+    }//GEN-LAST:event_jTextField1KeyPressed
 
     /**
      * @param args the command line arguments

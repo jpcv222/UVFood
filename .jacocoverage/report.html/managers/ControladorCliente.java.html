@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>ControladorCliente.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">JaCoCoverage analysis of project &quot;UVFood&quot; (powered by JaCoCo from EclEmma)</a> &gt; <a href="index.source.html" class="el_package">managers</a> &gt; <span class="el_source">ControladorCliente.java</span></div><h1>ControladorCliente.java</h1><pre class="source lang-java linenums">/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package managers;
+
+import classes.Usuario;
+import classes.ConsultasCliente;
+import components.UVFoodDialogs;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
+import static java.util.Objects.hash;
+import org.apache.commons.codec.digest.DigestUtils;
+import validations.Validations;
+import views.VistaAdmin;
+import views.VistaCliente;
+import views.VistaLogin;
+
+/**
+ *
+ * @author Jeffrey Rios 2019 GitHub: jeffrey2423
+ */
+public class ControladorCliente implements ActionListener {
+
+    private VistaCliente vistaCliente;
+    private VistaLogin vistaLogin;
+    private ConsultasCliente consultasCliente;
+    private Usuario modeloCliente;
+<span class="nc" id="L32">    Validations validations = new Validations();</span>
+<span class="nc" id="L33">    UVFoodDialogs modal = new UVFoodDialogs();</span>
+
+<span class="nc" id="L35">    public ControladorCliente(VistaCliente vistaCliente, VistaLogin vistaLogin, ConsultasCliente consultasCliente, Usuario modeloCliente) {</span>
+<span class="nc" id="L36">        this.vistaCliente = vistaCliente;</span>
+<span class="nc" id="L37">        this.vistaLogin = vistaLogin;</span>
+<span class="nc" id="L38">        this.consultasCliente = consultasCliente;</span>
+<span class="nc" id="L39">        this.modeloCliente = modeloCliente;</span>
+<span class="nc" id="L40">        this.vistaLogin.jButtonIniciarSesion.addActionListener(this);</span>
+<span class="nc" id="L41">    }</span>
+
+    public void iniciar() {
+<span class="nc" id="L44">        vistaLogin.setTitle(&quot;Login&quot;);</span>
+
+<span class="nc" id="L46">    }</span>
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+<span class="nc bnc" id="L50" title="All 2 branches missed.">        if (e.getSource() == vistaLogin.jButtonIniciarSesion) {</span>
+<span class="nc" id="L51">            String clave = new String(vistaLogin.jPasswordField.getPassword());</span>
+<span class="nc" id="L52">            String claveEn = DigestUtils.sha1Hex(clave);</span>
+
+<span class="nc bnc" id="L54" title="All 4 branches missed.">            if (validations.campoVacio(vistaLogin.jPasswordField) &amp;&amp; validations.campoVacio(vistaLogin.jTextField1)) {</span>
+<span class="nc" id="L55">                modeloCliente.setUsername(vistaLogin.jTextField1.getText());</span>
+<span class="nc" id="L56">                modeloCliente.setPassword_user(clave);</span>
+
+<span class="nc bnc" id="L58" title="All 2 branches missed.">                if (consultasCliente.login(modeloCliente, vistaLogin)) {</span>
+<span class="nc" id="L59">                    vistaLogin.dispose();</span>
+
+<span class="nc" id="L61">                    VistaCliente home = new VistaCliente();</span>
+<span class="nc" id="L62">                    VistaAdmin home2 = new VistaAdmin();</span>
+<span class="nc" id="L63">                    home2.setVisible(true);</span>
+<span class="nc" id="L64">                }</span>
+
+            } else {
+<span class="nc" id="L67">                modal.error_message(&quot;Error&quot;, &quot;Campos obligatorios&quot;, &quot;Debes llenar todos los campos&quot;, null, null);</span>
+            }
+
+        }
+<span class="nc" id="L71">    }</span>
+
+    public void keyButton() {
+<span class="nc" id="L74">        vistaLogin.jButtonIniciarSesion.addKeyListener(new KeyListener() {</span>
+            @Override
+            public void keyTyped(KeyEvent ke) {
+<span class="nc bnc" id="L77" title="All 2 branches missed.">                if (ke.getKeyCode()==KeyEvent.VK_ENTER) {</span>
+<span class="nc" id="L78">                                String clave = new String(vistaLogin.jPasswordField.getPassword());</span>
+<span class="nc" id="L79">                String claveEn = DigestUtils.sha1Hex(clave);</span>
+
+<span class="nc bnc" id="L81" title="All 4 branches missed.">                if (validations.campoVacio(vistaLogin.jPasswordField) &amp;&amp; validations.campoVacio(vistaLogin.jTextField1)) {</span>
+<span class="nc" id="L82">                    modeloCliente.setUsername(vistaLogin.jTextField1.getText());</span>
+<span class="nc" id="L83">                    modeloCliente.setPassword_user(clave);</span>
+
+<span class="nc bnc" id="L85" title="All 2 branches missed.">                    if (consultasCliente.login(modeloCliente, vistaLogin)) {</span>
+<span class="nc" id="L86">                        vistaLogin.dispose();</span>
+
+<span class="nc" id="L88">                        VistaCliente home = new VistaCliente();</span>
+<span class="nc" id="L89">                        VistaAdmin home2 = new VistaAdmin();</span>
+<span class="nc" id="L90">                        home2.setVisible(true);</span>
+<span class="nc" id="L91">                    }</span>
+
+                } else {
+<span class="nc" id="L94">                    modal.error_message(&quot;Error&quot;, &quot;Campos obligatorios&quot;, &quot;Debes llenar todos los campos&quot;, null, null);</span>
+                }
+
+            }
+<span class="nc" id="L98">                }</span>
+
+            @Override
+            public void keyPressed(KeyEvent ke) {
+                
+<span class="nc" id="L103">            }</span>
+
+            @Override
+            public void keyReleased(KeyEvent ke) {
+                
+<span class="nc" id="L108">            }</span>
+            
+}
+);
+<span class="nc" id="L112">    }</span>
+    
+    
+    
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.6.201602180812</span></div></body></html>

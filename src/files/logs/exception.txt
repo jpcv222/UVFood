@@ -1,0 +1,477 @@
+managers.ControladorAdmin//readCSVFile// null java.lang.NullPointerException// 2019-08-18T18:50:10.122
+managers.ControladorAdmin//readCSVFile// null java.lang.NullPointerException// 2019-08-18T18:50:10.667
+managers.ControladorAdmin//readCSVFile// null java.lang.NullPointerException// 2019-08-18T18:50:10.962
+managers.ControladorAdmin//readCSVFile// null java.lang.NullPointerException// 2019-08-19T02:54:57.422
+managers.ControladorAdmin//readCSVFile// null java.lang.NullPointerException// 2019-08-19T02:55:31.705
+managers.ControladorAdmin//readCSVFile// null java.lang.NullPointerException// 2019-08-19T02:55:34.165
+managers.ControladorAdmin//readCSVFile// null java.lang.NullPointerException// 2019-08-19T02:55:40.516
+managers.ControladorAdmin//readCSVFile// null java.lang.NullPointerException// 2019-08-19T02:55:42.367
+managers.ControladorAdmin//readCSVFile// null java.lang.NullPointerException// 2019-08-19T02:55:44.156
+managers.ControladorAdmin//readCSVFile// null java.lang.NullPointerException// 2019-08-19T03:19:25.644
+managers.ControladorAdmin//readCSVFile// null java.lang.NullPointerException// 2019-08-19T03:19:31.913
+managers.ControladorAdmin//readCSVFile// null java.lang.NullPointerException// 2019-08-19T03:23:46.226
+classes.FileChooser//calcularRutaArchivo// null java.lang.NullPointerException// 2019-08-19T03:34:22.152
+classes.ConexionBD//Conexion// FATAL: database "pruebauvfood" does not exist org.postgresql.util.PSQLException: FATAL: database "pruebauvfood" does not exist// 2019-08-19T04:02:27.141
+classes.ConexionBD//Conexion// FATAL: database "pruebauvfood" does not exist org.postgresql.util.PSQLException: FATAL: database "pruebauvfood" does not exist// 2019-08-19T04:02:32.991
+classes.ConexionBD//Conexion// FATAL: database "pruebauvfood" does not exist org.postgresql.util.PSQLException: FATAL: database "pruebauvfood" does not exist// 2019-08-19T04:05:55.436
+classes.ConexionBD//Conexion// FATAL: database "pruebauvfood" does not exist org.postgresql.util.PSQLException: FATAL: database "pruebauvfood" does not exist// 2019-08-19T04:06:00.391
+classes.ConsultasCliente//login// ERROR: relation "uvfood_usuario" does not exist
+  Position: 15 org.postgresql.util.PSQLException: ERROR: relation "uvfood_usuario" does not exist
+  Position: 15// 2019-08-19T04:09:50.079
+classes.ConexionBD//Conexion// FATAL: la autentificación password falló para el usuario «postgres» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf) org.postgresql.util.PSQLException: FATAL: la autentificación password falló para el usuario «postgres» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf)// 2019-08-19T16:00:38.013
+classes.ConexionBD//Conexion// FATAL: la autentificación password falló para el usuario «postgres» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf) org.postgresql.util.PSQLException: FATAL: la autentificación password falló para el usuario «postgres» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf)// 2019-08-19T16:03:48.113
+classes.ConexionBD//Conexion// FATAL: la autentificación password falló para el usuario «postgres» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf) org.postgresql.util.PSQLException: FATAL: la autentificación password falló para el usuario «postgres» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf)// 2019-08-19T16:05:23.672
+classes.ConexionBD//Conexion// FATAL: la autentificación password falló para el usuario «postgres» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf) org.postgresql.util.PSQLException: FATAL: la autentificación password falló para el usuario «postgres» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf)// 2019-08-19T16:08:12.242
+classes.ConsultasCliente//login// ERROR: no existe la relación «uvfood_usuario»
+  Position: 15 org.postgresql.util.PSQLException: ERROR: no existe la relación «uvfood_usuario»
+  Position: 15// 2019-08-19T16:24:34.045
+classes.ConsultasCliente//login// ERROR: no existe la relación «uvfood_usuario»
+  Position: 15 org.postgresql.util.PSQLException: ERROR: no existe la relación «uvfood_usuario»
+  Position: 15// 2019-08-19T16:27:39.561
+classes.ConsultasCliente//login// ERROR: no existe la relación «uvfood_usuario»
+  Position: 15 org.postgresql.util.PSQLException: ERROR: no existe la relación «uvfood_usuario»
+  Position: 15// 2019-08-19T16:27:41.864
+classes.ConsultasCliente//login// ERROR: no existe la relación «uvfood_usuario»
+  Position: 15 org.postgresql.util.PSQLException: ERROR: no existe la relación «uvfood_usuario»
+  Position: 15// 2019-08-19T16:27:45.154
+classes.ConexionBD//Conexion// FATAL: la autentificación password falló para el usuario «postgres» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf) org.postgresql.util.PSQLException: FATAL: la autentificación password falló para el usuario «postgres» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf)// 2019-08-20T08:56:52.048
+classes.ConexionBD//Conexion// FATAL: la autentificación password falló para el usuario «postgres» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf) org.postgresql.util.PSQLException: FATAL: la autentificación password falló para el usuario «postgres» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf)// 2019-08-20T11:30:59.135
+classes.ConsultasAdmin//buscarUser// ERROR: error de sintaxis en o cerca de «,»
+  Position: 40 org.postgresql.util.PSQLException: ERROR: error de sintaxis en o cerca de «,»
+  Position: 40// 2019-08-21T09:24:16.865
+classes.ConsultasAdmin//buscarUser// ERROR: error de sintaxis en o cerca de «,»
+  Position: 40 org.postgresql.util.PSQLException: ERROR: error de sintaxis en o cerca de «,»
+  Position: 40// 2019-08-21T09:24:32.076
+classes.ConsultasAdmin//buscarUser// ERROR: error de sintaxis en o cerca de «,»
+  Position: 40 org.postgresql.util.PSQLException: ERROR: error de sintaxis en o cerca de «,»
+  Position: 40// 2019-08-21T09:25:55
+classes.ConsultasAdmin//buscarUser// ERROR: error de sintaxis en o cerca de «,»
+  Position: 40 org.postgresql.util.PSQLException: ERROR: error de sintaxis en o cerca de «,»
+  Position: 40// 2019-08-21T09:35:42.681
+classes.ConsultasAdmin//buscarUser// ERROR: error de sintaxis en o cerca de «,»
+  Position: 40 org.postgresql.util.PSQLException: ERROR: error de sintaxis en o cerca de «,»
+  Position: 40// 2019-08-21T09:36:46.290
+classes.ConsultasAdmin//buscarUser// ERROR: error de sintaxis en o cerca de «,»
+  Position: 40 org.postgresql.util.PSQLException: ERROR: error de sintaxis en o cerca de «,»
+  Position: 40// 2019-08-21T09:36:51.999
+classes.ConsultasAdmin//buscarUser// ERROR: error de sintaxis en o cerca de «,»
+  Position: 40 org.postgresql.util.PSQLException: ERROR: error de sintaxis en o cerca de «,»
+  Position: 40// 2019-08-21T09:37:23.446
+classes.ConsultasAdmin//buscarUser// ERROR: error de sintaxis en o cerca de «,»
+  Position: 40 org.postgresql.util.PSQLException: ERROR: error de sintaxis en o cerca de «,»
+  Position: 40// 2019-08-21T09:37:41.378
+classes.ConsultasAdmin//buscarUser// ERROR: error de sintaxis en o cerca de «,»
+  Position: 40 org.postgresql.util.PSQLException: ERROR: error de sintaxis en o cerca de «,»
+  Position: 40// 2019-08-21T09:37:41.595
+classes.ConsultasAdmin//buscarUser// ERROR: error de sintaxis en o cerca de «,»
+  Position: 40 org.postgresql.util.PSQLException: ERROR: error de sintaxis en o cerca de «,»
+  Position: 40// 2019-08-21T09:45:51.949
+classes.ConsultasAdmin//buscarUser// ERROR: error de sintaxis en o cerca de «,»
+  Position: 40 org.postgresql.util.PSQLException: ERROR: error de sintaxis en o cerca de «,»
+  Position: 40// 2019-08-21T09:45:57.688
+classes.ConsultasAdmin//buscarUser// ERROR: error de sintaxis en o cerca de «,»
+  Position: 40 org.postgresql.util.PSQLException: ERROR: error de sintaxis en o cerca de «,»
+  Position: 40// 2019-08-21T09:46:01.062
+classes.ConsultasAdmin//buscarUser// ERROR: error de sintaxis en o cerca de «,»
+  Position: 40 org.postgresql.util.PSQLException: ERROR: error de sintaxis en o cerca de «,»
+  Position: 40// 2019-08-21T09:46:01.366
+classes.ConsultasAdmin//buscarUser// ERROR: error de sintaxis en o cerca de «,»
+  Position: 40 org.postgresql.util.PSQLException: ERROR: error de sintaxis en o cerca de «,»
+  Position: 40// 2019-08-21T09:46:01.870
+classes.ConsultasAdmin//buscarUser// ERROR: error de sintaxis en o cerca de «,»
+  Position: 40 org.postgresql.util.PSQLException: ERROR: error de sintaxis en o cerca de «,»
+  Position: 40// 2019-08-21T09:46:02.061
+classes.ConsultasAdmin//buscarUser// ERROR: error de sintaxis en o cerca de «,»
+  Position: 40 org.postgresql.util.PSQLException: ERROR: error de sintaxis en o cerca de «,»
+  Position: 40// 2019-08-21T09:46:03.077
+classes.ConsultasAdmin//buscarUser// ERROR: error de sintaxis en o cerca de «,»
+  Position: 40 org.postgresql.util.PSQLException: ERROR: error de sintaxis en o cerca de «,»
+  Position: 40// 2019-08-21T09:46:03.213
+classes.ConsultasAdmin//buscarUser// ERROR: error de sintaxis en o cerca de «,»
+  Position: 40 org.postgresql.util.PSQLException: ERROR: error de sintaxis en o cerca de «,»
+  Position: 40// 2019-08-21T09:46:03.310
+classes.ConsultasAdmin//buscarUser// ERROR: error de sintaxis en o cerca de «,»
+  Position: 40 org.postgresql.util.PSQLException: ERROR: error de sintaxis en o cerca de «,»
+  Position: 40// 2019-08-21T09:46:03.534
+classes.ConsultasAdmin//buscarUser// ERROR: error de sintaxis en o cerca de «,»
+  Position: 40 org.postgresql.util.PSQLException: ERROR: error de sintaxis en o cerca de «,»
+  Position: 40// 2019-08-21T09:46:03.663
+classes.ConsultasAdmin//buscarUser// ERROR: error de sintaxis en o cerca de «,»
+  Position: 40 org.postgresql.util.PSQLException: ERROR: error de sintaxis en o cerca de «,»
+  Position: 40// 2019-08-21T09:46:55.712
+classes.ConsultasAdmin//buscarUser// ERROR: error de sintaxis en o cerca de «,»
+  Position: 40 org.postgresql.util.PSQLException: ERROR: error de sintaxis en o cerca de «,»
+  Position: 40// 2019-08-21T09:46:57.479
+classes.ConsultasAdmin//buscarUser// ERROR: error de sintaxis en o cerca de «,»
+  Position: 40 org.postgresql.util.PSQLException: ERROR: error de sintaxis en o cerca de «,»
+  Position: 40// 2019-08-21T09:47:43.842
+classes.ConsultasCliente//login// ERROR: no existe la relación «uvfood_usuario»
+  Position: 15 org.postgresql.util.PSQLException: ERROR: no existe la relación «uvfood_usuario»
+  Position: 15// 2019-08-21T09:59:49.650
+classes.ConsultasCliente//login// ERROR: no existe la relación «uvfood_usuario»
+  Position: 15 org.postgresql.util.PSQLException: ERROR: no existe la relación «uvfood_usuario»
+  Position: 15// 2019-08-21T10:00:00.991
+classes.ConsultasCliente//login// ERROR: no existe la relación «uvfood_usuario»
+  Position: 15 org.postgresql.util.PSQLException: ERROR: no existe la relación «uvfood_usuario»
+  Position: 15// 2019-08-21T10:00:05.148
+classes.ConsultasAdmin//buscarUser// ERROR: error de sintaxis en o cerca de «,»
+  Position: 39 org.postgresql.util.PSQLException: ERROR: error de sintaxis en o cerca de «,»
+  Position: 39// 2019-08-21T10:45:21.281
+classes.ConsultasAdmin//buscarUser// ERROR: error de sintaxis en o cerca de «%»
+  Position: 51 org.postgresql.util.PSQLException: ERROR: error de sintaxis en o cerca de «%»
+  Position: 51// 2019-08-21T10:46:18.281
+classes.ConsultasAdmin//buscarUser// ERROR: error de sintaxis en o cerca de «%»
+  Position: 51 org.postgresql.util.PSQLException: ERROR: error de sintaxis en o cerca de «%»
+  Position: 51// 2019-08-21T10:46:57.297
+classes.ConsultasAdmin//buscarUser// ERROR: error de sintaxis en o cerca de «%»
+  Position: 51 org.postgresql.util.PSQLException: ERROR: error de sintaxis en o cerca de «%»
+  Position: 51// 2019-08-21T10:46:58.966
+classes.ConsultasAdmin//buscarUser// ERROR: error de sintaxis en o cerca de «%»
+  Position: 51 org.postgresql.util.PSQLException: ERROR: error de sintaxis en o cerca de «%»
+  Position: 51// 2019-08-21T10:46:59.719
+classes.ConsultasAdmin//buscarUser// ERROR: error de sintaxis en o cerca de «%»
+  Position: 51 org.postgresql.util.PSQLException: ERROR: error de sintaxis en o cerca de «%»
+  Position: 51// 2019-08-21T10:47:00.271
+classes.ConsultasAdmin//buscarUser// ERROR: error de sintaxis en o cerca de «%»
+  Position: 51 org.postgresql.util.PSQLException: ERROR: error de sintaxis en o cerca de «%»
+  Position: 51// 2019-08-21T10:47:56.010
+classes.ConsultasAdmin//buscarUser// ERROR: error de sintaxis en o cerca de «%»
+  Position: 51 org.postgresql.util.PSQLException: ERROR: error de sintaxis en o cerca de «%»
+  Position: 51// 2019-08-21T10:48:21.639
+classes.ConsultasAdmin//buscarUser// ERROR: error de sintaxis al final de la entrada
+  Position: 57 org.postgresql.util.PSQLException: ERROR: error de sintaxis al final de la entrada
+  Position: 57// 2019-08-21T10:49:36.725
+classes.ConsultasAdmin//buscarUser// ERROR: error de sintaxis al final de la entrada
+  Position: 56 org.postgresql.util.PSQLException: ERROR: error de sintaxis al final de la entrada
+  Position: 56// 2019-08-21T10:49:44.834
+classes.ConsultasAdmin//buscarUser// ERROR: error de sintaxis en o cerca de «,»
+  Position: 39 org.postgresql.util.PSQLException: ERROR: error de sintaxis en o cerca de «,»
+  Position: 39// 2019-08-21T10:55:10.999
+classes.ConsultasAdmin//buscarUser// ERROR: error de sintaxis en o cerca de «,»
+  Position: 39 org.postgresql.util.PSQLException: ERROR: error de sintaxis en o cerca de «,»
+  Position: 39// 2019-08-21T10:58:57.118
+classes.ConsultasAdmin//buscarUser// ERROR: error de sintaxis en o cerca de «,»
+  Position: 39 org.postgresql.util.PSQLException: ERROR: error de sintaxis en o cerca de «,»
+  Position: 39// 2019-08-21T10:58:58.694
+classes.ConsultasAdmin//buscarUser// ERROR: error de sintaxis en o cerca de «LIKEG»
+  Position: 40 org.postgresql.util.PSQLException: ERROR: error de sintaxis en o cerca de «LIKEG»
+  Position: 40// 2019-08-21T11:03:59.477
+classes.ConsultasAdmin//buscarUser// ERROR: error de sintaxis en o cerca de «creation_date»
+  Position: 159 org.postgresql.util.PSQLException: ERROR: error de sintaxis en o cerca de «creation_date»
+  Position: 159// 2019-08-21T11:05:10.259
+classes.ConsultasAdmin//buscarUser// ERROR: error de sintaxis en o cerca de «creation_date»
+  Position: 153 org.postgresql.util.PSQLException: ERROR: error de sintaxis en o cerca de «creation_date»
+  Position: 153// 2019-08-21T11:05:18.273
+classes.ConsultasAdmin//buscarUser// ERROR: error de sintaxis en o cerca de «creation_date»
+  Position: 159 org.postgresql.util.PSQLException: ERROR: error de sintaxis en o cerca de «creation_date»
+  Position: 159// 2019-08-21T11:05:19.298
+classes.ConsultasAdmin//buscarUser// ERROR: el operador no existe: integer ~~ unknown
+  Hint: Ningún operador coincide en el nombre y tipos de argumentos. Puede ser necesario agregar conversión explícita de tipos.
+  Position: 40 org.postgresql.util.PSQLException: ERROR: el operador no existe: integer ~~ unknown
+  Hint: Ningún operador coincide en el nombre y tipos de argumentos. Puede ser necesario agregar conversión explícita de tipos.
+  Position: 40// 2019-08-21T11:05:48.885
+classes.ConsultasAdmin//buscarUser// ERROR: el operador no existe: integer ~~ unknown
+  Hint: Ningún operador coincide en el nombre y tipos de argumentos. Puede ser necesario agregar conversión explícita de tipos.
+  Position: 40 org.postgresql.util.PSQLException: ERROR: el operador no existe: integer ~~ unknown
+  Hint: Ningún operador coincide en el nombre y tipos de argumentos. Puede ser necesario agregar conversión explícita de tipos.
+  Position: 40// 2019-08-21T11:05:50.917
+classes.ConexionBD//Conexion// FATAL: no existe la base de datos «uvfood» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf) org.postgresql.util.PSQLException: FATAL: no existe la base de datos «uvfood» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf)// 2019-08-21T12:56:32.901
+classes.ConexionBD//Conexion// FATAL: no existe la base de datos «uvfood» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf) org.postgresql.util.PSQLException: FATAL: no existe la base de datos «uvfood» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf)// 2019-08-21T12:58:02.230
+classes.ConexionBD//Conexion// FATAL: no existe la base de datos «uvfood» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf) org.postgresql.util.PSQLException: FATAL: no existe la base de datos «uvfood» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf)// 2019-08-21T12:58:39.511
+classes.ConexionBD//Conexion// FATAL: no existe la base de datos «uvfood» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf) org.postgresql.util.PSQLException: FATAL: no existe la base de datos «uvfood» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf)// 2019-08-21T12:58:58.202
+classes.ConsultasAdmin//llenarTabla// null java.lang.NullPointerException// 2019-08-21T12:58:58.204
+classes.ConexionBD//Conexion// FATAL: no existe la base de datos «uvfood» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf) org.postgresql.util.PSQLException: FATAL: no existe la base de datos «uvfood» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf)// 2019-08-21T12:59:02.634
+classes.ConsultasAdmin//buscarUser// null java.lang.NullPointerException// 2019-08-21T12:59:02.635
+classes.ConexionBD//Conexion// FATAL: no existe la base de datos «uvfood» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf) org.postgresql.util.PSQLException: FATAL: no existe la base de datos «uvfood» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf)// 2019-08-21T12:59:09.008
+classes.ConsultasAdmin//buscarUser// null java.lang.NullPointerException// 2019-08-21T12:59:09.022
+classes.ConexionBD//Conexion// FATAL: no existe la base de datos «uvfood» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf) org.postgresql.util.PSQLException: FATAL: no existe la base de datos «uvfood» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf)// 2019-08-21T12:59:11.634
+classes.ConsultasAdmin//buscarUser// null java.lang.NullPointerException// 2019-08-21T12:59:11.636
+classes.ConexionBD//Conexion// FATAL: no existe la base de datos «uvfood» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf) org.postgresql.util.PSQLException: FATAL: no existe la base de datos «uvfood» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf)// 2019-08-21T12:59:13.569
+classes.ConsultasAdmin//buscarUser// null java.lang.NullPointerException// 2019-08-21T12:59:13.570
+classes.ConexionBD//Conexion// FATAL: no existe la base de datos «uvfood» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf) org.postgresql.util.PSQLException: FATAL: no existe la base de datos «uvfood» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf)// 2019-08-21T12:59:14.775
+classes.ConsultasAdmin//buscarUser// null java.lang.NullPointerException// 2019-08-21T12:59:14.776
+classes.ConexionBD//Conexion// FATAL: la autentificación password falló para el usuario «postgres» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf) org.postgresql.util.PSQLException: FATAL: la autentificación password falló para el usuario «postgres» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf)// 2019-08-21T21:36:54.426
+classes.ConexionBD//Conexion// FATAL: la autentificación password falló para el usuario «postgres» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf) org.postgresql.util.PSQLException: FATAL: la autentificación password falló para el usuario «postgres» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf)// 2019-08-21T21:37:03.621
+classes.ConexionBD//Conexion// FATAL: la autentificación password falló para el usuario «postgres» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf) org.postgresql.util.PSQLException: FATAL: la autentificación password falló para el usuario «postgres» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf)// 2019-08-21T21:42:53.249
+classes.ConsultasAdmin//llenarTabla// null java.lang.NullPointerException// 2019-08-21T21:42:53.256
+classes.ConexionBD//Conexion// FATAL: la autentificación password falló para el usuario «postgres» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf) org.postgresql.util.PSQLException: FATAL: la autentificación password falló para el usuario «postgres» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf)// 2019-08-21T21:42:56.150
+classes.ConexionBD//Conexion// FATAL: la autentificación password falló para el usuario «postgres» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf) org.postgresql.util.PSQLException: FATAL: la autentificación password falló para el usuario «postgres» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf)// 2019-08-21T21:45:02.685
+classes.ConsultasAdmin//llenarTabla// null java.lang.NullPointerException// 2019-08-21T21:45:02.692
+classes.ConexionBD//Conexion// FATAL: la autentificación password falló para el usuario «postgres» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf) org.postgresql.util.PSQLException: FATAL: la autentificación password falló para el usuario «postgres» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf)// 2019-08-21T21:45:05.514
+classes.ConsultasAdmin//buscarUser// null java.lang.NullPointerException// 2019-08-21T21:45:05.521
+classes.ConexionBD//Conexion// FATAL: la autentificación password falló para el usuario «postgres» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf) org.postgresql.util.PSQLException: FATAL: la autentificación password falló para el usuario «postgres» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf)// 2019-08-21T21:46:59.574
+classes.ConsultasAdmin//llenarTabla// null java.lang.NullPointerException// 2019-08-21T21:46:59.632
+classes.ConexionBD//Conexion// FATAL: la autentificación password falló para el usuario «postgres» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf) org.postgresql.util.PSQLException: FATAL: la autentificación password falló para el usuario «postgres» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf)// 2019-08-21T21:47:02.971
+classes.ConsultasAdmin//buscarUser// null java.lang.NullPointerException// 2019-08-21T21:47:02.979
+classes.ConexionBD//Conexion// FATAL: la autentificación password falló para el usuario «postgres» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf) org.postgresql.util.PSQLException: FATAL: la autentificación password falló para el usuario «postgres» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf)// 2019-08-21T21:47:46.524
+classes.ConsultasAdmin//buscarUser// null java.lang.NullPointerException// 2019-08-21T21:47:46.531
+classes.ConexionBD//Conexion// FATAL: la autentificación password falló para el usuario «postgres» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf) org.postgresql.util.PSQLException: FATAL: la autentificación password falló para el usuario «postgres» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf)// 2019-08-21T21:47:53.992
+classes.ConsultasAdmin//buscarUser// null java.lang.NullPointerException// 2019-08-21T21:47:53.998
+classes.ConexionBD//Conexion// FATAL: la autentificación password falló para el usuario «postgres» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf) org.postgresql.util.PSQLException: FATAL: la autentificación password falló para el usuario «postgres» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf)// 2019-08-21T21:48:07.670
+classes.ConsultasAdmin//llenarTabla// null java.lang.NullPointerException// 2019-08-21T21:48:07.679
+classes.FileManage//readCSVFile// null java.lang.NullPointerException// 2019-08-26T00:43:56.165
+classes.FileManage//calcularRutaArchivo// null java.lang.NullPointerException// 2019-08-26T00:46:32.483
+FileManageTest//testLogin// null java.lang.NullPointerException// 2019-08-26T00:53:53.501
+FileManageTest//testLogin// null java.lang.NullPointerException// 2019-08-26T00:54:13.023
+classes.FileManage//readCSVFile// null java.lang.NullPointerException// 2019-08-26T01:52:10.443
+classes.ConexionBD//Conexion// FATAL: la autentificación password falló para el usuario «postgres» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf) org.postgresql.util.PSQLException: FATAL: la autentificación password falló para el usuario «postgres» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf)// 2019-08-26T08:38:12.507
+managers.ControladorAdmin//guardarImg// C:\Users\STH_1F_MCB_PC\Pictures\CIER\CierLV.jpg -> C:\Users\STH_1F_MCB_PC\Desktop\UVFood\ImgSlider\CierLV.jpg java.nio.file.NoSuchFileException: C:\Users\STH_1F_MCB_PC\Pictures\CIER\CierLV.jpg -> C:\Users\STH_1F_MCB_PC\Desktop\UVFood\ImgSlider\CierLV.jpg// 2019-08-26T11:00:26.410
+classes.ConexionBD//Conexion// FATAL: la autentificación password falló para el usuario «postgres» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf) org.postgresql.util.PSQLException: FATAL: la autentificación password falló para el usuario «postgres» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf)// 2019-08-27T09:15:18.884
+classes.ConexionBD//Conexion// FATAL: la autentificación password falló para el usuario «postgres» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf) org.postgresql.util.PSQLException: FATAL: la autentificación password falló para el usuario «postgres» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf)// 2019-08-27T09:25:18.445
+classes.ConexionBD//Conexion// FATAL: la autentificación password falló para el usuario «postgres» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf) org.postgresql.util.PSQLException: FATAL: la autentificación password falló para el usuario «postgres» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf)// 2019-08-27T09:26:19.501
+managers.ControladorAdmin//readCSVFile// null java.lang.NullPointerException// 2019-08-18T18:50:10.122
+managers.ControladorAdmin//readCSVFile// null java.lang.NullPointerException// 2019-08-18T18:50:10.667
+managers.ControladorAdmin//readCSVFile// null java.lang.NullPointerException// 2019-08-18T18:50:10.962
+managers.ControladorAdmin//readCSVFile// null java.lang.NullPointerException// 2019-08-19T02:54:57.422
+managers.ControladorAdmin//readCSVFile// null java.lang.NullPointerException// 2019-08-19T02:55:31.705
+managers.ControladorAdmin//readCSVFile// null java.lang.NullPointerException// 2019-08-19T02:55:34.165
+managers.ControladorAdmin//readCSVFile// null java.lang.NullPointerException// 2019-08-19T02:55:40.516
+managers.ControladorAdmin//readCSVFile// null java.lang.NullPointerException// 2019-08-19T02:55:42.367
+managers.ControladorAdmin//readCSVFile// null java.lang.NullPointerException// 2019-08-19T02:55:44.156
+managers.ControladorAdmin//readCSVFile// null java.lang.NullPointerException// 2019-08-19T03:19:25.644
+managers.ControladorAdmin//readCSVFile// null java.lang.NullPointerException// 2019-08-19T03:19:31.913
+managers.ControladorAdmin//readCSVFile// null java.lang.NullPointerException// 2019-08-19T03:23:46.226
+classes.FileChooser//calcularRutaArchivo// null java.lang.NullPointerException// 2019-08-19T03:34:22.152
+classes.ConexionBD//Conexion// FATAL: database "pruebauvfood" does not exist org.postgresql.util.PSQLException: FATAL: database "pruebauvfood" does not exist// 2019-08-19T04:02:27.141
+classes.ConexionBD//Conexion// FATAL: database "pruebauvfood" does not exist org.postgresql.util.PSQLException: FATAL: database "pruebauvfood" does not exist// 2019-08-19T04:02:32.991
+classes.ConexionBD//Conexion// FATAL: database "pruebauvfood" does not exist org.postgresql.util.PSQLException: FATAL: database "pruebauvfood" does not exist// 2019-08-19T04:05:55.436
+classes.ConexionBD//Conexion// FATAL: database "pruebauvfood" does not exist org.postgresql.util.PSQLException: FATAL: database "pruebauvfood" does not exist// 2019-08-19T04:06:00.391
+classes.ConsultasCliente//login// ERROR: relation "uvfood_usuario" does not exist
+  Position: 15 org.postgresql.util.PSQLException: ERROR: relation "uvfood_usuario" does not exist
+  Position: 15// 2019-08-19T04:09:50.079
+classes.ConexionBD//Conexion// FATAL: la autentificación password falló para el usuario «postgres» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf) org.postgresql.util.PSQLException: FATAL: la autentificación password falló para el usuario «postgres» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf)// 2019-08-19T16:00:38.013
+classes.ConexionBD//Conexion// FATAL: la autentificación password falló para el usuario «postgres» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf) org.postgresql.util.PSQLException: FATAL: la autentificación password falló para el usuario «postgres» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf)// 2019-08-19T16:03:48.113
+classes.ConexionBD//Conexion// FATAL: la autentificación password falló para el usuario «postgres» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf) org.postgresql.util.PSQLException: FATAL: la autentificación password falló para el usuario «postgres» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf)// 2019-08-19T16:05:23.672
+classes.ConexionBD//Conexion// FATAL: la autentificación password falló para el usuario «postgres» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf) org.postgresql.util.PSQLException: FATAL: la autentificación password falló para el usuario «postgres» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf)// 2019-08-19T16:08:12.242
+classes.ConsultasCliente//login// ERROR: no existe la relación «uvfood_usuario»
+  Position: 15 org.postgresql.util.PSQLException: ERROR: no existe la relación «uvfood_usuario»
+  Position: 15// 2019-08-19T16:24:34.045
+classes.ConsultasCliente//login// ERROR: no existe la relación «uvfood_usuario»
+  Position: 15 org.postgresql.util.PSQLException: ERROR: no existe la relación «uvfood_usuario»
+  Position: 15// 2019-08-19T16:27:39.561
+classes.ConsultasCliente//login// ERROR: no existe la relación «uvfood_usuario»
+  Position: 15 org.postgresql.util.PSQLException: ERROR: no existe la relación «uvfood_usuario»
+  Position: 15// 2019-08-19T16:27:41.864
+classes.ConsultasCliente//login// ERROR: no existe la relación «uvfood_usuario»
+  Position: 15 org.postgresql.util.PSQLException: ERROR: no existe la relación «uvfood_usuario»
+  Position: 15// 2019-08-19T16:27:45.154
+classes.ConexionBD//Conexion// FATAL: la autentificación password falló para el usuario «postgres» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf) org.postgresql.util.PSQLException: FATAL: la autentificación password falló para el usuario «postgres» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf)// 2019-08-20T08:56:52.048
+classes.ConexionBD//Conexion// FATAL: la autentificación password falló para el usuario «postgres» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf) org.postgresql.util.PSQLException: FATAL: la autentificación password falló para el usuario «postgres» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf)// 2019-08-20T11:30:59.135
+classes.ConsultasAdmin//buscarUser// ERROR: error de sintaxis en o cerca de «,»
+  Position: 40 org.postgresql.util.PSQLException: ERROR: error de sintaxis en o cerca de «,»
+  Position: 40// 2019-08-21T09:24:16.865
+classes.ConsultasAdmin//buscarUser// ERROR: error de sintaxis en o cerca de «,»
+  Position: 40 org.postgresql.util.PSQLException: ERROR: error de sintaxis en o cerca de «,»
+  Position: 40// 2019-08-21T09:24:32.076
+classes.ConsultasAdmin//buscarUser// ERROR: error de sintaxis en o cerca de «,»
+  Position: 40 org.postgresql.util.PSQLException: ERROR: error de sintaxis en o cerca de «,»
+  Position: 40// 2019-08-21T09:25:55
+classes.ConsultasAdmin//buscarUser// ERROR: error de sintaxis en o cerca de «,»
+  Position: 40 org.postgresql.util.PSQLException: ERROR: error de sintaxis en o cerca de «,»
+  Position: 40// 2019-08-21T09:35:42.681
+classes.ConsultasAdmin//buscarUser// ERROR: error de sintaxis en o cerca de «,»
+  Position: 40 org.postgresql.util.PSQLException: ERROR: error de sintaxis en o cerca de «,»
+  Position: 40// 2019-08-21T09:36:46.290
+classes.ConsultasAdmin//buscarUser// ERROR: error de sintaxis en o cerca de «,»
+  Position: 40 org.postgresql.util.PSQLException: ERROR: error de sintaxis en o cerca de «,»
+  Position: 40// 2019-08-21T09:36:51.999
+classes.ConsultasAdmin//buscarUser// ERROR: error de sintaxis en o cerca de «,»
+  Position: 40 org.postgresql.util.PSQLException: ERROR: error de sintaxis en o cerca de «,»
+  Position: 40// 2019-08-21T09:37:23.446
+classes.ConsultasAdmin//buscarUser// ERROR: error de sintaxis en o cerca de «,»
+  Position: 40 org.postgresql.util.PSQLException: ERROR: error de sintaxis en o cerca de «,»
+  Position: 40// 2019-08-21T09:37:41.378
+classes.ConsultasAdmin//buscarUser// ERROR: error de sintaxis en o cerca de «,»
+  Position: 40 org.postgresql.util.PSQLException: ERROR: error de sintaxis en o cerca de «,»
+  Position: 40// 2019-08-21T09:37:41.595
+classes.ConsultasAdmin//buscarUser// ERROR: error de sintaxis en o cerca de «,»
+  Position: 40 org.postgresql.util.PSQLException: ERROR: error de sintaxis en o cerca de «,»
+  Position: 40// 2019-08-21T09:45:51.949
+classes.ConsultasAdmin//buscarUser// ERROR: error de sintaxis en o cerca de «,»
+  Position: 40 org.postgresql.util.PSQLException: ERROR: error de sintaxis en o cerca de «,»
+  Position: 40// 2019-08-21T09:45:57.688
+classes.ConsultasAdmin//buscarUser// ERROR: error de sintaxis en o cerca de «,»
+  Position: 40 org.postgresql.util.PSQLException: ERROR: error de sintaxis en o cerca de «,»
+  Position: 40// 2019-08-21T09:46:01.062
+classes.ConsultasAdmin//buscarUser// ERROR: error de sintaxis en o cerca de «,»
+  Position: 40 org.postgresql.util.PSQLException: ERROR: error de sintaxis en o cerca de «,»
+  Position: 40// 2019-08-21T09:46:01.366
+classes.ConsultasAdmin//buscarUser// ERROR: error de sintaxis en o cerca de «,»
+  Position: 40 org.postgresql.util.PSQLException: ERROR: error de sintaxis en o cerca de «,»
+  Position: 40// 2019-08-21T09:46:01.870
+classes.ConsultasAdmin//buscarUser// ERROR: error de sintaxis en o cerca de «,»
+  Position: 40 org.postgresql.util.PSQLException: ERROR: error de sintaxis en o cerca de «,»
+  Position: 40// 2019-08-21T09:46:02.061
+classes.ConsultasAdmin//buscarUser// ERROR: error de sintaxis en o cerca de «,»
+  Position: 40 org.postgresql.util.PSQLException: ERROR: error de sintaxis en o cerca de «,»
+  Position: 40// 2019-08-21T09:46:03.077
+classes.ConsultasAdmin//buscarUser// ERROR: error de sintaxis en o cerca de «,»
+  Position: 40 org.postgresql.util.PSQLException: ERROR: error de sintaxis en o cerca de «,»
+  Position: 40// 2019-08-21T09:46:03.213
+classes.ConsultasAdmin//buscarUser// ERROR: error de sintaxis en o cerca de «,»
+  Position: 40 org.postgresql.util.PSQLException: ERROR: error de sintaxis en o cerca de «,»
+  Position: 40// 2019-08-21T09:46:03.310
+classes.ConsultasAdmin//buscarUser// ERROR: error de sintaxis en o cerca de «,»
+  Position: 40 org.postgresql.util.PSQLException: ERROR: error de sintaxis en o cerca de «,»
+  Position: 40// 2019-08-21T09:46:03.534
+classes.ConsultasAdmin//buscarUser// ERROR: error de sintaxis en o cerca de «,»
+  Position: 40 org.postgresql.util.PSQLException: ERROR: error de sintaxis en o cerca de «,»
+  Position: 40// 2019-08-21T09:46:03.663
+classes.ConsultasAdmin//buscarUser// ERROR: error de sintaxis en o cerca de «,»
+  Position: 40 org.postgresql.util.PSQLException: ERROR: error de sintaxis en o cerca de «,»
+  Position: 40// 2019-08-21T09:46:55.712
+classes.ConsultasAdmin//buscarUser// ERROR: error de sintaxis en o cerca de «,»
+  Position: 40 org.postgresql.util.PSQLException: ERROR: error de sintaxis en o cerca de «,»
+  Position: 40// 2019-08-21T09:46:57.479
+classes.ConsultasAdmin//buscarUser// ERROR: error de sintaxis en o cerca de «,»
+  Position: 40 org.postgresql.util.PSQLException: ERROR: error de sintaxis en o cerca de «,»
+  Position: 40// 2019-08-21T09:47:43.842
+classes.ConsultasCliente//login// ERROR: no existe la relación «uvfood_usuario»
+  Position: 15 org.postgresql.util.PSQLException: ERROR: no existe la relación «uvfood_usuario»
+  Position: 15// 2019-08-21T09:59:49.650
+classes.ConsultasCliente//login// ERROR: no existe la relación «uvfood_usuario»
+  Position: 15 org.postgresql.util.PSQLException: ERROR: no existe la relación «uvfood_usuario»
+  Position: 15// 2019-08-21T10:00:00.991
+classes.ConsultasCliente//login// ERROR: no existe la relación «uvfood_usuario»
+  Position: 15 org.postgresql.util.PSQLException: ERROR: no existe la relación «uvfood_usuario»
+  Position: 15// 2019-08-21T10:00:05.148
+classes.ConsultasAdmin//buscarUser// ERROR: error de sintaxis en o cerca de «,»
+  Position: 39 org.postgresql.util.PSQLException: ERROR: error de sintaxis en o cerca de «,»
+  Position: 39// 2019-08-21T10:45:21.281
+classes.ConsultasAdmin//buscarUser// ERROR: error de sintaxis en o cerca de «%»
+  Position: 51 org.postgresql.util.PSQLException: ERROR: error de sintaxis en o cerca de «%»
+  Position: 51// 2019-08-21T10:46:18.281
+classes.ConsultasAdmin//buscarUser// ERROR: error de sintaxis en o cerca de «%»
+  Position: 51 org.postgresql.util.PSQLException: ERROR: error de sintaxis en o cerca de «%»
+  Position: 51// 2019-08-21T10:46:57.297
+classes.ConsultasAdmin//buscarUser// ERROR: error de sintaxis en o cerca de «%»
+  Position: 51 org.postgresql.util.PSQLException: ERROR: error de sintaxis en o cerca de «%»
+  Position: 51// 2019-08-21T10:46:58.966
+classes.ConsultasAdmin//buscarUser// ERROR: error de sintaxis en o cerca de «%»
+  Position: 51 org.postgresql.util.PSQLException: ERROR: error de sintaxis en o cerca de «%»
+  Position: 51// 2019-08-21T10:46:59.719
+classes.ConsultasAdmin//buscarUser// ERROR: error de sintaxis en o cerca de «%»
+  Position: 51 org.postgresql.util.PSQLException: ERROR: error de sintaxis en o cerca de «%»
+  Position: 51// 2019-08-21T10:47:00.271
+classes.ConsultasAdmin//buscarUser// ERROR: error de sintaxis en o cerca de «%»
+  Position: 51 org.postgresql.util.PSQLException: ERROR: error de sintaxis en o cerca de «%»
+  Position: 51// 2019-08-21T10:47:56.010
+classes.ConsultasAdmin//buscarUser// ERROR: error de sintaxis en o cerca de «%»
+  Position: 51 org.postgresql.util.PSQLException: ERROR: error de sintaxis en o cerca de «%»
+  Position: 51// 2019-08-21T10:48:21.639
+classes.ConsultasAdmin//buscarUser// ERROR: error de sintaxis al final de la entrada
+  Position: 57 org.postgresql.util.PSQLException: ERROR: error de sintaxis al final de la entrada
+  Position: 57// 2019-08-21T10:49:36.725
+classes.ConsultasAdmin//buscarUser// ERROR: error de sintaxis al final de la entrada
+  Position: 56 org.postgresql.util.PSQLException: ERROR: error de sintaxis al final de la entrada
+  Position: 56// 2019-08-21T10:49:44.834
+classes.ConsultasAdmin//buscarUser// ERROR: error de sintaxis en o cerca de «,»
+  Position: 39 org.postgresql.util.PSQLException: ERROR: error de sintaxis en o cerca de «,»
+  Position: 39// 2019-08-21T10:55:10.999
+classes.ConsultasAdmin//buscarUser// ERROR: error de sintaxis en o cerca de «,»
+  Position: 39 org.postgresql.util.PSQLException: ERROR: error de sintaxis en o cerca de «,»
+  Position: 39// 2019-08-21T10:58:57.118
+classes.ConsultasAdmin//buscarUser// ERROR: error de sintaxis en o cerca de «,»
+  Position: 39 org.postgresql.util.PSQLException: ERROR: error de sintaxis en o cerca de «,»
+  Position: 39// 2019-08-21T10:58:58.694
+classes.ConsultasAdmin//buscarUser// ERROR: error de sintaxis en o cerca de «LIKEG»
+  Position: 40 org.postgresql.util.PSQLException: ERROR: error de sintaxis en o cerca de «LIKEG»
+  Position: 40// 2019-08-21T11:03:59.477
+classes.ConsultasAdmin//buscarUser// ERROR: error de sintaxis en o cerca de «creation_date»
+  Position: 159 org.postgresql.util.PSQLException: ERROR: error de sintaxis en o cerca de «creation_date»
+  Position: 159// 2019-08-21T11:05:10.259
+classes.ConsultasAdmin//buscarUser// ERROR: error de sintaxis en o cerca de «creation_date»
+  Position: 153 org.postgresql.util.PSQLException: ERROR: error de sintaxis en o cerca de «creation_date»
+  Position: 153// 2019-08-21T11:05:18.273
+classes.ConsultasAdmin//buscarUser// ERROR: error de sintaxis en o cerca de «creation_date»
+  Position: 159 org.postgresql.util.PSQLException: ERROR: error de sintaxis en o cerca de «creation_date»
+  Position: 159// 2019-08-21T11:05:19.298
+classes.ConsultasAdmin//buscarUser// ERROR: el operador no existe: integer ~~ unknown
+  Hint: Ningún operador coincide en el nombre y tipos de argumentos. Puede ser necesario agregar conversión explícita de tipos.
+  Position: 40 org.postgresql.util.PSQLException: ERROR: el operador no existe: integer ~~ unknown
+  Hint: Ningún operador coincide en el nombre y tipos de argumentos. Puede ser necesario agregar conversión explícita de tipos.
+  Position: 40// 2019-08-21T11:05:48.885
+classes.ConsultasAdmin//buscarUser// ERROR: el operador no existe: integer ~~ unknown
+  Hint: Ningún operador coincide en el nombre y tipos de argumentos. Puede ser necesario agregar conversión explícita de tipos.
+  Position: 40 org.postgresql.util.PSQLException: ERROR: el operador no existe: integer ~~ unknown
+  Hint: Ningún operador coincide en el nombre y tipos de argumentos. Puede ser necesario agregar conversión explícita de tipos.
+  Position: 40// 2019-08-21T11:05:50.917
+classes.ConexionBD//Conexion// FATAL: no existe la base de datos «uvfood» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf) org.postgresql.util.PSQLException: FATAL: no existe la base de datos «uvfood» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf)// 2019-08-21T12:56:32.901
+classes.ConexionBD//Conexion// FATAL: no existe la base de datos «uvfood» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf) org.postgresql.util.PSQLException: FATAL: no existe la base de datos «uvfood» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf)// 2019-08-21T12:58:02.230
+classes.ConexionBD//Conexion// FATAL: no existe la base de datos «uvfood» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf) org.postgresql.util.PSQLException: FATAL: no existe la base de datos «uvfood» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf)// 2019-08-21T12:58:39.511
+classes.ConexionBD//Conexion// FATAL: no existe la base de datos «uvfood» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf) org.postgresql.util.PSQLException: FATAL: no existe la base de datos «uvfood» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf)// 2019-08-21T12:58:58.202
+classes.ConsultasAdmin//llenarTabla// null java.lang.NullPointerException// 2019-08-21T12:58:58.204
+classes.ConexionBD//Conexion// FATAL: no existe la base de datos «uvfood» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf) org.postgresql.util.PSQLException: FATAL: no existe la base de datos «uvfood» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf)// 2019-08-21T12:59:02.634
+classes.ConsultasAdmin//buscarUser// null java.lang.NullPointerException// 2019-08-21T12:59:02.635
+classes.ConexionBD//Conexion// FATAL: no existe la base de datos «uvfood» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf) org.postgresql.util.PSQLException: FATAL: no existe la base de datos «uvfood» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf)// 2019-08-21T12:59:09.008
+classes.ConsultasAdmin//buscarUser// null java.lang.NullPointerException// 2019-08-21T12:59:09.022
+classes.ConexionBD//Conexion// FATAL: no existe la base de datos «uvfood» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf) org.postgresql.util.PSQLException: FATAL: no existe la base de datos «uvfood» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf)// 2019-08-21T12:59:11.634
+classes.ConsultasAdmin//buscarUser// null java.lang.NullPointerException// 2019-08-21T12:59:11.636
+classes.ConexionBD//Conexion// FATAL: no existe la base de datos «uvfood» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf) org.postgresql.util.PSQLException: FATAL: no existe la base de datos «uvfood» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf)// 2019-08-21T12:59:13.569
+classes.ConsultasAdmin//buscarUser// null java.lang.NullPointerException// 2019-08-21T12:59:13.570
+classes.ConexionBD//Conexion// FATAL: no existe la base de datos «uvfood» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf) org.postgresql.util.PSQLException: FATAL: no existe la base de datos «uvfood» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf)// 2019-08-21T12:59:14.775
+classes.ConsultasAdmin//buscarUser// null java.lang.NullPointerException// 2019-08-21T12:59:14.776
+classes.ConexionBD//Conexion// FATAL: la autentificación password falló para el usuario «postgres» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf) org.postgresql.util.PSQLException: FATAL: la autentificación password falló para el usuario «postgres» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf)// 2019-08-21T21:36:54.426
+classes.ConexionBD//Conexion// FATAL: la autentificación password falló para el usuario «postgres» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf) org.postgresql.util.PSQLException: FATAL: la autentificación password falló para el usuario «postgres» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf)// 2019-08-21T21:37:03.621
+classes.ConexionBD//Conexion// FATAL: la autentificación password falló para el usuario «postgres» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf) org.postgresql.util.PSQLException: FATAL: la autentificación password falló para el usuario «postgres» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf)// 2019-08-21T21:42:53.249
+classes.ConsultasAdmin//llenarTabla// null java.lang.NullPointerException// 2019-08-21T21:42:53.256
+classes.ConexionBD//Conexion// FATAL: la autentificación password falló para el usuario «postgres» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf) org.postgresql.util.PSQLException: FATAL: la autentificación password falló para el usuario «postgres» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf)// 2019-08-21T21:42:56.150
+classes.ConexionBD//Conexion// FATAL: la autentificación password falló para el usuario «postgres» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf) org.postgresql.util.PSQLException: FATAL: la autentificación password falló para el usuario «postgres» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf)// 2019-08-21T21:45:02.685
+classes.ConsultasAdmin//llenarTabla// null java.lang.NullPointerException// 2019-08-21T21:45:02.692
+classes.ConexionBD//Conexion// FATAL: la autentificación password falló para el usuario «postgres» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf) org.postgresql.util.PSQLException: FATAL: la autentificación password falló para el usuario «postgres» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf)// 2019-08-21T21:45:05.514
+classes.ConsultasAdmin//buscarUser// null java.lang.NullPointerException// 2019-08-21T21:45:05.521
+classes.ConexionBD//Conexion// FATAL: la autentificación password falló para el usuario «postgres» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf) org.postgresql.util.PSQLException: FATAL: la autentificación password falló para el usuario «postgres» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf)// 2019-08-21T21:46:59.574
+classes.ConsultasAdmin//llenarTabla// null java.lang.NullPointerException// 2019-08-21T21:46:59.632
+classes.ConexionBD//Conexion// FATAL: la autentificación password falló para el usuario «postgres» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf) org.postgresql.util.PSQLException: FATAL: la autentificación password falló para el usuario «postgres» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf)// 2019-08-21T21:47:02.971
+classes.ConsultasAdmin//buscarUser// null java.lang.NullPointerException// 2019-08-21T21:47:02.979
+classes.ConexionBD//Conexion// FATAL: la autentificación password falló para el usuario «postgres» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf) org.postgresql.util.PSQLException: FATAL: la autentificación password falló para el usuario «postgres» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf)// 2019-08-21T21:47:46.524
+classes.ConsultasAdmin//buscarUser// null java.lang.NullPointerException// 2019-08-21T21:47:46.531
+classes.ConexionBD//Conexion// FATAL: la autentificación password falló para el usuario «postgres» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf) org.postgresql.util.PSQLException: FATAL: la autentificación password falló para el usuario «postgres» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf)// 2019-08-21T21:47:53.992
+classes.ConsultasAdmin//buscarUser// null java.lang.NullPointerException// 2019-08-21T21:47:53.998
+classes.ConexionBD//Conexion// FATAL: la autentificación password falló para el usuario «postgres» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf) org.postgresql.util.PSQLException: FATAL: la autentificación password falló para el usuario «postgres» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf)// 2019-08-21T21:48:07.670
+classes.ConsultasAdmin//llenarTabla// null java.lang.NullPointerException// 2019-08-21T21:48:07.679
+classes.FileManage//readCSVFile// null java.lang.NullPointerException// 2019-08-26T00:43:56.165
+classes.FileManage//calcularRutaArchivo// null java.lang.NullPointerException// 2019-08-26T00:46:32.483
+FileManageTest//testLogin// null java.lang.NullPointerException// 2019-08-26T00:53:53.501
+FileManageTest//testLogin// null java.lang.NullPointerException// 2019-08-26T00:54:13.023
+classes.FileManage//readCSVFile// null java.lang.NullPointerException// 2019-08-26T01:52:10.443
+classes.ConexionBD//Conexion// FATAL: la autentificación password falló para el usuario «postgres» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf) org.postgresql.util.PSQLException: FATAL: la autentificación password falló para el usuario «postgres» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf)// 2019-08-26T08:38:12.507
+managers.ControladorAdmin//guardarImg// C:\Users\STH_1F_MCB_PC\Pictures\CIER\CierLV.jpg -> C:\Users\STH_1F_MCB_PC\Desktop\UVFood\ImgSlider\CierLV.jpg java.nio.file.NoSuchFileException: C:\Users\STH_1F_MCB_PC\Pictures\CIER\CierLV.jpg -> C:\Users\STH_1F_MCB_PC\Desktop\UVFood\ImgSlider\CierLV.jpg// 2019-08-26T11:00:26.410
+classes.ConexionBD//Conexion// FATAL: la autentificación password falló para el usuario «postgres» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf) org.postgresql.util.PSQLException: FATAL: la autentificación password falló para el usuario «postgres» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf)// 2019-08-27T09:15:18.884
+classes.ConexionBD//Conexion// FATAL: la autentificación password falló para el usuario «postgres» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf) org.postgresql.util.PSQLException: FATAL: la autentificación password falló para el usuario «postgres» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf)// 2019-08-27T09:25:18.445
+classes.ConexionBD//Conexion// FATAL: la autentificación password falló para el usuario «postgres» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf) org.postgresql.util.PSQLException: FATAL: la autentificación password falló para el usuario «postgres» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf)// 2019-08-27T09:26:19.501
+classes.ConsultasAdmin//llenarAcciones// ERROR: el operador no existe: integer = character varying
+  Hint: Ningún operador coincide en el nombre y tipos de argumentos. Puede ser necesario agregar conversión explícita de tipos.
+  Position: 39 org.postgresql.util.PSQLException: ERROR: el operador no existe: integer = character varying
+  Hint: Ningún operador coincide en el nombre y tipos de argumentos. Puede ser necesario agregar conversión explícita de tipos.
+  Position: 39// 2019-08-27T11:53:42.039
+classes.ConsultasAdmin//llenarAcciones// ERROR: el operador no existe: integer = character varying
+  Hint: Ningún operador coincide en el nombre y tipos de argumentos. Puede ser necesario agregar conversión explícita de tipos.
+  Position: 39 org.postgresql.util.PSQLException: ERROR: el operador no existe: integer = character varying
+  Hint: Ningún operador coincide en el nombre y tipos de argumentos. Puede ser necesario agregar conversión explícita de tipos.
+  Position: 39// 2019-08-27T12:00:08.473
+classes.ConexionBD//Conexion// FATAL: password authentication failed for user "postgres" org.postgresql.util.PSQLException: FATAL: password authentication failed for user "postgres"// 2019-08-27T18:04:10.821
+managers.queries.ConsultasLogin//get_view// The column index is out of range: 1, number of columns: 0. org.postgresql.util.PSQLException: The column index is out of range: 1, number of columns: 0.// 2019-08-27T18:38:25.952
+managers.queries.ConsultasLogin//get_view// The column index is out of range: 1, number of columns: 0. org.postgresql.util.PSQLException: The column index is out of range: 1, number of columns: 0.// 2019-08-27T18:47:58.053
+managers.queries.ConsultasLogin//get_view// ERROR: column "sistemasuvfood" does not exist
+  Position: 172 org.postgresql.util.PSQLException: ERROR: column "sistemasuvfood" does not exist
+  Position: 172// 2019-08-27T18:51:57.456
+managers.queries.ConsultasLogin//get_view// ERROR: column "sistemasuvfood" does not exist
+  Position: 172 org.postgresql.util.PSQLException: ERROR: column "sistemasuvfood" does not exist
+  Position: 172// 2019-08-27T18:53:42.437
+managers.queries.ConsultasLogin//get_view// The column index is out of range: 1, number of columns: 0. org.postgresql.util.PSQLException: The column index is out of range: 1, number of columns: 0.// 2019-08-27T18:57:10.055
+managers.queries.ConsultasLogin//get_view// ERROR: column "sistemasuvfood" does not exist
+  Position: 172 org.postgresql.util.PSQLException: ERROR: column "sistemasuvfood" does not exist
+  Position: 172// 2019-08-27T18:59:54.338
+managers.queries.ConsultasLogin//get_view// ERROR: column "sistemasuvfood" does not exist
+  Position: 172 org.postgresql.util.PSQLException: ERROR: column "sistemasuvfood" does not exist
+  Position: 172// 2019-08-27T19:01:14.616
+managers.queries.ConsultasLogin//get_view// The column index is out of range: 0, number of columns: 1. org.postgresql.util.PSQLException: The column index is out of range: 0, number of columns: 1.// 2019-08-27T19:02:25.075
+managers.queries.KeyValidate//haveKey// ERROR: syntax error at or near ";"
+  Position: 131 org.postgresql.util.PSQLException: ERROR: syntax error at or near ";"
+  Position: 131// 2019-08-28T00:15:21.802
+managers.queries.KeyValidate//haveKey// ERROR: syntax error at or near ";"
+  Position: 131 org.postgresql.util.PSQLException: ERROR: syntax error at or near ";"
+  Position: 131// 2019-08-28T00:15:29.640
+classes.FileManage//calcularRutaArchivo// null java.lang.NullPointerException// 2019-08-28T01:41:23.284
+managers.queries.KeyValidate//resultHaveKey// null java.lang.NullPointerException// 2019-08-28T01:50:32.558

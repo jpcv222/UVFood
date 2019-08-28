@@ -8,7 +8,6 @@
  */
 package views;
 
-import classes.ConsultasAdmin;
 import java.awt.Image;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
@@ -18,7 +17,6 @@ import java.io.File;
 import javax.swing.JFileChooser;
 import javax.swing.JLabel;
 import javax.swing.border.BevelBorder;
-import javax.swing.table.DefaultTableModel;
 import rojerusan.RSPanelsSlider;
 import managers.ControladorAdmin;
 
@@ -41,7 +39,7 @@ public class VistaAdmin extends javax.swing.JFrame {
     public JFileChooser fileImg = new JFileChooser();
     public File nombreImg;
 
-    ControladorAdmin manager;
+    public ControladorAdmin manager;
 
     public VistaAdmin() {
         manager = new ControladorAdmin(this);
@@ -1220,12 +1218,12 @@ public class VistaAdmin extends javax.swing.JFrame {
 
     private void jPanelSelectCSVUserMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelSelectCSVUserMouseClicked
         // TODO add your handling code here:
-        manager.selectFile("user.upload");
+        manager.selectFile("users.select.csv");
     }//GEN-LAST:event_jPanelSelectCSVUserMouseClicked
 
     private void jButtonCargarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCargarActionPerformed
         // TODO add your handling code here:
-        manager.readCSVFile();
+        manager.readCSVFile("users.upload.csv");
     }//GEN-LAST:event_jButtonCargarActionPerformed
 
     private void btnCerrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCerrarActionPerformed
@@ -1257,20 +1255,20 @@ public class VistaAdmin extends javax.swing.JFrame {
 
     private void jTextFieldBuscarUserKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextFieldBuscarUserKeyReleased
         // TODO add your handling code here:
-        ConsultasAdmin consulAdmin = new ConsultasAdmin();
+       /* ConsultasAdmin consulAdmin = new ConsultasAdmin();
         String dato = jTextFieldBuscarUser.getText();
         if (consulAdmin.buscarUser(dato, this)) {
 
         } else {
 
         }
-
+*/
     }//GEN-LAST:event_jTextFieldBuscarUserKeyReleased
 
     private void btnConsultaUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConsultaUserActionPerformed
         // TODO add your handling code here:
-        ConsultasAdmin consulAdmin = new ConsultasAdmin();
-        consulAdmin.llenarTabla(this);
+        //ConsultasAdmin consulAdmin = new ConsultasAdmin();
+        //consulAdmin.llenarTabla(this);
     }//GEN-LAST:event_btnConsultaUserActionPerformed
 
     private void btnGuardarImgActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarImgActionPerformed
@@ -1372,8 +1370,8 @@ public class VistaAdmin extends javax.swing.JFrame {
 
     private void jTableUsersMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTableUsersMouseClicked
         // TODO add your handling code here:
-        ConsultasAdmin consulAdmin = new ConsultasAdmin();
-        consulAdmin.llenarAcciones(this);
+      //  ConsultasAdmin consulAdmin = new ConsultasAdmin();
+       // consulAdmin.llenarAcciones(this);
     }//GEN-LAST:event_jTableUsersMouseClicked
 
     /**

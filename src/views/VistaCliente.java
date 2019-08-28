@@ -5,9 +5,7 @@
  */
 package views;
 
-import classes.Usuario;
 import java.awt.Color;
-import java.awt.Font;
 import java.awt.Frame;
 import java.awt.Image;
 import javax.swing.Icon;
@@ -27,7 +25,6 @@ public class VistaCliente extends javax.swing.JFrame {
     int xMouse;
     int yMouse;
     
-    Usuario modeloUser;
     
     public VistaCliente() {
         initComponents();
@@ -52,15 +49,6 @@ public class VistaCliente extends javax.swing.JFrame {
         jLabel4.setIcon(icono4);
         this.repaint();
         
-    }
-    
-    
-    public VistaCliente (Usuario modeloUser){
-        initComponents();
-        this.setLocationRelativeTo(null);
-        this.modeloUser = modeloUser;
-        
-        jLabelNombreUser.setText("Hola "+modeloUser.getUsername());
     }
     
     
