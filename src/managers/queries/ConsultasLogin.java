@@ -118,7 +118,7 @@ public class ConsultasLogin extends ConexionBD {
                 view_result = "success.cliente";
                 break;
             case "Vendedor":
-                view_result = "success.vendedor";
+                view_result = "success.admin";
                 break;
             default:
                 view_result = "success.notfound";

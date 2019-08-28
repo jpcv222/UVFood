@@ -62,7 +62,7 @@ public class KeyValidate extends ConexionBD {
             case "success.key_access":
                 have_key = true;
                 break;
-            case "error.key_notfound":
+            case "error.notfound_key":
                 have_key = false;
                 modal.error_message("Error de acceso.", "Permisos denegados.", "Comuníquese con el área de sistemas.", null, null);
                 break;
