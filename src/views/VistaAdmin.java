@@ -85,7 +85,7 @@ public class VistaAdmin extends javax.swing.JFrame {
         this.repaint();
 
         manager = new ControladorAdmin(this);
-        manager.desHablitarEdicionBtn();
+        
 
     }
 
@@ -1291,8 +1291,11 @@ public class VistaAdmin extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextFieldBuscarUserKeyReleased
 
     private void btnConsultaUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConsultaUserActionPerformed
-
+        jComboBoxRoles.removeAllItems();
+        sePuede = "solo_crear";
         manager.requestFillTable();
+        manager.desHablitarEdicionBtn();
+        manager.hablitarEdicionTotal();
 
     }//GEN-LAST:event_btnConsultaUserActionPerformed
 
@@ -1385,6 +1388,7 @@ public class VistaAdmin extends javax.swing.JFrame {
 
     private void btnLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarActionPerformed
         // TODO add your handling code here:
+        jComboBoxRoles.removeAllItems();
         sePuede = "solo_crear";
         manager.limpiarCampos();
         manager.hablitarEdicionTotal();

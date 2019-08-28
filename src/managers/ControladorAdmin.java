@@ -198,7 +198,7 @@ public class ControladorAdmin {
                 interfazPrincipalAdmin.btnCrearUser.setEnabled(true);
                 interfazPrincipalAdmin.btnModificarUser.setEnabled(false);
                 interfazPrincipalAdmin.btnEliminarUser.setEnabled(false);
-                
+                requestFillCombo();
                 interfazPrincipalAdmin.btnHabilitarEdicion.setEnabled(false);
                 
                 break;
@@ -252,5 +252,7 @@ public class ControladorAdmin {
         interfazPrincipalAdmin.jTextFieldRol.setText("");
         interfazPrincipalAdmin.jTextFieldUser.setText("");
     }
+    
+
 
 }
