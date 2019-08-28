@@ -15,18 +15,18 @@ import java.sql.SQLException;
  *
  * @author sp
  */
-public class ConexionBD {
-    UVFoodDialogs modal = new UVFoodDialogs();
+public  class ConexionBD {
+    static UVFoodDialogs modal = new UVFoodDialogs();
 
-    private final String url = "jdbc:postgresql://localhost:5432/uvfood";
-    private final String user = "postgres";
-    private final String password = "pgsql";
-    private Connection conn = null;
-    private Logs logs = new Logs(Thread.currentThread().getStackTrace()[1].getClassName());
+    private static final String url = "jdbc:postgresql://localhost:5432/uvfood";
+    private static final String user = "postgres";
+    private static final String password = "pgsql";
+    private static Connection conn = null;
+    private static Logs logs = new Logs(Thread.currentThread().getStackTrace()[1].getClassName());
 
-    public Connection Conexion() {
+    public static Connection Conexion() {
         try {
-            conn = DriverManager.getConnection(this.url, this.user, this.password);
+            conn = DriverManager.getConnection(ConexionBD.url, ConexionBD.user, ConexionBD.password);
             System.out.println("Conexion exitosa");
         } catch (SQLException e) {
             modal.error_message("Error", "Algo anda mal", "El servidor esta presentado problemas", "Por Favor intenta mas tarde", "O reportanos que ocurre");

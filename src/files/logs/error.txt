@@ -1,3 +1,5 @@
 managers.ControladorLogin//request_login// El usuario no existe.// 2019-08-28T01:23:26.614
 managers.ControladorLogin//define_view// El registro no existe.// 2019-08-28T01:23:53.416
 managers.ControladorLogin//define_view// El registro no existe o está inactivo.// 2019-08-28T01:25:36.354
+managers.ControladorLogin//request_login// El usuario no existe.// 2019-08-28T01:41:10.024
+classes.FileManage//selectFile// Archivo CSV, ruta errónea.// 2019-08-28T01:41:23.284

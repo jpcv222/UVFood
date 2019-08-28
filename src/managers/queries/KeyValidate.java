@@ -19,14 +19,14 @@ import java.sql.Statement;
  */
 public class KeyValidate extends ConexionBD {
 
-    private Logs logs = new Logs(Thread.currentThread().getStackTrace()[1].getClassName());
-    private final UVFoodDialogs modal;
+    private static Logs logs = new Logs(Thread.currentThread().getStackTrace()[1].getClassName());
+    private static  UVFoodDialogs modal;
 
     public KeyValidate(UVFoodDialogs modal) {
-        this.modal = modal;
+        KeyValidate.modal = modal;
     }
 
-    public String haveKey(String namekey, int iduser) {
+    public static String haveKey(String namekey, int iduser) {
         String result = "error.unknow";
 
         Statement ps = null;
@@ -55,8 +55,10 @@ public class KeyValidate extends ConexionBD {
         return result;
     }
 
-    public boolean resultHaveKey(String result) {
+    public static boolean resultHaveKey(String result) {
         boolean have_key = false;
+        
+        try{
 
         switch (result) {
             case "success.key_access":
@@ -73,6 +75,15 @@ public class KeyValidate extends ConexionBD {
                 modal.error_message("Error fatal.", "Algo anda mal.", "El servidor está presentado problemas.", "Por Favor intenta mas tarde.", "No se puede leer archivo.");
                 logs.escribirErrorLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// El servidor está presentado problemas.");
                 break;
+            default:
+                have_key = false;
+                logs.escribirErrorLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// Respuesta a petición inválida.");
+                break;
+        }
+        
+        }catch(NullPointerException ex){
+            have_key = false;
+            logs.escribirExceptionLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// " + ex.getMessage() + " " + ex.toString());
         }
 
         return have_key;
