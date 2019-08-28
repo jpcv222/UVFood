@@ -181,7 +181,12 @@ public class ControladorAdmin {
     }
 
     public void limpiarCampos() {
-
+        interfazPrincipalAdmin.jTextFieldApellido.setText("");
+        interfazPrincipalAdmin.jTextFieldEmail.setText("");
+        interfazPrincipalAdmin.jTextFieldFecNa.setText("");
+        interfazPrincipalAdmin.jTextFieldName.setText("");
+        interfazPrincipalAdmin.jTextFieldRol.setText("");
+        interfazPrincipalAdmin.jTextFieldUser.setText("");
     }
 
 }

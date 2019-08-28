@@ -168,7 +168,7 @@ public class ConsultasAdmin extends ConexionBD {
             int fila = vista.jTableUsers.getSelectedRow();
             String codigo = vista.jTableUsers.getValueAt(fila, 0).toString();
 
-            String sql = "SELECT * FROM uvfood_user as  WHERE iduser= '" + codigo + "';";
+            String sql = "SELECT * FROM uvfood_user WHERE iduser= '" + codigo + "';";
             ps = conn.createStatement();
             rs = ps.executeQuery(sql);
 
@@ -179,14 +179,18 @@ public class ConsultasAdmin extends ConexionBD {
                 vista.jTextFieldEmail.setText(rs.getString(6));
                 vista.jTextFieldFecNa.setText(sqlDateToString(rs.getDate(5)));
             }
-            String sql2 = "SELECT t1.iduser, t1.id_typeuser, t1.status, t2.type_user FROM uvfood_user_extended AS t1 INNER JOIN uvfood_typeuser "
-                    + "AS t2 ON t2.id_typeuser = t1.id_typeuser WHERE t1.iduser ='"+codigo+"' AND t1.status = 1;";
+            String sql2 = "SELECT t2.type_user FROM uvfood_user_extended AS t1 INNER JOIN uvfood_typeuser "
+                    + "AS t2 ON t2.id_typeuser = t1.id_typeuser WHERE t1.iduser ='" + codigo + "';";
             ps = conn.createStatement();
             rs = ps.executeQuery(sql2);
-            
+
             while (rs.next()) {
-                vista.jTextFieldRol.setText(rs.getString(4));
-                
+                if (rs.getString(1) == "") {
+                    vista.jTextFieldRol.setText("Sin rol asignado");
+                } else {
+                    vista.jTextFieldRol.setText(rs.getString(1));
+                }
+
             }
 
             rs.close();

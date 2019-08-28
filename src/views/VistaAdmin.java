@@ -1336,6 +1336,7 @@ public class VistaAdmin extends javax.swing.JFrame {
     }//GEN-LAST:event_btnGuardarImgMouseExited
 
     private void jTableUsersMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTableUsersMouseClicked
+        manager.limpiarCampos();
         manager.requestFillFields();
     }//GEN-LAST:event_jTableUsersMouseClicked
 

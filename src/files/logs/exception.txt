@@ -520,3 +520,14 @@ managers.queries.ConsultasAdmin//llenarAcciones// ERROR: no existe la relación 
 managers.queries.ConsultasAdmin//llenarAcciones// ERROR: no existe la relación «uvfood_typeuseras»
   Position: 102 org.postgresql.util.PSQLException: ERROR: no existe la relación «uvfood_typeuseras»
   Position: 102// 2019-08-28T14:10:35.877
+managers.queries.ConsultasAdmin//llenarAcciones// ERROR: error de sintaxis en o cerca de «WHERE»
+  Position: 31 org.postgresql.util.PSQLException: ERROR: error de sintaxis en o cerca de «WHERE»
+  Position: 31// 2019-08-28T14:44:24.886
+managers.queries.ConsultasAdmin//llenarAcciones// ERROR: error de sintaxis en o cerca de «WHERE»
+  Position: 31 org.postgresql.util.PSQLException: ERROR: error de sintaxis en o cerca de «WHERE»
+  Position: 31// 2019-08-28T14:44:30.498
+managers.queries.ConsultasAdmin//llenarAcciones// ERROR: error de sintaxis en o cerca de «WHERE»
+  Position: 31 org.postgresql.util.PSQLException: ERROR: error de sintaxis en o cerca de «WHERE»
+  Position: 31// 2019-08-28T14:44:34.578
+managers.queries.ConsultasAdmin//llenarAcciones// El índice de la columna está fuera de rango: 4, número de columnas: 1. org.postgresql.util.PSQLException: El índice de la columna está fuera de rango: 4, número de columnas: 1.// 2019-08-28T14:46:13.165
+managers.queries.ConsultasAdmin//llenarAcciones// El índice de la columna está fuera de rango: 4, número de columnas: 1. org.postgresql.util.PSQLException: El índice de la columna está fuera de rango: 4, número de columnas: 1.// 2019-08-28T14:46:19.881
