@@ -51,7 +51,7 @@ public class ControladorLogin {
                 case "success":
                     vistaLogin.dispose();
                     define_view();
-                    logs.escribirAccessLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// Usuario existente y activo.");
+                    logs.escribirAccessLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// Usuario existente.");
                     break;
                 case "error.incorrect_user":
                     modal.error_message("Error.", "Algo anda mal.", "El usuario no existe.", "Por favor intenta con otros datos.", null);
@@ -104,8 +104,8 @@ public class ControladorLogin {
                 logs.escribirErrorLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// El rol no está definido.");
                 break;
             case "error.notfound_typeuser":
-                modal.error_message("Error.", "Algo anda mal.", "El registro no existe.", "Por favor intenta con otros datos.", null);
-                logs.escribirErrorLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// El registro no existe.");
+                modal.error_message("Error.", "Algo anda mal.", "El registro no existe o está inactivo.", "Por favor intenta con otros datos.", null);
+                logs.escribirErrorLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// El registro no existe o está inactivo.");
                 break;
             case "error.unknow":
                 modal.error_message("Error.", "Algo anda mal.", "Error desconocido, ", "contacte al área de sistemas.", null);
