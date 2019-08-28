@@ -20,7 +20,7 @@ import views.VistaLogin;
  */
 public class ControladorLogin {
 
-    private final VistaLogin vistaLogin;
+    private  VistaLogin vistaLogin;
     private final FormValidations validations;
     private Usuario user;
     private ConsultasLogin loginQueries;
@@ -30,6 +30,8 @@ public class ControladorLogin {
         this.vistaLogin = vistaLogin;
         this.validations = new FormValidations();
         this.modal = new UVFoodDialogs();
+        this.user = new Usuario();
+        this.loginQueries = new ConsultasLogin();
     }
 
     public void request_login() {
@@ -45,10 +47,7 @@ public class ControladorLogin {
             switch (result) {
                 case "success":
                     vistaLogin.dispose();
-
-                    VistaCliente home = new VistaCliente();
-                    VistaAdmin home2 = new VistaAdmin();
-                    home2.setVisible(true);
+                    define_view();
                     break;
                 case "error.incorrect_user":
                     modal.error_message("Error.", "Algo anda mal.", "El usuario no existe.", "Por favor intenta con otros datos.", null);
@@ -57,12 +56,50 @@ public class ControladorLogin {
                     modal.error_message("Error.", "Algo anda mal.", "La contraseña no coincide con el usuario.", "Por Favor intenta con otros datos.", null);
                     break;
                 case "error.server":
-                    modal.error_message("Error.", "Algo anda mal.", "El servidor está presentado problemas.", "Por Favor intenta mas tarde.", "O reportanos que ocurre.");
+                    modal.error_message("Error fatal.", "Algo anda mal.", "El servidor está presentado problemas.", "Por Favor intenta mas tarde.", "O reportanos que ocurre.");
+                    break;
+                case "error.unknow":
+                    modal.error_message("Error.", "Algo anda mal.", "Error desconocido, ", "contacte al área de sistemas.", null);
                     break;
             }
 
         } else {
             modal.error_message("Error", "Campos obligatorios", "Debes llenar todos los campos", null, null);
+        }
+    }
+
+    public void define_view() {
+
+        String result = loginQueries.get_view(user);
+
+        switch (result) {
+            case "success.admin":
+                vistaLogin.dispose();
+                VistaAdmin home_admin = new VistaAdmin();
+                home_admin.manager.user = this.user;
+                home_admin.setVisible(true);
+                break;
+            case "success.cliente":
+                vistaLogin.dispose();
+                VistaCliente home_cliente = new VistaCliente();
+                home_cliente.setVisible(true);
+                break;
+            case "success.vendedor":
+                modal.error_message("Error.", "Algo anda mal.", "Vista vendedor no disponible.", null, null);
+                break;
+            case "success.notfound":
+                modal.error_message("Error.", "Algo anda mal.", "El rol no está definido.", null, null);
+                break;
+            case "error.notfound_typeuser":
+                modal.error_message("Error.", "Algo anda mal.", "El registro no existe.", "Por favor intenta con otros datos.", null);
+                break;
+            case "error.unknow":
+                modal.error_message("Error.", "Algo anda mal.", "Error desconocido, ", "contacte al área de sistemas.", null);
+                break;
+            case "error.server":
+                modal.error_message("Error fatal.", "Algo anda mal.", "El servidor está presentado problemas.", "Por Favor intenta mas tarde.", "No se puede cargar vista.");
+                break;
+
         }
 
     }

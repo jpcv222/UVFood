@@ -12,6 +12,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import views.VistaLogin;
 
 //libreria para encriptar
@@ -21,18 +22,21 @@ import views.VistaLogin;
  * @author sp
  */
 public class ConsultasLogin extends ConexionBD {
-     private Logs logs = new Logs(Thread.currentThread().getStackTrace()[1].getClassName());
+
+    private Logs logs = new Logs(Thread.currentThread().getStackTrace()[1].getClassName());
 
     public String login(Usuario modeloCliente, VistaLogin vista) {
-        
+
         String result = "error.unknow";
         PreparedStatement ps = null;
-        Connection conn = Conexion();
+        Connection conn = null;
+        
         ResultSet rs = null;
-       
+
         String sql = "SELECT * FROM uvfood_user WHERE username = ?";
 
         try {
+            conn = Conexion();
             ps = conn.prepareStatement(sql);
             ps.setString(1, modeloCliente.getUsername());
             rs = ps.executeQuery();
@@ -62,13 +66,65 @@ public class ConsultasLogin extends ConexionBD {
             }
 
         } catch (SQLException e) {
-            logs.escribirExceptionLogs(Thread.currentThread().getStackTrace()[1].getMethodName() +"// "+  e.getMessage() +" "+ e.toString());
+            logs.escribirExceptionLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// " + e.getMessage() + " " + e.toString());
             result = "error.server";
 
         }
-        
+
         return result;
 
     }
 
+    public String get_view(Usuario modeloCliente) {
+        String result = "error.unknow";
+
+        Statement ps = null;
+        Connection conn = Conexion();
+        ResultSet rs = null;
+
+        String username = modeloCliente.getUsername();
+
+        String sql = "SELECT type_user FROM uvfood_typeuser WHERE id_typeuser IN "
+                + "(SELECT id_typeuser FROM uvfood_user_extended WHERE status = 1 AND iduser IN "
+                + "	(SELECT iduser FROM uvfood_user WHERE username = '" + username + "'));";
+
+        try {
+            
+            ps = conn.createStatement();
+            rs = ps.executeQuery(sql); 
+
+            if (rs.next()) {
+                result = define_view(rs.getString(1));
+            } else {
+                result = "error.notfound_typeuser";
+            }
+
+        } catch (SQLException e) {
+            logs.escribirExceptionLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// " + e.getMessage() + " " + e.toString());
+            result = "error.server";
+        }
+
+        return result;
+    }
+
+    public String define_view(String result_sql) {
+        String view_result;
+
+        switch (result_sql) {
+            case "Administrador":
+                view_result = "success.admin";
+                break;
+            case "Cliente":
+                view_result = "success.cliente";
+                break;
+            case "Vendedor":
+                view_result = "success.vendedor";
+                break;
+            default:
+                view_result = "success.notfound";
+                break;
+        }
+
+        return view_result;
+    }
 }

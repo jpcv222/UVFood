@@ -8,7 +8,6 @@ package views;
 import java.awt.Color;
 import java.awt.Frame;
 import managers.ControladorLogin;
-import org.apache.commons.codec.digest.DigestUtils;
 
 /**
  *
@@ -23,7 +22,7 @@ public class VistaLogin extends javax.swing.JFrame {
     int xMouse;
     int yMouse;
     
-    private ControladorLogin login_manager;
+    private final ControladorLogin login_manager;
     
 
     public VistaLogin() {
@@ -82,14 +81,12 @@ public class VistaLogin extends javax.swing.JFrame {
 
         jPanelLogin.setBackground(new java.awt.Color(255, 255, 255));
 
-        jButtonIniciarSesion.setBackground(new java.awt.Color(204, 204, 204));
+        jButtonIniciarSesion.setBackground(new java.awt.Color(255, 255, 255));
         jButtonIniciarSesion.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jButtonIniciarSesion.setText("Iniciar Sesion");
-        jButtonIniciarSesion.setContentAreaFilled(false);
-        jButtonIniciarSesion.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButtonIniciarSesion.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 0, 0)));
+        jButtonIniciarSesion.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jButtonIniciarSesion.setFocusPainted(false);
-        jButtonIniciarSesion.setOpaque(true);
-        jButtonIniciarSesion.setSelected(true);
         jButtonIniciarSesion.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 jButtonIniciarSesionMousePressed(evt);

@@ -10,7 +10,7 @@ import classes.FileManage;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import views.VistaAdmin;
-import classes.KeyValidate;
+import managers.queries.KeyValidate;
 import classes.Logs;
 import classes.Usuario;
 import components.UVFoodDialogs;
@@ -28,11 +28,11 @@ import static java.nio.file.StandardCopyOption.REPLACE_EXISTING;
 public class ControladorAdmin implements ActionListener {
 
     private final VistaAdmin interfazPrincipalAdmin;
-    private final FileManage file ;
+    private final FileManage file;
     private final KeyValidate keyvalidate;
-    private final UVFoodDialogs modal ;
+    private final UVFoodDialogs modal;
     private ConsultasAdmin consultasAdmin;
-    private Usuario user;
+    public Usuario user;
 
     private Logs logs = new Logs(Thread.currentThread().getStackTrace()[1].getClassName());
 
@@ -40,21 +40,22 @@ public class ControladorAdmin implements ActionListener {
     public ControladorAdmin(VistaAdmin interfazPrincipalAdmin) {
         this.interfazPrincipalAdmin = interfazPrincipalAdmin;
         this.modal = new UVFoodDialogs();
-        this.keyvalidate = new KeyValidate();
+        this.keyvalidate = new KeyValidate(modal);
         this.file = new FileManage();
     }
 
-    public void selectFile(String tipoCarga) {
-        if (keyvalidate.haveKey("action-method-name", "user-id")) {
+    public void selectFile(String namekey) {
 
+        String result = keyvalidate.haveKey(namekey, user.getIdUser());
+        boolean validate = keyvalidate.resultHaveKey(result);
+        if (validate) {
             String response = FileManage.selectFile(file.calcularRutaArchivo());
             interfazPrincipalAdmin.jLabelRutaArchivo.setText(response);
-
             validateBtCargar();
-        } else {
-            //Show error key message
         }
+
     }
+
 
     public void validateBtCargar() {
         String value = interfazPrincipalAdmin.jLabelRutaArchivo.getText();
@@ -65,57 +66,62 @@ public class ControladorAdmin implements ActionListener {
         }
     }
 
-    public void readCSVFile() {
-        if (keyvalidate.haveKey("action-method-name", "user-id")) {
+    public void readCSVFile(String namekey) {
+
+        String result = keyvalidate.haveKey(namekey, user.getIdUser());
+        boolean validate = keyvalidate.resultHaveKey(result);
+        if (validate) {
             String response = FileManage.readCSVFile(file.getRuta());
+            resultUpload(response, "usuarios");
+        }
 
-            switch (response) {
-                case "success":
-                    modal.success_message("Carga masiva de usuarios.", "Éxito al cargar archivo.", "Los usuarios fueron cargados con éxito.", null, null);
-                    break;
-                case "error.noclassdeffounderror":
-                    modal.error_message("Error fatal.", "Lectura archivo CSV errónea.", "Librería de lectura de archivo extraviada.", "Comuníquese con el área de sistemas.", null);
-                    break;
-                case "error.nullpointerexception":
-                    modal.error_message("Carga masiva usuarios.", "Lectura archivo CSV errónea.", "El archivo CSV es null.", null, null);
-                    break;
-                case "error.unknow":
-                    modal.error_message("Carga masiva usuarios.", "Lectura archivo CSV errónea.", "Error desconocido.", "Comuníquese con el área de sistemas.", null);
-                    break;
-            }
+    }
 
-        } else {
-            //Show error key message
+    public void resultUpload(String response, String type) {
+
+        switch (response) {
+            case "success":
+                modal.success_message("Carga masiva de " + type + ".", "Éxito al cargar archivo.", "Los " + type + " fueron cargados con éxito.", null, null);
+                break;
+            case "error.noclassdeffounderror":
+                modal.error_message("Carga masiva de " + type + ".", "Error fatal.", "Librería de lectura de archivo extraviada.", "Comuníquese con el área de sistemas.", null);
+                break;
+            case "error.nullpointerexception":
+                modal.error_message("Carga masiva de " + type + ".", "Lectura archivo CSV errónea.", "El archivo CSV es null.", null, null);
+                break;
+            case "error.unknow":
+                modal.error_message("Carga masiva de " + type + ".", "Lectura archivo CSV errónea.", "Error desconocido.", "Comuníquese con el área de sistemas.", null);
+                break;
         }
     }
 
     public void guardarImg() {
 
-            if (interfazPrincipalAdmin.nombreImg != null) {
-                interfazPrincipalAdmin.btnGuardarImg.setEnabled(true);
-                try {
-                    //definimos el destino de la imagen
-                    String dest = System.getProperty("user.dir") + "/src/ImgSlider/" + interfazPrincipalAdmin.nombreImg.getName();
-                    Path destino = Paths.get(dest);
+        if (interfazPrincipalAdmin.nombreImg != null) {
+            interfazPrincipalAdmin.btnGuardarImg.setEnabled(true);
+            try {
+                //definimos el destino de la imagen
+                String dest = System.getProperty("user.dir") + "/src/ImgSlider/" + interfazPrincipalAdmin.nombreImg.getName();
+                Path destino = Paths.get(dest);
 
-                    //defininimos el origen
-                    String orig = interfazPrincipalAdmin.nombreImg.getPath();
-                    Path origen = Paths.get(orig);
+                //defininimos el origen
+                String orig = interfazPrincipalAdmin.nombreImg.getPath();
+                Path origen = Paths.get(orig);
 
-                    //copiamos el archivo
-                    Files.copy(origen, destino, REPLACE_EXISTING);
+                //copiamos el archivo
+                Files.copy(origen, destino, REPLACE_EXISTING);
 
-                    System.out.println("archivo copiado con exito en: " + dest);
+                System.out.println("archivo copiado con exito en: " + dest);
 
-                } catch (IOException ex) {
-                    logs.escribirExceptionLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// " + ex.getMessage() + " " + ex.toString());
-                    modal.error_message("Error fatal.", "Carga de imagen erronea.", "Intente con otra imagen o", "Comuníquese con el área de sistemas.", null);
+            } catch (IOException ex) {
+                logs.escribirExceptionLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// " + ex.getMessage() + " " + ex.toString());
+                modal.error_message("Error fatal.", "Carga de imagen erronea.", "Intente con otra imagen o", "Comuníquese con el área de sistemas.", null);
 
-                }
-
-            } else {
-                interfazPrincipalAdmin.btnGuardarImg.setEnabled(false);
             }
+
+        } else {
+            interfazPrincipalAdmin.btnGuardarImg.setEnabled(false);
+        }
 
     }
 

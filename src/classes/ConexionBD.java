@@ -18,9 +18,9 @@ import java.sql.SQLException;
 public class ConexionBD {
     UVFoodDialogs modal = new UVFoodDialogs();
 
-    private String url = "jdbc:postgresql://localhost:5432/uvfood";
-    private String user = "postgres";
-    private String password = "root";
+    private final String url = "jdbc:postgresql://localhost:5432/uvfood";
+    private final String user = "postgres";
+    private final String password = "pgsql";
     private Connection conn = null;
     private Logs logs = new Logs(Thread.currentThread().getStackTrace()[1].getClassName());
 

@@ -450,3 +450,26 @@ classes.ConsultasAdmin//llenarAcciones// ERROR: el operador no existe: integer =
   Position: 39 org.postgresql.util.PSQLException: ERROR: el operador no existe: integer = character varying
   Hint: Ningún operador coincide en el nombre y tipos de argumentos. Puede ser necesario agregar conversión explícita de tipos.
   Position: 39// 2019-08-27T12:00:08.473
+classes.ConexionBD//Conexion// FATAL: password authentication failed for user "postgres" org.postgresql.util.PSQLException: FATAL: password authentication failed for user "postgres"// 2019-08-27T18:04:10.821
+managers.queries.ConsultasLogin//get_view// The column index is out of range: 1, number of columns: 0. org.postgresql.util.PSQLException: The column index is out of range: 1, number of columns: 0.// 2019-08-27T18:38:25.952
+managers.queries.ConsultasLogin//get_view// The column index is out of range: 1, number of columns: 0. org.postgresql.util.PSQLException: The column index is out of range: 1, number of columns: 0.// 2019-08-27T18:47:58.053
+managers.queries.ConsultasLogin//get_view// ERROR: column "sistemasuvfood" does not exist
+  Position: 172 org.postgresql.util.PSQLException: ERROR: column "sistemasuvfood" does not exist
+  Position: 172// 2019-08-27T18:51:57.456
+managers.queries.ConsultasLogin//get_view// ERROR: column "sistemasuvfood" does not exist
+  Position: 172 org.postgresql.util.PSQLException: ERROR: column "sistemasuvfood" does not exist
+  Position: 172// 2019-08-27T18:53:42.437
+managers.queries.ConsultasLogin//get_view// The column index is out of range: 1, number of columns: 0. org.postgresql.util.PSQLException: The column index is out of range: 1, number of columns: 0.// 2019-08-27T18:57:10.055
+managers.queries.ConsultasLogin//get_view// ERROR: column "sistemasuvfood" does not exist
+  Position: 172 org.postgresql.util.PSQLException: ERROR: column "sistemasuvfood" does not exist
+  Position: 172// 2019-08-27T18:59:54.338
+managers.queries.ConsultasLogin//get_view// ERROR: column "sistemasuvfood" does not exist
+  Position: 172 org.postgresql.util.PSQLException: ERROR: column "sistemasuvfood" does not exist
+  Position: 172// 2019-08-27T19:01:14.616
+managers.queries.ConsultasLogin//get_view// The column index is out of range: 0, number of columns: 1. org.postgresql.util.PSQLException: The column index is out of range: 0, number of columns: 1.// 2019-08-27T19:02:25.075
+managers.queries.KeyValidate//haveKey// ERROR: syntax error at or near ";"
+  Position: 131 org.postgresql.util.PSQLException: ERROR: syntax error at or near ";"
+  Position: 131// 2019-08-28T00:15:21.802
+managers.queries.KeyValidate//haveKey// ERROR: syntax error at or near ";"
+  Position: 131 org.postgresql.util.PSQLException: ERROR: syntax error at or near ";"
+  Position: 131// 2019-08-28T00:15:29.640

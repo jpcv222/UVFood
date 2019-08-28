@@ -5,7 +5,7 @@
  */
 package managers;
 
-import classes.KeyValidate;
+import managers.queries.KeyValidate;
 import classes.Usuario;
 import managers.queries.ConsultasLogin;
 import components.UVFoodDialogs;
@@ -30,7 +30,7 @@ public class ControladorCliente {
         this.modeloCliente = modeloCliente;
         this.modal = new UVFoodDialogs();
         this.validations = new FormValidations();
-        this.keyvalidate = new KeyValidate();
+        this.keyvalidate = new KeyValidate(modal);
     }
 
 }
