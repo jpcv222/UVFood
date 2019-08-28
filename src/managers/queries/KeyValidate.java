@@ -61,14 +61,17 @@ public class KeyValidate extends ConexionBD {
         switch (result) {
             case "success.key_access":
                 have_key = true;
+                logs.escribirAccessLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// Permiso concedido.");
                 break;
             case "error.notfound_key":
                 have_key = false;
                 modal.error_message("Error de acceso.", "Permisos denegados.", "Comuníquese con el área de sistemas.", null, null);
+                logs.escribirErrorLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// Permisos denegados.");
                 break;
             case "error.server":
                 have_key = false;
                 modal.error_message("Error fatal.", "Algo anda mal.", "El servidor está presentado problemas.", "Por Favor intenta mas tarde.", "No se puede leer archivo.");
+                logs.escribirErrorLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// El servidor está presentado problemas.");
                 break;
         }
 
