@@ -25,9 +25,9 @@ import static java.nio.file.StandardCopyOption.REPLACE_EXISTING;
  * @author Juan Pablo Castro 2019 GitHub: jpcv222
  * @author Jeffrey Rios 2019 GitHub: jeffrey2423
  */
-public class ControladorAdmin implements ActionListener {
+public class ControladorAdmin {
 
-    private final VistaAdmin interfazPrincipalAdmin;
+    private VistaAdmin interfazPrincipalAdmin;
     private final FileManage file;
     private final KeyValidate keyvalidate;
     private final UVFoodDialogs modal;
@@ -42,6 +42,7 @@ public class ControladorAdmin implements ActionListener {
         this.modal = new UVFoodDialogs();
         this.keyvalidate = new KeyValidate(modal);
         this.file = new FileManage();
+        this.consultasAdmin = new ConsultasAdmin();
     }
 
     public void selectFile(String namekey) {
@@ -151,14 +152,21 @@ public class ControladorAdmin implements ActionListener {
 
     }
 
-    @Override
-    public void actionPerformed(ActionEvent e) {
-        if (e.getSource() == interfazPrincipalAdmin.btnConsultaUser) {
-            if (consultasAdmin.llenarTabla(interfazPrincipalAdmin)) {
-                System.out.println("entro");
-            } else {
-                System.out.println("no entro");
-            }
+    public void requestSearchUser() {
+        if (!consultasAdmin.buscarUser(interfazPrincipalAdmin)) {
+            modal.error_message("Error", "Algo anda mal", "No fue exitosa la busqueda", "Por Favor intenta mas tarde", "O reportanos que ocurre");
+        }
+    }
+
+    public void requestFillTable() {
+        if (!consultasAdmin.llenarTabla(interfazPrincipalAdmin)) {
+            modal.error_message("Error", "Algo anda mal", "No se pueden mostrar los usuarios", "Por Favor intenta mas tarde", "O reportanos que ocurre");
+        }
+    }
+
+    public void requestFillFields() {
+        if (!consultasAdmin.llenarAcciones(interfazPrincipalAdmin)) {
+            modal.error_message("Error", "Algo anda mal", "No se puede mostrar los datos del uusuario", "Por Favor intenta mas tarde", "O reportanos que ocurre");
         }
     }
 

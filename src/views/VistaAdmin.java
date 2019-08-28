@@ -42,7 +42,7 @@ public class VistaAdmin extends javax.swing.JFrame {
     public ControladorAdmin manager;
 
     public VistaAdmin() {
-        manager = new ControladorAdmin(this);
+        initComponents();
 
         item_menu_exited = new Color(205, 31, 50);
         item_bottom_exited = new Color(240, 240, 240);
@@ -50,8 +50,6 @@ public class VistaAdmin extends javax.swing.JFrame {
         item_bottom_entered = new Color(153, 153, 153);
         item_menu_clicked = new Color(157, 0, 0);
         border_clicked = new BevelBorder(BevelBorder.RAISED);
-
-        initComponents();
         // btnGuardarImg.setEnabled(false);
         this.setLocationRelativeTo(null);
         resetColor(jLabelHome, "inicio.jpg");
@@ -84,6 +82,8 @@ public class VistaAdmin extends javax.swing.JFrame {
         Icon icono5 = new ImageIcon(imagen5.getImage().getScaledInstance(jLabelticket.getWidth(), jLabelticket.getHeight(), Image.SCALE_DEFAULT));
         jLabelticket.setIcon(icono5);
         this.repaint();
+
+        manager = new ControladorAdmin(this);
 
     }
 
@@ -173,6 +173,8 @@ public class VistaAdmin extends javax.swing.JFrame {
         btnEscogerImg1 = new javax.swing.JButton();
         btnEscogerImg2 = new javax.swing.JButton();
         btnEscogerImg3 = new javax.swing.JButton();
+        jComboBox1 = new javax.swing.JComboBox<>();
+        jLabel19 = new javax.swing.JLabel();
         jPanelModuleUserRegister = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
@@ -510,14 +512,14 @@ public class VistaAdmin extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Id", "Usuario", "Nombre", "Apellido", "Fecha de nacimiento", "Email", "Fecha de creacion"
+                "Id", "Usuario", "Nombre", "Apellido", "Fecha de nacimiento", "Email", "Fecha de creacion", "Estado"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false
+                false, false, false, false, false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -543,6 +545,7 @@ public class VistaAdmin extends javax.swing.JFrame {
             jTableUsers.getColumnModel().getColumn(4).setResizable(false);
             jTableUsers.getColumnModel().getColumn(5).setResizable(false);
             jTableUsers.getColumnModel().getColumn(6).setResizable(false);
+            jTableUsers.getColumnModel().getColumn(7).setResizable(false);
         }
 
         jTextFieldBuscarUser.addActionListener(new java.awt.event.ActionListener() {
@@ -563,31 +566,30 @@ public class VistaAdmin extends javax.swing.JFrame {
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1)
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 399, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(35, 35, 35)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jTextFieldBuscarUser, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 882, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(38, Short.MAX_VALUE))
+                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 399, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jTextFieldBuscarUser, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap())
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jTextFieldBuscarUser, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel3))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextFieldBuscarUser, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3))
-                .addGap(10, 10, 10)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 40, Short.MAX_VALUE))
+                .addGap(0, 70, Short.MAX_VALUE))
         );
 
         jPanel4.setBackground(new java.awt.Color(255, 255, 255));
@@ -598,11 +600,6 @@ public class VistaAdmin extends javax.swing.JFrame {
 
         jTextFieldUser.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jTextFieldUser.setBorder(null);
-        jTextFieldUser.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFieldUserActionPerformed(evt);
-            }
-        });
 
         jLabel13.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel13.setText("Usuario");
@@ -618,19 +615,9 @@ public class VistaAdmin extends javax.swing.JFrame {
 
         jTextFieldName.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jTextFieldName.setBorder(null);
-        jTextFieldName.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFieldNameActionPerformed(evt);
-            }
-        });
 
         jTextFieldApellido.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jTextFieldApellido.setBorder(null);
-        jTextFieldApellido.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFieldApellidoActionPerformed(evt);
-            }
-        });
 
         jLabel16.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel16.setText("Apellido");
@@ -640,82 +627,38 @@ public class VistaAdmin extends javax.swing.JFrame {
 
         jTextFieldFecNa.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jTextFieldFecNa.setBorder(null);
-        jTextFieldFecNa.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFieldFecNaActionPerformed(evt);
-            }
-        });
 
         jLabel18.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel18.setText("Email");
 
         jTextFieldEmail.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jTextFieldEmail.setBorder(null);
-        jTextFieldEmail.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFieldEmailActionPerformed(evt);
-            }
-        });
 
         btnEscogerImg1.setBackground(new java.awt.Color(255, 255, 255));
         btnEscogerImg1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/edit_user (1).png"))); // NOI18N
         btnEscogerImg1.setBorder(null);
         btnEscogerImg1.setContentAreaFilled(false);
-        btnEscogerImg1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnEscogerImg1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnEscogerImg1.setOpaque(true);
-        btnEscogerImg1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                btnEscogerImg1MouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                btnEscogerImg1MouseExited(evt);
-            }
-        });
-        btnEscogerImg1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnEscogerImg1ActionPerformed(evt);
-            }
-        });
 
         btnEscogerImg2.setBackground(new java.awt.Color(255, 255, 255));
         btnEscogerImg2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/add_user (1).png"))); // NOI18N
         btnEscogerImg2.setBorder(null);
         btnEscogerImg2.setContentAreaFilled(false);
-        btnEscogerImg2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnEscogerImg2.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnEscogerImg2.setOpaque(true);
-        btnEscogerImg2.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                btnEscogerImg2MouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                btnEscogerImg2MouseExited(evt);
-            }
-        });
-        btnEscogerImg2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnEscogerImg2ActionPerformed(evt);
-            }
-        });
 
         btnEscogerImg3.setBackground(new java.awt.Color(255, 255, 255));
         btnEscogerImg3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/delete_user (1).png"))); // NOI18N
         btnEscogerImg3.setBorder(null);
         btnEscogerImg3.setContentAreaFilled(false);
-        btnEscogerImg3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnEscogerImg3.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnEscogerImg3.setOpaque(true);
-        btnEscogerImg3.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                btnEscogerImg3MouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                btnEscogerImg3MouseExited(evt);
-            }
-        });
-        btnEscogerImg3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnEscogerImg3ActionPerformed(evt);
-            }
-        });
+
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
+        jLabel19.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel19.setText("Rol");
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -726,49 +669,52 @@ public class VistaAdmin extends javax.swing.JFrame {
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                        .addGap(15, 15, 15)
+                        .addGap(10, 10, 10)
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(jComboBox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jLabel13, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jSeparator2, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jTextFieldUser, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel17, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jTextFieldFecNa, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jSeparator6, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 280, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jSeparator6, javax.swing.GroupLayout.DEFAULT_SIZE, 280, Short.MAX_VALUE)
+                            .addComponent(jLabel19, javax.swing.GroupLayout.Alignment.LEADING))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 58, Short.MAX_VALUE)
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(jLabel15, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jTextFieldName, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jSeparator4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(jLabel18, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jTextFieldEmail, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jSeparator7, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(jLabel15, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jTextFieldName, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jSeparator4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(jLabel18, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jTextFieldEmail, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jSeparator7, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(btnEscogerImg2, javax.swing.GroupLayout.Alignment.TRAILING))
                         .addGap(27, 27, 27)
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jPasswordField, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jLabel14, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(jLabel16, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jTextFieldApellido, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jSeparator5, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(22, 22, 22))))
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(108, 108, 108)
-                .addComponent(btnEscogerImg2)
-                .addGap(216, 216, 216)
-                .addComponent(btnEscogerImg1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnEscogerImg3)
-                .addGap(110, 110, 110))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jPasswordField, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel14, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(jLabel16, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jTextFieldApellido, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jSeparator5, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                                .addComponent(btnEscogerImg1)
+                                .addGap(49, 49, 49)
+                                .addComponent(btnEscogerImg3)))))
+                .addContainerGap())
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
+                .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(2, 2, 2)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -777,21 +723,17 @@ public class VistaAdmin extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jSeparator5, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(jPanel4Layout.createSequentialGroup()
-                                .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTextFieldUser, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel4Layout.createSequentialGroup()
-                                .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTextFieldName, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jSeparator4, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                        .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jTextFieldUser, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jTextFieldName, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jSeparator4, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(39, 39, 39)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel4Layout.createSequentialGroup()
@@ -812,12 +754,20 @@ public class VistaAdmin extends javax.swing.JFrame {
                         .addComponent(jTextFieldEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jSeparator7, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(18, 18, 18)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnEscogerImg2, javax.swing.GroupLayout.DEFAULT_SIZE, 114, Short.MAX_VALUE)
-                    .addComponent(btnEscogerImg1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnEscogerImg3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGap(40, 40, 40)
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btnEscogerImg2, javax.swing.GroupLayout.DEFAULT_SIZE, 108, Short.MAX_VALUE)
+                            .addComponent(btnEscogerImg1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnEscogerImg3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addContainerGap())
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
 
         javax.swing.GroupLayout jPanelModuleUserReportsLayout = new javax.swing.GroupLayout(jPanelModuleUserReports);
@@ -972,7 +922,7 @@ public class VistaAdmin extends javax.swing.JFrame {
         btnEscogerImg.setText("Escoger Imagen");
         btnEscogerImg.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         btnEscogerImg.setContentAreaFilled(false);
-        btnEscogerImg.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnEscogerImg.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnEscogerImg.setOpaque(true);
         btnEscogerImg.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
@@ -992,7 +942,7 @@ public class VistaAdmin extends javax.swing.JFrame {
         btnGuardarImg.setText("Guardar imagen");
         btnGuardarImg.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         btnGuardarImg.setContentAreaFilled(false);
-        btnGuardarImg.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnGuardarImg.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnGuardarImg.setEnabled(false);
         btnGuardarImg.setOpaque(true);
         btnGuardarImg.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -1254,21 +1204,13 @@ public class VistaAdmin extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextFieldBuscarUserActionPerformed
 
     private void jTextFieldBuscarUserKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextFieldBuscarUserKeyReleased
-        // TODO add your handling code here:
-       /* ConsultasAdmin consulAdmin = new ConsultasAdmin();
-        String dato = jTextFieldBuscarUser.getText();
-        if (consulAdmin.buscarUser(dato, this)) {
-
-        } else {
-
-        }
-*/
+        manager.requestSearchUser();
     }//GEN-LAST:event_jTextFieldBuscarUserKeyReleased
 
     private void btnConsultaUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConsultaUserActionPerformed
-        // TODO add your handling code here:
-        //ConsultasAdmin consulAdmin = new ConsultasAdmin();
-        //consulAdmin.llenarTabla(this);
+
+        manager.requestFillTable();
+        
     }//GEN-LAST:event_btnConsultaUserActionPerformed
 
     private void btnGuardarImgActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarImgActionPerformed
@@ -1312,66 +1254,8 @@ public class VistaAdmin extends javax.swing.JFrame {
         btnGuardarImg.setBackground(new Color(255, 255, 255));
     }//GEN-LAST:event_btnGuardarImgMouseExited
 
-    private void jTextFieldUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldUserActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextFieldUserActionPerformed
-
-    private void jTextFieldNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldNameActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextFieldNameActionPerformed
-
-    private void jTextFieldApellidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldApellidoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextFieldApellidoActionPerformed
-
-    private void jTextFieldFecNaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldFecNaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextFieldFecNaActionPerformed
-
-    private void jTextFieldEmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldEmailActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextFieldEmailActionPerformed
-
-    private void btnEscogerImg1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnEscogerImg1MouseEntered
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnEscogerImg1MouseEntered
-
-    private void btnEscogerImg1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnEscogerImg1MouseExited
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnEscogerImg1MouseExited
-
-    private void btnEscogerImg1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEscogerImg1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnEscogerImg1ActionPerformed
-
-    private void btnEscogerImg2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnEscogerImg2MouseEntered
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnEscogerImg2MouseEntered
-
-    private void btnEscogerImg2MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnEscogerImg2MouseExited
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnEscogerImg2MouseExited
-
-    private void btnEscogerImg2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEscogerImg2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnEscogerImg2ActionPerformed
-
-    private void btnEscogerImg3MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnEscogerImg3MouseEntered
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnEscogerImg3MouseEntered
-
-    private void btnEscogerImg3MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnEscogerImg3MouseExited
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnEscogerImg3MouseExited
-
-    private void btnEscogerImg3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEscogerImg3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnEscogerImg3ActionPerformed
-
     private void jTableUsersMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTableUsersMouseClicked
-        // TODO add your handling code here:
-      //  ConsultasAdmin consulAdmin = new ConsultasAdmin();
-       // consulAdmin.llenarAcciones(this);
+        manager.requestFillFields();
     }//GEN-LAST:event_jTableUsersMouseClicked
 
     /**
@@ -1427,6 +1311,7 @@ public class VistaAdmin extends javax.swing.JFrame {
     public javax.swing.JButton btnGuardarImg;
     private javax.swing.JButton btnMiminize;
     public javax.swing.JButton jButtonCargar;
+    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -1437,6 +1322,7 @@ public class VistaAdmin extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -1479,7 +1365,7 @@ public class VistaAdmin extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator7;
     public javax.swing.JTable jTableUsers;
     public javax.swing.JTextField jTextFieldApellido;
-    private javax.swing.JTextField jTextFieldBuscarUser;
+    public javax.swing.JTextField jTextFieldBuscarUser;
     public javax.swing.JTextField jTextFieldEmail;
     public javax.swing.JTextField jTextFieldFecNa;
     public javax.swing.JTextField jTextFieldName;
