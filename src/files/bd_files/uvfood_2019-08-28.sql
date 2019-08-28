@@ -31,16 +31,6 @@ COMMENT ON EXTENSION plpgsql IS 'PL/pgSQL procedural language';
 
 
 --
--- Name: is_active_domain; Type: DOMAIN; Schema: public; Owner: postgres
---
-
-CREATE DOMAIN public.is_active_domain AS integer
-	CONSTRAINT is_active_domain_check CHECK ((VALUE = ANY (ARRAY[1, 0])));
-
-
-ALTER DOMAIN public.is_active_domain OWNER TO postgres;
-
---
 -- Name: modality_program; Type: DOMAIN; Schema: public; Owner: postgres
 --
 
@@ -144,9 +134,10 @@ ALTER FUNCTION public.funcaddloginsertuser() OWNER TO postgres;
 
 CREATE FUNCTION public.funcaddloginsertuserextended() RETURNS trigger
     LANGUAGE plpgsql
-    AS $$ BEGIN
+    AS $$
+ BEGIN
  INSERT INTO uvfood_logs (actionbd, whatsdone, date_insert)VALUES 
- ('INSERT',CONCAT('INSERT INTO uvfood_user_extended ', NEW.iduser, ' ', NEW.id_typeuser), CURRENT_TIMESTAMP);
+ ('INSERT',CONCAT('INSERT INTO uvfood_user_extended ', NEW.iduser, ' ', NEW.idprogram), CURRENT_TIMESTAMP);
  RETURN NEW;
  END;
  $$;
@@ -228,9 +219,10 @@ ALTER FUNCTION public.funcaddlogupdateuser() OWNER TO postgres;
 
 CREATE FUNCTION public.funcaddlogupdateuserextended() RETURNS trigger
     LANGUAGE plpgsql
-    AS $$ BEGIN
+    AS $$
+ BEGIN
  INSERT INTO uvfood_logs (actionbd, whatsdone, date_insert)VALUES 
- ('UPDATE',CONCAT('UPDATE uvfood_user SET ',OLD.iduser, ' ', OLD.id_typeuser), CURRENT_TIMESTAMP);
+ ('UPDATE',CONCAT('UPDATE uvfood_user SET ',OLD.iduser, ' ', OLD.idprogram), CURRENT_TIMESTAMP);
  RETURN NEW;
  END;
  $$;
@@ -505,15 +497,14 @@ ALTER SEQUENCE public.uvfood_typeuser_id_typeuser_seq OWNED BY public.uvfood_typ
 --
 
 CREATE TABLE public.uvfood_user (
-    iduser integer NOT NULL,
+    iduser serial NOT NULL,
     username character(20) NOT NULL,
     firstname character varying(200) NOT NULL,
     surname character varying(200) NOT NULL,
     birth_date date,
     email character varying(100) NOT NULL,
     password_user character varying(200) NOT NULL,
-    creation_date date DEFAULT now() NOT NULL,
-    is_active public.is_active_domain DEFAULT 1 NOT NULL
+    creation_date date
 );
 
 
@@ -526,7 +517,7 @@ ALTER TABLE public.uvfood_user OWNER TO postgres;
 CREATE TABLE public.uvfood_user_extended (
     iduser integer NOT NULL,
     id_typeuser integer NOT NULL,
-    status public.status_account DEFAULT 1
+    status public.status_account NOT NULL
 );
 
 
@@ -635,8 +626,6 @@ COPY public.uvfood_faculty (idfaculty, namefaculty) FROM stdin;
 --
 
 COPY public.uvfood_keys (idkey, idmodule, namekey) FROM stdin;
-3	1	users.select.csv
-4	1	users.upload.csv
 \.
 
 
@@ -648,13 +637,6 @@ COPY public.uvfood_logs (idlog, actionbd, whatsdone, date_insert) FROM stdin;
 1	INSERT	INSERT INTO uvfood_usersuperad	2019-08-15 00:56:45.537235
 2	UPDATE	UPDATE uvfood_user SET  superad	2019-08-15 00:59:28.939751
 3	INSERT	INSERT INTO uvfood_sede CALI-MELENDEZ	2019-08-15 01:24:01.661582
-4	INSERT	INSERT INTO uvfood_user sistemasUVFood      	2019-08-27 14:37:52.319577
-5	INSERT	INSERT INTO uvfood_user_extended 5 1	2019-08-27 14:49:56.717944
-6	INSERT	INSERT INTO uvfood_user kcopper             	2019-08-27 19:05:40.99525
-7	INSERT	INSERT INTO uvfood_user_extended 6 3	2019-08-27 19:07:51.679916
-8	UPDATE	UPDATE uvfood_user SET 6 3	2019-08-27 19:12:52.354899
-9	INSERT	INSERT INTO uvfood_user vendedor1           	2019-08-28 00:35:52.984478
-10	INSERT	INSERT INTO uvfood_user_extended 7 2	2019-08-28 00:36:56.90868
 \.
 
 
@@ -663,8 +645,6 @@ COPY public.uvfood_logs (idlog, actionbd, whatsdone, date_insert) FROM stdin;
 --
 
 COPY public.uvfood_modules (idmodule, namemodule) FROM stdin;
-1	users
-2	sales
 \.
 
 
@@ -698,9 +678,6 @@ COPY public.uvfood_student_program (iduser, idprogram, status) FROM stdin;
 --
 
 COPY public.uvfood_typeuser (id_typeuser, type_user) FROM stdin;
-1	Administrador
-2	Vendedor
-3	Cliente
 \.
 
 
@@ -708,10 +685,8 @@ COPY public.uvfood_typeuser (id_typeuser, type_user) FROM stdin;
 -- Data for Name: uvfood_user; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
-COPY public.uvfood_user (iduser, username, firstname, surname, birth_date, email, password_user, creation_date, is_active) FROM stdin;
-5	sistemasUVFood      	Oficina de sistemas	UVFood	2000-12-12	uvfood.sistemas@gmail.com	sistemas	2019-08-27	1
-6	kcopper             	Hanier	Pena	1900-12-12	kcopper.uvfood@gmail.com	123	2019-08-27	1
-7	vendedor1           	Vendedor	UVFood	2000-12-12	vendedor.uvfood@gmail.com	vendedor	2019-08-28	1
+COPY public.uvfood_user (iduser, username, firstname, surname, birth_date, email, password_user, creation_date) FROM stdin;
+3	superad	Super Usuario	Sistemas UVFOOD	2000-02-22	sistemas.uvfood@correounivalle.edu.co	jpcv222@#	2019-08-15
 \.
 
 
@@ -720,9 +695,6 @@ COPY public.uvfood_user (iduser, username, firstname, surname, birth_date, email
 --
 
 COPY public.uvfood_user_extended (iduser, id_typeuser, status) FROM stdin;
-5	1	1
-6	3	0
-7	2	1
 \.
 
 
@@ -731,8 +703,6 @@ COPY public.uvfood_user_extended (iduser, id_typeuser, status) FROM stdin;
 --
 
 COPY public.uvfood_user_key (iduser, idkey) FROM stdin;
-5	3
-5	4
 \.
 
 
@@ -747,21 +717,21 @@ SELECT pg_catalog.setval('public.uvfood_faculty_idfaculty_seq', 1, false);
 -- Name: uvfood_keys_idkey_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.uvfood_keys_idkey_seq', 4, true);
+SELECT pg_catalog.setval('public.uvfood_keys_idkey_seq', 1, false);
 
 
 --
 -- Name: uvfood_logs_idlog_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.uvfood_logs_idlog_seq', 10, true);
+SELECT pg_catalog.setval('public.uvfood_logs_idlog_seq', 3, true);
 
 
 --
 -- Name: uvfood_modules_idmodule_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.uvfood_modules_idmodule_seq', 2, true);
+SELECT pg_catalog.setval('public.uvfood_modules_idmodule_seq', 1, false);
 
 
 --
@@ -782,14 +752,14 @@ SELECT pg_catalog.setval('public.uvfood_sede_idsede_seq', 1, true);
 -- Name: uvfood_typeuser_id_typeuser_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.uvfood_typeuser_id_typeuser_seq', 3, true);
+SELECT pg_catalog.setval('public.uvfood_typeuser_id_typeuser_seq', 1, false);
 
 
 --
 -- Name: uvfood_user_iduser_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.uvfood_user_iduser_seq', 7, true);
+SELECT pg_catalog.setval('public.uvfood_user_iduser_seq', 4, true);
 
 
 --
