@@ -182,17 +182,24 @@ public class ControladorAdmin {
                 interfazPrincipalAdmin.btnCrearUser.setEnabled(false);
                 interfazPrincipalAdmin.btnModificarUser.setEnabled(false);
                 interfazPrincipalAdmin.btnEliminarUser.setEnabled(true);
+                
+                interfazPrincipalAdmin.btnHabilitarEdicion.setEnabled(false);
+                desHablitarEdicion();
                 break;
             case "eliminar_modificar":
                 interfazPrincipalAdmin.btnCrearUser.setEnabled(false);
                 interfazPrincipalAdmin.btnModificarUser.setEnabled(true);
                 interfazPrincipalAdmin.btnEliminarUser.setEnabled(true);
+                
+                interfazPrincipalAdmin.btnHabilitarEdicion.setEnabled(true);
                 HablitarEdicion();
                 break;
             case "solo_crear":
                 interfazPrincipalAdmin.btnCrearUser.setEnabled(true);
                 interfazPrincipalAdmin.btnModificarUser.setEnabled(false);
                 interfazPrincipalAdmin.btnEliminarUser.setEnabled(false);
+                
+                interfazPrincipalAdmin.btnHabilitarEdicion.setEnabled(false);
                 
                 break;
             default:
@@ -214,6 +221,15 @@ public class ControladorAdmin {
         interfazPrincipalAdmin.jTextFieldUser.setEditable(false);
         interfazPrincipalAdmin.jPasswordField.setEditable(false);
         interfazPrincipalAdmin.jComboBoxRoles.setEnabled(false);
+
+    }
+    public void desHablitarEdicionBtn() {
+        interfazPrincipalAdmin.btnCrearUser.setEnabled(true);
+        interfazPrincipalAdmin.btnModificarUser.setEnabled(false);
+        interfazPrincipalAdmin.btnEliminarUser.setEnabled(false);
+        interfazPrincipalAdmin.jTextFieldRol.setEditable(false);
+        
+        interfazPrincipalAdmin.btnHabilitarEdicion.setEnabled(false);
 
     }
 

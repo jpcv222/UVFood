@@ -85,7 +85,7 @@ public class VistaAdmin extends javax.swing.JFrame {
         this.repaint();
 
         manager = new ControladorAdmin(this);
-        manager.desHablitarEdicion();
+        manager.desHablitarEdicionBtn();
 
     }
 
@@ -1342,6 +1342,8 @@ public class VistaAdmin extends javax.swing.JFrame {
         manager.limpiarCampos();
         manager.requestFillFields();
         manager.hablitarEdicionTotal();
+        btnHabilitarEdicion.setEnabled(true);
+        
     }//GEN-LAST:event_jTableUsersMouseClicked
 
     private void btnCrearUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCrearUserActionPerformed
@@ -1350,15 +1352,15 @@ public class VistaAdmin extends javax.swing.JFrame {
 
     private void btnHabilitarEdicionMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnHabilitarEdicionMouseEntered
         // TODO add your handling code here:
-        btnHabilitarEdicion.setBackground(new Color(205, 31, 50));
-        btnHabilitarEdicion.setForeground(Color.white);
+       /* btnHabilitarEdicion.setBackground(new Color(205, 31, 50));
+        btnHabilitarEdicion.setForeground(Color.white);*/
 
     }//GEN-LAST:event_btnHabilitarEdicionMouseEntered
 
     private void btnHabilitarEdicionMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnHabilitarEdicionMouseExited
         // TODO add your handling code here:
-        btnHabilitarEdicion.setBackground(new Color(255, 255, 255));
-        btnHabilitarEdicion.setForeground(Color.black);
+        /*btnHabilitarEdicion.setBackground(new Color(255, 255, 255));
+        btnHabilitarEdicion.setForeground(Color.black);*/
     }//GEN-LAST:event_btnHabilitarEdicionMouseExited
 
     private void btnHabilitarEdicionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHabilitarEdicionActionPerformed
@@ -1370,15 +1372,15 @@ public class VistaAdmin extends javax.swing.JFrame {
     private void btnLimpiarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnLimpiarMouseEntered
         // TODO add your handling code here:
 
-        btnLimpiar.setBackground(new Color(205, 31, 50));
-        btnLimpiar.setForeground(Color.white);
+        /*btnLimpiar.setBackground(new Color(205, 31, 50));
+        btnLimpiar.setForeground(Color.white);*/
 
     }//GEN-LAST:event_btnLimpiarMouseEntered
 
     private void btnLimpiarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnLimpiarMouseExited
         // TODO add your handling code here:
-        btnLimpiar.setBackground(new Color(255, 255, 255));
-        btnLimpiar.setForeground(Color.black);
+        /*btnLimpiar.setBackground(new Color(255, 255, 255));
+        btnLimpiar.setForeground(Color.black);*/
     }//GEN-LAST:event_btnLimpiarMouseExited
 
     private void btnLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarActionPerformed
