@@ -510,3 +510,13 @@ managers.queries.ConsultasAdmin//llenarAcciones// ERROR: el operador no existe: 
   Position: 39 org.postgresql.util.PSQLException: ERROR: el operador no existe: integer = character varying
   Hint: Ningún operador coincide en el nombre y tipos de argumentos. Puede ser necesario agregar conversión explícita de tipos.
   Position: 39// 2019-08-28T10:33:13.381
+managers.queries.ConsultasAdmin//llenarAcciones// -1 java.lang.ArrayIndexOutOfBoundsException: -1// 2019-08-28T11:53:37.073
+managers.queries.ConsultasAdmin//llenarAcciones// ERROR: no existe la relación «uvfood_typeuseras»
+  Position: 102 org.postgresql.util.PSQLException: ERROR: no existe la relación «uvfood_typeuseras»
+  Position: 102// 2019-08-28T14:10:26.656
+managers.queries.ConsultasAdmin//llenarAcciones// ERROR: no existe la relación «uvfood_typeuseras»
+  Position: 102 org.postgresql.util.PSQLException: ERROR: no existe la relación «uvfood_typeuseras»
+  Position: 102// 2019-08-28T14:10:33.287
+managers.queries.ConsultasAdmin//llenarAcciones// ERROR: no existe la relación «uvfood_typeuseras»
+  Position: 102 org.postgresql.util.PSQLException: ERROR: no existe la relación «uvfood_typeuseras»
+  Position: 102// 2019-08-28T14:10:35.877

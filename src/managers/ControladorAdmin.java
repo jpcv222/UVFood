@@ -160,14 +160,28 @@ public class ControladorAdmin {
 
     public void requestFillTable() {
         if (!consultasAdmin.llenarTabla(interfazPrincipalAdmin)) {
-            modal.error_message("Error", "Algo anda mal", "No se pueden mostrar los usuarios", "Por Favor intenta mas tarde", "O reportanos que ocurre");
+            modal.error_message("Error", "Algo anda mal", "No se pueden mostrar registros de la Base de datos", "Por Favor intenta mas tarde", "O reportanos que ocurre");
         }
     }
 
     public void requestFillFields() {
         if (!consultasAdmin.llenarAcciones(interfazPrincipalAdmin)) {
-            modal.error_message("Error", "Algo anda mal", "No se puede mostrar los datos del uusuario", "Por Favor intenta mas tarde", "O reportanos que ocurre");
+            modal.error_message("Error", "Algo anda mal", "No se pueden mostrar registros de la Base de datos", "Por Favor intenta mas tarde", "O reportanos que ocurre");
         }
+    }
+
+    public void requestFillCombo() {
+        if (!consultasAdmin.fillCombo(interfazPrincipalAdmin)) {
+            modal.error_message("Error", "Algo anda mal", "No se pueden mostrar registros de la Base de datos", "Por Favor intenta mas tarde", "O reportanos que ocurre");
+        }
+    }
+
+    public void hablitarEdicion() {
+
+    }
+
+    public void limpiarCampos() {
+
     }
 
 }
