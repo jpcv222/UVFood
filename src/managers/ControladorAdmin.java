@@ -13,11 +13,17 @@ import classes.Logs;
 import classes.Usuario;
 import components.UVFoodDialogs;
 import java.awt.BorderLayout;
+import java.awt.MouseInfo;
+import java.awt.Point;
+import java.awt.event.KeyEvent;
+import static java.awt.image.ImageObserver.WIDTH;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import static java.nio.file.StandardCopyOption.REPLACE_EXISTING;
+import javax.swing.ImageIcon;
+import javax.swing.JMenuItem;
 import org.jfree.chart.*;
 import org.jfree.chart.plot.PlotOrientation;
 import org.jfree.data.category.DefaultCategoryDataset;
@@ -51,6 +57,10 @@ public class ControladorAdmin {
         String current_text = interfazPrincipalAdmin.jLabelBienvenida.getText();
         this.interfazPrincipalAdmin.jLabelBienvenida.setText(current_text + user.getFirstname());
         createIndexView();
+    }
+    
+    public void showPermissionsView() {
+        modal.show_permissions_view();
     }
 
     public void selectFile(String namekey) {
@@ -231,6 +241,30 @@ public class ControladorAdmin {
 
     }
 
+      public void createPopupmenu() {
+        try{
+
+        Point punto = MouseInfo.getPointerInfo().getLocation();
+        int x = punto.x;
+        int y = punto.y;
+
+        interfazPrincipalAdmin.popup.removeAll();
+        // New project menu item
+        JMenuItem menuItem = new JMenuItem("Permisos...",
+                new ImageIcon("src/images/house-key.png"));
+        menuItem.setMnemonic(KeyEvent.VK_P);
+        menuItem.getAccessibleContext().setAccessibleDescription(
+                "Asignar permisos a este usuario.");
+
+        interfazPrincipalAdmin.popup.add(menuItem);
+        interfazPrincipalAdmin.popup.setVisible(true);
+        interfazPrincipalAdmin.popup.setLocation(x, y);
+        }catch (Exception ex){
+        logs.escribirErrorLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// Error creando popupmenu.");
+        logs.escribirExceptionLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// " + ex.getMessage() + " " + ex.toString());
+        }
+    }
+      
     public boolean validarImg() {
 
         if (interfazPrincipalAdmin.nombreImg.getName().contains(".jpg")) {
