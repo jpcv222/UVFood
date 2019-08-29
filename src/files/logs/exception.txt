@@ -532,3 +532,4 @@ managers.queries.ConsultasAdmin//llenarAcciones// ERROR: error de sintaxis en o 
   Position: 31// 2019-08-28T14:44:34.578
 managers.queries.ConsultasAdmin//llenarAcciones// El índice de la columna está fuera de rango: 4, número de columnas: 1. org.postgresql.util.PSQLException: El índice de la columna está fuera de rango: 4, número de columnas: 1.// 2019-08-28T14:46:13.165
 managers.queries.ConsultasAdmin//llenarAcciones// El índice de la columna está fuera de rango: 4, número de columnas: 1. org.postgresql.util.PSQLException: El índice de la columna está fuera de rango: 4, número de columnas: 1.// 2019-08-28T14:46:19.881
+classes.ConexionBD//Conexion// FATAL: password authentication failed for user "postgres" org.postgresql.util.PSQLException: FATAL: password authentication failed for user "postgres"// 2019-08-28T22:56:15.069
