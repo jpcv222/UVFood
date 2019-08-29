@@ -180,6 +180,10 @@ public class VistaAdmin extends javax.swing.JFrame implements Runnable {
         jLabelX = new javax.swing.JLabel();
         jlUsersGraph = new javax.swing.JLabel();
         P_GraficaUsers = new javax.swing.JPanel();
+        P_GraficaSessions_content = new javax.swing.JPanel();
+        jLabelX1 = new javax.swing.JLabel();
+        jlSessionsGraph = new javax.swing.JLabel();
+        P_GraficaSessions = new javax.swing.JPanel();
         jPanelPerfilAdmin = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
         jPanelModuleUserAdmin = new javax.swing.JPanel();
@@ -470,9 +474,26 @@ public class VistaAdmin extends javax.swing.JFrame implements Runnable {
         P_GraficaUsers_content.add(jlUsersGraph, new org.netbeans.lib.awtextra.AbsoluteConstraints(111, 13, 78, -1));
 
         P_GraficaUsers.setLayout(new java.awt.BorderLayout());
-        P_GraficaUsers_content.add(P_GraficaUsers, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 350, 210));
+        P_GraficaUsers_content.add(P_GraficaUsers, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 390, 230));
 
-        jPanelIndexAdmin.add(P_GraficaUsers_content, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, 380, 270));
+        jPanelIndexAdmin.add(P_GraficaUsers_content, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 100, 420, 290));
+
+        P_GraficaSessions_content.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabelX1.setFont(new java.awt.Font("Roboto Light", 0, 18)); // NOI18N
+        jLabelX1.setForeground(new java.awt.Color(205, 31, 50));
+        jLabelX1.setText("Sesiones:");
+        P_GraficaSessions_content.add(jLabelX1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 90, -1));
+
+        jlSessionsGraph.setFont(new java.awt.Font("Roboto Light", 1, 18)); // NOI18N
+        jlSessionsGraph.setForeground(new java.awt.Color(205, 31, 50));
+        jlSessionsGraph.setText("0");
+        P_GraficaSessions_content.add(jlSessionsGraph, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 10, 78, -1));
+
+        P_GraficaSessions.setLayout(new java.awt.BorderLayout());
+        P_GraficaSessions_content.add(P_GraficaSessions, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 350, 520));
+
+        jPanelIndexAdmin.add(P_GraficaSessions_content, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 100, 370, 600));
 
         rSPanelsSlider1.add(jPanelIndexAdmin, "card2");
 
@@ -1534,6 +1555,8 @@ public class VistaAdmin extends javax.swing.JFrame implements Runnable {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public javax.swing.JPanel P_GraficaSessions;
+    public javax.swing.JPanel P_GraficaSessions_content;
     public javax.swing.JPanel P_GraficaUsers;
     public javax.swing.JPanel P_GraficaUsers_content;
     private javax.swing.JButton btnCerrar;
@@ -1574,6 +1597,7 @@ public class VistaAdmin extends javax.swing.JFrame implements Runnable {
     public javax.swing.JLabel jLabelRutaArchivo;
     private javax.swing.JLabel jLabelUser;
     private javax.swing.JLabel jLabelX;
+    private javax.swing.JLabel jLabelX1;
     private javax.swing.JLabel jLabelinterfaz;
     private javax.swing.JLabel jLabelticket;
     private javax.swing.JPanel jPanel1;
@@ -1613,6 +1637,7 @@ public class VistaAdmin extends javax.swing.JFrame implements Runnable {
     public javax.swing.JTextField jTextFieldUser;
     private javax.swing.JLabel jlFecha;
     private javax.swing.JLabel jlHora;
+    public javax.swing.JLabel jlSessionsGraph;
     public javax.swing.JLabel jlUsersGraph;
     private rojerusan.RSPanelsSlider rSPanelsSlider1;
     // End of variables declaration//GEN-END:variables

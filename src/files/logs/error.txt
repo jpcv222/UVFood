@@ -20,3 +20,13 @@ managers.ControladorAdmin//createJFreeChart// El servidor está presentado probl
 managers.ControladorLogin//insert_session_record// Error desconocido.// 2019-08-29T01:38:23.613
 managers.ControladorLogin//insert_session_record// Error desconocido.// 2019-08-29T01:40:29.575
 managers.ControladorLogin//insert_session_record// Error desconocido.// 2019-08-29T01:44:52.409
+managers.ControladorLogin//insert_session_record// Error desconocido.// 2019-08-29T02:14:08.521
+managers.ControladorLogin//insert_session_record// Error desconocido.// 2019-08-29T02:15:26.687
+managers.ControladorLogin//insert_session_record// Error desconocido.// 2019-08-29T02:17:12.759
+managers.queries.KeyValidate//resultHaveKey// Permisos denegados.// 2019-08-29T02:19:17.473
+managers.queries.KeyValidate//resultHaveKey// Permisos denegados.// 2019-08-29T02:19:17.509
+managers.ControladorLogin//insert_session_record// Error desconocido.// 2019-08-29T02:19:17.573
+managers.queries.KeyValidate//resultHaveKey// Permisos denegados.// 2019-08-29T02:19:42.773
+managers.queries.KeyValidate//resultHaveKey// Permisos denegados.// 2019-08-29T02:19:52.512
+managers.queries.KeyValidate//resultHaveKey// Permisos denegados.// 2019-08-29T02:19:54.273
+managers.queries.KeyValidate//resultHaveKey// Permisos denegados.// 2019-08-29T02:19:54.301
