@@ -107,8 +107,8 @@ public class ControladorAdmin {
         interfazPrincipalAdmin.P_GraficaUsers.add(contenedor, BorderLayout.CENTER);
         interfazPrincipalAdmin.P_GraficaUsers.validate();
     }
-    
-     public void jFreeChartSessions(int sessions) {
+
+    public void jFreeChartSessions(int sessions) {
 
         interfazPrincipalAdmin.jlSessionsGraph.setText(String.valueOf(sessions));
 
@@ -262,7 +262,7 @@ public class ControladorAdmin {
                 interfazPrincipalAdmin.btnModificarUser.setEnabled(false);
                 interfazPrincipalAdmin.btnEliminarUser.setEnabled(true);
 
-                interfazPrincipalAdmin.btnHabilitarEdicion.setEnabled(false);
+                interfazPrincipalAdmin.btnHabilitarEdicion.setEnabled(true);
                 desHablitarEdicion();
                 break;
             case "eliminar_modificar":
@@ -279,6 +279,7 @@ public class ControladorAdmin {
                 interfazPrincipalAdmin.btnEliminarUser.setEnabled(false);
                 requestFillCombo();
                 interfazPrincipalAdmin.btnHabilitarEdicion.setEnabled(false);
+                interfazPrincipalAdmin.jTextFieldRol.setEditable(false);
 
                 break;
             default:
@@ -288,10 +289,6 @@ public class ControladorAdmin {
     }
 
     public void desHablitarEdicion() {
-        interfazPrincipalAdmin.btnCrearUser.setEnabled(true);
-        interfazPrincipalAdmin.btnModificarUser.setEnabled(false);
-        interfazPrincipalAdmin.btnEliminarUser.setEnabled(false);
-
         interfazPrincipalAdmin.jTextFieldApellido.setEditable(false);
         interfazPrincipalAdmin.jTextFieldEmail.setEditable(false);
         interfazPrincipalAdmin.jTextFieldFecNa.setEditable(false);
@@ -308,7 +305,6 @@ public class ControladorAdmin {
         interfazPrincipalAdmin.btnModificarUser.setEnabled(false);
         interfazPrincipalAdmin.btnEliminarUser.setEnabled(false);
         interfazPrincipalAdmin.jTextFieldRol.setEditable(false);
-
         interfazPrincipalAdmin.btnHabilitarEdicion.setEnabled(false);
 
     }
