@@ -50,3 +50,7 @@ managers.ControladorLogin//define_view// Acceso a vista admin.// 2019-08-29T01:1
 managers.ControladorLogin//request_login// Usuario existente.// 2019-08-29T01:14:50.583
 managers.queries.KeyValidate//resultHaveKey// Permiso concedido.// 2019-08-29T01:14:51.958
 managers.ControladorAdmin//createJFreeChart// Se genera gráfica con 3 usuarios.// 2019-08-29T01:14:51.989
+managers.ControladorLogin//define_view// Acceso a vista admin.// 2019-08-29T01:38:23.537
+managers.ControladorLogin//request_login// Usuario existente.// 2019-08-29T01:38:23.613
+managers.queries.KeyValidate//resultHaveKey// Permiso concedido.// 2019-08-29T01:38:28.726
+managers.ControladorAdmin//createJFreeChart// Se genera gráfica con 3 usuarios.// 2019-08-29T01:38:28.750

@@ -534,3 +534,4 @@ managers.queries.ConsultasAdmin//llenarAcciones// El índice de la columna está
 managers.queries.ConsultasAdmin//llenarAcciones// El índice de la columna está fuera de rango: 4, número de columnas: 1. org.postgresql.util.PSQLException: El índice de la columna está fuera de rango: 4, número de columnas: 1.// 2019-08-28T14:46:19.881
 classes.ConexionBD//Conexion// FATAL: password authentication failed for user "postgres" org.postgresql.util.PSQLException: FATAL: password authentication failed for user "postgres"// 2019-08-28T22:56:15.069
 managers.queries.ConsultasAdmin//get_count_users// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-08-29T01:03:50.478
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-08-29T01:38:23.613

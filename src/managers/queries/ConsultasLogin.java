@@ -30,7 +30,7 @@ public class ConsultasLogin extends ConexionBD {
         String result = "error.unknow";
         PreparedStatement ps = null;
         Connection conn = null;
-        
+
         ResultSet rs = null;
 
         String sql = "SELECT * FROM uvfood_user WHERE username = ?";
@@ -72,7 +72,33 @@ public class ConsultasLogin extends ConexionBD {
         }
 
         return result;
+    }
 
+    public String insert_session_record(int id_user) {
+        String result =  "error.unknow";
+        Statement ps = null;
+        Connection conn = Conexion();
+        ResultSet rs = null;
+
+
+        String sql = "INSERT INTO uvfood_sessions (iduser) VALUES ("+id_user+");";
+
+        try {
+            ps = conn.createStatement();
+            rs = ps.executeQuery(sql);
+
+            if (rs.rowInserted()) {
+                result = "success.insert";
+            }else{
+                 result = "error.insert";
+            }
+
+        } catch (SQLException e) {
+            logs.escribirExceptionLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// " + e.getMessage() + " " + e.toString());
+            result = "error.unknow";
+        }
+        
+        return result;
     }
 
     public String get_view(Usuario modeloCliente) {
@@ -89,9 +115,9 @@ public class ConsultasLogin extends ConexionBD {
                 + "	(SELECT iduser FROM uvfood_user WHERE username = '" + username + "'));";
 
         try {
-            
+
             ps = conn.createStatement();
-            rs = ps.executeQuery(sql); 
+            rs = ps.executeQuery(sql);
 
             if (rs.next()) {
                 result = define_view(rs.getString(1));
