@@ -6,3 +6,13 @@ classes.FileManage//selectFile// Archivo CSV, ruta errónea.// 2019-08-28T01:41:
 managers.ControladorLogin//request_login// El usuario no existe.// 2019-08-28T02:35:57.904
 managers.ControladorLogin//request_login// El usuario no existe.// 2019-08-28T02:36:10.291
 classes.FileManage//selectFile// Archivo CSV, ruta errónea.// 2019-08-28T13:33:36.918
+managers.ControladorLogin//request_login// Campos obligatorios vacíos.// 2019-08-28T09:04:39.621
+managers.ControladorLogin//request_login// Campos obligatorios vacíos.// 2019-08-28T09:04:51.013
+managers.ControladorLogin//request_login// El usuario no existe.// 2019-08-28T09:08:26.823
+managers.ControladorLogin//request_login// El usuario no existe.// 2019-08-28T09:08:32.505
+managers.ControladorLogin//request_login// Campos obligatorios vacíos.// 2019-08-28T09:08:40.658
+managers.ControladorLogin//request_login// Campos obligatorios vacíos.// 2019-08-28T09:08:44.731
+managers.ControladorLogin//request_login// Campos obligatorios vacíos.// 2019-08-28T09:08:46.522
+managers.ControladorLogin//request_login// El usuario no existe.// 2019-08-28T10:25:22.943
+managers.ControladorLogin//request_login// Campos obligatorios vacíos.// 2019-08-28T11:12:13.354
+managers.ControladorLogin//request_login// Campos obligatorios vacíos.// 2019-08-28T11:12:17.120

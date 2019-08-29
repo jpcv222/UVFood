@@ -476,3 +476,59 @@ managers.queries.KeyValidate//haveKey// ERROR: syntax error at or near ";"
 classes.FileManage//calcularRutaArchivo// null java.lang.NullPointerException// 2019-08-28T01:41:23.284
 managers.queries.KeyValidate//resultHaveKey// null java.lang.NullPointerException// 2019-08-28T01:50:32.558
 classes.FileManage//calcularRutaArchivo// null java.lang.NullPointerException// 2019-08-28T13:33:36.887
+managers.queries.ConsultasAdmin//llenarAcciones// ERROR: el operador no existe: integer = character varying
+  Hint: Ningún operador coincide en el nombre y tipos de argumentos. Puede ser necesario agregar conversión explícita de tipos.
+  Position: 39 org.postgresql.util.PSQLException: ERROR: el operador no existe: integer = character varying
+  Hint: Ningún operador coincide en el nombre y tipos de argumentos. Puede ser necesario agregar conversión explícita de tipos.
+  Position: 39// 2019-08-28T10:28:59.904
+managers.queries.ConsultasAdmin//llenarAcciones// ERROR: el operador no existe: integer = character varying
+  Hint: Ningún operador coincide en el nombre y tipos de argumentos. Puede ser necesario agregar conversión explícita de tipos.
+  Position: 39 org.postgresql.util.PSQLException: ERROR: el operador no existe: integer = character varying
+  Hint: Ningún operador coincide en el nombre y tipos de argumentos. Puede ser necesario agregar conversión explícita de tipos.
+  Position: 39// 2019-08-28T10:30:31.630
+managers.queries.ConsultasAdmin//llenarAcciones// ERROR: el operador no existe: integer = character varying
+  Hint: Ningún operador coincide en el nombre y tipos de argumentos. Puede ser necesario agregar conversión explícita de tipos.
+  Position: 39 org.postgresql.util.PSQLException: ERROR: el operador no existe: integer = character varying
+  Hint: Ningún operador coincide en el nombre y tipos de argumentos. Puede ser necesario agregar conversión explícita de tipos.
+  Position: 39// 2019-08-28T10:30:37.875
+managers.queries.ConsultasAdmin//llenarAcciones// ERROR: el operador no existe: integer = character varying
+  Hint: Ningún operador coincide en el nombre y tipos de argumentos. Puede ser necesario agregar conversión explícita de tipos.
+  Position: 39 org.postgresql.util.PSQLException: ERROR: el operador no existe: integer = character varying
+  Hint: Ningún operador coincide en el nombre y tipos de argumentos. Puede ser necesario agregar conversión explícita de tipos.
+  Position: 39// 2019-08-28T10:30:42.140
+managers.queries.ConsultasAdmin//llenarAcciones// ERROR: el operador no existe: integer = character varying
+  Hint: Ningún operador coincide en el nombre y tipos de argumentos. Puede ser necesario agregar conversión explícita de tipos.
+  Position: 39 org.postgresql.util.PSQLException: ERROR: el operador no existe: integer = character varying
+  Hint: Ningún operador coincide en el nombre y tipos de argumentos. Puede ser necesario agregar conversión explícita de tipos.
+  Position: 39// 2019-08-28T10:30:42.347
+managers.queries.ConsultasAdmin//llenarAcciones// ERROR: el operador no existe: integer = character varying
+  Hint: Ningún operador coincide en el nombre y tipos de argumentos. Puede ser necesario agregar conversión explícita de tipos.
+  Position: 39 org.postgresql.util.PSQLException: ERROR: el operador no existe: integer = character varying
+  Hint: Ningún operador coincide en el nombre y tipos de argumentos. Puede ser necesario agregar conversión explícita de tipos.
+  Position: 39// 2019-08-28T10:30:43.125
+managers.queries.ConsultasAdmin//llenarAcciones// ERROR: el operador no existe: integer = character varying
+  Hint: Ningún operador coincide en el nombre y tipos de argumentos. Puede ser necesario agregar conversión explícita de tipos.
+  Position: 39 org.postgresql.util.PSQLException: ERROR: el operador no existe: integer = character varying
+  Hint: Ningún operador coincide en el nombre y tipos de argumentos. Puede ser necesario agregar conversión explícita de tipos.
+  Position: 39// 2019-08-28T10:33:13.381
+managers.queries.ConsultasAdmin//llenarAcciones// -1 java.lang.ArrayIndexOutOfBoundsException: -1// 2019-08-28T11:53:37.073
+managers.queries.ConsultasAdmin//llenarAcciones// ERROR: no existe la relación «uvfood_typeuseras»
+  Position: 102 org.postgresql.util.PSQLException: ERROR: no existe la relación «uvfood_typeuseras»
+  Position: 102// 2019-08-28T14:10:26.656
+managers.queries.ConsultasAdmin//llenarAcciones// ERROR: no existe la relación «uvfood_typeuseras»
+  Position: 102 org.postgresql.util.PSQLException: ERROR: no existe la relación «uvfood_typeuseras»
+  Position: 102// 2019-08-28T14:10:33.287
+managers.queries.ConsultasAdmin//llenarAcciones// ERROR: no existe la relación «uvfood_typeuseras»
+  Position: 102 org.postgresql.util.PSQLException: ERROR: no existe la relación «uvfood_typeuseras»
+  Position: 102// 2019-08-28T14:10:35.877
+managers.queries.ConsultasAdmin//llenarAcciones// ERROR: error de sintaxis en o cerca de «WHERE»
+  Position: 31 org.postgresql.util.PSQLException: ERROR: error de sintaxis en o cerca de «WHERE»
+  Position: 31// 2019-08-28T14:44:24.886
+managers.queries.ConsultasAdmin//llenarAcciones// ERROR: error de sintaxis en o cerca de «WHERE»
+  Position: 31 org.postgresql.util.PSQLException: ERROR: error de sintaxis en o cerca de «WHERE»
+  Position: 31// 2019-08-28T14:44:30.498
+managers.queries.ConsultasAdmin//llenarAcciones// ERROR: error de sintaxis en o cerca de «WHERE»
+  Position: 31 org.postgresql.util.PSQLException: ERROR: error de sintaxis en o cerca de «WHERE»
+  Position: 31// 2019-08-28T14:44:34.578
+managers.queries.ConsultasAdmin//llenarAcciones// El índice de la columna está fuera de rango: 4, número de columnas: 1. org.postgresql.util.PSQLException: El índice de la columna está fuera de rango: 4, número de columnas: 1.// 2019-08-28T14:46:13.165
+managers.queries.ConsultasAdmin//llenarAcciones// El índice de la columna está fuera de rango: 4, número de columnas: 1. org.postgresql.util.PSQLException: El índice de la columna está fuera de rango: 4, número de columnas: 1.// 2019-08-28T14:46:19.881
