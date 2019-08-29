@@ -5,3 +5,11 @@ managers.ControladorLogin//request_login// Usuario existente y activo.// 2019-08
 managers.ControladorLogin//define_view// Acceso a vista admin.// 2019-08-28T01:41:19.092
 managers.ControladorLogin//request_login// Usuario existente.// 2019-08-28T01:41:19.092
 managers.queries.KeyValidate//resultHaveKey// Permiso concedido.// 2019-08-28T01:41:21.757
+managers.ControladorLogin//define_view// Acceso a vista admin.// 2019-08-28T13:33:30.248
+managers.ControladorLogin//request_login// Usuario existente.// 2019-08-28T13:33:30.248
+managers.queries.KeyValidate//resultHaveKey// Permiso concedido.// 2019-08-28T13:33:34.872
+managers.queries.KeyValidate//resultHaveKey// Permiso concedido.// 2019-08-28T13:34:06.205
+managers.queries.KeyValidate//resultHaveKey// Permiso concedido.// 2019-08-28T13:34:16.218
+managers.ControladorAdmin//resultUpload// Los usuarios fueron cargados con éxito.// 2019-08-28T13:34:16.921
+managers.queries.KeyValidate//resultHaveKey// Permiso concedido.// 2019-08-28T13:34:40.220
+managers.ControladorAdmin//resultUpload// Los usuarios fueron cargados con éxito.// 2019-08-28T13:34:40.235

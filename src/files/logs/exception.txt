@@ -475,3 +475,4 @@ managers.queries.KeyValidate//haveKey// ERROR: syntax error at or near ";"
   Position: 131// 2019-08-28T00:15:29.640
 classes.FileManage//calcularRutaArchivo// null java.lang.NullPointerException// 2019-08-28T01:41:23.284
 managers.queries.KeyValidate//resultHaveKey// null java.lang.NullPointerException// 2019-08-28T01:50:32.558
+classes.FileManage//calcularRutaArchivo// null java.lang.NullPointerException// 2019-08-28T13:33:36.887

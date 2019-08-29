@@ -28,13 +28,8 @@ public class ConsultasAdmin extends ConexionBD {
 
     public boolean llenarTabla(VistaAdmin vista) {
 
-        DefaultTableModel modelo = new DefaultTableModel() {
-            @Override
-            public boolean isCellEditable(int row, int col) {
-                return false;
-            }
-        };
-
+        DefaultTableModel modelo = new DefaultTableModel()
+;
         PreparedStatement ps = null;
         Connection conn = Conexion();
         ResultSet rs = null;
