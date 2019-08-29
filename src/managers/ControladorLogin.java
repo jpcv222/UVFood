@@ -86,6 +86,7 @@ public class ControladorLogin {
                 vistaLogin.dispose();
                 VistaAdmin home_admin = new VistaAdmin();
                 home_admin.manager.user = this.user;
+                home_admin.manager.set_init_conf();
                 home_admin.setVisible(true);
                 logs.escribirAccessLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// Acceso a vista admin.");
                 break;

@@ -44,6 +44,11 @@ public class ControladorAdmin {
         this.file = new FileManage();
         this.consultasAdmin = new ConsultasAdmin();
     }
+    
+    public void set_init_conf(){
+        String current_text = interfazPrincipalAdmin.jLabelBienvenida.getText();
+            this.interfazPrincipalAdmin.jLabelBienvenida.setText(current_text + user.getFirstname());
+    }
 
     public void selectFile(String namekey) {
 

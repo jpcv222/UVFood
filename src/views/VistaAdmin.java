@@ -45,6 +45,8 @@ public class VistaAdmin extends javax.swing.JFrame {
 
     public VistaAdmin() {
         initComponents();
+        
+        
         item_menu_exited = new Color(205, 31, 50);
         item_bottom_exited = new Color(240, 240, 240);
         item_menu_entered = new Color(157, 0, 0);
@@ -137,7 +139,8 @@ public class VistaAdmin extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         rSPanelsSlider1 = new rojerusan.RSPanelsSlider();
         jPanelIndexAdmin = new javax.swing.JPanel();
-        jLabel7 = new javax.swing.JLabel();
+        jPanelHeaderIndex = new javax.swing.JPanel();
+        jLabelBienvenida = new javax.swing.JLabel();
         jPanelPerfilAdmin = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
         jPanelModuleUserAdmin = new javax.swing.JPanel();
@@ -366,23 +369,39 @@ public class VistaAdmin extends javax.swing.JFrame {
 
         jPanelIndexAdmin.setBackground(new java.awt.Color(255, 255, 255));
         jPanelIndexAdmin.setName("jPanelIndexAdmin"); // NOI18N
+        jPanelIndexAdmin.setPreferredSize(new java.awt.Dimension(961, 704));
+        jPanelIndexAdmin.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel7.setText("Index");
+        jPanelHeaderIndex.setBackground(new java.awt.Color(205, 31, 50));
 
-        javax.swing.GroupLayout jPanelIndexAdminLayout = new javax.swing.GroupLayout(jPanelIndexAdmin);
-        jPanelIndexAdmin.setLayout(jPanelIndexAdminLayout);
-        jPanelIndexAdminLayout.setHorizontalGroup(
-            jPanelIndexAdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelIndexAdminLayout.createSequentialGroup()
-                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 831, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 170, Short.MAX_VALUE))
+        jLabelBienvenida.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jLabelBienvenida.setForeground(new java.awt.Color(255, 255, 255));
+        jLabelBienvenida.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabelBienvenida.setText("Bienvenido al Servicio de Restaurante Universitario, ");
+        jLabelBienvenida.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabelBienvenidaMouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanelHeaderIndexLayout = new javax.swing.GroupLayout(jPanelHeaderIndex);
+        jPanelHeaderIndex.setLayout(jPanelHeaderIndexLayout);
+        jPanelHeaderIndexLayout.setHorizontalGroup(
+            jPanelHeaderIndexLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelHeaderIndexLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabelBienvenida, javax.swing.GroupLayout.PREFERRED_SIZE, 909, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(80, Short.MAX_VALUE))
         );
-        jPanelIndexAdminLayout.setVerticalGroup(
-            jPanelIndexAdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelIndexAdminLayout.createSequentialGroup()
-                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 440, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 272, Short.MAX_VALUE))
+        jPanelHeaderIndexLayout.setVerticalGroup(
+            jPanelHeaderIndexLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelHeaderIndexLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabelBienvenida, javax.swing.GroupLayout.DEFAULT_SIZE, 39, Short.MAX_VALUE)
+                .addContainerGap())
         );
+
+        jPanelIndexAdmin.add(jPanelHeaderIndex, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1001, -1));
 
         rSPanelsSlider1.add(jPanelIndexAdmin, "card2");
 
@@ -645,14 +664,14 @@ public class VistaAdmin extends javax.swing.JFrame {
         btnModificarUser.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/edit_user (1).png"))); // NOI18N
         btnModificarUser.setBorder(null);
         btnModificarUser.setContentAreaFilled(false);
-        btnModificarUser.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnModificarUser.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnModificarUser.setOpaque(true);
 
         btnCrearUser.setBackground(new java.awt.Color(255, 255, 255));
         btnCrearUser.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/add_user (1).png"))); // NOI18N
         btnCrearUser.setBorder(null);
         btnCrearUser.setContentAreaFilled(false);
-        btnCrearUser.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnCrearUser.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnCrearUser.setOpaque(true);
         btnCrearUser.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -664,7 +683,7 @@ public class VistaAdmin extends javax.swing.JFrame {
         btnEliminarUser.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/delete_user (1).png"))); // NOI18N
         btnEliminarUser.setBorder(null);
         btnEliminarUser.setContentAreaFilled(false);
-        btnEliminarUser.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnEliminarUser.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnEliminarUser.setOpaque(true);
 
         jComboBoxRoles.setBorder(null);
@@ -676,7 +695,7 @@ public class VistaAdmin extends javax.swing.JFrame {
         btnHabilitarEdicion.setText("Habilitar Edicion");
         btnHabilitarEdicion.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         btnHabilitarEdicion.setContentAreaFilled(false);
-        btnHabilitarEdicion.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnHabilitarEdicion.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnHabilitarEdicion.setOpaque(true);
         btnHabilitarEdicion.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
@@ -696,7 +715,7 @@ public class VistaAdmin extends javax.swing.JFrame {
         btnLimpiar.setText("Limpiar Campos");
         btnLimpiar.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         btnLimpiar.setContentAreaFilled(false);
-        btnLimpiar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnLimpiar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnLimpiar.setOpaque(true);
         btnLimpiar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
@@ -835,7 +854,7 @@ public class VistaAdmin extends javax.swing.JFrame {
                                     .addGroup(jPanel4Layout.createSequentialGroup()
                                         .addGap(40, 40, 40)
                                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(btnCrearUser, javax.swing.GroupLayout.DEFAULT_SIZE, 108, Short.MAX_VALUE)
+                                            .addComponent(btnCrearUser, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                             .addComponent(btnModificarUser, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                             .addComponent(btnEliminarUser, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                                 .addContainerGap())))
@@ -970,7 +989,7 @@ public class VistaAdmin extends javax.swing.JFrame {
                                     .addComponent(jPanelSelectCSVUser, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jButtonCargar, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 436, Short.MAX_VALUE)))
+                        .addGap(0, 399, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanelModuleUserRegisterLayout.setVerticalGroup(
@@ -980,7 +999,7 @@ public class VistaAdmin extends javax.swing.JFrame {
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 21, Short.MAX_VALUE)
                 .addGroup(jPanelModuleUserRegisterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jButtonCargar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanelSelectCSVUser, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -989,7 +1008,7 @@ public class VistaAdmin extends javax.swing.JFrame {
                 .addGap(434, 434, 434))
         );
 
-        jPanelModuleUserAdmin.add(jPanelModuleUserRegister, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 73, -1, 620));
+        jPanelModuleUserAdmin.add(jPanelModuleUserRegister, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 83, 940, 610));
         jPanelModuleUserRegister.getAccessibleContext().setAccessibleName("jPanelModuleUserRegister");
 
         rSPanelsSlider1.add(jPanelModuleUserAdmin, "card3");
@@ -1274,12 +1293,12 @@ public class VistaAdmin extends javax.swing.JFrame {
 
     private void btnConsultaUserMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnConsultaUserMouseEntered
         // TODO add your handling code here:
-        //btnConsultaUser.setBackground(item_menu_entered);
+        btnConsultaUser.setBackground(item_menu_entered);
     }//GEN-LAST:event_btnConsultaUserMouseEntered
 
     private void btnConsultaUserMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnConsultaUserMouseExited
         // TODO add your handling code here:
-        //btnConsultaUser.setBackground(item_menu_exited);
+        btnConsultaUser.setBackground(item_menu_exited);
     }//GEN-LAST:event_btnConsultaUserMouseExited
 
     private void jTextFieldBuscarUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldBuscarUserActionPerformed
@@ -1394,6 +1413,10 @@ public class VistaAdmin extends javax.swing.JFrame {
         manager.hablitarEdicionTotal();
     }//GEN-LAST:event_btnLimpiarActionPerformed
 
+    private void jLabelBienvenidaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelBienvenidaMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jLabelBienvenidaMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -1467,9 +1490,9 @@ public class VistaAdmin extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    public javax.swing.JLabel jLabelBienvenida;
     public javax.swing.JLabel jLabelEscogerImagen;
     private javax.swing.JLabel jLabelHome;
     private javax.swing.JLabel jLabelPerfil;
@@ -1483,6 +1506,7 @@ public class VistaAdmin extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanelGestionInterfaz;
     private javax.swing.JPanel jPanelHeader;
+    private javax.swing.JPanel jPanelHeaderIndex;
     private javax.swing.JPanel jPanelIndexAdmin;
     private javax.swing.JPanel jPanelMenu;
     private javax.swing.JPanel jPanelMenuOptionsModuleUser;
