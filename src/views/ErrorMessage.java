@@ -53,6 +53,7 @@ public class ErrorMessage extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+        jPanel1.setPreferredSize(new java.awt.Dimension(440, 380));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel2.setBackground(new java.awt.Color(205, 31, 50));
@@ -82,7 +83,7 @@ public class ErrorMessage extends javax.swing.JFrame {
         jLabelSubtitleModal.setForeground(new java.awt.Color(205, 31, 50));
         jLabelSubtitleModal.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabelSubtitleModal.setText("Subtítulo de aviso");
-        jPanel1.add(jLabelSubtitleModal, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 130, 320, 40));
+        jPanel1.add(jLabelSubtitleModal, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 130, 440, 40));
 
         jLabelIconModal.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabelIconModal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/error_message.png"))); // NOI18N
@@ -92,19 +93,19 @@ public class ErrorMessage extends javax.swing.JFrame {
         jLabelBodyModal3.setForeground(new java.awt.Color(102, 102, 102));
         jLabelBodyModal3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabelBodyModal3.setText("Cuerpo del aviso 3.");
-        jPanel1.add(jLabelBodyModal3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 250, 400, 40));
+        jPanel1.add(jLabelBodyModal3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 250, 440, 40));
 
         jLabelBodyModal1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabelBodyModal1.setForeground(new java.awt.Color(102, 102, 102));
         jLabelBodyModal1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabelBodyModal1.setText("Cuerpo del aviso 1.");
-        jPanel1.add(jLabelBodyModal1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, 400, 40));
+        jPanel1.add(jLabelBodyModal1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 180, 440, 40));
 
         jLabelBodyModal2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabelBodyModal2.setForeground(new java.awt.Color(102, 102, 102));
         jLabelBodyModal2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabelBodyModal2.setText("Cuerpo del aviso 2.");
-        jPanel1.add(jLabelBodyModal2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 220, 400, 30));
+        jPanel1.add(jLabelBodyModal2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 220, 440, 30));
 
         jPanelAceptar.setBackground(new java.awt.Color(255, 255, 255));
         jPanelAceptar.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(205, 31, 50), 2, true));
@@ -130,7 +131,7 @@ public class ErrorMessage extends javax.swing.JFrame {
 
         jPanel1.add(jPanelAceptar, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 300, 210, 50));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 440, 380));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 440, 370));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
