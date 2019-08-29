@@ -52,6 +52,7 @@ public class VistaAdmin extends javax.swing.JFrame implements Runnable {
 
     public VistaAdmin() {
         initComponents();
+        manager = new ControladorAdmin(this);
         
         jlFecha.setText(fecha());
         hilo = new Thread(this);
@@ -95,8 +96,6 @@ public class VistaAdmin extends javax.swing.JFrame implements Runnable {
         Icon icono5 = new ImageIcon(imagen5.getImage().getScaledInstance(jLabelticket.getWidth(), jLabelticket.getHeight(), Image.SCALE_DEFAULT));
         jLabelticket.setIcon(icono5);
         this.repaint();
-
-        manager = new ControladorAdmin(this);
         
 
     }

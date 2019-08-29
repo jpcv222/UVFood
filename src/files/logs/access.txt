@@ -54,3 +54,9 @@ managers.ControladorLogin//define_view// Acceso a vista admin.// 2019-08-29T01:3
 managers.ControladorLogin//request_login// Usuario existente.// 2019-08-29T01:38:23.613
 managers.queries.KeyValidate//resultHaveKey// Permiso concedido.// 2019-08-29T01:38:28.726
 managers.ControladorAdmin//createJFreeChart// Se genera gráfica con 3 usuarios.// 2019-08-29T01:38:28.750
+managers.ControladorLogin//define_view// Acceso a vista admin.// 2019-08-29T01:40:29.527
+managers.ControladorLogin//request_login// Usuario existente.// 2019-08-29T01:40:29.575
+managers.queries.KeyValidate//resultHaveKey// Permiso concedido.// 2019-08-29T01:44:52.221
+managers.ControladorAdmin//createJFreeChart// Se genera gráfica con 3 usuarios.// 2019-08-29T01:44:52.249
+managers.ControladorLogin//define_view// Acceso a vista admin.// 2019-08-29T01:44:52.377
+managers.ControladorLogin//request_login// Usuario existente.// 2019-08-29T01:44:52.409

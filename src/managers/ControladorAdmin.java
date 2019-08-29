@@ -50,6 +50,7 @@ public class ControladorAdmin {
     public void set_init_conf() {
         String current_text = interfazPrincipalAdmin.jLabelBienvenida.getText();
         this.interfazPrincipalAdmin.jLabelBienvenida.setText(current_text + user.getFirstname());
+        createIndexView();
     }
 
     public void selectFile(String namekey) {

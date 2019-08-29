@@ -535,3 +535,5 @@ managers.queries.ConsultasAdmin//llenarAcciones// El índice de la columna está
 classes.ConexionBD//Conexion// FATAL: password authentication failed for user "postgres" org.postgresql.util.PSQLException: FATAL: password authentication failed for user "postgres"// 2019-08-28T22:56:15.069
 managers.queries.ConsultasAdmin//get_count_users// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-08-29T01:03:50.478
 managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-08-29T01:38:23.613
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-08-29T01:40:29.575
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-08-29T01:44:52.409
