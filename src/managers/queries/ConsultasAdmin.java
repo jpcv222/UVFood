@@ -29,7 +29,7 @@ import views.VistaAdmin;
 public class ConsultasAdmin extends ConexionBD {
 
     private Logs logs = new Logs(Thread.currentThread().getStackTrace()[1].getClassName());
-    private DBCore db_core =  new DBCore();
+    private DBCore db_core = new DBCore();
 
     public boolean llenarTabla(VistaAdmin vista) {
         DefaultTableModel modelo = new DefaultTableModel() {
@@ -175,13 +175,14 @@ public class ConsultasAdmin extends ConexionBD {
             rs = ps.executeQuery(sql);
 
             while (rs.next()) {
+                vista.jTextFieldIdUser.setText("" + rs.getInt(1));
                 vista.jTextFieldUser.setText(rs.getString(2));
                 vista.jTextFieldName.setText(rs.getString(3));
                 vista.jTextFieldApellido.setText(rs.getString(4));
                 vista.jTextFieldEmail.setText(rs.getString(6));
                 vista.jTextFieldFecNa.setText(sqlDateToString(rs.getDate(5)));
             }
-            String sql2 = "SELECT t2.type_user FROM uvfood_user_extended AS t1 INNER JOIN uvfood_typeuser "
+            String sql2 = "SELECT t2.type_user, t2.id_typeuser FROM uvfood_user_extended AS t1 INNER JOIN uvfood_typeuser "
                     + "AS t2 ON t2.id_typeuser = t1.id_typeuser WHERE t1.iduser ='" + codigo + "';";
             ps = conn.createStatement();
             rs = ps.executeQuery(sql2);
@@ -191,6 +192,7 @@ public class ConsultasAdmin extends ConexionBD {
                     vista.jTextFieldRol.setText("Sin rol asignado");
                 } else {
                     vista.jTextFieldRol.setText(rs.getString(1));
+                    vista.jTextFieldIdRol.setText("" + rs.getInt(2));
                 }
 
             }
@@ -243,10 +245,64 @@ public class ConsultasAdmin extends ConexionBD {
     }
 
     public int get_count_record(String table, String atrib) {
-        
+
         int result = db_core.get_count_record(table, atrib);
         return result;
 
     }
 
+    public String crearUsuario(VistaAdmin vista) {
+        String result = "";
+        Statement ps = null;
+        ResultSet rs = null;
+
+        String usuario = vista.jTextFieldUser.getText();
+        String nombre = vista.jTextFieldName.getText();
+        String apellido = vista.jTextFieldApellido.getText();
+        String email = vista.jTextFieldEmail.getText();
+        String fecha = vista.jTextFieldFecNa.getText();
+        String clave = new String(vista.jPasswordField.getPassword());
+
+        try {
+            Connection conn = Conexion();
+
+            String verUserQuery = "SELECT username FROM uvfood_user WHERE username = '" + usuario + "';";
+            String verEmailQuery = "SELECT email FROM uvfood_user WHERE email = '" + email + "';";
+
+            String insertQuery = "INSERT INTO uvfood_user (username, firstname, surname, birth_date, email, password_user) VALUES ('" + usuario + "', '" + nombre + "', '" + apellido + "', '" + fecha + "', '" + email + "', '" + clave + "')";
+
+            ps = conn.createStatement();
+            rs = ps.executeQuery(verUserQuery);
+
+            //verificamos primero si el usuario existe
+            if (rs.next()) {
+                result = "error.usuario.existe";
+            } else {
+                ps = conn.createStatement();
+                rs = ps.executeQuery(verEmailQuery);
+                if (rs.next()) {
+                    result = "error.email.existe";
+                } else {
+                    ps = conn.createStatement();
+                    rs = ps.executeQuery(insertQuery);
+                    if (rs.rowInserted()) {
+                        result = "success.dato.insertado";
+                        llenarTabla(vista);
+                    }else{
+                        result = "error.dato.no.insertado";
+                    }
+                }
+            }
+            rs.close();
+            ps.close();
+
+        } catch (SQLException ex) {
+            logs.escribirExceptionLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// " + ex.getMessage() + " " + ex.toString());
+            result = "error.sql.error";
+        } catch (NullPointerException np) {
+            logs.escribirExceptionLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// " + np.getMessage() + " " + np.toString());
+            result = "error.NP.error";
+        }
+        return result;
+    }
 }

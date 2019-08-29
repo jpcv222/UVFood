@@ -327,6 +327,8 @@ public class ControladorAdmin {
         interfazPrincipalAdmin.jTextFieldName.setText("");
         interfazPrincipalAdmin.jTextFieldRol.setText("");
         interfazPrincipalAdmin.jTextFieldUser.setText("");
+        interfazPrincipalAdmin.jTextFieldIdRol.setText("");
+        interfazPrincipalAdmin.jTextFieldIdUser.setText("");
     }
 
 }
