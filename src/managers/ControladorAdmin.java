@@ -303,6 +303,20 @@ public class ControladorAdmin {
             modal.error_message("Error", "Algo anda mal", "No se pueden mostrar registros de la Base de datos", "Por Favor intenta mas tarde", "O reportanos que ocurre");
         }
     }
+    
+    public void requestInsertUser(){
+        String result = consultasAdmin.crearUsuario(interfazPrincipalAdmin);
+        
+        switch(result){
+            case "error.usuario.existe":
+                modal.error_message("Error", "Algo anda mal", "El usuario ya esta registrado", "Por Favor intenta con otro", "O reportanos que ocurre");
+                break;
+            case "success.dato.insertado":
+                modal.error_message("Exito", "", "El usuario se registro con exito", "", "");
+                break;
+                
+        }
+    }
 
     public void hablitarEdicionTotal() {
         switch (VistaAdmin.sePuede) {
@@ -311,7 +325,7 @@ public class ControladorAdmin {
                 interfazPrincipalAdmin.btnModificarUser.setEnabled(false);
                 interfazPrincipalAdmin.btnEliminarUser.setEnabled(true);
 
-                interfazPrincipalAdmin.btnHabilitarEdicion.setEnabled(false);
+                interfazPrincipalAdmin.btnHabilitarEdicion.setEnabled(true);
                 desHablitarEdicion();
                 break;
             case "eliminar_modificar":
@@ -326,8 +340,26 @@ public class ControladorAdmin {
                 interfazPrincipalAdmin.btnCrearUser.setEnabled(true);
                 interfazPrincipalAdmin.btnModificarUser.setEnabled(false);
                 interfazPrincipalAdmin.btnEliminarUser.setEnabled(false);
+
+                interfazPrincipalAdmin.jTextFieldRol.removeAll();
+                interfazPrincipalAdmin.jTextFieldRol.repaint();
+                interfazPrincipalAdmin.jTextFieldRol.revalidate();
                 requestFillCombo();
                 interfazPrincipalAdmin.btnHabilitarEdicion.setEnabled(false);
+                interfazPrincipalAdmin.jTextFieldRol.setEditable(false);
+
+                break;
+            case "solo_crear_limpiar":
+                interfazPrincipalAdmin.btnCrearUser.setEnabled(true);
+                interfazPrincipalAdmin.btnModificarUser.setEnabled(false);
+                interfazPrincipalAdmin.btnEliminarUser.setEnabled(false);
+
+                interfazPrincipalAdmin.jTextFieldRol.removeAll();
+                interfazPrincipalAdmin.jTextFieldRol.repaint();
+                interfazPrincipalAdmin.jTextFieldRol.revalidate();
+
+                interfazPrincipalAdmin.btnHabilitarEdicion.setEnabled(false);
+                interfazPrincipalAdmin.jTextFieldRol.setEditable(false);
 
                 break;
             default:
@@ -337,10 +369,6 @@ public class ControladorAdmin {
     }
 
     public void desHablitarEdicion() {
-        interfazPrincipalAdmin.btnCrearUser.setEnabled(true);
-        interfazPrincipalAdmin.btnModificarUser.setEnabled(false);
-        interfazPrincipalAdmin.btnEliminarUser.setEnabled(false);
-
         interfazPrincipalAdmin.jTextFieldApellido.setEditable(false);
         interfazPrincipalAdmin.jTextFieldEmail.setEditable(false);
         interfazPrincipalAdmin.jTextFieldFecNa.setEditable(false);
@@ -357,7 +385,6 @@ public class ControladorAdmin {
         interfazPrincipalAdmin.btnModificarUser.setEnabled(false);
         interfazPrincipalAdmin.btnEliminarUser.setEnabled(false);
         interfazPrincipalAdmin.jTextFieldRol.setEditable(false);
-
         interfazPrincipalAdmin.btnHabilitarEdicion.setEnabled(false);
 
     }
@@ -380,6 +407,8 @@ public class ControladorAdmin {
         interfazPrincipalAdmin.jTextFieldName.setText("");
         interfazPrincipalAdmin.jTextFieldRol.setText("");
         interfazPrincipalAdmin.jTextFieldUser.setText("");
+        interfazPrincipalAdmin.jTextFieldIdRol.setText("");
+        interfazPrincipalAdmin.jTextFieldIdUser.setText("");
     }
 
 }
