@@ -177,9 +177,10 @@ public class VistaAdmin extends javax.swing.JFrame implements Runnable {
         jPanelIndexAdmin = new javax.swing.JPanel();
         jPanelHeaderIndex = new javax.swing.JPanel();
         jLabelBienvenida = new javax.swing.JLabel();
-        P_GraficaUsers = new javax.swing.JPanel();
+        P_GraficaUsers_content = new javax.swing.JPanel();
         jLabelX = new javax.swing.JLabel();
         jlUsersGraph = new javax.swing.JLabel();
+        P_GraficaUsers = new javax.swing.JPanel();
         jPanelPerfilAdmin = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
         jPanelModuleUserAdmin = new javax.swing.JPanel();
@@ -457,36 +458,22 @@ public class VistaAdmin extends javax.swing.JFrame implements Runnable {
 
         jPanelIndexAdmin.add(jPanelHeaderIndex, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1001, -1));
 
+        P_GraficaUsers_content.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
         jLabelX.setFont(new java.awt.Font("Roboto Light", 0, 18)); // NOI18N
         jLabelX.setForeground(new java.awt.Color(205, 31, 50));
         jLabelX.setText("Usuarios: ");
+        P_GraficaUsers_content.add(jLabelX, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 13, -1, -1));
 
         jlUsersGraph.setFont(new java.awt.Font("Roboto Light", 1, 18)); // NOI18N
         jlUsersGraph.setForeground(new java.awt.Color(205, 31, 50));
         jlUsersGraph.setText("0");
+        P_GraficaUsers_content.add(jlUsersGraph, new org.netbeans.lib.awtextra.AbsoluteConstraints(111, 13, 78, -1));
 
-        javax.swing.GroupLayout P_GraficaUsersLayout = new javax.swing.GroupLayout(P_GraficaUsers);
-        P_GraficaUsers.setLayout(P_GraficaUsersLayout);
-        P_GraficaUsersLayout.setHorizontalGroup(
-            P_GraficaUsersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(P_GraficaUsersLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabelX)
-                .addGap(18, 18, 18)
-                .addComponent(jlUsersGraph, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(191, Short.MAX_VALUE))
-        );
-        P_GraficaUsersLayout.setVerticalGroup(
-            P_GraficaUsersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(P_GraficaUsersLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(P_GraficaUsersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabelX)
-                    .addComponent(jlUsersGraph))
-                .addContainerGap(233, Short.MAX_VALUE))
-        );
+        P_GraficaUsers.setLayout(new java.awt.BorderLayout());
+        P_GraficaUsers_content.add(P_GraficaUsers, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 350, 210));
 
-        jPanelIndexAdmin.add(P_GraficaUsers, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, 380, 270));
+        jPanelIndexAdmin.add(P_GraficaUsers_content, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, 380, 270));
 
         rSPanelsSlider1.add(jPanelIndexAdmin, "card2");
 
@@ -1549,6 +1536,7 @@ public class VistaAdmin extends javax.swing.JFrame implements Runnable {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JPanel P_GraficaUsers;
+    public javax.swing.JPanel P_GraficaUsers_content;
     private javax.swing.JButton btnCerrar;
     public javax.swing.JButton btnConsultaUser;
     public javax.swing.JButton btnCrearUser;

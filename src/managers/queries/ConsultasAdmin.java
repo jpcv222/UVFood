@@ -246,7 +246,7 @@ public class ConsultasAdmin extends ConexionBD {
         Statement ps = null;
         Connection conn = Conexion();
         ResultSet rs = null;
-        String sql = "";
+        String sql = "SELECT count(iduser) FROM uvfood_user;";
 
         try {
 

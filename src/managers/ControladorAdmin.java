@@ -7,8 +7,6 @@ package managers;
 
 import managers.queries.ConsultasAdmin;
 import classes.FileManage;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import views.VistaAdmin;
 import managers.queries.KeyValidate;
 import classes.Logs;
@@ -20,9 +18,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import static java.nio.file.StandardCopyOption.REPLACE_EXISTING;
-import org.jfree.chart.ChartFactory;
-import org.jfree.chart.ChartPanel;
-import org.jfree.chart.JFreeChart;
+import org.jfree.chart.*;
 import org.jfree.chart.plot.PlotOrientation;
 import org.jfree.data.category.DefaultCategoryDataset;
 
@@ -69,7 +65,7 @@ public class ControladorAdmin {
     }
 
     public void createIndexView() {
-        createJFreeChart("user.create.jfreechart.users");
+        createJFreeChart("index.show.count.users");
 
     }
 
@@ -85,7 +81,7 @@ public class ControladorAdmin {
                 logs.escribirErrorLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// Consulta no arroja resultados.");
                     break;
                 case -999:
-                modal.error_message("Error fatal.", "Algo anda mal.", "El servidor está presentado problemas.", "Por Favor intenta mas tarde.", "No se puede cargar vista.");
+                modal.error_message("Error fatal.", "Algo anda mal.", "El servidor está presentado problemas.", "Por Favor intenta mas tarde.",null);
                 logs.escribirErrorLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// El servidor está presentado problemas.");
                     break;
                 default:

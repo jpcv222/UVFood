@@ -23,3 +23,30 @@ managers.ControladorLogin//define_view// Acceso a vista admin.// 2019-08-28T23:2
 managers.ControladorLogin//request_login// Usuario existente.// 2019-08-28T23:28:46.067
 managers.ControladorLogin//define_view// Acceso a vista admin.// 2019-08-28T23:29:37.795
 managers.ControladorLogin//request_login// Usuario existente.// 2019-08-28T23:29:37.796
+managers.ControladorLogin//define_view// Acceso a vista admin.// 2019-08-29T01:03:45.883
+managers.ControladorLogin//request_login// Usuario existente.// 2019-08-29T01:03:45.887
+managers.queries.KeyValidate//resultHaveKey// Permiso concedido.// 2019-08-29T01:03:50.442
+managers.ControladorLogin//define_view// Acceso a vista admin.// 2019-08-29T01:05:38.498
+managers.ControladorLogin//request_login// Usuario existente.// 2019-08-29T01:05:38.508
+managers.queries.KeyValidate//resultHaveKey// Permiso concedido.// 2019-08-29T01:05:40.264
+managers.ControladorAdmin//createJFreeChart// Se genera gráfica con 3 usuarios.// 2019-08-29T01:05:40.280
+managers.ControladorLogin//define_view// Acceso a vista admin.// 2019-08-29T01:07:49.602
+managers.ControladorLogin//request_login// Usuario existente.// 2019-08-29T01:07:49.602
+managers.queries.KeyValidate//resultHaveKey// Permiso concedido.// 2019-08-29T01:07:51.303
+managers.ControladorAdmin//createJFreeChart// Se genera gráfica con 3 usuarios.// 2019-08-29T01:07:51.334
+managers.ControladorLogin//define_view// Acceso a vista admin.// 2019-08-29T01:09:31.069
+managers.ControladorLogin//request_login// Usuario existente.// 2019-08-29T01:09:31.069
+managers.queries.KeyValidate//resultHaveKey// Permiso concedido.// 2019-08-29T01:09:32.225
+managers.ControladorAdmin//createJFreeChart// Se genera gráfica con 3 usuarios.// 2019-08-29T01:09:32.288
+managers.ControladorLogin//define_view// Acceso a vista admin.// 2019-08-29T01:11:38.316
+managers.ControladorLogin//request_login// Usuario existente.// 2019-08-29T01:11:38.316
+managers.queries.KeyValidate//resultHaveKey// Permiso concedido.// 2019-08-29T01:11:39.494
+managers.ControladorAdmin//createJFreeChart// Se genera gráfica con 3 usuarios.// 2019-08-29T01:11:39.525
+managers.ControladorLogin//define_view// Acceso a vista admin.// 2019-08-29T01:13:29.111
+managers.ControladorLogin//request_login// Usuario existente.// 2019-08-29T01:13:29.111
+managers.queries.KeyValidate//resultHaveKey// Permiso concedido.// 2019-08-29T01:13:30.283
+managers.ControladorAdmin//createJFreeChart// Se genera gráfica con 3 usuarios.// 2019-08-29T01:13:30.314
+managers.ControladorLogin//define_view// Acceso a vista admin.// 2019-08-29T01:14:50.583
+managers.ControladorLogin//request_login// Usuario existente.// 2019-08-29T01:14:50.583
+managers.queries.KeyValidate//resultHaveKey// Permiso concedido.// 2019-08-29T01:14:51.958
+managers.ControladorAdmin//createJFreeChart// Se genera gráfica con 3 usuarios.// 2019-08-29T01:14:51.989
