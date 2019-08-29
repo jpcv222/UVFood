@@ -30,3 +30,4 @@ managers.queries.KeyValidate//resultHaveKey// Permisos denegados.// 2019-08-29T0
 managers.queries.KeyValidate//resultHaveKey// Permisos denegados.// 2019-08-29T02:19:52.512
 managers.queries.KeyValidate//resultHaveKey// Permisos denegados.// 2019-08-29T02:19:54.273
 managers.queries.KeyValidate//resultHaveKey// Permisos denegados.// 2019-08-29T02:19:54.301
+managers.ControladorLogin//insert_session_record// Error desconocido.// 2019-08-29T02:38:43.540

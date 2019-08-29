@@ -454,41 +454,6 @@ ALTER SEQUENCE public.uvfood_sede_idsede_seq OWNED BY public.uvfood_sede.idsede;
 
 
 --
--- Name: uvfood_sessions; Type: TABLE; Schema: public; Owner: postgres
---
-
-CREATE TABLE public.uvfood_sessions (
-    idsession integer NOT NULL,
-    iduser integer NOT NULL,
-    date_session timestamp without time zone DEFAULT CURRENT_TIMESTAMP NOT NULL
-);
-
-
-ALTER TABLE public.uvfood_sessions OWNER TO postgres;
-
---
--- Name: uvfood_sessions_idsession_seq; Type: SEQUENCE; Schema: public; Owner: postgres
---
-
-CREATE SEQUENCE public.uvfood_sessions_idsession_seq
-    AS integer
-    START WITH 1
-    INCREMENT BY 1
-    NO MINVALUE
-    NO MAXVALUE
-    CACHE 1;
-
-
-ALTER TABLE public.uvfood_sessions_idsession_seq OWNER TO postgres;
-
---
--- Name: uvfood_sessions_idsession_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
---
-
-ALTER SEQUENCE public.uvfood_sessions_idsession_seq OWNED BY public.uvfood_sessions.idsession;
-
-
---
 -- Name: uvfood_student_program; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -644,13 +609,6 @@ ALTER TABLE ONLY public.uvfood_sede ALTER COLUMN idsede SET DEFAULT nextval('pub
 
 
 --
--- Name: uvfood_sessions idsession; Type: DEFAULT; Schema: public; Owner: postgres
---
-
-ALTER TABLE ONLY public.uvfood_sessions ALTER COLUMN idsession SET DEFAULT nextval('public.uvfood_sessions_idsession_seq'::regclass);
-
-
---
 -- Name: uvfood_typeuser id_typeuser; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
@@ -679,8 +637,6 @@ COPY public.uvfood_faculty (idfaculty, namefaculty) FROM stdin;
 COPY public.uvfood_keys (idkey, idmodule, namekey) FROM stdin;
 3	1	users.select.csv
 4	1	users.upload.csv
-5	3	index.show.count.users
-6	3	index.show.count.sessions
 \.
 
 
@@ -709,7 +665,6 @@ COPY public.uvfood_logs (idlog, actionbd, whatsdone, date_insert) FROM stdin;
 COPY public.uvfood_modules (idmodule, namemodule) FROM stdin;
 1	users
 2	sales
-3	index
 \.
 
 
@@ -727,21 +682,6 @@ COPY public.uvfood_program (idprogram, univallecode, idsede, idfaculty, program_
 
 COPY public.uvfood_sede (idsede, namesede) FROM stdin;
 1	CALI-MELENDEZ
-\.
-
-
---
--- Data for Name: uvfood_sessions; Type: TABLE DATA; Schema: public; Owner: postgres
---
-
-COPY public.uvfood_sessions (idsession, iduser, date_session) FROM stdin;
-1	5	2019-08-29 01:38:23.586107
-2	7	2019-08-29 01:40:29.571127
-3	5	2019-08-29 01:44:52.405405
-4	5	2019-08-29 02:14:08.516188
-5	5	2019-08-29 02:15:26.682847
-6	5	2019-08-29 02:17:12.754731
-7	7	2019-08-29 02:19:17.561684
 \.
 
 
@@ -793,8 +733,6 @@ COPY public.uvfood_user_extended (iduser, id_typeuser, status) FROM stdin;
 COPY public.uvfood_user_key (iduser, idkey) FROM stdin;
 5	3
 5	4
-5	5
-5	6
 \.
 
 
@@ -809,7 +747,7 @@ SELECT pg_catalog.setval('public.uvfood_faculty_idfaculty_seq', 1, false);
 -- Name: uvfood_keys_idkey_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.uvfood_keys_idkey_seq', 6, true);
+SELECT pg_catalog.setval('public.uvfood_keys_idkey_seq', 4, true);
 
 
 --
@@ -823,7 +761,7 @@ SELECT pg_catalog.setval('public.uvfood_logs_idlog_seq', 10, true);
 -- Name: uvfood_modules_idmodule_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.uvfood_modules_idmodule_seq', 3, true);
+SELECT pg_catalog.setval('public.uvfood_modules_idmodule_seq', 2, true);
 
 
 --
@@ -838,13 +776,6 @@ SELECT pg_catalog.setval('public.uvfood_program_idprogram_seq', 1, false);
 --
 
 SELECT pg_catalog.setval('public.uvfood_sede_idsede_seq', 1, true);
-
-
---
--- Name: uvfood_sessions_idsession_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.uvfood_sessions_idsession_seq', 7, true);
 
 
 --
@@ -990,14 +921,6 @@ ALTER TABLE ONLY public.uvfood_sede
 
 
 --
--- Name: uvfood_sessions uvfood_sessions_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
---
-
-ALTER TABLE ONLY public.uvfood_sessions
-    ADD CONSTRAINT uvfood_sessions_pkey PRIMARY KEY (idsession);
-
-
---
 -- Name: uvfood_typeuser uvfood_typeuser_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -1113,14 +1036,6 @@ CREATE TRIGGER tr_updlogs8 AFTER UPDATE ON public.uvfood_faculty FOR EACH ROW EX
 --
 
 CREATE TRIGGER tr_updlogs9 AFTER INSERT ON public.uvfood_sede FOR EACH ROW EXECUTE PROCEDURE public.funcaddloginsertsede();
-
-
---
--- Name: uvfood_sessions fk_user_sessions; Type: FK CONSTRAINT; Schema: public; Owner: postgres
---
-
-ALTER TABLE ONLY public.uvfood_sessions
-    ADD CONSTRAINT fk_user_sessions FOREIGN KEY (iduser) REFERENCES public.uvfood_user(iduser);
 
 
 --

@@ -543,3 +543,4 @@ managers.queries.ConsultasLogin//insert_session_record// No results were returne
 managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-08-29T02:15:26.687
 managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-08-29T02:17:12.755
 managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-08-29T02:19:17.573
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-08-29T02:38:43.540
