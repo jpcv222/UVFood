@@ -44,7 +44,7 @@ public class VistaAdmin extends javax.swing.JFrame implements Runnable {
     public File nombreImg;
 
     public ControladorAdmin manager;
-    
+
     String hora, minutos, segundos;
     Thread hilo;
 
@@ -53,11 +53,11 @@ public class VistaAdmin extends javax.swing.JFrame implements Runnable {
     public VistaAdmin() {
         initComponents();
         manager = new ControladorAdmin(this);
-        
+
         jlFecha.setText(fecha());
         hilo = new Thread(this);
         hilo.start();
-        
+
         item_menu_exited = new Color(205, 31, 50);
         item_bottom_exited = new Color(240, 240, 240);
         item_menu_entered = new Color(157, 0, 0);
@@ -96,12 +96,10 @@ public class VistaAdmin extends javax.swing.JFrame implements Runnable {
         Icon icono5 = new ImageIcon(imagen5.getImage().getScaledInstance(jLabelticket.getWidth(), jLabelticket.getHeight(), Image.SCALE_DEFAULT));
         jLabelticket.setIcon(icono5);
         this.repaint();
-        
 
     }
 
-
-      public void hora() {
+    public void hora() {
         Calendar calendario = new GregorianCalendar();
         Date horaActual = new Date();
         calendario.setTime(horaActual);
@@ -114,7 +112,7 @@ public class VistaAdmin extends javax.swing.JFrame implements Runnable {
     @Override
     public void run() {
         Thread current = Thread.currentThread();
-     
+
         for (int i = 1; 1 < 10; i++) {
             if (i > 0) {
                 hora();
@@ -128,7 +126,7 @@ public class VistaAdmin extends javax.swing.JFrame implements Runnable {
         SimpleDateFormat formatofecha = new SimpleDateFormat("dd/MM/YYYY");
         return formatofecha.format(fecha);
     }
-    
+
     public void resetColor(JLabel item, String image) {
         ImageIcon imagen = new ImageIcon("src/images/" + image);
         Icon icono = new ImageIcon(imagen.getImage().getScaledInstance(item.getWidth(), item.getHeight(), Image.SCALE_DEFAULT));
@@ -1248,7 +1246,7 @@ public class VistaAdmin extends javax.swing.JFrame implements Runnable {
         resetColor(jLabelinterfaz);*/
         changeImage("inicio-clic.jpg", jLabelHome);
         rSPanelsSlider1.setPanelSlider(15, jPanelIndexAdmin, RSPanelsSlider.DIRECT.RIGHT);
-        
+
         manager.createIndexView();
 
     }//GEN-LAST:event_jLabelHomeMouseClicked
@@ -1459,7 +1457,11 @@ public class VistaAdmin extends javax.swing.JFrame implements Runnable {
         manager.requestFillFields();
         manager.hablitarEdicionTotal();
         btnHabilitarEdicion.setEnabled(true);
-        
+
+        if (evt.getButton() == java.awt.event.MouseEvent.BUTTON3) {
+            System.out.println("Right Click");
+        }
+
     }//GEN-LAST:event_jTableUsersMouseClicked
 
     private void btnCrearUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCrearUserActionPerformed
@@ -1468,7 +1470,7 @@ public class VistaAdmin extends javax.swing.JFrame implements Runnable {
 
     private void btnHabilitarEdicionMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnHabilitarEdicionMouseEntered
         // TODO add your handling code here:
-       /* btnHabilitarEdicion.setBackground(new Color(205, 31, 50));
+        /* btnHabilitarEdicion.setBackground(new Color(205, 31, 50));
         btnHabilitarEdicion.setForeground(Color.white);*/
 
     }//GEN-LAST:event_btnHabilitarEdicionMouseEntered
