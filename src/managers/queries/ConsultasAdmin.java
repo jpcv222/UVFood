@@ -215,6 +215,7 @@ public class ConsultasAdmin extends ConexionBD {
     }
 
     public boolean fillCombo(VistaAdmin vista) {
+                    vista.jComboBoxRoles.removeAllItems();
         Statement ps = null;
         ResultSet rs = null;
 
@@ -226,6 +227,7 @@ public class ConsultasAdmin extends ConexionBD {
             rs = ps.executeQuery(sql);
 
             while (rs.next()) {
+                
                 vista.jComboBoxRoles.addItem(rs.getString("type_user"));
             }
             rs.close();
@@ -271,6 +273,7 @@ public class ConsultasAdmin extends ConexionBD {
 
             String insertQuery = "INSERT INTO uvfood_user (username, firstname, surname, birth_date, email, password_user) VALUES ('" + usuario + "', '" + nombre + "', '" + apellido + "', '" + fecha + "', '" + email + "', '" + clave + "')";
 
+            String insertRolQuery = "";
             ps = conn.createStatement();
             rs = ps.executeQuery(verUserQuery);
 

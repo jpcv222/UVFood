@@ -277,7 +277,24 @@ public class ControladorAdmin {
                 interfazPrincipalAdmin.btnCrearUser.setEnabled(true);
                 interfazPrincipalAdmin.btnModificarUser.setEnabled(false);
                 interfazPrincipalAdmin.btnEliminarUser.setEnabled(false);
+
+                interfazPrincipalAdmin.jTextFieldRol.removeAll();
+                interfazPrincipalAdmin.jTextFieldRol.repaint();
+                interfazPrincipalAdmin.jTextFieldRol.revalidate();
                 requestFillCombo();
+                interfazPrincipalAdmin.btnHabilitarEdicion.setEnabled(false);
+                interfazPrincipalAdmin.jTextFieldRol.setEditable(false);
+
+                break;
+            case "solo_crear_limpiar":
+                interfazPrincipalAdmin.btnCrearUser.setEnabled(true);
+                interfazPrincipalAdmin.btnModificarUser.setEnabled(false);
+                interfazPrincipalAdmin.btnEliminarUser.setEnabled(false);
+
+                interfazPrincipalAdmin.jTextFieldRol.removeAll();
+                interfazPrincipalAdmin.jTextFieldRol.repaint();
+                interfazPrincipalAdmin.jTextFieldRol.revalidate();
+
                 interfazPrincipalAdmin.btnHabilitarEdicion.setEnabled(false);
                 interfazPrincipalAdmin.jTextFieldRol.setEditable(false);
 
