@@ -9,3 +9,7 @@ managers.ControladorLogin//define_view// Acceso a vista admin.// 2019-08-28T10:2
 managers.ControladorLogin//request_login// Usuario existente.// 2019-08-28T10:26:08.220
 managers.ControladorLogin//define_view// Acceso a vista admin.// 2019-08-28T11:12:31.921
 managers.ControladorLogin//request_login// Usuario existente.// 2019-08-28T11:12:31.923
+managers.ControladorLogin//define_view// Acceso a vista cliente.// 2019-08-28T23:12:56.904
+managers.ControladorLogin//request_login// Usuario existente.// 2019-08-28T23:12:56.919
+managers.ControladorLogin//define_view// Acceso a vista admin.// 2019-08-28T23:13:53.792
+managers.ControladorLogin//request_login// Usuario existente.// 2019-08-28T23:13:53.799
