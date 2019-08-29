@@ -44,7 +44,7 @@ public class VistaAdmin extends javax.swing.JFrame implements Runnable {
     public File nombreImg;
 
     public ControladorAdmin manager;
-    
+
     String hora, minutos, segundos;
     Thread hilo;
 
@@ -53,11 +53,11 @@ public class VistaAdmin extends javax.swing.JFrame implements Runnable {
     public VistaAdmin() {
         initComponents();
         manager = new ControladorAdmin(this);
-        
+
         jlFecha.setText(fecha());
         hilo = new Thread(this);
         hilo.start();
-        
+
         item_menu_exited = new Color(205, 31, 50);
         item_bottom_exited = new Color(240, 240, 240);
         item_menu_entered = new Color(157, 0, 0);
@@ -96,12 +96,12 @@ public class VistaAdmin extends javax.swing.JFrame implements Runnable {
         Icon icono5 = new ImageIcon(imagen5.getImage().getScaledInstance(jLabelticket.getWidth(), jLabelticket.getHeight(), Image.SCALE_DEFAULT));
         jLabelticket.setIcon(icono5);
         this.repaint();
-        
 
+        //jTextFieldIdRol.setVisible(false);
+        //jTextFieldIdUser.setVisible(false);
     }
 
-
-      public void hora() {
+    public void hora() {
         Calendar calendario = new GregorianCalendar();
         Date horaActual = new Date();
         calendario.setTime(horaActual);
@@ -114,7 +114,7 @@ public class VistaAdmin extends javax.swing.JFrame implements Runnable {
     @Override
     public void run() {
         Thread current = Thread.currentThread();
-     
+
         for (int i = 1; 1 < 10; i++) {
             if (i > 0) {
                 hora();
@@ -128,7 +128,7 @@ public class VistaAdmin extends javax.swing.JFrame implements Runnable {
         SimpleDateFormat formatofecha = new SimpleDateFormat("dd/MM/YYYY");
         return formatofecha.format(fecha);
     }
-    
+
     public void resetColor(JLabel item, String image) {
         ImageIcon imagen = new ImageIcon("src/images/" + image);
         Icon icono = new ImageIcon(imagen.getImage().getScaledInstance(item.getWidth(), item.getHeight(), Image.SCALE_DEFAULT));
@@ -228,6 +228,8 @@ public class VistaAdmin extends javax.swing.JFrame implements Runnable {
         jLabel21 = new javax.swing.JLabel();
         jTextFieldRol = new javax.swing.JTextField();
         jSeparator9 = new javax.swing.JSeparator();
+        jTextFieldIdUser = new javax.swing.JTextField();
+        jTextFieldIdRol = new javax.swing.JTextField();
         jPanelModuleUserRegister = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
@@ -707,7 +709,7 @@ public class VistaAdmin extends javax.swing.JFrame implements Runnable {
                             .addComponent(jLabel3))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 70, Short.MAX_VALUE))
+                .addGap(0, 26, Short.MAX_VALUE))
         );
 
         jPanel4.setBackground(new java.awt.Color(255, 255, 255));
@@ -779,9 +781,14 @@ public class VistaAdmin extends javax.swing.JFrame implements Runnable {
         btnEliminarUser.setOpaque(true);
 
         jComboBoxRoles.setBorder(null);
+        jComboBoxRoles.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBoxRolesActionPerformed(evt);
+            }
+        });
 
         jLabel19.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jLabel19.setText("Rol");
+        jLabel19.setText("Escoger Rol");
 
         btnHabilitarEdicion.setBackground(new java.awt.Color(255, 255, 255));
         btnHabilitarEdicion.setText("Habilitar Edicion");
@@ -844,11 +851,11 @@ public class VistaAdmin extends javax.swing.JFrame implements Runnable {
                             .addComponent(jLabel21)
                             .addComponent(jTextFieldRol)
                             .addComponent(jSeparator9, javax.swing.GroupLayout.DEFAULT_SIZE, 280, Short.MAX_VALUE)
-                            .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel13)
                             .addComponent(jSeparator2)
                             .addComponent(jTextFieldUser, javax.swing.GroupLayout.DEFAULT_SIZE, 280, Short.MAX_VALUE)
-                            .addComponent(jComboBoxRoles, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(jComboBoxRoles, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel19))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
@@ -875,7 +882,12 @@ public class VistaAdmin extends javax.swing.JFrame implements Runnable {
                                 .addGap(27, 27, 27)
                                 .addComponent(btnModificarUser)
                                 .addGap(28, 28, 28)
-                                .addComponent(btnEliminarUser))))
+                                .addComponent(btnEliminarUser))
+                            .addGroup(jPanel4Layout.createSequentialGroup()
+                                .addGap(37, 37, 37)
+                                .addComponent(jTextFieldIdUser, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(54, 54, 54)
+                                .addComponent(jTextFieldIdRol, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addComponent(jLabel17, javax.swing.GroupLayout.Alignment.LEADING)
@@ -934,34 +946,38 @@ public class VistaAdmin extends javax.swing.JFrame implements Runnable {
                         .addComponent(jSeparator7, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addGap(33, 33, 33)
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(jPanel4Layout.createSequentialGroup()
-                                .addGap(52, 52, 52)
-                                .addComponent(btnLimpiar, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(btnHabilitarEdicion, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(17, 17, 17)
+                                .addComponent(jTextFieldIdRol, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(40, 40, 40)
+                                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(btnCrearUser, javax.swing.GroupLayout.DEFAULT_SIZE, 155, Short.MAX_VALUE)
+                                    .addComponent(btnModificarUser, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(btnEliminarUser, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                            .addGroup(jPanel4Layout.createSequentialGroup()
+                                .addGap(18, 18, 18)
+                                .addComponent(jTextFieldIdUser, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel4Layout.createSequentialGroup()
-                                        .addGap(40, 40, 40)
-                                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(btnCrearUser, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(btnModificarUser, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(btnEliminarUser, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                                .addContainerGap())))
+                                        .addGap(52, 52, 52)
+                                        .addComponent(btnLimpiar, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(jPanel4Layout.createSequentialGroup()
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(btnHabilitarEdicion, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                        .addContainerGap())
                     .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGap(17, 17, 17)
                         .addComponent(jLabel21, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jTextFieldRol, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jSeparator9, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(28, 28, 28)
                         .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jComboBoxRoles, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(23, 23, 23))))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
 
         javax.swing.GroupLayout jPanelModuleUserReportsLayout = new javax.swing.GroupLayout(jPanelModuleUserReports);
@@ -979,7 +995,7 @@ public class VistaAdmin extends javax.swing.JFrame implements Runnable {
             jPanelModuleUserReportsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelModuleUserReportsLayout.createSequentialGroup()
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
@@ -1248,7 +1264,7 @@ public class VistaAdmin extends javax.swing.JFrame implements Runnable {
         resetColor(jLabelinterfaz);*/
         changeImage("inicio-clic.jpg", jLabelHome);
         rSPanelsSlider1.setPanelSlider(15, jPanelIndexAdmin, RSPanelsSlider.DIRECT.RIGHT);
-        
+
         manager.createIndexView();
 
     }//GEN-LAST:event_jLabelHomeMouseClicked
@@ -1404,10 +1420,13 @@ public class VistaAdmin extends javax.swing.JFrame implements Runnable {
     }//GEN-LAST:event_jTextFieldBuscarUserKeyReleased
 
     private void btnConsultaUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConsultaUserActionPerformed
-        jComboBoxRoles.removeAllItems();
+
         sePuede = "solo_crear";
+        jTextFieldRol.removeAll();
+        jTextFieldRol.repaint();
+        jTextFieldRol.revalidate();
+        //jComboBoxRoles.removeAllItems();
         manager.requestFillTable();
-        manager.desHablitarEdicionBtn();
         manager.hablitarEdicionTotal();
 
     }//GEN-LAST:event_btnConsultaUserActionPerformed
@@ -1458,17 +1477,18 @@ public class VistaAdmin extends javax.swing.JFrame implements Runnable {
         manager.limpiarCampos();
         manager.requestFillFields();
         manager.hablitarEdicionTotal();
-        btnHabilitarEdicion.setEnabled(true);
-        
+
     }//GEN-LAST:event_jTableUsersMouseClicked
 
     private void btnCrearUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCrearUserActionPerformed
         // TODO add your handling code here:
+        manager.requestInsertUser();
+        manager.requestFillTable();
     }//GEN-LAST:event_btnCrearUserActionPerformed
 
     private void btnHabilitarEdicionMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnHabilitarEdicionMouseEntered
         // TODO add your handling code here:
-       /* btnHabilitarEdicion.setBackground(new Color(205, 31, 50));
+        /* btnHabilitarEdicion.setBackground(new Color(205, 31, 50));
         btnHabilitarEdicion.setForeground(Color.white);*/
 
     }//GEN-LAST:event_btnHabilitarEdicionMouseEntered
@@ -1501,15 +1521,27 @@ public class VistaAdmin extends javax.swing.JFrame implements Runnable {
 
     private void btnLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarActionPerformed
         // TODO add your handling code here:
-        jComboBoxRoles.removeAllItems();
-        sePuede = "solo_crear";
+        //jComboBoxRoles.removeAllItems();
+        sePuede = "solo_crear_limpiar";
         manager.limpiarCampos();
         manager.hablitarEdicionTotal();
+        jComboBoxRoles.setEnabled(true);
+
     }//GEN-LAST:event_btnLimpiarActionPerformed
 
     private void jLabelBienvenidaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelBienvenidaMouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_jLabelBienvenidaMouseClicked
+
+    private void jComboBoxRolesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxRolesActionPerformed
+        // TODO add your handling code here:
+        jTextFieldRol.removeAll();
+        jTextFieldRol.repaint();
+        jTextFieldRol.revalidate();
+
+        String rol = jComboBoxRoles.getSelectedItem().toString();
+        jTextFieldRol.setText(rol);
+    }//GEN-LAST:event_jComboBoxRolesActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1632,6 +1664,8 @@ public class VistaAdmin extends javax.swing.JFrame implements Runnable {
     public javax.swing.JTextField jTextFieldBuscarUser;
     public javax.swing.JTextField jTextFieldEmail;
     public javax.swing.JTextField jTextFieldFecNa;
+    public javax.swing.JTextField jTextFieldIdRol;
+    public javax.swing.JTextField jTextFieldIdUser;
     public javax.swing.JTextField jTextFieldName;
     public javax.swing.JTextField jTextFieldRol;
     public javax.swing.JTextField jTextFieldUser;
