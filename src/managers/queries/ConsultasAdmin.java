@@ -215,7 +215,7 @@ public class ConsultasAdmin extends ConexionBD {
     }
 
     public boolean fillCombo(VistaAdmin vista) {
-                    vista.jComboBoxRoles.removeAllItems();
+        vista.jComboBoxRoles.removeAllItems();
         Statement ps = null;
         ResultSet rs = null;
 
@@ -227,7 +227,7 @@ public class ConsultasAdmin extends ConexionBD {
             rs = ps.executeQuery(sql);
 
             while (rs.next()) {
-                
+
                 vista.jComboBoxRoles.addItem(rs.getString("type_user"));
             }
             rs.close();
@@ -264,6 +264,9 @@ public class ConsultasAdmin extends ConexionBD {
         String email = vista.jTextFieldEmail.getText();
         String fecha = vista.jTextFieldFecNa.getText();
         String clave = new String(vista.jPasswordField.getPassword());
+        String rol = vista.jTextFieldRol.getText();
+
+        System.out.println(rol);
 
         try {
             Connection conn = Conexion();
@@ -272,8 +275,7 @@ public class ConsultasAdmin extends ConexionBD {
             String verEmailQuery = "SELECT email FROM uvfood_user WHERE email = '" + email + "';";
 
             String insertQuery = "INSERT INTO uvfood_user (username, firstname, surname, birth_date, email, password_user) VALUES ('" + usuario + "', '" + nombre + "', '" + apellido + "', '" + fecha + "', '" + email + "', '" + clave + "')";
-
-            String insertRolQuery = "";
+            String getIdQuery = "SELECT iduser, is_active FROM uvfood_user WHERE username = '" + usuario + "';";
             ps = conn.createStatement();
             rs = ps.executeQuery(verUserQuery);
 
@@ -290,8 +292,31 @@ public class ConsultasAdmin extends ConexionBD {
                     rs = ps.executeQuery(insertQuery);
                     if (rs.rowInserted()) {
                         result = "success.dato.insertado";
-                        llenarTabla(vista);
-                    }else{
+
+                        ps = conn.createStatement();
+                        rs = ps.executeQuery(getIdQuery);
+                        while (rs.next()) {
+                            int idUserTemp = rs.getInt(1);
+                            int activeUserTemp = rs.getInt(2);
+                            
+                            
+
+                            String getIdRolQuery = "SELECT id_typeuser FROM uvfood_typeuser WHERE type_user = '" + rol + "';";
+                            ps = conn.createStatement();
+                            rs = ps.executeQuery(getIdRolQuery);
+                            while (rs.next()) {
+                                int idRolTemp = rs.getInt(1);
+                                String insertRolUserQuery = "INSERT INTO uvfood_user_extended VALUES('" + idUserTemp + "', '" + idRolTemp + "', '" + activeUserTemp + "')";
+                                ps = conn.createStatement();
+                                rs = ps.executeQuery(insertRolUserQuery);
+                                if (rs.rowInserted()) {
+                                    result = "success.dato.insertado";
+                                } else {
+                                    result = "error.dato.no.insertado";
+                                }
+                            }
+                        }
+                    } else {
                         result = "error.dato.no.insertado";
                     }
                 }

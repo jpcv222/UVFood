@@ -254,6 +254,20 @@ public class ControladorAdmin {
             modal.error_message("Error", "Algo anda mal", "No se pueden mostrar registros de la Base de datos", "Por Favor intenta mas tarde", "O reportanos que ocurre");
         }
     }
+    
+    public void requestInsertUser(){
+        String result = consultasAdmin.crearUsuario(interfazPrincipalAdmin);
+        
+        switch(result){
+            case "error.usuario.existe":
+                modal.error_message("Error", "Algo anda mal", "El usuario ya esta registrado", "Por Favor intenta con otro", "O reportanos que ocurre");
+                break;
+            case "success.dato.insertado":
+                modal.error_message("Exito", "", "El usuario se registro con exito", "", "");
+                break;
+                
+        }
+    }
 
     public void hablitarEdicionTotal() {
         switch (VistaAdmin.sePuede) {

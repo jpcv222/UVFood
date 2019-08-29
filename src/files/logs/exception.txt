@@ -560,3 +560,31 @@ classes.ConexionBD//Conexion// FATAL: no existe la base de datos «uvfood» (pgj
 managers.queries.ConsultasAdmin//fillCombo// null java.lang.NullPointerException// 2019-08-29T15:22:14.883
 managers.queries.ConsultasAdmin//fillCombo// null java.lang.NullPointerException// 2019-08-29T15:49:45.599
 managers.queries.ConsultasAdmin//fillCombo// null java.lang.NullPointerException// 2019-08-29T15:50:20.278
+managers.queries.ConsultasAdmin//llenarAcciones// -1 java.lang.ArrayIndexOutOfBoundsException: -1// 2019-08-29T16:17:15.388
+managers.queries.ConsultasAdmin//crearUsuario// La consulta no retornó ningún resultado. org.postgresql.util.PSQLException: La consulta no retornó ningún resultado.// 2019-08-29T16:18:38.078
+managers.queries.ConsultasAdmin//crearUsuario// ERROR: la sintaxis de entrada no es válida para tipo date: «jhhjhj»
+  Position: 127 org.postgresql.util.PSQLException: ERROR: la sintaxis de entrada no es válida para tipo date: «jhhjhj»
+  Position: 127// 2019-08-29T16:34:13.045
+managers.queries.ConsultasAdmin//crearUsuario// ERROR: la sintaxis de entrada no es válida para tipo date: «»
+  Position: 110 org.postgresql.util.PSQLException: ERROR: la sintaxis de entrada no es válida para tipo date: «»
+  Position: 110// 2019-08-29T16:40:38.657
+managers.queries.ConsultasAdmin//crearUsuario// La consulta no retornó ningún resultado. org.postgresql.util.PSQLException: La consulta no retornó ningún resultado.// 2019-08-29T16:41:53.952
+managers.queries.ConsultasAdmin//crearUsuario// ERROR: el valor de hora/fecha está fuera de rango: «1222-56-96»
+  Hint: Quizás necesite una configuración diferente de «datestyle».
+  Position: 142 org.postgresql.util.PSQLException: ERROR: el valor de hora/fecha está fuera de rango: «1222-56-96»
+  Hint: Quizás necesite una configuración diferente de «datestyle».
+  Position: 142// 2019-08-29T16:44:56.677
+managers.queries.ConsultasAdmin//crearUsuario// ERROR: el valor de hora/fecha está fuera de rango: «1222-56-96»
+  Hint: Quizás necesite una configuración diferente de «datestyle».
+  Position: 142 org.postgresql.util.PSQLException: ERROR: el valor de hora/fecha está fuera de rango: «1222-56-96»
+  Hint: Quizás necesite una configuración diferente de «datestyle».
+  Position: 142// 2019-08-29T16:45:09.586
+managers.queries.ConsultasAdmin//crearUsuario// La consulta no retornó ningún resultado. org.postgresql.util.PSQLException: La consulta no retornó ningún resultado.// 2019-08-29T16:47:57.512
+managers.queries.ConsultasAdmin//crearUsuario// ERROR: el valor es demasiado largo para el tipo character(20) org.postgresql.util.PSQLException: ERROR: el valor es demasiado largo para el tipo character(20)// 2019-08-29T16:49:58.618
+managers.queries.ConsultasAdmin//crearUsuario// ERROR: el valor es demasiado largo para el tipo character(20) org.postgresql.util.PSQLException: ERROR: el valor es demasiado largo para el tipo character(20)// 2019-08-29T16:51:00.232
+managers.queries.ConsultasAdmin//crearUsuario// ERROR: el valor es demasiado largo para el tipo character(20) org.postgresql.util.PSQLException: ERROR: el valor es demasiado largo para el tipo character(20)// 2019-08-29T16:53:03.470
+managers.queries.ConsultasAdmin//crearUsuario// ERROR: el valor es demasiado largo para el tipo character(20) org.postgresql.util.PSQLException: ERROR: el valor es demasiado largo para el tipo character(20)// 2019-08-29T16:53:15.084
+managers.queries.ConsultasAdmin//crearUsuario// La consulta no retornó ningún resultado. org.postgresql.util.PSQLException: La consulta no retornó ningún resultado.// 2019-08-29T16:54:47.058
+managers.queries.ConsultasAdmin//crearUsuario// ERROR: la sintaxis de entrada no es válida para tipo date: «»
+  Position: 110 org.postgresql.util.PSQLException: ERROR: la sintaxis de entrada no es válida para tipo date: «»
+  Position: 110// 2019-08-29T17:25:56.974

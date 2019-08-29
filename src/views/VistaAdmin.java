@@ -97,9 +97,8 @@ public class VistaAdmin extends javax.swing.JFrame implements Runnable {
         jLabelticket.setIcon(icono5);
         this.repaint();
 
-        jTextFieldIdRol.setVisible(false);
-        jTextFieldIdUser.setVisible(false);
-
+        //jTextFieldIdRol.setVisible(false);
+        //jTextFieldIdUser.setVisible(false);
     }
 
     public void hora() {
@@ -1423,6 +1422,9 @@ public class VistaAdmin extends javax.swing.JFrame implements Runnable {
     private void btnConsultaUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConsultaUserActionPerformed
 
         sePuede = "solo_crear";
+        jTextFieldRol.removeAll();
+        jTextFieldRol.repaint();
+        jTextFieldRol.revalidate();
         //jComboBoxRoles.removeAllItems();
         manager.requestFillTable();
         manager.hablitarEdicionTotal();
@@ -1480,6 +1482,8 @@ public class VistaAdmin extends javax.swing.JFrame implements Runnable {
 
     private void btnCrearUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCrearUserActionPerformed
         // TODO add your handling code here:
+        manager.requestInsertUser();
+        manager.requestFillTable();
     }//GEN-LAST:event_btnCrearUserActionPerformed
 
     private void btnHabilitarEdicionMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnHabilitarEdicionMouseEntered
@@ -1521,6 +1525,7 @@ public class VistaAdmin extends javax.swing.JFrame implements Runnable {
         sePuede = "solo_crear_limpiar";
         manager.limpiarCampos();
         manager.hablitarEdicionTotal();
+        jComboBoxRoles.setEnabled(true);
 
     }//GEN-LAST:event_btnLimpiarActionPerformed
 
