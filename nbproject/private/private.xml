@@ -3,22 +3,17 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/C:/Users/jpcv2/Documents/NetBeansProjects/UVFood/src/managers/queries/ConsultasAdmin.java</file>
             <file>file:/C:/Users/jpcv2/Documents/NetBeansProjects/UVFood/src/classes/ConexionBD.java</file>
-            <file>file:/C:/Users/jpcv2/Documents/NetBeansProjects/UVFood/src/classes/DBcontrol.java</file>
+            <file>file:/C:/Users/jpcv2/Documents/NetBeansProjects/UVFood/src/managers/ControladorLogin.java</file>
             <file>file:/C:/Users/jpcv2/Documents/NetBeansProjects/UVFood/src/classes/Logs.java</file>
-            <file>file:/C:/Users/jpcv2/Documents/NetBeansProjects/UVFood/test/KeyValidateTest.java</file>
+            <file>file:/C:/Users/jpcv2/Documents/NetBeansProjects/UVFood/src/managers/ControladorCliente.java</file>
             <file>file:/C:/Users/jpcv2/Documents/NetBeansProjects/UVFood/src/managers/queries/KeyValidate.java</file>
             <file>file:/C:/Users/jpcv2/Documents/NetBeansProjects/UVFood/src/managers/queries/ConsultasLogin.java</file>
+            <file>file:/C:/Users/jpcv2/Documents/NetBeansProjects/UVFood/src/classes/DBCore.java</file>
             <file>file:/C:/Users/jpcv2/Documents/NetBeansProjects/UVFood/src/views/VistaAdmin.java</file>
             <file>file:/C:/Users/jpcv2/Documents/NetBeansProjects/UVFood/src/managers/ControladorAdmin.java</file>
             <file>file:/C:/Users/jpcv2/Documents/NetBeansProjects/UVFood/src/classes/FileManage.java</file>
-            <file>file:/C:/Users/jpcv2/Documents/NetBeansProjects/UVFood/src/classes/Usuario.java</file>
-            <file>file:/C:/Users/jpcv2/Documents/NetBeansProjects/UVFood/src/managers/queries/ConsultasAdmin.java</file>
-            <file>file:/C:/Users/jpcv2/Documents/NetBeansProjects/UVFood/src/views/VistaLogin.java</file>
-            <file>file:/C:/Users/jpcv2/Documents/NetBeansProjects/UVFood/src/managers/ControladorLogin.java</file>
-            <file>file:/C:/Users/jpcv2/Documents/NetBeansProjects/UVFood/src/managers/ControladorCliente.java</file>
-            <file>file:/C:/Users/jpcv2/Documents/NetBeansProjects/UVFood/src/components/UVFoodDialogs.java</file>
-            <file>file:/C:/Users/jpcv2/Documents/NetBeansProjects/UVFood/src/uvfood/UVFood.java</file>
         </group>
     </open-files>
 </project-private>

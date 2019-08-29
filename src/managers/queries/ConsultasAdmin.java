@@ -6,7 +6,6 @@
 package managers.queries;
 
 import classes.ConexionBD;
-import classes.DBCore;
 import classes.Logs;
 import java.sql.Connection;
 import java.sql.PreparedStatement;

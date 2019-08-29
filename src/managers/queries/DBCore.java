@@ -3,8 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package classes;
+package managers.queries;
 
+import classes.Logs;
 import static classes.ConexionBD.Conexion;
 import java.sql.Connection;
 import java.sql.ResultSet;
