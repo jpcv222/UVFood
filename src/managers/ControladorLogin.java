@@ -51,6 +51,7 @@ public class ControladorLogin {
                 case "success":
                     vistaLogin.dispose();
                     define_view();
+                    insert_session_record();
                     logs.escribirAccessLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// Usuario existente.");
                     break;
                 case "error.incorrect_user":
@@ -76,6 +77,25 @@ public class ControladorLogin {
             logs.escribirErrorLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// Campos obligatorios vacíos.");
         }
     }
+    
+    public void insert_session_record(){
+         String result = loginQueries.insert_session_record(user.getIdUser());
+             switch (result) {
+            case "success.insert":
+                logs.escribirAccessLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// Acceso a vista admin.");
+                break;
+            case "error.insert":
+                logs.escribirErrorLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// El registro de sesión no se realizó.");
+                break;
+            case "error.unknow":
+                logs.escribirErrorLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// Error desconocido.");
+                break;
+            case "error.server":
+                logs.escribirErrorLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// El servidor está presentado problemas.");
+                break;
+
+        }
+    }
 
     public void define_view() {
 
@@ -86,6 +106,7 @@ public class ControladorLogin {
                 vistaLogin.dispose();
                 VistaAdmin home_admin = new VistaAdmin();
                 home_admin.manager.user = this.user;
+                home_admin.manager.set_init_conf();
                 home_admin.setVisible(true);
                 logs.escribirAccessLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// Acceso a vista admin.");
                 break;
