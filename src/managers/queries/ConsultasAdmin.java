@@ -240,4 +240,34 @@ public class ConsultasAdmin extends ConexionBD {
 
     }
 
+    public int get_count_users() {
+
+        int result = 0;
+        Statement ps = null;
+        Connection conn = Conexion();
+        ResultSet rs = null;
+        String sql = "";
+
+        try {
+
+            ps = conn.createStatement();
+            rs = ps.executeQuery(sql);
+
+            if (rs.next()) {
+                result = Integer.parseInt(rs.getString(1));
+            } else {
+                result = -99;
+            }
+            rs.close();
+            ps.close();
+
+        } catch (SQLException np) {
+             logs.escribirExceptionLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// " + np.getMessage() + " " + np.toString());
+             result = -999;
+        }
+        
+        return result;
+
+    }
+
 }

@@ -14,11 +14,17 @@ import managers.queries.KeyValidate;
 import classes.Logs;
 import classes.Usuario;
 import components.UVFoodDialogs;
+import java.awt.BorderLayout;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import static java.nio.file.StandardCopyOption.REPLACE_EXISTING;
+import org.jfree.chart.ChartFactory;
+import org.jfree.chart.ChartPanel;
+import org.jfree.chart.JFreeChart;
+import org.jfree.chart.plot.PlotOrientation;
+import org.jfree.data.category.DefaultCategoryDataset;
 
 /**
  *
@@ -44,10 +50,10 @@ public class ControladorAdmin {
         this.file = new FileManage();
         this.consultasAdmin = new ConsultasAdmin();
     }
-    
-    public void set_init_conf(){
+
+    public void set_init_conf() {
         String current_text = interfazPrincipalAdmin.jLabelBienvenida.getText();
-            this.interfazPrincipalAdmin.jLabelBienvenida.setText(current_text + user.getFirstname());
+        this.interfazPrincipalAdmin.jLabelBienvenida.setText(current_text + user.getFirstname());
     }
 
     public void selectFile(String namekey) {
@@ -60,6 +66,48 @@ public class ControladorAdmin {
             validateBtCargar();
         }
 
+    }
+
+    public void createIndexView() {
+        createJFreeChart("user.create.jfreechart.users");
+
+    }
+
+    public void createJFreeChart(String namekey) {
+        String result = keyvalidate.haveKey(namekey, user.getIdUser());
+        boolean validate = keyvalidate.resultHaveKey(result);
+        int data_response;
+        if (validate) {
+            data_response = consultasAdmin.get_count_users();
+            switch (data_response) {
+                case -99:
+                modal.error_message("Warning base de datos.", "Algo anda mal.", "La consulta no arrojó resultados.", null,null);
+                logs.escribirErrorLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// Consulta no arroja resultados.");
+                    break;
+                case -999:
+                modal.error_message("Error fatal.", "Algo anda mal.", "El servidor está presentado problemas.", "Por Favor intenta mas tarde.", "No se puede cargar vista.");
+                logs.escribirErrorLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// El servidor está presentado problemas.");
+                    break;
+                default:
+                    logs.escribirAccessLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// Se genera gráfica con "+data_response+ " usuarios.");
+                    generateGraph(data_response);
+                    break;
+            }
+        }
+    }
+    
+    public void generateGraph(int users){
+    
+                    interfazPrincipalAdmin.jlUsersGraph.setText(String.valueOf(users));
+
+                    DefaultCategoryDataset data = new DefaultCategoryDataset();
+                    data.addValue(users, "Todos los roles", "");
+
+                    JFreeChart grafica = ChartFactory.createBarChart3D("Usuarios", "", "Total", data, PlotOrientation.VERTICAL, true, true, false);
+
+                    ChartPanel contenedor = new ChartPanel(grafica);
+                    interfazPrincipalAdmin.P_GraficaUsers.add(contenedor, BorderLayout.CENTER);
+                    interfazPrincipalAdmin.P_GraficaUsers.validate();
     }
 
     public void validateBtCargar() {
@@ -187,7 +235,7 @@ public class ControladorAdmin {
                 interfazPrincipalAdmin.btnCrearUser.setEnabled(false);
                 interfazPrincipalAdmin.btnModificarUser.setEnabled(false);
                 interfazPrincipalAdmin.btnEliminarUser.setEnabled(true);
-                
+
                 interfazPrincipalAdmin.btnHabilitarEdicion.setEnabled(false);
                 desHablitarEdicion();
                 break;
@@ -195,7 +243,7 @@ public class ControladorAdmin {
                 interfazPrincipalAdmin.btnCrearUser.setEnabled(false);
                 interfazPrincipalAdmin.btnModificarUser.setEnabled(true);
                 interfazPrincipalAdmin.btnEliminarUser.setEnabled(true);
-                
+
                 interfazPrincipalAdmin.btnHabilitarEdicion.setEnabled(true);
                 HablitarEdicion();
                 break;
@@ -205,7 +253,7 @@ public class ControladorAdmin {
                 interfazPrincipalAdmin.btnEliminarUser.setEnabled(false);
                 requestFillCombo();
                 interfazPrincipalAdmin.btnHabilitarEdicion.setEnabled(false);
-                
+
                 break;
             default:
                 break;
@@ -217,7 +265,7 @@ public class ControladorAdmin {
         interfazPrincipalAdmin.btnCrearUser.setEnabled(true);
         interfazPrincipalAdmin.btnModificarUser.setEnabled(false);
         interfazPrincipalAdmin.btnEliminarUser.setEnabled(false);
-        
+
         interfazPrincipalAdmin.jTextFieldApellido.setEditable(false);
         interfazPrincipalAdmin.jTextFieldEmail.setEditable(false);
         interfazPrincipalAdmin.jTextFieldFecNa.setEditable(false);
@@ -228,12 +276,13 @@ public class ControladorAdmin {
         interfazPrincipalAdmin.jComboBoxRoles.setEnabled(false);
 
     }
+
     public void desHablitarEdicionBtn() {
         interfazPrincipalAdmin.btnCrearUser.setEnabled(true);
         interfazPrincipalAdmin.btnModificarUser.setEnabled(false);
         interfazPrincipalAdmin.btnEliminarUser.setEnabled(false);
         interfazPrincipalAdmin.jTextFieldRol.setEditable(false);
-        
+
         interfazPrincipalAdmin.btnHabilitarEdicion.setEnabled(false);
 
     }
@@ -257,7 +306,5 @@ public class ControladorAdmin {
         interfazPrincipalAdmin.jTextFieldRol.setText("");
         interfazPrincipalAdmin.jTextFieldUser.setText("");
     }
-    
-
 
 }
