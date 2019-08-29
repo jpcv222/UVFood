@@ -6,6 +6,7 @@
 package views;
 
 import java.awt.Color;
+import managers.ControladorGestionPermisos;
 
 /**
  *
@@ -17,12 +18,16 @@ public class GestionPermisos extends javax.swing.JFrame {
      * Creates new form ErrorMessage
      */
     Color red_error;
+    public ControladorGestionPermisos manager;
+
     public GestionPermisos() {
-        
-        red_error = new Color(205,31,50);
         initComponents();
+        manager = new ControladorGestionPermisos(this);
+
+        red_error = new Color(205, 31, 50);
+
         this.setLocationRelativeTo(null);
-        
+
     }
 
     /**
@@ -157,7 +162,7 @@ public class GestionPermisos extends javax.swing.JFrame {
         jPanelAceptar.setBackground(Color.white);
         jLabelAceptar.setForeground(red_error);
     }//GEN-LAST:event_jPanelAceptarMouseExited
-            
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
