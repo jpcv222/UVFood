@@ -1452,12 +1452,13 @@ public class VistaAdmin extends javax.swing.JFrame implements Runnable {
     }//GEN-LAST:event_btnGuardarImgMouseExited
 
     private void jTableUsersMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTableUsersMouseClicked
+        if (evt.getButton() == java.awt.event.MouseEvent.BUTTON1) {
         sePuede = "soloEliminar";
         manager.limpiarCampos();
         manager.requestFillFields();
         manager.hablitarEdicionTotal();
         btnHabilitarEdicion.setEnabled(true);
-
+        }
         if (evt.getButton() == java.awt.event.MouseEvent.BUTTON3) {
             System.out.println("Right Click");
         }
