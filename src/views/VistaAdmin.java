@@ -14,6 +14,10 @@ import javax.swing.ImageIcon;
 import java.awt.Color;
 import java.awt.Frame;
 import java.io.File;
+import java.util.Date;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
 import javax.swing.JFileChooser;
 import javax.swing.JLabel;
 import javax.swing.border.BevelBorder;
@@ -24,7 +28,7 @@ import managers.ControladorAdmin;
  *
  * @author webMaster
  */
-public class VistaAdmin extends javax.swing.JFrame {
+public class VistaAdmin extends javax.swing.JFrame implements Runnable {
 
     /**
      * Creates new form VistaAdmin
@@ -40,12 +44,18 @@ public class VistaAdmin extends javax.swing.JFrame {
     public File nombreImg;
 
     public ControladorAdmin manager;
+    
+    String hora, minutos, segundos;
+    Thread hilo;
 
     public static String sePuede;
 
     public VistaAdmin() {
         initComponents();
         
+        jlFecha.setText(fecha());
+        hilo = new Thread(this);
+        hilo.start();
         
         item_menu_exited = new Color(205, 31, 50);
         item_bottom_exited = new Color(240, 240, 240);
@@ -92,10 +102,34 @@ public class VistaAdmin extends javax.swing.JFrame {
     }
 
 
-    /* public void resetColor(JLabel item) {
-        item.setOpaque(false);
-        item.setBackground(new Color(205,31,50));
-    }*/
+      public void hora() {
+        Calendar calendario = new GregorianCalendar();
+        Date horaActual = new Date();
+        calendario.setTime(horaActual);
+        hora = calendario.get(Calendar.HOUR_OF_DAY) > 9 ? "" + calendario.get(Calendar.HOUR_OF_DAY) : "0" + calendario.get(Calendar.HOUR_OF_DAY);
+        minutos = calendario.get(Calendar.MINUTE) > 9 ? "" + calendario.get(Calendar.MINUTE) : "0" + calendario.get(Calendar.MINUTE);
+        segundos = calendario.get(Calendar.SECOND) > 9 ? "" + calendario.get(Calendar.SECOND) : "0" + calendario.get(Calendar.SECOND);
+
+    }
+
+    @Override
+    public void run() {
+        Thread current = Thread.currentThread();
+     
+        for (int i = 1; 1 < 10; i++) {
+            if (i > 0) {
+                hora();
+                jlHora.setText(hora + ":" + minutos + ":" + segundos);
+            }
+        }
+    }
+
+    public static String fecha() {
+        Date fecha = new Date();
+        SimpleDateFormat formatofecha = new SimpleDateFormat("dd/MM/YYYY");
+        return formatofecha.format(fecha);
+    }
+    
     public void resetColor(JLabel item, String image) {
         ImageIcon imagen = new ImageIcon("src/images/" + image);
         Icon icono = new ImageIcon(imagen.getImage().getScaledInstance(item.getWidth(), item.getHeight(), Image.SCALE_DEFAULT));

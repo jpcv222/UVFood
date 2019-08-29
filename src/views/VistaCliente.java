@@ -8,6 +8,10 @@ package views;
 import java.awt.Color;
 import java.awt.Frame;
 import java.awt.Image;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.GregorianCalendar;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
@@ -17,7 +21,7 @@ import rojerusan.RSPanelsSlider;
  *
  * @author Jeffrey Rios 2019 GitHub: jeffrey2423
  */
-public class VistaCliente extends javax.swing.JFrame {
+public class VistaCliente extends javax.swing.JFrame implements Runnable{
 
     /**
      * Creates new form VistaCliente
@@ -25,14 +29,21 @@ public class VistaCliente extends javax.swing.JFrame {
     int xMouse;
     int yMouse;
     
+    String hora, minutos, segundos;
+    Thread hilo;
+    
     
     public VistaCliente() {
         initComponents();
+        
+        
+        jlFecha.setText(fecha());
+        hilo = new Thread(this);
+        hilo.start();
+        
         this.setLocationRelativeTo(null);
         jLabel1.setOpaque(true);
         jLabel1.setBackground(new Color(255,51,51));
-        
-
         
         ImageIcon imagen1 = new ImageIcon("src/images/inicio.jpg");
         Icon icono1 = new ImageIcon(imagen1.getImage().getScaledInstance(jLabel1.getWidth(), jLabel1.getHeight(), Image.SCALE_DEFAULT));
@@ -51,11 +62,34 @@ public class VistaCliente extends javax.swing.JFrame {
         
     }
     
+     public void hora() {
+        Calendar calendario = new GregorianCalendar();
+        Date horaActual = new Date();
+        calendario.setTime(horaActual);
+        hora = calendario.get(Calendar.HOUR_OF_DAY) > 9 ? "" + calendario.get(Calendar.HOUR_OF_DAY) : "0" + calendario.get(Calendar.HOUR_OF_DAY);
+        minutos = calendario.get(Calendar.MINUTE) > 9 ? "" + calendario.get(Calendar.MINUTE) : "0" + calendario.get(Calendar.MINUTE);
+        segundos = calendario.get(Calendar.SECOND) > 9 ? "" + calendario.get(Calendar.SECOND) : "0" + calendario.get(Calendar.SECOND);
+
+    }
+
+    @Override
+    public void run() {
+        Thread current = Thread.currentThread();
+     
+        for (int i = 1; 1 < 10; i++) {
+            if (i > 0) {
+                hora();
+                jlHora.setText(hora + ":" + minutos + ":" + segundos);
+            }
+        }
+    }
+
+    public static String fecha() {
+        Date fecha = new Date();
+        SimpleDateFormat formatofecha = new SimpleDateFormat("dd/MM/YYYY");
+        return formatofecha.format(fecha);
+    }
     
-    /*public void resetColor(JLabel item) {
-        item.setOpaque(false);
-        item.setBackground(new Color(205,31,50));
-    }*/
     public void resetColor(JLabel item, String image) {
         ImageIcon imagen = new ImageIcon("src/images/"+image);
         Icon icono = new ImageIcon(imagen.getImage().getScaledInstance(item.getWidth(), item.getHeight(), Image.SCALE_DEFAULT));
@@ -105,6 +139,8 @@ public class VistaCliente extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabelNombreUser = new javax.swing.JLabel();
+        jlFecha = new javax.swing.JLabel();
+        jlHora = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -341,6 +377,14 @@ public class VistaCliente extends javax.swing.JFrame {
 
         jLabelNombreUser.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
 
+        jlFecha.setFont(new java.awt.Font("Roboto Light", 0, 18)); // NOI18N
+        jlFecha.setForeground(new java.awt.Color(205, 31, 50));
+        jlFecha.setText("DD/MM/YYYY");
+
+        jlHora.setFont(new java.awt.Font("Roboto Light", 0, 18)); // NOI18N
+        jlHora.setForeground(new java.awt.Color(205, 31, 50));
+        jlHora.setText("00:00:00");
+
         javax.swing.GroupLayout jPanelHeaderLayout = new javax.swing.GroupLayout(jPanelHeader);
         jPanelHeader.setLayout(jPanelHeaderLayout);
         jPanelHeaderLayout.setHorizontalGroup(
@@ -350,6 +394,10 @@ public class VistaCliente extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanelHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelHeaderLayout.createSequentialGroup()
+                        .addComponent(jlHora)
+                        .addGap(30, 30, 30)
+                        .addComponent(jlFecha)
+                        .addGap(54, 54, 54)
                         .addComponent(jLabel5)
                         .addContainerGap())
                     .addComponent(jLabelNombreUser, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -357,7 +405,11 @@ public class VistaCliente extends javax.swing.JFrame {
         jPanelHeaderLayout.setVerticalGroup(
             jPanelHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelHeaderLayout.createSequentialGroup()
-                .addComponent(jLabel5)
+                .addGroup(jPanelHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel5)
+                    .addGroup(jPanelHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jlFecha)
+                        .addComponent(jlHora)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 13, Short.MAX_VALUE)
                 .addComponent(jLabelNombreUser, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
@@ -516,6 +568,8 @@ public class VistaCliente extends javax.swing.JFrame {
     private javax.swing.JPanel jPanelMenuDiaPrincipal;
     private javax.swing.JPanel jPanelPerfilCliente;
     private javax.swing.JPanel jPanelbtn;
+    private javax.swing.JLabel jlFecha;
+    private javax.swing.JLabel jlHora;
     private rojerusan.RSPanelsSlider rSPanelsSlider1;
     // End of variables declaration//GEN-END:variables
 }
