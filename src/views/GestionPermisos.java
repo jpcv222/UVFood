@@ -22,6 +22,7 @@ public class GestionPermisos extends javax.swing.JFrame {
         red_error = new Color(205,31,50);
         initComponents();
         this.setLocationRelativeTo(null);
+        
     }
 
     /**
