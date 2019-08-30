@@ -24,6 +24,7 @@ import java.nio.file.Paths;
 import static java.nio.file.StandardCopyOption.REPLACE_EXISTING;
 import javax.swing.ImageIcon;
 import javax.swing.JMenuItem;
+import javax.swing.JTable;
 import org.jfree.chart.*;
 import org.jfree.chart.plot.PlotOrientation;
 import org.jfree.data.category.DefaultCategoryDataset;
@@ -58,9 +59,14 @@ public class ControladorAdmin {
         this.interfazPrincipalAdmin.jLabelBienvenida.setText(current_text + user.getFirstname());
         createIndexView();
     }
-    
+
     public void showPermissionsView() {
-        modal.show_permissions_view();
+        try {
+            modal.show_permissions_view(user.getUsername(), user.getFirstname(), user.getSurname());
+        } catch (Exception ex) {
+            modal.error_message("Error fatal.", "Error en servidor.", "Se ha generado una excepción.", null, null);
+            logs.escribirErrorLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// Consulta no arroja resultados.");
+        }
     }
 
     public void selectFile(String namekey) {
@@ -241,30 +247,30 @@ public class ControladorAdmin {
 
     }
 
-      public void createPopupmenu() {
-        try{
+    public void createPopupmenu() {
+        try {
 
-        Point punto = MouseInfo.getPointerInfo().getLocation();
-        int x = punto.x;
-        int y = punto.y;
+            Point punto = MouseInfo.getPointerInfo().getLocation();
+            int x = punto.x;
+            int y = punto.y;
 
-        interfazPrincipalAdmin.popup.removeAll();
-        // New project menu item
-        JMenuItem menuItem = new JMenuItem("Permisos...",
-                new ImageIcon("src/images/house-key.png"));
-        menuItem.setMnemonic(KeyEvent.VK_P);
-        menuItem.getAccessibleContext().setAccessibleDescription(
-                "Asignar permisos a este usuario.");
+            interfazPrincipalAdmin.popup.removeAll();
+            // New project menu item
+            JMenuItem menuItem = new JMenuItem("Permisos...",
+                    new ImageIcon("src/images/house-key.png"));
+            menuItem.setMnemonic(KeyEvent.VK_P);
+            menuItem.getAccessibleContext().setAccessibleDescription(
+                    "Asignar permisos a este usuario.");
 
-        interfazPrincipalAdmin.popup.add(menuItem);
-        interfazPrincipalAdmin.popup.setVisible(true);
-        interfazPrincipalAdmin.popup.setLocation(x, y);
-        }catch (Exception ex){
-        logs.escribirErrorLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// Error creando popupmenu.");
-        logs.escribirExceptionLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// " + ex.getMessage() + " " + ex.toString());
+            interfazPrincipalAdmin.popup.add(menuItem);
+            interfazPrincipalAdmin.popup.setVisible(true);
+            interfazPrincipalAdmin.popup.setLocation(x, y);
+        } catch (Exception ex) {
+            logs.escribirErrorLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// Error creando popupmenu.");
+            logs.escribirExceptionLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// " + ex.getMessage() + " " + ex.toString());
         }
     }
-      
+
     public boolean validarImg() {
 
         if (interfazPrincipalAdmin.nombreImg.getName().contains(".jpg")) {
@@ -303,18 +309,18 @@ public class ControladorAdmin {
             modal.error_message("Error", "Algo anda mal", "No se pueden mostrar registros de la Base de datos", "Por Favor intenta mas tarde", "O reportanos que ocurre");
         }
     }
-    
-    public void requestInsertUser(){
+
+    public void requestInsertUser() {
         String result = consultasAdmin.crearUsuario(interfazPrincipalAdmin);
-        
-        switch(result){
+
+        switch (result) {
             case "error.usuario.existe":
                 modal.error_message("Error", "Algo anda mal", "El usuario ya esta registrado", "Por Favor intenta con otro", "O reportanos que ocurre");
                 break;
             case "success.dato.insertado":
                 modal.error_message("Exito", "", "El usuario se registro con exito", "", "");
                 break;
-                
+
         }
     }
 

@@ -23,6 +23,7 @@ public class GestionPermisos extends javax.swing.JFrame {
     public GestionPermisos() {
         initComponents();
         manager = new ControladorGestionPermisos(this);
+        manager.set_init_conf();
 
         red_error = new Color(205, 31, 50);
 
@@ -109,10 +110,10 @@ public class GestionPermisos extends javax.swing.JFrame {
 
         jPanel1.add(jPanelAceptar, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 580, 210, 50));
 
-        jLabelUserNamePerm.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabelUserNamePerm.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jLabelUserNamePerm.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabelUserNamePerm.setText("Nombre usuario");
-        jPanel1.add(jLabelUserNamePerm, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 60, 530, 40));
+        jPanel1.add(jLabelUserNamePerm, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 60, 600, 40));
 
         jLabelAceptar2.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jLabelAceptar2.setForeground(new java.awt.Color(205, 31, 50));

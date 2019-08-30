@@ -1483,7 +1483,8 @@ public class VistaAdmin extends javax.swing.JFrame implements Runnable {
             btnHabilitarEdicion.setEnabled(true);
         }
         if (evt.getButton() == java.awt.event.MouseEvent.BUTTON3) {
-            manager.createPopupmenu();
+            //manager.createPopupmenu();
+        
             manager.showPermissionsView();
         }
     }//GEN-LAST:event_jTableUsersMouseClicked

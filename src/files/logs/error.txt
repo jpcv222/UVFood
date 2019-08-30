@@ -38,3 +38,11 @@ managers.ControladorLogin//insert_session_record// Error desconocido.// 2019-08-
 managers.ControladorLogin//request_login// Campos obligatorios vacíos.// 2019-08-29T09:50:56.681
 managers.ControladorLogin//request_login// Campos obligatorios vacíos.// 2019-08-29T09:50:57.731
 managers.ControladorLogin//insert_session_record// Error desconocido.// 2019-08-29T09:51:21.731
+managers.ControladorLogin//insert_session_record// Error desconocido.// 2019-08-29T18:29:47.393
+managers.ControladorLogin//insert_session_record// Error desconocido.// 2019-08-29T18:37:05.302
+managers.ControladorLogin//insert_session_record// Error desconocido.// 2019-08-29T18:39:14.239
+managers.ControladorLogin//insert_session_record// Error desconocido.// 2019-08-29T18:41:46.774
+managers.ControladorLogin//insert_session_record// Error desconocido.// 2019-08-29T19:00:35.298
+managers.ControladorLogin//insert_session_record// Error desconocido.// 2019-08-29T19:02:26.089
+managers.ControladorLogin//insert_session_record// Error desconocido.// 2019-08-29T19:12:20.461
+managers.ControladorLogin//insert_session_record// Error desconocido.// 2019-08-29T19:14:58.726

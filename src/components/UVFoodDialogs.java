@@ -5,6 +5,7 @@
  */
 package components;
 
+import classes.Usuario;
 import views.ErrorMessage;
 import views.GestionPermisos;
 import views.SuccesMessage;
@@ -67,9 +68,11 @@ public class UVFoodDialogs {
         }
     }
 
-    public void show_permissions_view() {
+    public void show_permissions_view(String username, String firstname, String surname ) {
         view_permissons.setVisible(true);
         view_permissons.setAlwaysOnTop(true);
+        this.view_permissons.jLabelUserNamePerm.setText(username+ ": "+ firstname + " " + surname);
+        
     }
 
     public boolean validate_message(String title, String subtitle, String body1) {
