@@ -3,8 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package classes;
+package managers.queries;
 
+import classes.Logs;
 import static classes.ConexionBD.Conexion;
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -47,6 +48,36 @@ public class DBCore {
         } catch (SQLException np) {
             logs.escribirExceptionLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// " + np.getMessage() + " " + np.toString());
             result = -999;
+        }
+
+        return result;
+
+    }
+    
+    public Object get_all_records(String table, String atrib) {
+
+        Object result = 0;
+        Statement ps = null;
+        Connection conn = Conexion();
+        ResultSet rs = null;
+        String sql = "SELECT " + atrib + " FROM uvfood_" + table + ";";
+
+        try {
+
+            ps = conn.createStatement();
+            rs = ps.executeQuery(sql);
+
+            if (rs.next()) {
+                result = rs;
+            } else {
+                result = "error.empty";
+            }
+            rs.close();
+            ps.close();
+
+        } catch (SQLException np) {
+            logs.escribirExceptionLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// " + np.getMessage() + " " + np.toString());
+            result = "server.error";
         }
 
         return result;

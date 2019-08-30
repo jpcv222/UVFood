@@ -20,6 +20,7 @@ import java.util.Calendar;
 import java.util.GregorianCalendar;
 import javax.swing.JFileChooser;
 import javax.swing.JLabel;
+import javax.swing.JPopupMenu;
 import javax.swing.border.BevelBorder;
 import rojerusan.RSPanelsSlider;
 import managers.ControladorAdmin;
@@ -39,7 +40,7 @@ public class VistaAdmin extends javax.swing.JFrame implements Runnable {
     BevelBorder border_clicked;
     int xMouse;
     int yMouse;
-
+    public JPopupMenu popup = new JPopupMenu();
     public JFileChooser fileImg = new JFileChooser();
     public File nombreImg;
 
@@ -54,6 +55,7 @@ public class VistaAdmin extends javax.swing.JFrame implements Runnable {
         initComponents();
         manager = new ControladorAdmin(this);
 
+        popup.setVisible(false);
         jlFecha.setText(fecha());
         hilo = new Thread(this);
         hilo.start();
@@ -1473,12 +1475,20 @@ public class VistaAdmin extends javax.swing.JFrame implements Runnable {
     }//GEN-LAST:event_btnGuardarImgMouseExited
 
     private void jTableUsersMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTableUsersMouseClicked
-        sePuede = "soloEliminar";
-        manager.limpiarCampos();
-        manager.requestFillFields();
-        manager.hablitarEdicionTotal();
-
+        if (evt.getButton() == java.awt.event.MouseEvent.BUTTON1) {
+            sePuede = "soloEliminar";
+            manager.limpiarCampos();
+            manager.requestFillFields();
+            manager.hablitarEdicionTotal();
+            btnHabilitarEdicion.setEnabled(true);
+        }
+        if (evt.getButton() == java.awt.event.MouseEvent.BUTTON3) {
+            //manager.createPopupmenu();
+        
+            manager.showPermissionsView();
+        }
     }//GEN-LAST:event_jTableUsersMouseClicked
+
 
     private void btnCrearUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCrearUserActionPerformed
         // TODO add your handling code here:

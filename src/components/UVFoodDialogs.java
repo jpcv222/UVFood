@@ -5,7 +5,9 @@
  */
 package components;
 
+import classes.Usuario;
 import views.ErrorMessage;
+import views.GestionPermisos;
 import views.SuccesMessage;
 
 /**
@@ -16,10 +18,12 @@ public class UVFoodDialogs {
 
     private ErrorMessage error_message;
     private SuccesMessage succes_message;
+    private GestionPermisos view_permissons;
 
     public UVFoodDialogs() {
         this.error_message = new ErrorMessage();
         this.succes_message = new SuccesMessage();
+        this.view_permissons = new GestionPermisos();
     }
 
     public void error_message(String title, String subtitle, String body1, String body2, String body3) {
@@ -62,6 +66,13 @@ public class UVFoodDialogs {
             succes_message.setVisible(true);
             succes_message.setAlwaysOnTop(true);
         }
+    }
+
+    public void show_permissions_view(String username, String firstname, String surname ) {
+        view_permissons.setVisible(true);
+        view_permissons.setAlwaysOnTop(true);
+        this.view_permissons.jLabelUserNamePerm.setText(username+ ": "+ firstname + " " + surname);
+        
     }
 
     public boolean validate_message(String title, String subtitle, String body1) {

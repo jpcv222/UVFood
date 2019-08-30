@@ -13,11 +13,18 @@ import classes.Logs;
 import classes.Usuario;
 import components.UVFoodDialogs;
 import java.awt.BorderLayout;
+import java.awt.MouseInfo;
+import java.awt.Point;
+import java.awt.event.KeyEvent;
+import static java.awt.image.ImageObserver.WIDTH;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import static java.nio.file.StandardCopyOption.REPLACE_EXISTING;
+import javax.swing.ImageIcon;
+import javax.swing.JMenuItem;
+import javax.swing.JTable;
 import org.jfree.chart.*;
 import org.jfree.chart.plot.PlotOrientation;
 import org.jfree.data.category.DefaultCategoryDataset;
@@ -53,6 +60,15 @@ public class ControladorAdmin {
         createIndexView();
     }
 
+    public void showPermissionsView() {
+        try {
+            modal.show_permissions_view(user.getUsername(), user.getFirstname(), user.getSurname());
+        } catch (Exception ex) {
+            modal.error_message("Error fatal.", "Error en servidor.", "Se ha generado una excepción.", null, null);
+            logs.escribirErrorLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// Consulta no arroja resultados.");
+        }
+    }
+
     public void selectFile(String namekey) {
 
         String result = keyvalidate.haveKey(namekey, user.getIdUser());
@@ -71,56 +87,71 @@ public class ControladorAdmin {
     }
 
     public void createJFreeChartCount(String namekey, String table, String atrib) {
-        String result = keyvalidate.haveKey(namekey, user.getIdUser());
-        boolean validate = keyvalidate.resultHaveKey(result);
-        if (validate) {
-            int data_response;
-            data_response = consultasAdmin.get_count_record(table, atrib);
-            switch (data_response) {
-                case -99:
-                    modal.error_message("Warning base de datos.", "Algo anda mal.", "La consulta no arrojó resultados.", null, null);
-                    logs.escribirErrorLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// Consulta no arroja resultados.");
-                    break;
-                case -999:
-                    modal.error_message("Error fatal.", "Algo anda mal.", "El servidor está presentado problemas.", "Por Favor intenta mas tarde.", null);
-                    logs.escribirErrorLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// El servidor está presentado problemas.");
-                    break;
-                default:
-                    logs.escribirAccessLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// Se genera gráfica con " + data_response + " registros.");
-                    generateGraph(namekey, data_response);
-                    break;
+        try {
+            String result = keyvalidate.haveKey(namekey, user.getIdUser());
+            boolean validate = keyvalidate.resultHaveKey(result);
+            if (validate) {
+                int data_response;
+                data_response = consultasAdmin.get_count_record(table, atrib);
+                switch (data_response) {
+                    case -99:
+                        modal.error_message("Warning base de datos.", "Algo anda mal.", "La consulta no arrojó resultados.", null, null);
+                        logs.escribirErrorLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// Consulta no arroja resultados.");
+                        break;
+                    case -999:
+                        modal.error_message("Error fatal.", "Algo anda mal.", "El servidor está presentado problemas.", "Por Favor intenta mas tarde.", null);
+                        logs.escribirErrorLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// El servidor está presentado problemas.");
+                        break;
+                    default:
+                        logs.escribirAccessLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// Se genera gráfica con " + data_response + " registros.");
+                        generateGraph(namekey, data_response);
+                        break;
+                }
             }
+
+        } catch (Exception ex) {
+            logs.escribirExceptionLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// " + ex.getMessage() + " " + ex.toString());
+            modal.error_message("Error fatal.", "Algo anda mal.", "El servidor está presentado problemas.", "Por Favor intenta mas tarde.", null);
         }
+
     }
 
     public void jFreeChartUsers(int users) {
+        try {
+            interfazPrincipalAdmin.jlUsersGraph.setText(String.valueOf(users));
 
-        interfazPrincipalAdmin.jlUsersGraph.setText(String.valueOf(users));
+            DefaultCategoryDataset data = new DefaultCategoryDataset();
+            data.addValue(users, "Todos los roles", "");
 
-        DefaultCategoryDataset data = new DefaultCategoryDataset();
-        data.addValue(users, "Todos los roles", "");
+            JFreeChart grafica = ChartFactory.createBarChart3D("Usuarios", "", "Total", data, PlotOrientation.VERTICAL, true, true, false);
 
-        JFreeChart grafica = ChartFactory.createBarChart3D("Usuarios", "", "Total", data, PlotOrientation.VERTICAL, true, true, false);
-
-        ChartPanel contenedor = new ChartPanel(grafica);
-        interfazPrincipalAdmin.P_GraficaSessions.removeAll();
-        interfazPrincipalAdmin.P_GraficaUsers.add(contenedor, BorderLayout.CENTER);
-        interfazPrincipalAdmin.P_GraficaUsers.validate();
+            ChartPanel contenedor = new ChartPanel(grafica);
+            interfazPrincipalAdmin.P_GraficaSessions.removeAll();
+            interfazPrincipalAdmin.P_GraficaUsers.add(contenedor, BorderLayout.CENTER);
+            interfazPrincipalAdmin.P_GraficaUsers.validate();
+        } catch (Exception ex) {
+            logs.escribirExceptionLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// " + ex.getMessage() + " " + ex.toString());
+            modal.error_message("Error fatal.", "Algo anda mal.", "El servidor está presentado problemas.", "Por Favor intenta mas tarde.", null);
+        }
     }
 
     public void jFreeChartSessions(int sessions) {
+        try {
+            interfazPrincipalAdmin.jlSessionsGraph.setText(String.valueOf(sessions));
 
-        interfazPrincipalAdmin.jlSessionsGraph.setText(String.valueOf(sessions));
+            DefaultCategoryDataset data = new DefaultCategoryDataset();
+            data.addValue(sessions, "Todas las sesiones", "");
 
-        DefaultCategoryDataset data = new DefaultCategoryDataset();
-        data.addValue(sessions, "Todas las sesiones", "");
+            JFreeChart grafica = ChartFactory.createBarChart3D("Sesiones", "", "Total", data, PlotOrientation.VERTICAL, true, true, false);
 
-        JFreeChart grafica = ChartFactory.createBarChart3D("Sesiones", "", "Total", data, PlotOrientation.VERTICAL, true, true, false);
-
-        ChartPanel contenedor = new ChartPanel(grafica);
-        interfazPrincipalAdmin.P_GraficaSessions.removeAll();
-        interfazPrincipalAdmin.P_GraficaSessions.add(contenedor, BorderLayout.CENTER);
-        interfazPrincipalAdmin.P_GraficaSessions.validate();
+            ChartPanel contenedor = new ChartPanel(grafica);
+            interfazPrincipalAdmin.P_GraficaSessions.removeAll();
+            interfazPrincipalAdmin.P_GraficaSessions.add(contenedor, BorderLayout.CENTER);
+            interfazPrincipalAdmin.P_GraficaSessions.validate();
+        } catch (Exception ex) {
+            logs.escribirExceptionLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// " + ex.getMessage() + " " + ex.toString());
+            modal.error_message("Error fatal.", "Algo anda mal.", "El servidor está presentado problemas.", "Por Favor intenta mas tarde.", null);
+        }
     }
 
     public void generateGraph(String namekey, int records) {
@@ -216,6 +247,30 @@ public class ControladorAdmin {
 
     }
 
+    public void createPopupmenu() {
+        try {
+
+            Point punto = MouseInfo.getPointerInfo().getLocation();
+            int x = punto.x;
+            int y = punto.y;
+
+            interfazPrincipalAdmin.popup.removeAll();
+            // New project menu item
+            JMenuItem menuItem = new JMenuItem("Permisos...",
+                    new ImageIcon("src/images/house-key.png"));
+            menuItem.setMnemonic(KeyEvent.VK_P);
+            menuItem.getAccessibleContext().setAccessibleDescription(
+                    "Asignar permisos a este usuario.");
+
+            interfazPrincipalAdmin.popup.add(menuItem);
+            interfazPrincipalAdmin.popup.setVisible(true);
+            interfazPrincipalAdmin.popup.setLocation(x, y);
+        } catch (Exception ex) {
+            logs.escribirErrorLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// Error creando popupmenu.");
+            logs.escribirExceptionLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// " + ex.getMessage() + " " + ex.toString());
+        }
+    }
+
     public boolean validarImg() {
 
         if (interfazPrincipalAdmin.nombreImg.getName().contains(".jpg")) {
@@ -254,18 +309,18 @@ public class ControladorAdmin {
             modal.error_message("Error", "Algo anda mal", "No se pueden mostrar registros de la Base de datos", "Por Favor intenta mas tarde", "O reportanos que ocurre");
         }
     }
-    
-    public void requestInsertUser(){
+
+    public void requestInsertUser() {
         String result = consultasAdmin.crearUsuario(interfazPrincipalAdmin);
-        
-        switch(result){
+
+        switch (result) {
             case "error.usuario.existe":
                 modal.error_message("Error", "Algo anda mal", "El usuario ya esta registrado", "Por Favor intenta con otro", "O reportanos que ocurre");
                 break;
             case "success.dato.insertado":
                 modal.error_message("Exito", "", "El usuario se registro con exito", "", "");
                 break;
-                
+
         }
     }
 
