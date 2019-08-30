@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>ConsultasCliente.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">JaCoCoverage analysis of project &quot;UVFood&quot; (powered by JaCoCo from EclEmma)</a> &gt; <a href="index.source.html" class="el_package">classes</a> &gt; <span class="el_source">ConsultasCliente.java</span></div><h1>ConsultasCliente.java</h1><pre class="source lang-java linenums">/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package classes;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import views.VistaLogin;
+
+//libreria para encriptar
+//import org.apache.commons.codec.digest.DigestUtils;
+/**
+ *
+ * @author sp
+ */
+<span class="nc" id="L20">public class ConsultasCliente extends ConexionBD {</span>
+<span class="nc" id="L21">     private Logs logs = new Logs(Thread.currentThread().getStackTrace()[1].getClassName());</span>
+
+    public boolean login(Usuario modeloCliente, VistaLogin vista) {
+<span class="nc" id="L24">        PreparedStatement ps = null;</span>
+<span class="nc" id="L25">        Connection conn = Conexion();</span>
+<span class="nc" id="L26">        ResultSet rs = null;</span>
+       
+<span class="nc" id="L28">        String sql = &quot;SELECT * FROM uvfood_user WHERE username = ?&quot;;</span>
+
+        try {
+<span class="nc" id="L31">            ps = conn.prepareStatement(sql);</span>
+<span class="nc" id="L32">            ps.setString(1, modeloCliente.getUsername());</span>
+<span class="nc" id="L33">            rs = ps.executeQuery();</span>
+
+            //verificamos primero si el usuario existe
+<span class="nc bnc" id="L36" title="All 2 branches missed.">            if (rs.next()) {</span>
+                //verificamos si la contraseña que escribe es igual a la de la bd
+<span class="nc bnc" id="L38" title="All 2 branches missed.">                if (modeloCliente.getPassword_user().equals(rs.getString(7))) {</span>
+
+                    /*
+                    ahora los datos que trae la consulta se los pasamos al modelo
+                    para luego acceder a ellos
+                     */
+<span class="nc" id="L44">                    modeloCliente.setIdUser(rs.getInt(1));</span>
+<span class="nc" id="L45">                    modeloCliente.setUsername(rs.getString(2));</span>
+<span class="nc" id="L46">                    modeloCliente.setFirstname(rs.getString(3));</span>
+<span class="nc" id="L47">                    modeloCliente.setSurname(rs.getString(4));</span>
+<span class="nc" id="L48">                    modeloCliente.setBirth_date(rs.getDate(5));</span>
+<span class="nc" id="L49">                    modeloCliente.setEmail(rs.getString(6));</span>
+
+<span class="nc" id="L51">                    return true;</span>
+                } else {
+<span class="nc" id="L53">                    modal.error_message(&quot;Error&quot;, &quot;Algo anda mal&quot;,&quot;La contraseña no coincide con el usuario&quot;,&quot;Por Favor intenta con otros datos&quot;, null);</span>
+<span class="nc" id="L54">                    return false;</span>
+                }
+            } else {
+<span class="nc" id="L57">                modal.error_message(&quot;Error&quot;, &quot;Algo anda mal&quot;,&quot;El usuario no existe&quot;,&quot;Por Favor intenta con otros datos&quot;, null);</span>
+<span class="nc" id="L58">                return false;</span>
+            }
+
+<span class="nc" id="L61">        } catch (SQLException e) {</span>
+<span class="nc" id="L62">            modal.error_message(&quot;Error&quot;, &quot;Algo anda mal&quot;, &quot;El servidor esta presentado problemas&quot;, &quot;Por Favor intenta mas tarde&quot;, &quot;O reportanos que ocurre&quot;);</span>
+<span class="nc" id="L63">            logs.escribirExceptionLogs(Thread.currentThread().getStackTrace()[1].getMethodName() +&quot;// &quot;+  e.getMessage() +&quot; &quot;+ e.toString());</span>
+<span class="nc" id="L64">            return false;</span>
+
+        }
+
+    }
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.6.201602180812</span></div></body></html>
