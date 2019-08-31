@@ -46,13 +46,22 @@ public class GestionPermisos extends javax.swing.JFrame {
         jLabelTitleModal = new javax.swing.JLabel();
         jPanelAceptar = new javax.swing.JPanel();
         jLabelAceptar = new javax.swing.JLabel();
-        jLabelUserNamePerm = new javax.swing.JLabel();
         jLabelAceptar2 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
         jLabel19 = new javax.swing.JLabel();
         jComboBoxModulos = new javax.swing.JComboBox<>();
         jPanelActions = new javax.swing.JPanel();
         jLabel20 = new javax.swing.JLabel();
+        jLabelUserNamePerm = new javax.swing.JLabel();
+        jPanel3 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabelConstructModule = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -88,6 +97,7 @@ public class GestionPermisos extends javax.swing.JFrame {
 
         jPanelAceptar.setBackground(new java.awt.Color(255, 255, 255));
         jPanelAceptar.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(205, 31, 50), 2, true));
+        jPanelAceptar.setEnabled(false);
         jPanelAceptar.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jPanelAceptar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -110,11 +120,6 @@ public class GestionPermisos extends javax.swing.JFrame {
 
         jPanel1.add(jPanelAceptar, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 580, 210, 50));
 
-        jLabelUserNamePerm.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jLabelUserNamePerm.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jLabelUserNamePerm.setText("Nombre usuario");
-        jPanel1.add(jLabelUserNamePerm, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 60, 600, 40));
-
         jLabelAceptar2.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jLabelAceptar2.setForeground(new java.awt.Color(205, 31, 50));
         jLabelAceptar2.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
@@ -136,6 +141,41 @@ public class GestionPermisos extends javax.swing.JFrame {
         jLabel20.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel20.setText("Módulo");
         jPanel1.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 120, 390, 20));
+
+        jLabelUserNamePerm.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jLabelUserNamePerm.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabelUserNamePerm.setText("Nombre usuario");
+        jPanel1.add(jLabelUserNamePerm, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 60, 600, 40));
+
+        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icon.png"))); // NOI18N
+        jPanel3.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 90, 80, 120));
+
+        jLabelConstructModule.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jLabelConstructModule.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabelConstructModule.setText("Módulo en construcción.");
+        jPanel3.add(jLabelConstructModule, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 10, -1, -1));
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/nut-icon.png"))); // NOI18N
+        jPanel3.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 10, 80, 130));
+
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/screw.png"))); // NOI18N
+        jPanel3.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 80, 80, 130));
+
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/nut-icon.png"))); // NOI18N
+        jPanel3.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 100, 80, 130));
+
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/screw.png"))); // NOI18N
+        jPanel3.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 10, 80, 130));
+
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icon.png"))); // NOI18N
+        jPanel3.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 0, 80, 120));
+
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/nut-icon.png"))); // NOI18N
+        jPanel3.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, 80, 130));
+
+        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 210, 410, 210));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 880, 650));
 
@@ -168,14 +208,23 @@ public class GestionPermisos extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     public javax.swing.JComboBox<String> jComboBoxModulos;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel19;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabelAceptar;
     private javax.swing.JLabel jLabelAceptar2;
+    public javax.swing.JLabel jLabelConstructModule;
     public javax.swing.JLabel jLabelTitleModal;
     public javax.swing.JLabel jLabelUserNamePerm;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanelAceptar;
     private javax.swing.JPanel jPanelActions;
     private javax.swing.JSeparator jSeparator1;
