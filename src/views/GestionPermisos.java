@@ -52,10 +52,10 @@ public class GestionPermisos extends javax.swing.JFrame {
         jComboBoxModulos = new javax.swing.JComboBox<>();
         jPanelActions = new javax.swing.JPanel();
         jLabel20 = new javax.swing.JLabel();
-        jLabelUserNamePerm1 = new javax.swing.JLabel();
+        jLabelUserNamePerm = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jLabelUserNamePerm = new javax.swing.JLabel();
+        jLabelConstructModule = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -97,6 +97,7 @@ public class GestionPermisos extends javax.swing.JFrame {
 
         jPanelAceptar.setBackground(new java.awt.Color(255, 255, 255));
         jPanelAceptar.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(205, 31, 50), 2, true));
+        jPanelAceptar.setEnabled(false);
         jPanelAceptar.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jPanelAceptar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -141,20 +142,20 @@ public class GestionPermisos extends javax.swing.JFrame {
         jLabel20.setText("Módulo");
         jPanel1.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 120, 390, 20));
 
-        jLabelUserNamePerm1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jLabelUserNamePerm1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jLabelUserNamePerm1.setText("Nombre usuario");
-        jPanel1.add(jLabelUserNamePerm1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 60, 600, 40));
+        jLabelUserNamePerm.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jLabelUserNamePerm.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabelUserNamePerm.setText("Nombre usuario");
+        jPanel1.add(jLabelUserNamePerm, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 60, 600, 40));
 
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icon.png"))); // NOI18N
         jPanel3.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 90, 80, 120));
 
-        jLabelUserNamePerm.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jLabelUserNamePerm.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jLabelUserNamePerm.setText("Módulo en construcción.");
-        jPanel3.add(jLabelUserNamePerm, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 10, -1, -1));
+        jLabelConstructModule.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jLabelConstructModule.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabelConstructModule.setText("Módulo en construcción.");
+        jPanel3.add(jLabelConstructModule, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 10, -1, -1));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/nut-icon.png"))); // NOI18N
         jPanel3.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 10, 80, 130));
@@ -218,9 +219,9 @@ public class GestionPermisos extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabelAceptar;
     private javax.swing.JLabel jLabelAceptar2;
+    public javax.swing.JLabel jLabelConstructModule;
     public javax.swing.JLabel jLabelTitleModal;
     public javax.swing.JLabel jLabelUserNamePerm;
-    public javax.swing.JLabel jLabelUserNamePerm1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
