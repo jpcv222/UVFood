@@ -3,6 +3,7 @@ Desktop software to Servicio de Restaurante Universitario from Universidad del V
 # Prerequisites
 - You will need NetBeans IDE 8.1 or highest.
 - You will need PostgreSQL 10 or highest.
+- Java Project.
 # Installing
 ## Package project
 - Clone or download this repository. 
@@ -21,6 +22,7 @@ Desktop software to Servicio de Restaurante Universitario from Universidad del V
 ```
 ## Run project
 - Run file UVFood/src/UVFood.java to execute project.
+- Login with username 'sistemasUVFood' and password 'sistemas'.
 # Authors
 
 * **Juan Pablo Castro** - *Engineer database, Developer* - [jpcv222](https://github.com/jpcv222)
