@@ -50,7 +50,8 @@ public class FileManage {
         if (ruta_alt != null) {
             response = ruta_alt;
         } else {
-            response = "Archivo CSV, ruta errónea";
+            response = "Archivo CSV, ruta errónea.";
+            logs.escribirErrorLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// Archivo CSV, ruta errónea.");
         }
         return response;
     }

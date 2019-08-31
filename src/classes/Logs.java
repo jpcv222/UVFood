@@ -15,12 +15,16 @@ public class Logs {
     
     private String directorioRaiz;
     private String exceptionLogsFile;
+    private String errorLogsFile;
+    private String accessLogsFile;
     private String className;
     
     public Logs(String  className) {
         this.className = className;
         this.directorioRaiz = System.getProperty("user.dir");
-        this.exceptionLogsFile = directorioRaiz+"/src/logs/exception.txt";
+        this.exceptionLogsFile = directorioRaiz+"/src/files/logs/exception.txt";
+        this.errorLogsFile = directorioRaiz+"/src/files/logs/error.txt";
+        this.accessLogsFile = directorioRaiz+"/src/files/logs/access.txt";
     }
 
     public String getClassName() {
@@ -39,6 +43,54 @@ public class Logs {
         try
         {
             fichero = new FileWriter(exceptionLogsFile, true);
+            pw = new PrintWriter(fichero);
+            pw.println(this.getClassName() + "//"+ message + "// "+ now);
+            
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+           try {
+           if (null != fichero)
+              fichero.close();
+           } catch (Exception e2) {
+              e2.printStackTrace();
+           }
+
+        }
+    }
+    
+     public void escribirErrorLogs(String message)
+    {
+        FileWriter fichero = null;
+        PrintWriter pw = null;
+        LocalDateTime now = LocalDateTime.now();  
+        try
+        {
+            fichero = new FileWriter(errorLogsFile, true);
+            pw = new PrintWriter(fichero);
+            pw.println(this.getClassName() + "//"+ message + "// "+ now);
+            
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+           try {
+           if (null != fichero)
+              fichero.close();
+           } catch (Exception e2) {
+              e2.printStackTrace();
+           }
+
+        }
+    }
+     
+     public void escribirAccessLogs(String message)
+    {
+        FileWriter fichero = null;
+        PrintWriter pw = null;
+        LocalDateTime now = LocalDateTime.now();  
+        try
+        {
+            fichero = new FileWriter(accessLogsFile, true);
             pw = new PrintWriter(fichero);
             pw.println(this.getClassName() + "//"+ message + "// "+ now);
             

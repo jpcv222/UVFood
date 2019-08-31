@@ -35,6 +35,7 @@ public class Index extends javax.swing.JFrame {
     int yMouse;
     boolean slid1, slid2;
     AnimationClass AC = new AnimationClass();
+    SobreNosotros nosotros;
     
     public static VistaLogin login;
     
@@ -71,6 +72,9 @@ public class Index extends javax.swing.JFrame {
         
         slid1 = true;
         slid2 = true;
+        
+        
+       
         
         SlideShow();
     }
@@ -245,7 +249,7 @@ public class Index extends javax.swing.JFrame {
         jPanelbtnIndexLayout.setVerticalGroup(
             jPanelbtnIndexLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelbtnIndexLayout.createSequentialGroup()
-                .addGroup(jPanelbtnIndexLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jPanelbtnIndexLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnMiminize, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnCerrar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(0, 0, Short.MAX_VALUE))
@@ -263,6 +267,9 @@ public class Index extends javax.swing.JFrame {
         btnIniciarSesion.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnIniciarSesion.setOpaque(true);
         btnIniciarSesion.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnIniciarSesionMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 btnIniciarSesionMouseEntered(evt);
             }
@@ -507,7 +514,13 @@ public class Index extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btnSobreNosotrosActionPerformed
 
-    /**
+    private void btnIniciarSesionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnIniciarSesionMouseClicked
+        // TODO add your handling code here:
+         nosotros = new SobreNosotros(this, true);
+         nosotros.setVisible(true);
+    }//GEN-LAST:event_btnIniciarSesionMouseClicked
+
+    /** |
      * @param args the command line arguments
      */
     public static void main(String args[]) {

@@ -7,15 +7,9 @@ package uvfood;
 
 import java.sql.Connection;
 import classes.ConexionBD;
-import classes.ConsultasAdmin;
-import classes.ConsultasCliente;
-import classes.Usuario;
 import components.UVFoodDialogs;
-import managers.ControladorAdmin;
 import managers.ControladorCliente;
 import views.Index;
-import views.VistaAdmin;
-import views.VistaCliente;
 import views.VistaLogin;
 
 /**
@@ -44,16 +38,8 @@ public class UVFood extends ConexionBD {
         /*
         llamadas a los constructores de los controladores pasandole los objetos previamente creados
         */
-        Usuario usuario = new Usuario();
-        VistaCliente vistaCliente = new VistaCliente();
-        VistaAdmin vistaAdmin = new VistaAdmin();
-        VistaLogin vistaLogin = new VistaLogin();
         Index index = new Index();
         
-        ConsultasCliente consultasCliente = new ConsultasCliente();
-        ConsultasAdmin consultasAdmin = new ConsultasAdmin();
-        
-        ControladorCliente controladorCliente = new ControladorCliente(vistaCliente, vistaLogin, consultasCliente, usuario);
         index.setVisible(true);
         
     }
