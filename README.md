@@ -23,6 +23,7 @@ Desktop software to Servicio de Restaurante Universitario from Universidad del V
 ## Run project
 - Run file UVFood/src/UVFood.java to execute project.
 - Login with username 'sistemasUVFood' and password 'sistemas'.
+- See uvfood_user table in database to login with others users data
 # Authors
 
 * **Juan Pablo Castro** - *Engineer database, Developer* - [jpcv222](https://github.com/jpcv222)
