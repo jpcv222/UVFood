@@ -520,7 +520,7 @@ public class Index extends javax.swing.JFrame {
          nosotros.setVisible(true);
     }//GEN-LAST:event_btnIniciarSesionMouseClicked
 
-    /**
+    /** |
      * @param args the command line arguments
      */
     public static void main(String args[]) {
