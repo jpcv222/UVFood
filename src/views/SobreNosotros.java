@@ -67,6 +67,7 @@ public class SobreNosotros extends javax.swing.JDialog {
         jPanel2 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
         img3 = new javax.swing.JLabel();
         img4 = new javax.swing.JLabel();
         img1 = new javax.swing.JLabel();
@@ -92,10 +93,14 @@ public class SobreNosotros extends javax.swing.JDialog {
         jLabel28 = new javax.swing.JLabel();
         jLabel29 = new javax.swing.JLabel();
         jLabel30 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
+        jSeparator5 = new javax.swing.JSeparator();
         jPanelOnlinePro = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
-        jSeparator5 = new javax.swing.JSeparator();
+        jLabel3 = new javax.swing.JLabel();
+        jPanelOnlinePro1 = new javax.swing.JPanel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -132,18 +137,25 @@ public class SobreNosotros extends javax.swing.JDialog {
             }
         });
 
+        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("UVFood, Servicio de Restaurante Universitario.");
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addContainerGap(756, Short.MAX_VALUE)
+                .addContainerGap()
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 248, Short.MAX_VALUE)
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 42, Short.MAX_VALUE)
+            .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 42, Short.MAX_VALUE)
         );
 
         jPanel2.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, -1));
@@ -269,11 +281,7 @@ public class SobreNosotros extends javax.swing.JDialog {
         jPanel5.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 210, 380, 26));
 
         jPanel2.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 230, 390, 240));
-
-        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(204, 0, 51));
-        jLabel1.setText("Haz click sobre cada ícono de usuario...");
-        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 170, -1, -1));
+        jPanel2.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, 770, 20));
 
         jPanelOnlinePro.setBackground(new java.awt.Color(255, 204, 204));
         jPanelOnlinePro.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -290,7 +298,11 @@ public class SobreNosotros extends javax.swing.JDialog {
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(204, 0, 51));
-        jLabel2.setText("Visita nuestro proyecto online.");
+        jLabel2.setText("Visita nuestro proyecto online:");
+
+        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel3.setText("GitHub");
 
         javax.swing.GroupLayout jPanelOnlineProLayout = new javax.swing.GroupLayout(jPanelOnlinePro);
         jPanelOnlinePro.setLayout(jPanelOnlineProLayout);
@@ -298,19 +310,63 @@ public class SobreNosotros extends javax.swing.JDialog {
             jPanelOnlineProLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelOnlineProLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 726, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 353, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 353, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(25, Short.MAX_VALUE))
         );
         jPanelOnlineProLayout.setVerticalGroup(
             jPanelOnlineProLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelOnlineProLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel2)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
+            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        jPanel2.add(jPanelOnlinePro, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 510, 750, 60));
-        jPanel2.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 140, 770, 30));
+        jPanel2.add(jPanelOnlinePro, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 490, 750, 40));
+
+        jPanelOnlinePro1.setBackground(new java.awt.Color(255, 204, 204));
+        jPanelOnlinePro1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jPanelOnlinePro1MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jPanelOnlinePro1MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jPanelOnlinePro1MouseExited(evt);
+            }
+        });
+
+        jLabel4.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(204, 0, 51));
+        jLabel4.setText("Visita nuestro proyecto online:");
+
+        jLabel5.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(102, 0, 102));
+        jLabel5.setText("Taiga");
+
+        javax.swing.GroupLayout jPanelOnlinePro1Layout = new javax.swing.GroupLayout(jPanelOnlinePro1);
+        jPanelOnlinePro1.setLayout(jPanelOnlinePro1Layout);
+        jPanelOnlinePro1Layout.setHorizontalGroup(
+            jPanelOnlinePro1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelOnlinePro1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 353, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 353, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(25, Short.MAX_VALUE))
+        );
+        jPanelOnlinePro1Layout.setVerticalGroup(
+            jPanelOnlinePro1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
+            .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
+        jPanel2.add(jPanelOnlinePro1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 540, 750, 40));
+
+        jLabel6.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(204, 0, 51));
+        jLabel6.setText("Haz click sobre cada ícono de usuario...");
+        jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 170, -1, -1));
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 610));
 
@@ -395,6 +451,33 @@ public class SobreNosotros extends javax.swing.JDialog {
         jPanelOnlinePro.setBackground(item_menu_exited);
     }//GEN-LAST:event_jPanelOnlineProMouseExited
 
+    private void jPanelOnlinePro1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelOnlinePro1MouseClicked
+        // TODO add your handling code here:
+            URL url = null;
+        try {
+            url = new URL("https://tree.taiga.io/project/febe-uvfood/timeline");
+            try {
+                Desktop.getDesktop().browse(url.toURI());
+            } catch (IOException e) {
+                e.printStackTrace();
+            } catch (URISyntaxException e) {
+                e.printStackTrace();
+            }
+        } catch (MalformedURLException e1) {
+            e1.printStackTrace();
+        }
+    }//GEN-LAST:event_jPanelOnlinePro1MouseClicked
+
+    private void jPanelOnlinePro1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelOnlinePro1MouseEntered
+        // TODO add your handling code here:
+          jPanelOnlinePro1.setBackground(item_menu_entered);
+    }//GEN-LAST:event_jPanelOnlinePro1MouseEntered
+
+    private void jPanelOnlinePro1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelOnlinePro1MouseExited
+        // TODO add your handling code here:
+          jPanelOnlinePro1.setBackground(item_menu_exited);
+    }//GEN-LAST:event_jPanelOnlinePro1MouseExited
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel img1;
@@ -412,7 +495,11 @@ public class SobreNosotros extends javax.swing.JDialog {
     private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel29;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel30;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel2;
@@ -420,6 +507,7 @@ public class SobreNosotros extends javax.swing.JDialog {
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanelOnlinePro;
+    private javax.swing.JPanel jPanelOnlinePro1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
