@@ -1742,11 +1742,15 @@ public class VistaAdmin extends javax.swing.JFrame implements Runnable {
                 manager.hablitarEdicionTotal();
                 btnHabilitarEdicion.setEnabled(true);
                 jComboBoxRoles.setEnabled(false);
+                btnEliminarUser.setEnabled(true);
+                btnhabilitarUser.setEnabled(false);
             }else if (jTextFieldActivo.getText().equals("No Activo")){
                 sePuede = "soloHabilitar"; 
                 manager.hablitarEdicionTotal();
                 btnHabilitarEdicion.setEnabled(true);
                 btnEliminarUser.setEnabled(false);
+                btnhabilitarUser.setEnabled(true);
+                
             }
 
         }

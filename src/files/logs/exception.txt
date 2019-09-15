@@ -814,3 +814,11 @@ managers.queries.ConsultasAdmin//llenarAcciones// -1 java.lang.ArrayIndexOutOfBo
 managers.queries.ConsultasAdmin//disableUser// null java.lang.NullPointerException// 2019-09-14T23:19:53.530
 managers.queries.ConsultasAdmin//llenarAcciones// -1 java.lang.ArrayIndexOutOfBoundsException: -1// 2019-09-14T23:20:25.174
 managers.queries.ConsultasAdmin//enableUser// null java.lang.NullPointerException// 2019-09-14T23:20:25.180
+managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-14T23:22:12.323
+managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-14T23:22:12.353
+managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-14T23:22:59.504
+managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-14T23:22:59.534
+managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-14T23:23:53.702
+managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-14T23:23:53.732
+managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-14T23:24:47.117
+managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-14T23:24:47.148
