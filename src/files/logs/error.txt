@@ -49,3 +49,6 @@ managers.ControladorLogin//insert_session_record// Error desconocido.// 2019-08-
 managers.ControladorAdmin//showPermissionsView// Consulta no arroja resultados.// 2019-08-30T23:38:56.387
 managers.ControladorLogin//insert_session_record// Error desconocido.// 2019-08-30T23:39:56.150
 managers.ControladorLogin//insert_session_record// Error desconocido.// 2019-08-30T23:41:33.347
+managers.ControladorAdmin//showPermissionsView// Consulta no arroja resultados.// 2019-09-14T19:39:39.382
+managers.ControladorAdmin//showPermissionsView// Consulta no arroja resultados.// 2019-09-14T19:39:45.933
+managers.ControladorAdmin//showPermissionsView// Consulta no arroja resultados.// 2019-09-14T21:16:47.368

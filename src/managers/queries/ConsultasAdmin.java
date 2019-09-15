@@ -7,6 +7,8 @@ package managers.queries;
 
 import classes.ConexionBD;
 import classes.Logs;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -19,6 +21,7 @@ import java.util.Locale;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.table.DefaultTableModel;
+import views.DisableUser;
 import views.VistaAdmin;
 
 /**
@@ -167,7 +170,9 @@ public class ConsultasAdmin extends ConexionBD {
             Connection conn = Conexion();
 
             int fila = vista.jTableUsers.getSelectedRow();
+
             String codigo = vista.jTableUsers.getValueAt(fila, 0).toString();
+            String activo = vista.jTableUsers.getValueAt(fila, 7).toString();
 
             String sql = "SELECT * FROM uvfood_user WHERE iduser= '" + codigo + "';";
             ps = conn.createStatement();
@@ -180,6 +185,13 @@ public class ConsultasAdmin extends ConexionBD {
                 vista.jTextFieldApellido.setText(rs.getString(4));
                 vista.jTextFieldEmail.setText(rs.getString(6));
                 vista.jTextFieldFecNa.setText(sqlDateToString(rs.getDate(5)));
+                vista.jTextFieldActivo.setText(activo);
+
+                if (vista.jTextFieldActivo.getText().equals("No activo")) {
+                    vista.btnhabilitarUser.setEnabled(true);
+                }else{
+                    vista.btnhabilitarUser.setEnabled(false);
+                }
             }
             String sql2 = "SELECT t2.type_user, t2.id_typeuser FROM uvfood_user_extended AS t1 INNER JOIN uvfood_typeuser "
                     + "AS t2 ON t2.id_typeuser = t1.id_typeuser WHERE t1.iduser ='" + codigo + "';";
@@ -187,7 +199,7 @@ public class ConsultasAdmin extends ConexionBD {
             rs = ps.executeQuery(sql2);
 
             while (rs.next()) {
-                if (rs.getString(1) == "") {
+                if (rs.getString(1).equals("")) {
                     vista.jTextFieldRol.setText("Sin rol asignado");
                 } else {
                     vista.jTextFieldRol.setText(rs.getString(1));
@@ -297,8 +309,6 @@ public class ConsultasAdmin extends ConexionBD {
                         while (rs.next()) {
                             int idUserTemp = rs.getInt(1);
                             int activeUserTemp = rs.getInt(2);
-                            
-                            
 
                             String getIdRolQuery = "SELECT id_typeuser FROM uvfood_typeuser WHERE type_user = '" + rol + "';";
                             ps = conn.createStatement();
@@ -332,4 +342,83 @@ public class ConsultasAdmin extends ConexionBD {
         }
         return result;
     }
+
+    public String disableUser(VistaAdmin vista) {
+        String result = "";
+        String idTem = vista.jTextFieldIdUser.getText();
+        int id = Integer.parseInt(idTem);
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+
+        try {
+            Connection conn = Conexion();
+
+            String sql = "UPDATE uvfood_user SET is_active = 0 WHERE iduser = ?;";
+            ps = conn.prepareStatement(sql);
+            ps.setInt(1, id);
+            int res = ps.executeUpdate();
+
+            if (res > 0) {
+                result = "success";
+                llenarTabla(vista);
+                llenarAcciones(vista);
+
+            } else {
+                result = "error";
+            }
+            rs.close();
+            ps.close();
+        } catch (SQLException ex) {
+            logs.escribirExceptionLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// " + ex.getMessage() + " " + ex.toString());
+            result = "ex";
+        } catch (NullPointerException np) {
+            logs.escribirExceptionLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// " + np.getMessage() + " " + np.toString());
+            result = "np";
+        } catch (ArrayIndexOutOfBoundsException ai) {
+            logs.escribirExceptionLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// " + ai.getMessage() + " " + ai.toString());
+            result = "ai";
+        }
+
+        return result;
+    }
+
+    public String enableUser(VistaAdmin vista) {
+        String result = "";
+        String idTem = vista.jTextFieldIdUser.getText();
+        int id = Integer.parseInt(idTem);
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+
+        try {
+            Connection conn = Conexion();
+
+            String sql = "UPDATE uvfood_user SET is_active = 1 WHERE iduser = ?;";
+            ps = conn.prepareStatement(sql);
+            ps.setInt(1, id);
+            int res = ps.executeUpdate();
+
+            if (res > 0) {
+                result = "success";
+                llenarTabla(vista);
+                llenarAcciones(vista);
+
+            } else {
+                result = "error";
+            }
+            rs.close();
+            ps.close();
+        } catch (SQLException ex) {
+            logs.escribirExceptionLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// " + ex.getMessage() + " " + ex.toString());
+            result = "ex";
+        } catch (NullPointerException np) {
+            logs.escribirExceptionLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// " + np.getMessage() + " " + np.toString());
+            result = "np";
+        } catch (ArrayIndexOutOfBoundsException ai) {
+            logs.escribirExceptionLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// " + ai.getMessage() + " " + ai.toString());
+            result = "ai";
+        }
+
+        return result;
+    }
+
 }

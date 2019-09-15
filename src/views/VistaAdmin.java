@@ -8,6 +8,7 @@
  */
 package views;
 
+import components.UVFoodDialogs;
 import java.awt.Image;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
@@ -45,15 +46,20 @@ public class VistaAdmin extends javax.swing.JFrame implements Runnable {
     public File nombreImg;
 
     public ControladorAdmin manager;
+    private UVFoodDialogs modal;
 
     String hora, minutos, segundos;
     Thread hilo;
 
     public static String sePuede;
 
+    private DisableUser confirmation_message = new DisableUser();
+
+    ;
+
     public VistaAdmin() {
         initComponents();
-        manager = new ControladorAdmin(this);
+        manager = new ControladorAdmin(this, confirmation_message);
 
         popup.setVisible(false);
         jlFecha.setText(fecha());
@@ -99,8 +105,9 @@ public class VistaAdmin extends javax.swing.JFrame implements Runnable {
         jLabelticket.setIcon(icono5);
         this.repaint();
 
-        //jTextFieldIdRol.setVisible(false);
-        //jTextFieldIdUser.setVisible(false);
+        jTextFieldIdRol.setVisible(false);
+        jTextFieldIdUser.setVisible(false);
+        jTextFieldActivo.setVisible(false);
     }
 
     public void hora() {
@@ -250,6 +257,8 @@ public class VistaAdmin extends javax.swing.JFrame implements Runnable {
         jSeparator9 = new javax.swing.JSeparator();
         jTextFieldIdUser = new javax.swing.JTextField();
         jTextFieldIdRol = new javax.swing.JTextField();
+        jTextFieldActivo = new javax.swing.JTextField();
+        btnhabilitarUser = new javax.swing.JButton();
         jLabel48 = new javax.swing.JLabel();
         jPanelModuleUserRegister = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -918,6 +927,11 @@ public class VistaAdmin extends javax.swing.JFrame implements Runnable {
         btnEliminarUser.setContentAreaFilled(false);
         btnEliminarUser.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnEliminarUser.setOpaque(true);
+        btnEliminarUser.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEliminarUserActionPerformed(evt);
+            }
+        });
 
         jComboBoxRoles.setBorder(null);
         jComboBoxRoles.addActionListener(new java.awt.event.ActionListener() {
@@ -975,6 +989,27 @@ public class VistaAdmin extends javax.swing.JFrame implements Runnable {
         jTextFieldRol.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jTextFieldRol.setBorder(null);
 
+        btnhabilitarUser.setBackground(new java.awt.Color(255, 255, 255));
+        btnhabilitarUser.setText("Habilitar Usuario");
+        btnhabilitarUser.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        btnhabilitarUser.setContentAreaFilled(false);
+        btnhabilitarUser.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        btnhabilitarUser.setEnabled(false);
+        btnhabilitarUser.setOpaque(true);
+        btnhabilitarUser.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnhabilitarUserMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnhabilitarUserMouseExited(evt);
+            }
+        });
+        btnhabilitarUser.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnhabilitarUserActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
@@ -995,8 +1030,8 @@ public class VistaAdmin extends javax.swing.JFrame implements Runnable {
                             .addComponent(jTextFieldUser, javax.swing.GroupLayout.DEFAULT_SIZE, 280, Short.MAX_VALUE)
                             .addComponent(jComboBoxRoles, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jLabel19))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
                                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
@@ -1016,17 +1051,20 @@ public class VistaAdmin extends javax.swing.JFrame implements Runnable {
                                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(btnHabilitarEdicion, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(btnLimpiar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(48, 48, 48)
+                                .addGap(47, 47, 47)
                                 .addComponent(btnCrearUser)
-                                .addGap(27, 27, 27)
+                                .addGap(29, 29, 29)
                                 .addComponent(btnModificarUser)
-                                .addGap(28, 28, 28)
+                                .addGap(27, 27, 27)
                                 .addComponent(btnEliminarUser))
                             .addGroup(jPanel4Layout.createSequentialGroup()
-                                .addGap(37, 37, 37)
                                 .addComponent(jTextFieldIdUser, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(54, 54, 54)
-                                .addComponent(jTextFieldIdRol, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jTextFieldIdRol, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jTextFieldActivo, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(btnhabilitarUser, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addComponent(jLabel17, javax.swing.GroupLayout.Alignment.LEADING)
@@ -1087,16 +1125,18 @@ public class VistaAdmin extends javax.swing.JFrame implements Runnable {
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(jPanel4Layout.createSequentialGroup()
-                                .addGap(17, 17, 17)
-                                .addComponent(jTextFieldIdRol, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(40, 40, 40)
+                                .addGap(101, 101, 101)
                                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(btnCrearUser, javax.swing.GroupLayout.DEFAULT_SIZE, 137, Short.MAX_VALUE)
-                                    .addComponent(btnModificarUser, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(btnEliminarUser, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                    .addComponent(btnModificarUser)
+                                    .addComponent(btnEliminarUser)
+                                    .addComponent(btnCrearUser))
+                                .addGap(0, 18, Short.MAX_VALUE))
                             .addGroup(jPanel4Layout.createSequentialGroup()
                                 .addGap(18, 18, 18)
-                                .addComponent(jTextFieldIdUser, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jTextFieldIdUser, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jTextFieldIdRol, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jTextFieldActivo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel4Layout.createSequentialGroup()
                                         .addGap(52, 52, 52)
@@ -1105,11 +1145,14 @@ public class VistaAdmin extends javax.swing.JFrame implements Runnable {
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addComponent(btnHabilitarEdicion, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                         .addContainerGap())
-                    .addGroup(jPanel4Layout.createSequentialGroup()
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel4Layout.createSequentialGroup()
                         .addGap(17, 17, 17)
-                        .addComponent(jLabel21, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextFieldRol, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(btnhabilitarUser, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel4Layout.createSequentialGroup()
+                                .addComponent(jLabel21, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jTextFieldRol, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jSeparator9, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(28, 28, 28)
@@ -1689,15 +1732,27 @@ public class VistaAdmin extends javax.swing.JFrame implements Runnable {
 
     private void jTableUsersMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTableUsersMouseClicked
         if (evt.getButton() == java.awt.event.MouseEvent.BUTTON1) {
-            sePuede = "soloEliminar";
             manager.limpiarCampos();
             manager.requestFillFields();
-            manager.hablitarEdicionTotal();
+            btnCrearUser.setEnabled(false);
+            jComboBoxRoles.setEnabled(false);
             btnHabilitarEdicion.setEnabled(true);
+            if (jTextFieldActivo.getText().equals("Activo")) {
+                sePuede = "soloEliminar";               
+                manager.hablitarEdicionTotal();
+                btnHabilitarEdicion.setEnabled(true);
+                jComboBoxRoles.setEnabled(false);
+            }else if (jTextFieldActivo.getText().equals("No Activo")){
+                sePuede = "soloHabilitar"; 
+                manager.hablitarEdicionTotal();
+                btnHabilitarEdicion.setEnabled(true);
+                btnEliminarUser.setEnabled(false);
+            }
+
         }
         if (evt.getButton() == java.awt.event.MouseEvent.BUTTON3) {
             //manager.createPopupmenu();
-        
+
             manager.showPermissionsView();
         }
     }//GEN-LAST:event_jTableUsersMouseClicked
@@ -1749,6 +1804,8 @@ public class VistaAdmin extends javax.swing.JFrame implements Runnable {
         manager.limpiarCampos();
         manager.hablitarEdicionTotal();
         jComboBoxRoles.setEnabled(true);
+        btnhabilitarUser.setEnabled(false);
+        btnEliminarUser.setEnabled(false);
 
     }//GEN-LAST:event_btnLimpiarActionPerformed
 
@@ -1765,6 +1822,25 @@ public class VistaAdmin extends javax.swing.JFrame implements Runnable {
         String rol = jComboBoxRoles.getSelectedItem().toString();
         jTextFieldRol.setText(rol);
     }//GEN-LAST:event_jComboBoxRolesActionPerformed
+
+    private void btnEliminarUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarUserActionPerformed
+        // TODO add your handling code here:
+        //manager.showConfirmationMessage();
+    }//GEN-LAST:event_btnEliminarUserActionPerformed
+
+    private void btnhabilitarUserMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnhabilitarUserMouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnhabilitarUserMouseEntered
+
+    private void btnhabilitarUserMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnhabilitarUserMouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnhabilitarUserMouseExited
+
+    private void btnhabilitarUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnhabilitarUserActionPerformed
+        // TODO add your handling code here:
+        manager.requestEnableUser();
+        btnEliminarUser.setEnabled(true);
+    }//GEN-LAST:event_btnhabilitarUserActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1824,6 +1900,7 @@ public class VistaAdmin extends javax.swing.JFrame implements Runnable {
     public javax.swing.JButton btnLimpiar;
     private javax.swing.JButton btnMiminize;
     public javax.swing.JButton btnModificarUser;
+    public javax.swing.JButton btnhabilitarUser;
     public javax.swing.JButton jButtonCargar;
     public javax.swing.JComboBox<String> jComboBoxRoles;
     private javax.swing.JLabel jLabel1;
@@ -1920,6 +1997,7 @@ public class VistaAdmin extends javax.swing.JFrame implements Runnable {
     private javax.swing.JSeparator jSeparator7;
     private javax.swing.JSeparator jSeparator9;
     public javax.swing.JTable jTableUsers;
+    public javax.swing.JTextField jTextFieldActivo;
     public javax.swing.JTextField jTextFieldApellido;
     public javax.swing.JTextField jTextFieldBuscarUser;
     public javax.swing.JTextField jTextFieldEmail;
