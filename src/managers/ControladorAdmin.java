@@ -327,7 +327,7 @@ public class ControladorAdmin implements ActionListener {
                 modal.error_message("Error", "Algo anda mal", "El usuario ya esta registrado", "Por Favor intenta con otro", "O reportanos que ocurre");
                 break;
             case "success.dato.insertado":
-                modal.error_message("Exito", "", "El usuario se registro con exito", "", "");
+                modal.success_message("Exito", "", "El usuario se registro con exito", "", "");
                 break;
 
         }

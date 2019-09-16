@@ -822,3 +822,105 @@ managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPo
 managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-14T23:23:53.732
 managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-14T23:24:47.117
 managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-14T23:24:47.148
+managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-15T18:50:10.047
+managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-15T18:50:10.117
+managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-15T18:51:31.501
+managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-15T18:51:31.541
+managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-15T18:52:30.296
+managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-15T18:52:30.338
+managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-15T18:53:15.845
+managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-15T18:53:15.881
+managers.queries.ConsultasAdmin//crearUsuario// ERROR: llave duplicada viola restricción de unicidad «uvfood_user_password_user_key»
+  Detail: Ya existe la llave (password_user)=(123). org.postgresql.util.PSQLException: ERROR: llave duplicada viola restricción de unicidad «uvfood_user_password_user_key»
+  Detail: Ya existe la llave (password_user)=(123).// 2019-09-15T18:54:06.016
+managers.queries.ConsultasAdmin//crearUsuario// ERROR: llave duplicada viola restricción de unicidad «uvfood_user_password_user_key»
+  Detail: Ya existe la llave (password_user)=(123). org.postgresql.util.PSQLException: ERROR: llave duplicada viola restricción de unicidad «uvfood_user_password_user_key»
+  Detail: Ya existe la llave (password_user)=(123).// 2019-09-15T18:54:18.610
+managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-15T18:56:36.208
+managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-15T18:56:36.246
+managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-15T19:01:53.718
+managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-15T19:01:53.753
+managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-15T19:03:06.049
+managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-15T19:03:06.101
+managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-15T19:18:20.677
+managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-15T19:18:20.727
+managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-15T19:18:49.461
+managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-15T19:18:49.510
+managers.queries.ConsultasAdmin//crearUsuario// ERROR: llave duplicada viola restricción de unicidad «uvfood_user_password_user_key»
+  Detail: Ya existe la llave (password_user)=(123). org.postgresql.util.PSQLException: ERROR: llave duplicada viola restricción de unicidad «uvfood_user_password_user_key»
+  Detail: Ya existe la llave (password_user)=(123).// 2019-09-15T19:19:24.243
+managers.queries.ConsultasAdmin//crearUsuario// ERROR: llave duplicada viola restricción de unicidad «uvfood_user_password_user_key»
+  Detail: Ya existe la llave (password_user)=(123). org.postgresql.util.PSQLException: ERROR: llave duplicada viola restricción de unicidad «uvfood_user_password_user_key»
+  Detail: Ya existe la llave (password_user)=(123).// 2019-09-15T19:19:32.905
+managers.queries.ConsultasAdmin//crearUsuario// ERROR: llave duplicada viola restricción de unicidad «uvfood_user_password_user_key»
+  Detail: Ya existe la llave (password_user)=(123). org.postgresql.util.PSQLException: ERROR: llave duplicada viola restricción de unicidad «uvfood_user_password_user_key»
+  Detail: Ya existe la llave (password_user)=(123).// 2019-09-15T19:19:33.979
+managers.queries.ConsultasAdmin//crearUsuario// ERROR: llave duplicada viola restricción de unicidad «uvfood_user_password_user_key»
+  Detail: Ya existe la llave (password_user)=(123). org.postgresql.util.PSQLException: ERROR: llave duplicada viola restricción de unicidad «uvfood_user_password_user_key»
+  Detail: Ya existe la llave (password_user)=(123).// 2019-09-15T19:19:34.804
+managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-15T19:24:45.330
+managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-15T19:24:45.392
+managers.queries.ConsultasAdmin//crearUsuario// ERROR: llave duplicada viola restricción de unicidad «uvfood_user_password_user_key»
+  Detail: Ya existe la llave (password_user)=(123). org.postgresql.util.PSQLException: ERROR: llave duplicada viola restricción de unicidad «uvfood_user_password_user_key»
+  Detail: Ya existe la llave (password_user)=(123).// 2019-09-15T19:25:29.106
+managers.queries.ConsultasAdmin//crearUsuario// ERROR: llave duplicada viola restricción de unicidad «uvfood_user_password_user_key»
+  Detail: Ya existe la llave (password_user)=(123). org.postgresql.util.PSQLException: ERROR: llave duplicada viola restricción de unicidad «uvfood_user_password_user_key»
+  Detail: Ya existe la llave (password_user)=(123).// 2019-09-15T19:25:33.471
+managers.queries.ConsultasAdmin//crearUsuario// ERROR: llave duplicada viola restricción de unicidad «uvfood_user_password_user_key»
+  Detail: Ya existe la llave (password_user)=(123). org.postgresql.util.PSQLException: ERROR: llave duplicada viola restricción de unicidad «uvfood_user_password_user_key»
+  Detail: Ya existe la llave (password_user)=(123).// 2019-09-15T19:25:34.163
+managers.queries.ConsultasAdmin//crearUsuario// ERROR: llave duplicada viola restricción de unicidad «uvfood_user_password_user_key»
+  Detail: Ya existe la llave (password_user)=(123). org.postgresql.util.PSQLException: ERROR: llave duplicada viola restricción de unicidad «uvfood_user_password_user_key»
+  Detail: Ya existe la llave (password_user)=(123).// 2019-09-15T19:25:34.334
+managers.queries.ConsultasAdmin//crearUsuario// ERROR: llave duplicada viola restricción de unicidad «uvfood_user_password_user_key»
+  Detail: Ya existe la llave (password_user)=(123). org.postgresql.util.PSQLException: ERROR: llave duplicada viola restricción de unicidad «uvfood_user_password_user_key»
+  Detail: Ya existe la llave (password_user)=(123).// 2019-09-15T19:25:34.533
+managers.queries.ConsultasAdmin//crearUsuario// ERROR: llave duplicada viola restricción de unicidad «uvfood_user_password_user_key»
+  Detail: Ya existe la llave (password_user)=(123). org.postgresql.util.PSQLException: ERROR: llave duplicada viola restricción de unicidad «uvfood_user_password_user_key»
+  Detail: Ya existe la llave (password_user)=(123).// 2019-09-15T19:25:34.773
+managers.queries.ConsultasAdmin//crearUsuario// ERROR: llave duplicada viola restricción de unicidad «uvfood_user_password_user_key»
+  Detail: Ya existe la llave (password_user)=(123). org.postgresql.util.PSQLException: ERROR: llave duplicada viola restricción de unicidad «uvfood_user_password_user_key»
+  Detail: Ya existe la llave (password_user)=(123).// 2019-09-15T19:25:34.942
+managers.queries.ConsultasAdmin//crearUsuario// ERROR: llave duplicada viola restricción de unicidad «uvfood_user_password_user_key»
+  Detail: Ya existe la llave (password_user)=(123). org.postgresql.util.PSQLException: ERROR: llave duplicada viola restricción de unicidad «uvfood_user_password_user_key»
+  Detail: Ya existe la llave (password_user)=(123).// 2019-09-15T19:25:35.136
+managers.queries.ConsultasAdmin//crearUsuario// ERROR: llave duplicada viola restricción de unicidad «uvfood_user_password_user_key»
+  Detail: Ya existe la llave (password_user)=(123). org.postgresql.util.PSQLException: ERROR: llave duplicada viola restricción de unicidad «uvfood_user_password_user_key»
+  Detail: Ya existe la llave (password_user)=(123).// 2019-09-15T19:25:35.334
+managers.queries.ConsultasAdmin//crearUsuario// ERROR: llave duplicada viola restricción de unicidad «uvfood_user_password_user_key»
+  Detail: Ya existe la llave (password_user)=(123). org.postgresql.util.PSQLException: ERROR: llave duplicada viola restricción de unicidad «uvfood_user_password_user_key»
+  Detail: Ya existe la llave (password_user)=(123).// 2019-09-15T19:25:35.522
+managers.queries.ConsultasAdmin//crearUsuario// ERROR: llave duplicada viola restricción de unicidad «uvfood_user_password_user_key»
+  Detail: Ya existe la llave (password_user)=(123). org.postgresql.util.PSQLException: ERROR: llave duplicada viola restricción de unicidad «uvfood_user_password_user_key»
+  Detail: Ya existe la llave (password_user)=(123).// 2019-09-15T19:25:36.241
+managers.queries.ConsultasAdmin//crearUsuario// ERROR: llave duplicada viola restricción de unicidad «uvfood_user_password_user_key»
+  Detail: Ya existe la llave (password_user)=(123). org.postgresql.util.PSQLException: ERROR: llave duplicada viola restricción de unicidad «uvfood_user_password_user_key»
+  Detail: Ya existe la llave (password_user)=(123).// 2019-09-15T19:25:36.430
+managers.queries.ConsultasAdmin//crearUsuario// ERROR: llave duplicada viola restricción de unicidad «uvfood_user_password_user_key»
+  Detail: Ya existe la llave (password_user)=(123). org.postgresql.util.PSQLException: ERROR: llave duplicada viola restricción de unicidad «uvfood_user_password_user_key»
+  Detail: Ya existe la llave (password_user)=(123).// 2019-09-15T19:25:36.646
+managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-15T19:27:56.283
+managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-15T19:27:56.353
+managers.queries.ConsultasAdmin//crearUsuario// ERROR: la sintaxis de entrada no es válida para tipo date: «»
+  Position: 110 org.postgresql.util.PSQLException: ERROR: la sintaxis de entrada no es válida para tipo date: «»
+  Position: 110// 2019-09-15T19:28:03.740
+managers.queries.ConsultasAdmin//crearUsuario// ERROR: la sintaxis de entrada no es válida para tipo date: «»
+  Position: 110 org.postgresql.util.PSQLException: ERROR: la sintaxis de entrada no es válida para tipo date: «»
+  Position: 110// 2019-09-15T19:28:05.077
+managers.queries.ConsultasAdmin//crearUsuario// ERROR: la sintaxis de entrada no es válida para tipo date: «»
+  Position: 110 org.postgresql.util.PSQLException: ERROR: la sintaxis de entrada no es válida para tipo date: «»
+  Position: 110// 2019-09-15T19:28:05.919
+managers.queries.ConsultasAdmin//crearUsuario// ERROR: la sintaxis de entrada no es válida para tipo date: «»
+  Position: 110 org.postgresql.util.PSQLException: ERROR: la sintaxis de entrada no es válida para tipo date: «»
+  Position: 110// 2019-09-15T19:28:06.617
+managers.queries.ConsultasAdmin//crearUsuario// ERROR: la sintaxis de entrada no es válida para tipo date: «»
+  Position: 110 org.postgresql.util.PSQLException: ERROR: la sintaxis de entrada no es válida para tipo date: «»
+  Position: 110// 2019-09-15T19:28:07.382
+managers.queries.ConsultasAdmin//crearUsuario// ERROR: la sintaxis de entrada no es válida para tipo date: «»
+  Position: 110 org.postgresql.util.PSQLException: ERROR: la sintaxis de entrada no es válida para tipo date: «»
+  Position: 110// 2019-09-15T19:28:08.016
+managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-15T19:36:27.068
+managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-15T19:36:27.116
+managers.queries.ConsultasAdmin//crearUsuario// ERROR: llave duplicada viola restricción de unicidad «uvfood_user_password_user_key»
+  Detail: Ya existe la llave (password_user)=(123). org.postgresql.util.PSQLException: ERROR: llave duplicada viola restricción de unicidad «uvfood_user_password_user_key»
+  Detail: Ya existe la llave (password_user)=(123).// 2019-09-15T19:37:02.809

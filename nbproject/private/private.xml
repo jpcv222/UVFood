@@ -3,20 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/jpcv2/Documents/NetBeansProjects/UVFood/src/classes/ConexionBD.java</file>
-            <file>file:/C:/Users/jpcv2/Documents/NetBeansProjects/UVFood/src/views/GestionPermisos.java</file>
-            <file>file:/C:/Users/jpcv2/Documents/NetBeansProjects/UVFood/src/managers/ControladorGestionPermisos.java</file>
-            <file>file:/C:/Users/jpcv2/Documents/NetBeansProjects/UVFood/src/managers/queries/KeyValidate.java</file>
-            <file>file:/C:/Users/jpcv2/Documents/NetBeansProjects/UVFood/src/managers/queries/ConsultasLogin.java</file>
-            <file>file:/C:/Users/jpcv2/Documents/NetBeansProjects/UVFood/src/views/VistaAdmin.java</file>
-            <file>file:/C:/Users/jpcv2/Documents/NetBeansProjects/UVFood/src/managers/ControladorAdmin.java</file>
-            <file>file:/C:/Users/jpcv2/Documents/NetBeansProjects/UVFood/src/managers/queries/ConsultasAdmin.java</file>
-            <file>file:/C:/Users/jpcv2/Documents/NetBeansProjects/UVFood/src/managers/queries/DBCore.java</file>
-            <file>file:/C:/Users/jpcv2/Documents/NetBeansProjects/UVFood/src/managers/ControladorLogin.java</file>
-            <file>file:/C:/Users/jpcv2/Documents/NetBeansProjects/UVFood/src/views/ErrorMessage.java</file>
-            <file>file:/C:/Users/jpcv2/Documents/NetBeansProjects/UVFood/src/views/Index.java</file>
-            <file>file:/C:/Users/jpcv2/Documents/NetBeansProjects/UVFood/src/components/UVFoodDialogs.java</file>
-            <file>file:/C:/Users/jpcv2/Documents/NetBeansProjects/UVFood/src/views/SobreNosotros.java</file>
+            <file>file:/C:/Users/jeffr/Documents/UVFood/src/managers/ControladorAdmin.java</file>
+            <file>file:/C:/Users/jeffr/Documents/UVFood/src/components/UVFoodDialogs.java</file>
+            <file>file:/C:/Users/jeffr/Documents/UVFood/src/managers/queries/ConsultasAdmin.java</file>
+            <file>file:/C:/Users/jeffr/Documents/UVFood/src/views/VistaAdmin.java</file>
         </group>
     </open-files>
 </project-private>
