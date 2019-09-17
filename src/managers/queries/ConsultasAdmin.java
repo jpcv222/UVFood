@@ -34,6 +34,9 @@ public class ConsultasAdmin extends ConexionBD {
     private Logs logs = new Logs(Thread.currentThread().getStackTrace()[1].getClassName());
     private DBCore db_core = new DBCore();
 
+    String usuarioTem = "";
+    String emailTem = "";
+
     public boolean llenarTabla(VistaAdmin vista) {
         DefaultTableModel modelo = new DefaultTableModel() {
             @Override
@@ -192,13 +195,15 @@ public class ConsultasAdmin extends ConexionBD {
             rs = ps.executeQuery(sql);
 
             while (rs.next()) {
+                usuarioTem = rs.getString(2);
+                emailTem   = rs.getString(6);
                 vista.jTextFieldIdUser.setText("" + rs.getInt(1));
                 vista.jTextFieldUser.setText(rs.getString(2));
                 vista.jTextFieldName.setText(rs.getString(3));
                 vista.jTextFieldApellido.setText(rs.getString(4));
                 vista.jTextFieldEmail.setText(rs.getString(6));
                 vista.jTextFieldFecNa.setText(sqlDateToString(rs.getDate(5)));
-                vista.jTextFieldNumActi.setText(""+rs.getInt("is_active"));
+                vista.jTextFieldNumActi.setText("" + rs.getInt("is_active"));
                 vista.jTextFieldActivo.setText(activo);
 
                 if (vista.jTextFieldActivo.getText().equals("No activo")) {
@@ -364,6 +369,8 @@ public class ConsultasAdmin extends ConexionBD {
 
             PreparedStatement ps = null;
             ResultSet rs = null;
+            PreparedStatement psTem = null;
+            ResultSet rsTemp = null;
 
             String usuario = vista.jTextFieldUser.getText();
             String nombre = vista.jTextFieldName.getText();
@@ -377,59 +384,85 @@ public class ConsultasAdmin extends ConexionBD {
 
             Connection conn = Conexion();
 
-            String verUserQuery = "SELECT username FROM uvfood_user WHERE username = '" + usuario + "';";
-            String verEmailQuery = "SELECT email FROM uvfood_user WHERE email = '" + email + "';";
+            /*String userTemp = "SELECT * FROM uvfood_user WHERE iduser = '" + idUserActual + "';";
+            psTem = conn.prepareStatement(userTemp);
+            rsTemp = psTem.executeQuery();
+            while (rsTemp.next()) {
+                
+                usuarioTem = rsTemp.getString("username");
+                emailTem = rsTemp.getString("email");
+                
+            }*/
+            System.out.println("usuario actual " + usuarioTem);
+            String verUserQuery = "SELECT username FROM uvfood_user WHERE username <> '" + usuarioTem + "';";
+            String verEmailQuery = "SELECT email FROM uvfood_user WHERE email <> '" + emailTem + "';";
 
-            String updateQuery = "UPDATE uvfood_user SET username = '" + usuario + "', SET firstname = '" + nombre + "', SET surname = '" + apellido + "', SET birth_date = '" + fecha + "', SET email = '" + email + "', SET password_user ='" + clave + "';";
-            String updateQuery2 = "UPDATE uvfood_user SET username = '" + usuario + "', SET firstname = '" + nombre + "', SET surname = '" + apellido + "', SET birth_date = '" + fecha + "', SET email = '" + email + "';";
+            String updateQuery = "UPDATE uvfood_user SET username = '" + usuario + "', firstname = '" + nombre + "', surname = '" + apellido + "', birth_date = '" + fecha + "', email = '" + email + "', password_user ='" + clave + "' WHERE iduser = '" + idUser + "';";
+            String updateQuery2 = "UPDATE uvfood_user SET username = '" + usuario + "', firstname = '" + nombre + "', surname = '" + apellido + "', birth_date = '" + fecha + "', email = '" + email + "' WHERE iduser = '" + idUser + "';";
 
             //String getIdQuery = "SELECT iduser, is_active FROM uvfood_user WHERE username = '" + usuario + "';";
             ps = conn.prepareStatement(verUserQuery);
             rs = ps.executeQuery();
+            
+            /*while(rs.next()){
+                if(rs.getString("username").equals(usuarioTem)){
+                    System.out.println("no esta");
+                }else{
+                    System.out.println("no esta");
+                }
+            }*/
 
             //verificamos primero si el usuario existe
-            if (rs.next()) {
-                result = "error.usuario.existe";
-            } else {
-                ps = conn.prepareStatement(verEmailQuery);
-                rs = ps.executeQuery();
-                if (rs.next()) {
-                    result = "error.email.existe";
+            while (rs.next()) {
+                if (rs.getString("username").equals(usuario)) {
+                    System.out.println("el usuario existe");
+                    result = "error.usuario.existe";
                 } else {
-                    int res = 0;
-                    if (clave.equals("")) {
-                        ps = conn.prepareStatement(updateQuery2);
-                        res = ps.executeUpdate();
+                    ps = conn.prepareStatement(verEmailQuery);
+                    rs = ps.executeQuery();
+                    while (rs.next()) {
+                        if (rs.getString("email").equals(email)) {
+                            System.out.println("el email existe");
+                            result = "error.email.existe";
+                        } else {
+                            int res = 0;
+                            if (clave.equals("")) {
+                                ps = conn.prepareStatement(updateQuery2);
+                                res = ps.executeUpdate();
 
-                    } else {
-                        ps = conn.prepareStatement(updateQuery);
-                        res = ps.executeUpdate();
+                            } else {
+                                ps = conn.prepareStatement(updateQuery);
+                                res = ps.executeUpdate();
 
-                    }
-
-                    if (res > 0) {
-                        result = "success.dato.actualizado";
-
-                            String getIdRolQuery = "SELECT id_typeuser FROM uvfood_typeuser WHERE type_user = '" + rol + "';";
-                            ps = conn.prepareStatement(getIdRolQuery);
-                            rs = ps.executeQuery();
-                            if (rs.next()) {
-                                int idRolTemp = rs.getInt(1);
-                                String updateRolUserQuery = "UPDATE uvfood_user_extended SET id_typeuser = '" + idRolTemp + "' WHERE iduser = '" + idUser + "';";
-                                ps = conn.prepareStatement(updateRolUserQuery);
-                                int res2 = ps.executeUpdate();
-                                if (res2 > 0) {
-                                    llenarTabla(vista);
-                                    result = "success.dato.insertado";
-                                } else {
-                                    result = "error.dato.no.insertado";
-                                }
                             }
-                    } else {
-                        result = "error.dato.no.insertado";
+
+                            if (res > 0) {
+                                result = "success.dato.actualizado";
+
+                                String getIdRolQuery = "SELECT id_typeuser FROM uvfood_typeuser WHERE type_user = '" + rol + "';";
+                                ps = conn.prepareStatement(getIdRolQuery);
+                                rs = ps.executeQuery();
+                                if (rs.next()) {
+                                    int idRolTemp = rs.getInt(1);
+                                    String updateRolUserQuery = "UPDATE uvfood_user_extended SET id_typeuser = '" + idRolTemp + "' WHERE iduser = '" + idUser + "';";
+                                    ps = conn.prepareStatement(updateRolUserQuery);
+                                    int res2 = ps.executeUpdate();
+                                    if (res2 > 0) {
+                                        llenarTabla(vista);
+                                        result = "success.dato.actualizado";
+                                    } else {
+                                        result = "error.dato.no.actualizado";
+                                    }
+                                }
+                            } else {
+                                result = "error.dato.no.actualizado";
+                            }
+                        }
                     }
                 }
+
             }
+
             rs.close();
             ps.close();
 

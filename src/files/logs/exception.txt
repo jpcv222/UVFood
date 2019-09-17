@@ -1116,3 +1116,125 @@ managers.queries.ConsultasAdmin//disableUser// null java.lang.NullPointerExcepti
 managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-17T13:59:55.093
 managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-17T13:59:55.124
 managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-17T13:59:55.162
+managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-17T14:41:05.747
+managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-17T14:41:05.773
+managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-17T14:41:05.804
+managers.queries.ConsultasAdmin//updateUser// ERROR: error de sintaxis en o cerca de «firstname»
+  Position: 55 org.postgresql.util.PSQLException: ERROR: error de sintaxis en o cerca de «firstname»
+  Position: 55// 2019-09-17T14:42:24.684
+managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-17T14:44:21.247
+managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-17T14:44:21.273
+managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-17T14:44:21.303
+managers.queries.ConsultasAdmin//updateUser// ERROR: error de sintaxis en o cerca de «firstname»
+  Position: 54 org.postgresql.util.PSQLException: ERROR: error de sintaxis en o cerca de «firstname»
+  Position: 54// 2019-09-17T14:45:53.917
+managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-17T14:49:13.749
+managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-17T14:49:13.778
+managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-17T14:49:13.811
+managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-17T14:54:01.425
+managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-17T14:54:01.450
+managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-17T14:54:01.480
+managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-17T14:54:38.297
+managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-17T14:54:38.325
+managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-17T14:54:38.357
+managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-17T15:00:23.296
+managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-17T15:00:23.323
+managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-17T15:00:23.356
+managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-17T15:01:02.668
+managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-17T15:01:02.698
+managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-17T15:01:02.734
+managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-17T15:54:28.822
+managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-17T15:54:28.852
+managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-17T15:54:28.887
+managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-17T16:09:55.266
+managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-17T16:09:55.297
+managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-17T16:09:55.332
+managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-17T16:41:17.227
+managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-17T16:41:17.259
+managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-17T16:41:17.290
+managers.queries.ConsultasAdmin//updateUser// ERROR: llave duplicada viola restricción de unicidad «uvfood_user_email_key»
+  Detail: Ya existe la llave (email)=(pruebaSeActualizo@prueba.com). org.postgresql.util.PSQLException: ERROR: llave duplicada viola restricción de unicidad «uvfood_user_email_key»
+  Detail: Ya existe la llave (email)=(pruebaSeActualizo@prueba.com).// 2019-09-17T16:43:00.283
+managers.queries.ConsultasAdmin//updateUser// ERROR: llave duplicada viola restricción de unicidad «uvfood_user_email_key»
+  Detail: Ya existe la llave (email)=(pruebaSeActualizo@prueba.com). org.postgresql.util.PSQLException: ERROR: llave duplicada viola restricción de unicidad «uvfood_user_email_key»
+  Detail: Ya existe la llave (email)=(pruebaSeActualizo@prueba.com).// 2019-09-17T16:43:07.926
+managers.queries.ConsultasAdmin//updateUser// ERROR: llave duplicada viola restricción de unicidad «uvfood_user_email_key»
+  Detail: Ya existe la llave (email)=(pruebaSeActualizo@prueba.com). org.postgresql.util.PSQLException: ERROR: llave duplicada viola restricción de unicidad «uvfood_user_email_key»
+  Detail: Ya existe la llave (email)=(pruebaSeActualizo@prueba.com).// 2019-09-17T16:43:10.175
+managers.queries.ConsultasAdmin//updateUser// ERROR: llave duplicada viola restricción de unicidad «uvfood_user_email_key»
+  Detail: Ya existe la llave (email)=(pruebaSeActualizo@prueba.com). org.postgresql.util.PSQLException: ERROR: llave duplicada viola restricción de unicidad «uvfood_user_email_key»
+  Detail: Ya existe la llave (email)=(pruebaSeActualizo@prueba.com).// 2019-09-17T16:43:43.137
+managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-17T16:44:52.706
+managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-17T16:44:52.737
+managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-17T16:44:52.768
+managers.queries.ConsultasAdmin//llenarAcciones// -1 java.lang.ArrayIndexOutOfBoundsException: -1// 2019-09-17T16:45:04.497
+managers.queries.ConsultasAdmin//enableUser// null java.lang.NullPointerException// 2019-09-17T16:45:04.502
+managers.queries.ConsultasAdmin//updateUser// ERROR: llave duplicada viola restricción de unicidad «uvfood_user_username_key»
+  Detail: Ya existe la llave (username)=(kcopper             ). org.postgresql.util.PSQLException: ERROR: llave duplicada viola restricción de unicidad «uvfood_user_username_key»
+  Detail: Ya existe la llave (username)=(kcopper             ).// 2019-09-17T16:46:03.144
+managers.queries.ConsultasAdmin//updateUser// ERROR: llave duplicada viola restricción de unicidad «uvfood_user_username_key»
+  Detail: Ya existe la llave (username)=(kcopper             ). org.postgresql.util.PSQLException: ERROR: llave duplicada viola restricción de unicidad «uvfood_user_username_key»
+  Detail: Ya existe la llave (username)=(kcopper             ).// 2019-09-17T16:46:07.528
+managers.queries.ConsultasAdmin//updateUser// ERROR: llave duplicada viola restricción de unicidad «uvfood_user_username_key»
+  Detail: Ya existe la llave (username)=(kcopper             ). org.postgresql.util.PSQLException: ERROR: llave duplicada viola restricción de unicidad «uvfood_user_username_key»
+  Detail: Ya existe la llave (username)=(kcopper             ).// 2019-09-17T16:46:08.451
+managers.queries.ConsultasAdmin//updateUser// ERROR: llave duplicada viola restricción de unicidad «uvfood_user_username_key»
+  Detail: Ya existe la llave (username)=(kcopper             ). org.postgresql.util.PSQLException: ERROR: llave duplicada viola restricción de unicidad «uvfood_user_username_key»
+  Detail: Ya existe la llave (username)=(kcopper             ).// 2019-09-17T16:46:09.814
+managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-17T16:46:25.570
+managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-17T16:46:25.601
+managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-17T16:46:25.632
+managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-17T16:48:11.293
+managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-17T16:48:11.309
+managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-17T16:48:11.340
+managers.queries.ConsultasAdmin//updateUser// ERROR: llave duplicada viola restricción de unicidad «uvfood_user_username_key»
+  Detail: Ya existe la llave (username)=(kcopper             ). org.postgresql.util.PSQLException: ERROR: llave duplicada viola restricción de unicidad «uvfood_user_username_key»
+  Detail: Ya existe la llave (username)=(kcopper             ).// 2019-09-17T16:48:37.411
+managers.queries.ConsultasAdmin//updateUser// ERROR: llave duplicada viola restricción de unicidad «uvfood_user_username_key»
+  Detail: Ya existe la llave (username)=(kcopper             ). org.postgresql.util.PSQLException: ERROR: llave duplicada viola restricción de unicidad «uvfood_user_username_key»
+  Detail: Ya existe la llave (username)=(kcopper             ).// 2019-09-17T16:48:39.621
+managers.queries.ConsultasAdmin//updateUser// ERROR: llave duplicada viola restricción de unicidad «uvfood_user_username_key»
+  Detail: Ya existe la llave (username)=(kcopper             ). org.postgresql.util.PSQLException: ERROR: llave duplicada viola restricción de unicidad «uvfood_user_username_key»
+  Detail: Ya existe la llave (username)=(kcopper             ).// 2019-09-17T16:48:40.601
+managers.queries.ConsultasAdmin//updateUser// ERROR: llave duplicada viola restricción de unicidad «uvfood_user_username_key»
+  Detail: Ya existe la llave (username)=(kcopper             ). org.postgresql.util.PSQLException: ERROR: llave duplicada viola restricción de unicidad «uvfood_user_username_key»
+  Detail: Ya existe la llave (username)=(kcopper             ).// 2019-09-17T16:48:41.397
+managers.queries.ConsultasAdmin//updateUser// ERROR: llave duplicada viola restricción de unicidad «uvfood_user_username_key»
+  Detail: Ya existe la llave (username)=(kcopper             ). org.postgresql.util.PSQLException: ERROR: llave duplicada viola restricción de unicidad «uvfood_user_username_key»
+  Detail: Ya existe la llave (username)=(kcopper             ).// 2019-09-17T16:48:42.156
+managers.queries.ConsultasAdmin//updateUser// ERROR: llave duplicada viola restricción de unicidad «uvfood_user_username_key»
+  Detail: Ya existe la llave (username)=(kcopper             ). org.postgresql.util.PSQLException: ERROR: llave duplicada viola restricción de unicidad «uvfood_user_username_key»
+  Detail: Ya existe la llave (username)=(kcopper             ).// 2019-09-17T16:49:10.616
+managers.queries.ConsultasAdmin//updateUser// ERROR: llave duplicada viola restricción de unicidad «uvfood_user_username_key»
+  Detail: Ya existe la llave (username)=(kcopper             ). org.postgresql.util.PSQLException: ERROR: llave duplicada viola restricción de unicidad «uvfood_user_username_key»
+  Detail: Ya existe la llave (username)=(kcopper             ).// 2019-09-17T16:49:11.417
+managers.queries.ConsultasAdmin//updateUser// ERROR: llave duplicada viola restricción de unicidad «uvfood_user_username_key»
+  Detail: Ya existe la llave (username)=(kcopper             ). org.postgresql.util.PSQLException: ERROR: llave duplicada viola restricción de unicidad «uvfood_user_username_key»
+  Detail: Ya existe la llave (username)=(kcopper             ).// 2019-09-17T16:49:12.468
+managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-17T17:05:38.675
+managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-17T17:05:38.708
+managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-17T17:05:38.742
+managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-17T17:07:31.422
+managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-17T17:07:31.467
+managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-17T17:07:31.501
+managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-17T17:12:36.190
+managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-17T17:12:36.226
+managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-17T17:12:36.263
+managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-17T17:14:57.990
+managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-17T17:14:58.034
+managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-17T17:14:58.074
+managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-17T17:17:30.313
+managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-17T17:17:30.358
+managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-17T17:17:30.395
+managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-17T17:18:48.440
+managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-17T17:18:48.476
+managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-17T17:18:48.510
+managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-17T17:27:15.982
+managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-17T17:27:16.035
+managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-17T17:27:16.069
+managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-17T17:29:48.640
+managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-17T17:29:48.690
+managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-17T17:29:48.724
+managers.queries.ConsultasAdmin//updateUser// ERROR: llave duplicada viola restricción de unicidad «uvfood_user_username_key»
+  Detail: Ya existe la llave (username)=(PRUEBAA             ). org.postgresql.util.PSQLException: ERROR: llave duplicada viola restricción de unicidad «uvfood_user_username_key»
+  Detail: Ya existe la llave (username)=(PRUEBAA             ).// 2019-09-17T17:30:25.916

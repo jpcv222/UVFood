@@ -329,19 +329,18 @@ public class ControladorAdmin implements ActionListener {
         switch (result) {
             case "error.usuario.existe":
                 modal.error_message("Error", "Algo anda mal", "El usuario ya esta registrado", "Por Favor intenta con otro", "");
-                logs.escribirExceptionLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "/error.usuario ya existe/ ");
+                logs.escribirErrorLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "/error.usuario ya existe/ ");
                 break;
             case "error.email.existe":
                 modal.error_message("Error", "Algo anda mal", "El email ya esta registrado", "Por Favor intenta con otro", "");
-                logs.escribirExceptionLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "/error.email ya existe/ ");
+                logs.escribirErrorLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "/error.email ya existe/ ");
                 break;
             case "error.dato.no.insertado":
                 modal.error_message("Error", "Algo anda mal", "Ocurrio un error al registrar", "Por Favor verifica los datos", "O reportanos que ocurre");
-                logs.escribirExceptionLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "/error./ ");
+                logs.escribirErrorLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "/error./ ");
                 break;
             case "success.dato.insertado":
                 modal.success_message("Exito", "", "El usuario se registro con exito", "", "");
-                logs.escribirExceptionLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "/error./ ");
                 limpiarCampos();
                 break;
             default:
@@ -370,6 +369,62 @@ public class ControladorAdmin implements ActionListener {
                 break;
             case "success":
                 requestInsertUser();
+                break;
+            default:
+                logs.escribirErrorLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// Respuesta a petición inválida.");
+                break;
+
+        }
+
+    }
+
+    public void requestUpdateUser() {
+
+        String result = consultasAdmin.updateUser(interfazPrincipalAdmin);
+
+        switch (result) {
+            case "error.usuario.existe":
+                modal.error_message("Error", "Algo anda mal", "El usuario ya esta registrado", "Por Favor intenta con otro", "");
+                logs.escribirErrorLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "/error.usuario ya existe/ ");
+                break;
+            case "error.email.existe":
+                modal.error_message("Error", "Algo anda mal", "El email ya esta registrado", "Por Favor intenta con otro", "");
+                logs.escribirErrorLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "/error.email ya existe/ ");
+                break;
+            case "error.dato.no.actualizado":
+                modal.error_message("Error", "Algo anda mal", "Ocurrio un error al actualizar", "Por Favor verifica los datos", "O reportanos que ocurre");
+                logs.escribirErrorLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "/error./ ");
+                break;
+            case "success.dato.actualizado":
+                modal.success_message("Exito", "", "El usuario se actualizo con exito", "", "");
+                limpiarCampos();
+                break;
+            default:
+                logs.escribirErrorLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// Respuesta a petición inválida.");
+                break;
+
+        }
+
+    }
+
+    public void requestValidationsUpdateUser() {
+        String validation = validaciones.validarUpdate(interfazPrincipalAdmin);
+
+        switch (validation) {
+            case "error.emptyField":
+                modal.error_message("Error.", "Todos los campos son obligatorios.", "", null, null);
+                logs.escribirErrorLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "//Error de campos obligatorios");
+                break;
+            case "error.email":
+                modal.error_message("Error.", "El email ingresado no es valido", "Example@Example.com", null, null);
+                logs.escribirErrorLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "//Error de email incorrecto");
+                break;
+            case "error.date":
+                modal.error_message("Error.", "la fecha ingresada no es valida", "yyyy-MM-dd", null, null);
+                logs.escribirErrorLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "//fecha ingresada no es valida");
+                break;
+            case "success":
+                requestUpdateUser();
                 break;
             default:
                 logs.escribirErrorLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// Respuesta a petición inválida.");
@@ -409,7 +464,7 @@ public class ControladorAdmin implements ActionListener {
                 interfazPrincipalAdmin.jTextFieldRol.removeAll();
                 interfazPrincipalAdmin.jTextFieldRol.repaint();
                 interfazPrincipalAdmin.jTextFieldRol.revalidate();
-                
+
                 interfazPrincipalAdmin.btnHabilitarEdicion.setEnabled(false);
                 interfazPrincipalAdmin.jTextFieldRol.setEditable(false);
 
@@ -497,10 +552,7 @@ public class ControladorAdmin implements ActionListener {
         }
 
     }
-    
-    public void requestUpdate(){
-        consultasAdmin.updateUser(interfazPrincipalAdmin);
-    }
+
 
     public void showConfirmationMessage() {
         modal.confirmation_message("Confirmacion", "¿Desea deshabilitar este usuario?");

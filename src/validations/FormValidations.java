@@ -111,4 +111,31 @@ public class FormValidations {
         }
         return result;
     }
+    public String validarUpdate(VistaAdmin vista) {
+        String result = "";
+
+        String usuario = vista.jTextFieldUser.getText();
+        String nombre = vista.jTextFieldName.getText();
+        String apellido = vista.jTextFieldApellido.getText();
+        String email = vista.jTextFieldEmail.getText();
+        String fecha = vista.jTextFieldFecNa.getText();
+        String clave = new String(vista.jPasswordField.getPassword());
+
+        if (noCampoVacio(usuario) && noCampoVacio(nombre) && noCampoVacio(apellido) && noCampoVacio(email)
+                && noCampoVacio(fecha)) {
+            if (isEmail(email)) {
+                if (isDate(fecha)) {
+                    result = "success";
+                } else {
+                    result = "error.date";
+                }
+            } else {
+
+                result = "error.email";
+            }
+        } else {
+            result = "error.emptyField";
+        }
+        return result;
+    }
 }
