@@ -52,3 +52,27 @@ managers.ControladorLogin//insert_session_record// Error desconocido.// 2019-08-
 managers.ControladorAdmin//showPermissionsView// Consulta no arroja resultados.// 2019-09-14T19:39:39.382
 managers.ControladorAdmin//showPermissionsView// Consulta no arroja resultados.// 2019-09-14T19:39:45.933
 managers.ControladorAdmin//showPermissionsView// Consulta no arroja resultados.// 2019-09-14T21:16:47.368
+validations.FormValidations//validarInsert//Error de email incorrecto// 2019-09-16T21:34:45.103
+validations.FormValidations//campoVacio//Error de campos obligatorios// 2019-09-16T21:35:18.873
+validations.FormValidations//campoVacio//Error de campos obligatorios// 2019-09-16T21:35:18.882
+validations.FormValidations//campoVacio//Error de campos obligatorios// 2019-09-16T21:35:18.888
+validations.FormValidations//validarInsert//Error de email incorrecto// 2019-09-16T21:36:45.892
+validations.FormValidations//campoVacio//Error de campos obligatorios// 2019-09-16T21:36:58.990
+validations.FormValidations//campoVacio//Error de campos obligatorios// 2019-09-16T21:36:58.996
+validations.FormValidations//campoVacio//Error de campos obligatorios// 2019-09-16T21:36:59.003
+validations.FormValidations//validarInsert//Error de email incorrecto// 2019-09-16T21:48:17.822
+validations.FormValidations//campoVacio//Error de campos obligatorios// 2019-09-16T21:48:30.327
+validations.FormValidations//campoVacio//Error de campos obligatorios// 2019-09-16T21:48:30.336
+validations.FormValidations//campoVacio//Error de campos obligatorios// 2019-09-16T21:48:30.344
+validations.FormValidations//isDate//fecha ingresada no es valida// 2019-09-16T21:48:30.353
+validations.FormValidations//campoVacio//Error de campos obligatorios// 2019-09-16T21:48:36.231
+validations.FormValidations//campoVacio//Error de campos obligatorios// 2019-09-16T21:48:36.241
+validations.FormValidations//campoVacio//Error de campos obligatorios// 2019-09-16T21:48:36.247
+validations.FormValidations//isDate//fecha ingresada no es valida// 2019-09-16T21:48:36.254
+validations.FormValidations//campoVacio//Error de campos obligatorios// 2019-09-16T21:48:47.546
+validations.FormValidations//campoVacio//Error de campos obligatorios// 2019-09-16T21:48:47.554
+validations.FormValidations//campoVacio//Error de campos obligatorios// 2019-09-16T21:48:47.561
+validations.FormValidations//noCampoVacio//Error de campos obligatorios// 2019-09-16T22:06:36.974
+validations.FormValidations//noCampoVacio//Error de campos obligatorios// 2019-09-16T22:06:42.482
+validations.FormValidations//validarInsert//Error de email incorrecto// 2019-09-16T22:06:56.151
+validations.FormValidations//isDate//fecha ingresada no es valida// 2019-09-16T22:07:08.690

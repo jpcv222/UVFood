@@ -1807,8 +1807,9 @@ public class VistaAdmin extends javax.swing.JFrame implements Runnable {
         // TODO add your handling code here:
         //jComboBoxRoles.removeAllItems();
         sePuede = "solo_crear_limpiar";
-        manager.limpiarCampos();
         manager.hablitarEdicionTotal();
+        manager.limpiarCampos();
+        
         jComboBoxRoles.setEnabled(true);
         btnhabilitarUser.setEnabled(false);
         btnEliminarUser.setEnabled(false);

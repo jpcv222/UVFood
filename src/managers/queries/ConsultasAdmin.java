@@ -279,20 +279,19 @@ public class ConsultasAdmin extends ConexionBD {
 
     public String crearUsuario(VistaAdmin vista) {
         String result = "";
-        PreparedStatement ps = null;
-        ResultSet rs = null;
-
-        String usuario = vista.jTextFieldUser.getText();
-        String nombre = vista.jTextFieldName.getText();
-        String apellido = vista.jTextFieldApellido.getText();
-        String email = vista.jTextFieldEmail.getText();
-        Date fecha = Date.valueOf(vista.jTextFieldFecNa.getText());
-        String clave = new String(vista.jPasswordField.getPassword());
-        String rol = vista.jTextFieldRol.getText();
-
-        System.out.println(rol);
-
         try {
+            
+            PreparedStatement ps = null;
+            ResultSet rs = null;
+
+            String usuario = vista.jTextFieldUser.getText();
+            String nombre = vista.jTextFieldName.getText();
+            String apellido = vista.jTextFieldApellido.getText();
+            String email = vista.jTextFieldEmail.getText();
+            Date fecha = Date.valueOf(vista.jTextFieldFecNa.getText());
+            String clave = new String(vista.jPasswordField.getPassword());
+            String rol = vista.jTextFieldRol.getText();
+            
             Connection conn = Conexion();
 
             String verUserQuery = "SELECT username FROM uvfood_user WHERE username = '" + usuario + "';";
@@ -320,7 +319,6 @@ public class ConsultasAdmin extends ConexionBD {
                     if (res > 0) {
                         result = "success.dato.insertado";
                         System.out.println("3");
-                        
 
                         ps = conn.prepareStatement(getIdQuery);
                         rs = ps.executeQuery();

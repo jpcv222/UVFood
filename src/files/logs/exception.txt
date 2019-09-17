@@ -924,3 +924,36 @@ managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPo
 managers.queries.ConsultasAdmin//crearUsuario// ERROR: llave duplicada viola restricción de unicidad «uvfood_user_password_user_key»
   Detail: Ya existe la llave (password_user)=(123). org.postgresql.util.PSQLException: ERROR: llave duplicada viola restricción de unicidad «uvfood_user_password_user_key»
   Detail: Ya existe la llave (password_user)=(123).// 2019-09-15T19:37:02.809
+managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-15T20:33:42.442
+managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-15T20:33:42.492
+managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-15T23:25:07.549
+managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-15T23:25:07.596
+managers.queries.ConsultasAdmin//llenarAcciones// -1 java.lang.ArrayIndexOutOfBoundsException: -1// 2019-09-15T23:26:26.024
+managers.queries.ConsultasAdmin//disableUser// null java.lang.NullPointerException// 2019-09-15T23:26:26.024
+managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-16T21:12:43.100
+managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-16T21:12:43.149
+managers.queries.ConsultasAdmin//llenarAcciones// -1 java.lang.ArrayIndexOutOfBoundsException: -1// 2019-09-16T21:13:04.074
+managers.queries.ConsultasAdmin//disableUser// null java.lang.NullPointerException// 2019-09-16T21:13:04.074
+managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-16T21:15:22.834
+managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-16T21:15:22.875
+managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-16T21:34:38.651
+managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-16T21:34:38.696
+managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-16T21:34:38.730
+managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-16T21:36:38.249
+managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-16T21:36:38.289
+managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-16T21:36:38.323
+managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-16T21:43:35.884
+managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-16T21:43:35.915
+managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-16T21:43:35.951
+managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-16T21:48:08.542
+managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-16T21:48:08.575
+managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-16T21:48:08.609
+managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-16T21:49:15.651
+managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-16T21:49:15.684
+managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-16T21:49:15.717
+managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-16T22:05:33.096
+managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-16T22:05:33.135
+managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-16T22:05:33.166
+managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-16T22:06:29.047
+managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-16T22:06:29.080
+managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-16T22:06:29.112

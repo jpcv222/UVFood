@@ -30,6 +30,7 @@ import javax.swing.JTable;
 import org.jfree.chart.*;
 import org.jfree.chart.plot.PlotOrientation;
 import org.jfree.data.category.DefaultCategoryDataset;
+import validations.FormValidations;
 import views.DisableUser;
 
 /**
@@ -40,6 +41,7 @@ import views.DisableUser;
 public class ControladorAdmin implements ActionListener {
 
     private VistaAdmin interfazPrincipalAdmin;
+    private FormValidations validaciones;
     private final FileManage file;
     private final KeyValidate keyvalidate;
     private UVFoodDialogs modal;
@@ -60,6 +62,7 @@ public class ControladorAdmin implements ActionListener {
         this.confirmation_message.btnAceptar.addActionListener(this);
         this.confirmation_message.btnCancelar.addActionListener(this);
         this.interfazPrincipalAdmin.btnEliminarUser.addActionListener(this);
+        this.validaciones = new FormValidations();
 
     }
 
@@ -320,17 +323,21 @@ public class ControladorAdmin implements ActionListener {
     }
 
     public void requestInsertUser() {
-        String result = consultasAdmin.crearUsuario(interfazPrincipalAdmin);
+        if (validaciones.validarInsert(interfazPrincipalAdmin)) {
+            String result = consultasAdmin.crearUsuario(interfazPrincipalAdmin);
 
-        switch (result) {
-            case "error.usuario.existe":
-                modal.error_message("Error", "Algo anda mal", "El usuario ya esta registrado", "Por Favor intenta con otro", "");
-                break;
-            case "success.dato.insertado":
-                modal.success_message("Exito", "", "El usuario se registro con exito", "", "");
-                break;
+            switch (result) {
+                case "error.usuario.existe":
+                    modal.error_message("Error", "Algo anda mal", "El usuario ya esta registrado", "Por Favor intenta con otro", "");
+                    break;
+                case "success.dato.insertado":
+                    modal.success_message("Exito", "", "El usuario se registro con exito", "", "");
+                    break;
+
+            }
 
         }
+
     }
 
     public void hablitarEdicionTotal() {
@@ -377,6 +384,8 @@ public class ControladorAdmin implements ActionListener {
 
                 interfazPrincipalAdmin.btnHabilitarEdicion.setEnabled(false);
                 interfazPrincipalAdmin.jTextFieldRol.setEditable(false);
+
+                HablitarEdicion();
 
                 break;
             case "soloHabilitar":
