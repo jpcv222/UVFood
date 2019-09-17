@@ -249,7 +249,7 @@ public class ConsultasAdmin extends ConexionBD {
             String sql = "SELECT * FROM uvfood_typeuser;";
             ps = conn.createStatement();
             rs = ps.executeQuery(sql);
-
+            
             while (rs.next()) {
 
                 vista.jComboBoxRoles.addItem(rs.getString("type_user"));
@@ -280,7 +280,7 @@ public class ConsultasAdmin extends ConexionBD {
     public String crearUsuario(VistaAdmin vista) {
         String result = "";
         try {
-            
+
             PreparedStatement ps = null;
             ResultSet rs = null;
 
@@ -291,7 +291,7 @@ public class ConsultasAdmin extends ConexionBD {
             Date fecha = Date.valueOf(vista.jTextFieldFecNa.getText());
             String clave = new String(vista.jPasswordField.getPassword());
             String rol = vista.jTextFieldRol.getText();
-            
+
             Connection conn = Conexion();
 
             String verUserQuery = "SELECT username FROM uvfood_user WHERE username = '" + usuario + "';";

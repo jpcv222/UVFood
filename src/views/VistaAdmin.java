@@ -1680,12 +1680,14 @@ public class VistaAdmin extends javax.swing.JFrame implements Runnable {
     private void btnConsultaUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConsultaUserActionPerformed
 
         sePuede = "solo_crear";
+        manager.hablitarEdicionTotal();
         jTextFieldRol.removeAll();
         jTextFieldRol.repaint();
         jTextFieldRol.revalidate();
+        //manager.requestFillCombo();
         //jComboBoxRoles.removeAllItems();
         manager.requestFillTable();
-        manager.hablitarEdicionTotal();
+
 
     }//GEN-LAST:event_btnConsultaUserActionPerformed
 
@@ -1766,7 +1768,7 @@ public class VistaAdmin extends javax.swing.JFrame implements Runnable {
 
     private void btnCrearUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCrearUserActionPerformed
         // TODO add your handling code here:
-        manager.requestInsertUser();
+        manager.requestValidationsInsertUser();
         //manager.requestFillTable();
     }//GEN-LAST:event_btnCrearUserActionPerformed
 
@@ -1809,7 +1811,7 @@ public class VistaAdmin extends javax.swing.JFrame implements Runnable {
         sePuede = "solo_crear_limpiar";
         manager.hablitarEdicionTotal();
         manager.limpiarCampos();
-        
+
         jComboBoxRoles.setEnabled(true);
         btnhabilitarUser.setEnabled(false);
         btnEliminarUser.setEnabled(false);
@@ -1822,10 +1824,10 @@ public class VistaAdmin extends javax.swing.JFrame implements Runnable {
 
     private void jComboBoxRolesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxRolesActionPerformed
         // TODO add your handling code here:
+        sePuede = "solo_crear";
         jTextFieldRol.removeAll();
         jTextFieldRol.repaint();
         jTextFieldRol.revalidate();
-
         String rol = jComboBoxRoles.getSelectedItem().toString();
         jTextFieldRol.setText(rol);
     }//GEN-LAST:event_jComboBoxRolesActionPerformed

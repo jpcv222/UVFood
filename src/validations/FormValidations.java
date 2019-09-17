@@ -20,7 +20,7 @@ import views.VistaAdmin;
 
 /**
  *
- * @author jeffr
+ * @author Jeffrey Rios 2019 GitHub: jeffrey2423
  */
 public class FormValidations {
 
@@ -60,8 +60,6 @@ public class FormValidations {
         if (!campo.equalsIgnoreCase("")) {
             return true;
         } else {
-            modal.error_message("Error.", "Todos los campos son obligatorios.", "", null, null);
-            logs.escribirErrorLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "//Error de campos obligatorios");
             return false;
         }
 
@@ -72,18 +70,22 @@ public class FormValidations {
             SimpleDateFormat formatoFecha = new SimpleDateFormat("yyyy-MM-dd");
             Date fecha = formatoFecha.parse(fechax);
         } catch (Exception e) {
-            modal.error_message("Error.", "la fecha ingresada no es valida", "yyyy-MM-dd", null, null);
-            logs.escribirErrorLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "//fecha ingresada no es valida");
             return false;
 
         }
         return true;
     }
 
-    public boolean validarInsert(VistaAdmin vista) {
+    public boolean isEmail(String email) {
         // Patrón para validar el email
         Pattern pattern = Pattern.compile("^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@"
                 + "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$");
+        Matcher mather = pattern.matcher(email);
+        return mather.find() == true;
+    }
+
+    public String validarInsert(VistaAdmin vista) {
+        String result = "";
 
         String usuario = vista.jTextFieldUser.getText();
         String nombre = vista.jTextFieldName.getText();
@@ -91,21 +93,22 @@ public class FormValidations {
         String email = vista.jTextFieldEmail.getText();
         String fecha = vista.jTextFieldFecNa.getText();
         String clave = new String(vista.jPasswordField.getPassword());
-        Matcher mather = pattern.matcher(email);
 
         if (noCampoVacio(usuario) && noCampoVacio(nombre) && noCampoVacio(apellido) && noCampoVacio(email)
                 && noCampoVacio(fecha) && noCampoVacio(clave)) {
-            if (mather.find() == true) {
+            if (isEmail(email)) {
                 if (isDate(fecha)) {
-                    return true;
+                    result = "success";
+                } else {
+                    result = "error.date";
                 }
             } else {
-                modal.error_message("Error.", "El email ingresado no es valido", "Example@Example.com", null, null);
-                logs.escribirErrorLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "//Error de email incorrecto");
-                return false;
+
+                result = "error.email";
             }
+        } else {
+            result = "error.emptyField";
         }
-        return false;
+        return result;
     }
 }
-

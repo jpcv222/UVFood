@@ -323,18 +323,57 @@ public class ControladorAdmin implements ActionListener {
     }
 
     public void requestInsertUser() {
-        if (validaciones.validarInsert(interfazPrincipalAdmin)) {
-            String result = consultasAdmin.crearUsuario(interfazPrincipalAdmin);
 
-            switch (result) {
-                case "error.usuario.existe":
-                    modal.error_message("Error", "Algo anda mal", "El usuario ya esta registrado", "Por Favor intenta con otro", "");
-                    break;
-                case "success.dato.insertado":
-                    modal.success_message("Exito", "", "El usuario se registro con exito", "", "");
-                    break;
+        String result = consultasAdmin.crearUsuario(interfazPrincipalAdmin);
 
-            }
+        switch (result) {
+            case "error.usuario.existe":
+                modal.error_message("Error", "Algo anda mal", "El usuario ya esta registrado", "Por Favor intenta con otro", "");
+                logs.escribirExceptionLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "/error.usuario ya existe/ ");
+                break;
+            case "error.email.existe":
+                modal.error_message("Error", "Algo anda mal", "El email ya esta registrado", "Por Favor intenta con otro", "");
+                logs.escribirExceptionLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "/error.email ya existe/ ");
+                break;
+            case "error.dato.no.insertado":
+                modal.error_message("Error", "Algo anda mal", "Ocurrio un error al registrar", "Por Favor verifica los datos", "O reportanos que ocurre");
+                logs.escribirExceptionLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "/error./ ");
+                break;
+            case "success.dato.insertado":
+                modal.success_message("Exito", "", "El usuario se registro con exito", "", "");
+                logs.escribirExceptionLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "/error./ ");
+                limpiarCampos();
+                break;
+            default:
+                logs.escribirErrorLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// Respuesta a petición inválida.");
+                break;
+
+        }
+
+    }
+
+    public void requestValidationsInsertUser() {
+        String validation = validaciones.validarInsert(interfazPrincipalAdmin);
+
+        switch (validation) {
+            case "error.emptyField":
+                modal.error_message("Error.", "Todos los campos son obligatorios.", "", null, null);
+                logs.escribirErrorLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "//Error de campos obligatorios");
+                break;
+            case "error.email":
+                modal.error_message("Error.", "El email ingresado no es valido", "Example@Example.com", null, null);
+                logs.escribirErrorLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "//Error de email incorrecto");
+                break;
+            case "error.date":
+                modal.error_message("Error.", "la fecha ingresada no es valida", "yyyy-MM-dd", null, null);
+                logs.escribirErrorLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "//fecha ingresada no es valida");
+                break;
+            case "success":
+                requestInsertUser();
+                break;
+            default:
+                logs.escribirErrorLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// Respuesta a petición inválida.");
+                break;
 
         }
 
@@ -361,6 +400,7 @@ public class ControladorAdmin implements ActionListener {
                 HablitarEdicion();
                 break;
             case "solo_crear":
+                requestFillCombo();
                 interfazPrincipalAdmin.btnCrearUser.setEnabled(true);
                 interfazPrincipalAdmin.btnModificarUser.setEnabled(false);
                 interfazPrincipalAdmin.btnEliminarUser.setEnabled(false);
@@ -368,7 +408,7 @@ public class ControladorAdmin implements ActionListener {
                 interfazPrincipalAdmin.jTextFieldRol.removeAll();
                 interfazPrincipalAdmin.jTextFieldRol.repaint();
                 interfazPrincipalAdmin.jTextFieldRol.revalidate();
-                requestFillCombo();
+                
                 interfazPrincipalAdmin.btnHabilitarEdicion.setEnabled(false);
                 interfazPrincipalAdmin.jTextFieldRol.setEditable(false);
 
