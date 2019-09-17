@@ -400,6 +400,7 @@ public class ControladorAdmin implements ActionListener {
                 HablitarEdicion();
                 break;
             case "solo_crear":
+                //interfazPrincipalAdmin.jComboBoxRoles.removeAllItems();
                 requestFillCombo();
                 interfazPrincipalAdmin.btnCrearUser.setEnabled(true);
                 interfazPrincipalAdmin.btnModificarUser.setEnabled(false);
@@ -495,6 +496,10 @@ public class ControladorAdmin implements ActionListener {
 
         }
 
+    }
+    
+    public void requestUpdate(){
+        consultasAdmin.updateUser(interfazPrincipalAdmin);
     }
 
     public void showConfirmationMessage() {
