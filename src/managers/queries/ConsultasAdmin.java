@@ -410,11 +410,10 @@ public class ConsultasAdmin extends ConexionBD {
         } catch (SQLException ex) {
             logs.escribirExceptionLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// " + ex.getMessage() + " " + ex.toString());
             result = "error.sql.error";
-        }
-        /*catch (NullPointerException np) {
+        } catch (NullPointerException np) {
             logs.escribirExceptionLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// " + np.getMessage() + " " + np.toString());
             result = "error.NP.error";
-        }*/
+        }
         return result;
 
     }
@@ -435,7 +434,6 @@ public class ConsultasAdmin extends ConexionBD {
 
             Connection conn = Conexion();
 
-            //verificamos primero si el usuario existe
             if (!usuario.equals(usuarioTem)) {
                 String verUserQuery = "SELECT username FROM uvfood_user WHERE username = '" + usuario + "';";
                 ps = conn.prepareStatement(verUserQuery);
