@@ -15,6 +15,8 @@ import components.UVFoodDialogs;
 import java.awt.BorderLayout;
 import java.awt.MouseInfo;
 import java.awt.Point;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import static java.awt.image.ImageObserver.WIDTH;
 import java.io.IOException;
@@ -28,30 +30,40 @@ import javax.swing.JTable;
 import org.jfree.chart.*;
 import org.jfree.chart.plot.PlotOrientation;
 import org.jfree.data.category.DefaultCategoryDataset;
+import validations.FormValidations;
+import views.DisableUser;
 
 /**
  *
  * @author Juan Pablo Castro 2019 GitHub: jpcv222
  * @author Jeffrey Rios 2019 GitHub: jeffrey2423
  */
-public class ControladorAdmin {
+public class ControladorAdmin implements ActionListener {
 
     private VistaAdmin interfazPrincipalAdmin;
+    private FormValidations validaciones;
     private final FileManage file;
     private final KeyValidate keyvalidate;
-    private final UVFoodDialogs modal;
+    private UVFoodDialogs modal;
     private ConsultasAdmin consultasAdmin;
+    private DisableUser confirmation_message;
     public Usuario user;
 
     private Logs logs = new Logs(Thread.currentThread().getStackTrace()[1].getClassName());
 
     //private Cliente modeloCliente;
-    public ControladorAdmin(VistaAdmin interfazPrincipalAdmin) {
+    public ControladorAdmin(VistaAdmin interfazPrincipalAdmin, DisableUser confirmation_message) {
         this.interfazPrincipalAdmin = interfazPrincipalAdmin;
         this.modal = new UVFoodDialogs();
         this.keyvalidate = new KeyValidate(modal);
         this.file = new FileManage();
+        this.confirmation_message = confirmation_message;
         this.consultasAdmin = new ConsultasAdmin();
+        this.confirmation_message.btnAceptar.addActionListener(this);
+        this.confirmation_message.btnCancelar.addActionListener(this);
+        this.interfazPrincipalAdmin.btnEliminarUser.addActionListener(this);
+        this.validaciones = new FormValidations();
+
     }
 
     public void set_init_conf() {
@@ -311,17 +323,115 @@ public class ControladorAdmin {
     }
 
     public void requestInsertUser() {
+
         String result = consultasAdmin.crearUsuario(interfazPrincipalAdmin);
 
         switch (result) {
             case "error.usuario.existe":
-                modal.error_message("Error", "Algo anda mal", "El usuario ya esta registrado", "Por Favor intenta con otro", "O reportanos que ocurre");
+                modal.error_message("Error", "Algo anda mal", "El usuario ya esta registrado", "Por Favor intenta con otro", "");
+                logs.escribirErrorLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "/error.usuario ya existe/ ");
+                break;
+            case "error.email.existe":
+                modal.error_message("Error", "Algo anda mal", "El email ya esta registrado", "Por Favor intenta con otro", "");
+                logs.escribirErrorLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "/error.email ya existe/ ");
+                break;
+            case "error.dato.no.insertado":
+                modal.error_message("Error", "Algo anda mal", "Ocurrio un error al registrar", "Por Favor verifica los datos", "O reportanos que ocurre");
+                logs.escribirErrorLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "/error./ ");
                 break;
             case "success.dato.insertado":
-                modal.error_message("Exito", "", "El usuario se registro con exito", "", "");
+                modal.success_message("Exito", "", "El usuario se registro con exito", "", "");
+                limpiarCampos();
+                break;
+            default:
+                logs.escribirErrorLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// Respuesta a petición inválida.");
                 break;
 
         }
+
+    }
+
+    public void requestValidationsInsertUser() {
+        String validation = validaciones.validarInsert(interfazPrincipalAdmin);
+
+        switch (validation) {
+            case "error.emptyField":
+                modal.error_message("Error.", "Todos los campos son obligatorios.", "", null, null);
+                logs.escribirErrorLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "//Error de campos obligatorios");
+                break;
+            case "error.email":
+                modal.error_message("Error.", "El email ingresado no es valido", "Example@Example.com", null, null);
+                logs.escribirErrorLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "//Error de email incorrecto");
+                break;
+            case "error.date":
+                modal.error_message("Error.", "la fecha ingresada no es valida", "yyyy-MM-dd", null, null);
+                logs.escribirErrorLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "//fecha ingresada no es valida");
+                break;
+            case "success":
+                requestInsertUser();
+                break;
+            default:
+                logs.escribirErrorLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// Respuesta a petición inválida.");
+                break;
+
+        }
+
+    }
+
+    public void requestUpdateUser() {
+
+        String result = consultasAdmin.updateUser(interfazPrincipalAdmin);
+
+        switch (result) {
+            case "error.usuario.existe":
+                modal.error_message("Error", "Algo anda mal", "El usuario ya esta registrado", "Por Favor intenta con otro", "");
+                logs.escribirErrorLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "/error.usuario ya existe/ ");
+                break;
+            case "error.email.existe":
+                modal.error_message("Error", "Algo anda mal", "El email ya esta registrado", "Por Favor intenta con otro", "");
+                logs.escribirErrorLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "/error.email ya existe/ ");
+                break;
+            case "error.dato.no.actualizado":
+                modal.error_message("Error", "Algo anda mal", "Ocurrio un error al actualizar", "Por Favor verifica los datos", "O reportanos que ocurre");
+                logs.escribirErrorLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "/error./ ");
+                break;
+            case "success.dato.actualizado":
+                modal.success_message("Exito", "", "El usuario se actualizo con exito", "", "");
+                limpiarCampos();
+                break;
+            default:
+                logs.escribirErrorLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// Respuesta a petición inválida.");
+                break;
+
+        }
+
+    }
+
+    public void requestValidationsUpdateUser() {
+        String validation = validaciones.validarUpdate(interfazPrincipalAdmin);
+
+        switch (validation) {
+            case "error.emptyField":
+                modal.error_message("Error.", "Todos los campos son obligatorios.", "", null, null);
+                logs.escribirErrorLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "//Error de campos obligatorios");
+                break;
+            case "error.email":
+                modal.error_message("Error.", "El email ingresado no es valido", "Example@Example.com", null, null);
+                logs.escribirErrorLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "//Error de email incorrecto");
+                break;
+            case "error.date":
+                modal.error_message("Error.", "la fecha ingresada no es valida", "yyyy-MM-dd", null, null);
+                logs.escribirErrorLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "//fecha ingresada no es valida");
+                break;
+            case "success":
+                requestUpdateUser();
+                break;
+            default:
+                logs.escribirErrorLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// Respuesta a petición inválida.");
+                break;
+
+        }
+
     }
 
     public void hablitarEdicionTotal() {
@@ -332,7 +442,9 @@ public class ControladorAdmin {
                 interfazPrincipalAdmin.btnEliminarUser.setEnabled(true);
 
                 interfazPrincipalAdmin.btnHabilitarEdicion.setEnabled(true);
+                interfazPrincipalAdmin.btnCrearUser.setEnabled(false);
                 desHablitarEdicion();
+
                 break;
             case "eliminar_modificar":
                 interfazPrincipalAdmin.btnCrearUser.setEnabled(false);
@@ -343,6 +455,8 @@ public class ControladorAdmin {
                 HablitarEdicion();
                 break;
             case "solo_crear":
+                //interfazPrincipalAdmin.jComboBoxRoles.removeAllItems();
+                requestFillCombo();
                 interfazPrincipalAdmin.btnCrearUser.setEnabled(true);
                 interfazPrincipalAdmin.btnModificarUser.setEnabled(false);
                 interfazPrincipalAdmin.btnEliminarUser.setEnabled(false);
@@ -350,7 +464,7 @@ public class ControladorAdmin {
                 interfazPrincipalAdmin.jTextFieldRol.removeAll();
                 interfazPrincipalAdmin.jTextFieldRol.repaint();
                 interfazPrincipalAdmin.jTextFieldRol.revalidate();
-                requestFillCombo();
+
                 interfazPrincipalAdmin.btnHabilitarEdicion.setEnabled(false);
                 interfazPrincipalAdmin.jTextFieldRol.setEditable(false);
 
@@ -367,6 +481,13 @@ public class ControladorAdmin {
                 interfazPrincipalAdmin.btnHabilitarEdicion.setEnabled(false);
                 interfazPrincipalAdmin.jTextFieldRol.setEditable(false);
 
+                HablitarEdicion();
+
+                break;
+            case "soloHabilitar":
+                interfazPrincipalAdmin.btnHabilitarEdicion.setEnabled(true);
+                interfazPrincipalAdmin.btnCrearUser.setEnabled(false);
+                interfazPrincipalAdmin.btnEliminarUser.setEnabled(false);
                 break;
             default:
                 break;
@@ -415,6 +536,50 @@ public class ControladorAdmin {
         interfazPrincipalAdmin.jTextFieldUser.setText("");
         interfazPrincipalAdmin.jTextFieldIdRol.setText("");
         interfazPrincipalAdmin.jTextFieldIdUser.setText("");
+    }
+
+    public void requestDisableUser() {
+        String res = consultasAdmin.disableUser(interfazPrincipalAdmin);
+
+        switch (res) {
+            case "success":
+                modal.success_message("Exito", "", "El usuario fue deshabilitado con exito", "", "");
+                break;
+            case "error":
+                modal.error_message("Error", "", "Intentalo de nuevo por favor", "", "");
+                break;
+
+        }
+
+    }
+
+
+    public void showConfirmationMessage() {
+        modal.confirmation_message("Confirmacion", "¿Desea deshabilitar este usuario?");
+
+    }
+
+    public void requestEnableUser() {
+        consultasAdmin.enableUser(interfazPrincipalAdmin);
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent ae) {
+        if (ae.getSource() == interfazPrincipalAdmin.btnEliminarUser) {
+            confirmation_message.setVisible(true);
+            interfazPrincipalAdmin.btnhabilitarUser.setEnabled(true);
+
+            //modal.confirmation_message("Confirmacion", "¿Desea deshabilitar este usuario?");
+        }
+        if (ae.getSource() == confirmation_message.btnAceptar) {
+            requestDisableUser();
+            confirmation_message.dispose();
+
+        }
+        if (ae.getSource() == confirmation_message.btnCancelar) {
+            confirmation_message.dispose();
+        }
+
     }
 
 }
