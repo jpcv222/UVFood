@@ -1668,3 +1668,51 @@ managers.queries.ConsultasAdmin//ManejadorUpdate// ERROR: llave duplicada viola 
 managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-18T00:39:57.255
 managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-18T00:39:57.298
 managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-18T00:39:57.329
+managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-18T00:47:52.624
+managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-18T00:47:52.666
+managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-18T00:47:52.707
+managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-18T00:50:46
+managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-18T00:50:46.041
+managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-18T00:50:46.076
+managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-18T00:55:03.013
+managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-18T00:55:03.062
+managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-18T00:55:03.097
+managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-18T01:00:02.055
+managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-18T01:00:02.099
+managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-18T01:00:02.157
+managers.queries.ConsultasAdmin//ManejadorUpdate// ERROR: llave duplicada viola restricción de unicidad «uvfood_user_email_key»
+  Detail: Ya existe la llave (email)=(prueba2@prueba2.com). org.postgresql.util.PSQLException: ERROR: llave duplicada viola restricción de unicidad «uvfood_user_email_key»
+  Detail: Ya existe la llave (email)=(prueba2@prueba2.com).// 2019-09-18T01:01:55.681
+managers.queries.ConsultasAdmin//ManejadorUpdate// ERROR: llave duplicada viola restricción de unicidad «uvfood_user_email_key»
+  Detail: Ya existe la llave (email)=(prueba2@prueba2.com). org.postgresql.util.PSQLException: ERROR: llave duplicada viola restricción de unicidad «uvfood_user_email_key»
+  Detail: Ya existe la llave (email)=(prueba2@prueba2.com).// 2019-09-18T01:02:00.278
+managers.queries.ConsultasAdmin//ManejadorUpdate// ERROR: llave duplicada viola restricción de unicidad «uvfood_user_email_key»
+  Detail: Ya existe la llave (email)=(prueba2@prueba2.com). org.postgresql.util.PSQLException: ERROR: llave duplicada viola restricción de unicidad «uvfood_user_email_key»
+  Detail: Ya existe la llave (email)=(prueba2@prueba2.com).// 2019-09-18T01:02:00.655
+managers.queries.ConsultasAdmin//ManejadorUpdate// ERROR: llave duplicada viola restricción de unicidad «uvfood_user_email_key»
+  Detail: Ya existe la llave (email)=(prueba2@prueba2.com). org.postgresql.util.PSQLException: ERROR: llave duplicada viola restricción de unicidad «uvfood_user_email_key»
+  Detail: Ya existe la llave (email)=(prueba2@prueba2.com).// 2019-09-18T01:02:00.876
+managers.queries.ConsultasAdmin//ManejadorUpdate// ERROR: llave duplicada viola restricción de unicidad «uvfood_user_email_key»
+  Detail: Ya existe la llave (email)=(prueba2@prueba2.com). org.postgresql.util.PSQLException: ERROR: llave duplicada viola restricción de unicidad «uvfood_user_email_key»
+  Detail: Ya existe la llave (email)=(prueba2@prueba2.com).// 2019-09-18T01:02:01.337
+managers.queries.ConsultasAdmin//ManejadorUpdate// ERROR: llave duplicada viola restricción de unicidad «uvfood_user_email_key»
+  Detail: Ya existe la llave (email)=(prueba2@prueba2.com). org.postgresql.util.PSQLException: ERROR: llave duplicada viola restricción de unicidad «uvfood_user_email_key»
+  Detail: Ya existe la llave (email)=(prueba2@prueba2.com).// 2019-09-18T01:02:01.703
+managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-18T01:03:11.187
+managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-18T01:03:11.238
+managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-18T01:03:11.286
+managers.queries.ConsultasAdmin//ManejadorUpdate// ERROR: llave duplicada viola restricción de unicidad «uvfood_user_email_key»
+  Detail: Ya existe la llave (email)=(p@prueba2.com). org.postgresql.util.PSQLException: ERROR: llave duplicada viola restricción de unicidad «uvfood_user_email_key»
+  Detail: Ya existe la llave (email)=(p@prueba2.com).// 2019-09-18T01:05:24.043
+managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-18T01:12:37.541
+managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-18T01:12:37.592
+managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-18T01:12:37.637
+managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-18T01:19:34.259
+managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-18T01:19:34.322
+managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-18T01:19:34.366
+managers.queries.ConsultasAdmin//ManejadorUpdate// ERROR: llave duplicada viola restricción de unicidad «uvfood_user_email_key»
+  Detail: Ya existe la llave (email)=(p@prueba2.com). org.postgresql.util.PSQLException: ERROR: llave duplicada viola restricción de unicidad «uvfood_user_email_key»
+  Detail: Ya existe la llave (email)=(p@prueba2.com).// 2019-09-18T01:21:34.817
+managers.queries.ConsultasAdmin//ManejadorUpdate// ERROR: llave duplicada viola restricción de unicidad «uvfood_user_email_key»
+  Detail: Ya existe la llave (email)=(p@prueba2.com). org.postgresql.util.PSQLException: ERROR: llave duplicada viola restricción de unicidad «uvfood_user_email_key»
+  Detail: Ya existe la llave (email)=(p@prueba2.com).// 2019-09-18T01:21:36.646

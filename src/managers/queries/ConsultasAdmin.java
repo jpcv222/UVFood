@@ -441,23 +441,43 @@ public class ConsultasAdmin extends ConexionBD {
                 if (rs.next()) {
                     result = "error.usuario.existe";
                 } else {
-                    if (!email.equals(emailTem)) {
-                        String verEmailQuery = "SELECT email FROM uvfood_user WHERE email = '" + email + "';";
-                        ps = conn.prepareStatement(verEmailQuery);
+
+                    result = ManejadorUpdate(vista, usuario, nombre, apellido, fecha, email, clave, idUser, rol);
+
+                }
+            } else if (!email.equals(emailTem)) {
+                String verEmailQuery = "SELECT email FROM uvfood_user WHERE email = '" + email + "';";
+                ps = conn.prepareStatement(verEmailQuery);
+                rs = ps.executeQuery();
+                if (rs.next()) {
+                    result = "error.email.existe";
+                } else {
+
+                    result = ManejadorUpdate(vista, usuario, nombre, apellido, fecha, email, clave, idUser, rol);
+                }
+
+            } else if (!email.equals(emailTem)) {
+                String verEmailQuery = "SELECT email FROM uvfood_user WHERE email = '" + email + "';";
+                ps = conn.prepareStatement(verEmailQuery);
+                rs = ps.executeQuery();
+                if (rs.next()) {
+                    result = "error.email.existe";
+                } else {
+                    if (!usuario.equals(usuarioTem)) {
+                        String verUserQuery = "SELECT username FROM uvfood_user WHERE username = '" + usuario + "';";
+                        ps = conn.prepareStatement(verUserQuery);
                         rs = ps.executeQuery();
                         if (rs.next()) {
-                            result = "error.email.existe";
+                            result = "error.usuario.existe";
                         } else {
                             result = ManejadorUpdate(vista, usuario, nombre, apellido, fecha, email, clave, idUser, rol);
                         }
                     }
-                }
-            } else {
-                if (email.equals(emailTem)) {
-                    result = ManejadorUpdate(vista, usuario, nombre, apellido, fecha, email, clave, idUser, rol);
-                }
 
-            }
+                }
+            }else{
+                result = ManejadorUpdate(vista, usuario, nombre, apellido, fecha, email, clave, idUser, rol);
+            } 
 
         } catch (SQLException ex) {
             logs.escribirExceptionLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// " + ex.getMessage() + " " + ex.toString());
