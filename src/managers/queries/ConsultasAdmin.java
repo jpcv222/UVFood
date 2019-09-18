@@ -422,6 +422,8 @@ public class ConsultasAdmin extends ConexionBD {
         String result = "";
         PreparedStatement ps = null;
         ResultSet rs = null;
+        PreparedStatement ps2 = null;
+        ResultSet rs2 = null;
         try {
             String usuario = vista.jTextFieldUser.getText();
             String nombre = vista.jTextFieldName.getText();
@@ -442,24 +444,26 @@ public class ConsultasAdmin extends ConexionBD {
                     result = "error.usuario.existe";
                 } else {
 
-                    result = ManejadorUpdate(vista, usuario, nombre, apellido, fecha, email, clave, idUser, rol);
+                    if (!email.equals(emailTem)) {
+                        String verEmailQuery = "SELECT email FROM uvfood_user WHERE email = '" + email + "';";
+                        ps = conn.prepareStatement(verEmailQuery);
+                        rs = ps.executeQuery();
+                        if (rs.next()) {
+                            result = "error.email.existe";
+                        } else {
 
+                            result = ManejadorUpdate(vista, usuario, nombre, apellido, fecha, email, clave, idUser, rol);
+                        }
+
+                    }
                 }
+
             } else if (!email.equals(emailTem)) {
+
                 String verEmailQuery = "SELECT email FROM uvfood_user WHERE email = '" + email + "';";
                 ps = conn.prepareStatement(verEmailQuery);
                 rs = ps.executeQuery();
-                if (rs.next()) {
-                    result = "error.email.existe";
-                } else {
 
-                    result = ManejadorUpdate(vista, usuario, nombre, apellido, fecha, email, clave, idUser, rol);
-                }
-
-            } else if (!email.equals(emailTem)) {
-                String verEmailQuery = "SELECT email FROM uvfood_user WHERE email = '" + email + "';";
-                ps = conn.prepareStatement(verEmailQuery);
-                rs = ps.executeQuery();
                 if (rs.next()) {
                     result = "error.email.existe";
                 } else {
@@ -467,6 +471,7 @@ public class ConsultasAdmin extends ConexionBD {
                         String verUserQuery = "SELECT username FROM uvfood_user WHERE username = '" + usuario + "';";
                         ps = conn.prepareStatement(verUserQuery);
                         rs = ps.executeQuery();
+
                         if (rs.next()) {
                             result = "error.usuario.existe";
                         } else {
@@ -475,9 +480,10 @@ public class ConsultasAdmin extends ConexionBD {
                     }
 
                 }
-            }else{
+
+            } else {
                 result = ManejadorUpdate(vista, usuario, nombre, apellido, fecha, email, clave, idUser, rol);
-            } 
+            }
 
         } catch (SQLException ex) {
             logs.escribirExceptionLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// " + ex.getMessage() + " " + ex.toString());
