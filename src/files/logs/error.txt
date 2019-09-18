@@ -149,3 +149,76 @@ managers.ControladorAdmin//requestUpdateUser// Respuesta a petición inválida./
 managers.ControladorAdmin//requestUpdateUser// Respuesta a petición inválida.// 2019-09-17T23:17:51.492
 managers.ControladorAdmin//requestUpdateUser/error.email ya existe/ // 2019-09-17T23:20:05.047
 managers.ControladorAdmin//requestUpdateUser/error.usuario ya existe/ // 2019-09-17T23:20:23.893
+managers.ControladorAdmin//requestUpdateUser// Respuesta a petición inválida.// 2019-09-17T23:39:47.564
+managers.ControladorAdmin//requestUpdateUser// Respuesta a petición inválida.// 2019-09-17T23:39:48.999
+managers.ControladorAdmin//requestUpdateUser// Respuesta a petición inválida.// 2019-09-17T23:39:53.062
+managers.ControladorAdmin//requestUpdateUser// Respuesta a petición inválida.// 2019-09-17T23:39:53.801
+managers.ControladorAdmin//requestUpdateUser// Respuesta a petición inválida.// 2019-09-17T23:40:48.685
+managers.ControladorAdmin//requestUpdateUser// Respuesta a petición inválida.// 2019-09-17T23:53:38.567
+managers.ControladorAdmin//requestUpdateUser// Respuesta a petición inválida.// 2019-09-17T23:53:45.872
+managers.ControladorAdmin//requestUpdateUser// Respuesta a petición inválida.// 2019-09-17T23:53:46.717
+managers.ControladorAdmin//requestUpdateUser// Respuesta a petición inválida.// 2019-09-17T23:53:47.520
+managers.ControladorAdmin//requestUpdateUser// Respuesta a petición inválida.// 2019-09-17T23:56:49.536
+managers.ControladorAdmin//requestUpdateUser// Respuesta a petición inválida.// 2019-09-17T23:56:55.992
+managers.ControladorAdmin//requestUpdateUser// Respuesta a petición inválida.// 2019-09-17T23:57:39.667
+managers.ControladorAdmin//requestUpdateUser// Respuesta a petición inválida.// 2019-09-18T00:01:02.747
+managers.ControladorAdmin//requestUpdateUser// Respuesta a petición inválida.// 2019-09-18T00:01:16.236
+managers.ControladorAdmin//requestUpdateUser// Respuesta a petición inválida.// 2019-09-18T00:01:18.224
+managers.ControladorAdmin//requestUpdateUser// Respuesta a petición inválida.// 2019-09-18T00:01:18.768
+managers.ControladorAdmin//requestUpdateUser// Respuesta a petición inválida.// 2019-09-18T00:01:19.118
+managers.ControladorAdmin//requestUpdateUser// Respuesta a petición inválida.// 2019-09-18T00:01:23.516
+managers.ControladorAdmin//requestUpdateUser// Respuesta a petición inválida.// 2019-09-18T00:01:24.245
+managers.ControladorAdmin//requestUpdateUser// Respuesta a petición inválida.// 2019-09-18T00:01:24.488
+managers.ControladorAdmin//requestUpdateUser// Respuesta a petición inválida.// 2019-09-18T00:01:24.695
+managers.ControladorAdmin//requestUpdateUser// Respuesta a petición inválida.// 2019-09-18T00:01:24.888
+managers.ControladorAdmin//requestUpdateUser// Respuesta a petición inválida.// 2019-09-18T00:01:25.077
+managers.ControladorAdmin//requestUpdateUser// Respuesta a petición inválida.// 2019-09-18T00:01:25.267
+managers.ControladorAdmin//requestUpdateUser// Respuesta a petición inválida.// 2019-09-18T00:01:25.460
+managers.ControladorAdmin//requestUpdateUser// Respuesta a petición inválida.// 2019-09-18T00:01:25.641
+managers.ControladorAdmin//requestUpdateUser// Respuesta a petición inválida.// 2019-09-18T00:01:25.927
+managers.ControladorAdmin//requestUpdateUser// Respuesta a petición inválida.// 2019-09-18T00:01:26.026
+managers.ControladorAdmin//requestUpdateUser// Respuesta a petición inválida.// 2019-09-18T00:01:26.210
+managers.ControladorAdmin//requestUpdateUser// Respuesta a petición inválida.// 2019-09-18T00:01:26.379
+managers.ControladorAdmin//requestUpdateUser// Respuesta a petición inválida.// 2019-09-18T00:01:26.572
+managers.ControladorAdmin//requestUpdateUser// Respuesta a petición inválida.// 2019-09-18T00:01:26.728
+managers.ControladorAdmin//requestUpdateUser// Respuesta a petición inválida.// 2019-09-18T00:01:27.030
+managers.ControladorAdmin//requestUpdateUser// Respuesta a petición inválida.// 2019-09-18T00:01:27.109
+managers.ControladorAdmin//requestUpdateUser// Respuesta a petición inválida.// 2019-09-18T00:01:27.279
+managers.ControladorAdmin//requestUpdateUser// Respuesta a petición inválida.// 2019-09-18T00:01:27.493
+managers.ControladorAdmin//requestUpdateUser// Respuesta a petición inválida.// 2019-09-18T00:01:27.662
+managers.ControladorAdmin//requestUpdateUser// Respuesta a petición inválida.// 2019-09-18T00:01:30.594
+managers.ControladorAdmin//requestUpdateUser// Respuesta a petición inválida.// 2019-09-18T00:01:35.238
+managers.ControladorAdmin//requestUpdateUser// Respuesta a petición inválida.// 2019-09-18T00:01:39.124
+managers.ControladorAdmin//requestUpdateUser/error.usuario ya existe/ // 2019-09-18T00:14:59.143
+managers.ControladorAdmin//requestUpdateUser/error.usuario ya existe/ // 2019-09-18T00:15:59.297
+managers.ControladorAdmin//requestUpdateUser/error.usuario ya existe/ // 2019-09-18T00:16:05.660
+managers.ControladorAdmin//requestUpdateUser// Respuesta a petición inválida.// 2019-09-18T00:16:13.699
+managers.ControladorAdmin//requestUpdateUser// Respuesta a petición inválida.// 2019-09-18T00:16:15.612
+managers.ControladorAdmin//requestUpdateUser/error.usuario ya existe/ // 2019-09-18T00:16:43.171
+managers.ControladorAdmin//requestUpdateUser/error.email ya existe/ // 2019-09-18T00:17:14.832
+managers.ControladorAdmin//requestUpdateUser/error.usuario ya existe/ // 2019-09-18T00:17:35.183
+managers.ControladorAdmin//requestValidationsInsertUser//Error de campos obligatorios// 2019-09-18T00:17:55.348
+managers.ControladorAdmin//requestValidationsInsertUser//Error de campos obligatorios// 2019-09-18T00:19:07.832
+managers.ControladorAdmin//requestValidationsUpdateUser//Error de campos obligatorios// 2019-09-18T00:20:04.415
+managers.ControladorAdmin//requestUpdateUser/error.usuario ya existe/ // 2019-09-18T00:20:20.265
+managers.ControladorAdmin//requestUpdateUser// Respuesta a petición inválida.// 2019-09-18T00:20:38.688
+managers.ControladorAdmin//requestUpdateUser// Respuesta a petición inválida.// 2019-09-18T00:20:40.809
+managers.ControladorAdmin//requestUpdateUser// Respuesta a petición inválida.// 2019-09-18T00:20:41.262
+managers.ControladorAdmin//requestUpdateUser// Respuesta a petición inválida.// 2019-09-18T00:20:41.502
+managers.ControladorAdmin//requestUpdateUser// Respuesta a petición inválida.// 2019-09-18T00:20:41.687
+managers.ControladorAdmin//requestUpdateUser/error.usuario ya existe/ // 2019-09-18T00:21:01.750
+managers.ControladorAdmin//requestUpdateUser// Respuesta a petición inválida.// 2019-09-18T00:21:06.302
+managers.ControladorAdmin//requestUpdateUser// Respuesta a petición inválida.// 2019-09-18T00:21:07.742
+managers.ControladorAdmin//requestUpdateUser// Respuesta a petición inválida.// 2019-09-18T00:21:08.326
+managers.ControladorAdmin//requestUpdateUser// Respuesta a petición inválida.// 2019-09-18T00:21:08.573
+managers.ControladorAdmin//requestUpdateUser// Respuesta a petición inválida.// 2019-09-18T00:21:08.769
+managers.ControladorAdmin//requestUpdateUser/error.email ya existe/ // 2019-09-18T00:21:54.621
+managers.ControladorAdmin//requestUpdateUser/error.usuario ya existe/ // 2019-09-18T00:22:13.593
+managers.ControladorAdmin//requestUpdateUser// Respuesta a petición inválida.// 2019-09-18T00:22:18.528
+managers.ControladorAdmin//requestUpdateUser// Respuesta a petición inválida.// 2019-09-18T00:22:20.261
+managers.ControladorAdmin//requestUpdateUser// Respuesta a petición inválida.// 2019-09-18T00:22:41.938
+managers.ControladorAdmin//requestUpdateUser// Respuesta a petición inválida.// 2019-09-18T00:22:43.033
+managers.ControladorAdmin//requestUpdateUser/error.usuario ya existe/ // 2019-09-18T00:40:29.925
+managers.ControladorAdmin//requestUpdateUser/error.usuario ya existe/ // 2019-09-18T00:40:51.338
+managers.ControladorAdmin//requestUpdateUser/error.usuario ya existe/ // 2019-09-18T00:41:10.037
+managers.ControladorAdmin//requestUpdateUser/error.email ya existe/ // 2019-09-18T00:41:17.436
