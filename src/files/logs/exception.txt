@@ -1238,3 +1238,47 @@ managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPo
 managers.queries.ConsultasAdmin//updateUser// ERROR: llave duplicada viola restricción de unicidad «uvfood_user_username_key»
   Detail: Ya existe la llave (username)=(PRUEBAA             ). org.postgresql.util.PSQLException: ERROR: llave duplicada viola restricción de unicidad «uvfood_user_username_key»
   Detail: Ya existe la llave (username)=(PRUEBAA             ).// 2019-09-17T17:30:25.916
+managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-17T22:20:50.732
+managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-17T22:20:50.806
+managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-17T22:20:50.880
+managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-17T22:22:53.918
+managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-17T22:22:53.955
+managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-17T22:22:53.987
+managers.queries.ConsultasAdmin//updateUser// ERROR: el valor es demasiado largo para el tipo character(20) org.postgresql.util.PSQLException: ERROR: el valor es demasiado largo para el tipo character(20)// 2019-09-17T22:23:39.113
+managers.queries.ConsultasAdmin//updateUser// ERROR: el valor es demasiado largo para el tipo character(20) org.postgresql.util.PSQLException: ERROR: el valor es demasiado largo para el tipo character(20)// 2019-09-17T22:23:44.274
+managers.queries.ConsultasAdmin//updateUser// ERROR: llave duplicada viola restricción de unicidad «uvfood_user_email_key»
+  Detail: Ya existe la llave (email)=(uvfood.sistemas@gmail.com). org.postgresql.util.PSQLException: ERROR: llave duplicada viola restricción de unicidad «uvfood_user_email_key»
+  Detail: Ya existe la llave (email)=(uvfood.sistemas@gmail.com).// 2019-09-17T22:25:20.319
+managers.queries.ConsultasAdmin//updateUser// ERROR: llave duplicada viola restricción de unicidad «uvfood_user_email_key»
+  Detail: Ya existe la llave (email)=(uvfood.sistemas@gmail.com). org.postgresql.util.PSQLException: ERROR: llave duplicada viola restricción de unicidad «uvfood_user_email_key»
+  Detail: Ya existe la llave (email)=(uvfood.sistemas@gmail.com).// 2019-09-17T22:25:23.031
+managers.queries.ConsultasAdmin//updateUser// ERROR: llave duplicada viola restricción de unicidad «uvfood_user_email_key»
+  Detail: Ya existe la llave (email)=(uvfood.sistemas@gmail.com). org.postgresql.util.PSQLException: ERROR: llave duplicada viola restricción de unicidad «uvfood_user_email_key»
+  Detail: Ya existe la llave (email)=(uvfood.sistemas@gmail.com).// 2019-09-17T22:25:24.675
+managers.queries.ConsultasAdmin//updateUser// ERROR: llave duplicada viola restricción de unicidad «uvfood_user_email_key»
+  Detail: Ya existe la llave (email)=(uvfood.sistemas@gmail.com). org.postgresql.util.PSQLException: ERROR: llave duplicada viola restricción de unicidad «uvfood_user_email_key»
+  Detail: Ya existe la llave (email)=(uvfood.sistemas@gmail.com).// 2019-09-17T22:25:39.818
+managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-17T22:28:32.002
+managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-17T22:28:32.038
+managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-17T22:28:32.072
+managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-17T22:53:50.850
+managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-17T22:53:50.892
+managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-17T22:53:50.927
+managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-17T23:13:39.557
+managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-17T23:13:39.603
+managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-17T23:13:39.642
+managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-17T23:16:12.293
+managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-17T23:16:12.330
+managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-17T23:16:12.364
+managers.queries.ConsultasAdmin//updateUser// ERROR: llave duplicada viola restricción de unicidad «uvfood_user_email_key»
+  Detail: Ya existe la llave (email)=(prueba2@prueba2.com). org.postgresql.util.PSQLException: ERROR: llave duplicada viola restricción de unicidad «uvfood_user_email_key»
+  Detail: Ya existe la llave (email)=(prueba2@prueba2.com).// 2019-09-17T23:17:42.844
+managers.queries.ConsultasAdmin//updateUser// ERROR: llave duplicada viola restricción de unicidad «uvfood_user_email_key»
+  Detail: Ya existe la llave (email)=(prueba2@prueba2.com). org.postgresql.util.PSQLException: ERROR: llave duplicada viola restricción de unicidad «uvfood_user_email_key»
+  Detail: Ya existe la llave (email)=(prueba2@prueba2.com).// 2019-09-17T23:17:50.477
+managers.queries.ConsultasAdmin//updateUser// ERROR: llave duplicada viola restricción de unicidad «uvfood_user_email_key»
+  Detail: Ya existe la llave (email)=(prueba2@prueba2.com). org.postgresql.util.PSQLException: ERROR: llave duplicada viola restricción de unicidad «uvfood_user_email_key»
+  Detail: Ya existe la llave (email)=(prueba2@prueba2.com).// 2019-09-17T23:17:51.485
+managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-17T23:19:30.090
+managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-17T23:19:30.134
+managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-17T23:19:30.169
