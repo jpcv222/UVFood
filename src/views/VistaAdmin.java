@@ -1120,7 +1120,7 @@ public class VistaAdmin extends javax.swing.JFrame implements Runnable {
         );
 
         jLabel48.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel48.setText("Puee seleccionar un usuario: click izquierdo para llenar campos, derecho para asignar permisos.");
+        jLabel48.setText("Puede seleccionar un usuario: click izquierdo para llenar campos, derecho para asignar permisos.");
 
         javax.swing.GroupLayout jPanelModuleUserReportsLayout = new javax.swing.GroupLayout(jPanelModuleUserReports);
         jPanelModuleUserReports.setLayout(jPanelModuleUserReportsLayout);
@@ -1595,12 +1595,12 @@ public class VistaAdmin extends javax.swing.JFrame implements Runnable {
 
     private void jPanelSelectCSVUserMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelSelectCSVUserMouseClicked
         // TODO add your handling code here:
-        manager.selectFile("users.select.csv");
+        manager.selectFile();
     }//GEN-LAST:event_jPanelSelectCSVUserMouseClicked
 
     private void jButtonCargarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCargarActionPerformed
         // TODO add your handling code here:
-        manager.readCSVFile("users.upload.csv");
+        manager.readCSVFile();
     }//GEN-LAST:event_jButtonCargarActionPerformed
 
     private void btnCerrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCerrarActionPerformed
@@ -1697,8 +1697,9 @@ public class VistaAdmin extends javax.swing.JFrame implements Runnable {
         }
         if (evt.getButton() == java.awt.event.MouseEvent.BUTTON3) {
             //manager.createPopupmenu();
-        
-            manager.showPermissionsView();
+           
+            int row = jTableUsers.rowAtPoint( evt.getPoint() );
+            manager.showPermissionsView(row);
         }
     }//GEN-LAST:event_jTableUsersMouseClicked
 

@@ -49,3 +49,19 @@ managers.ControladorLogin//insert_session_record// Error desconocido.// 2019-08-
 managers.ControladorAdmin//showPermissionsView// Consulta no arroja resultados.// 2019-08-30T23:38:56.387
 managers.ControladorLogin//insert_session_record// Error desconocido.// 2019-08-30T23:39:56.150
 managers.ControladorLogin//insert_session_record// Error desconocido.// 2019-08-30T23:41:33.347
+managers.ControladorAdmin//showPermissionsView// Consulta no arroja resultados.// 2019-09-19T19:36:55.028
+managers.ControladorAdmin//showPermissionsView// Consulta no arroja resultados.// 2019-09-19T19:37:02.009
+managers.ControladorLogin//insert_session_record// Error desconocido.// 2019-09-19T20:05:22.085
+managers.queries.KeyValidate//resultHaveKey// Permisos denegados.// 2019-09-19T20:05:37.299
+managers.ControladorLogin//insert_session_record// Error desconocido.// 2019-09-19T20:37:58.263
+managers.ControladorAdmin//showPermissionsView// Consulta no arroja resultados.// 2019-09-19T20:38:15.134
+managers.ControladorLogin//insert_session_record// Error desconocido.// 2019-09-19T20:40:56.217
+managers.ControladorAdmin//showPermissionsView// Consulta no arroja resultados.// 2019-09-19T20:41:01.785
+managers.ControladorAdmin//showPermissionsView// Consulta no arroja resultados.// 2019-09-19T20:41:15.665
+managers.ControladorLogin//insert_session_record// Error desconocido.// 2019-09-19T20:43:15.489
+managers.ControladorAdmin//showPermissionsView// Consulta no arroja resultados.// 2019-09-19T20:43:32.391
+managers.ControladorLogin//insert_session_record// Error desconocido.// 2019-09-19T20:46:30.920
+managers.ControladorLogin//insert_session_record// Error desconocido.// 2019-09-19T22:20:03.869
+classes.FileManage//selectFile// Archivo CSV, ruta errónea.// 2019-09-19T22:21:54.517
+classes.FileManage//selectFile// Archivo CSV, ruta errónea.// 2019-09-19T22:22:06.377
+managers.ControladorLogin//insert_session_record// Error desconocido.// 2019-09-20T00:34:38.075

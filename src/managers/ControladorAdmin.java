@@ -60,17 +60,31 @@ public class ControladorAdmin {
         createIndexView();
     }
 
-    public void showPermissionsView() {
+    public void showPermissionsView(int row) {
+        String namekey = "permissions.show.view.asign";
+
         try {
-            modal.show_permissions_view(user.getUsername(), user.getFirstname(), user.getSurname());
+            
+            String username = interfazPrincipalAdmin.jTableUsers.getValueAt(row, 1).toString();
+            String firstname = interfazPrincipalAdmin.jTableUsers.getValueAt(row, 2).toString();
+            String surname = interfazPrincipalAdmin.jTableUsers.getValueAt(row, 3).toString();
+            
+            String result = keyvalidate.haveKey(namekey, user.getIdUser());
+            boolean validate = keyvalidate.resultHaveKey(result);
+            if (validate) {
+                modal.show_permissions_view(username, firstname, surname);
+            } else {
+                modal.error_message("Error de validación.", "Permisos denegados.", "El rol actual no tiene accesos a esta opción.", null, null);
+            }
         } catch (Exception ex) {
-            modal.error_message("Error fatal.", "Error en servidor.", "Se ha generado una excepción.", null, null);
+            modal.error_message("Error fatal.", "Error en servidor.", "Se ha generado un error inesperado.", null, null);
+            logs.escribirExceptionLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// " + ex.getMessage() + " " + ex.toString());
             logs.escribirErrorLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// Consulta no arroja resultados.");
         }
     }
 
-    public void selectFile(String namekey) {
-
+    public void selectFile() {
+        String namekey = "users.select.csv";
         String result = keyvalidate.haveKey(namekey, user.getIdUser());
         boolean validate = keyvalidate.resultHaveKey(result);
         if (validate) {
@@ -176,8 +190,8 @@ public class ControladorAdmin {
         }
     }
 
-    public void readCSVFile(String namekey) {
-
+    public void readCSVFile() {
+        String namekey = "users.upload.csv";
         String result = keyvalidate.haveKey(namekey, user.getIdUser());
         boolean validate = keyvalidate.resultHaveKey(result);
         if (validate) {
