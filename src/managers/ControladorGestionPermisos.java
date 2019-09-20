@@ -60,8 +60,8 @@ public class ControladorGestionPermisos {
                         }
                         break;
                 }
-            }else{
-                  modal.error_message("Error de validación.", "Permisos denegados.", "El rol actual no tiene accesos a esta opción.", null, null);
+            } else {
+                modal.error_message("Error de validación.", "Permisos denegados.", "El rol actual no tiene accesos a esta opción.", null, null);
             }
 
         } catch (Exception ex) {
@@ -69,6 +69,36 @@ public class ControladorGestionPermisos {
             logs.escribirExceptionLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// " + ex.getMessage() + " " + ex.toString());
         }
 
+    }
+
+    public void createKeysModule() {
+        
+        String module = (String) interfazGestionPermisos.jComboBoxModulos.getSelectedItem();
+        String namekey = "permissions.asign";
+        
+        String result = keyvalidate.haveKey(namekey, user.getIdUser());
+        boolean validate = keyvalidate.resultHaveKey(result);
+        if (validate) {
+            ArrayList<String> data_response;
+            data_response = consultasPermissions.get_keys_modules();
+            switch (data_response.get(0)) {
+                case "error.empty":
+                    logs.escribirErrorLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// Consulta no arroja resultados.");
+                    break;
+                case "server.error":
+                    logs.escribirErrorLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// El servidor está presentado problemas.");
+                    break;
+                case "server.success":
+                    logs.escribirAccessLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// Se muestran  modulos con " + data_response + " registros.");
+                    interfazGestionPermisos.jComboBoxModulos.removeAllItems();
+                    for (int x = 1; x < data_response.size(); x++) {
+                        interfazGestionPermisos.jComboBoxModulos.addItem(data_response.get(x));
+                    }
+                    break;
+            }
+        } else {
+            modal.error_message("Error de validación.", "Permisos denegados.", "El rol actual no tiene accesos a esta opción.", null, null);
+        }
     }
 
     public Usuario getUser() {
