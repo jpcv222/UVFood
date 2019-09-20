@@ -3,6 +3,7 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< HEAD
             <file>file:/C:/Users/jpcv2/Documents/NetBeansProjects/UVFood/src/classes/ConexionBD.java</file>
             <file>file:/C:/Users/jpcv2/Documents/NetBeansProjects/UVFood/src/views/GestionPermisos.java</file>
             <file>file:/C:/Users/jpcv2/Documents/NetBeansProjects/UVFood/src/managers/ControladorGestionPermisos.java</file>
@@ -18,6 +19,13 @@
             <file>file:/C:/Users/jpcv2/Documents/NetBeansProjects/UVFood/src/views/Index.java</file>
             <file>file:/C:/Users/jpcv2/Documents/NetBeansProjects/UVFood/src/components/UVFoodDialogs.java</file>
             <file>file:/C:/Users/jpcv2/Documents/NetBeansProjects/UVFood/src/views/SobreNosotros.java</file>
+=======
+            <file>file:/C:/Users/jeffr/Documents/UVFood/src/managers/ControladorAdmin.java</file>
+            <file>file:/C:/Users/jeffr/Documents/UVFood/src/managers/queries/ConsultasAdmin.java</file>
+            <file>file:/C:/Users/jeffr/Documents/UVFood/src/files/logs/error.txt</file>
+            <file>file:/C:/Users/jeffr/Documents/UVFood/src/views/VistaAdmin.java</file>
+            <file>file:/C:/Users/jeffr/Documents/UVFood/src/files/logs/exception.txt</file>
+>>>>>>> ab8a6742dd2bf76604a8f5c585e05360431d9c68
         </group>
     </open-files>
 </project-private>
