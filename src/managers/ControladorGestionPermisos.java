@@ -9,6 +9,7 @@ import classes.Logs;
 import classes.Usuario;
 import components.UVFoodDialogs;
 import java.util.ArrayList;
+import javax.swing.JCheckBox;
 import managers.queries.ConsultasPermissions;
 import managers.queries.KeyValidate;
 import views.GestionPermisos;
@@ -24,6 +25,7 @@ public class ControladorGestionPermisos {
     private KeyValidate keyvalidate;
     private final UVFoodDialogs modal;
     private ConsultasPermissions consultasPermissions;
+    public  ArrayList <JCheckBox> keys_options;
 
     private Logs logs = new Logs(Thread.currentThread().getStackTrace()[1].getClassName());
 
@@ -31,6 +33,7 @@ public class ControladorGestionPermisos {
         this.interfazGestionPermisos = interfazPrincipalAdmin;
         this.consultasPermissions = new ConsultasPermissions();
         this.modal = new UVFoodDialogs();
+        this.keys_options = new ArrayList<>();
     }
 
     public void set_init_conf() {
@@ -44,7 +47,7 @@ public class ControladorGestionPermisos {
             boolean validate = keyvalidate.resultHaveKey(result);
             if (validate) {
                 ArrayList<String> data_response;
-                data_response = consultasPermissions.get_modules();
+                data_response = consultasPermissions.get_modules("namemodule","");
                 switch (data_response.get(0)) {
                     case "error.empty":
                         logs.escribirErrorLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// Consulta no arroja resultados.");
@@ -72,15 +75,15 @@ public class ControladorGestionPermisos {
     }
 
     public void createKeysModule() {
-        
+
         String module = (String) interfazGestionPermisos.jComboBoxModulos.getSelectedItem();
         String namekey = "permissions.asign";
-        
+
         String result = keyvalidate.haveKey(namekey, user.getIdUser());
         boolean validate = keyvalidate.resultHaveKey(result);
         if (validate) {
             ArrayList<String> data_response;
-            data_response = consultasPermissions.get_keys_modules();
+            data_response = consultasPermissions.get_keys_modules(module);
             switch (data_response.get(0)) {
                 case "error.empty":
                     logs.escribirErrorLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// Consulta no arroja resultados.");
@@ -89,15 +92,22 @@ public class ControladorGestionPermisos {
                     logs.escribirErrorLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// El servidor está presentado problemas.");
                     break;
                 case "server.success":
-                    logs.escribirAccessLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// Se muestran  modulos con " + data_response + " registros.");
-                    interfazGestionPermisos.jComboBoxModulos.removeAllItems();
-                    for (int x = 1; x < data_response.size(); x++) {
-                        interfazGestionPermisos.jComboBoxModulos.addItem(data_response.get(x));
-                    }
+                    logs.escribirAccessLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// Se muestran  keys por modulos con " + data_response + " registros.");
+                    addCheckBox(data_response);
                     break;
             }
         } else {
             modal.error_message("Error de validación.", "Permisos denegados.", "El rol actual no tiene accesos a esta opción.", null, null);
+        }
+    }
+
+    public void addCheckBox(ArrayList<String> options) {
+
+        for (int x = 1; x < options.size(); x++) {
+            JCheckBox key_option = new JCheckBox();
+            key_option.setText(options.get(x));
+            interfazGestionPermisos.jPanelActions.removeAll();
+            interfazGestionPermisos.jPanelActions.add(key_option);
         }
     }
 

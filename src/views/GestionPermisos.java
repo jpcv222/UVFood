@@ -235,7 +235,7 @@ public class GestionPermisos extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanelAceptar;
-    private javax.swing.JPanel jPanelActions;
+    public javax.swing.JPanel jPanelActions;
     private javax.swing.JSeparator jSeparator1;
     // End of variables declaration//GEN-END:variables
 }

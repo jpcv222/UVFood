@@ -776,3 +776,64 @@ managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPo
 managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-20T03:54:21.810
 managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-20T03:54:25.922
 managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-20T03:58:21.983
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-20T04:16:14.422
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-20T04:29:27.940
+managers.queries.ConsultasPermissions//get_modules// ERROR: syntax error at or near "SELECTnamemodule"
+  Position: 1 org.postgresql.util.PSQLException: ERROR: syntax error at or near "SELECTnamemodule"
+  Position: 1// 2019-09-20T04:29:32.999
+managers.queries.ConsultasPermissions//get_modules// ERROR: syntax error at or near "SELECTid"
+  Position: 1 org.postgresql.util.PSQLException: ERROR: syntax error at or near "SELECTid"
+  Position: 1// 2019-09-20T04:29:34.146
+managers.queries.ConsultasPermissions//get_keys_modules// Index: 1, Size: 1 java.lang.IndexOutOfBoundsException: Index: 1, Size: 1// 2019-09-20T04:29:34.157
+managers.queries.ConsultasPermissions//get_modules// ERROR: syntax error at or near "SELECTid"
+  Position: 1 org.postgresql.util.PSQLException: ERROR: syntax error at or near "SELECTid"
+  Position: 1// 2019-09-20T04:29:34.653
+managers.queries.ConsultasPermissions//get_keys_modules// Index: 1, Size: 1 java.lang.IndexOutOfBoundsException: Index: 1, Size: 1// 2019-09-20T04:29:34.663
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-20T04:30:44.758
+managers.queries.ConsultasPermissions//get_modules// ERROR: column "id" does not exist
+  Position: 8 org.postgresql.util.PSQLException: ERROR: column "id" does not exist
+  Position: 8// 2019-09-20T04:31:02.196
+managers.queries.ConsultasPermissions//get_keys_modules// Index: 1, Size: 1 java.lang.IndexOutOfBoundsException: Index: 1, Size: 1// 2019-09-20T04:31:02.206
+managers.queries.ConsultasPermissions//get_modules// ERROR: column "id" does not exist
+  Position: 8 org.postgresql.util.PSQLException: ERROR: column "id" does not exist
+  Position: 8// 2019-09-20T04:31:03.191
+managers.queries.ConsultasPermissions//get_keys_modules// Index: 1, Size: 1 java.lang.IndexOutOfBoundsException: Index: 1, Size: 1// 2019-09-20T04:31:03.191
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-20T04:32:27.529
+managers.queries.ConsultasPermissions//get_modules// ERROR: column "users" does not exist
+  Position: 56 org.postgresql.util.PSQLException: ERROR: column "users" does not exist
+  Position: 56// 2019-09-20T04:32:32.676
+managers.queries.ConsultasPermissions//get_keys_modules// Index: 1, Size: 1 java.lang.IndexOutOfBoundsException: Index: 1, Size: 1// 2019-09-20T04:32:32.680
+managers.queries.ConsultasPermissions//get_modules// ERROR: column "permissions" does not exist
+  Position: 56 org.postgresql.util.PSQLException: ERROR: column "permissions" does not exist
+  Position: 56// 2019-09-20T04:32:34.027
+managers.queries.ConsultasPermissions//get_keys_modules// Index: 1, Size: 1 java.lang.IndexOutOfBoundsException: Index: 1, Size: 1// 2019-09-20T04:32:34.031
+managers.queries.ConsultasPermissions//get_modules// ERROR: column "permissions" does not exist
+  Position: 56 org.postgresql.util.PSQLException: ERROR: column "permissions" does not exist
+  Position: 56// 2019-09-20T04:32:34.524
+managers.queries.ConsultasPermissions//get_keys_modules// Index: 1, Size: 1 java.lang.IndexOutOfBoundsException: Index: 1, Size: 1// 2019-09-20T04:32:34.532
+managers.queries.ConsultasPermissions//get_modules// ERROR: column "permissions" does not exist
+  Position: 56 org.postgresql.util.PSQLException: ERROR: column "permissions" does not exist
+  Position: 56// 2019-09-20T04:36:38.533
+managers.queries.ConsultasPermissions//get_keys_modules// Index: 1, Size: 1 java.lang.IndexOutOfBoundsException: Index: 1, Size: 1// 2019-09-20T04:36:38.549
+managers.queries.ConsultasPermissions//get_modules// ERROR: column "users" does not exist
+  Position: 56 org.postgresql.util.PSQLException: ERROR: column "users" does not exist
+  Position: 56// 2019-09-20T04:36:39.675
+managers.queries.ConsultasPermissions//get_keys_modules// Index: 1, Size: 1 java.lang.IndexOutOfBoundsException: Index: 1, Size: 1// 2019-09-20T04:36:39.679
+managers.queries.ConsultasPermissions//get_modules// ERROR: column "users" does not exist
+  Position: 56 org.postgresql.util.PSQLException: ERROR: column "users" does not exist
+  Position: 56// 2019-09-20T04:36:40.095
+managers.queries.ConsultasPermissions//get_keys_modules// Index: 1, Size: 1 java.lang.IndexOutOfBoundsException: Index: 1, Size: 1// 2019-09-20T04:36:40.099
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-20T04:38:12.720
+managers.queries.ConsultasPermissions//get_modules// The column name namemodule was not found in this ResultSet. org.postgresql.util.PSQLException: The column name namemodule was not found in this ResultSet.// 2019-09-20T04:38:19.596
+managers.queries.ConsultasPermissions//get_keys_modules// ERROR: missing FROM-clause entry for table "server"
+  Position: 50 org.postgresql.util.PSQLException: ERROR: missing FROM-clause entry for table "server"
+  Position: 50// 2019-09-20T04:38:19.667
+managers.queries.ConsultasPermissions//get_modules// The column name namemodule was not found in this ResultSet. org.postgresql.util.PSQLException: The column name namemodule was not found in this ResultSet.// 2019-09-20T04:38:20.602
+managers.queries.ConsultasPermissions//get_keys_modules// ERROR: missing FROM-clause entry for table "server"
+  Position: 50 org.postgresql.util.PSQLException: ERROR: missing FROM-clause entry for table "server"
+  Position: 50// 2019-09-20T04:38:20.662
+managers.queries.ConsultasPermissions//get_modules// The column name namemodule was not found in this ResultSet. org.postgresql.util.PSQLException: The column name namemodule was not found in this ResultSet.// 2019-09-20T04:38:20.973
+managers.queries.ConsultasPermissions//get_keys_modules// ERROR: missing FROM-clause entry for table "server"
+  Position: 50 org.postgresql.util.PSQLException: ERROR: missing FROM-clause entry for table "server"
+  Position: 50// 2019-09-20T04:38:21.043
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-20T04:39:54.781

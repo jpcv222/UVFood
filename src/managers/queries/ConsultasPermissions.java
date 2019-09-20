@@ -22,16 +22,16 @@ public class ConsultasPermissions {
     private DBCore db_core = new DBCore();
     private Logs logs = new Logs(Thread.currentThread().getStackTrace()[1].getClassName());
 
-    public ArrayList<String> get_modules() {
+    public ArrayList<String> get_modules(String atrib, String condition) {
+        
         ArrayList<String> result = new ArrayList();
-
-        Statement ps = null;
-        Connection conn = Conexion();
-        ResultSet rs = null;
-        ResultSet aux_rs = null;
-        String sql = "SELECT namemodule FROM uvfood_modules;";
-
+        
         try {
+            Statement ps = null;
+            Connection conn = Conexion();
+            ResultSet rs = null;
+            ResultSet aux_rs = null;
+            String sql = "SELECT " + atrib + " FROM uvfood_modules " + condition + ";";
 
             ps = conn.createStatement();
             rs = ps.executeQuery(sql);
@@ -39,7 +39,7 @@ public class ConsultasPermissions {
             if (aux_rs.next()) {
                 result.add("server.success");
                 do {
-                    result.add(rs.getString("namemodule"));
+                    result.add(rs.getString(atrib));
                 } while (rs.next());
             } else {
                 result.add("error.empty");
@@ -54,17 +54,19 @@ public class ConsultasPermissions {
 
         return result;
     }
-    
-       public ArrayList<String> get_keys_modules() {
+
+    public ArrayList<String> get_keys_modules(String module) {
+        
         ArrayList<String> result = new ArrayList();
 
-        Statement ps = null;
-        Connection conn = Conexion();
-        ResultSet rs = null;
-        ResultSet aux_rs = null;
-        String sql = "SELECT namekey FROM uvfood_keys;";
-
         try {
+            String id_module = get_modules("idmodule", "WHERE namemodule = '" + module+"'").get(1);
+
+            Statement ps = null;
+            Connection conn = Conexion();
+            ResultSet rs = null;
+            ResultSet aux_rs = null;
+            String sql = "SELECT namekey FROM uvfood_keys WHERE idmodule = " + id_module + ";";
 
             ps = conn.createStatement();
             rs = ps.executeQuery(sql);
@@ -80,7 +82,7 @@ public class ConsultasPermissions {
             rs.close();
             ps.close();
 
-        } catch (SQLException np) {
+        } catch (SQLException | NullPointerException | IndexOutOfBoundsException np) {
             logs.escribirExceptionLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// " + np.getMessage() + " " + np.toString());
             result.add("server.error");
         }

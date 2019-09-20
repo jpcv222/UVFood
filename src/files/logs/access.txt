@@ -443,3 +443,90 @@ managers.ControladorLogin//request_login// Usuario existente.// 2019-09-20T03:58
 managers.queries.KeyValidate//resultHaveKey// Permiso concedido.// 2019-09-20T03:58:26.057
 managers.queries.KeyValidate//resultHaveKey// Permiso concedido.// 2019-09-20T03:58:26.208
 managers.ControladorGestionPermisos//createSelectModules// Se muestran  modulos con [server.success, users, sales, index, permissions] registros.// 2019-09-20T03:58:26.288
+managers.queries.KeyValidate//resultHaveKey// Permiso concedido.// 2019-09-20T04:16:13.952
+managers.ControladorAdmin//createJFreeChartCount// Se genera gráfica con 4 registros.// 2019-09-20T04:16:14.036
+managers.queries.KeyValidate//resultHaveKey// Permiso concedido.// 2019-09-20T04:16:14.199
+managers.ControladorAdmin//createJFreeChartCount// Se genera gráfica con 51 registros.// 2019-09-20T04:16:14.268
+managers.ControladorLogin//define_view// Acceso a vista admin.// 2019-09-20T04:16:14.299
+managers.ControladorLogin//request_login// Usuario existente.// 2019-09-20T04:16:14.453
+managers.queries.KeyValidate//resultHaveKey// Permiso concedido.// 2019-09-20T04:16:18.153
+managers.queries.KeyValidate//resultHaveKey// Permiso concedido.// 2019-09-20T04:16:18.236
+managers.ControladorGestionPermisos//createSelectModules// Se muestran  modulos con [server.success, users, sales, index, permissions] registros.// 2019-09-20T04:16:18.307
+managers.queries.KeyValidate//resultHaveKey// Permiso concedido.// 2019-09-20T04:16:20.254
+managers.ControladorGestionPermisos//createKeysModule// Se muestran  keys por modulos con [server.success, users.select.csv, users.upload.csv, index.show.count.users, index.show.count.sessions, permissions.asign, permissions.show.view.asign] registros.// 2019-09-20T04:16:20.315
+managers.queries.KeyValidate//resultHaveKey// Permiso concedido.// 2019-09-20T04:16:30.304
+managers.ControladorGestionPermisos//createKeysModule// Se muestran  keys por modulos con [server.success, users.select.csv, users.upload.csv, index.show.count.users, index.show.count.sessions, permissions.asign, permissions.show.view.asign] registros.// 2019-09-20T04:16:30.376
+managers.queries.KeyValidate//resultHaveKey// Permiso concedido.// 2019-09-20T04:16:31.809
+managers.ControladorGestionPermisos//createKeysModule// Se muestran  keys por modulos con [server.success, users.select.csv, users.upload.csv, index.show.count.users, index.show.count.sessions, permissions.asign, permissions.show.view.asign] registros.// 2019-09-20T04:16:31.974
+managers.queries.KeyValidate//resultHaveKey// Permiso concedido.// 2019-09-20T04:16:34.956
+managers.ControladorGestionPermisos//createKeysModule// Se muestran  keys por modulos con [server.success, users.select.csv, users.upload.csv, index.show.count.users, index.show.count.sessions, permissions.asign, permissions.show.view.asign] registros.// 2019-09-20T04:16:35.147
+managers.queries.KeyValidate//resultHaveKey// Permiso concedido.// 2019-09-20T04:16:44.377
+managers.ControladorGestionPermisos//createKeysModule// Se muestran  keys por modulos con [server.success, users.select.csv, users.upload.csv, index.show.count.users, index.show.count.sessions, permissions.asign, permissions.show.view.asign] registros.// 2019-09-20T04:16:44.466
+managers.queries.KeyValidate//resultHaveKey// Permiso concedido.// 2019-09-20T04:16:47.128
+managers.ControladorGestionPermisos//createKeysModule// Se muestran  keys por modulos con [server.success, users.select.csv, users.upload.csv, index.show.count.users, index.show.count.sessions, permissions.asign, permissions.show.view.asign] registros.// 2019-09-20T04:16:47.188
+managers.queries.KeyValidate//resultHaveKey// Permiso concedido.// 2019-09-20T04:16:47.259
+managers.ControladorGestionPermisos//createKeysModule// Se muestran  keys por modulos con [server.success, users.select.csv, users.upload.csv, index.show.count.users, index.show.count.sessions, permissions.asign, permissions.show.view.asign] registros.// 2019-09-20T04:16:47.330
+managers.queries.KeyValidate//resultHaveKey// Permiso concedido.// 2019-09-20T04:16:47.431
+managers.ControladorGestionPermisos//createKeysModule// Se muestran  keys por modulos con [server.success, users.select.csv, users.upload.csv, index.show.count.users, index.show.count.sessions, permissions.asign, permissions.show.view.asign] registros.// 2019-09-20T04:16:47.493
+managers.queries.KeyValidate//resultHaveKey// Permiso concedido.// 2019-09-20T04:16:47.574
+managers.ControladorGestionPermisos//createKeysModule// Se muestran  keys por modulos con [server.success, users.select.csv, users.upload.csv, index.show.count.users, index.show.count.sessions, permissions.asign, permissions.show.view.asign] registros.// 2019-09-20T04:16:47.636
+managers.queries.KeyValidate//resultHaveKey// Permiso concedido.// 2019-09-20T04:29:27.492
+managers.ControladorAdmin//createJFreeChartCount// Se genera gráfica con 4 registros.// 2019-09-20T04:29:27.561
+managers.queries.KeyValidate//resultHaveKey// Permiso concedido.// 2019-09-20T04:29:27.723
+managers.ControladorAdmin//createJFreeChartCount// Se genera gráfica con 52 registros.// 2019-09-20T04:29:27.824
+managers.ControladorLogin//define_view// Acceso a vista admin.// 2019-09-20T04:29:27.839
+managers.ControladorLogin//request_login// Usuario existente.// 2019-09-20T04:29:27.962
+managers.queries.KeyValidate//resultHaveKey// Permiso concedido.// 2019-09-20T04:29:32.732
+managers.queries.KeyValidate//resultHaveKey// Permiso concedido.// 2019-09-20T04:29:32.868
+managers.queries.KeyValidate//resultHaveKey// Permiso concedido.// 2019-09-20T04:29:34.092
+managers.queries.KeyValidate//resultHaveKey// Permiso concedido.// 2019-09-20T04:29:34.590
+managers.queries.KeyValidate//resultHaveKey// Permiso concedido.// 2019-09-20T04:30:43.959
+managers.ControladorAdmin//createJFreeChartCount// Se genera gráfica con 4 registros.// 2019-09-20T04:30:44.022
+managers.queries.KeyValidate//resultHaveKey// Permiso concedido.// 2019-09-20T04:30:44.191
+managers.ControladorAdmin//createJFreeChartCount// Se genera gráfica con 53 registros.// 2019-09-20T04:30:44.392
+managers.ControladorLogin//define_view// Acceso a vista admin.// 2019-09-20T04:30:44.423
+managers.ControladorLogin//request_login// Usuario existente.// 2019-09-20T04:30:44.768
+managers.queries.KeyValidate//resultHaveKey// Permiso concedido.// 2019-09-20T04:30:58.920
+managers.queries.KeyValidate//resultHaveKey// Permiso concedido.// 2019-09-20T04:30:59.005
+managers.ControladorGestionPermisos//createSelectModules// Se muestran  modulos con [server.success, users, sales, index, permissions] registros.// 2019-09-20T04:30:59.058
+managers.queries.KeyValidate//resultHaveKey// Permiso concedido.// 2019-09-20T04:31:01.951
+managers.queries.KeyValidate//resultHaveKey// Permiso concedido.// 2019-09-20T04:31:03.140
+managers.queries.KeyValidate//resultHaveKey// Permiso concedido.// 2019-09-20T04:32:27.149
+managers.ControladorAdmin//createJFreeChartCount// Se genera gráfica con 4 registros.// 2019-09-20T04:32:27.217
+managers.queries.KeyValidate//resultHaveKey// Permiso concedido.// 2019-09-20T04:32:27.381
+managers.ControladorAdmin//createJFreeChartCount// Se genera gráfica con 54 registros.// 2019-09-20T04:32:27.437
+managers.ControladorLogin//define_view// Acceso a vista admin.// 2019-09-20T04:32:27.457
+managers.ControladorLogin//request_login// Usuario existente.// 2019-09-20T04:32:27.541
+managers.queries.KeyValidate//resultHaveKey// Permiso concedido.// 2019-09-20T04:32:31.219
+managers.queries.KeyValidate//resultHaveKey// Permiso concedido.// 2019-09-20T04:32:31.503
+managers.ControladorGestionPermisos//createSelectModules// Se muestran  modulos con [server.success, users, sales, index, permissions] registros.// 2019-09-20T04:32:31.576
+managers.queries.KeyValidate//resultHaveKey// Permiso concedido.// 2019-09-20T04:32:32.616
+managers.queries.KeyValidate//resultHaveKey// Permiso concedido.// 2019-09-20T04:32:33.956
+managers.queries.KeyValidate//resultHaveKey// Permiso concedido.// 2019-09-20T04:32:34.453
+managers.queries.KeyValidate//resultHaveKey// Permiso concedido.// 2019-09-20T04:36:38.464
+managers.queries.KeyValidate//resultHaveKey// Permiso concedido.// 2019-09-20T04:36:39.615
+managers.queries.KeyValidate//resultHaveKey// Permiso concedido.// 2019-09-20T04:36:40.031
+managers.queries.KeyValidate//resultHaveKey// Permiso concedido.// 2019-09-20T04:38:12.281
+managers.ControladorAdmin//createJFreeChartCount// Se genera gráfica con 4 registros.// 2019-09-20T04:38:12.361
+managers.queries.KeyValidate//resultHaveKey// Permiso concedido.// 2019-09-20T04:38:12.545
+managers.ControladorAdmin//createJFreeChartCount// Se genera gráfica con 55 registros.// 2019-09-20T04:38:12.621
+managers.ControladorLogin//define_view// Acceso a vista admin.// 2019-09-20T04:38:12.641
+managers.ControladorLogin//request_login// Usuario existente.// 2019-09-20T04:38:12.732
+managers.queries.KeyValidate//resultHaveKey// Permiso concedido.// 2019-09-20T04:38:17.267
+managers.queries.KeyValidate//resultHaveKey// Permiso concedido.// 2019-09-20T04:38:17.355
+managers.ControladorGestionPermisos//createSelectModules// Se muestran  modulos con [server.success, users, sales, index, permissions] registros.// 2019-09-20T04:38:17.434
+managers.queries.KeyValidate//resultHaveKey// Permiso concedido.// 2019-09-20T04:38:19.502
+managers.queries.KeyValidate//resultHaveKey// Permiso concedido.// 2019-09-20T04:38:20.543
+managers.queries.KeyValidate//resultHaveKey// Permiso concedido.// 2019-09-20T04:38:20.900
+managers.queries.KeyValidate//resultHaveKey// Permiso concedido.// 2019-09-20T04:39:54.366
+managers.ControladorAdmin//createJFreeChartCount// Se genera gráfica con 4 registros.// 2019-09-20T04:39:54.450
+managers.queries.KeyValidate//resultHaveKey// Permiso concedido.// 2019-09-20T04:39:54.610
+managers.ControladorAdmin//createJFreeChartCount// Se genera gráfica con 56 registros.// 2019-09-20T04:39:54.685
+managers.ControladorLogin//define_view// Acceso a vista admin.// 2019-09-20T04:39:54.705
+managers.ControladorLogin//request_login// Usuario existente.// 2019-09-20T04:39:54.793
+managers.queries.KeyValidate//resultHaveKey// Permiso concedido.// 2019-09-20T04:39:59.312
+managers.queries.KeyValidate//resultHaveKey// Permiso concedido.// 2019-09-20T04:39:59.406
+managers.ControladorGestionPermisos//createSelectModules// Se muestran  modulos con [server.success, users, sales, index, permissions] registros.// 2019-09-20T04:39:59.466
+managers.queries.KeyValidate//resultHaveKey// Permiso concedido.// 2019-09-20T04:40:00.608
+managers.ControladorGestionPermisos//createKeysModule// Se muestran  keys por modulos con [server.success, users.select.csv, users.upload.csv] registros.// 2019-09-20T04:40:00.729
+managers.queries.KeyValidate//resultHaveKey// Permiso concedido.// 2019-09-20T04:40:01.976
