@@ -8,6 +8,7 @@ package managers;
 import classes.Logs;
 import classes.Usuario;
 import components.UVFoodDialogs;
+import java.awt.Color;
 import java.util.ArrayList;
 import javax.swing.JCheckBox;
 import managers.queries.ConsultasPermissions;
@@ -25,7 +26,7 @@ public class ControladorGestionPermisos {
     private KeyValidate keyvalidate;
     private final UVFoodDialogs modal;
     private ConsultasPermissions consultasPermissions;
-    public  ArrayList <JCheckBox> keys_options;
+    public ArrayList<JCheckBox> keys_options;
 
     private Logs logs = new Logs(Thread.currentThread().getStackTrace()[1].getClassName());
 
@@ -47,7 +48,7 @@ public class ControladorGestionPermisos {
             boolean validate = keyvalidate.resultHaveKey(result);
             if (validate) {
                 ArrayList<String> data_response;
-                data_response = consultasPermissions.get_modules("namemodule","");
+                data_response = consultasPermissions.get_modules("namemodule", "");
                 switch (data_response.get(0)) {
                     case "error.empty":
                         logs.escribirErrorLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// Consulta no arroja resultados.");
@@ -102,12 +103,16 @@ public class ControladorGestionPermisos {
     }
 
     public void addCheckBox(ArrayList<String> options) {
+        
+        interfazGestionPermisos.jPanelActions.removeAll();
+        interfazGestionPermisos.jPanelActions.repaint();
 
         for (int x = 1; x < options.size(); x++) {
-            JCheckBox key_option = new JCheckBox();
-            key_option.setText(options.get(x));
-            interfazGestionPermisos.jPanelActions.removeAll();
+            JCheckBox key_option = new JCheckBox(options.get(x));
             interfazGestionPermisos.jPanelActions.add(key_option);
+            interfazGestionPermisos.jPanelActions.validate();
+            interfazGestionPermisos.jPanelActions.repaint();
+
         }
     }
 
