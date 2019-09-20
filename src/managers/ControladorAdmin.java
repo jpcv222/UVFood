@@ -28,6 +28,7 @@ import javax.swing.JTable;
 import org.jfree.chart.*;
 import org.jfree.chart.plot.PlotOrientation;
 import org.jfree.data.category.DefaultCategoryDataset;
+import views.GestionPermisos;
 
 /**
  *
@@ -72,7 +73,7 @@ public class ControladorAdmin {
             String result = keyvalidate.haveKey(namekey, user.getIdUser());
             boolean validate = keyvalidate.resultHaveKey(result);
             if (validate) {
-                modal.show_permissions_view(username, firstname, surname);
+                show_permissions_view(username, firstname, surname);
             } else {
                 modal.error_message("Error de validación.", "Permisos denegados.", "El rol actual no tiene accesos a esta opción.", null, null);
             }
@@ -81,6 +82,15 @@ public class ControladorAdmin {
             logs.escribirExceptionLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// " + ex.getMessage() + " " + ex.toString());
             logs.escribirErrorLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// Consulta no arroja resultados.");
         }
+    }
+    
+        public void show_permissions_view(String username, String firstname, String surname ) {
+        GestionPermisos view_permissions = new GestionPermisos();
+        view_permissions.setVisible(true);
+        view_permissions.jLabelUserNamePerm.setText(username+ ": "+ firstname + " " + surname);
+        view_permissions.manager.set_init_conf();
+        view_permissions.manager.user = this.user;
+        
     }
 
     public void selectFile() {

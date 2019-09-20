@@ -23,7 +23,6 @@ public class GestionPermisos extends javax.swing.JFrame {
     public GestionPermisos() {
         initComponents();
         manager = new ControladorGestionPermisos(this);
-        manager.set_init_conf();
 
         red_error = new Color(205, 31, 50);
 

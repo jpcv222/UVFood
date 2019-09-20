@@ -722,3 +722,52 @@ managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPo
 managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-20T00:34:12.560
 managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-20T00:34:37.450
 managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-20T00:34:38.065
+managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-20T02:55:49.473
+managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-20T02:55:49.633
+managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-20T02:55:57.415
+managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-20T02:56:02.558
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-20T02:56:03.221
+managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-20T02:58:07.976
+managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-20T02:58:08.132
+managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-20T02:58:09.765
+managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-20T02:58:15.791
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-20T02:58:16.323
+managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-20T03:05:16.055
+managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-20T03:05:16.215
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-20T03:09:52.857
+managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-20T03:09:58.164
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-20T03:12:42.040
+managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-20T03:12:46.611
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-20T03:14:21.710
+managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-20T03:14:25.957
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-20T03:21:02.777
+managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-20T03:21:06.844
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-20T03:22:34.980
+managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-20T03:22:38.881
+managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-20T03:22:45.839
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-20T03:23:30.271
+managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-20T03:23:34.253
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-20T03:24:57.463
+managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-20T03:25:00.945
+managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-20T03:25:54.895
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-20T03:27:27.858
+managers.ControladorAdmin//showPermissionsView// null java.lang.NullPointerException// 2019-09-20T03:27:31.468
+managers.ControladorAdmin//showPermissionsView// null java.lang.NullPointerException// 2019-09-20T03:28:26.056
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-20T03:30:40.608
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-20T03:33:00.456
+managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-20T03:33:05.762
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-20T03:37:21.441
+managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-20T03:37:25.501
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-20T03:38:03.690
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-20T03:39:30.440
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-20T03:41:45.380
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-20T03:42:42.948
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-20T03:43:28.717
+managers.ControladorGestionPermisos//createSelectModules// Index: 4, Size: 4 java.lang.IndexOutOfBoundsException: Index: 4, Size: 4// 2019-09-20T03:43:33.455
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-20T03:45:07.529
+managers.ControladorGestionPermisos//createSelectModules// Index: 4, Size: 4 java.lang.IndexOutOfBoundsException: Index: 4, Size: 4// 2019-09-20T03:45:11.244
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-20T03:45:51.500
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-20T03:46:25.382
+managers.ControladorGestionPermisos//createSelectModules// Index: 4, Size: 4 java.lang.IndexOutOfBoundsException: Index: 4, Size: 4// 2019-09-20T03:46:28.811
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-20T03:47:39.481
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-20T03:49:27.011

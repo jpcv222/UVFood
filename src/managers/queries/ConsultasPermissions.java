@@ -5,8 +5,12 @@
  */
 package managers.queries;
 
+import static classes.ConexionBD.Conexion;
 import classes.Logs;
+import java.sql.Connection;
 import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 
 /**
@@ -18,25 +22,36 @@ public class ConsultasPermissions {
     private DBCore db_core = new DBCore();
     private Logs logs = new Logs(Thread.currentThread().getStackTrace()[1].getClassName());
 
-    public ArrayList <String> get_modules() {
-        ArrayList <String> result = new ArrayList();
+    public ArrayList<String> get_modules() {
+        ArrayList<String> result = new ArrayList();
+
+        Statement ps = null;
+        Connection conn = Conexion();
+        ResultSet rs = null;
+        ResultSet aux_rs = null;
+        String sql = "SELECT namemodule FROM uvfood_modules;";
+
         try {
-        
-        Object response = db_core.get_all_records("modules", "namemodule");
-        result.clear();
-        if ("error.empty".equals((String) response) || "server.error".equals((String) response)) {
-            result.add((String) response);
-        }else {
-            ResultSet new_response = (ResultSet) response;
-            while (new_response.next()) {
-              result.add(new_response.getString("namemodule"));
+
+            ps = conn.createStatement();
+            rs = ps.executeQuery(sql);
+            aux_rs = rs;
+            if (aux_rs.next()) {
+                result.add("server.success");
+                do {
+                    result.add(rs.getString("namemodule"));
+                } while (rs.next());
+            } else {
+                result.add("error.empty");
             }
-        }
-        }
-        catch(Exception ex){
-            logs.escribirExceptionLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// " + ex.getMessage() + " " + ex.toString());
+            rs.close();
+            ps.close();
+
+        } catch (SQLException np) {
+            logs.escribirExceptionLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// " + np.getMessage() + " " + np.toString());
             result.add("server.error");
         }
+
         return result;
     }
 
