@@ -91,3 +91,6 @@ managers.ControladorLogin//insert_session_record// Error desconocido.// 2019-09-
 managers.ControladorLogin//insert_session_record// Error desconocido.// 2019-09-20T03:46:25.398
 managers.ControladorLogin//insert_session_record// Error desconocido.// 2019-09-20T03:47:39.484
 managers.ControladorLogin//insert_session_record// Error desconocido.// 2019-09-20T03:49:27.021
+managers.ControladorLogin//insert_session_record// Error desconocido.// 2019-09-20T03:52:55.698
+managers.ControladorLogin//insert_session_record// Error desconocido.// 2019-09-20T03:54:21.826
+managers.ControladorLogin//insert_session_record// Error desconocido.// 2019-09-20T03:58:21.985

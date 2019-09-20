@@ -771,3 +771,8 @@ managers.queries.ConsultasLogin//insert_session_record// No results were returne
 managers.ControladorGestionPermisos//createSelectModules// Index: 4, Size: 4 java.lang.IndexOutOfBoundsException: Index: 4, Size: 4// 2019-09-20T03:46:28.811
 managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-20T03:47:39.481
 managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-20T03:49:27.011
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-20T03:52:55.682
+managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-20T03:52:59.395
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-20T03:54:21.810
+managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-20T03:54:25.922
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-20T03:58:21.983

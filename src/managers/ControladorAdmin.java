@@ -65,11 +65,11 @@ public class ControladorAdmin {
         String namekey = "permissions.show.view.asign";
 
         try {
-            
+
             String username = interfazPrincipalAdmin.jTableUsers.getValueAt(row, 1).toString();
             String firstname = interfazPrincipalAdmin.jTableUsers.getValueAt(row, 2).toString();
             String surname = interfazPrincipalAdmin.jTableUsers.getValueAt(row, 3).toString();
-            
+
             String result = keyvalidate.haveKey(namekey, user.getIdUser());
             boolean validate = keyvalidate.resultHaveKey(result);
             if (validate) {
@@ -83,14 +83,14 @@ public class ControladorAdmin {
             logs.escribirErrorLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// Consulta no arroja resultados.");
         }
     }
-    
-        public void show_permissions_view(String username, String firstname, String surname ) {
+
+    public void show_permissions_view(String username, String firstname, String surname) {
         GestionPermisos view_permissions = new GestionPermisos();
-        view_permissions.setVisible(true);
-        view_permissions.jLabelUserNamePerm.setText(username+ ": "+ firstname + " " + surname);
+        view_permissions.manager.setUser(user);
         view_permissions.manager.set_init_conf();
-        view_permissions.manager.user = this.user;
-        
+        view_permissions.jLabelUserNamePerm.setText(username + ": " + firstname + " " + surname);
+        view_permissions.setVisible(true);
+
     }
 
     public void selectFile() {

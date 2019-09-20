@@ -40,9 +40,9 @@ public class ControladorGestionPermisos {
     public void createSelectModules() {
         String namekey = "permissions.asign";
         try {
-            //String result = keyvalidate.haveKey(namekey, user.getIdUser());
-            //boolean validate = keyvalidate.resultHaveKey(result);
-            if (true) {
+            String result = keyvalidate.haveKey(namekey, user.getIdUser());
+            boolean validate = keyvalidate.resultHaveKey(result);
+            if (validate) {
                 ArrayList<String> data_response;
                 data_response = consultasPermissions.get_modules();
                 switch (data_response.get(0)) {
@@ -69,6 +69,14 @@ public class ControladorGestionPermisos {
             logs.escribirExceptionLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// " + ex.getMessage() + " " + ex.toString());
         }
 
+    }
+
+    public Usuario getUser() {
+        return user;
+    }
+
+    public void setUser(Usuario user) {
+        this.user = user;
     }
 
 }
