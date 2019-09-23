@@ -116,7 +116,7 @@ public class ControladorGestionPermisos {
         }
     }
 
-    public void validateCheckSelected(JCheckBox key_option) {
+    public void validateCheckSelected() {
         keys_options.clear();
         java.awt.Container check[] = (java.awt.Container[]) interfazGestionPermisos.jPanelActions.getComponents();
         JCheckBox num[] = (JCheckBox[]) check;

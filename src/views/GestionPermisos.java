@@ -193,7 +193,7 @@ public class GestionPermisos extends javax.swing.JFrame {
 
     private void jPanelAceptarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelAceptarMouseClicked
         // TODO add your handling code here:
-        //this.dispose();
+        manager.validateCheckSelected();
     }//GEN-LAST:event_jPanelAceptarMouseClicked
 
     private void jPanelAceptarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelAceptarMouseEntered
