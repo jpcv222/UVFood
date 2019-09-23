@@ -2110,3 +2110,4 @@ managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPo
 managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-18T12:24:28.924
 managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-18T12:24:28.955
 >>>>>>> ab8a6742dd2bf76604a8f5c585e05360431d9c68
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-20T17:13:17.256

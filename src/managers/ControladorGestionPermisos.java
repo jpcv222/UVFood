@@ -26,7 +26,7 @@ public class ControladorGestionPermisos {
     private KeyValidate keyvalidate;
     private final UVFoodDialogs modal;
     private ConsultasPermissions consultasPermissions;
-    public ArrayList<JCheckBox> keys_options;
+    public ArrayList<String> keys_options;
 
     private Logs logs = new Logs(Thread.currentThread().getStackTrace()[1].getClassName());
 
@@ -103,7 +103,7 @@ public class ControladorGestionPermisos {
     }
 
     public void addCheckBox(ArrayList<String> options) {
-        
+
         interfazGestionPermisos.jPanelActions.removeAll();
         interfazGestionPermisos.jPanelActions.repaint();
 
@@ -113,6 +113,17 @@ public class ControladorGestionPermisos {
             interfazGestionPermisos.jPanelActions.validate();
             interfazGestionPermisos.jPanelActions.repaint();
 
+        }
+    }
+
+    public void validateCheckSelected(JCheckBox key_option) {
+        keys_options.clear();
+        java.awt.Container check[] = (java.awt.Container[]) interfazGestionPermisos.jPanelActions.getComponents();
+        JCheckBox num[] = (JCheckBox[]) check;
+        for (int i = 0; i < interfazGestionPermisos.jPanelActions.getComponentCount(); i++) {
+            if (num[i].isSelected()) {
+                keys_options.add(num[i].getText());
+            }
         }
     }
 

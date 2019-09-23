@@ -132,8 +132,8 @@ public class GestionPermisos extends javax.swing.JFrame {
 
         jComboBoxModulos.setBorder(null);
         jComboBoxModulos.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jComboBoxModulosMouseClicked(evt);
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jComboBoxModulosMousePressed(evt);
             }
         });
         jPanel1.add(jComboBoxModulos, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, 390, 30));
@@ -208,10 +208,10 @@ public class GestionPermisos extends javax.swing.JFrame {
         jLabelAceptar.setForeground(red_error);
     }//GEN-LAST:event_jPanelAceptarMouseExited
 
-    private void jComboBoxModulosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jComboBoxModulosMouseClicked
+    private void jComboBoxModulosMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jComboBoxModulosMousePressed
         // TODO add your handling code here:
         manager.createKeysModule();
-    }//GEN-LAST:event_jComboBoxModulosMouseClicked
+    }//GEN-LAST:event_jComboBoxModulosMousePressed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
