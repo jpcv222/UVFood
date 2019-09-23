@@ -1929,3 +1929,15 @@ managers.queries.ConsultasAdmin//ManejadorUpdate// ERROR: llave duplicada viola 
 managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-18T12:24:28.893
 managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-18T12:24:28.924
 managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-18T12:24:28.955
+managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-23T15:14:41.362
+managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-23T15:14:41.388
+managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-23T15:14:41.418
+managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-23T15:17:51.970
+managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-23T15:17:52.028
+managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-23T15:17:52.117
+managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-23T15:21:08.462
+managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-23T15:21:08.525
+managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-23T15:21:08.554
+managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-23T15:31:53.896
+managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-23T15:31:53.971
+managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-23T15:31:54.002

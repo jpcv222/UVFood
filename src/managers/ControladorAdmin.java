@@ -456,7 +456,7 @@ public class ControladorAdmin implements ActionListener {
                 break;
             case "solo_crear":
                 //interfazPrincipalAdmin.jComboBoxRoles.removeAllItems();
-                requestFillCombo();
+                
                 interfazPrincipalAdmin.btnCrearUser.setEnabled(true);
                 interfazPrincipalAdmin.btnModificarUser.setEnabled(false);
                 interfazPrincipalAdmin.btnEliminarUser.setEnabled(false);

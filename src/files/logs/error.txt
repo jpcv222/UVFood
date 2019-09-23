@@ -338,3 +338,4 @@ managers.ControladorAdmin//requestUpdateUser/error.email ya existe/ // 2019-09-1
 managers.ControladorAdmin//requestUpdateUser/error.usuario ya existe/ // 2019-09-18T12:26:18.868
 managers.ControladorAdmin//requestUpdateUser/error.email ya existe/ // 2019-09-18T12:26:29.347
 managers.ControladorAdmin//requestUpdateUser/error.usuario ya existe/ // 2019-09-18T12:26:40.666
+managers.ControladorAdmin//requestValidationsInsertUser//Error de campos obligatorios// 2019-09-23T15:14:52.328

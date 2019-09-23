@@ -109,6 +109,8 @@ public class VistaAdmin extends javax.swing.JFrame implements Runnable {
         jTextFieldIdUser.setVisible(false);
         jTextFieldActivo.setVisible(false);
         jTextFieldNumActi.setVisible(false);
+
+        manager.requestFillCombo();
     }
 
     public void hora() {
@@ -1849,7 +1851,9 @@ public class VistaAdmin extends javax.swing.JFrame implements Runnable {
         jTextFieldRol.removeAll();
         jTextFieldRol.repaint();
         jTextFieldRol.revalidate();
+
         String rol = jComboBoxRoles.getSelectedItem().toString();
+
         jTextFieldRol.setText(rol);
     }//GEN-LAST:event_jComboBoxRolesActionPerformed
 
