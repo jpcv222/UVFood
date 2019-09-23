@@ -141,6 +141,11 @@ public class VistaCliente extends javax.swing.JFrame implements Runnable{
         jLabel17 = new javax.swing.JLabel();
         jPanelPerfilCliente = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
+        jPanelCompra = new javax.swing.JPanel();
+        jPanelMenuDiaPrincipal1 = new javax.swing.JPanel();
+        jLabel18 = new javax.swing.JLabel();
+        jPanel4 = new javax.swing.JPanel();
+        jLabel19 = new javax.swing.JLabel();
         jPanelbtn = new javax.swing.JPanel();
         btnCerrar = new javax.swing.JButton();
         btnMiminize = new javax.swing.JButton();
@@ -347,6 +352,64 @@ public class VistaCliente extends javax.swing.JFrame implements Runnable{
         );
 
         rSPanelsSlider1.add(jPanelPerfilCliente, "card3");
+
+        jPanelCompra.setBackground(new java.awt.Color(255, 255, 255));
+
+        jPanelMenuDiaPrincipal1.setBackground(new java.awt.Color(205, 31, 50));
+
+        jLabel18.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel18.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel18.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel18.setText("Menu del dia");
+
+        jPanel4.setBackground(new java.awt.Color(255, 255, 255));
+
+        jLabel19.setText("Espacio para imagen del menu");
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel19, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel19, javax.swing.GroupLayout.DEFAULT_SIZE, 213, Short.MAX_VALUE)
+        );
+
+        javax.swing.GroupLayout jPanelMenuDiaPrincipal1Layout = new javax.swing.GroupLayout(jPanelMenuDiaPrincipal1);
+        jPanelMenuDiaPrincipal1.setLayout(jPanelMenuDiaPrincipal1Layout);
+        jPanelMenuDiaPrincipal1Layout.setHorizontalGroup(
+            jPanelMenuDiaPrincipal1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel18, javax.swing.GroupLayout.DEFAULT_SIZE, 790, Short.MAX_VALUE)
+            .addComponent(jPanel4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        jPanelMenuDiaPrincipal1Layout.setVerticalGroup(
+            jPanelMenuDiaPrincipal1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelMenuDiaPrincipal1Layout.createSequentialGroup()
+                .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout jPanelCompraLayout = new javax.swing.GroupLayout(jPanelCompra);
+        jPanelCompra.setLayout(jPanelCompraLayout);
+        jPanelCompraLayout.setHorizontalGroup(
+            jPanelCompraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelCompraLayout.createSequentialGroup()
+                .addContainerGap(109, Short.MAX_VALUE)
+                .addComponent(jPanelMenuDiaPrincipal1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(101, 101, 101))
+        );
+        jPanelCompraLayout.setVerticalGroup(
+            jPanelCompraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelCompraLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanelMenuDiaPrincipal1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(467, Short.MAX_VALUE))
+        );
+
+        rSPanelsSlider1.add(jPanelCompra, "card4");
 
         jPanelbtn.setBackground(new java.awt.Color(255, 255, 255));
         jPanelbtn.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
@@ -602,6 +665,8 @@ public class VistaCliente extends javax.swing.JFrame implements Runnable{
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -614,10 +679,13 @@ public class VistaCliente extends javax.swing.JFrame implements Runnable{
     public javax.swing.JLabel jLabelUserNamePerm;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanelCompra;
     private javax.swing.JPanel jPanelHeader;
     private javax.swing.JPanel jPanelIndexCliente;
     private javax.swing.JPanel jPanelMenu;
     private javax.swing.JPanel jPanelMenuDiaPrincipal;
+    private javax.swing.JPanel jPanelMenuDiaPrincipal1;
     private javax.swing.JPanel jPanelPerfilCliente;
     private javax.swing.JPanel jPanelbtn;
     private javax.swing.JLabel jlFecha;
