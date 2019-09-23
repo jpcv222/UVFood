@@ -26,7 +26,8 @@ public class ControladorGestionPermisos {
     private KeyValidate keyvalidate;
     private final UVFoodDialogs modal;
     private ConsultasPermissions consultasPermissions;
-    public ArrayList<String> keys_options;
+    public ArrayList<String> new_user_keys_options;
+    public ArrayList<String> current_user_keys;
 
     private Logs logs = new Logs(Thread.currentThread().getStackTrace()[1].getClassName());
 
@@ -34,11 +35,13 @@ public class ControladorGestionPermisos {
         this.interfazGestionPermisos = interfazPrincipalAdmin;
         this.consultasPermissions = new ConsultasPermissions();
         this.modal = new UVFoodDialogs();
-        this.keys_options = new ArrayList<>();
+        this.new_user_keys_options = new ArrayList<>();
+        this.current_user_keys = new ArrayList<>();
     }
 
     public void set_init_conf() {
         createSelectModules();
+        getCurrentUserKeys();
     }
 
     public void createSelectModules() {
@@ -65,7 +68,7 @@ public class ControladorGestionPermisos {
                         break;
                 }
             } else {
-                modal.error_message("Error de validación.", "Permisos denegados.", "El rol actual no tiene accesos a esta opción.", null, null);
+                modal.error_message("Error de validación.", "Permisos denegados.", "El rol actual no tiene accesos a esta opción:", "Asignación de permisos.", null);
             }
 
         } catch (Exception ex) {
@@ -75,6 +78,37 @@ public class ControladorGestionPermisos {
 
     }
 
+    public void getCurrentUserKeys(){
+        String namekey = "permissions.asign";
+
+        String result = keyvalidate.haveKey(namekey, user.getIdUser());
+        boolean validate = keyvalidate.resultHaveKey(result);
+        
+        if (validate) {
+                  ArrayList<String> data_response;
+                data_response = consultasPermissions.get_user_keys(user.getIdUser());
+                switch (data_response.get(0)) {
+                    case "error.empty":
+                        logs.escribirErrorLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// Consulta no arroja resultados.");
+                        break;
+                    case "server.error":
+                        logs.escribirErrorLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// El servidor está presentado problemas.");
+                        break;
+                    case "server.success":
+                        logs.escribirAccessLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// Se muestran  user keys con " + data_response + " registros.");
+                        current_user_keys.clear();
+                        for (int x = 1; x < data_response.size(); x++) {
+                            current_user_keys.add(data_response.get(x));
+                        }
+                        break;
+                }
+        }
+        else {
+            modal.error_message("Error de validación.", "Permisos denegados.", "El rol actual no tiene accesos a esta opción:", "Asignación de permisos.", null);
+        }
+        
+    }
+    
     public void createKeysModule() {
 
         String module = (String) interfazGestionPermisos.jComboBoxModulos.getSelectedItem();
@@ -98,7 +132,7 @@ public class ControladorGestionPermisos {
                     break;
             }
         } else {
-            modal.error_message("Error de validación.", "Permisos denegados.", "El rol actual no tiene accesos a esta opción.", null, null);
+           modal.error_message("Error de validación.", "Permisos denegados.", "El rol actual no tiene accesos a esta opción:", "Asignación de permisos.", null);
         }
     }
 
@@ -117,12 +151,12 @@ public class ControladorGestionPermisos {
     }
 
     public void validateCheckSelected() {
-        keys_options.clear();
+        new_user_keys_options.clear();
         java.awt.Container check[] = (java.awt.Container[]) interfazGestionPermisos.jPanelActions.getComponents();
         JCheckBox num[] = (JCheckBox[]) check;
         for (int i = 0; i < interfazGestionPermisos.jPanelActions.getComponentCount(); i++) {
             if (num[i].isSelected()) {
-                keys_options.add(num[i].getText());
+                new_user_keys_options.add(num[i].getText());
             }
         }
     }

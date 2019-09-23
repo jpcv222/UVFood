@@ -21,7 +21,40 @@ public class ConsultasPermissions {
 
     private DBCore db_core = new DBCore();
     private Logs logs = new Logs(Thread.currentThread().getStackTrace()[1].getClassName());
+    
+    public ArrayList<String> get_user_keys(int id_user){
+        
+         ArrayList<String> result = new ArrayList();
+        
+        try {
+            Statement ps = null;
+            Connection conn = Conexion();
+            ResultSet rs = null;
+            ResultSet aux_rs = null;
+            String sql = "SELECT namekey FROM uvfood_keys WHERE idkey IN (SELECT idkey FROM uvfood_user_key WHERE iduser  = '"+id_user+"');";
 
+            ps = conn.createStatement();
+            rs = ps.executeQuery(sql);
+            aux_rs = rs;
+            if (aux_rs.next()) {
+                result.add("server.success");
+                do {
+                    result.add(rs.getString("namekey"));
+                } while (rs.next());
+            } else {
+                result.add("error.empty");
+            }
+            rs.close();
+            ps.close();
+
+        } catch (SQLException np) {
+            logs.escribirExceptionLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// " + np.getMessage() + " " + np.toString());
+            result.add("server.error");
+        }
+
+        return result;
+    }
+    
     public ArrayList<String> get_modules(String atrib, String condition) {
         
         ArrayList<String> result = new ArrayList();
