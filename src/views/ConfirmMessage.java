@@ -17,7 +17,7 @@ public class ConfirmMessage extends javax.swing.JFrame {
      * Creates new form ErrorMessage
      */
     Color red_error;
-    boolean confirm_action;
+    public boolean confirm_action;
 
     public ConfirmMessage() {
 

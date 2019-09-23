@@ -16,9 +16,9 @@ import views.SuccesMessage;
  */
 public class UVFoodDialogs {
 
-    private ErrorMessage error_message;
-    private SuccesMessage succes_message;
-    private ConfirmMessage confirmation_message;
+    public ErrorMessage error_message;
+    public SuccesMessage succes_message;
+    public ConfirmMessage confirmation_message;
 
     public UVFoodDialogs() {
         this.error_message = new ErrorMessage();

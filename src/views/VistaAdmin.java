@@ -1856,7 +1856,7 @@ public class VistaAdmin extends javax.swing.JFrame implements Runnable {
 
     private void btnEliminarUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarUserActionPerformed
         // TODO add your handling code here:
-        manager.showConfirmationMessage();
+        manager.validateDisableUser();
     }//GEN-LAST:event_btnEliminarUserActionPerformed
 
     private void btnhabilitarUserMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnhabilitarUserMouseEntered

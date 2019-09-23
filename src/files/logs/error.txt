@@ -442,3 +442,7 @@ managers.ControladorAdmin//requestUpdateUser/error.usuario ya existe/ // 2019-09
 managers.ControladorAdmin//requestUpdateUser/error.email ya existe/ // 2019-09-18T12:26:29.347
 managers.ControladorAdmin//requestUpdateUser/error.usuario ya existe/ // 2019-09-18T12:26:40.666
 managers.ControladorLogin//insert_session_record// Error desconocido.// 2019-09-20T17:13:17.272
+managers.ControladorLogin//insert_session_record// Error desconocido.// 2019-09-22T21:54:30.141
+managers.ControladorLogin//insert_session_record// Error desconocido.// 2019-09-22T21:56:48.047
+managers.ControladorLogin//insert_session_record// Error desconocido.// 2019-09-22T22:09:02.862
+managers.ControladorLogin//insert_session_record// Error desconocido.// 2019-09-22T22:11:59.226

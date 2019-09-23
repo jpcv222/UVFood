@@ -39,7 +39,7 @@ import views.ConfirmMessage;
  * @author Juan Pablo Castro 2019 GitHub: jpcv222
  * @author Jeffrey Rios 2019 GitHub: jeffrey2423
  */
-public class ControladorAdmin implements ActionListener {
+public class ControladorAdmin  {
 
     private VistaAdmin interfazPrincipalAdmin;
     private FormValidations validaciones;
@@ -60,9 +60,6 @@ public class ControladorAdmin implements ActionListener {
         this.file = new FileManage();
         this.confirmation_message = confirmation_message;
         this.consultasAdmin = new ConsultasAdmin();
-        this.confirmation_message.btnAceptar.addActionListener(this);
-        this.confirmation_message.btnCancelar.addActionListener(this);
-        this.interfazPrincipalAdmin.btnEliminarUser.addActionListener(this);
         this.validaciones = new FormValidations();
 
     }
@@ -549,7 +546,7 @@ public class ControladorAdmin implements ActionListener {
         interfazPrincipalAdmin.jTextFieldUser.setEditable(true);
         interfazPrincipalAdmin.jPasswordField.setEditable(true);
         interfazPrincipalAdmin.jComboBoxRoles.setEnabled(true);
-
+      
     }
 
     public void limpiarCampos() {
@@ -568,41 +565,32 @@ public class ControladorAdmin implements ActionListener {
 
         switch (res) {
             case "success":
-                modal.success_message("Exito", "", "El usuario fue deshabilitado con exito", "", "");
+                modal.success_message("Éxito", "", "El usuario fue deshabilitado con exito", "", "");
                 break;
             case "error":
                 modal.error_message("Error", "", "Intentalo de nuevo por favor", "", "");
                 break;
+            default:
+                modal.error_message("Error", "Servidor no envía respuesta", "Intentalo de nuevo por favor", "", "");
+                break;
 
         }
 
     }
 
-    public void showConfirmationMessage() {
+    public void validateDisableUser() {
         modal.confirmation_message("Confirmacion", "¿Desea deshabilitar este usuario?");
+        if(modal.confirmation_message.confirm_action){
+            requestDisableUser();
+            interfazPrincipalAdmin.btnhabilitarUser.setEnabled(true);
+            interfazPrincipalAdmin.btnEliminarUser.setEnabled(false);
+        }
     }
 
     public void requestEnableUser() {
         consultasAdmin.enableUser(interfazPrincipalAdmin);
-    }
-
-    @Override
-    public void actionPerformed(ActionEvent ae) {
-        if (ae.getSource() == interfazPrincipalAdmin.btnEliminarUser) {
-            confirmation_message.setVisible(true);
-            interfazPrincipalAdmin.btnhabilitarUser.setEnabled(true);
-
-            //modal.confirmation_message("Confirmacion", "¿Desea deshabilitar este usuario?");
-        }
-        if (ae.getSource() == confirmation_message.btnAceptar) {
-            requestDisableUser();
-            confirmation_message.dispose();
-
-        }
-        if (ae.getSource() == confirmation_message.btnCancelar) {
-            confirmation_message.dispose();
-        }
-
+        interfazPrincipalAdmin.btnhabilitarUser.setEnabled(false);
+        interfazPrincipalAdmin.btnEliminarUser.setEnabled(true);
     }
 
 }

@@ -522,13 +522,10 @@ public class ConsultasAdmin extends ConexionBD {
             ps.close();
         } catch (SQLException ex) {
             logs.escribirExceptionLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// " + ex.getMessage() + " " + ex.toString());
-            result = "ex";
         } catch (NullPointerException np) {
             logs.escribirExceptionLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// " + np.getMessage() + " " + np.toString());
-            result = "np";
         } catch (ArrayIndexOutOfBoundsException ai) {
             logs.escribirExceptionLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// " + ai.getMessage() + " " + ai.toString());
-            result = "ai";
         }
 
         return result;

@@ -2111,3 +2111,31 @@ managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPo
 managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-09-18T12:24:28.955
 >>>>>>> ab8a6742dd2bf76604a8f5c585e05360431d9c68
 managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-20T17:13:17.256
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-22T21:54:30.125
+managers.queries.ConsultasAdmin//llenarAcciones// -1 java.lang.ArrayIndexOutOfBoundsException: -1// 2019-09-22T21:55:10.074
+managers.queries.ConsultasAdmin//disableUser// null java.lang.NullPointerException// 2019-09-22T21:55:10.074
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-22T21:56:48.031
+managers.queries.ConsultasAdmin//llenarAcciones// -1 java.lang.ArrayIndexOutOfBoundsException: -1// 2019-09-22T21:56:59.489
+managers.queries.ConsultasAdmin//enableUser// null java.lang.NullPointerException// 2019-09-22T21:56:59.489
+managers.queries.ConsultasAdmin//llenarAcciones// -1 java.lang.ArrayIndexOutOfBoundsException: -1// 2019-09-22T21:57:17.112
+managers.queries.ConsultasAdmin//disableUser// null java.lang.NullPointerException// 2019-09-22T21:57:17.127
+managers.queries.ConsultasAdmin//llenarAcciones// -1 java.lang.ArrayIndexOutOfBoundsException: -1// 2019-09-22T21:59:05.473
+managers.queries.ConsultasAdmin//disableUser// null java.lang.NullPointerException// 2019-09-22T21:59:05.481
+managers.queries.ConsultasAdmin//llenarAcciones// null java.lang.ArrayIndexOutOfBoundsException// 2019-09-22T21:59:18.530
+managers.queries.ConsultasAdmin//enableUser// null java.lang.NullPointerException// 2019-09-22T21:59:18.538
+managers.queries.ConsultasAdmin//llenarAcciones// null java.lang.ArrayIndexOutOfBoundsException// 2019-09-22T21:59:22.173
+managers.queries.ConsultasAdmin//enableUser// null java.lang.NullPointerException// 2019-09-22T21:59:22.181
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-22T22:09:02.854
+managers.queries.ConsultasAdmin//llenarAcciones// -1 java.lang.ArrayIndexOutOfBoundsException: -1// 2019-09-22T22:09:32.662
+managers.queries.ConsultasAdmin//disableUser// null java.lang.NullPointerException// 2019-09-22T22:09:32.666
+managers.queries.ConsultasAdmin//llenarAcciones// -1 java.lang.ArrayIndexOutOfBoundsException: -1// 2019-09-22T22:09:47.230
+managers.queries.ConsultasAdmin//disableUser// null java.lang.NullPointerException// 2019-09-22T22:09:47.234
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-22T22:11:59.222
+managers.queries.ConsultasAdmin//llenarAcciones// -1 java.lang.ArrayIndexOutOfBoundsException: -1// 2019-09-22T22:12:05.338
+managers.queries.ConsultasAdmin//enableUser// null java.lang.NullPointerException// 2019-09-22T22:12:05.346
+managers.queries.ConsultasAdmin//llenarAcciones// -1 java.lang.ArrayIndexOutOfBoundsException: -1// 2019-09-22T22:12:07.479
+managers.queries.ConsultasAdmin//enableUser// null java.lang.NullPointerException// 2019-09-22T22:12:07.487
+managers.queries.ConsultasAdmin//llenarAcciones// -1 java.lang.ArrayIndexOutOfBoundsException: -1// 2019-09-22T22:12:14.833
+managers.queries.ConsultasAdmin//disableUser// null java.lang.NullPointerException// 2019-09-22T22:12:14.841
+managers.queries.ConsultasAdmin//llenarAcciones// -1 java.lang.ArrayIndexOutOfBoundsException: -1// 2019-09-22T22:12:43.910
+managers.queries.ConsultasAdmin//disableUser// null java.lang.NullPointerException// 2019-09-22T22:12:43.918
