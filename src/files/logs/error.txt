@@ -491,3 +491,6 @@ managers.ControladorGestionPermisos//asignUserPermissions// Actualización de pe
 managers.ControladorLogin//insert_session_record// Error desconocido.// 2019-09-23T02:30:51.713
 managers.ControladorGestionPermisos//getCurrentUserKeys// Consulta no arroja resultados.// 2019-09-23T02:31:01.666
 managers.ControladorGestionPermisos//asignUserPermissions// Actualización de permisos de usuario no completada.// 2019-09-23T02:31:05.932
+managers.ControladorLogin//insert_session_record// Error desconocido.// 2019-09-23T15:31:49.228
+classes.FileManage//selectFile// Archivo CSV, ruta errónea.// 2019-09-23T15:33:41.612
+managers.ControladorGestionPermisos//getCurrentUserKeys// Consulta no arroja resultados.// 2019-09-23T15:34:20.151

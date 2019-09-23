@@ -2170,3 +2170,5 @@ managers.queries.ConsultasLogin//insert_session_record// No results were returne
 managers.queries.ConsultasPermissions//update_user_keys// ERROR: missing FROM-clause entry for table "select"
   Position: 39 org.postgresql.util.PSQLException: ERROR: missing FROM-clause entry for table "select"
   Position: 39// 2019-09-23T02:31:05.838
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-23T15:31:48.900
+classes.FileManage//calcularRutaArchivo// null java.lang.NullPointerException// 2019-09-23T15:33:41.596
