@@ -446,3 +446,6 @@ managers.ControladorLogin//insert_session_record// Error desconocido.// 2019-09-
 managers.ControladorLogin//insert_session_record// Error desconocido.// 2019-09-22T21:56:48.047
 managers.ControladorLogin//insert_session_record// Error desconocido.// 2019-09-22T22:09:02.862
 managers.ControladorLogin//insert_session_record// Error desconocido.// 2019-09-22T22:11:59.226
+managers.ControladorLogin//insert_session_record// Error desconocido.// 2019-09-23T00:37:56.541
+managers.ControladorGestionPermisos//createKeysModule// Consulta no arroja resultados.// 2019-09-23T00:38:08.366
+managers.ControladorGestionPermisos//createKeysModule// Consulta no arroja resultados.// 2019-09-23T00:38:23.066

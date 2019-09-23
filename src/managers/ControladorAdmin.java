@@ -97,7 +97,8 @@ public class ControladorAdmin  {
         GestionPermisos view_permissions = new GestionPermisos();
         view_permissions.manager.setUser(user);
         view_permissions.manager.set_init_conf();
-        view_permissions.jLabelUserNamePerm.setText(username + ": " + firstname + " " + surname);
+        view_permissions.jLabelUserName.setText(firstname + " " + surname);
+        view_permissions.jLabelUserName.setText(username);
         view_permissions.setVisible(true);
 
     }

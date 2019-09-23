@@ -22,7 +22,7 @@ public class ConsultasPermissions {
     private DBCore db_core = new DBCore();
     private Logs logs = new Logs(Thread.currentThread().getStackTrace()[1].getClassName());
     
-    public ArrayList<String> get_user_keys(int id_user){
+    public ArrayList<String> get_user_keys(String username){
         
          ArrayList<String> result = new ArrayList();
         
@@ -31,7 +31,9 @@ public class ConsultasPermissions {
             Connection conn = Conexion();
             ResultSet rs = null;
             ResultSet aux_rs = null;
-            String sql = "SELECT namekey FROM uvfood_keys WHERE idkey IN (SELECT idkey FROM uvfood_user_key WHERE iduser  = '"+id_user+"');";
+            String sql = "SELECT namekey FROM uvfood_keys WHERE idkey IN "
+                    + "(SELECT idkey FROM uvfood_user_key WHERE iduser  IN\n" +
+"					  (SELECT iduser FROM uvfood_user WHERE username=  '"+username+"'));";
 
             ps = conn.createStatement();
             rs = ps.executeQuery(sql);

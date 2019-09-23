@@ -78,37 +78,36 @@ public class ControladorGestionPermisos {
 
     }
 
-    public void getCurrentUserKeys(){
+    public void getCurrentUserKeys() {
         String namekey = "permissions.asign";
 
         String result = keyvalidate.haveKey(namekey, user.getIdUser());
         boolean validate = keyvalidate.resultHaveKey(result);
-        
+
         if (validate) {
-                  ArrayList<String> data_response;
-                data_response = consultasPermissions.get_user_keys(user.getIdUser());
-                switch (data_response.get(0)) {
-                    case "error.empty":
-                        logs.escribirErrorLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// Consulta no arroja resultados.");
-                        break;
-                    case "server.error":
-                        logs.escribirErrorLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// El servidor está presentado problemas.");
-                        break;
-                    case "server.success":
-                        logs.escribirAccessLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// Se muestran  user keys con " + data_response + " registros.");
-                        current_user_keys.clear();
-                        for (int x = 1; x < data_response.size(); x++) {
-                            current_user_keys.add(data_response.get(x));
-                        }
-                        break;
-                }
-        }
-        else {
+            ArrayList<String> data_response;
+            data_response = consultasPermissions.get_user_keys(interfazGestionPermisos.);
+            switch (data_response.get(0)) {
+                case "error.empty":
+                    logs.escribirErrorLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// Consulta no arroja resultados.");
+                    break;
+                case "server.error":
+                    logs.escribirErrorLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// El servidor está presentado problemas.");
+                    break;
+                case "server.success":
+                    logs.escribirAccessLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// Se muestran  user keys con " + data_response + " registros.");
+                    current_user_keys.clear();
+                    for (int x = 1; x < data_response.size(); x++) {
+                        current_user_keys.add(data_response.get(x));
+                    }
+                    break;
+            }
+        } else {
             modal.error_message("Error de validación.", "Permisos denegados.", "El rol actual no tiene accesos a esta opción:", "Asignación de permisos.", null);
         }
-        
+
     }
-    
+
     public void createKeysModule() {
 
         String module = (String) interfazGestionPermisos.jComboBoxModulos.getSelectedItem();
@@ -132,7 +131,7 @@ public class ControladorGestionPermisos {
                     break;
             }
         } else {
-           modal.error_message("Error de validación.", "Permisos denegados.", "El rol actual no tiene accesos a esta opción:", "Asignación de permisos.", null);
+            modal.error_message("Error de validación.", "Permisos denegados.", "El rol actual no tiene accesos a esta opción:", "Asignación de permisos.", null);
         }
     }
 
@@ -144,10 +143,26 @@ public class ControladorGestionPermisos {
         for (int x = 1; x < options.size(); x++) {
             JCheckBox key_option = new JCheckBox(options.get(x));
             interfazGestionPermisos.jPanelActions.add(key_option);
+            key_option.setSelected(validateSelected(key_option));
             interfazGestionPermisos.jPanelActions.validate();
             interfazGestionPermisos.jPanelActions.repaint();
 
         }
+    }
+
+    public boolean validateSelected(JCheckBox item) {
+        boolean result = false;
+        try {
+            for (int i = 0; i < current_user_keys.size(); i++) {
+                if (item.getText().equals(current_user_keys.get(i))) {
+                    result = true;
+                }
+            }
+        } catch (ArrayIndexOutOfBoundsException | NullPointerException ex) {
+            logs.escribirExceptionLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// " + ex.getMessage() + " " + ex.toString());
+        }
+
+        return result;
     }
 
     public void validateCheckSelected() {

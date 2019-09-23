@@ -2139,3 +2139,4 @@ managers.queries.ConsultasAdmin//llenarAcciones// -1 java.lang.ArrayIndexOutOfBo
 managers.queries.ConsultasAdmin//disableUser// null java.lang.NullPointerException// 2019-09-22T22:12:14.841
 managers.queries.ConsultasAdmin//llenarAcciones// -1 java.lang.ArrayIndexOutOfBoundsException: -1// 2019-09-22T22:12:43.910
 managers.queries.ConsultasAdmin//disableUser// null java.lang.NullPointerException// 2019-09-22T22:12:43.918
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-23T00:37:56.533
