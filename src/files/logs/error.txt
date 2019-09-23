@@ -459,3 +459,35 @@ managers.ControladorGestionPermisos//getCurrentUserKeys// Consulta no arroja res
 managers.ControladorGestionPermisos//createKeysModule// Consulta no arroja resultados.// 2019-09-23T00:55:44.121
 managers.ControladorLogin//insert_session_record// Error desconocido.// 2019-09-23T01:00:53.437
 managers.ControladorGestionPermisos//getCurrentUserKeys// Consulta no arroja resultados.// 2019-09-23T01:00:56.978
+managers.ControladorLogin//insert_session_record// Error desconocido.// 2019-09-23T01:56:18.704
+managers.ControladorGestionPermisos//getCurrentUserKeys// Consulta no arroja resultados.// 2019-09-23T01:56:23.238
+managers.ControladorGestionPermisos//createKeysModule// Consulta no arroja resultados.// 2019-09-23T01:56:25.068
+managers.ControladorLogin//insert_session_record// Error desconocido.// 2019-09-23T01:57:28.761
+managers.ControladorGestionPermisos//getCurrentUserKeys// Consulta no arroja resultados.// 2019-09-23T01:57:32.677
+managers.ControladorGestionPermisos//getCurrentUserKeys// Consulta no arroja resultados.// 2019-09-23T01:57:44.130
+managers.ControladorGestionPermisos//createKeysModule// Consulta no arroja resultados.// 2019-09-23T01:57:47.503
+managers.ControladorLogin//insert_session_record// Error desconocido.// 2019-09-23T01:59:19.414
+managers.ControladorGestionPermisos//getCurrentUserKeys// Consulta no arroja resultados.// 2019-09-23T01:59:23.289
+managers.ControladorGestionPermisos//getCurrentUserKeys// Consulta no arroja resultados.// 2019-09-23T01:59:32.424
+managers.ControladorLogin//insert_session_record// Error desconocido.// 2019-09-23T02:02:43.679
+managers.ControladorGestionPermisos//getCurrentUserKeys// Consulta no arroja resultados.// 2019-09-23T02:02:47.566
+managers.ControladorLogin//insert_session_record// Error desconocido.// 2019-09-23T02:09:58.041
+managers.ControladorGestionPermisos//getCurrentUserKeys// Consulta no arroja resultados.// 2019-09-23T02:10:01.537
+managers.ControladorLogin//insert_session_record// Error desconocido.// 2019-09-23T02:11:50.273
+managers.ControladorGestionPermisos//getCurrentUserKeys// Consulta no arroja resultados.// 2019-09-23T02:11:55.111
+managers.ControladorLogin//insert_session_record// Error desconocido.// 2019-09-23T02:15:04.989
+managers.ControladorGestionPermisos//getCurrentUserKeys// Consulta no arroja resultados.// 2019-09-23T02:15:16.698
+managers.ControladorLogin//insert_session_record// Error desconocido.// 2019-09-23T02:16:54.081
+managers.ControladorGestionPermisos//getCurrentUserKeys// Consulta no arroja resultados.// 2019-09-23T02:16:58.551
+managers.ControladorLogin//insert_session_record// Error desconocido.// 2019-09-23T02:19:30.180
+managers.ControladorGestionPermisos//getCurrentUserKeys// Consulta no arroja resultados.// 2019-09-23T02:19:34.098
+managers.ControladorGestionPermisos//asignUserPermissions// Actualización de permisos de usuario no completada.// 2019-09-23T02:19:37.709
+managers.ControladorGestionPermisos//asignUserPermissions// Actualización de permisos de usuario no completada.// 2019-09-23T02:19:58.862
+managers.ControladorLogin//insert_session_record// Error desconocido.// 2019-09-23T02:22:57.463
+managers.ControladorGestionPermisos//getCurrentUserKeys// Consulta no arroja resultados.// 2019-09-23T02:23:01.290
+managers.ControladorLogin//insert_session_record// Error desconocido.// 2019-09-23T02:27:29.497
+managers.ControladorGestionPermisos//getCurrentUserKeys// Consulta no arroja resultados.// 2019-09-23T02:27:34.063
+managers.ControladorGestionPermisos//asignUserPermissions// Actualización de permisos de usuario no completada.// 2019-09-23T02:27:38.294
+managers.ControladorLogin//insert_session_record// Error desconocido.// 2019-09-23T02:30:51.713
+managers.ControladorGestionPermisos//getCurrentUserKeys// Consulta no arroja resultados.// 2019-09-23T02:31:01.666
+managers.ControladorGestionPermisos//asignUserPermissions// Actualización de permisos de usuario no completada.// 2019-09-23T02:31:05.932

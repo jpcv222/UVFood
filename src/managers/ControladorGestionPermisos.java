@@ -174,31 +174,45 @@ public class ControladorGestionPermisos {
         boolean validate = keyvalidate.resultHaveKey(result);
         if (validate) {
             ArrayList<String> data_response;
-            data_response = consultasPermissions.update_user_keys(interfazGestionPermisos.jLabelUserName.getText(), user_keys_to_insert(new_user_keys_options, current_user_keys));
-            switch (data_response.get(0)) {
-                case "error.empty":
-                    logs.escribirErrorLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// Consulta no arroja resultados.");
-                    break;
-                case "server.error":
-                    logs.escribirErrorLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// El servidor está presentado problemas.");
-                    break;
-                case "server.success":
-                    logs.escribirAccessLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// Se han actualizado permisos de usuario correctamente.");
-                    modal.success_message("Éxito.", "Actualización correcta.", "Se han actualizado permisos", "de usuario correctamente.", null);
-                    break;
+            ArrayList<String> keys = user_keys_to_insert(new_user_keys_options, current_user_keys);
+            if (!keys.isEmpty()) {
+                
+                data_response = consultasPermissions.update_user_keys(interfazGestionPermisos.jLabelUserName.getText(), keys);
+                if (validateAsignUserPermissions(data_response)) {
+                    modal.success_message("Éxito.", "Permisos actualizados.", "Se han actualizado permisos", "de manera exitosa.", null);
+                    logs.escribirAccessLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// Se actualizan permisos de usuario de manera exitosa.");
+                } else {
+                    modal.error_message("Error.", "Permisos no actualizados.", "No se han actualizado permisos", "de manera exitosa.", null);
+                    logs.escribirErrorLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// Actualización de permisos de usuario no completada.");
+                }
+            } else {
+                modal.error_message("Error.", "Permisos no actualizados.", "No se han actualizado permisos", "de manera exitosa.", "No hay nada qué actualizar.");
             }
+
         } else {
             modal.error_message("Error de validación.", "Permisos denegados.", "El rol actual no tiene accesos a esta opción:", "Asignación de permisos.", null);
         }
     }
 
+    public boolean validateAsignUserPermissions(ArrayList<String> data_response) {
+        boolean result = true;
+        for (int i = 0; i < data_response.size(); i++) {
+            if (data_response.get(i).equals("error.dato.no.insertado") || data_response.get(i).equals("server.error")) {
+                return false;
+            }
+        }
+
+        return result;
+    }
+
     public ArrayList<String> user_keys_to_insert(ArrayList<String> new_user_keys, ArrayList<String> current_user_keys) {
-        ArrayList<String> result = new ArrayList();
+        ArrayList<String> result = new_user_keys;
+        
         for (int i = 0; i < new_user_keys.size(); i++) {
 
             for (int j = 0; j < current_user_keys.size(); j++) {
                 if (new_user_keys.get(i).equals(current_user_keys.get(j))) {
-                    result.add(new_user_keys.get(i));
+                    result.remove(i);
                 }
             }
         }
@@ -206,18 +220,16 @@ public class ControladorGestionPermisos {
     }
 
     public void validateCheckSelected() {
-        try {
-            new_user_keys_options.clear();
-            java.awt.Component check[] = (java.awt.Component[]) interfazGestionPermisos.jPanelActions.getComponents();
-            JCheckBox num[] = (JCheckBox[]) check;
-            for (int i = 0; i < interfazGestionPermisos.jPanelActions.getComponentCount(); i++) {
-                if (num[i].isSelected()) {
-                    new_user_keys_options.add(num[i].getText());
+       
+            for(int x=0;x<interfazGestionPermisos.jPanelActions.getComponentCount();x++){
+                if(interfazGestionPermisos.jPanelActions.getComponent(x) instanceof JCheckBox){
+                    JCheckBox check=(JCheckBox) interfazGestionPermisos.jPanelActions.getComponent(x);
+                  if(check.isSelected()){
+                       new_user_keys_options.add(check.getText());
+                   }
                 }
             }
-        } catch (ClassCastException ex) {
-            logs.escribirExceptionLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// " + ex.getMessage() + " " + ex.toString());
-        }
+        
     }
 
     public Usuario getUser() {

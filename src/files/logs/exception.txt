@@ -2143,3 +2143,30 @@ managers.queries.ConsultasLogin//insert_session_record// No results were returne
 managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-23T00:50:29.726
 managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-23T00:55:24.427
 managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-23T01:00:53.429
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-23T01:56:18.700
+managers.ControladorGestionPermisos//validateCheckSelected// [Ljava.awt.Component; cannot be cast to [Ljavax.swing.JCheckBox; java.lang.ClassCastException: [Ljava.awt.Component; cannot be cast to [Ljavax.swing.JCheckBox;// 2019-09-23T01:56:41.632
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-23T01:57:28.757
+managers.ControladorGestionPermisos//validateCheckSelected// [Ljava.awt.Component; cannot be cast to [Ljavax.swing.JCheckBox; java.lang.ClassCastException: [Ljava.awt.Component; cannot be cast to [Ljavax.swing.JCheckBox;// 2019-09-23T01:57:36.336
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-23T01:59:19.410
+managers.ControladorGestionPermisos//validateCheckSelected// [Ljava.awt.Component; cannot be cast to [Ljavax.swing.JCheckBox; java.lang.ClassCastException: [Ljava.awt.Component; cannot be cast to [Ljavax.swing.JCheckBox;// 2019-09-23T01:59:26.664
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-23T02:02:43.675
+managers.ControladorGestionPermisos//validateCheckSelected// [Ljava.awt.Component; cannot be cast to [Ljavax.swing.JCheckBox; java.lang.ClassCastException: [Ljava.awt.Component; cannot be cast to [Ljavax.swing.JCheckBox;// 2019-09-23T02:02:51.654
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-23T02:09:58.037
+managers.ControladorGestionPermisos//validateCheckSelected// [Ljava.awt.Component; cannot be cast to [Ljavax.swing.JCheckBox; java.lang.ClassCastException: [Ljava.awt.Component; cannot be cast to [Ljavax.swing.JCheckBox;// 2019-09-23T02:10:04.269
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-23T02:11:50.269
+managers.ControladorGestionPermisos//validateCheckSelected// [Ljava.awt.Component; cannot be cast to [Ljavax.swing.JCheckBox; java.lang.ClassCastException: [Ljava.awt.Component; cannot be cast to [Ljavax.swing.JCheckBox;// 2019-09-23T02:11:58.095
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-23T02:15:04.981
+managers.ControladorGestionPermisos//validateCheckSelected// [Ljava.awt.Component; cannot be cast to [Ljavax.swing.JCheckBox; java.lang.ClassCastException: [Ljava.awt.Component; cannot be cast to [Ljavax.swing.JCheckBox;// 2019-09-23T02:15:19.814
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-23T02:16:54.077
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-23T02:19:30.176
+managers.queries.ConsultasPermissions//update_user_keys// Can't use query methods that take a query string on a PreparedStatement. org.postgresql.util.PSQLException: Can't use query methods that take a query string on a PreparedStatement.// 2019-09-23T02:19:37.693
+managers.queries.ConsultasPermissions//update_user_keys// Can't use query methods that take a query string on a PreparedStatement. org.postgresql.util.PSQLException: Can't use query methods that take a query string on a PreparedStatement.// 2019-09-23T02:19:58.846
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-23T02:22:57.451
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-23T02:27:29.473
+managers.queries.ConsultasPermissions//update_user_keys// ERROR: missing FROM-clause entry for table "select"
+  Position: 39 org.postgresql.util.PSQLException: ERROR: missing FROM-clause entry for table "select"
+  Position: 39// 2019-09-23T02:27:38.258
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-23T02:30:51.695
+managers.queries.ConsultasPermissions//update_user_keys// ERROR: missing FROM-clause entry for table "select"
+  Position: 39 org.postgresql.util.PSQLException: ERROR: missing FROM-clause entry for table "select"
+  Position: 39// 2019-09-23T02:31:05.838
