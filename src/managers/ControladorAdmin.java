@@ -580,7 +580,6 @@ public class ControladorAdmin implements ActionListener {
 
     public void showConfirmationMessage() {
         modal.confirmation_message("Confirmacion", "¿Desea deshabilitar este usuario?");
-
     }
 
     public void requestEnableUser() {
