@@ -6,7 +6,7 @@
 package components;
 
 import classes.Usuario;
-import views.DisableUser;
+import views.ConfirmMessage;
 import views.ErrorMessage;
 import views.GestionPermisos;
 import views.SuccesMessage;
@@ -19,12 +19,12 @@ public class UVFoodDialogs {
 
     private ErrorMessage error_message;
     private SuccesMessage succes_message;
-    private DisableUser confirmation_message;
+    private ConfirmMessage confirmation_message;
 
     public UVFoodDialogs() {
         this.error_message = new ErrorMessage();
         this.succes_message = new SuccesMessage();
-        this.confirmation_message = new DisableUser();
+        this.confirmation_message = new ConfirmMessage();
     }
 
     public void error_message(String title, String subtitle, String body1, String body2, String body3) {

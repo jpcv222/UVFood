@@ -11,13 +11,13 @@ import java.awt.Color;
  *
  * @author jpcv2
  */
-public class DisableUser extends javax.swing.JFrame {
+public class ConfirmMessage extends javax.swing.JFrame {
 
     /**
      * Creates new form ErrorMessage
      */
     Color red_error;
-    public DisableUser() {
+    public ConfirmMessage() {
         
         red_error = new Color(205,31,50);
         initComponents();

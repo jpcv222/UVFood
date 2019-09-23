@@ -22,7 +22,7 @@ import java.util.Locale;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.table.DefaultTableModel;
-import views.DisableUser;
+import views.ConfirmMessage;
 import views.VistaAdmin;
 
 /**

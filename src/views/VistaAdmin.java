@@ -53,7 +53,7 @@ public class VistaAdmin extends javax.swing.JFrame implements Runnable {
 
     public static String sePuede;
 
-    private DisableUser confirmation_message = new DisableUser();
+    private ConfirmMessage confirmation_message = new ConfirmMessage();
 
     ;
 

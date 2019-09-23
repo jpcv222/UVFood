@@ -32,7 +32,7 @@ import org.jfree.chart.plot.PlotOrientation;
 import org.jfree.data.category.DefaultCategoryDataset;
 import views.GestionPermisos;
 import validations.FormValidations;
-import views.DisableUser;
+import views.ConfirmMessage;
 
 /**
  *
@@ -47,13 +47,13 @@ public class ControladorAdmin implements ActionListener {
     private final KeyValidate keyvalidate;
     private UVFoodDialogs modal;
     private ConsultasAdmin consultasAdmin;
-    private DisableUser confirmation_message;
+    private ConfirmMessage confirmation_message;
     public Usuario user;
 
     private Logs logs = new Logs(Thread.currentThread().getStackTrace()[1].getClassName());
 
     //private Cliente modeloCliente;
-    public ControladorAdmin(VistaAdmin interfazPrincipalAdmin, DisableUser confirmation_message) {
+    public ControladorAdmin(VistaAdmin interfazPrincipalAdmin, ConfirmMessage confirmation_message) {
         this.interfazPrincipalAdmin = interfazPrincipalAdmin;
         this.modal = new UVFoodDialogs();
         this.keyvalidate = new KeyValidate(modal);
