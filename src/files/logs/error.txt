@@ -457,3 +457,5 @@ managers.ControladorGestionPermisos//createKeysModule// Consulta no arroja resul
 managers.ControladorLogin//insert_session_record// Error desconocido.// 2019-09-23T00:55:24.443
 managers.ControladorGestionPermisos//getCurrentUserKeys// Consulta no arroja resultados.// 2019-09-23T00:55:41.160
 managers.ControladorGestionPermisos//createKeysModule// Consulta no arroja resultados.// 2019-09-23T00:55:44.121
+managers.ControladorLogin//insert_session_record// Error desconocido.// 2019-09-23T01:00:53.437
+managers.ControladorGestionPermisos//getCurrentUserKeys// Consulta no arroja resultados.// 2019-09-23T01:00:56.978

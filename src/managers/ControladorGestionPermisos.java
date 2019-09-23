@@ -165,14 +165,58 @@ public class ControladorGestionPermisos {
         return result;
     }
 
-    public void validateCheckSelected() {
-        new_user_keys_options.clear();
-        java.awt.Container check[] = (java.awt.Container[]) interfazGestionPermisos.jPanelActions.getComponents();
-        JCheckBox num[] = (JCheckBox[]) check;
-        for (int i = 0; i < interfazGestionPermisos.jPanelActions.getComponentCount(); i++) {
-            if (num[i].isSelected()) {
-                new_user_keys_options.add(num[i].getText());
+    public void asignUserPermissions() {
+        validateCheckSelected();
+
+        String namekey = "permissions.asign";
+
+        String result = keyvalidate.haveKey(namekey, user.getIdUser());
+        boolean validate = keyvalidate.resultHaveKey(result);
+        if (validate) {
+            ArrayList<String> data_response;
+            data_response = consultasPermissions.update_user_keys(interfazGestionPermisos.jLabelUserName.getText(), user_keys_to_insert(new_user_keys_options, current_user_keys));
+            switch (data_response.get(0)) {
+                case "error.empty":
+                    logs.escribirErrorLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// Consulta no arroja resultados.");
+                    break;
+                case "server.error":
+                    logs.escribirErrorLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// El servidor está presentado problemas.");
+                    break;
+                case "server.success":
+                    logs.escribirAccessLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// Se han actualizado permisos de usuario correctamente.");
+                    modal.success_message("Éxito.", "Actualización correcta.", "Se han actualizado permisos", "de usuario correctamente.", null);
+                    break;
             }
+        } else {
+            modal.error_message("Error de validación.", "Permisos denegados.", "El rol actual no tiene accesos a esta opción:", "Asignación de permisos.", null);
+        }
+    }
+
+    public ArrayList<String> user_keys_to_insert(ArrayList<String> new_user_keys, ArrayList<String> current_user_keys) {
+        ArrayList<String> result = new ArrayList();
+        for (int i = 0; i < new_user_keys.size(); i++) {
+
+            for (int j = 0; j < current_user_keys.size(); j++) {
+                if (new_user_keys.get(i).equals(current_user_keys.get(j))) {
+                    result.add(new_user_keys.get(i));
+                }
+            }
+        }
+        return result;
+    }
+
+    public void validateCheckSelected() {
+        try {
+            new_user_keys_options.clear();
+            java.awt.Component check[] = (java.awt.Component[]) interfazGestionPermisos.jPanelActions.getComponents();
+            JCheckBox num[] = (JCheckBox[]) check;
+            for (int i = 0; i < interfazGestionPermisos.jPanelActions.getComponentCount(); i++) {
+                if (num[i].isSelected()) {
+                    new_user_keys_options.add(num[i].getText());
+                }
+            }
+        } catch (ClassCastException ex) {
+            logs.escribirExceptionLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// " + ex.getMessage() + " " + ex.toString());
         }
     }
 

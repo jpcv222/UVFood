@@ -63,6 +63,9 @@ public class GestionPermisos extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabelUserNamePerm1 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -122,10 +125,10 @@ public class GestionPermisos extends javax.swing.JFrame {
         jLabelAceptar.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jLabelAceptar.setForeground(new java.awt.Color(205, 31, 50));
         jLabelAceptar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabelAceptar.setText("Aceptar");
-        jPanelAceptar.add(jLabelAceptar, new org.netbeans.lib.awtextra.AbsoluteConstraints(37, 6, 140, 40));
+        jLabelAceptar.setText("Asignar permisos");
+        jPanelAceptar.add(jLabelAceptar, new org.netbeans.lib.awtextra.AbsoluteConstraints(7, 6, 200, 40));
 
-        jPanel1.add(jPanelAceptar, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 580, 210, 50));
+        jPanel1.add(jPanelAceptar, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 570, 210, 50));
 
         jLabelAceptar2.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jLabelAceptar2.setForeground(new java.awt.Color(205, 31, 50));
@@ -185,13 +188,25 @@ public class GestionPermisos extends javax.swing.JFrame {
         jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 210, 410, 210));
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel8.setText("Agregue permisos al usuario en cada módulo de manera independiente...");
-        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 100, 520, 40));
+        jLabel8.setText("3. Presione 'Asignar permisos' para agregar los permisos.");
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 530, 400, 40));
 
         jLabelUserNamePerm1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jLabelUserNamePerm1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabelUserNamePerm1.setText("Nombre usuario");
         jPanel1.add(jLabelUserNamePerm1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 60, 600, 40));
+
+        jLabel9.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel9.setText("Agregue permisos al usuario en cada módulo de manera independiente...");
+        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 100, 520, 40));
+
+        jLabel10.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel10.setText("1. Seleccione un módulo o funcionalidad.");
+        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 470, 390, 40));
+
+        jLabel11.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel11.setText("2. Seleccione los permisos a asignar de ese módulo.");
+        jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 500, 390, 40));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 880, 650));
 
@@ -205,7 +220,7 @@ public class GestionPermisos extends javax.swing.JFrame {
 
     private void jPanelAceptarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelAceptarMouseClicked
         // TODO add your handling code here:
-        manager.validateCheckSelected();
+        manager.asignUserPermissions();
     }//GEN-LAST:event_jPanelAceptarMouseClicked
 
     private void jPanelAceptarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelAceptarMouseEntered
@@ -230,6 +245,8 @@ public class GestionPermisos extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     public javax.swing.JComboBox<String> jComboBoxModulos;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
@@ -239,6 +256,7 @@ public class GestionPermisos extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JLabel jLabelAceptar;
     private javax.swing.JLabel jLabelAceptar2;
     public javax.swing.JLabel jLabelConstructModule;
