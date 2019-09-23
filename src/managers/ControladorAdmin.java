@@ -39,7 +39,7 @@ import views.ConfirmMessage;
  * @author Juan Pablo Castro 2019 GitHub: jpcv222
  * @author Jeffrey Rios 2019 GitHub: jeffrey2423
  */
-public class ControladorAdmin  {
+public class ControladorAdmin {
 
     private VistaAdmin interfazPrincipalAdmin;
     private FormValidations validaciones;
@@ -96,9 +96,9 @@ public class ControladorAdmin  {
     public void show_permissions_view(String username, String firstname, String surname) {
         GestionPermisos view_permissions = new GestionPermisos();
         view_permissions.manager.setUser(user);
-        view_permissions.manager.set_init_conf();
-        view_permissions.jLabelUserName.setText(firstname + " " + surname);
+        view_permissions.jLabelUserNamePerm1.setText(firstname + " " + surname);
         view_permissions.jLabelUserName.setText(username);
+        view_permissions.manager.set_init_conf();
         view_permissions.setVisible(true);
 
     }
@@ -547,7 +547,7 @@ public class ControladorAdmin  {
         interfazPrincipalAdmin.jTextFieldUser.setEditable(true);
         interfazPrincipalAdmin.jPasswordField.setEditable(true);
         interfazPrincipalAdmin.jComboBoxRoles.setEnabled(true);
-      
+
     }
 
     public void limpiarCampos() {
@@ -581,7 +581,7 @@ public class ControladorAdmin  {
 
     public void validateDisableUser() {
         modal.confirmation_message("Confirmacion", "¿Desea deshabilitar este usuario?");
-        if(modal.confirmation_message.confirm_action){
+        if (modal.confirmation_message.confirm_action) {
             requestDisableUser();
             interfazPrincipalAdmin.btnhabilitarUser.setEnabled(true);
             interfazPrincipalAdmin.btnEliminarUser.setEnabled(false);

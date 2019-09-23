@@ -449,3 +449,11 @@ managers.ControladorLogin//insert_session_record// Error desconocido.// 2019-09-
 managers.ControladorLogin//insert_session_record// Error desconocido.// 2019-09-23T00:37:56.541
 managers.ControladorGestionPermisos//createKeysModule// Consulta no arroja resultados.// 2019-09-23T00:38:08.366
 managers.ControladorGestionPermisos//createKeysModule// Consulta no arroja resultados.// 2019-09-23T00:38:23.066
+managers.ControladorLogin//insert_session_record// Error desconocido.// 2019-09-23T00:50:29.731
+managers.ControladorGestionPermisos//getCurrentUserKeys// Consulta no arroja resultados.// 2019-09-23T00:50:38.019
+managers.ControladorGestionPermisos//createKeysModule// Consulta no arroja resultados.// 2019-09-23T00:50:43.528
+managers.ControladorGestionPermisos//getCurrentUserKeys// Consulta no arroja resultados.// 2019-09-23T00:50:59.076
+managers.ControladorGestionPermisos//createKeysModule// Consulta no arroja resultados.// 2019-09-23T00:51:02.044
+managers.ControladorLogin//insert_session_record// Error desconocido.// 2019-09-23T00:55:24.443
+managers.ControladorGestionPermisos//getCurrentUserKeys// Consulta no arroja resultados.// 2019-09-23T00:55:41.160
+managers.ControladorGestionPermisos//createKeysModule// Consulta no arroja resultados.// 2019-09-23T00:55:44.121

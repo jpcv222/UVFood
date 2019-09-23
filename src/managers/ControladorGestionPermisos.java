@@ -86,7 +86,7 @@ public class ControladorGestionPermisos {
 
         if (validate) {
             ArrayList<String> data_response;
-            data_response = consultasPermissions.get_user_keys(interfazGestionPermisos.);
+            data_response = consultasPermissions.get_user_keys(interfazGestionPermisos.jLabelUserName.getText());
             switch (data_response.get(0)) {
                 case "error.empty":
                     logs.escribirErrorLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// Consulta no arroja resultados.");
