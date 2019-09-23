@@ -30,15 +30,16 @@ import javax.swing.JTable;
 import org.jfree.chart.*;
 import org.jfree.chart.plot.PlotOrientation;
 import org.jfree.data.category.DefaultCategoryDataset;
+import views.GestionPermisos;
 import validations.FormValidations;
-import views.DisableUser;
+import views.ConfirmMessage;
 
 /**
  *
  * @author Juan Pablo Castro 2019 GitHub: jpcv222
  * @author Jeffrey Rios 2019 GitHub: jeffrey2423
  */
-public class ControladorAdmin implements ActionListener {
+public class ControladorAdmin {
 
     private VistaAdmin interfazPrincipalAdmin;
     private FormValidations validaciones;
@@ -46,22 +47,19 @@ public class ControladorAdmin implements ActionListener {
     private final KeyValidate keyvalidate;
     private UVFoodDialogs modal;
     private ConsultasAdmin consultasAdmin;
-    private DisableUser confirmation_message;
+    private ConfirmMessage confirmation_message;
     public Usuario user;
 
     private Logs logs = new Logs(Thread.currentThread().getStackTrace()[1].getClassName());
 
     //private Cliente modeloCliente;
-    public ControladorAdmin(VistaAdmin interfazPrincipalAdmin, DisableUser confirmation_message) {
+    public ControladorAdmin(VistaAdmin interfazPrincipalAdmin, ConfirmMessage confirmation_message) {
         this.interfazPrincipalAdmin = interfazPrincipalAdmin;
         this.modal = new UVFoodDialogs();
         this.keyvalidate = new KeyValidate(modal);
         this.file = new FileManage();
         this.confirmation_message = confirmation_message;
         this.consultasAdmin = new ConsultasAdmin();
-        this.confirmation_message.btnAceptar.addActionListener(this);
-        this.confirmation_message.btnCancelar.addActionListener(this);
-        this.interfazPrincipalAdmin.btnEliminarUser.addActionListener(this);
         this.validaciones = new FormValidations();
 
     }
@@ -72,17 +70,41 @@ public class ControladorAdmin implements ActionListener {
         createIndexView();
     }
 
-    public void showPermissionsView() {
+    public void showPermissionsView(int row) {
+        String namekey = "permissions.show.view.asign";
+
         try {
-            modal.show_permissions_view(user.getUsername(), user.getFirstname(), user.getSurname());
+
+            String username = interfazPrincipalAdmin.jTableUsers.getValueAt(row, 1).toString();
+            String firstname = interfazPrincipalAdmin.jTableUsers.getValueAt(row, 2).toString();
+            String surname = interfazPrincipalAdmin.jTableUsers.getValueAt(row, 3).toString();
+
+            String result = keyvalidate.haveKey(namekey, user.getIdUser());
+            boolean validate = keyvalidate.resultHaveKey(result);
+            if (validate) {
+                show_permissions_view(username, firstname, surname);
+            } else {
+                modal.error_message("Error de validación.", "Permisos denegados.", "El rol actual no tiene accesos a esta opción.", null, null);
+            }
         } catch (Exception ex) {
-            modal.error_message("Error fatal.", "Error en servidor.", "Se ha generado una excepción.", null, null);
+            modal.error_message("Error fatal.", "Error en servidor.", "Se ha generado un error inesperado.", null, null);
+            logs.escribirExceptionLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// " + ex.getMessage() + " " + ex.toString());
             logs.escribirErrorLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// Consulta no arroja resultados.");
         }
     }
 
-    public void selectFile(String namekey) {
+    public void show_permissions_view(String username, String firstname, String surname) {
+        GestionPermisos view_permissions = new GestionPermisos();
+        view_permissions.manager.setUser(user);
+        view_permissions.jLabelUserNamePerm1.setText(firstname + " " + surname);
+        view_permissions.jLabelUserName.setText(username);
+        view_permissions.manager.set_init_conf();
+        view_permissions.setVisible(true);
 
+    }
+
+    public void selectFile() {
+        String namekey = "users.select.csv";
         String result = keyvalidate.haveKey(namekey, user.getIdUser());
         boolean validate = keyvalidate.resultHaveKey(result);
         if (validate) {
@@ -188,8 +210,8 @@ public class ControladorAdmin implements ActionListener {
         }
     }
 
-    public void readCSVFile(String namekey) {
-
+    public void readCSVFile() {
+        String namekey = "users.upload.csv";
         String result = keyvalidate.haveKey(namekey, user.getIdUser());
         boolean validate = keyvalidate.resultHaveKey(result);
         if (validate) {
@@ -397,6 +419,7 @@ public class ControladorAdmin implements ActionListener {
                 break;
             case "success.dato.actualizado":
                 modal.success_message("Exito", "", "El usuario se actualizo con exito", "", "");
+                logs.escribirAccessLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + " Se realiza actualización de usuario con éxito.");
                 limpiarCampos();
                 break;
             default:
@@ -543,43 +566,32 @@ public class ControladorAdmin implements ActionListener {
 
         switch (res) {
             case "success":
-                modal.success_message("Exito", "", "El usuario fue deshabilitado con exito", "", "");
+                modal.success_message("Éxito", "", "El usuario fue deshabilitado con exito", "", "");
                 break;
             case "error":
                 modal.error_message("Error", "", "Intentalo de nuevo por favor", "", "");
                 break;
+            default:
+                modal.error_message("Error", "Servidor no envía respuesta", "Intentalo de nuevo por favor", "", "");
+                break;
 
         }
 
     }
 
-
-    public void showConfirmationMessage() {
+    public void validateDisableUser() {
         modal.confirmation_message("Confirmacion", "¿Desea deshabilitar este usuario?");
-
+        if (modal.confirmation_message.confirm_action) {
+            requestDisableUser();
+            interfazPrincipalAdmin.btnhabilitarUser.setEnabled(true);
+            interfazPrincipalAdmin.btnEliminarUser.setEnabled(false);
+        }
     }
 
     public void requestEnableUser() {
         consultasAdmin.enableUser(interfazPrincipalAdmin);
-    }
-
-    @Override
-    public void actionPerformed(ActionEvent ae) {
-        if (ae.getSource() == interfazPrincipalAdmin.btnEliminarUser) {
-            confirmation_message.setVisible(true);
-            interfazPrincipalAdmin.btnhabilitarUser.setEnabled(true);
-
-            //modal.confirmation_message("Confirmacion", "¿Desea deshabilitar este usuario?");
-        }
-        if (ae.getSource() == confirmation_message.btnAceptar) {
-            requestDisableUser();
-            confirmation_message.dispose();
-
-        }
-        if (ae.getSource() == confirmation_message.btnCancelar) {
-            confirmation_message.dispose();
-        }
-
+        interfazPrincipalAdmin.btnhabilitarUser.setEnabled(false);
+        interfazPrincipalAdmin.btnEliminarUser.setEnabled(true);
     }
 
 }

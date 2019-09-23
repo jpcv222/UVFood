@@ -53,7 +53,7 @@ public class VistaAdmin extends javax.swing.JFrame implements Runnable {
 
     public static String sePuede;
 
-    private DisableUser confirmation_message = new DisableUser();
+    private ConfirmMessage confirmation_message = new ConfirmMessage();
 
     ;
 
@@ -1658,12 +1658,12 @@ public class VistaAdmin extends javax.swing.JFrame implements Runnable {
 
     private void jPanelSelectCSVUserMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelSelectCSVUserMouseClicked
         // TODO add your handling code here:
-        manager.selectFile("users.select.csv");
+        manager.selectFile();
     }//GEN-LAST:event_jPanelSelectCSVUserMouseClicked
 
     private void jButtonCargarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCargarActionPerformed
         // TODO add your handling code here:
-        manager.readCSVFile("users.upload.csv");
+        manager.readCSVFile();
     }//GEN-LAST:event_jButtonCargarActionPerformed
 
     private void btnCerrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCerrarActionPerformed
@@ -1780,8 +1780,9 @@ public class VistaAdmin extends javax.swing.JFrame implements Runnable {
         }
         if (evt.getButton() == java.awt.event.MouseEvent.BUTTON3) {
             //manager.createPopupmenu();
-
-            manager.showPermissionsView();
+           
+            int row = jTableUsers.rowAtPoint( evt.getPoint() );
+            manager.showPermissionsView(row);
         }
     }//GEN-LAST:event_jTableUsersMouseClicked
 
@@ -1855,7 +1856,7 @@ public class VistaAdmin extends javax.swing.JFrame implements Runnable {
 
     private void btnEliminarUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarUserActionPerformed
         // TODO add your handling code here:
-        //manager.showConfirmationMessage();
+        manager.validateDisableUser();
     }//GEN-LAST:event_btnEliminarUserActionPerformed
 
     private void btnhabilitarUserMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnhabilitarUserMouseEntered
