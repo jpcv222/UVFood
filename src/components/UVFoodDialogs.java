@@ -5,10 +5,9 @@
  */
 package components;
 
-import classes.Usuario;
+
 import views.ConfirmMessage;
 import views.ErrorMessage;
-import views.GestionPermisos;
 import views.SuccesMessage;
 
 /**

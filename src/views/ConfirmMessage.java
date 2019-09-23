@@ -108,11 +108,9 @@ public class ConfirmMessage extends javax.swing.JFrame {
     public javax.swing.JButton btnAceptar;
     public javax.swing.JButton btnCancelar;
     private javax.swing.JButton jButton1;
-    private javax.swing.JLabel jLabelAceptar1;
     public javax.swing.JLabel jLabelSubtitleModal;
     public javax.swing.JLabel jLabelTitleModal;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanelAceptar1;
     // End of variables declaration//GEN-END:variables
 }

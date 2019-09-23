@@ -421,6 +421,7 @@ public class ControladorAdmin implements ActionListener {
                 break;
             case "success.dato.actualizado":
                 modal.success_message("Exito", "", "El usuario se actualizo con exito", "", "");
+                logs.escribirAccessLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + " Se realiza actualización de usuario con éxito.");
                 limpiarCampos();
                 break;
             default:
@@ -576,7 +577,6 @@ public class ControladorAdmin implements ActionListener {
         }
 
     }
-
 
     public void showConfirmationMessage() {
         modal.confirmation_message("Confirmacion", "¿Desea deshabilitar este usuario?");
