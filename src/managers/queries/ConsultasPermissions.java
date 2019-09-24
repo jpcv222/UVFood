@@ -5,9 +5,15 @@
  */
 package managers.queries;
 
+import static classes.ConexionBD.Conexion;
 import classes.Logs;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
+
 
 /**
  *
@@ -18,25 +24,138 @@ public class ConsultasPermissions {
     private DBCore db_core = new DBCore();
     private Logs logs = new Logs(Thread.currentThread().getStackTrace()[1].getClassName());
 
-    public ArrayList <String> get_modules() {
-        ArrayList <String> result = new ArrayList();
-        try {
+    public ArrayList<String> update_user_keys(String username, ArrayList<String> user_keys) {
+
+        ArrayList<String> result = new ArrayList();
         
-        Object response = db_core.get_all_records("modules", "namemodule");
-        result.clear();
-        if ("error.empty".equals((String) response) || "server.error".equals((String) response)) {
-            result.add((String) response);
-        }else {
-            ResultSet new_response = (ResultSet) response;
-            while (new_response.next()) {
-              result.add(new_response.getString("namemodule"));
+        String iduser = (String) db_core.get_record("user", "iduser", "username = '" + username + "'");
+        System.out.println(iduser);
+        try {
+            PreparedStatement ps = null;
+            Connection conn = Conexion();
+
+            for (int i = 0; i < user_keys.size(); i++) {
+                String sql = "INSERT INTO uvfood_user_key VALUES (" + iduser + "," + user_keys.get(i) + ");";
+
+                ps = conn.prepareStatement(sql);
+                int res = ps.executeUpdate();
+                if (res > 0) {
+                    result.add("success.dato.insertado");
+                } else {
+                    result.add("error.dato.no.insertado");
+                }
+                
+                 ps.close();
             }
-        }
-        }
-        catch(Exception ex){
-            logs.escribirExceptionLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// " + ex.getMessage() + " " + ex.toString());
+            
+        } catch (SQLException  | NullPointerException | IndexOutOfBoundsException np) {
+            logs.escribirExceptionLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// " + np.getMessage() + " " + np.toString());
             result.add("server.error");
         }
+
+        return result;
+    }
+
+    public ArrayList<String> get_user_keys(String username) {
+
+        ArrayList<String> result = new ArrayList();
+
+        try {
+            Statement ps = null;
+            Connection conn = Conexion();
+            ResultSet rs = null;
+            ResultSet aux_rs = null;
+            String sql = "SELECT namekey FROM uvfood_keys WHERE idkey IN "
+                    + "(SELECT idkey FROM uvfood_user_key WHERE iduser  IN\n"
+                    + "					  (SELECT iduser FROM uvfood_user WHERE username=  '" + username + "'));";
+
+            ps = conn.createStatement();
+            rs = ps.executeQuery(sql);
+            aux_rs = rs;
+            if (aux_rs.next()) {
+                result.add("server.success");
+                do {
+                    result.add(rs.getString("namekey"));
+                } while (rs.next());
+            } else {
+                result.add("error.empty");
+            }
+            rs.close();
+            ps.close();
+
+        } catch (SQLException np) {
+            logs.escribirExceptionLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// " + np.getMessage() + " " + np.toString());
+            result.add("server.error");
+        }
+
+        return result;
+    }
+
+    public ArrayList<String> get_modules(String atrib, String condition) {
+
+        ArrayList<String> result = new ArrayList();
+
+        try {
+            Statement ps = null;
+            Connection conn = Conexion();
+            ResultSet rs = null;
+            ResultSet aux_rs = null;
+            String sql = "SELECT " + atrib + " FROM uvfood_modules " + condition + ";";
+
+            ps = conn.createStatement();
+            rs = ps.executeQuery(sql);
+            aux_rs = rs;
+            if (aux_rs.next()) {
+                result.add("server.success");
+                do {
+                    result.add(rs.getString(atrib));
+                } while (rs.next());
+            } else {
+                result.add("error.empty");
+            }
+            rs.close();
+            ps.close();
+
+        } catch (SQLException np) {
+            logs.escribirExceptionLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// " + np.getMessage() + " " + np.toString());
+            result.add("server.error");
+        }
+
+        return result;
+    }
+
+    public ArrayList<String> get_keys_modules(String module) {
+
+        ArrayList<String> result = new ArrayList();
+
+        try {
+            String id_module = get_modules("idmodule", "WHERE namemodule = '" + module + "'").get(1);
+
+            Statement ps = null;
+            Connection conn = Conexion();
+            ResultSet rs = null;
+            ResultSet aux_rs = null;
+            String sql = "SELECT namekey FROM uvfood_keys WHERE idmodule = " + id_module + ";";
+
+            ps = conn.createStatement();
+            rs = ps.executeQuery(sql);
+            aux_rs = rs;
+            if (aux_rs.next()) {
+                result.add("server.success");
+                do {
+                    result.add(rs.getString("namekey"));
+                } while (rs.next());
+            } else {
+                result.add("error.empty");
+            }
+            rs.close();
+            ps.close();
+
+        } catch (SQLException | NullPointerException | IndexOutOfBoundsException np) {
+            logs.escribirExceptionLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// " + np.getMessage() + " " + np.toString());
+            result.add("server.error");
+        }
+
         return result;
     }
 

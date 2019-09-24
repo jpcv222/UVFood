@@ -53,7 +53,7 @@ public class DBCore {
         return result;
 
     }
-    
+
     public Object get_all_records(String table, String atrib) {
 
         Object result = 0;
@@ -69,6 +69,37 @@ public class DBCore {
 
             if (rs.next()) {
                 result = rs;
+            } else {
+                result = "error.empty";
+            }
+            rs.close();
+            ps.close();
+
+        } catch (SQLException np) {
+            logs.escribirExceptionLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// " + np.getMessage() + " " + np.toString());
+            result = "server.error";
+        }
+
+        return result;
+
+    }
+
+    public Object get_record(String table, String atrib, String condition) {
+
+        Object result = 0;
+
+        try {
+
+            Statement ps = null;
+            Connection conn = Conexion();
+            ResultSet rs = null;
+            String sql = "SELECT " + atrib + " FROM uvfood_" + table + " WHERE " + condition + ";";
+
+            ps = conn.createStatement();
+            rs = ps.executeQuery(sql);
+
+            if (rs.next()) {
+                result = rs.getString(atrib);
             } else {
                 result = "error.empty";
             }
