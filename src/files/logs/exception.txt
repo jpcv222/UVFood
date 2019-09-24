@@ -45,3 +45,6 @@ managers.queries.ConsultasAdmin//llenarTablaUsersToTickets// Operation requires 
 managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-24T13:52:28.167
 managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-24T13:53:15.327
 managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-24T14:27:00.133
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-24T15:06:53.259
+managers.ControladorAdmin//requestFillFieldsSales// -1 java.lang.ArrayIndexOutOfBoundsException: -1// 2019-09-24T15:07:48.805
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-24T15:08:36.334

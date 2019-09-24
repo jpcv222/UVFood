@@ -344,22 +344,38 @@ public class ControladorAdmin {
             }
         }
     }
-    
+
     public void requestFillTableUsersToTickets() {
         String namekey = "sales.generate.user.graph";
         String result = keyvalidate.haveKey(namekey, user.getIdUser());
         boolean validate = keyvalidate.resultHaveKey(result);
         interfazPrincipalAdmin.jTextFieldBuscarUserToTicket.setEnabled(validate);
         if (validate) {
-        if (!consultasAdmin.llenarTablaUsersToTickets(interfazPrincipalAdmin)) {
-            modal.error_message("Error", "Algo anda mal", "No se pueden mostrar registros de la Base de datos", "Por Favor intenta mas tarde", "O reportanos que ocurre");
-        }
+            if (!consultasAdmin.llenarTablaUsersToTickets(interfazPrincipalAdmin)) {
+                modal.error_message("Error", "Algo anda mal", "No se pueden mostrar registros de la Base de datos", "Por Favor intenta mas tarde", "O reportanos que ocurre");
+            }
         }
     }
 
     public void requestFillFields() {
         if (!consultasAdmin.llenarAcciones(interfazPrincipalAdmin)) {
             modal.error_message("Error", "Algo anda mal", "No se pueden mostrar registros de la Base de datos", "Por Favor intenta mas tarde", "O reportanos que ocurre");
+        }
+    }
+
+    public void requestFillFieldsSales() {
+        String namekey = "sales.generate.user.sale";
+        String result = keyvalidate.haveKey(namekey, user.getIdUser());
+        boolean validate = keyvalidate.resultHaveKey(result);
+        if (validate) {
+            try {
+                int fila = interfazPrincipalAdmin.jTableUsersToTickets.getSelectedRow();
+                String username = interfazPrincipalAdmin.jTableUsersToTickets.getValueAt(fila, 1).toString();
+                interfazPrincipalAdmin.jLabelUsernameSales.setText(username);
+            } catch (Exception ai) {
+                logs.escribirExceptionLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// " + ai.getMessage() + " " + ai.toString());
+                modal.error_message("Error", "Algo anda mal", "No se pueden mostrar registros de la Base de datos", "Por Favor intenta mas tarde", "O reportanos que ocurre");
+            }
         }
     }
 
@@ -592,6 +608,13 @@ public class ControladorAdmin {
         interfazPrincipalAdmin.jTextFieldUser.setText("");
         interfazPrincipalAdmin.jTextFieldIdRol.setText("");
         interfazPrincipalAdmin.jTextFieldIdUser.setText("");
+    }
+
+    public void limpiarCamposSales() {
+        interfazPrincipalAdmin.jTextFieldCantidadTickets.setText("0");
+        interfazPrincipalAdmin.jTextFieldEfectivo.setText("0");
+        interfazPrincipalAdmin.jTextFieldCambio.setText("0");
+        interfazPrincipalAdmin.jTextFieldTotalVenta.setText("0");
     }
 
     public void requestDisableUser() {

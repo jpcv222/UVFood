@@ -81,3 +81,8 @@ managers.queries.KeyValidate//resultHaveKey// Permisos denegados.// 2019-09-24T1
 managers.queries.KeyValidate//resultHaveKey// Permisos denegados.// 2019-09-24T14:06:19.743
 managers.ControladorLogin//insert_session_record// Error desconocido.// 2019-09-24T14:27:00.141
 managers.ControladorGestionPermisos//existInputKey// Consulta no arroja resultados.// 2019-09-24T14:27:19.895
+managers.ControladorLogin//insert_session_record// Error desconocido.// 2019-09-24T15:06:53.267
+managers.queries.KeyValidate//resultHaveKey// Permisos denegados.// 2019-09-24T15:06:59.591
+managers.queries.KeyValidate//resultHaveKey// Permisos denegados.// 2019-09-24T15:07:08.770
+managers.ControladorGestionPermisos//existInputKey// Consulta no arroja resultados.// 2019-09-24T15:07:30.453
+managers.ControladorLogin//insert_session_record// Error desconocido.// 2019-09-24T15:08:36.342
