@@ -365,6 +365,14 @@ public class ControladorAdmin {
                 modal.success_message("Exito", "", "El usuario se registro con exito", "", "");
                 limpiarCampos();
                 break;
+            case "error.NP.error":
+                modal.error_message("Error", "Algo anda mal", "Ocurrio un error al registrar", "Es posible que los campos", "tengan formato incorrecto.");
+                logs.escribirErrorLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "/error./ validando campos ");
+                break;
+                 case "error.sql.error":
+                modal.error_message("Error", "Algo anda mal", "Ocurrio un error al registrar", "Error en el servidor.", "Consulte al área de sistemas.");
+                logs.escribirErrorLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "/error./ validando campos ");
+                break;
             default:
                 logs.escribirErrorLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// Respuesta a petición inválida.");
                 break;

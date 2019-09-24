@@ -494,3 +494,14 @@ managers.ControladorGestionPermisos//asignUserPermissions// Actualización de pe
 managers.ControladorLogin//insert_session_record// Error desconocido.// 2019-09-23T15:31:49.228
 classes.FileManage//selectFile// Archivo CSV, ruta errónea.// 2019-09-23T15:33:41.612
 managers.ControladorGestionPermisos//getCurrentUserKeys// Consulta no arroja resultados.// 2019-09-23T15:34:20.151
+managers.ControladorLogin//insert_session_record// Error desconocido.// 2019-09-23T20:06:48.779
+managers.ControladorAdmin//requestValidationsInsertUser//Error de campos obligatorios// 2019-09-23T20:07:05.032
+managers.ControladorLogin//insert_session_record// Error desconocido.// 2019-09-23T20:15:27.951
+managers.ControladorAdmin//requestInsertUser// Respuesta a petición inválida.// 2019-09-23T20:16:31.440
+managers.ControladorAdmin//requestInsertUser// Respuesta a petición inválida.// 2019-09-23T20:17:01.730
+managers.ControladorLogin//insert_session_record// Error desconocido.// 2019-09-23T20:22:30.862
+managers.ControladorAdmin//requestInsertUser/error./ validando campos // 2019-09-23T20:23:22.293
+managers.ControladorAdmin//requestInsertUser// Respuesta a petición inválida.// 2019-09-23T20:30:31.783
+managers.ControladorAdmin//requestInsertUser// Respuesta a petición inválida.// 2019-09-23T20:30:45.221
+managers.ControladorAdmin//requestInsertUser// Respuesta a petición inválida.// 2019-09-23T20:32:15.556
+managers.ControladorLogin//insert_session_record// Error desconocido.// 2019-09-23T20:40:47.223

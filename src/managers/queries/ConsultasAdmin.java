@@ -321,7 +321,6 @@ public class ConsultasAdmin extends ConexionBD {
                     ps = conn.prepareStatement(insertQuery);
                     int res = ps.executeUpdate();
                     if (res > 0) {
-                        result = "success.dato.insertado";
 
                         ps = conn.prepareStatement(getIdQuery);
                         rs = ps.executeQuery();
@@ -356,7 +355,7 @@ public class ConsultasAdmin extends ConexionBD {
         } catch (SQLException ex) {
             logs.escribirExceptionLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// " + ex.getMessage() + " " + ex.toString());
             result = "error.sql.error";
-        } catch (NullPointerException np) {
+        } catch (NullPointerException | IllegalArgumentException np) {
             logs.escribirExceptionLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// " + np.getMessage() + " " + np.toString());
             result = "error.NP.error";
         }
