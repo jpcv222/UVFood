@@ -186,12 +186,16 @@ public class ControladorGestionPermisos {
         }
     }
 
-    public boolean validateAsignUserPermissions(ArrayList<String> data_response) {
+    public static boolean validateAsignUserPermissions(ArrayList<String> data_response) {
         boolean result = true;
+        try{
         for (int i = 0; i < data_response.size(); i++) {
             if (data_response.get(i).equals("error.dato.no.insertado") || data_response.get(i).equals("server.error")) {
                 return false;
             }
+        }
+        }catch(Exception np){
+             result = true;
         }
 
         return result;
