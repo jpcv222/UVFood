@@ -333,8 +333,13 @@ public class ControladorAdmin {
     }
     
     public void requestFillTableSessions() {
+        String namekey = "reports.generate.user.sessions";
+        String result = keyvalidate.haveKey(namekey, user.getIdUser());
+        boolean validate = keyvalidate.resultHaveKey(result);
+        if (validate) {
         if (!consultasAdmin.llenarTablaSessions(interfazPrincipalAdmin)) {
             modal.error_message("Error", "Algo anda mal", "No se pueden mostrar registros de la Base de datos", "Por Favor intenta mas tarde", "O reportanos que ocurre");
+        }
         }
     }
 

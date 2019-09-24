@@ -30,3 +30,4 @@ classes.FileManage//calcularRutaArchivo// null java.lang.NullPointerException// 
 managers.queries.ConsultasPermissions//update_user_keys// ERROR: missing FROM-clause entry for table "create"
   Position: 39 org.postgresql.util.PSQLException: ERROR: missing FROM-clause entry for table "create"
   Position: 39// 2019-09-24T02:44:33.964
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-24T03:29:23.841

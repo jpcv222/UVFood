@@ -195,3 +195,9 @@ managers.ControladorGestionPermisos//createKeysModule// Se muestran  keys por mo
 managers.queries.KeyValidate//resultHaveKey// Permiso concedido.// 2019-09-24T02:44:00.270
 managers.ControladorGestionPermisos//createKeysModule// Se muestran  keys por modulos con [server.success, permissions.asign, permissions.show.view.asign, permissions.create.keys, permissions.create.modules] registros.// 2019-09-24T02:44:00.346
 managers.queries.KeyValidate//resultHaveKey// Permiso concedido.// 2019-09-24T02:44:33.401
+managers.queries.KeyValidate//resultHaveKey// Permiso concedido.// 2019-09-24T03:29:22.497
+managers.ControladorAdmin//createJFreeChartCount// Se genera gráfica con 8 registros.// 2019-09-24T03:29:22.575
+managers.queries.KeyValidate//resultHaveKey// Permiso concedido.// 2019-09-24T03:29:22.966
+managers.ControladorAdmin//createJFreeChartCount// Se genera gráfica con 100 registros.// 2019-09-24T03:29:23.060
+managers.ControladorLogin//define_view// Acceso a vista admin.// 2019-09-24T03:29:23.075
+managers.ControladorLogin//request_login// Usuario existente.// 2019-09-24T03:29:24.106

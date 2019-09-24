@@ -59,3 +59,4 @@ managers.ControladorGestionPermisos//createKeysModule// Consulta no arroja resul
 managers.ControladorGestionPermisos//createKeysModule// Consulta no arroja resultados.// 2019-09-24T02:43:48.897
 managers.queries.KeyValidate//resultHaveKey// Permisos denegados.// 2019-09-24T02:44:27.872
 managers.ControladorGestionPermisos//asignUserPermissions// Actualización de permisos de usuario no completada.// 2019-09-24T02:44:34.020
+managers.ControladorLogin//insert_session_record// Error desconocido.// 2019-09-24T03:29:23.997
