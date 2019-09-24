@@ -2266,7 +2266,7 @@ public class VistaAdmin extends javax.swing.JFrame implements Runnable {
         btnConfigTickets.setBorder(null);
         jPanelModuleTicketsUser.setVisible(true);
         jPanelModuleConfigTickets.setVisible(false);
-        
+
         manager.requestFillTableUsersToTickets();
     }//GEN-LAST:event_jPanelTicketRegisterItemMouseClicked
 
@@ -2310,8 +2310,10 @@ public class VistaAdmin extends javax.swing.JFrame implements Runnable {
             manager.requestFillFieldsSales();
         }
         if (evt.getButton() == java.awt.event.MouseEvent.BUTTON3) {
+            //manager.createPopupmenu();
             manager.limpiarCamposSales();
-            manager.requestFillFieldsSales();
+            int row = jTableUsersToTickets.rowAtPoint(evt.getPoint());
+            manager.consumptionTicket(row);
         }
     }//GEN-LAST:event_jTableUsersToTicketsMouseClicked
 

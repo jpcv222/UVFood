@@ -392,6 +392,20 @@ public class ControladorAdmin {
             }
         }
     }
+    
+    public void consumptionTicket(int row) {
+        String namekey = "sales.generate.user.sale";
+        String result = keyvalidate.haveKey(namekey, user.getIdUser());
+        boolean validate = keyvalidate.resultHaveKey(result);
+        if (validate) {
+            if (consultasAdmin.insertConsumption(interfazPrincipalAdmin, row)) {
+                modal.success_message("Exito.", "Consumo de ticket realizado.", "El ticket se descontará.", "", "");
+            } else {
+                modal.error_message("Error", "Algo anda mal", "No se realizó consumo de ticket.", "Por Favor intenta mas tarde", "O reportanos que ocurre");
+
+            }
+        }
+    }
 
     public void requestFillCombo() {
         if (!consultasAdmin.fillCombo(interfazPrincipalAdmin)) {

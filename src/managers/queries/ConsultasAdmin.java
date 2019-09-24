@@ -445,6 +445,36 @@ public class ConsultasAdmin extends ConexionBD {
         return result;
     }
     
+    public boolean insertConsumption(VistaAdmin vista, int row) {
+        boolean result = false;
+        try {
+            
+            PreparedStatement ps = null;
+            
+            int iduser = (int) vista.jTableUsersToTickets.getValueAt(row, 0);
+            
+            Connection conn = Conexion();
+            
+            String insertQuery = "INSERT INTO uvfood_consumption_user (iduser) VALUES "
+                    + "('" + iduser + "';)";
+            
+            ps = conn.prepareStatement(insertQuery);
+            int res = ps.executeUpdate();
+            if (res > 0) {
+                result = true;
+            } else {
+                result = false;
+            }
+            
+            ps.close();
+            
+        } catch (SQLException | NullPointerException | IllegalArgumentException | ClassCastException ex) {
+            logs.escribirExceptionLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// " + ex.getMessage() + " " + ex.toString());
+            result = false;
+        }
+        return result;
+    }
+    
     public String crearUsuario(VistaAdmin vista) {
         String result = "";
         try {
