@@ -9,3 +9,38 @@ managers.ControladorGestionPermisos//insertModule// El servidor está presentado
 managers.ControladorLogin//insert_session_record// Error desconocido.// 2019-09-24T01:14:20.148
 managers.ControladorGestionPermisos//getCurrentUserKeys// Consulta no arroja resultados.// 2019-09-24T01:14:23.731
 managers.ControladorGestionPermisos//existInputModule// Consulta no arroja resultados.// 2019-09-24T01:14:26.903
+managers.ControladorLogin//insert_session_record// Error desconocido.// 2019-09-24T01:49:31.958
+managers.ControladorGestionPermisos//getCurrentUserKeys// Consulta no arroja resultados.// 2019-09-24T01:49:35.689
+managers.queries.KeyValidate//resultHaveKey// Permisos denegados.// 2019-09-24T01:49:38.597
+managers.ControladorGestionPermisos//existInputModule// Consulta no arroja resultados.// 2019-09-24T01:49:38.633
+managers.ControladorGestionPermisos//existInputKey// Consulta no arroja resultados.// 2019-09-24T01:49:38.665
+managers.queries.KeyValidate//resultHaveKey// Permisos denegados.// 2019-09-24T01:49:50.577
+managers.ControladorGestionPermisos//existInputModule// Consulta no arroja resultados.// 2019-09-24T01:49:50.617
+managers.ControladorGestionPermisos//existInputKey// Consulta no arroja resultados.// 2019-09-24T01:49:50.677
+managers.queries.KeyValidate//resultHaveKey// Permisos denegados.// 2019-09-24T01:49:58.932
+managers.ControladorGestionPermisos//existInputKey// Consulta no arroja resultados.// 2019-09-24T01:49:59.108
+managers.ControladorGestionPermisos//insertKey// El servidor está presentado problemas.// 2019-09-24T01:49:59.236
+managers.queries.KeyValidate//resultHaveKey// Permisos denegados.// 2019-09-24T01:50:03.238
+managers.ControladorGestionPermisos//existInputKey// Consulta no arroja resultados.// 2019-09-24T01:50:03.322
+managers.ControladorGestionPermisos//insertKey// El servidor está presentado problemas.// 2019-09-24T01:50:03.362
+managers.queries.KeyValidate//resultHaveKey// Permisos denegados.// 2019-09-24T01:50:14.733
+managers.queries.KeyValidate//resultHaveKey// Permisos denegados.// 2019-09-24T01:50:53.195
+managers.ControladorGestionPermisos//existInputKey// Consulta no arroja resultados.// 2019-09-24T01:50:53.383
+managers.ControladorGestionPermisos//insertKey// El servidor está presentado problemas.// 2019-09-24T01:50:54.398
+managers.ControladorGestionPermisos//createKeysModule// Consulta no arroja resultados.// 2019-09-24T01:51:39.164
+managers.queries.KeyValidate//resultHaveKey// Permisos denegados.// 2019-09-24T01:52:06.360
+managers.ControladorGestionPermisos//existInputKey// Consulta no arroja resultados.// 2019-09-24T01:52:06.423
+managers.ControladorGestionPermisos//insertKey// El servidor está presentado problemas.// 2019-09-24T01:52:06.454
+managers.ControladorLogin//insert_session_record// Error desconocido.// 2019-09-24T01:55:08.433
+managers.ControladorGestionPermisos//getCurrentUserKeys// Consulta no arroja resultados.// 2019-09-24T01:55:11.820
+managers.queries.KeyValidate//resultHaveKey// Permisos denegados.// 2019-09-24T01:55:16.594
+managers.queries.KeyValidate//resultHaveKey// Permisos denegados.// 2019-09-24T01:55:51.784
+managers.ControladorGestionPermisos//existInputKey// Consulta no arroja resultados.// 2019-09-24T01:55:51.852
+managers.ControladorGestionPermisos//insertKey// El servidor está presentado problemas.// 2019-09-24T01:55:51.924
+managers.ControladorLogin//insert_session_record// Error desconocido.// 2019-09-24T01:56:29.316
+managers.queries.KeyValidate//resultHaveKey// Permisos denegados.// 2019-09-24T01:57:14.804
+managers.ControladorGestionPermisos//existInputKey// Consulta no arroja resultados.// 2019-09-24T01:57:14.988
+managers.queries.KeyValidate//resultHaveKey// Permisos denegados.// 2019-09-24T01:57:21.112
+managers.queries.KeyValidate//resultHaveKey// Permisos denegados.// 2019-09-24T01:57:51.693
+managers.ControladorGestionPermisos//existInputKey// Consulta no arroja resultados.// 2019-09-24T01:57:51.792
+managers.ControladorLogin//insert_session_record// Error desconocido.// 2019-09-24T02:26:10.414

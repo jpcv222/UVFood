@@ -83,6 +83,36 @@ public class ConsultasPermissions {
         return result;
     }
 
+     public String insertKey(String namemodule, String namekey) {
+
+        String result;
+
+        try {
+            String id_module = get_modules("idmodule", "WHERE namemodule = '" + namemodule + "'").get(1);
+            
+            PreparedStatement ps = null;
+            Connection conn = Conexion();
+
+            String sql = "INSERT INTO uvfood_keys (idmodule,namekey) VALUES ('"+id_module +"','"+ namekey + "');";
+
+            ps = conn.prepareStatement(sql);
+            int res = ps.executeUpdate();
+            if (res > 0) {
+                result = "success.dato.insertado";
+            } else {
+                result = "error.dato.no.insertado";
+            }
+
+            ps.close();
+
+        } catch (SQLException | NullPointerException | IndexOutOfBoundsException np) {
+            logs.escribirExceptionLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// " + np.getMessage() + " " + np.toString());
+            result = "server.error";
+        }
+
+        return result;
+    }
+    
     public ArrayList<String> get_user_keys(String username) {
 
         ArrayList<String> result = new ArrayList();
@@ -179,6 +209,39 @@ public class ConsultasPermissions {
             ps.close();
 
         } catch (SQLException | NullPointerException | IndexOutOfBoundsException np) {
+            logs.escribirExceptionLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// " + np.getMessage() + " " + np.toString());
+            result.add("server.error");
+        }
+
+        return result;
+    }
+    
+    public ArrayList<String> get_keys(String atrib, String condition) {
+
+        ArrayList<String> result = new ArrayList();
+
+        try {
+            Statement ps = null;
+            Connection conn = Conexion();
+            ResultSet rs = null;
+            ResultSet aux_rs = null;
+            String sql = "SELECT " + atrib + " FROM uvfood_keys " + condition + ";";
+
+            ps = conn.createStatement();
+            rs = ps.executeQuery(sql);
+            aux_rs = rs;
+            if (aux_rs.next()) {
+                result.add("server.success");
+                do {
+                    result.add(rs.getString(atrib));
+                } while (rs.next());
+            } else {
+                result.add("error.empty");
+            }
+            rs.close();
+            ps.close();
+
+        } catch (SQLException np) {
             logs.escribirExceptionLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// " + np.getMessage() + " " + np.toString());
             result.add("server.error");
         }

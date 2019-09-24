@@ -188,14 +188,14 @@ public class ControladorGestionPermisos {
 
     public static boolean validateAsignUserPermissions(ArrayList<String> data_response) {
         boolean result = true;
-        try{
-        for (int i = 0; i < data_response.size(); i++) {
-            if (data_response.get(i).equals("error.dato.no.insertado") || data_response.get(i).equals("server.error")) {
-                return false;
+        try {
+            for (int i = 0; i < data_response.size(); i++) {
+                if (data_response.get(i).equals("error.dato.no.insertado") || data_response.get(i).equals("server.error")) {
+                    return false;
+                }
             }
-        }
-        }catch(Exception np){
-             result = true;
+        } catch (Exception np) {
+            result = true;
         }
 
         return result;
@@ -232,9 +232,9 @@ public class ControladorGestionPermisos {
 
         String namekey = "permissions.create.modules";
 
-        //String result = keyvalidate.haveKey(namekey, user.getIdUser());
-        //boolean validate = keyvalidate.resultHaveKey(result);
-        if (true) {
+        String result = keyvalidate.haveKey(namekey, user.getIdUser());
+        boolean validate = keyvalidate.resultHaveKey(result);
+        if (validate) {
             String new_module = interfazGestionPermisos.jTextFieldModuloNuevo.getText();
             boolean exist_module = existInputModule(new_module);
             if (!exist_module && !new_module.trim().equals("")) {
@@ -259,8 +259,28 @@ public class ControladorGestionPermisos {
                 modal.error_message("Error.", "Módulos no actualizados.", "El módulo ingresado no se puede registrar.", "Error en el servidor.", null);
                 break;
             case "success.dato.insertado":
-                logs.escribirAccessLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// Se muestran  user keys con " + data_response + " registros.");
+                logs.escribirAccessLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// Se insertan módulos: " + new_module + ".");
                 modal.success_message("Éxito.", "Módulos actualizados.", "Se ha registrado módulo", "de manera exitosa.", null);
+                break;
+        }
+    }
+    
+     public void insertKey(String namemodule, String new_key) {
+
+        String data_response;
+        data_response = consultasPermissions.insertKey(namemodule, new_key);
+        switch (data_response) {
+            case "error.dato.no.insertado":
+                logs.escribirErrorLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// Consulta no arroja resultados: error.dato.no.insertado");
+                modal.error_message("Error.", "Permisos no actualizados.", "El permiso ingresado no se puede registrar.", "Error en el servidor.", null);
+                break;
+            case "server.error":
+                logs.escribirErrorLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// El servidor está presentado problemas.");
+                modal.error_message("Error.", "Permisos no actualizados.", "El permiso ingresado no se puede registrar.", "Error en el servidor.", null);
+                break;
+            case "success.dato.insertado":
+                logs.escribirAccessLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// Se insertan permisos: " + new_key + ".");
+                modal.success_message("Éxito.", "Permisos actualizados.", "Se ha registrado permiso", "de manera exitosa.", null);
                 break;
         }
     }
@@ -291,6 +311,58 @@ public class ControladorGestionPermisos {
 
         return response;
 
+    }
+    
+       public boolean existInputKey(String new_key) {
+
+        boolean response;
+
+        ArrayList<String> data_response;
+        data_response = consultasPermissions.get_keys("idkey", "WHERE namekey = '" + new_key + "'");
+        switch (data_response.get(0)) {
+            case "error.empty":
+                logs.escribirErrorLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// Consulta no arroja resultados.");
+                response = false;
+                break;
+            case "server.error":
+                logs.escribirErrorLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// El servidor está presentado problemas.");
+                response = true;
+                break;
+            case "server.success":
+                logs.escribirAccessLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// Se muestran  user modules con " + data_response + " registros.");
+                response = true;
+                break;
+            default:
+                response = true;
+                break;
+        }
+
+        return response;
+
+    }
+
+    public void addKey() {
+
+        String namekey = "permissions.create.keys";
+
+        String result = keyvalidate.haveKey(namekey, user.getIdUser());
+        boolean validate = keyvalidate.resultHaveKey(result);
+        if (validate) {
+            String new_key = interfazGestionPermisos.jTextFieldPermisoNuevo.getText();
+            String namemodule = interfazGestionPermisos.jTextFieldModuloNuevo.getText();
+            boolean exist_module = existInputModule(namemodule);
+            boolean exist_key = existInputKey(new_key);
+            if (!namemodule.trim().equals("") && !new_key.trim().equals("")) {
+                if (exist_module && !exist_key) {
+                    insertKey(namemodule, new_key);
+                } else {
+                    modal.error_message("Error de validación.", "No se registró permiso.", "Posibles causas:", "1. Módulo inexistente.", "2. Permiso duplicado.");
+                }
+
+            } else {
+                modal.error_message("Error de validación.", "Campos obligatorios vacíos.", "El permiso ingresado no se agregó.", "Llene los campos módulo y permiso.", null);
+            }
+        }
     }
 
     public Usuario getUser() {
