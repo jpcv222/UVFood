@@ -104,3 +104,9 @@ managers.queries.KeyValidate//resultHaveKey// Permisos denegados.// 2019-09-24T1
 managers.ControladorLogin//insert_session_record// Error desconocido.// 2019-09-24T16:42:17.458
 managers.ControladorLogin//insert_session_record// Error desconocido.// 2019-09-24T16:43:18.866
 managers.ControladorLogin//insert_session_record// Error desconocido.// 2019-09-24T16:44:02.347
+classes.FileManage//selectFile// Archivo CSV, ruta errónea.// 2019-09-24T16:51:39.148
+managers.queries.KeyValidate//resultHaveKey// Permisos denegados.// 2019-09-24T16:51:41.545
+managers.queries.KeyValidate//resultHaveKey// Permisos denegados.// 2019-09-24T16:58:20.201
+managers.ControladorGestionPermisos//existInputModule// Consulta no arroja resultados.// 2019-09-24T17:00:46.088
+managers.ControladorGestionPermisos//existInputKey// Consulta no arroja resultados.// 2019-09-24T17:00:46.119
+managers.queries.KeyValidate//resultHaveKey// Permisos denegados.// 2019-09-24T17:00:51.071

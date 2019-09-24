@@ -107,3 +107,4 @@ managers.queries.ConsultasAdmin//insertConsumption// ERROR: duplicate key value 
 managers.queries.ConsultasAdmin//insertConsumption// ERROR: duplicate key value violates unique constraint "unique_consumption_date_user"
   Detail: Key (iduser, date_consumption)=(18, 2019-09-23) already exists. org.postgresql.util.PSQLException: ERROR: duplicate key value violates unique constraint "unique_consumption_date_user"
   Detail: Key (iduser, date_consumption)=(18, 2019-09-23) already exists.// 2019-09-24T16:44:38.583
+classes.FileManage//calcularRutaArchivo// null java.lang.NullPointerException// 2019-09-24T16:51:39.136
