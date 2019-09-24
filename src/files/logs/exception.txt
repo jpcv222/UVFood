@@ -92,3 +92,18 @@ WHERE uvfood_user_discount.iduser = 6';. Expected  char// 2019-09-24T16:25:01.57
 managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-24T16:26:19.893
 managers.queries.ConsultasAdmin//llenarTablaUsersToTickets// The column index is out of range: 0, number of columns: 1. org.postgresql.util.PSQLException: The column index is out of range: 0, number of columns: 1.// 2019-09-24T16:26:22.122
 managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-24T16:27:07.116
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-24T16:42:17.442
+managers.queries.ConsultasAdmin//insertConsumption// ERROR: syntax error at or near ";"
+  Position: 58 org.postgresql.util.PSQLException: ERROR: syntax error at or near ";"
+  Position: 58// 2019-09-24T16:42:23.691
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-24T16:43:18.866
+managers.queries.ConsultasAdmin//insertConsumption// ERROR: relation "uvfood_consumption_user" does not exist
+  Position: 13 org.postgresql.util.PSQLException: ERROR: relation "uvfood_consumption_user" does not exist
+  Position: 13// 2019-09-24T16:43:25.130
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-24T16:44:02.339
+managers.queries.ConsultasAdmin//insertConsumption// ERROR: duplicate key value violates unique constraint "unique_consumption_date_user"
+  Detail: Key (iduser, date_consumption)=(17, 2019-09-23) already exists. org.postgresql.util.PSQLException: ERROR: duplicate key value violates unique constraint "unique_consumption_date_user"
+  Detail: Key (iduser, date_consumption)=(17, 2019-09-23) already exists.// 2019-09-24T16:44:07.456
+managers.queries.ConsultasAdmin//insertConsumption// ERROR: duplicate key value violates unique constraint "unique_consumption_date_user"
+  Detail: Key (iduser, date_consumption)=(18, 2019-09-23) already exists. org.postgresql.util.PSQLException: ERROR: duplicate key value violates unique constraint "unique_consumption_date_user"
+  Detail: Key (iduser, date_consumption)=(18, 2019-09-23) already exists.// 2019-09-24T16:44:38.583

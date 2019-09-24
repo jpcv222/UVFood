@@ -401,7 +401,7 @@ public class ControladorAdmin {
             if (consultasAdmin.insertConsumption(interfazPrincipalAdmin, row)) {
                 modal.success_message("Exito.", "Consumo de ticket realizado.", "El ticket se descontará.", "", "");
             } else {
-                modal.error_message("Error", "Algo anda mal", "No se realizó consumo de ticket.", "Por Favor intenta mas tarde", "O reportanos que ocurre");
+                modal.error_message("Error", "Viola restricción.", "No se realizó consumo de ticket.", "Por Favor intenta más tarde.", "Ticket diario consumido.");
 
             }
         }

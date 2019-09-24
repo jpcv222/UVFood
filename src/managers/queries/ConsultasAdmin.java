@@ -455,8 +455,8 @@ public class ConsultasAdmin extends ConexionBD {
             
             Connection conn = Conexion();
             
-            String insertQuery = "INSERT INTO uvfood_consumption_user (iduser) VALUES "
-                    + "('" + iduser + "';)";
+            String insertQuery = "INSERT INTO uvfood_consumption_user_ticket (iduser) VALUES "
+                    + "('" + iduser + "');";
             
             ps = conn.prepareStatement(insertQuery);
             int res = ps.executeUpdate();
