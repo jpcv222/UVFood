@@ -445,3 +445,16 @@ managers.ControladorAdmin//requestValidationsInsertUser//Error de campos obligat
 managers.ControladorAdmin//requestInsertImgBD// Respuesta a petición inválida.// 2019-09-23T18:54:14.456
 managers.ControladorAdmin//requestInsertImgBD// Respuesta a petición inválida.// 2019-09-23T18:56:37.786
 managers.ControladorAdmin//requestInsertImgBD// Respuesta a petición inválida.// 2019-09-23T19:55:52.937
+managers.ControladorAdmin//requestInsertImgBD// Respuesta a petición inválida.// 2019-09-23T20:06:15.579
+managers.ControladorAdmin//requestInsertImgBD// Respuesta a petición inválida.// 2019-09-23T20:06:21.245
+managers.ControladorAdmin//requestInsertImgBD/error.fecha ya esta/ // 2019-09-23T20:14:12.592
+managers.ControladorAdmin//requestInsertImgBD// Respuesta a petición inválida.// 2019-09-23T20:17:03.315
+managers.ControladorAdmin//requestInsertImgBD// Respuesta a petición inválida.// 2019-09-23T20:17:15.211
+managers.ControladorAdmin//requestInsertImgBD// Respuesta a petición inválida.// 2019-09-23T20:19:44.874
+managers.ControladorAdmin//requestInsertImgBD// Respuesta a petición inválida.// 2019-09-23T20:21:19.512
+managers.ControladorAdmin//requestInsertImgBD/error.fecha ya esta/ // 2019-09-23T20:22:37.280
+managers.ControladorAdmin//requestInsertImgBD/error.fecha ya esta/ // 2019-09-23T20:23:18.868
+managers.ControladorAdmin//requestValidationsInsertUser//Error de campos obligatorios// 2019-09-23T20:25:42.102
+managers.ControladorAdmin//requestValidationsInsertUser//fecha ingresada no es valida// 2019-09-23T20:26:07.375
+managers.ControladorAdmin//requestValidationsInsertUser//fecha ingresada no es valida// 2019-09-23T20:26:40.150
+managers.ControladorAdmin//requestValidationsInsertUser//fecha ingresada no es valida// 2019-09-23T20:27:00.557

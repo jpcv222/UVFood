@@ -602,9 +602,18 @@ public class ConsultasAdmin extends ConexionBD {
         return result;
     }
 
+    public String getFecha() {
+        java.util.Date myDate = new java.util.Date();
+
+        String fecha = new SimpleDateFormat("yyyy-MM-dd").format(myDate);
+
+        return fecha;
+    }
+
     public String guardarMenu(String img, VistaAdmin vista) {
         String result = "";
         String nameType = vista.tipoImg;
+        String newDate = vista.jTextFieldNewDate.getText();
         int idType = 0;
         try {
 
@@ -612,25 +621,53 @@ public class ConsultasAdmin extends ConexionBD {
             ResultSet rs = null;
 
             Connection conn = Conexion();
-            String getIdTipo = "SELECT idtype FROM uvfood_type_image WHERE name_type = '" + nameType + "';";
-            ps = conn.prepareStatement(getIdTipo);
-            rs = ps.executeQuery();
-            
-
-            if (rs.next()) {
-                idType = rs.getInt(1);
-                
-                String inserImg = "INSERT INTO uvfood_images (file_image, type_image) VALUES('" + img + "','" + idType + "');";
-                ps = conn.prepareStatement(inserImg);
+            if (!newDate.equals("")) {
+                String getIdTipo = "SELECT idtype FROM uvfood_type_image WHERE name_type = '" + nameType + "';";
+                ps = conn.prepareStatement(getIdTipo);
                 rs = ps.executeQuery();
-                int res = ps.executeUpdate();
-                if (res > 0) {
-                    result = "success.dato.insertado";
+                if (rs.next()) {
+                    idType = rs.getInt(1);
 
-                } else {
-                    result = "error.dato.no.insertado";
+                    String inserImg = "INSERT INTO uvfood_images (file_image, type_image, publication_date) VALUES('" + img + "','" + idType + "','" + newDate + "');";
+                    ps = conn.prepareStatement(inserImg);
+                    rs = ps.executeQuery();
+                    int res = ps.executeUpdate();
+                    if (res > 0) {
+                        result = "success.dato.insertado";
+
+                    } else {
+                        result = "error.dato.no.insertado";
+                    }
+
                 }
 
+            } else {
+
+                String getFecha = "SELECT file_image FROM uvfood_images WHERE publication_date = '" + getFecha() + "' AND type_image = 2;";
+                ps = conn.prepareStatement(getFecha);
+                rs = ps.executeQuery();
+                if (rs.next()) {
+                    result = "error.fecha.esta";
+                } else {
+                    String getIdTipo = "SELECT idtype FROM uvfood_type_image WHERE name_type = '" + nameType + "';";
+                    ps = conn.prepareStatement(getIdTipo);
+                    rs = ps.executeQuery();
+                    if (rs.next()) {
+                        idType = rs.getInt(1);
+
+                        String inserImg = "INSERT INTO uvfood_images (file_image, type_image) VALUES('" + img + "','" + idType + "');";
+                        ps = conn.prepareStatement(inserImg);
+                        rs = ps.executeQuery();
+                        int res = ps.executeUpdate();
+                        if (res > 0) {
+                            result = "success.dato.insertado";
+
+                        } else {
+                            result = "error.dato.no.insertado";
+                        }
+
+                    }
+                }
             }
 
             rs.close();

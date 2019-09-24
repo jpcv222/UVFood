@@ -329,6 +329,10 @@ public class ControladorAdmin {
                 case "error.dato.no.insertado":
                     logs.escribirErrorLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "/error.Imagen no insertada/ ");
                     break;
+                case "error.fecha.esta":
+                    modal.error_message("Error", "Algo anda mal", "Ya hay un menu con la fecha de hoy", "Por Favor intenta modificando", "O eliminando");
+                    logs.escribirErrorLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "/error.fecha ya esta/ ");
+                    break;
                 default:
                     logs.escribirErrorLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// Respuesta a petición inválida.");
                     break;

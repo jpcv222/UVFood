@@ -299,7 +299,7 @@ public class VistaAdmin extends javax.swing.JFrame implements Runnable {
         jPanelFechaMenu = new javax.swing.JPanel();
         jLabel35 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        jTextFieldNewDate = new javax.swing.JTextField();
         jSeparator8 = new javax.swing.JSeparator();
         jLabel9 = new javax.swing.JLabel();
 
@@ -1187,7 +1187,7 @@ public class VistaAdmin extends javax.swing.JFrame implements Runnable {
         );
 
         jLabel49.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel49.setText("Para seleccionar un usuario: click izquierdo para llenar campos, derecho para asignar permisos.");
+        jLabel49.setText("Puede seleccionar un usuario: click izquierdo para llenar campos, derecho para asignar permisos.");
 
         javax.swing.GroupLayout jPanelModuleUserReportsLayout = new javax.swing.GroupLayout(jPanelModuleUserReports);
         jPanelModuleUserReports.setLayout(jPanelModuleUserReportsLayout);
@@ -1337,7 +1337,7 @@ public class VistaAdmin extends javax.swing.JFrame implements Runnable {
                             .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 399, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanelModuleUserRegisterLayout.createSequentialGroup()
                                 .addGroup(jPanelModuleUserRegisterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 392, Short.MAX_VALUE)
+                                    .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 392, Short.MAX_VALUE)
                                     .addComponent(jPanelSelectCSVUser, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jButtonCargar, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -1434,7 +1434,7 @@ public class VistaAdmin extends javax.swing.JFrame implements Runnable {
 
         jLabel8.setText("Fecha");
 
-        jTextField1.setBorder(null);
+        jTextFieldNewDate.setBorder(null);
 
         javax.swing.GroupLayout jPanelFechaMenuLayout = new javax.swing.GroupLayout(jPanelFechaMenu);
         jPanelFechaMenu.setLayout(jPanelFechaMenuLayout);
@@ -1444,7 +1444,7 @@ public class VistaAdmin extends javax.swing.JFrame implements Runnable {
                 .addContainerGap()
                 .addGroup(jPanelFechaMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jSeparator8)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jTextFieldNewDate, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelFechaMenuLayout.createSequentialGroup()
                         .addGap(0, 11, Short.MAX_VALUE)
                         .addGroup(jPanelFechaMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
@@ -1460,7 +1460,7 @@ public class VistaAdmin extends javax.swing.JFrame implements Runnable {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel8)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jTextFieldNewDate, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(9, 9, 9)
                 .addComponent(jSeparator8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
@@ -2075,7 +2075,6 @@ public class VistaAdmin extends javax.swing.JFrame implements Runnable {
     private javax.swing.JSeparator jSeparator8;
     private javax.swing.JSeparator jSeparator9;
     public javax.swing.JTable jTableUsers;
-    private javax.swing.JTextField jTextField1;
     public javax.swing.JTextField jTextFieldActivo;
     public javax.swing.JTextField jTextFieldApellido;
     public javax.swing.JTextField jTextFieldBuscarUser;
@@ -2084,6 +2083,7 @@ public class VistaAdmin extends javax.swing.JFrame implements Runnable {
     public javax.swing.JTextField jTextFieldIdRol;
     public javax.swing.JTextField jTextFieldIdUser;
     public javax.swing.JTextField jTextFieldName;
+    public javax.swing.JTextField jTextFieldNewDate;
     public javax.swing.JTextField jTextFieldNumActi;
     public javax.swing.JTextField jTextFieldRol;
     public javax.swing.JTextField jTextFieldUser;

@@ -1013,3 +1013,19 @@ managers.queries.ConsultasAdmin//llenarTabla// null java.lang.NullPointerExcepti
 managers.queries.ConsultasAdmin//llenarAcciones// -1 java.lang.ArrayIndexOutOfBoundsException: -1// 2019-09-23T19:54:57.139
 managers.queries.ConsultasAdmin//disableUser// null java.lang.NullPointerException// 2019-09-23T19:54:57.141
 managers.queries.ConsultasAdmin//guardarMenu// La consulta no retornó ningún resultado. org.postgresql.util.PSQLException: La consulta no retornó ningún resultado.// 2019-09-23T19:55:52.935
+managers.queries.ConsultasAdmin//guardarMenu// La consulta no retornó ningún resultado. org.postgresql.util.PSQLException: La consulta no retornó ningún resultado.// 2019-09-23T20:06:15.577
+managers.queries.ConsultasAdmin//guardarMenu// ERROR: llave duplicada viola restricción de unicidad «uvfood_images_publication_date_key»
+  Detail: Ya existe la llave (publication_date)=(2019-09-23). org.postgresql.util.PSQLException: ERROR: llave duplicada viola restricción de unicidad «uvfood_images_publication_date_key»
+  Detail: Ya existe la llave (publication_date)=(2019-09-23).// 2019-09-23T20:06:21.244
+managers.queries.ConsultasAdmin//guardarMenu// ERROR: no existe la columna «type_image»
+  Position: 73 org.postgresql.util.PSQLException: ERROR: no existe la columna «type_image»
+  Position: 73// 2019-09-23T20:17:03.313
+managers.queries.ConsultasAdmin//guardarMenu// ERROR: no existe la columna «type_image»
+  Position: 73 org.postgresql.util.PSQLException: ERROR: no existe la columna «type_image»
+  Position: 73// 2019-09-23T20:17:15.210
+managers.queries.ConsultasAdmin//guardarMenu// ERROR: no existe la columna «idtype»
+  Position: 8 org.postgresql.util.PSQLException: ERROR: no existe la columna «idtype»
+  Position: 8// 2019-09-23T20:19:44.872
+managers.queries.ConsultasAdmin//guardarMenu// ERROR: no existe la columna «name_type»
+  Position: 44 org.postgresql.util.PSQLException: ERROR: no existe la columna «name_type»
+  Position: 44// 2019-09-23T20:21:19.512
