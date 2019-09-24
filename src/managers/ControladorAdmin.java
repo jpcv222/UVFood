@@ -176,7 +176,7 @@ public class ControladorAdmin {
             DefaultCategoryDataset data = new DefaultCategoryDataset();
             data.addValue(sessions, "Todas las sesiones", "");
 
-            JFreeChart grafica = ChartFactory.createBarChart3D("Sesiones", "", "Total", data, PlotOrientation.VERTICAL, true, true, false);
+            JFreeChart grafica = ChartFactory.createBarChart3D("Sesiones totales", "", "Total", data, PlotOrientation.VERTICAL, true, true, false);
 
             ChartPanel contenedor = new ChartPanel(grafica);
             interfazPrincipalAdmin.P_GraficaSessions.removeAll();
@@ -332,6 +332,19 @@ public class ControladorAdmin {
         }
     }
 
+    public void requestFillTableSessions() {
+        String namekey = "reports.generate.user.sessions";
+        String result = keyvalidate.haveKey(namekey, user.getIdUser());
+        boolean validate = keyvalidate.resultHaveKey(result);
+        interfazPrincipalAdmin.jLabelNoticeNotPermissions.setVisible(!validate);
+        interfazPrincipalAdmin.jTextFieldBuscarUserSessions.setEnabled(validate);
+        if (validate) {
+            if (!consultasAdmin.llenarTablaSessions(interfazPrincipalAdmin)) {
+                modal.error_message("Error", "Algo anda mal", "No se pueden mostrar registros de la Base de datos", "Por Favor intenta mas tarde", "O reportanos que ocurre");
+            }
+        }
+    }
+
     public void requestFillFields() {
         if (!consultasAdmin.llenarAcciones(interfazPrincipalAdmin)) {
             modal.error_message("Error", "Algo anda mal", "No se pueden mostrar registros de la Base de datos", "Por Favor intenta mas tarde", "O reportanos que ocurre");
@@ -364,6 +377,14 @@ public class ControladorAdmin {
             case "success.dato.insertado":
                 modal.success_message("Exito", "", "El usuario se registro con exito", "", "");
                 limpiarCampos();
+                break;
+            case "error.NP.error":
+                modal.error_message("Error", "Algo anda mal", "Ocurrio un error al registrar", "Es posible que los campos", "tengan formato incorrecto.");
+                logs.escribirErrorLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "/error./ validando campos ");
+                break;
+            case "error.sql.error":
+                modal.error_message("Error", "Algo anda mal", "Ocurrio un error al registrar", "Error en el servidor.", "Consulte al área de sistemas.");
+                logs.escribirErrorLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "/error./ validando campos ");
                 break;
             default:
                 logs.escribirErrorLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// Respuesta a petición inválida.");

@@ -86,8 +86,8 @@ public class VistaAdmin extends javax.swing.JFrame implements Runnable {
         this.repaint();
 
         ImageIcon imagen2 = new ImageIcon("src/images/Perfil.jpg");
-        Icon icono2 = new ImageIcon(imagen2.getImage().getScaledInstance(jLabelPerfil.getWidth(), jLabelPerfil.getHeight(), Image.SCALE_DEFAULT));
-        jLabelPerfil.setIcon(icono2);
+        Icon icono2 = new ImageIcon(imagen2.getImage().getScaledInstance(jLabelReportes.getWidth(), jLabelReportes.getHeight(), Image.SCALE_DEFAULT));
+        jLabelReportes.setIcon(icono2);
         this.repaint();
 
         ImageIcon imagen3 = new ImageIcon("src/images/GestionInterfaz.jpg");
@@ -170,7 +170,7 @@ public class VistaAdmin extends javax.swing.JFrame implements Runnable {
 
         jPanelMenu = new javax.swing.JPanel();
         jLabelHome = new javax.swing.JLabel();
-        jLabelPerfil = new javax.swing.JLabel();
+        jLabelReportes = new javax.swing.JLabel();
         jLabelUser = new javax.swing.JLabel();
         jLabelinterfaz = new javax.swing.JLabel();
         jLabelticket = new javax.swing.JLabel();
@@ -204,16 +204,17 @@ public class VistaAdmin extends javax.swing.JFrame implements Runnable {
         jLabel28 = new javax.swing.JLabel();
         jLabel29 = new javax.swing.JLabel();
         jLabel30 = new javax.swing.JLabel();
-        jPanelPerfilAdmin = new javax.swing.JPanel();
+        jPanelReportes = new javax.swing.JPanel();
+        jPanelHeaderIndex1 = new javax.swing.JPanel();
+        jLabelBienvenida1 = new javax.swing.JLabel();
         jPanel7 = new javax.swing.JPanel();
-        jLabel22 = new javax.swing.JLabel();
         jLabelUserNamePerm = new javax.swing.JLabel();
-        jLabel23 = new javax.swing.JLabel();
-        jLabel24 = new javax.swing.JLabel();
-        jLabel31 = new javax.swing.JLabel();
-        jLabel32 = new javax.swing.JLabel();
-        jLabel33 = new javax.swing.JLabel();
-        jLabel34 = new javax.swing.JLabel();
+        jSeparator8 = new javax.swing.JSeparator();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTableUsersSessions = new javax.swing.JTable();
+        jLabel22 = new javax.swing.JLabel();
+        jTextFieldBuscarUserSessions = new javax.swing.JTextField();
+        jLabelNoticeNotPermissions = new javax.swing.JLabel();
         jPanelModuleUserAdmin = new javax.swing.JPanel();
         jPanelMenuOptionsModuleUser = new javax.swing.JPanel();
         jPanelUserRegisterItem = new javax.swing.JPanel();
@@ -296,6 +297,13 @@ public class VistaAdmin extends javax.swing.JFrame implements Runnable {
         jLabel38 = new javax.swing.JLabel();
         jLabel39 = new javax.swing.JLabel();
         jLabel40 = new javax.swing.JLabel();
+        jPanelModuleTickets = new javax.swing.JPanel();
+        jPanelMenuOptionsModuleTickets = new javax.swing.JPanel();
+        jPanelTicketRegisterItem = new javax.swing.JPanel();
+        jLabel23 = new javax.swing.JLabel();
+        btnConfigTickets = new javax.swing.JButton();
+        jPanelModuleTicketsUser = new javax.swing.JPanel();
+        jPanelModuleConfigTickets = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -310,11 +318,11 @@ public class VistaAdmin extends javax.swing.JFrame implements Runnable {
             }
         });
 
-        jLabelPerfil.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabelPerfil.setForeground(new java.awt.Color(255, 255, 255));
-        jLabelPerfil.addMouseListener(new java.awt.event.MouseAdapter() {
+        jLabelReportes.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabelReportes.setForeground(new java.awt.Color(255, 255, 255));
+        jLabelReportes.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabelPerfilMouseClicked(evt);
+                jLabelReportesMouseClicked(evt);
             }
         });
 
@@ -347,7 +355,7 @@ public class VistaAdmin extends javax.swing.JFrame implements Runnable {
         jPanelMenuLayout.setHorizontalGroup(
             jPanelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jLabelHome, javax.swing.GroupLayout.DEFAULT_SIZE, 218, Short.MAX_VALUE)
-            .addComponent(jLabelPerfil, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jLabelReportes, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(jLabelinterfaz, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(jLabelUser, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(jLabelticket, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -355,10 +363,10 @@ public class VistaAdmin extends javax.swing.JFrame implements Runnable {
         jPanelMenuLayout.setVerticalGroup(
             jPanelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelMenuLayout.createSequentialGroup()
-                .addGap(215, 215, 215)
+                .addGap(206, 206, 206)
                 .addComponent(jLabelHome, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabelPerfil, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jLabelReportes, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabelinterfaz, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -620,59 +628,127 @@ public class VistaAdmin extends javax.swing.JFrame implements Runnable {
 
         rSPanelsSlider1.add(jPanelIndexAdmin, "card2");
 
-        jPanelPerfilAdmin.setBackground(new java.awt.Color(255, 255, 255));
-        jPanelPerfilAdmin.setName("jPanelPerfilAdmin"); // NOI18N
+        jPanelReportes.setBackground(new java.awt.Color(255, 255, 255));
+        jPanelReportes.setName("jPanelReportes"); // NOI18N
+
+        jPanelHeaderIndex1.setBackground(new java.awt.Color(205, 31, 50));
+
+        jLabelBienvenida1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jLabelBienvenida1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabelBienvenida1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabelBienvenida1.setText("Reportes especializados");
+        jLabelBienvenida1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabelBienvenida1MouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanelHeaderIndex1Layout = new javax.swing.GroupLayout(jPanelHeaderIndex1);
+        jPanelHeaderIndex1.setLayout(jPanelHeaderIndex1Layout);
+        jPanelHeaderIndex1Layout.setHorizontalGroup(
+            jPanelHeaderIndex1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelHeaderIndex1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabelBienvenida1, javax.swing.GroupLayout.PREFERRED_SIZE, 909, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(80, Short.MAX_VALUE))
+        );
+        jPanelHeaderIndex1Layout.setVerticalGroup(
+            jPanelHeaderIndex1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelHeaderIndex1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabelBienvenida1, javax.swing.GroupLayout.DEFAULT_SIZE, 39, Short.MAX_VALUE)
+                .addContainerGap())
+        );
 
         jPanel7.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel22.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icon.png"))); // NOI18N
-        jPanel7.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 90, 80, 120));
-
         jLabelUserNamePerm.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jLabelUserNamePerm.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jLabelUserNamePerm.setText("Módulo en construcción.");
-        jPanel7.add(jLabelUserNamePerm, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 10, -1, -1));
+        jLabelUserNamePerm.setText("Sesiones por usuario");
+        jPanel7.add(jLabelUserNamePerm, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, 30));
+        jPanel7.add(jSeparator8, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, 280, 10));
 
-        jLabel23.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/nut-icon.png"))); // NOI18N
-        jPanel7.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 10, 80, 130));
+        jTableUsersSessions.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
 
-        jLabel24.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/screw.png"))); // NOI18N
-        jPanel7.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 80, 80, 130));
+            },
+            new String [] {
+                "Usuario", "Nombre", "Apellido", "Sesiones"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false
+            };
 
-        jLabel31.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/nut-icon.png"))); // NOI18N
-        jPanel7.add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 100, 80, 130));
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
 
-        jLabel32.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/screw.png"))); // NOI18N
-        jPanel7.add(jLabel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 10, 80, 130));
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jTableUsersSessions.getTableHeader().setReorderingAllowed(false);
+        jTableUsersSessions.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTableUsersSessionsMouseClicked(evt);
+            }
+        });
+        jScrollPane2.setViewportView(jTableUsersSessions);
+        if (jTableUsersSessions.getColumnModel().getColumnCount() > 0) {
+            jTableUsersSessions.getColumnModel().getColumn(0).setResizable(false);
+            jTableUsersSessions.getColumnModel().getColumn(1).setResizable(false);
+            jTableUsersSessions.getColumnModel().getColumn(2).setResizable(false);
+            jTableUsersSessions.getColumnModel().getColumn(3).setResizable(false);
+        }
 
-        jLabel33.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icon.png"))); // NOI18N
-        jPanel7.add(jLabel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 0, 80, 120));
+        jPanel7.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(8, 71, 470, 120));
 
-        jLabel34.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/nut-icon.png"))); // NOI18N
-        jPanel7.add(jLabel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, 80, 130));
+        jLabel22.setText("Buscar");
+        jPanel7.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 10, 50, 30));
 
-        javax.swing.GroupLayout jPanelPerfilAdminLayout = new javax.swing.GroupLayout(jPanelPerfilAdmin);
-        jPanelPerfilAdmin.setLayout(jPanelPerfilAdminLayout);
-        jPanelPerfilAdminLayout.setHorizontalGroup(
-            jPanelPerfilAdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1006, Short.MAX_VALUE)
-            .addGroup(jPanelPerfilAdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanelPerfilAdminLayout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, 410, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
+        jTextFieldBuscarUserSessions.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldBuscarUserSessionsActionPerformed(evt);
+            }
+        });
+        jTextFieldBuscarUserSessions.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                jTextFieldBuscarUserSessionsKeyReleased(evt);
+            }
+        });
+        jPanel7.add(jTextFieldBuscarUserSessions, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 10, 180, 30));
+
+        jLabelNoticeNotPermissions.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jLabelNoticeNotPermissions.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabelNoticeNotPermissions.setText("Permisos denegados");
+        jPanel7.add(jLabelNoticeNotPermissions, new org.netbeans.lib.awtextra.AbsoluteConstraints(8, 190, 470, 40));
+
+        javax.swing.GroupLayout jPanelReportesLayout = new javax.swing.GroupLayout(jPanelReportes);
+        jPanelReportes.setLayout(jPanelReportesLayout);
+        jPanelReportesLayout.setHorizontalGroup(
+            jPanelReportesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelReportesLayout.createSequentialGroup()
+                .addComponent(jPanelHeaderIndex1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 12, Short.MAX_VALUE))
+            .addGroup(jPanelReportesLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, 484, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        jPanelPerfilAdminLayout.setVerticalGroup(
-            jPanelPerfilAdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 720, Short.MAX_VALUE)
-            .addGroup(jPanelPerfilAdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanelPerfilAdminLayout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
+        jPanelReportesLayout.setVerticalGroup(
+            jPanelReportesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelReportesLayout.createSequentialGroup()
+                .addComponent(jPanelHeaderIndex1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, 237, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 400, Short.MAX_VALUE))
         );
 
-        rSPanelsSlider1.add(jPanelPerfilAdmin, "card3");
+        rSPanelsSlider1.add(jPanelReportes, "card3");
 
         jPanelModuleUserAdmin.setBackground(new java.awt.Color(255, 255, 255));
         jPanelModuleUserAdmin.setName("jPanelModuleUserAdmin"); // NOI18N
@@ -810,13 +886,17 @@ public class VistaAdmin extends javax.swing.JFrame implements Runnable {
         jScrollPane1.setViewportView(jTableUsers);
         if (jTableUsers.getColumnModel().getColumnCount() > 0) {
             jTableUsers.getColumnModel().getColumn(0).setResizable(false);
+            jTableUsers.getColumnModel().getColumn(0).setHeaderValue("Id");
             jTableUsers.getColumnModel().getColumn(1).setResizable(false);
             jTableUsers.getColumnModel().getColumn(2).setResizable(false);
             jTableUsers.getColumnModel().getColumn(3).setResizable(false);
             jTableUsers.getColumnModel().getColumn(4).setResizable(false);
+            jTableUsers.getColumnModel().getColumn(4).setHeaderValue("Fecha de nacimiento");
             jTableUsers.getColumnModel().getColumn(5).setResizable(false);
+            jTableUsers.getColumnModel().getColumn(5).setHeaderValue("Email");
             jTableUsers.getColumnModel().getColumn(6).setResizable(false);
-            jTableUsers.getColumnModel().getColumn(7).setResizable(false);
+            jTableUsers.getColumnModel().getColumn(6).setHeaderValue("Fecha de creacion");
+            jTableUsers.getColumnModel().getColumn(7).setHeaderValue("Estado");
         }
 
         jTextFieldBuscarUser.addActionListener(new java.awt.event.ActionListener() {
@@ -1181,7 +1261,7 @@ public class VistaAdmin extends javax.swing.JFrame implements Runnable {
         );
 
         jLabel49.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel49.setText("Para seleccionar un usuario: click izquierdo para llenar campos, derecho para asignar permisos.");
+        jLabel49.setText("Puede seleccionar un usuario: click izquierdo para llenar campos, derecho para asignar permisos.");
 
         javax.swing.GroupLayout jPanelModuleUserReportsLayout = new javax.swing.GroupLayout(jPanelModuleUserReports);
         jPanelModuleUserReports.setLayout(jPanelModuleUserReportsLayout);
@@ -1506,6 +1586,138 @@ public class VistaAdmin extends javax.swing.JFrame implements Runnable {
 
         rSPanelsSlider1.add(jPanelGestionInterfaz, "card5");
 
+        jPanelModuleTickets.setBackground(new java.awt.Color(255, 255, 255));
+        jPanelModuleTickets.setName("jPanelModuleUserAdmin"); // NOI18N
+        jPanelModuleTickets.setPreferredSize(new java.awt.Dimension(961, 704));
+        jPanelModuleTickets.setRequestFocusEnabled(false);
+        jPanelModuleTickets.setVerifyInputWhenFocusTarget(false);
+        jPanelModuleTickets.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanelMenuOptionsModuleTickets.setBackground(new java.awt.Color(205, 31, 50));
+
+        jPanelTicketRegisterItem.setBackground(new java.awt.Color(205, 31, 50));
+        jPanelTicketRegisterItem.setName("jPanelUserRegisterItem"); // NOI18N
+        jPanelTicketRegisterItem.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jPanelTicketRegisterItemMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jPanelTicketRegisterItemMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jPanelTicketRegisterItemMouseExited(evt);
+            }
+        });
+
+        jLabel23.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jLabel23.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel23.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel23.setText("Venta tickets");
+        jLabel23.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel23MouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanelTicketRegisterItemLayout = new javax.swing.GroupLayout(jPanelTicketRegisterItem);
+        jPanelTicketRegisterItem.setLayout(jPanelTicketRegisterItemLayout);
+        jPanelTicketRegisterItemLayout.setHorizontalGroup(
+            jPanelTicketRegisterItemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelTicketRegisterItemLayout.createSequentialGroup()
+                .addContainerGap(40, Short.MAX_VALUE)
+                .addComponent(jLabel23, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(34, 34, 34))
+        );
+        jPanelTicketRegisterItemLayout.setVerticalGroup(
+            jPanelTicketRegisterItemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelTicketRegisterItemLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel23, javax.swing.GroupLayout.DEFAULT_SIZE, 39, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
+        btnConfigTickets.setBackground(new java.awt.Color(205, 31, 50));
+        btnConfigTickets.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        btnConfigTickets.setForeground(new java.awt.Color(255, 255, 255));
+        btnConfigTickets.setText("Configuración tickets");
+        btnConfigTickets.setContentAreaFilled(false);
+        btnConfigTickets.setOpaque(true);
+        btnConfigTickets.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnConfigTicketsMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnConfigTicketsMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnConfigTicketsMouseExited(evt);
+            }
+        });
+        btnConfigTickets.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnConfigTicketsActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanelMenuOptionsModuleTicketsLayout = new javax.swing.GroupLayout(jPanelMenuOptionsModuleTickets);
+        jPanelMenuOptionsModuleTickets.setLayout(jPanelMenuOptionsModuleTicketsLayout);
+        jPanelMenuOptionsModuleTicketsLayout.setHorizontalGroup(
+            jPanelMenuOptionsModuleTicketsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelMenuOptionsModuleTicketsLayout.createSequentialGroup()
+                .addComponent(jPanelTicketRegisterItem, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnConfigTickets, javax.swing.GroupLayout.PREFERRED_SIZE, 279, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 399, Short.MAX_VALUE))
+        );
+        jPanelMenuOptionsModuleTicketsLayout.setVerticalGroup(
+            jPanelMenuOptionsModuleTicketsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanelTicketRegisterItem, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(btnConfigTickets, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
+        jPanelModuleTickets.add(jPanelMenuOptionsModuleTickets, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1001, -1));
+
+        jPanelModuleTicketsUser.setBackground(new java.awt.Color(255, 255, 255));
+        jPanelModuleTicketsUser.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 0));
+        jPanelModuleTicketsUser.setAlignmentY(1.0F);
+        jPanelModuleTicketsUser.setPreferredSize(new java.awt.Dimension(977, 635));
+        jPanelModuleTicketsUser.setRequestFocusEnabled(false);
+        jPanelModuleTicketsUser.setVerifyInputWhenFocusTarget(false);
+
+        javax.swing.GroupLayout jPanelModuleTicketsUserLayout = new javax.swing.GroupLayout(jPanelModuleTicketsUser);
+        jPanelModuleTicketsUser.setLayout(jPanelModuleTicketsUserLayout);
+        jPanelModuleTicketsUserLayout.setHorizontalGroup(
+            jPanelModuleTicketsUserLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 977, Short.MAX_VALUE)
+        );
+        jPanelModuleTicketsUserLayout.setVerticalGroup(
+            jPanelModuleTicketsUserLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 620, Short.MAX_VALUE)
+        );
+
+        jPanelModuleTickets.add(jPanelModuleTicketsUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 72, -1, 620));
+
+        jPanelModuleConfigTickets.setBackground(new java.awt.Color(255, 255, 255));
+        jPanelModuleConfigTickets.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 0, 0), 2, true));
+        jPanelModuleConfigTickets.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jPanelModuleConfigTickets.setRequestFocusEnabled(false);
+        jPanelModuleConfigTickets.setVerifyInputWhenFocusTarget(false);
+
+        javax.swing.GroupLayout jPanelModuleConfigTicketsLayout = new javax.swing.GroupLayout(jPanelModuleConfigTickets);
+        jPanelModuleConfigTickets.setLayout(jPanelModuleConfigTicketsLayout);
+        jPanelModuleConfigTicketsLayout.setHorizontalGroup(
+            jPanelModuleConfigTicketsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 936, Short.MAX_VALUE)
+        );
+        jPanelModuleConfigTicketsLayout.setVerticalGroup(
+            jPanelModuleConfigTicketsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 606, Short.MAX_VALUE)
+        );
+
+        jPanelModuleTickets.add(jPanelModuleConfigTickets, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 83, 940, 610));
+
+        rSPanelsSlider1.add(jPanelModuleTickets, "card3");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -1533,7 +1745,7 @@ public class VistaAdmin extends javax.swing.JFrame implements Runnable {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jLabelHomeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelHomeMouseClicked
-        resetColor(jLabelPerfil, "Perfil.jpg");
+        resetColor(jLabelReportes, "Perfil.jpg");
         resetColor(jLabelinterfaz, "GestionInterfaz.jpg");
         resetColor(jLabelUser, "GestionUser.jpg");
         resetColor(jLabelticket, "GestionTicket.jpg");
@@ -1547,7 +1759,7 @@ public class VistaAdmin extends javax.swing.JFrame implements Runnable {
 
     }//GEN-LAST:event_jLabelHomeMouseClicked
 
-    private void jLabelPerfilMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelPerfilMouseClicked
+    private void jLabelReportesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelReportesMouseClicked
         resetColor(jLabelHome, "inicio.jpg");
         resetColor(jLabelinterfaz, "GestionInterfaz.jpg");
         resetColor(jLabelUser, "GestionUser.jpg");
@@ -1555,13 +1767,15 @@ public class VistaAdmin extends javax.swing.JFrame implements Runnable {
         /* setColor(jLabelPerfil);
         resetColor(jLabelUser);
         resetColor(jLabelinterfaz);*/
-        changeImage("perfil-clic.jpg", jLabelPerfil);
+        changeImage("perfil-clic.jpg", jLabelReportes);
 
-        rSPanelsSlider1.setPanelSlider(15, jPanelPerfilAdmin, RSPanelsSlider.DIRECT.RIGHT);
-    }//GEN-LAST:event_jLabelPerfilMouseClicked
+        rSPanelsSlider1.setPanelSlider(15, jPanelReportes, RSPanelsSlider.DIRECT.RIGHT);
+        jLabelNoticeNotPermissions.setVisible(false);
+        manager.requestFillTableSessions();
+    }//GEN-LAST:event_jLabelReportesMouseClicked
 
     private void jLabelUserMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelUserMouseClicked
-        resetColor(jLabelPerfil, "Perfil.jpg");
+        resetColor(jLabelReportes, "Perfil.jpg");
         resetColor(jLabelHome, "inicio.jpg");
         resetColor(jLabelinterfaz, "GestionInterfaz.jpg");
         resetColor(jLabelticket, "GestionTicket.jpg");
@@ -1572,7 +1786,7 @@ public class VistaAdmin extends javax.swing.JFrame implements Runnable {
     }//GEN-LAST:event_jLabelUserMouseClicked
 
     private void jLabelinterfazMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelinterfazMouseClicked
-        resetColor(jLabelPerfil, "Perfil.jpg");
+        resetColor(jLabelReportes, "Perfil.jpg");
         resetColor(jLabelHome, "inicio.jpg");
         resetColor(jLabelUser, "GestionUser.jpg");
         resetColor(jLabelticket, "GestionTicket.jpg");
@@ -1617,10 +1831,11 @@ public class VistaAdmin extends javax.swing.JFrame implements Runnable {
 
     private void jLabelticketMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelticketMouseClicked
         resetColor(jLabelHome, "inicio.jpg");
-        resetColor(jLabelPerfil, "Perfil.jpg");
+        resetColor(jLabelReportes, "Perfil.jpg");
         resetColor(jLabelinterfaz, "GestionInterfaz.jpg");
         resetColor(jLabelUser, "GestionUser.jpg");
         changeImage("Ticket-clic.jpg", jLabelticket);
+        rSPanelsSlider1.setPanelSlider(15, jPanelModuleTickets, RSPanelsSlider.DIRECT.RIGHT);
     }//GEN-LAST:event_jLabelticketMouseClicked
 
     private void jPanelUserRegisterItemMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelUserRegisterItemMouseEntered
@@ -1780,8 +1995,8 @@ public class VistaAdmin extends javax.swing.JFrame implements Runnable {
         }
         if (evt.getButton() == java.awt.event.MouseEvent.BUTTON3) {
             //manager.createPopupmenu();
-           
-            int row = jTableUsers.rowAtPoint( evt.getPoint() );
+
+            int row = jTableUsers.rowAtPoint(evt.getPoint());
             manager.showPermissionsView(row);
         }
     }//GEN-LAST:event_jTableUsersMouseClicked
@@ -1878,6 +2093,68 @@ public class VistaAdmin extends javax.swing.JFrame implements Runnable {
         manager.requestValidationsUpdateUser();
     }//GEN-LAST:event_btnModificarUserActionPerformed
 
+    private void jLabelBienvenida1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelBienvenida1MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jLabelBienvenida1MouseClicked
+
+    private void jTableUsersSessionsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTableUsersSessionsMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTableUsersSessionsMouseClicked
+
+    private void jTextFieldBuscarUserSessionsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldBuscarUserSessionsActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldBuscarUserSessionsActionPerformed
+
+    private void jTextFieldBuscarUserSessionsKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextFieldBuscarUserSessionsKeyReleased
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldBuscarUserSessionsKeyReleased
+
+    private void jLabel23MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel23MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jLabel23MouseClicked
+
+    private void jPanelTicketRegisterItemMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelTicketRegisterItemMouseClicked
+        // TODO add your handling code here:
+        jPanelTicketRegisterItem.setBorder(border_clicked);
+        btnConfigTickets.setBackground(item_menu_exited);
+        btnConfigTickets.setBorder(null);
+        jPanelModuleTicketsUser.setVisible(true);
+        jPanelModuleConfigTickets.setVisible(false);
+    }//GEN-LAST:event_jPanelTicketRegisterItemMouseClicked
+
+    private void jPanelTicketRegisterItemMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelTicketRegisterItemMouseEntered
+        // TODO add your handling code here:
+        jPanelTicketRegisterItem.setBackground(item_menu_entered);
+    }//GEN-LAST:event_jPanelTicketRegisterItemMouseEntered
+
+    private void jPanelTicketRegisterItemMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelTicketRegisterItemMouseExited
+        // TODO add your handling code here:
+        jPanelTicketRegisterItem.setBackground(item_menu_exited);
+    }//GEN-LAST:event_jPanelTicketRegisterItemMouseExited
+
+    private void btnConfigTicketsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnConfigTicketsMouseClicked
+        // TODO add your handling code here:
+        btnConfigTickets.setBorder(border_clicked);
+        btnConfigTickets.setBackground(item_menu_entered);
+        jPanelTicketRegisterItem.setBorder(null);
+        jPanelModuleTicketsUser.setVisible(false);
+        jPanelModuleConfigTickets.setVisible(true);
+    }//GEN-LAST:event_btnConfigTicketsMouseClicked
+
+    private void btnConfigTicketsMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnConfigTicketsMouseEntered
+        // TODO add your handling code here:
+        btnConfigTickets.setBackground(item_menu_entered);
+    }//GEN-LAST:event_btnConfigTicketsMouseEntered
+
+    private void btnConfigTicketsMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnConfigTicketsMouseExited
+        // TODO add your handling code here:
+        btnConfigTickets.setBackground(item_menu_exited);
+    }//GEN-LAST:event_btnConfigTicketsMouseExited
+
+    private void btnConfigTicketsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConfigTicketsActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnConfigTicketsActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -1927,6 +2204,7 @@ public class VistaAdmin extends javax.swing.JFrame implements Runnable {
     public javax.swing.JPanel P_GraficaUsers;
     public javax.swing.JPanel P_GraficaUsers_content;
     private javax.swing.JButton btnCerrar;
+    public javax.swing.JButton btnConfigTickets;
     public javax.swing.JButton btnConsultaUser;
     public javax.swing.JButton btnCrearUser;
     public javax.swing.JButton btnEliminarUser;
@@ -1955,7 +2233,6 @@ public class VistaAdmin extends javax.swing.JFrame implements Runnable {
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
-    private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel27;
@@ -1963,10 +2240,6 @@ public class VistaAdmin extends javax.swing.JFrame implements Runnable {
     private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel30;
-    private javax.swing.JLabel jLabel31;
-    private javax.swing.JLabel jLabel32;
-    private javax.swing.JLabel jLabel33;
-    private javax.swing.JLabel jLabel34;
     private javax.swing.JLabel jLabel35;
     private javax.swing.JLabel jLabel36;
     private javax.swing.JLabel jLabel37;
@@ -1989,9 +2262,11 @@ public class VistaAdmin extends javax.swing.JFrame implements Runnable {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     public javax.swing.JLabel jLabelBienvenida;
+    public javax.swing.JLabel jLabelBienvenida1;
     public javax.swing.JLabel jLabelEscogerImagen;
     private javax.swing.JLabel jLabelHome;
-    private javax.swing.JLabel jLabelPerfil;
+    public javax.swing.JLabel jLabelNoticeNotPermissions;
+    private javax.swing.JLabel jLabelReportes;
     public javax.swing.JLabel jLabelRutaArchivo;
     private javax.swing.JLabel jLabelUser;
     public javax.swing.JLabel jLabelUserNamePerm;
@@ -2013,18 +2288,25 @@ public class VistaAdmin extends javax.swing.JFrame implements Runnable {
     private javax.swing.JPanel jPanelGestionInterfaz;
     private javax.swing.JPanel jPanelHeader;
     private javax.swing.JPanel jPanelHeaderIndex;
+    private javax.swing.JPanel jPanelHeaderIndex1;
     private javax.swing.JPanel jPanelIndexAdmin;
     private javax.swing.JPanel jPanelMenu;
+    private javax.swing.JPanel jPanelMenuOptionsModuleTickets;
     private javax.swing.JPanel jPanelMenuOptionsModuleUser;
+    public javax.swing.JPanel jPanelModuleConfigTickets;
+    private javax.swing.JPanel jPanelModuleTickets;
+    public javax.swing.JPanel jPanelModuleTicketsUser;
     private javax.swing.JPanel jPanelModuleUserAdmin;
     public javax.swing.JPanel jPanelModuleUserRegister;
     public javax.swing.JPanel jPanelModuleUserReports;
-    private javax.swing.JPanel jPanelPerfilAdmin;
+    private javax.swing.JPanel jPanelReportes;
     public javax.swing.JPanel jPanelSelectCSVUser;
+    private javax.swing.JPanel jPanelTicketRegisterItem;
     private javax.swing.JPanel jPanelUserRegisterItem;
     private javax.swing.JPanel jPanelbtn;
     public javax.swing.JPasswordField jPasswordField;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
@@ -2032,11 +2314,14 @@ public class VistaAdmin extends javax.swing.JFrame implements Runnable {
     private javax.swing.JSeparator jSeparator5;
     private javax.swing.JSeparator jSeparator6;
     private javax.swing.JSeparator jSeparator7;
+    private javax.swing.JSeparator jSeparator8;
     private javax.swing.JSeparator jSeparator9;
     public javax.swing.JTable jTableUsers;
+    public javax.swing.JTable jTableUsersSessions;
     public javax.swing.JTextField jTextFieldActivo;
     public javax.swing.JTextField jTextFieldApellido;
     public javax.swing.JTextField jTextFieldBuscarUser;
+    public javax.swing.JTextField jTextFieldBuscarUserSessions;
     public javax.swing.JTextField jTextFieldEmail;
     public javax.swing.JTextField jTextFieldFecNa;
     public javax.swing.JTextField jTextFieldIdRol;

@@ -33,7 +33,7 @@ public class ConsultasLogin extends ConexionBD {
 
         ResultSet rs = null;
 
-        String sql = "SELECT * FROM uvfood_user WHERE username = ?";
+        String sql = "SELECT * FROM uvfood_user WHERE is_active = 1 AND username = ?";
 
         try {
             conn = Conexion();
