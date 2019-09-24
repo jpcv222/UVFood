@@ -635,6 +635,42 @@ public class ControladorAdmin {
 
     }
 
+    public void calculatePrice() {
+        String value = interfazPrincipalAdmin.jTextFieldCantidadTickets.getText();
+        if (validaciones.isNumeric(value)) {
+            int price_ticket = calculatePriceTicket();
+            int price = Integer.parseInt(value) * price_ticket;
+            interfazPrincipalAdmin.jTextFieldTotalVenta.setText(String.valueOf(price));
+        }
+
+    }
+    
+    public void calculateCashChange() {
+        String value = interfazPrincipalAdmin.jTextFieldEfectivo.getText();
+        if (validaciones.isNumeric(value)) {
+            int cash = Integer.parseInt(value);
+            int cash_change = cash - Integer.parseInt(interfazPrincipalAdmin.jTextFieldTotalVenta.getText());
+            interfazPrincipalAdmin.jTextFieldCambio.setText(String.valueOf(cash_change));
+        }
+
+    }
+
+    public int calculatePriceTicket() {
+
+        int result = 2100;
+
+        try {
+            int fila = interfazPrincipalAdmin.jTableUsersToTickets.getSelectedRow();
+            int discount = (int) interfazPrincipalAdmin.jTableUsersToTickets.getValueAt(fila, 6);
+            result = result - discount;
+        } catch (Exception ai) {
+            logs.escribirExceptionLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// " + ai.getMessage() + " " + ai.toString());
+            //modal.error_message("Error", "Algo anda mal", "No se pueden mostrar registros de la Base de datos", "Por Favor intenta mas tarde", "O reportanos que ocurre");
+
+        }
+        return result;
+    }
+
     public void validateDisableUser() {
         modal.confirmation_message("Confirmacion", "¿Desea deshabilitar este usuario?");
         if (modal.confirmation_message.confirm_action) {

@@ -1431,7 +1431,7 @@ public class VistaAdmin extends javax.swing.JFrame implements Runnable {
                             .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 399, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanelModuleUserRegisterLayout.createSequentialGroup()
                                 .addGroup(jPanelModuleUserRegisterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 392, Short.MAX_VALUE)
+                                    .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 392, Short.MAX_VALUE)
                                     .addComponent(jPanelSelectCSVUser, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jButtonCargar, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -1789,6 +1789,11 @@ public class VistaAdmin extends javax.swing.JFrame implements Runnable {
                 jTextFieldCantidadTicketsActionPerformed(evt);
             }
         });
+        jTextFieldCantidadTickets.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                jTextFieldCantidadTicketsKeyReleased(evt);
+            }
+        });
         jPanelSale.add(jTextFieldCantidadTickets, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 80, 90, 30));
 
         jLabel48.setText("Cantidad tickets");
@@ -1808,6 +1813,11 @@ public class VistaAdmin extends javax.swing.JFrame implements Runnable {
         jTextFieldEfectivo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextFieldEfectivoActionPerformed(evt);
+            }
+        });
+        jTextFieldEfectivo.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                jTextFieldEfectivoKeyReleased(evt);
             }
         });
         jPanelSale.add(jTextFieldEfectivo, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 80, 100, 30));
@@ -2386,6 +2396,16 @@ public class VistaAdmin extends javax.swing.JFrame implements Runnable {
     private void jTextFieldCambioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldCambioActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextFieldCambioActionPerformed
+
+    private void jTextFieldCantidadTicketsKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextFieldCantidadTicketsKeyReleased
+        // TODO add your handling code here:
+        manager.calculatePrice();
+    }//GEN-LAST:event_jTextFieldCantidadTicketsKeyReleased
+
+    private void jTextFieldEfectivoKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextFieldEfectivoKeyReleased
+        // TODO add your handling code here:
+        manager.calculateCashChange();
+    }//GEN-LAST:event_jTextFieldEfectivoKeyReleased
 
     /**
      * @param args the command line arguments
