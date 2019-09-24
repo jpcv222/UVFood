@@ -458,3 +458,20 @@ managers.ControladorAdmin//requestValidationsInsertUser//Error de campos obligat
 managers.ControladorAdmin//requestValidationsInsertUser//fecha ingresada no es valida// 2019-09-23T20:26:07.375
 managers.ControladorAdmin//requestValidationsInsertUser//fecha ingresada no es valida// 2019-09-23T20:26:40.150
 managers.ControladorAdmin//requestValidationsInsertUser//fecha ingresada no es valida// 2019-09-23T20:27:00.557
+managers.ControladorAdmin//requestInsertImgBD/error.fecha ya esta/ // 2019-09-23T20:49:11.427
+managers.ControladorAdmin//requestInsertImgBD/error.fecha ya esta/ // 2019-09-23T20:56:51.908
+managers.ControladorAdmin//requestInsertImgBD/error.fecha ya esta/ // 2019-09-23T20:57:06.813
+managers.ControladorAdmin//requestInsertImgBD/error.fecha ya esta/ // 2019-09-23T20:57:25.252
+managers.ControladorAdmin//requestInsertImgBD/error.fecha ya esta/ // 2019-09-23T20:57:32.415
+managers.ControladorAdmin//requestInsertImgBD/error.fecha ya esta/ // 2019-09-23T20:57:57.316
+managers.ControladorAdmin//requestInsertImgBD/error.fecha ya esta/ // 2019-09-23T21:08:12.870
+managers.ControladorAdmin//requestInsertImgBD/error.fecha ya esta/ // 2019-09-23T21:13:28.884
+managers.ControladorAdmin//requestInsertImgBD/error.fecha ya esta/ // 2019-09-23T21:13:35.667
+managers.ControladorAdmin//requestInsertImgBD/error.fecha ya esta/ // 2019-09-23T21:13:39.812
+managers.ControladorAdmin//requestInsertImgBD/error.fecha ya esta/ // 2019-09-23T21:13:49.909
+managers.ControladorAdmin//requestInsertImgBD/error.fecha ya esta/ // 2019-09-23T21:14:40.748
+managers.ControladorAdmin//requestInsertImgBD/error.fecha ya esta/ // 2019-09-23T21:14:49.163
+managers.ControladorAdmin//requestInsertImgBD/error.fecha ya esta/ // 2019-09-23T21:16:33.746
+managers.ControladorAdmin//guardarImgMenu/error.fecha ya esta/ // 2019-09-23T21:18:47.163
+managers.ControladorAdmin//guardarImgMenu/error.fecha ya esta/ // 2019-09-23T21:18:57.677
+managers.ControladorAdmin//requestInsertImgBD/error.fecha ya esta/ // 2019-09-23T21:19:08.515

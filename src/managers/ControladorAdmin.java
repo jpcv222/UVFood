@@ -349,7 +349,7 @@ public class ControladorAdmin {
             interfazPrincipalAdmin.btnGuardarImg.setEnabled(true);
             try {
                 //definimos el destino de la imagen
-                String nombreImg = interfazPrincipalAdmin.nombreImg.getName() + "menu_dia_" +getFecha();
+                String nombreImg = interfazPrincipalAdmin.nombreImg.getName() + "menu_dia_" + getFecha();
                 String dest = System.getProperty("user.dir") + "/src/ImgMenu/" + interfazPrincipalAdmin.nombreImg.getName() + "-" + getFecha();
                 Path destino = Paths.get(dest);
 
@@ -358,8 +358,19 @@ public class ControladorAdmin {
                 Path origen = Paths.get(orig);
 
                 //copiamos el archivo
-                Files.copy(origen, destino, REPLACE_EXISTING);
-                requestInsertImgBD(nombreImg);
+                if (!interfazPrincipalAdmin.jTextFieldNewDate.getText().equals("")) {
+                    if (validaciones.isDate(interfazPrincipalAdmin.jTextFieldNewDate.getText())) {
+                        Files.copy(origen, destino, REPLACE_EXISTING);
+                        requestInsertImgBD(nombreImg);
+                    } else {
+                        modal.error_message("Error", "Algo anda mal", "Ya hay un menu con la fecha de hoy", "Por Favor intenta modificando", "O eliminando");
+                        logs.escribirErrorLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "/error.fecha ya esta/ ");
+                    }
+                } else {
+                    Files.copy(origen, destino, REPLACE_EXISTING);
+                    requestInsertImgBD(nombreImg);
+                }
+
                 System.out.println("archivo copiado con exito en: " + dest);
 
             } catch (IOException ex) {
@@ -674,8 +685,6 @@ public class ControladorAdmin {
         }
 
     }
-
-
 
     public void validateDisableUser() {
 

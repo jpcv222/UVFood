@@ -609,6 +609,8 @@ public class ConsultasAdmin extends ConexionBD {
 
         return fecha;
     }
+    
+    
 
     public String guardarMenu(String img, VistaAdmin vista) {
         String result = "";
@@ -622,23 +624,30 @@ public class ConsultasAdmin extends ConexionBD {
 
             Connection conn = Conexion();
             if (!newDate.equals("")) {
-                String getIdTipo = "SELECT idtype FROM uvfood_type_image WHERE name_type = '" + nameType + "';";
-                ps = conn.prepareStatement(getIdTipo);
+                String getFecha = "SELECT file_image FROM uvfood_images WHERE publication_date = '" + newDate + "' AND type_image = 2;";
+                ps = conn.prepareStatement(getFecha);
                 rs = ps.executeQuery();
                 if (rs.next()) {
-                    idType = rs.getInt(1);
-
-                    String inserImg = "INSERT INTO uvfood_images (file_image, type_image, publication_date) VALUES('" + img + "','" + idType + "','" + newDate + "');";
-                    ps = conn.prepareStatement(inserImg);
+                    result = "error.fecha.esta";
+                } else {
+                    String getIdTipo = "SELECT idtype FROM uvfood_type_image WHERE name_type = '" + nameType + "';";
+                    ps = conn.prepareStatement(getIdTipo);
                     rs = ps.executeQuery();
-                    int res = ps.executeUpdate();
-                    if (res > 0) {
-                        result = "success.dato.insertado";
+                    if (rs.next()) {
+                        idType = rs.getInt(1);
 
-                    } else {
-                        result = "error.dato.no.insertado";
+                        String inserImg = "INSERT INTO uvfood_images (file_image, type_image) VALUES('" + img + "','" + idType + "');";
+                        ps = conn.prepareStatement(inserImg);
+                        rs = ps.executeQuery();
+                        int res = ps.executeUpdate();
+                        if (res > 0) {
+                            result = "success.dato.insertado";
+
+                        } else {
+                            result = "error.dato.no.insertado";
+                        }
+
                     }
-
                 }
 
             } else {
