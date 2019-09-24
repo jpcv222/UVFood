@@ -303,6 +303,12 @@ public class VistaAdmin extends javax.swing.JFrame implements Runnable {
         jLabel23 = new javax.swing.JLabel();
         btnConfigTickets = new javax.swing.JButton();
         jPanelModuleTicketsUser = new javax.swing.JPanel();
+        jPanel10 = new javax.swing.JPanel();
+        jLabel24 = new javax.swing.JLabel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        jTableUsersToTickets = new javax.swing.JTable();
+        jTextFieldBuscarUserToTicket = new javax.swing.JTextField();
+        jLabel31 = new javax.swing.JLabel();
         jPanelModuleConfigTickets = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -1411,7 +1417,7 @@ public class VistaAdmin extends javax.swing.JFrame implements Runnable {
                             .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 399, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanelModuleUserRegisterLayout.createSequentialGroup()
                                 .addGroup(jPanelModuleUserRegisterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 392, Short.MAX_VALUE)
+                                    .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 392, Short.MAX_VALUE)
                                     .addComponent(jPanelSelectCSVUser, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jButtonCargar, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -1678,21 +1684,116 @@ public class VistaAdmin extends javax.swing.JFrame implements Runnable {
         jPanelModuleTickets.add(jPanelMenuOptionsModuleTickets, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1001, -1));
 
         jPanelModuleTicketsUser.setBackground(new java.awt.Color(255, 255, 255));
-        jPanelModuleTicketsUser.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 0));
+        jPanelModuleTicketsUser.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 0, 0), 0));
         jPanelModuleTicketsUser.setAlignmentY(1.0F);
         jPanelModuleTicketsUser.setPreferredSize(new java.awt.Dimension(977, 635));
         jPanelModuleTicketsUser.setRequestFocusEnabled(false);
         jPanelModuleTicketsUser.setVerifyInputWhenFocusTarget(false);
 
+        jPanel10.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel10.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(205, 31, 50), 1, true));
+
+        jLabel24.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jLabel24.setText("Clientes habilitados");
+
+        jTableUsersToTickets.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Id", "Usuario", "Nombre", "Apellido", "Tickets acumulados", "Descuento"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.Integer.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jTableUsersToTickets.getTableHeader().setReorderingAllowed(false);
+        jTableUsersToTickets.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTableUsersToTicketsMouseClicked(evt);
+            }
+        });
+        jScrollPane3.setViewportView(jTableUsersToTickets);
+        if (jTableUsersToTickets.getColumnModel().getColumnCount() > 0) {
+            jTableUsersToTickets.getColumnModel().getColumn(0).setResizable(false);
+            jTableUsersToTickets.getColumnModel().getColumn(1).setResizable(false);
+            jTableUsersToTickets.getColumnModel().getColumn(2).setResizable(false);
+            jTableUsersToTickets.getColumnModel().getColumn(3).setResizable(false);
+            jTableUsersToTickets.getColumnModel().getColumn(4).setResizable(false);
+            jTableUsersToTickets.getColumnModel().getColumn(5).setResizable(false);
+        }
+
+        jTextFieldBuscarUserToTicket.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldBuscarUserToTicketActionPerformed(evt);
+            }
+        });
+        jTextFieldBuscarUserToTicket.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                jTextFieldBuscarUserToTicketKeyReleased(evt);
+            }
+        });
+
+        jLabel31.setText("Buscar");
+
+        javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
+        jPanel10.setLayout(jPanel10Layout);
+        jPanel10Layout.setHorizontalGroup(
+            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel10Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane3)
+                    .addGroup(jPanel10Layout.createSequentialGroup()
+                        .addComponent(jLabel24, javax.swing.GroupLayout.PREFERRED_SIZE, 399, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel31, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jTextFieldBuscarUserToTicket, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap())
+        );
+        jPanel10Layout.setVerticalGroup(
+            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel10Layout.createSequentialGroup()
+                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel24, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel10Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jTextFieldBuscarUserToTicket, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel31))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 17, Short.MAX_VALUE))
+        );
+
         javax.swing.GroupLayout jPanelModuleTicketsUserLayout = new javax.swing.GroupLayout(jPanelModuleTicketsUser);
         jPanelModuleTicketsUser.setLayout(jPanelModuleTicketsUserLayout);
         jPanelModuleTicketsUserLayout.setHorizontalGroup(
             jPanelModuleTicketsUserLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 977, Short.MAX_VALUE)
+            .addGroup(jPanelModuleTicketsUserLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         jPanelModuleTicketsUserLayout.setVerticalGroup(
             jPanelModuleTicketsUserLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 620, Short.MAX_VALUE)
+            .addGroup(jPanelModuleTicketsUserLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(467, Short.MAX_VALUE))
         );
 
         jPanelModuleTickets.add(jPanelModuleTicketsUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 72, -1, 620));
@@ -2120,6 +2221,8 @@ public class VistaAdmin extends javax.swing.JFrame implements Runnable {
         btnConfigTickets.setBorder(null);
         jPanelModuleTicketsUser.setVisible(true);
         jPanelModuleConfigTickets.setVisible(false);
+        
+        manager.requestFillTableUsersToTickets();
     }//GEN-LAST:event_jPanelTicketRegisterItemMouseClicked
 
     private void jPanelTicketRegisterItemMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelTicketRegisterItemMouseEntered
@@ -2154,6 +2257,18 @@ public class VistaAdmin extends javax.swing.JFrame implements Runnable {
     private void btnConfigTicketsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConfigTicketsActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnConfigTicketsActionPerformed
+
+    private void jTableUsersToTicketsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTableUsersToTicketsMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTableUsersToTicketsMouseClicked
+
+    private void jTextFieldBuscarUserToTicketActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldBuscarUserToTicketActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldBuscarUserToTicketActionPerformed
+
+    private void jTextFieldBuscarUserToTicketKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextFieldBuscarUserToTicketKeyReleased
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldBuscarUserToTicketKeyReleased
 
     /**
      * @param args the command line arguments
@@ -2233,6 +2348,7 @@ public class VistaAdmin extends javax.swing.JFrame implements Runnable {
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel27;
@@ -2240,6 +2356,7 @@ public class VistaAdmin extends javax.swing.JFrame implements Runnable {
     private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel30;
+    private javax.swing.JLabel jLabel31;
     private javax.swing.JLabel jLabel35;
     private javax.swing.JLabel jLabel36;
     private javax.swing.JLabel jLabel37;
@@ -2277,6 +2394,7 @@ public class VistaAdmin extends javax.swing.JFrame implements Runnable {
     private javax.swing.JLabel jLabelinterfaz;
     private javax.swing.JLabel jLabelticket;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
@@ -2307,6 +2425,7 @@ public class VistaAdmin extends javax.swing.JFrame implements Runnable {
     public javax.swing.JPasswordField jPasswordField;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
@@ -2318,10 +2437,12 @@ public class VistaAdmin extends javax.swing.JFrame implements Runnable {
     private javax.swing.JSeparator jSeparator9;
     public javax.swing.JTable jTableUsers;
     public javax.swing.JTable jTableUsersSessions;
+    public javax.swing.JTable jTableUsersToTickets;
     public javax.swing.JTextField jTextFieldActivo;
     public javax.swing.JTextField jTextFieldApellido;
     public javax.swing.JTextField jTextFieldBuscarUser;
     public javax.swing.JTextField jTextFieldBuscarUserSessions;
+    public javax.swing.JTextField jTextFieldBuscarUserToTicket;
     public javax.swing.JTextField jTextFieldEmail;
     public javax.swing.JTextField jTextFieldFecNa;
     public javax.swing.JTextField jTextFieldIdRol;

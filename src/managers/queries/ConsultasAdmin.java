@@ -100,6 +100,59 @@ public class ConsultasAdmin extends ConexionBD {
         }
 
     }
+    
+      public boolean llenarTablaUsersToTickets(VistaAdmin vista) {
+        DefaultTableModel modelo = new DefaultTableModel() {
+            @Override
+            public boolean isCellEditable(int row, int col) {
+                return false;
+            }
+        };
+        try {
+            Statement ps = null;
+            Connection conn = null;
+            ResultSet rs = null;
+
+            String sql = "SELECT uvfood_user.username, uvfood_user.firstname, uvfood_user.surname, count(\"idsession\") AS cant FROM uvfood_sessions \n"
+                    + "INNER JOIN uvfood_user ON uvfood_sessions.iduser = uvfood_user.iduser\n"
+                    + "GROUP BY uvfood_user.iduser;";
+
+            conn = Conexion();
+            ps = conn.createStatement();
+            rs = ps.executeQuery(sql);
+
+            ResultSetMetaData rsMd = rs.getMetaData();
+            int cantidadCol = rsMd.getColumnCount();
+
+            modelo.addColumn("Usuario");
+            modelo.addColumn("Nombre");
+            modelo.addColumn("Apellido");
+            modelo.addColumn("Sesiones");
+
+            while (rs.next()) {
+
+                Object[] filas = new Object[cantidadCol];
+
+                filas[0] = rs.getObject(1);
+                filas[1] = rs.getObject(2);
+                filas[2] = rs.getObject(3);
+                filas[3] = rs.getObject(4);
+
+                modelo.addRow(filas);
+            }
+            vista.jTableUsersSessions.setModel(modelo);
+            rs.close();
+            ps.close();
+            return true;
+        } catch (SQLException ex) {
+            logs.escribirExceptionLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// " + ex.getMessage() + " " + ex.toString());
+            return false;
+        } catch (NullPointerException np) {
+            logs.escribirExceptionLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// " + np.getMessage() + " " + np.toString());
+            return false;
+        }
+
+    }
 
     public boolean llenarTablaSessions(VistaAdmin vista) {
         DefaultTableModel modelo = new DefaultTableModel() {
