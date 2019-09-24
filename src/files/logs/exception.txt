@@ -34,3 +34,7 @@ managers.queries.ConsultasLogin//insert_session_record// No results were returne
 managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-24T03:38:50.421
 managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-24T03:45:50.410
 managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-24T03:47:42.090
+managers.ControladorAdmin//createJFreeChartCount// null java.lang.NullPointerException// 2019-09-24T06:07:15.460
+managers.ControladorAdmin//createJFreeChartCount// null java.lang.NullPointerException// 2019-09-24T06:07:15.867
+managers.ControladorAdmin//createJFreeChartCount// null java.lang.NullPointerException// 2019-09-24T06:07:56.698
+managers.ControladorAdmin//createJFreeChartCount// null java.lang.NullPointerException// 2019-09-24T06:07:56.718
