@@ -44,3 +44,18 @@ managers.queries.KeyValidate//resultHaveKey// Permisos denegados.// 2019-09-24T0
 managers.queries.KeyValidate//resultHaveKey// Permisos denegados.// 2019-09-24T01:57:51.693
 managers.ControladorGestionPermisos//existInputKey// Consulta no arroja resultados.// 2019-09-24T01:57:51.792
 managers.ControladorLogin//insert_session_record// Error desconocido.// 2019-09-24T02:26:10.414
+classes.FileManage//selectFile// Archivo CSV, ruta errónea.// 2019-09-24T02:38:38.582
+managers.ControladorGestionPermisos//getCurrentUserKeys// Consulta no arroja resultados.// 2019-09-24T02:38:47.099
+managers.ControladorGestionPermisos//getCurrentUserKeys// Consulta no arroja resultados.// 2019-09-24T02:43:08.663
+managers.ControladorGestionPermisos//createKeysModule// Consulta no arroja resultados.// 2019-09-24T02:43:28.373
+managers.ControladorGestionPermisos//createKeysModule// Consulta no arroja resultados.// 2019-09-24T02:43:28.912
+managers.ControladorGestionPermisos//getCurrentUserKeys// Consulta no arroja resultados.// 2019-09-24T02:43:33.410
+managers.ControladorGestionPermisos//createKeysModule// Consulta no arroja resultados.// 2019-09-24T02:43:38.024
+managers.ControladorGestionPermisos//createKeysModule// Consulta no arroja resultados.// 2019-09-24T02:43:38.495
+managers.ControladorGestionPermisos//createKeysModule// Consulta no arroja resultados.// 2019-09-24T02:43:39.190
+managers.ControladorGestionPermisos//createKeysModule// Consulta no arroja resultados.// 2019-09-24T02:43:39.674
+managers.ControladorGestionPermisos//createKeysModule// Consulta no arroja resultados.// 2019-09-24T02:43:40.700
+managers.ControladorGestionPermisos//createKeysModule// Consulta no arroja resultados.// 2019-09-24T02:43:48.506
+managers.ControladorGestionPermisos//createKeysModule// Consulta no arroja resultados.// 2019-09-24T02:43:48.897
+managers.queries.KeyValidate//resultHaveKey// Permisos denegados.// 2019-09-24T02:44:27.872
+managers.ControladorGestionPermisos//asignUserPermissions// Actualización de permisos de usuario no completada.// 2019-09-24T02:44:34.020

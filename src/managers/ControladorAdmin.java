@@ -176,7 +176,7 @@ public class ControladorAdmin {
             DefaultCategoryDataset data = new DefaultCategoryDataset();
             data.addValue(sessions, "Todas las sesiones", "");
 
-            JFreeChart grafica = ChartFactory.createBarChart3D("Sesiones", "", "Total", data, PlotOrientation.VERTICAL, true, true, false);
+            JFreeChart grafica = ChartFactory.createBarChart3D("Sesiones totales", "", "Total", data, PlotOrientation.VERTICAL, true, true, false);
 
             ChartPanel contenedor = new ChartPanel(grafica);
             interfazPrincipalAdmin.P_GraficaSessions.removeAll();
@@ -328,6 +328,12 @@ public class ControladorAdmin {
 
     public void requestFillTable() {
         if (!consultasAdmin.llenarTabla(interfazPrincipalAdmin)) {
+            modal.error_message("Error", "Algo anda mal", "No se pueden mostrar registros de la Base de datos", "Por Favor intenta mas tarde", "O reportanos que ocurre");
+        }
+    }
+    
+    public void requestFillTableSessions() {
+        if (!consultasAdmin.llenarTablaSessions(interfazPrincipalAdmin)) {
             modal.error_message("Error", "Algo anda mal", "No se pueden mostrar registros de la Base de datos", "Por Favor intenta mas tarde", "O reportanos que ocurre");
         }
     }
