@@ -48,3 +48,47 @@ managers.queries.ConsultasLogin//insert_session_record// No results were returne
 managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-24T15:06:53.259
 managers.ControladorAdmin//requestFillFieldsSales// -1 java.lang.ArrayIndexOutOfBoundsException: -1// 2019-09-24T15:07:48.805
 managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-24T15:08:36.334
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-24T15:26:49.048
+managers.ControladorAdmin//calculatePriceTicket// 6 >= 6 java.lang.ArrayIndexOutOfBoundsException: 6 >= 6// 2019-09-24T15:26:58.951
+managers.ControladorAdmin//calculatePriceTicket// 6 >= 6 java.lang.ArrayIndexOutOfBoundsException: 6 >= 6// 2019-09-24T15:27:01.224
+managers.ControladorAdmin//calculatePriceTicket// 6 >= 6 java.lang.ArrayIndexOutOfBoundsException: 6 >= 6// 2019-09-24T15:27:02.550
+managers.ControladorAdmin//calculatePriceTicket// 6 >= 6 java.lang.ArrayIndexOutOfBoundsException: 6 >= 6// 2019-09-24T15:27:03.525
+managers.ControladorAdmin//calculatePriceTicket// 6 >= 6 java.lang.ArrayIndexOutOfBoundsException: 6 >= 6// 2019-09-24T15:27:06.523
+managers.ControladorAdmin//calculatePriceTicket// 6 >= 6 java.lang.ArrayIndexOutOfBoundsException: 6 >= 6// 2019-09-24T15:27:08.967
+managers.ControladorAdmin//calculatePriceTicket// 6 >= 6 java.lang.ArrayIndexOutOfBoundsException: 6 >= 6// 2019-09-24T15:27:19.605
+managers.ControladorAdmin//calculatePriceTicket// 6 >= 6 java.lang.ArrayIndexOutOfBoundsException: 6 >= 6// 2019-09-24T15:27:22.948
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-24T15:34:14.887
+managers.ControladorAdmin//calculatePriceTicket// 6 >= 6 java.lang.ArrayIndexOutOfBoundsException: 6 >= 6// 2019-09-24T15:34:21.267
+managers.ControladorAdmin//calculatePriceTicket// 6 >= 6 java.lang.ArrayIndexOutOfBoundsException: 6 >= 6// 2019-09-24T15:34:23.520
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-24T15:35:25.021
+managers.ControladorAdmin//calculatePriceTicket// 6 >= 6 java.lang.ArrayIndexOutOfBoundsException: 6 >= 6// 2019-09-24T15:35:33.417
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-24T15:39:10.370
+managers.ControladorAdmin//calculatePriceTicket// 6 >= 6 java.lang.ArrayIndexOutOfBoundsException: 6 >= 6// 2019-09-24T15:39:15.303
+managers.ControladorAdmin//calculatePriceTicket// 6 >= 6 java.lang.ArrayIndexOutOfBoundsException: 6 >= 6// 2019-09-24T15:39:15.786
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-24T15:49:36.110
+managers.ControladorAdmin//calculatePriceTicket// 6 >= 6 java.lang.ArrayIndexOutOfBoundsException: 6 >= 6// 2019-09-24T15:49:42.594
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-24T15:51:57.651
+managers.ControladorAdmin//calculatePriceTicket// 6 >= 6 java.lang.ArrayIndexOutOfBoundsException: 6 >= 6// 2019-09-24T15:52:02.389
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-24T15:52:42.082
+managers.ControladorAdmin//calculatePriceTicket// 6 >= 6 java.lang.ArrayIndexOutOfBoundsException: 6 >= 6// 2019-09-24T15:52:47.627
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-24T16:08:18.429
+managers.ControladorAdmin//calculatePriceTicket// 6 >= 6 java.lang.ArrayIndexOutOfBoundsException: 6 >= 6// 2019-09-24T16:08:23.865
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-24T16:10:03.353
+managers.queries.ConsultasAdmin//insertSale// null java.lang.NullPointerException// 2019-09-24T16:10:15.569
+managers.queries.ConsultasAdmin//insertSale// null java.lang.NullPointerException// 2019-09-24T16:11:18.009
+managers.queries.ConsultasAdmin//insertSale// null java.lang.NullPointerException// 2019-09-24T16:11:33.755
+managers.ControladorAdmin//calculatePriceTicket// -1 java.lang.ArrayIndexOutOfBoundsException: -1// 2019-09-24T16:11:39.222
+managers.queries.ConsultasAdmin//insertSale// null java.lang.NullPointerException// 2019-09-24T16:11:48.767
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-24T16:13:18.385
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-24T16:14:29.429
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-24T16:24:58.454
+managers.queries.ConsultasAdmin//llenarTablaUsersToTickets// Unterminated string literal started at position 194 in SQL SELECT  uvfood_discount.price_discount
+FROM uvfood_user_discount 
+INNER JOIN uvfood_discount ON uvfood_user_discount.iddiscount = uvfood_discount.iddiscount
+WHERE uvfood_user_discount.iduser = 6';. Expected  char org.postgresql.util.PSQLException: Unterminated string literal started at position 194 in SQL SELECT  uvfood_discount.price_discount
+FROM uvfood_user_discount 
+INNER JOIN uvfood_discount ON uvfood_user_discount.iddiscount = uvfood_discount.iddiscount
+WHERE uvfood_user_discount.iduser = 6';. Expected  char// 2019-09-24T16:25:01.574
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-24T16:26:19.893
+managers.queries.ConsultasAdmin//llenarTablaUsersToTickets// The column index is out of range: 0, number of columns: 1. org.postgresql.util.PSQLException: The column index is out of range: 0, number of columns: 1.// 2019-09-24T16:26:22.122
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-24T16:27:07.116

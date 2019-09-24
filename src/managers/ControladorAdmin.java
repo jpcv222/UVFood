@@ -379,6 +379,20 @@ public class ControladorAdmin {
         }
     }
 
+    public void vender() {
+        String namekey = "sales.generate.user.sale";
+        String result = keyvalidate.haveKey(namekey, user.getIdUser());
+        boolean validate = keyvalidate.resultHaveKey(result);
+        if (validate) {
+            if (consultasAdmin.insertSale(interfazPrincipalAdmin)) {
+                modal.success_message("Exito.", "Venta realizada.", "La venta se ha realizado con exito", "", "");
+            } else {
+                modal.error_message("Error", "Algo anda mal", "No se pueden mostrar registros de la Base de datos", "Por Favor intenta mas tarde", "O reportanos que ocurre");
+
+            }
+        }
+    }
+
     public void requestFillCombo() {
         if (!consultasAdmin.fillCombo(interfazPrincipalAdmin)) {
             modal.error_message("Error", "Algo anda mal", "No se pueden mostrar registros de la Base de datos", "Por Favor intenta mas tarde", "O reportanos que ocurre");
@@ -638,21 +652,50 @@ public class ControladorAdmin {
     public void calculatePrice() {
         String value = interfazPrincipalAdmin.jTextFieldCantidadTickets.getText();
         if (validaciones.isNumeric(value)) {
-            int price_ticket = calculatePriceTicket();
-            int price = Integer.parseInt(value) * price_ticket;
-            interfazPrincipalAdmin.jTextFieldTotalVenta.setText(String.valueOf(price));
+            if (validaciones.isNegativeOrZero(value)) {
+                int price_ticket = calculatePriceTicket();
+                int price = Integer.parseInt(value) * price_ticket;
+                interfazPrincipalAdmin.jTextFieldTotalVenta.setText(String.valueOf(price));
+            }
         }
 
     }
-    
+
     public void calculateCashChange() {
         String value = interfazPrincipalAdmin.jTextFieldEfectivo.getText();
         if (validaciones.isNumeric(value)) {
-            int cash = Integer.parseInt(value);
-            int cash_change = cash - Integer.parseInt(interfazPrincipalAdmin.jTextFieldTotalVenta.getText());
-            interfazPrincipalAdmin.jTextFieldCambio.setText(String.valueOf(cash_change));
+
+            if (validaciones.isNegativeOrZero(value)) {
+                int venta = Integer.parseInt(interfazPrincipalAdmin.jTextFieldTotalVenta.getText());
+                int cash = Integer.parseInt(value);
+                if (cash >= venta) {
+                    int cash_change = cash - venta;
+                    interfazPrincipalAdmin.jTextFieldCambio.setText(String.valueOf(cash_change));
+                }
+            }
         }
 
+    }
+
+    public void validateBtFacturar() {
+        String cash_change = interfazPrincipalAdmin.jTextFieldCambio.getText();
+        String tickets = interfazPrincipalAdmin.jTextFieldCantidadTickets.getText();
+        String price = interfazPrincipalAdmin.jTextFieldTotalVenta.getText();
+        String efectivo = interfazPrincipalAdmin.jTextFieldEfectivo.getText();
+        if (validaciones.isNumeric(cash_change) && validaciones.isNumeric(tickets) && validaciones.isNumeric(price) && validaciones.isNumeric(efectivo)) {
+            int cash_change_aux = Integer.parseInt(cash_change);
+            int tickets_aux = Integer.parseInt(tickets);
+            int price_aux = Integer.parseInt(price);
+            int efectivo_aux = Integer.parseInt(efectivo);
+
+            interfazPrincipalAdmin.btnFacturar.setEnabled(cash_change_aux >= 0 && tickets_aux >= 0 && efectivo_aux >= price_aux);
+
+        }
+    }
+
+    public void validateCantTickets() {
+        String value = interfazPrincipalAdmin.jTextFieldCantidadTickets.getText();
+        interfazPrincipalAdmin.jTextFieldEfectivo.setEnabled(validaciones.isNumeric(value) && validaciones.isNegativeOrZero(value));
     }
 
     public int calculatePriceTicket() {
@@ -661,7 +704,7 @@ public class ControladorAdmin {
 
         try {
             int fila = interfazPrincipalAdmin.jTableUsersToTickets.getSelectedRow();
-            int discount = (int) interfazPrincipalAdmin.jTableUsersToTickets.getValueAt(fila, 6);
+            int discount = (int) interfazPrincipalAdmin.jTableUsersToTickets.getValueAt(fila, 5);
             result = result - discount;
         } catch (Exception ai) {
             logs.escribirExceptionLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// " + ai.getMessage() + " " + ai.toString());

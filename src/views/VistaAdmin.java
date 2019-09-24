@@ -273,15 +273,6 @@ public class VistaAdmin extends javax.swing.JFrame implements Runnable {
         jPanel1 = new javax.swing.JPanel();
         jLabelRutaArchivo = new javax.swing.JLabel();
         jButtonCargar = new javax.swing.JButton();
-        jPanel9 = new javax.swing.JPanel();
-        jLabel41 = new javax.swing.JLabel();
-        jLabelUserNamePerm2 = new javax.swing.JLabel();
-        jLabel42 = new javax.swing.JLabel();
-        jLabel43 = new javax.swing.JLabel();
-        jLabel44 = new javax.swing.JLabel();
-        jLabel45 = new javax.swing.JLabel();
-        jLabel46 = new javax.swing.JLabel();
-        jLabel47 = new javax.swing.JLabel();
         jPanelGestionInterfaz = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         btnEscogerImg = new javax.swing.JButton();
@@ -1390,34 +1381,6 @@ public class VistaAdmin extends javax.swing.JFrame implements Runnable {
             }
         });
 
-        jPanel9.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel41.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icon.png"))); // NOI18N
-        jPanel9.add(jLabel41, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 90, 80, 120));
-
-        jLabelUserNamePerm2.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jLabelUserNamePerm2.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jLabelUserNamePerm2.setText("Módulo en construcción.");
-        jPanel9.add(jLabelUserNamePerm2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 10, -1, -1));
-
-        jLabel42.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/nut-icon.png"))); // NOI18N
-        jPanel9.add(jLabel42, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 10, 80, 130));
-
-        jLabel43.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/screw.png"))); // NOI18N
-        jPanel9.add(jLabel43, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 80, 80, 130));
-
-        jLabel44.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/nut-icon.png"))); // NOI18N
-        jPanel9.add(jLabel44, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 100, 80, 130));
-
-        jLabel45.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/screw.png"))); // NOI18N
-        jPanel9.add(jLabel45, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 10, 80, 130));
-
-        jLabel46.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icon.png"))); // NOI18N
-        jPanel9.add(jLabel46, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 0, 80, 120));
-
-        jLabel47.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/nut-icon.png"))); // NOI18N
-        jPanel9.add(jLabel47, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, 80, 130));
-
         javax.swing.GroupLayout jPanelModuleUserRegisterLayout = new javax.swing.GroupLayout(jPanelModuleUserRegister);
         jPanelModuleUserRegister.setLayout(jPanelModuleUserRegisterLayout);
         jPanelModuleUserRegisterLayout.setHorizontalGroup(
@@ -1431,16 +1394,12 @@ public class VistaAdmin extends javax.swing.JFrame implements Runnable {
                             .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 399, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanelModuleUserRegisterLayout.createSequentialGroup()
                                 .addGroup(jPanelModuleUserRegisterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 392, Short.MAX_VALUE)
+                                    .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 392, Short.MAX_VALUE)
                                     .addComponent(jPanelSelectCSVUser, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jButtonCargar, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(0, 399, Short.MAX_VALUE)))
                 .addContainerGap())
-            .addGroup(jPanelModuleUserRegisterLayout.createSequentialGroup()
-                .addGap(261, 261, 261)
-                .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, 410, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(265, Short.MAX_VALUE))
         );
         jPanelModuleUserRegisterLayout.setVerticalGroup(
             jPanelModuleUserRegisterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1455,9 +1414,7 @@ public class VistaAdmin extends javax.swing.JFrame implements Runnable {
                     .addComponent(jPanelSelectCSVUser, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(83, 83, 83)
-                .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(141, 141, 141))
+                .addGap(434, 434, 434))
         );
 
         jPanelModuleUserAdmin.add(jPanelModuleUserRegister, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 83, 940, 610));
@@ -1810,6 +1767,7 @@ public class VistaAdmin extends javax.swing.JFrame implements Runnable {
         jLabel51.setText("Efectivo");
         jPanelSale.add(jLabel51, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 50, 60, 30));
 
+        jTextFieldEfectivo.setEnabled(false);
         jTextFieldEfectivo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextFieldEfectivoActionPerformed(evt);
@@ -2379,6 +2337,7 @@ public class VistaAdmin extends javax.swing.JFrame implements Runnable {
 
     private void btnFacturarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnFacturarMouseClicked
         // TODO add your handling code here:
+        manager.vender();
     }//GEN-LAST:event_btnFacturarMouseClicked
 
     private void btnFacturarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnFacturarMouseEntered
@@ -2400,6 +2359,7 @@ public class VistaAdmin extends javax.swing.JFrame implements Runnable {
     private void jTextFieldCantidadTicketsKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextFieldCantidadTicketsKeyReleased
         // TODO add your handling code here:
         manager.calculatePrice();
+        manager.validateCantTickets();
     }//GEN-LAST:event_jTextFieldCantidadTicketsKeyReleased
 
     private void jTextFieldEfectivoKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextFieldEfectivoKeyReleased
@@ -2503,13 +2463,6 @@ public class VistaAdmin extends javax.swing.JFrame implements Runnable {
     private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel40;
-    private javax.swing.JLabel jLabel41;
-    private javax.swing.JLabel jLabel42;
-    private javax.swing.JLabel jLabel43;
-    private javax.swing.JLabel jLabel44;
-    private javax.swing.JLabel jLabel45;
-    private javax.swing.JLabel jLabel46;
-    private javax.swing.JLabel jLabel47;
     private javax.swing.JLabel jLabel48;
     private javax.swing.JLabel jLabel49;
     private javax.swing.JLabel jLabel5;
@@ -2531,7 +2484,6 @@ public class VistaAdmin extends javax.swing.JFrame implements Runnable {
     private javax.swing.JLabel jLabelUser;
     public javax.swing.JLabel jLabelUserNamePerm;
     public javax.swing.JLabel jLabelUserNamePerm1;
-    public javax.swing.JLabel jLabelUserNamePerm2;
     public javax.swing.JLabel jLabelUsernameSales;
     private javax.swing.JLabel jLabelX;
     private javax.swing.JLabel jLabelX1;
@@ -2546,7 +2498,6 @@ public class VistaAdmin extends javax.swing.JFrame implements Runnable {
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
-    private javax.swing.JPanel jPanel9;
     private javax.swing.JPanel jPanelGestionInterfaz;
     private javax.swing.JPanel jPanelHeader;
     private javax.swing.JPanel jPanelHeaderIndex;

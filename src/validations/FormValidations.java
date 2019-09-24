@@ -149,4 +149,13 @@ public class FormValidations {
         return true;
     }
 
+    public static boolean isNegativeOrZero(String strNum) {
+        try {
+            int d = Integer.parseInt(strNum);
+            return d > 0;
+        } catch (NumberFormatException | NullPointerException nfe) {
+            return false;
+        }
+    }
+
 }
