@@ -34,17 +34,23 @@ public class ConsultasPermissions {
             Connection conn = Conexion();
 
             for (int i = 0; i < user_keys.size(); i++) {
-                String sql = "INSERT INTO uvfood_user_key VALUES (" + iduser + "," + user_keys.get(i) + ");";
+                ArrayList<String> result_key = get_keys("idkey", "WHERE namekey = '" + user_keys.get(i) + "'");
+                if (result_key.size() > 1) {
+                    int idkey = Integer.parseInt(result_key.get(1));
 
-                ps = conn.prepareStatement(sql);
-                int res = ps.executeUpdate();
-                if (res > 0) {
-                    result.add("success.dato.insertado");
-                } else {
-                    result.add("error.dato.no.insertado");
+                    String sql = "INSERT INTO uvfood_user_key VALUES (" + iduser + "," + idkey + ");";
+
+                    ps = conn.prepareStatement(sql);
+                    int res = ps.executeUpdate();
+                    if (res > 0) {
+                        result.add("success.dato.insertado");
+                    } else {
+                        result.add("error.dato.no.insertado");
+                    }
+
+                    ps.close();
                 }
 
-                ps.close();
             }
 
         } catch (SQLException | NullPointerException | IndexOutOfBoundsException np) {
@@ -83,17 +89,17 @@ public class ConsultasPermissions {
         return result;
     }
 
-     public String insertKey(String namemodule, String namekey) {
+    public String insertKey(String namemodule, String namekey) {
 
         String result;
 
         try {
             String id_module = get_modules("idmodule", "WHERE namemodule = '" + namemodule + "'").get(1);
-            
+
             PreparedStatement ps = null;
             Connection conn = Conexion();
 
-            String sql = "INSERT INTO uvfood_keys (idmodule,namekey) VALUES ('"+id_module +"','"+ namekey + "');";
+            String sql = "INSERT INTO uvfood_keys (idmodule,namekey) VALUES ('" + id_module + "','" + namekey + "');";
 
             ps = conn.prepareStatement(sql);
             int res = ps.executeUpdate();
@@ -112,7 +118,7 @@ public class ConsultasPermissions {
 
         return result;
     }
-    
+
     public ArrayList<String> get_user_keys(String username) {
 
         ArrayList<String> result = new ArrayList();
@@ -215,7 +221,7 @@ public class ConsultasPermissions {
 
         return result;
     }
-    
+
     public ArrayList<String> get_keys(String atrib, String condition) {
 
         ArrayList<String> result = new ArrayList();

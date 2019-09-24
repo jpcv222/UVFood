@@ -60,3 +60,11 @@ managers.ControladorGestionPermisos//createKeysModule// Consulta no arroja resul
 managers.queries.KeyValidate//resultHaveKey// Permisos denegados.// 2019-09-24T02:44:27.872
 managers.ControladorGestionPermisos//asignUserPermissions// Actualización de permisos de usuario no completada.// 2019-09-24T02:44:34.020
 managers.ControladorLogin//insert_session_record// Error desconocido.// 2019-09-24T03:29:23.997
+managers.ControladorLogin//insert_session_record// Error desconocido.// 2019-09-24T03:38:50.436
+managers.ControladorGestionPermisos//existInputKey// Consulta no arroja resultados.// 2019-09-24T03:39:32.953
+managers.queries.KeyValidate//resultHaveKey// Permisos denegados.// 2019-09-24T03:39:47.450
+managers.queries.KeyValidate//resultHaveKey// Permisos denegados.// 2019-09-24T03:41:23.083
+managers.ControladorLogin//insert_session_record// Error desconocido.// 2019-09-24T03:45:50.410
+managers.queries.KeyValidate//resultHaveKey// Permisos denegados.// 2019-09-24T03:45:52.300
+managers.ControladorLogin//insert_session_record// Error desconocido.// 2019-09-24T03:47:42.090
+managers.queries.KeyValidate//resultHaveKey// Permisos denegados.// 2019-09-24T03:47:43.168

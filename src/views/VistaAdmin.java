@@ -214,6 +214,7 @@ public class VistaAdmin extends javax.swing.JFrame implements Runnable {
         jTableUsersSessions = new javax.swing.JTable();
         jLabel22 = new javax.swing.JLabel();
         jTextFieldBuscarUserSessions = new javax.swing.JTextField();
+        jLabelNoticeNotPermissions = new javax.swing.JLabel();
         jPanelModuleUserAdmin = new javax.swing.JPanel();
         jPanelMenuOptionsModuleUser = new javax.swing.JPanel();
         jPanelUserRegisterItem = new javax.swing.JPanel();
@@ -657,7 +658,7 @@ public class VistaAdmin extends javax.swing.JFrame implements Runnable {
         jLabelUserNamePerm.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jLabelUserNamePerm.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabelUserNamePerm.setText("Sesiones por usuario");
-        jPanel7.add(jLabelUserNamePerm, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, -1, -1, 40));
+        jPanel7.add(jLabelUserNamePerm, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, 30));
         jPanel7.add(jSeparator8, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, 280, 10));
 
         jTableUsersSessions.setModel(new javax.swing.table.DefaultTableModel(
@@ -714,6 +715,11 @@ public class VistaAdmin extends javax.swing.JFrame implements Runnable {
         });
         jPanel7.add(jTextFieldBuscarUserSessions, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 10, 180, 30));
 
+        jLabelNoticeNotPermissions.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jLabelNoticeNotPermissions.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabelNoticeNotPermissions.setText("Permisos denegados");
+        jPanel7.add(jLabelNoticeNotPermissions, new org.netbeans.lib.awtextra.AbsoluteConstraints(8, 190, 470, 40));
+
         javax.swing.GroupLayout jPanelReportesLayout = new javax.swing.GroupLayout(jPanelReportes);
         jPanelReportes.setLayout(jPanelReportesLayout);
         jPanelReportesLayout.setHorizontalGroup(
@@ -730,9 +736,9 @@ public class VistaAdmin extends javax.swing.JFrame implements Runnable {
             jPanelReportesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelReportesLayout.createSequentialGroup()
                 .addComponent(jPanelHeaderIndex1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 423, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, 237, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 400, Short.MAX_VALUE))
         );
 
         rSPanelsSlider1.add(jPanelReportes, "card3");
@@ -1625,6 +1631,7 @@ public class VistaAdmin extends javax.swing.JFrame implements Runnable {
         changeImage("perfil-clic.jpg", jLabelReportes);
 
         rSPanelsSlider1.setPanelSlider(15, jPanelReportes, RSPanelsSlider.DIRECT.RIGHT);
+        jLabelNoticeNotPermissions.setVisible(false);
          manager.requestFillTableSessions();
     }//GEN-LAST:event_jLabelReportesMouseClicked
 
@@ -2070,6 +2077,7 @@ public class VistaAdmin extends javax.swing.JFrame implements Runnable {
     public javax.swing.JLabel jLabelBienvenida1;
     public javax.swing.JLabel jLabelEscogerImagen;
     private javax.swing.JLabel jLabelHome;
+    public javax.swing.JLabel jLabelNoticeNotPermissions;
     private javax.swing.JLabel jLabelReportes;
     public javax.swing.JLabel jLabelRutaArchivo;
     private javax.swing.JLabel jLabelUser;

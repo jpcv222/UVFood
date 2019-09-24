@@ -331,15 +331,17 @@ public class ControladorAdmin {
             modal.error_message("Error", "Algo anda mal", "No se pueden mostrar registros de la Base de datos", "Por Favor intenta mas tarde", "O reportanos que ocurre");
         }
     }
-    
+
     public void requestFillTableSessions() {
         String namekey = "reports.generate.user.sessions";
         String result = keyvalidate.haveKey(namekey, user.getIdUser());
         boolean validate = keyvalidate.resultHaveKey(result);
+        interfazPrincipalAdmin.jLabelNoticeNotPermissions.setVisible(!validate);
+        interfazPrincipalAdmin.jTextFieldBuscarUserSessions.setEnabled(validate);
         if (validate) {
-        if (!consultasAdmin.llenarTablaSessions(interfazPrincipalAdmin)) {
-            modal.error_message("Error", "Algo anda mal", "No se pueden mostrar registros de la Base de datos", "Por Favor intenta mas tarde", "O reportanos que ocurre");
-        }
+            if (!consultasAdmin.llenarTablaSessions(interfazPrincipalAdmin)) {
+                modal.error_message("Error", "Algo anda mal", "No se pueden mostrar registros de la Base de datos", "Por Favor intenta mas tarde", "O reportanos que ocurre");
+            }
         }
     }
 
@@ -380,7 +382,7 @@ public class ControladorAdmin {
                 modal.error_message("Error", "Algo anda mal", "Ocurrio un error al registrar", "Es posible que los campos", "tengan formato incorrecto.");
                 logs.escribirErrorLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "/error./ validando campos ");
                 break;
-                 case "error.sql.error":
+            case "error.sql.error":
                 modal.error_message("Error", "Algo anda mal", "Ocurrio un error al registrar", "Error en el servidor.", "Consulte al área de sistemas.");
                 logs.escribirErrorLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "/error./ validando campos ");
                 break;
