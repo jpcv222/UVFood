@@ -1029,3 +1029,6 @@ managers.queries.ConsultasAdmin//guardarMenu// ERROR: no existe la columna «idt
 managers.queries.ConsultasAdmin//guardarMenu// ERROR: no existe la columna «name_type»
   Position: 44 org.postgresql.util.PSQLException: ERROR: no existe la columna «name_type»
   Position: 44// 2019-09-23T20:21:19.512
+managers.queries.ConsultasAdmin//fillComboImgTipo// ERROR: no existe la relación «uvfood_type_image»
+  Position: 15 org.postgresql.util.PSQLException: ERROR: no existe la relación «uvfood_type_image»
+  Position: 15// 2019-09-24T14:21:41.442
