@@ -176,7 +176,7 @@ public class ControladorGestionPermisos {
             ArrayList<String> data_response;
             ArrayList<String> keys = user_keys_to_insert(new_user_keys_options, current_user_keys);
             if (!keys.isEmpty()) {
-                
+
                 data_response = consultasPermissions.update_user_keys(interfazGestionPermisos.jLabelUserName.getText(), keys);
                 if (validateAsignUserPermissions(data_response)) {
                     modal.success_message("Éxito.", "Permisos actualizados.", "Se han actualizado permisos", "de manera exitosa.", null);
@@ -207,7 +207,7 @@ public class ControladorGestionPermisos {
 
     public ArrayList<String> user_keys_to_insert(ArrayList<String> new_user_keys, ArrayList<String> current_user_keys) {
         ArrayList<String> result = new_user_keys;
-        
+
         for (int i = 0; i < new_user_keys.size(); i++) {
 
             for (int j = 0; j < current_user_keys.size(); j++) {
@@ -220,16 +220,82 @@ public class ControladorGestionPermisos {
     }
 
     public void validateCheckSelected() {
-       
-            for(int x=0;x<interfazGestionPermisos.jPanelActions.getComponentCount();x++){
-                if(interfazGestionPermisos.jPanelActions.getComponent(x) instanceof JCheckBox){
-                    JCheckBox check=(JCheckBox) interfazGestionPermisos.jPanelActions.getComponent(x);
-                  if(check.isSelected()){
-                       new_user_keys_options.add(check.getText());
-                   }
+
+        for (int x = 0; x < interfazGestionPermisos.jPanelActions.getComponentCount(); x++) {
+            if (interfazGestionPermisos.jPanelActions.getComponent(x) instanceof JCheckBox) {
+                JCheckBox check = (JCheckBox) interfazGestionPermisos.jPanelActions.getComponent(x);
+                if (check.isSelected()) {
+                    new_user_keys_options.add(check.getText());
                 }
             }
+        }
+
+    }
+
+    public void addModule() {
+
+        String namekey = "permissions.create.modules";
+
+        String result = keyvalidate.haveKey(namekey, user.getIdUser());
+        boolean validate = keyvalidate.resultHaveKey(result);
+
+        if (true) {
+            String new_module = interfazGestionPermisos.jTextFieldModuloNuevo.getText();
+            boolean exist_module = existInputModule(new_module);
+            if (!exist_module && !new_module.trim().equals("")) {
+                insertModule(new_module);
+            } else {
+                modal.error_message("Error de validación.", "Registro duplicado o campo vacío.", "El módulo ingresado no se puede registrar.", "Intente con otro módulo.", null);
+            }
+        } else {
+            modal.error_message("Error de validación.", "Permisos denegados.", "El rol actual no tiene accesos a esta opción:", "Asignación de permisos.", null);
+        }
+    }
+
+    public void insertModule(String new_module) {
+
+         String data_response;
+            data_response = consultasPermissions.insertModule(new_module);
+            switch (data_response) {
+                case "error.empty":
+                    logs.escribirErrorLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// Consulta no arroja resultados.");
+                    break;
+                case "server.error":
+                    logs.escribirErrorLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// El servidor está presentado problemas.");
+                    break;
+                case "server.success":
+                    logs.escribirAccessLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// Se muestran  user keys con " + data_response + " registros.");
+                    modal.success_message("Éxito.", "Módulos actualizados.", "Se ha registrado módulo", "de manera exitosa.", null);
+                    break;
+            }
+    }
+
+    public boolean existInputModule(String new_module) {
+
+        boolean response;
         
+            ArrayList<String> data_response;
+            data_response = consultasPermissions.get_modules("idmodule", "WHERE namemodule = '" + new_module + "'");
+            switch (data_response.get(0)) {
+                case "error.empty":
+                    logs.escribirErrorLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// Consulta no arroja resultados.");
+                    response = false;
+                    break;
+                case "server.error":
+                    logs.escribirErrorLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// El servidor está presentado problemas.");
+                    response = true;
+                    break;
+                case "server.success":
+                    logs.escribirAccessLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// Se muestran  user modules con " + data_response + " registros.");
+                    response = true;
+                    break;
+                default:
+                    response = true;
+                    break;
+            }
+
+        return response;
+
     }
 
     public Usuario getUser() {

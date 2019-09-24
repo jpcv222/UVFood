@@ -14,7 +14,6 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
-
 /**
  *
  * @author jpcv2
@@ -27,9 +26,9 @@ public class ConsultasPermissions {
     public ArrayList<String> update_user_keys(String username, ArrayList<String> user_keys) {
 
         ArrayList<String> result = new ArrayList();
-        
+
         String iduser = (String) db_core.get_record("user", "iduser", "username = '" + username + "'");
-        System.out.println(iduser);
+
         try {
             PreparedStatement ps = null;
             Connection conn = Conexion();
@@ -44,13 +43,41 @@ public class ConsultasPermissions {
                 } else {
                     result.add("error.dato.no.insertado");
                 }
-                
-                 ps.close();
+
+                ps.close();
             }
-            
-        } catch (SQLException  | NullPointerException | IndexOutOfBoundsException np) {
+
+        } catch (SQLException | NullPointerException | IndexOutOfBoundsException np) {
             logs.escribirExceptionLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// " + np.getMessage() + " " + np.toString());
             result.add("server.error");
+        }
+
+        return result;
+    }
+
+    public String insertModule(String namemodule) {
+
+        String result;
+
+        try {
+            PreparedStatement ps = null;
+            Connection conn = Conexion();
+
+            String sql = "INSERT INTO uvfood_modules VALUES (" + namemodule + ");";
+
+            ps = conn.prepareStatement(sql);
+            int res = ps.executeUpdate();
+            if (res > 0) {
+                result = "success.dato.insertado";
+            } else {
+                result = "error.dato.no.insertado";
+            }
+
+            ps.close();
+
+        } catch (SQLException | NullPointerException | IndexOutOfBoundsException np) {
+            logs.escribirExceptionLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// " + np.getMessage() + " " + np.toString());
+            result = "server.error";
         }
 
         return result;

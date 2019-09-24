@@ -234,8 +234,8 @@ public class GestionPermisos extends javax.swing.JFrame {
         jPanel1.add(jLabelUserNamePerm1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 60, 600, 40));
 
         jLabel9.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel9.setText("Agregue permisos al usuario en cada módulo de manera independiente...");
-        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 100, 520, 40));
+        jLabel9.setText("Agregue permisos al usuario en cada módulo de manera independiente.");
+        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 100, 500, 40));
 
         jLabel10.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel10.setText("1. Seleccione un módulo o funcionalidad.");
@@ -312,6 +312,7 @@ public class GestionPermisos extends javax.swing.JFrame {
 
     private void jPanelAddKeys1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelAddKeys1MouseClicked
         // TODO add your handling code here:
+        manager.addModule();
     }//GEN-LAST:event_jPanelAddKeys1MouseClicked
 
     private void jPanelAddKeys1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelAddKeys1MouseEntered
@@ -355,7 +356,7 @@ public class GestionPermisos extends javax.swing.JFrame {
     private javax.swing.JPanel jPanelAddKeys1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
-    private javax.swing.JTextField jTextFieldModuloNuevo;
-    private javax.swing.JTextField jTextFieldPermisoNuevo;
+    public javax.swing.JTextField jTextFieldModuloNuevo;
+    public javax.swing.JTextField jTextFieldPermisoNuevo;
     // End of variables declaration//GEN-END:variables
 }
