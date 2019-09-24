@@ -111,6 +111,7 @@ public class FormValidations {
         }
         return result;
     }
+
     public String validarUpdate(VistaAdmin vista) {
         String result = "";
 
@@ -138,4 +139,23 @@ public class FormValidations {
         }
         return result;
     }
+
+    public static boolean isNumeric(String strNum) {
+        try {
+            double d = Double.parseDouble(strNum);
+        } catch (NumberFormatException | NullPointerException nfe) {
+            return false;
+        }
+        return true;
+    }
+
+    public static boolean isNegativeOrZero(String strNum) {
+        try {
+            int d = Integer.parseInt(strNum);
+            return d > 0;
+        } catch (NumberFormatException | NullPointerException nfe) {
+            return false;
+        }
+    }
+
 }

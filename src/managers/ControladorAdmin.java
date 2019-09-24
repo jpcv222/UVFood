@@ -345,9 +345,65 @@ public class ControladorAdmin {
         }
     }
 
+    public void requestFillTableUsersToTickets() {
+        String namekey = "sales.generate.user.graph";
+        String result = keyvalidate.haveKey(namekey, user.getIdUser());
+        boolean validate = keyvalidate.resultHaveKey(result);
+        interfazPrincipalAdmin.jTextFieldBuscarUserToTicket.setEnabled(validate);
+        if (validate) {
+            if (!consultasAdmin.llenarTablaUsersToTickets(interfazPrincipalAdmin)) {
+                modal.error_message("Error", "Algo anda mal", "No se pueden mostrar registros de la Base de datos", "Por Favor intenta mas tarde", "O reportanos que ocurre");
+            }
+        }
+    }
+
     public void requestFillFields() {
         if (!consultasAdmin.llenarAcciones(interfazPrincipalAdmin)) {
             modal.error_message("Error", "Algo anda mal", "No se pueden mostrar registros de la Base de datos", "Por Favor intenta mas tarde", "O reportanos que ocurre");
+        }
+    }
+
+    public void requestFillFieldsSales() {
+        String namekey = "sales.generate.user.sale";
+        String result = keyvalidate.haveKey(namekey, user.getIdUser());
+        boolean validate = keyvalidate.resultHaveKey(result);
+        if (validate) {
+            try {
+                int fila = interfazPrincipalAdmin.jTableUsersToTickets.getSelectedRow();
+                String username = interfazPrincipalAdmin.jTableUsersToTickets.getValueAt(fila, 1).toString();
+                interfazPrincipalAdmin.jLabelUsernameSales.setText(username);
+            } catch (Exception ai) {
+                logs.escribirExceptionLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// " + ai.getMessage() + " " + ai.toString());
+                modal.error_message("Error", "Algo anda mal", "No se pueden mostrar registros de la Base de datos", "Por Favor intenta mas tarde", "O reportanos que ocurre");
+            }
+        }
+    }
+
+    public void vender() {
+        String namekey = "sales.generate.user.sale";
+        String result = keyvalidate.haveKey(namekey, user.getIdUser());
+        boolean validate = keyvalidate.resultHaveKey(result);
+        if (validate) {
+            if (consultasAdmin.insertSale(interfazPrincipalAdmin)) {
+                modal.success_message("Exito.", "Venta realizada.", "La venta se ha realizado con exito", "", "");
+            } else {
+                modal.error_message("Error", "Algo anda mal", "No se pueden mostrar registros de la Base de datos", "Por Favor intenta mas tarde", "O reportanos que ocurre");
+
+            }
+        }
+    }
+    
+    public void consumptionTicket(int row) {
+        String namekey = "sales.generate.user.sale";
+        String result = keyvalidate.haveKey(namekey, user.getIdUser());
+        boolean validate = keyvalidate.resultHaveKey(result);
+        if (validate) {
+            if (consultasAdmin.insertConsumption(interfazPrincipalAdmin, row)) {
+                modal.success_message("Exito.", "Consumo de ticket realizado.", "El ticket se descontará.", "", "");
+            } else {
+                modal.error_message("Error", "Viola restricción.", "No se realizó consumo de ticket.", "Por Favor intenta más tarde.", "Ticket diario consumido.");
+
+            }
         }
     }
 
@@ -582,6 +638,13 @@ public class ControladorAdmin {
         interfazPrincipalAdmin.jTextFieldIdUser.setText("");
     }
 
+    public void limpiarCamposSales() {
+        interfazPrincipalAdmin.jTextFieldCantidadTickets.setText("0");
+        interfazPrincipalAdmin.jTextFieldEfectivo.setText("0");
+        interfazPrincipalAdmin.jTextFieldCambio.setText("0");
+        interfazPrincipalAdmin.jTextFieldTotalVenta.setText("0");
+    }
+
     public void requestDisableUser() {
         String res = consultasAdmin.disableUser(interfazPrincipalAdmin);
 
@@ -598,6 +661,71 @@ public class ControladorAdmin {
 
         }
 
+    }
+
+    public void calculatePrice() {
+        String value = interfazPrincipalAdmin.jTextFieldCantidadTickets.getText();
+        if (validaciones.isNumeric(value)) {
+            if (validaciones.isNegativeOrZero(value)) {
+                int price_ticket = calculatePriceTicket();
+                int price = Integer.parseInt(value) * price_ticket;
+                interfazPrincipalAdmin.jTextFieldTotalVenta.setText(String.valueOf(price));
+            }
+        }
+
+    }
+
+    public void calculateCashChange() {
+        String value = interfazPrincipalAdmin.jTextFieldEfectivo.getText();
+        if (validaciones.isNumeric(value)) {
+
+            if (validaciones.isNegativeOrZero(value)) {
+                int venta = Integer.parseInt(interfazPrincipalAdmin.jTextFieldTotalVenta.getText());
+                int cash = Integer.parseInt(value);
+                if (cash >= venta) {
+                    int cash_change = cash - venta;
+                    interfazPrincipalAdmin.jTextFieldCambio.setText(String.valueOf(cash_change));
+                }
+            }
+        }
+
+    }
+
+    public void validateBtFacturar() {
+        String cash_change = interfazPrincipalAdmin.jTextFieldCambio.getText();
+        String tickets = interfazPrincipalAdmin.jTextFieldCantidadTickets.getText();
+        String price = interfazPrincipalAdmin.jTextFieldTotalVenta.getText();
+        String efectivo = interfazPrincipalAdmin.jTextFieldEfectivo.getText();
+        if (validaciones.isNumeric(cash_change) && validaciones.isNumeric(tickets) && validaciones.isNumeric(price) && validaciones.isNumeric(efectivo)) {
+            int cash_change_aux = Integer.parseInt(cash_change);
+            int tickets_aux = Integer.parseInt(tickets);
+            int price_aux = Integer.parseInt(price);
+            int efectivo_aux = Integer.parseInt(efectivo);
+
+            interfazPrincipalAdmin.btnFacturar.setEnabled(cash_change_aux >= 0 && tickets_aux >= 0 && efectivo_aux >= price_aux);
+
+        }
+    }
+
+    public void validateCantTickets() {
+        String value = interfazPrincipalAdmin.jTextFieldCantidadTickets.getText();
+        interfazPrincipalAdmin.jTextFieldEfectivo.setEnabled(validaciones.isNumeric(value) && validaciones.isNegativeOrZero(value));
+    }
+
+    public int calculatePriceTicket() {
+
+        int result = 2100;
+
+        try {
+            int fila = interfazPrincipalAdmin.jTableUsersToTickets.getSelectedRow();
+            int discount = (int) interfazPrincipalAdmin.jTableUsersToTickets.getValueAt(fila, 5);
+            result = result - discount;
+        } catch (Exception ai) {
+            logs.escribirExceptionLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// " + ai.getMessage() + " " + ai.toString());
+            //modal.error_message("Error", "Algo anda mal", "No se pueden mostrar registros de la Base de datos", "Por Favor intenta mas tarde", "O reportanos que ocurre");
+
+        }
+        return result;
     }
 
     public void validateDisableUser() {
