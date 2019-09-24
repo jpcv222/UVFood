@@ -63,7 +63,7 @@ public class ConsultasPermissions {
             PreparedStatement ps = null;
             Connection conn = Conexion();
 
-            String sql = "INSERT INTO uvfood_modules VALUES (" + namemodule + ");";
+            String sql = "INSERT INTO uvfood_modules (namemodule) VALUES ('" + namemodule + "');";
 
             ps = conn.prepareStatement(sql);
             int res = ps.executeUpdate();

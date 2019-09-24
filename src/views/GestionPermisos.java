@@ -45,7 +45,7 @@ public class GestionPermisos extends javax.swing.JFrame {
         jLabelTitleModal = new javax.swing.JLabel();
         jLabelUserName = new javax.swing.JLabel();
         jPanelAceptar = new javax.swing.JPanel();
-        jLabelAceptar1 = new javax.swing.JLabel();
+        jLabelAceptar = new javax.swing.JLabel();
         jLabelAceptar2 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
         jLabel19 = new javax.swing.JLabel();
@@ -54,11 +54,11 @@ public class GestionPermisos extends javax.swing.JFrame {
         jLabelConstructModule = new javax.swing.JLabel();
         jSeparator2 = new javax.swing.JSeparator();
         jPanelAddKeys = new javax.swing.JPanel();
-        jLabelAceptar = new javax.swing.JLabel();
+        jLabelAddPermissions = new javax.swing.JLabel();
         jLabel20 = new javax.swing.JLabel();
         jTextFieldModuloNuevo = new javax.swing.JTextField();
-        jPanelAddKeys1 = new javax.swing.JPanel();
-        jLabelAceptar3 = new javax.swing.JLabel();
+        jPanelAddModules = new javax.swing.JPanel();
+        jLabelAddModules = new javax.swing.JLabel();
         jLabel22 = new javax.swing.JLabel();
         jTextFieldPermisoNuevo = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
@@ -124,11 +124,11 @@ public class GestionPermisos extends javax.swing.JFrame {
         });
         jPanelAceptar.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabelAceptar1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jLabelAceptar1.setForeground(new java.awt.Color(205, 31, 50));
-        jLabelAceptar1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabelAceptar1.setText("Asignar permisos");
-        jPanelAceptar.add(jLabelAceptar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(7, 6, 200, 40));
+        jLabelAceptar.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jLabelAceptar.setForeground(new java.awt.Color(205, 31, 50));
+        jLabelAceptar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabelAceptar.setText("Asignar permisos");
+        jPanelAceptar.add(jLabelAceptar, new org.netbeans.lib.awtextra.AbsoluteConstraints(7, 6, 200, 40));
 
         jPanel1.add(jPanelAceptar, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 570, 210, 50));
 
@@ -170,11 +170,11 @@ public class GestionPermisos extends javax.swing.JFrame {
             }
         });
 
-        jLabelAceptar.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jLabelAceptar.setForeground(new java.awt.Color(205, 31, 50));
-        jLabelAceptar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabelAceptar.setText("Agregar permiso");
-        jPanelAddKeys.add(jLabelAceptar);
+        jLabelAddPermissions.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jLabelAddPermissions.setForeground(new java.awt.Color(205, 31, 50));
+        jLabelAddPermissions.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabelAddPermissions.setText("Agregar permiso");
+        jPanelAddKeys.add(jLabelAddPermissions);
 
         jPanel3.add(jPanelAddKeys, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 250, 390, -1));
 
@@ -189,27 +189,27 @@ public class GestionPermisos extends javax.swing.JFrame {
         });
         jPanel3.add(jTextFieldModuloNuevo, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, 390, 30));
 
-        jPanelAddKeys1.setBackground(new java.awt.Color(255, 255, 255));
-        jPanelAddKeys1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(205, 31, 50), 2));
-        jPanelAddKeys1.addMouseListener(new java.awt.event.MouseAdapter() {
+        jPanelAddModules.setBackground(new java.awt.Color(255, 255, 255));
+        jPanelAddModules.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(205, 31, 50), 2));
+        jPanelAddModules.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jPanelAddKeys1MouseClicked(evt);
+                jPanelAddModulesMouseClicked(evt);
             }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                jPanelAddKeys1MouseEntered(evt);
+                jPanelAddModulesMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                jPanelAddKeys1MouseExited(evt);
+                jPanelAddModulesMouseExited(evt);
             }
         });
 
-        jLabelAceptar3.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jLabelAceptar3.setForeground(new java.awt.Color(205, 31, 50));
-        jLabelAceptar3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabelAceptar3.setText("Agregar módulo");
-        jPanelAddKeys1.add(jLabelAceptar3);
+        jLabelAddModules.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jLabelAddModules.setForeground(new java.awt.Color(205, 31, 50));
+        jLabelAddModules.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabelAddModules.setText("Agregar módulo");
+        jPanelAddModules.add(jLabelAddModules);
 
-        jPanel3.add(jPanelAddKeys1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 190, 390, -1));
+        jPanel3.add(jPanelAddModules, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 190, 390, -1));
 
         jLabel22.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel22.setText("Módulo");
@@ -292,36 +292,40 @@ public class GestionPermisos extends javax.swing.JFrame {
     private void jPanelAddKeysMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelAddKeysMouseEntered
         // TODO add your handling code here:
         jPanelAddKeys.setBackground(red_error);
-        jPanelAddKeys.setForeground(Color.white);
+        jLabelAddPermissions.setForeground(Color.white);
     }//GEN-LAST:event_jPanelAddKeysMouseEntered
 
     private void jPanelAddKeysMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelAddKeysMouseExited
         // TODO add your handling code here:
         jPanelAddKeys.setBackground(Color.white);
-        jPanelAddKeys.setForeground(red_error);
+        jLabelAddPermissions.setForeground(red_error);
     }//GEN-LAST:event_jPanelAddKeysMouseExited
 
     private void jPanelAddKeysMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelAddKeysMouseClicked
         // TODO add your handling code here:
-        //Add key
+        manager.addKey();
     }//GEN-LAST:event_jPanelAddKeysMouseClicked
 
     private void jTextFieldModuloNuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldModuloNuevoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextFieldModuloNuevoActionPerformed
 
-    private void jPanelAddKeys1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelAddKeys1MouseClicked
+    private void jPanelAddModulesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelAddModulesMouseClicked
         // TODO add your handling code here:
         manager.addModule();
-    }//GEN-LAST:event_jPanelAddKeys1MouseClicked
+    }//GEN-LAST:event_jPanelAddModulesMouseClicked
 
-    private void jPanelAddKeys1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelAddKeys1MouseEntered
+    private void jPanelAddModulesMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelAddModulesMouseEntered
         // TODO add your handling code here:
-    }//GEN-LAST:event_jPanelAddKeys1MouseEntered
+        jPanelAddModules.setBackground(red_error);
+        jLabelAddModules.setForeground(Color.white);
+    }//GEN-LAST:event_jPanelAddModulesMouseEntered
 
-    private void jPanelAddKeys1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelAddKeys1MouseExited
+    private void jPanelAddModulesMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelAddModulesMouseExited
         // TODO add your handling code here:
-    }//GEN-LAST:event_jPanelAddKeys1MouseExited
+        jPanelAddModules.setBackground(Color.white);
+        jLabelAddModules.setForeground(red_error);
+    }//GEN-LAST:event_jPanelAddModulesMouseExited
 
     private void jTextFieldPermisoNuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldPermisoNuevoActionPerformed
         // TODO add your handling code here:
@@ -340,9 +344,9 @@ public class GestionPermisos extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JLabel jLabelAceptar;
-    private javax.swing.JLabel jLabelAceptar1;
     private javax.swing.JLabel jLabelAceptar2;
-    private javax.swing.JLabel jLabelAceptar3;
+    private javax.swing.JLabel jLabelAddModules;
+    private javax.swing.JLabel jLabelAddPermissions;
     public javax.swing.JLabel jLabelConstructModule;
     public javax.swing.JLabel jLabelTitleModal;
     public javax.swing.JLabel jLabelUserName;
@@ -353,7 +357,7 @@ public class GestionPermisos extends javax.swing.JFrame {
     private javax.swing.JPanel jPanelAceptar;
     public javax.swing.JPanel jPanelActions;
     private javax.swing.JPanel jPanelAddKeys;
-    private javax.swing.JPanel jPanelAddKeys1;
+    private javax.swing.JPanel jPanelAddModules;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     public javax.swing.JTextField jTextFieldModuloNuevo;
