@@ -339,3 +339,5 @@ managers.ControladorAdmin//requestUpdateUser/error.usuario ya existe/ // 2019-09
 managers.ControladorAdmin//requestUpdateUser/error.email ya existe/ // 2019-09-18T12:26:29.347
 managers.ControladorAdmin//requestUpdateUser/error.usuario ya existe/ // 2019-09-18T12:26:40.666
 managers.ControladorAdmin//requestValidationsInsertUser//Error de campos obligatorios// 2019-09-23T15:14:52.328
+managers.ControladorAdmin//requestInsertImgBD// Respuesta a petición inválida.// 2019-09-23T18:54:14.456
+managers.ControladorAdmin//requestInsertImgBD// Respuesta a petición inválida.// 2019-09-23T18:56:37.786

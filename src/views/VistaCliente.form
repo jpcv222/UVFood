@@ -520,9 +520,6 @@
                   </Layout>
                   <SubComponents>
                     <Component class="javax.swing.JLabel" name="jLabel19">
-                      <Properties>
-                        <Property name="text" type="java.lang.String" value="Espacio para imagen del menu"/>
-                      </Properties>
                     </Component>
                   </SubComponents>
                 </Container>

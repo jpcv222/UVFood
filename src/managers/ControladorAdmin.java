@@ -19,11 +19,14 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import static java.awt.image.ImageObserver.WIDTH;
+import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import static java.nio.file.StandardCopyOption.REPLACE_EXISTING;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import javax.swing.ImageIcon;
 import javax.swing.JMenuItem;
 import javax.swing.JTable;
@@ -228,6 +231,32 @@ public class ControladorAdmin implements ActionListener {
         }
     }
 
+    public void requestFillComboImgType() {
+        if (!consultasAdmin.fillComboImgTipo(interfazPrincipalAdmin)) {
+            modal.error_message("Error", "Algo anda mal", "No se pueden mostrar registros de la Base de datos", "Por Favor intenta mas tarde", "O reportanos que ocurre");
+        }
+    }
+
+    public void requestGuardarImg(String tipo) {
+        try {
+            switch (tipo) {
+                case "Slider":
+                    guardarImg();
+                    break;
+                case "Menu":
+                    guardarImgMenu();
+                    break;
+                default:
+                    logs.escribirErrorLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// Respuesta a petición inválida.");
+                    break;
+
+            }
+
+        } catch (NullPointerException e) {
+        }
+
+    }
+
     public void guardarImg() {
 
         if (interfazPrincipalAdmin.nombreImg != null) {
@@ -259,6 +288,84 @@ public class ControladorAdmin implements ActionListener {
 
     }
 
+    public String getFecha() {
+        Date myDate = new Date();
+
+        String fecha = new SimpleDateFormat("yyyy-MM-dd").format(myDate);
+
+        return fecha;
+    }
+
+    public void requestInsertImgBD(String nombreImg) {
+        String result = consultasAdmin.guardarMenu(nombreImg, interfazPrincipalAdmin);
+
+        try {
+            switch (result) {
+                case "success.dato.insertado":
+                    interfazPrincipalAdmin.jLabelEscogerImagen.setText("Debes escoger una imagen");
+                    break;
+                case "error.dato.no.insertado":
+                    logs.escribirErrorLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "/error.Imagen no insertada/ ");
+                    break;
+                default:
+                    logs.escribirErrorLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// Respuesta a petición inválida.");
+                    break;
+
+            }
+
+        } catch (NullPointerException e) {
+        }
+    }
+
+    public void guardarImgMenu() {
+
+        if (interfazPrincipalAdmin.nombreImg != null) {
+            interfazPrincipalAdmin.btnGuardarImg.setEnabled(true);
+            try {
+                //definimos el destino de la imagen
+                String nombreImg = interfazPrincipalAdmin.nombreImg.getName() + "menu_dia_" +getFecha();
+                String dest = System.getProperty("user.dir") + "/src/ImgMenu/" + interfazPrincipalAdmin.nombreImg.getName() + "-" + getFecha();
+                Path destino = Paths.get(dest);
+
+                //defininimos el origen
+                String orig = interfazPrincipalAdmin.nombreImg.getPath();
+                Path origen = Paths.get(orig);
+
+                //copiamos el archivo
+                Files.copy(origen, destino, REPLACE_EXISTING);
+                requestInsertImgBD(nombreImg);
+                System.out.println("archivo copiado con exito en: " + dest);
+
+            } catch (IOException ex) {
+                logs.escribirExceptionLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// " + ex.getMessage() + " " + ex.toString());
+                modal.error_message("Error fatal.", "Carga de imagen erronea.", "Intente con otra imagen o", "Comuníquese con el área de sistemas.", null);
+
+            }
+
+        } else {
+            interfazPrincipalAdmin.btnGuardarImg.setEnabled(false);
+        }
+
+    }
+
+    public boolean validarImg() {
+
+        if (interfazPrincipalAdmin.nombreImg.getName().contains(".jpg")) {
+            interfazPrincipalAdmin.btnGuardarImg.setEnabled(true);
+            interfazPrincipalAdmin.jComboBoxTipoImg.setEnabled(true);
+            return true;
+        } else if (interfazPrincipalAdmin.nombreImg.getName().contains(".png")) {
+            interfazPrincipalAdmin.btnGuardarImg.setEnabled(true);
+            interfazPrincipalAdmin.jComboBoxTipoImg.setEnabled(true);
+            return true;
+        } else {
+            interfazPrincipalAdmin.btnGuardarImg.setEnabled(false);
+            interfazPrincipalAdmin.jComboBoxTipoImg.setEnabled(false);
+            return false;
+        }
+
+    }
+
     public void createPopupmenu() {
         try {
 
@@ -281,21 +388,6 @@ public class ControladorAdmin implements ActionListener {
             logs.escribirErrorLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// Error creando popupmenu.");
             logs.escribirExceptionLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// " + ex.getMessage() + " " + ex.toString());
         }
-    }
-
-    public boolean validarImg() {
-
-        if (interfazPrincipalAdmin.nombreImg.getName().contains(".jpg")) {
-            interfazPrincipalAdmin.btnGuardarImg.setEnabled(true);
-            return true;
-        } else if (interfazPrincipalAdmin.nombreImg.getName().contains(".png")) {
-            interfazPrincipalAdmin.btnGuardarImg.setEnabled(true);
-            return true;
-        } else {
-            interfazPrincipalAdmin.btnGuardarImg.setEnabled(false);
-            return false;
-        }
-
     }
 
     public void requestSearchUser() {
@@ -456,7 +548,7 @@ public class ControladorAdmin implements ActionListener {
                 break;
             case "solo_crear":
                 //interfazPrincipalAdmin.jComboBoxRoles.removeAllItems();
-                
+
                 interfazPrincipalAdmin.btnCrearUser.setEnabled(true);
                 interfazPrincipalAdmin.btnModificarUser.setEnabled(false);
                 interfazPrincipalAdmin.btnEliminarUser.setEnabled(false);
@@ -552,7 +644,6 @@ public class ControladorAdmin implements ActionListener {
         }
 
     }
-
 
     public void showConfirmationMessage() {
         modal.confirmation_message("Confirmacion", "¿Desea deshabilitar este usuario?");

@@ -276,6 +276,38 @@ public class ConsultasAdmin extends ConexionBD {
 
     }
 
+    public boolean fillComboImgTipo(VistaAdmin vista) {
+        vista.jComboBoxTipoImg.removeAllItems();
+        Statement ps = null;
+        ResultSet rs = null;
+
+        try {
+            Connection conn = Conexion();
+
+            String sql = "SELECT * FROM uvfood_type_image;";
+            ps = conn.createStatement();
+            rs = ps.executeQuery(sql);
+
+            while (rs.next()) {
+
+                vista.jComboBoxTipoImg.addItem(rs.getString(2));
+            }
+            rs.close();
+            ps.close();
+            return true;
+        } catch (SQLException ex) {
+            logs.escribirExceptionLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// " + ex.getMessage() + " " + ex.toString());
+            return false;
+        } catch (NullPointerException np) {
+            logs.escribirExceptionLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// " + np.getMessage() + " " + np.toString());
+            return false;
+        } catch (ArrayIndexOutOfBoundsException ai) {
+            logs.escribirExceptionLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// " + ai.getMessage() + " " + ai.toString());
+            return false;
+        }
+
+    }
+
     public int get_count_record(String table, String atrib) {
 
         int result = db_core.get_count_record(table, atrib);
@@ -570,6 +602,83 @@ public class ConsultasAdmin extends ConexionBD {
             result = "ai";
         }
 
+        return result;
+    }
+
+    public String guardarMenu(String img, VistaAdmin vista) {
+        String result = "";
+        String nameType = vista.tipoImg;
+        int idType = 0;
+        try {
+
+            PreparedStatement ps = null;
+            ResultSet rs = null;
+
+            Connection conn = Conexion();
+            String getIdTipo = "SELECT idtype FROM uvfood_type_image WHERE name_type = '" + nameType + "';";
+            ps = conn.prepareStatement(getIdTipo);
+            rs = ps.executeQuery();
+            
+
+            if (rs.next()) {
+                idType = rs.getInt(1);
+                
+                String inserImg = "INSERT INTO uvfood_images (file_image, type_image) VALUES('" + img + "','" + idType + "');";
+                ps = conn.prepareStatement(inserImg);
+                rs = ps.executeQuery();
+                int res = ps.executeUpdate();
+                if (res > 0) {
+                    result = "success.dato.insertado";
+
+                } else {
+                    result = "error.dato.no.insertado";
+                }
+
+            }
+
+            rs.close();
+            ps.close();
+
+        } catch (SQLException ex) {
+            logs.escribirExceptionLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// " + ex.getMessage() + " " + ex.toString());
+            result = "error.sql.error";
+        } catch (NullPointerException np) {
+            logs.escribirExceptionLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// " + np.getMessage() + " " + np.toString());
+            result = "error.NP.error";
+        }
+        return result;
+    }
+
+    public String traerMenu(Date fecha) {
+        String result = "";
+        try {
+
+            PreparedStatement ps = null;
+            ResultSet rs = null;
+
+            Connection conn = Conexion();
+
+            String inserImg = "SELECT nombre_img FROM uvfood_img_menu WHERE fecha_menu = '" + fecha + "';";
+
+            ps = conn.prepareStatement(inserImg);
+            rs = ps.executeQuery();
+            if (rs.next()) {
+                result = rs.getString(1);
+
+            } else {
+                result = "error.img.no.encontrada";
+            }
+
+            rs.close();
+            ps.close();
+
+        } catch (SQLException ex) {
+            logs.escribirExceptionLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// " + ex.getMessage() + " " + ex.toString());
+            result = "error.sql.error";
+        } catch (NullPointerException np) {
+            logs.escribirExceptionLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// " + np.getMessage() + " " + np.toString());
+            result = "error.NP.error";
+        }
         return result;
     }
 

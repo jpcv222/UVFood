@@ -364,8 +364,6 @@ public class VistaCliente extends javax.swing.JFrame implements Runnable{
 
         jPanel4.setBackground(new java.awt.Color(255, 255, 255));
 
-        jLabel19.setText("Espacio para imagen del menu");
-
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(

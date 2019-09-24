@@ -3,11 +3,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/jeffr/Documents/UVFood/src/managers/ControladorAdmin.java</file>
-            <file>file:/C:/Users/jeffr/Documents/UVFood/src/managers/queries/ConsultasAdmin.java</file>
-            <file>file:/C:/Users/jeffr/Documents/UVFood/src/files/logs/error.txt</file>
-            <file>file:/C:/Users/jeffr/Documents/UVFood/src/views/VistaAdmin.java</file>
-            <file>file:/C:/Users/jeffr/Documents/UVFood/src/files/logs/exception.txt</file>
+            <file>file:/C:/Users/STH_1F_MCB_PC/Desktop/UVFood/src/managers/queries/ConsultasAdmin.java</file>
+            <file>file:/C:/Users/STH_1F_MCB_PC/Desktop/UVFood/src/views/VistaAdmin.java</file>
+            <file>file:/C:/Users/STH_1F_MCB_PC/Desktop/UVFood/src/views/VistaCliente.java</file>
+            <file>file:/C:/Users/STH_1F_MCB_PC/Desktop/UVFood/src/managers/queries/ConsultasCliente.java</file>
+            <file>file:/C:/Users/STH_1F_MCB_PC/Desktop/UVFood/src/managers/ControladorAdmin.java</file>
+            <file>file:/C:/Users/STH_1F_MCB_PC/Desktop/UVFood/src/managers/ControladorCliente.java</file>
         </group>
     </open-files>
 </project-private>
