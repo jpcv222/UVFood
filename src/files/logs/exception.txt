@@ -38,3 +38,10 @@ managers.ControladorAdmin//createJFreeChartCount// null java.lang.NullPointerExc
 managers.ControladorAdmin//createJFreeChartCount// null java.lang.NullPointerException// 2019-09-24T06:07:15.867
 managers.ControladorAdmin//createJFreeChartCount// null java.lang.NullPointerException// 2019-09-24T06:07:56.698
 managers.ControladorAdmin//createJFreeChartCount// null java.lang.NullPointerException// 2019-09-24T06:07:56.718
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-24T13:46:15.177
+managers.queries.ConsultasAdmin//llenarTablaUsersToTickets// Operation requires a scrollable ResultSet, but this ResultSet is FORWARD_ONLY. org.postgresql.util.PSQLException: Operation requires a scrollable ResultSet, but this ResultSet is FORWARD_ONLY.// 2019-09-24T13:46:19.119
+managers.queries.ConsultasAdmin//llenarTablaUsersToTickets// Operation requires a scrollable ResultSet, but this ResultSet is FORWARD_ONLY. org.postgresql.util.PSQLException: Operation requires a scrollable ResultSet, but this ResultSet is FORWARD_ONLY.// 2019-09-24T13:46:24.935
+managers.queries.ConsultasAdmin//llenarTablaUsersToTickets// Operation requires a scrollable ResultSet, but this ResultSet is FORWARD_ONLY. org.postgresql.util.PSQLException: Operation requires a scrollable ResultSet, but this ResultSet is FORWARD_ONLY.// 2019-09-24T13:46:32.431
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-24T13:52:28.167
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-24T13:53:15.327
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-24T14:27:00.133

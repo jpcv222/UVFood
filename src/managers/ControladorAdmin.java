@@ -350,7 +350,7 @@ public class ControladorAdmin {
         String result = keyvalidate.haveKey(namekey, user.getIdUser());
         boolean validate = keyvalidate.resultHaveKey(result);
         interfazPrincipalAdmin.jTextFieldBuscarUserToTicket.setEnabled(validate);
-        if (true) {
+        if (validate) {
         if (!consultasAdmin.llenarTablaUsersToTickets(interfazPrincipalAdmin)) {
             modal.error_message("Error", "Algo anda mal", "No se pueden mostrar registros de la Base de datos", "Por Favor intenta mas tarde", "O reportanos que ocurre");
         }

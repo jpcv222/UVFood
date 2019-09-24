@@ -100,8 +100,8 @@ public class ConsultasAdmin extends ConexionBD {
         }
 
     }
-    
-      public boolean llenarTablaUsersToTickets(VistaAdmin vista) {
+
+    public boolean llenarTablaUsersToTickets(VistaAdmin vista) {
         DefaultTableModel modelo = new DefaultTableModel() {
             @Override
             public boolean isCellEditable(int row, int col) {
@@ -109,38 +109,70 @@ public class ConsultasAdmin extends ConexionBD {
             }
         };
         try {
-            Statement ps = null;
+            Statement ps = null, psaux = null;
             Connection conn = null;
-            ResultSet rs = null;
+            ResultSet rs = null, rsaux = null;
 
-            String sql = "SELECT uvfood_user.username, uvfood_user.firstname, uvfood_user.surname, count(\"idsession\") AS cant FROM uvfood_sessions \n"
-                    + "INNER JOIN uvfood_user ON uvfood_sessions.iduser = uvfood_user.iduser\n"
-                    + "GROUP BY uvfood_user.iduser;";
+            String sqlUsersToTickets = "SELECT uvfood_user.iduser,  uvfood_user.username, uvfood_user.firstname, uvfood_user.surname, uvfood_user_tickets.count_tickets\n"
+                    + "FROM uvfood_user \n"
+                    + "INNER JOIN uvfood_user_tickets ON uvfood_user.iduser = uvfood_user_tickets.iduser\n"
+                    + "WHERE uvfood_user.is_active = 1 AND uvfood_user.iduser IN \n"
+                    + "	(SELECT iduser FROM uvfood_user_extended WHERE uvfood_user_extended.iduser = uvfood_user.iduser AND id_typeuser IN\n"
+                    + "	(SELECT id_typeuser FROM uvfood_typeuser WHERE type_user = 'Cliente'));";
+
+            String sqlUsersWithDiscount = "SELECT uvfood_user_discount.iduser, uvfood_discount.price_discount\n"
+                    + "FROM uvfood_user_discount \n"
+                    + "INNER JOIN uvfood_discount ON uvfood_user_discount.iddiscount = uvfood_discount.iddiscount\n"
+                    + "WHERE uvfood_user_discount.iduser IN (\n"
+                    + "SELECT uvfood_user.iduser\n"
+                    + "       FROM uvfood_user\n"
+                    + "        INNER JOIN uvfood_user_tickets ON uvfood_user.iduser = uvfood_user_tickets.iduser\n"
+                    + "         WHERE uvfood_user.is_active = 1 AND uvfood_user.iduser IN\n"
+                    + "           (SELECT iduser FROM uvfood_user_extended WHERE uvfood_user_extended.iduser = uvfood_user.iduser AND id_typeuser IN\n"
+                    + "             (SELECT id_typeuser FROM uvfood_typeuser WHERE type_user = 'Cliente'))\n"
+                    + ");";
 
             conn = Conexion();
             ps = conn.createStatement();
-            rs = ps.executeQuery(sql);
+            rs = ps.executeQuery(sqlUsersToTickets);
+
+            psaux = conn.createStatement();
+            rsaux = psaux.executeQuery(sqlUsersWithDiscount);
 
             ResultSetMetaData rsMd = rs.getMetaData();
             int cantidadCol = rsMd.getColumnCount();
 
+            modelo.addColumn("Id");
             modelo.addColumn("Usuario");
             modelo.addColumn("Nombre");
             modelo.addColumn("Apellido");
-            modelo.addColumn("Sesiones");
+            modelo.addColumn("Tickets acumulados");
+            modelo.addColumn("Descuento");
 
             while (rs.next()) {
 
-                Object[] filas = new Object[cantidadCol];
+                Object[] filas = new Object[cantidadCol + 1];
 
                 filas[0] = rs.getObject(1);
                 filas[1] = rs.getObject(2);
                 filas[2] = rs.getObject(3);
                 filas[3] = rs.getObject(4);
+                filas[4] = rs.getObject(5);
+                filas[5] = 0;
+                
+                if(rsaux.isFirst()){
+                rsaux.first();
+                }
+                while (rsaux.next()) {
+                    if (rs.getObject(1) == rsaux.getObject(1)) {
+                        filas[5] = rsaux.getObject(1);
+                        rsaux.last();
+                    }
+                }
 
                 modelo.addRow(filas);
             }
-            vista.jTableUsersSessions.setModel(modelo);
+            vista.jTableUsersToTickets.setModel(modelo);
             rs.close();
             ps.close();
             return true;
