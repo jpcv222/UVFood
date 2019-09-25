@@ -117,3 +117,4 @@ managers.queries.ConsultasLogin//insert_session_record// No results were returne
 managers.queries.ConsultasAdmin//llenarTablaSales// The column index is out of range: 4, number of columns: 3. org.postgresql.util.PSQLException: The column index is out of range: 4, number of columns: 3.// 2019-09-24T19:12:49.097
 managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-24T19:13:48.799
 managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-24T19:14:29.636
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-24T19:31:15.036
