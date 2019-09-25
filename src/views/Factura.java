@@ -5,17 +5,27 @@
  */
 package views;
 
+import com.qoppa.pdfWriter.PDFPrinterJob;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
+import java.awt.print.PageFormat;
+import java.awt.print.Printable;
+import static java.awt.print.Printable.NO_SUCH_PAGE;
+import static java.awt.print.Printable.PAGE_EXISTS;
+
 /**
  *
  * @author jpcv2
  */
-public class Factura extends javax.swing.JFrame {
+public class Factura extends javax.swing.JFrame implements Printable {
 
     /**
      * Creates new form Factura
      */
     public Factura() {
         initComponents();
+        this.setLocationRelativeTo(null);
+
     }
 
     /**
@@ -27,7 +37,7 @@ public class Factura extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
+        jPanel = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
         jLabelTitleModal = new javax.swing.JLabel();
@@ -58,12 +68,14 @@ public class Factura extends javax.swing.JFrame {
         jSeparator10 = new javax.swing.JSeparator();
         jLabel32 = new javax.swing.JLabel();
         jLabelFecha = new javax.swing.JLabel();
+        jButton2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 0, 51), 3));
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanel.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 0, 51), 3));
+        jPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel2.setBackground(new java.awt.Color(205, 31, 50));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -85,98 +97,106 @@ public class Factura extends javax.swing.JFrame {
         jLabelTitleModal.setText("Factura de venta");
         jPanel2.add(jLabelTitleModal, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 10, 220, -1));
 
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 480, 50));
+        jPanel.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 480, 50));
 
         jLabelNameCliente.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabelNameCliente.setText("Value");
-        jPanel1.add(jLabelNameCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 400, 40));
+        jPanel.add(jLabelNameCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 400, 40));
 
         jLabel25.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
         jLabel25.setText("Fecha realizado");
-        jPanel1.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 500, 180, 39));
+        jPanel.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 500, 180, 39));
 
         jLabelCambio.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabelCambio.setText("Value");
-        jPanel1.add(jLabelCambio, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 450, 400, 40));
+        jPanel.add(jLabelCambio, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 450, 400, 40));
 
         jLabel26.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
         jLabel26.setText("Cliente");
-        jPanel1.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 110, 39));
+        jPanel.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 110, 39));
 
         jLabel27.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
         jLabel27.setText("Vendedor");
-        jPanel1.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, 110, 39));
+        jPanel.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, 110, 39));
 
         jLabel28.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
         jLabel28.setText("Tickets acumulados");
-        jPanel1.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 210, 190, 39));
+        jPanel.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 210, 190, 39));
 
         jLabelNameVendedor.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabelNameVendedor.setText("Value");
-        jPanel1.add(jLabelNameVendedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, 400, 40));
+        jPanel.add(jLabelNameVendedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, 400, 40));
 
         jLabelTicketsAcum.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabelTicketsAcum.setText("Value");
-        jPanel1.add(jLabelTicketsAcum, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 240, 180, 40));
+        jPanel.add(jLabelTicketsAcum, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 240, 180, 40));
 
         jLabel29.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
         jLabel29.setText("Tickets comprados ");
-        jPanel1.add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 210, 180, 39));
+        jPanel.add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 210, 180, 39));
 
         jLabelTicketsComprados.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabelTicketsComprados.setText("Value");
-        jPanel1.add(jLabelTicketsComprados, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 240, 170, 40));
+        jPanel.add(jLabelTicketsComprados, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 240, 170, 40));
 
         jLabel30.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
         jLabel30.setText("Total");
-        jPanel1.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 280, 180, 39));
+        jPanel.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 280, 180, 39));
 
         jLabelTotal.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabelTotal.setText("Value");
-        jPanel1.add(jLabelTotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 310, 400, 40));
+        jPanel.add(jLabelTotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 310, 400, 40));
 
         jLabel31.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
         jLabel31.setText("Efectivo");
-        jPanel1.add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 350, 180, 39));
+        jPanel.add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 350, 180, 39));
 
         jLabelEfectivo.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabelEfectivo.setText("Value");
-        jPanel1.add(jLabelEfectivo, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 380, 400, 40));
+        jPanel.add(jLabelEfectivo, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 380, 400, 40));
 
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/univalle.jpg"))); // NOI18N
         jLabel6.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 610, -1, 50));
-        jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 260, -1, -1));
-        jPanel1.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 310, 180, 0));
-        jPanel1.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 240, 180, 10));
-        jPanel1.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 240, 170, 20));
-        jPanel1.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, 400, 10));
-        jPanel1.add(jSeparator6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 400, 10));
-        jPanel1.add(jSeparator7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 530, 400, 20));
-        jPanel1.add(jSeparator8, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 310, 400, 20));
-        jPanel1.add(jSeparator9, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 380, 400, 20));
-        jPanel1.add(jSeparator10, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 450, 400, 20));
+        jPanel.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 610, -1, 50));
+        jPanel.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 260, -1, -1));
+        jPanel.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 310, 180, 0));
+        jPanel.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 240, 180, 10));
+        jPanel.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 240, 170, 20));
+        jPanel.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, 400, 10));
+        jPanel.add(jSeparator6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 400, 10));
+        jPanel.add(jSeparator7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 530, 400, 20));
+        jPanel.add(jSeparator8, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 310, 400, 20));
+        jPanel.add(jSeparator9, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 380, 400, 20));
+        jPanel.add(jSeparator10, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 450, 400, 20));
 
         jLabel32.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
         jLabel32.setText("Cambio");
-        jPanel1.add(jLabel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 420, 180, 39));
+        jPanel.add(jLabel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 420, 180, 39));
 
         jLabelFecha.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabelFecha.setText("Value");
-        jPanel1.add(jLabelFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 530, 400, 40));
+        jPanel.add(jLabelFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 530, 400, 40));
+
+        jButton2.setText("Print");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+        jPanel.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 630, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 482, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 482, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 3, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 693, Short.MAX_VALUE)
+            .addComponent(jPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 693, Short.MAX_VALUE)
         );
 
         pack();
@@ -186,6 +206,11 @@ public class Factura extends javax.swing.JFrame {
         // TODO add your handling code here:
         this.dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+                printSale();
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -224,6 +249,7 @@ public class Factura extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel27;
@@ -242,7 +268,7 @@ public class Factura extends javax.swing.JFrame {
     public javax.swing.JLabel jLabelTicketsComprados;
     public javax.swing.JLabel jLabelTitleModal;
     public javax.swing.JLabel jLabelTotal;
-    private javax.swing.JPanel jPanel1;
+    public javax.swing.JPanel jPanel;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator10;
@@ -255,4 +281,45 @@ public class Factura extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator8;
     private javax.swing.JSeparator jSeparator9;
     // End of variables declaration//GEN-END:variables
+
+    
+
+    public void printSale() {
+        try
+    	{
+    	 // create a PDF Printer Job
+    	 PDFPrinterJob printer = (PDFPrinterJob)PDFPrinterJob.getPrinterJob ();
+    	 // set the printable object 
+    	 printer.setPrintable (this);
+    	 // set number of copies to 1 
+    	 printer.setCopies (1);
+    	 // print and save the document
+    	 printer.print(".\\src\\files\\facturas\\factura"+jLabelFecha+".pdf");
+    	 // output done message 
+    	 System.out.println("Done!");
+    	}
+    	catch (Throwable t)
+    	{
+    	 t.printStackTrace();
+    	}
+    }
+    
+    @Override
+     public int print (Graphics g, PageFormat pf, int pageIndex) 
+    {
+    	if (pageIndex == 0)
+    	{
+ 
+          // translate the graphics for margins
+    	  g.translate(100, 100);
+ 
+    	 // print the panel to the graphics on page 0
+    	 jPanel.print (g);
+    	 return Printable.PAGE_EXISTS;
+    	}
+    	else
+    	{
+    	 return Printable.NO_SUCH_PAGE;
+    	}
+    }
 }
