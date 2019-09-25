@@ -154,3 +154,4 @@ managers.ControladorLogin//insert_session_record// Error desconocido.// 2019-09-
 managers.ControladorLogin//insert_session_record// Error desconocido.// 2019-09-25T11:50:45.581
 managers.queries.KeyValidate//resultHaveKey// Permisos denegados.// 2019-09-25T11:50:49.114
 managers.queries.KeyValidate//resultHaveKey// Permisos denegados.// 2019-09-25T11:50:49.258
+managers.ControladorLogin//insert_session_record// Error desconocido.// 2019-09-25T13:33:27.544

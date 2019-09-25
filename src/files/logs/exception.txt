@@ -139,3 +139,4 @@ managers.queries.ConsultasAdmin//crearUsuario// ERROR: llave duplicada viola res
 managers.queries.ConsultasLogin//insert_session_record// La consulta no retornó ningún resultado. org.postgresql.util.PSQLException: La consulta no retornó ningún resultado.// 2019-09-25T11:37:57.853
 managers.queries.ConsultasLogin//insert_session_record// La consulta no retornó ningún resultado. org.postgresql.util.PSQLException: La consulta no retornó ningún resultado.// 2019-09-25T11:39:10.927
 managers.queries.ConsultasLogin//insert_session_record// La consulta no retornó ningún resultado. org.postgresql.util.PSQLException: La consulta no retornó ningún resultado.// 2019-09-25T11:50:45.580
+managers.queries.ConsultasLogin//insert_session_record// La consulta no retornó ningún resultado. org.postgresql.util.PSQLException: La consulta no retornó ningún resultado.// 2019-09-25T13:33:27.544

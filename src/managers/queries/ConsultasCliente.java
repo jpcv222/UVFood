@@ -79,7 +79,7 @@ public class ConsultasCliente extends ConexionBD {
 
                 modelo.addRow(filas);
             }
-            vista.jTableUsersSales.setModel(modelo);
+            vista.jTableUsersSales1.setModel(modelo);
             rs.close();
             ps.close();
             return true;

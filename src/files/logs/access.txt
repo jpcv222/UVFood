@@ -733,3 +733,5 @@ managers.queries.KeyValidate//resultHaveKey// Permiso concedido.// 2019-09-25T11
 managers.ControladorAdmin//createJFreeChartCount// Se genera gráfica con 129 registros.// 2019-09-25T11:50:45.499
 managers.ControladorLogin//define_view// Acceso a vista admin.// 2019-09-25T11:50:45.516
 managers.ControladorLogin//request_login// Usuario existente.// 2019-09-25T11:50:45.581
+managers.ControladorLogin//define_view// Acceso a vista cliente.// 2019-09-25T13:33:27.381
+managers.ControladorLogin//request_login// Usuario existente.// 2019-09-25T13:33:27.545
