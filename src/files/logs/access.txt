@@ -567,3 +567,49 @@ managers.queries.KeyValidate//resultHaveKey// Permiso concedido.// 2019-09-24T17
 managers.ControladorGestionPermisos//createKeysModule// Se muestran  keys por modulos con [server.success, permissions.asign, permissions.show.view.asign, permissions.create.keys, permissions.create.modules] registros.// 2019-09-24T17:01:03.146
 managers.queries.KeyValidate//resultHaveKey// Permiso concedido.// 2019-09-24T17:01:03.490
 managers.ControladorGestionPermisos//createKeysModule// Se muestran  keys por modulos con [server.success, permissions.asign, permissions.show.view.asign, permissions.create.keys, permissions.create.modules] registros.// 2019-09-24T17:01:03.552
+managers.queries.KeyValidate//resultHaveKey// Permiso concedido.// 2019-09-24T18:48:50.190
+managers.ControladorAdmin//createJFreeChartCount// Se genera gráfica con 11 registros.// 2019-09-24T18:48:50.238
+managers.queries.KeyValidate//resultHaveKey// Permiso concedido.// 2019-09-24T18:48:50.398
+managers.ControladorAdmin//createJFreeChartCount// Se genera gráfica con 127 registros.// 2019-09-24T18:48:50.489
+managers.ControladorLogin//define_view// Acceso a vista admin.// 2019-09-24T18:48:50.517
+managers.ControladorLogin//request_login// Usuario existente.// 2019-09-24T18:48:50.825
+managers.queries.KeyValidate//resultHaveKey// Permiso concedido.// 2019-09-24T18:49:26.056
+managers.queries.KeyValidate//resultHaveKey// Permiso concedido.// 2019-09-24T18:49:37.630
+managers.queries.KeyValidate//resultHaveKey// Permiso concedido.// 2019-09-24T18:49:37.834
+managers.ControladorGestionPermisos//createSelectModules// Se muestran  modulos con [server.success, users, sales, index, permissions, prueba] registros.// 2019-09-24T18:49:37.934
+managers.queries.KeyValidate//resultHaveKey// Permiso concedido.// 2019-09-24T18:49:37.982
+managers.ControladorGestionPermisos//getCurrentUserKeys// Se muestran  user keys con [server.success, users.select.csv, users.upload.csv, index.show.count.users, index.show.count.sessions, permissions.asign, permissions.show.view.asign, permissions.create.keys, sales.generate.user.graph, sales.generate.user.sale] registros.// 2019-09-24T18:49:38.018
+managers.queries.KeyValidate//resultHaveKey// Permiso concedido.// 2019-09-24T18:49:40.011
+managers.ControladorGestionPermisos//createKeysModule// Se muestran  keys por modulos con [server.success, users.select.csv, users.upload.csv] registros.// 2019-09-24T18:49:40.075
+managers.queries.KeyValidate//resultHaveKey// Permiso concedido.// 2019-09-24T18:49:49.286
+managers.ControladorGestionPermisos//createKeysModule// Se muestran  keys por modulos con [server.success, permissions.asign, permissions.show.view.asign, permissions.create.keys, permissions.create.modules] registros.// 2019-09-24T18:49:49.346
+managers.queries.KeyValidate//resultHaveKey// Permiso concedido.// 2019-09-24T18:49:49.750
+managers.ControladorGestionPermisos//createKeysModule// Se muestran  keys por modulos con [server.success, permissions.asign, permissions.show.view.asign, permissions.create.keys, permissions.create.modules] registros.// 2019-09-24T18:49:49.830
+managers.queries.KeyValidate//resultHaveKey// Permiso concedido.// 2019-09-24T18:50:58.011
+managers.ControladorAdmin//createJFreeChartCount// Se genera gráfica con 11 registros.// 2019-09-24T18:50:58.059
+managers.queries.KeyValidate//resultHaveKey// Permiso concedido.// 2019-09-24T18:50:58.099
+managers.ControladorAdmin//createJFreeChartCount// Se genera gráfica con 128 registros.// 2019-09-24T18:50:58.151
+managers.queries.KeyValidate//resultHaveKey// Permiso concedido.// 2019-09-24T18:51:07.914
+managers.queries.KeyValidate//resultHaveKey// Permiso concedido.// 2019-09-24T18:51:24.300
+managers.queries.KeyValidate//resultHaveKey// Permiso concedido.// 2019-09-24T18:51:27.767
+managers.queries.KeyValidate//resultHaveKey// Permiso concedido.// 2019-09-24T18:52:03.528
+managers.queries.KeyValidate//resultHaveKey// Permiso concedido.// 2019-09-24T18:52:07.095
+managers.queries.KeyValidate//resultHaveKey// Permiso concedido.// 2019-09-24T18:52:26.332
+managers.queries.KeyValidate//resultHaveKey// Permiso concedido.// 2019-09-24T19:12:42.256
+managers.ControladorAdmin//createJFreeChartCount// Se genera gráfica con 11 registros.// 2019-09-24T19:12:42.308
+managers.queries.KeyValidate//resultHaveKey// Permiso concedido.// 2019-09-24T19:12:42.452
+managers.ControladorAdmin//createJFreeChartCount// Se genera gráfica con 128 registros.// 2019-09-24T19:12:42.496
+managers.ControladorLogin//define_view// Acceso a vista admin.// 2019-09-24T19:12:42.520
+managers.ControladorLogin//request_login// Usuario existente.// 2019-09-24T19:12:42.699
+managers.queries.KeyValidate//resultHaveKey// Permiso concedido.// 2019-09-24T19:13:48.491
+managers.ControladorAdmin//createJFreeChartCount// Se genera gráfica con 11 registros.// 2019-09-24T19:13:48.543
+managers.queries.KeyValidate//resultHaveKey// Permiso concedido.// 2019-09-24T19:13:48.675
+managers.ControladorAdmin//createJFreeChartCount// Se genera gráfica con 129 registros.// 2019-09-24T19:13:48.723
+managers.ControladorLogin//define_view// Acceso a vista admin.// 2019-09-24T19:13:48.751
+managers.ControladorLogin//request_login// Usuario existente.// 2019-09-24T19:13:48.811
+managers.queries.KeyValidate//resultHaveKey// Permiso concedido.// 2019-09-24T19:14:29.336
+managers.ControladorAdmin//createJFreeChartCount// Se genera gráfica con 11 registros.// 2019-09-24T19:14:29.384
+managers.queries.KeyValidate//resultHaveKey// Permiso concedido.// 2019-09-24T19:14:29.524
+managers.ControladorAdmin//createJFreeChartCount// Se genera gráfica con 130 registros.// 2019-09-24T19:14:29.564
+managers.ControladorLogin//define_view// Acceso a vista admin.// 2019-09-24T19:14:29.588
+managers.ControladorLogin//request_login// Usuario existente.// 2019-09-24T19:14:29.648

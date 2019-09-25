@@ -215,6 +215,14 @@ public class VistaAdmin extends javax.swing.JFrame implements Runnable {
         jLabel22 = new javax.swing.JLabel();
         jTextFieldBuscarUserSessions = new javax.swing.JTextField();
         jLabelNoticeNotPermissions = new javax.swing.JLabel();
+        jPanel9 = new javax.swing.JPanel();
+        jLabelUserNamePerm2 = new javax.swing.JLabel();
+        jSeparator11 = new javax.swing.JSeparator();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        jTableUsersSales = new javax.swing.JTable();
+        jLabel32 = new javax.swing.JLabel();
+        jTextFieldBuscarUserSessions1 = new javax.swing.JTextField();
+        jLabelNoticeNotPermissions1 = new javax.swing.JLabel();
         jPanelModuleUserAdmin = new javax.swing.JPanel();
         jPanelMenuOptionsModuleUser = new javax.swing.JPanel();
         jPanelUserRegisterItem = new javax.swing.JPanel();
@@ -641,6 +649,7 @@ public class VistaAdmin extends javax.swing.JFrame implements Runnable {
 
         jPanelReportes.setBackground(new java.awt.Color(255, 255, 255));
         jPanelReportes.setName("jPanelReportes"); // NOI18N
+        jPanelReportes.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanelHeaderIndex1.setBackground(new java.awt.Color(205, 31, 50));
 
@@ -670,6 +679,8 @@ public class VistaAdmin extends javax.swing.JFrame implements Runnable {
                 .addComponent(jLabelBienvenida1, javax.swing.GroupLayout.DEFAULT_SIZE, 39, Short.MAX_VALUE)
                 .addContainerGap())
         );
+
+        jPanelReportes.add(jPanelHeaderIndex1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         jPanel7.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -738,26 +749,78 @@ public class VistaAdmin extends javax.swing.JFrame implements Runnable {
         jLabelNoticeNotPermissions.setText("Permisos denegados");
         jPanel7.add(jLabelNoticeNotPermissions, new org.netbeans.lib.awtextra.AbsoluteConstraints(8, 190, 470, 40));
 
-        javax.swing.GroupLayout jPanelReportesLayout = new javax.swing.GroupLayout(jPanelReportes);
-        jPanelReportes.setLayout(jPanelReportesLayout);
-        jPanelReportesLayout.setHorizontalGroup(
-            jPanelReportesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelReportesLayout.createSequentialGroup()
-                .addComponent(jPanelHeaderIndex1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 12, Short.MAX_VALUE))
-            .addGroup(jPanelReportesLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, 484, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jPanelReportesLayout.setVerticalGroup(
-            jPanelReportesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelReportesLayout.createSequentialGroup()
-                .addComponent(jPanelHeaderIndex1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, 237, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 400, Short.MAX_VALUE))
-        );
+        jPanelReportes.add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 110, 484, 237));
+
+        jPanel9.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabelUserNamePerm2.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jLabelUserNamePerm2.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabelUserNamePerm2.setText("Ventas por usuario");
+        jPanel9.add(jLabelUserNamePerm2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, 30));
+        jPanel9.add(jSeparator11, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, 280, 10));
+
+        jTableUsersSales.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Usuario", "Nombre", "Apellido", "Tickets", "Total", "Fecha"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.Integer.class, java.lang.String.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jTableUsersSales.getTableHeader().setReorderingAllowed(false);
+        jTableUsersSales.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTableUsersSalesMouseClicked(evt);
+            }
+        });
+        jScrollPane4.setViewportView(jTableUsersSales);
+        if (jTableUsersSales.getColumnModel().getColumnCount() > 0) {
+            jTableUsersSales.getColumnModel().getColumn(0).setResizable(false);
+            jTableUsersSales.getColumnModel().getColumn(1).setResizable(false);
+            jTableUsersSales.getColumnModel().getColumn(2).setResizable(false);
+            jTableUsersSales.getColumnModel().getColumn(3).setResizable(false);
+            jTableUsersSales.getColumnModel().getColumn(4).setResizable(false);
+            jTableUsersSales.getColumnModel().getColumn(5).setResizable(false);
+        }
+
+        jPanel9.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(8, 71, 470, 120));
+
+        jLabel32.setText("Buscar");
+        jPanel9.add(jLabel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 10, 50, 30));
+
+        jTextFieldBuscarUserSessions1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldBuscarUserSessions1ActionPerformed(evt);
+            }
+        });
+        jTextFieldBuscarUserSessions1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                jTextFieldBuscarUserSessions1KeyReleased(evt);
+            }
+        });
+        jPanel9.add(jTextFieldBuscarUserSessions1, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 10, 180, 30));
+
+        jLabelNoticeNotPermissions1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jLabelNoticeNotPermissions1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabelNoticeNotPermissions1.setText("Permisos denegados");
+        jPanel9.add(jLabelNoticeNotPermissions1, new org.netbeans.lib.awtextra.AbsoluteConstraints(8, 190, 470, 40));
+
+        jPanelReportes.add(jPanel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 110, -1, -1));
 
         rSPanelsSlider1.add(jPanelReportes, "card3");
 
@@ -1394,7 +1457,7 @@ public class VistaAdmin extends javax.swing.JFrame implements Runnable {
                             .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 399, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanelModuleUserRegisterLayout.createSequentialGroup()
                                 .addGroup(jPanelModuleUserRegisterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 392, Short.MAX_VALUE)
+                                    .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 392, Short.MAX_VALUE)
                                     .addComponent(jPanelSelectCSVUser, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jButtonCargar, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -1918,6 +1981,7 @@ public class VistaAdmin extends javax.swing.JFrame implements Runnable {
         rSPanelsSlider1.setPanelSlider(15, jPanelReportes, RSPanelsSlider.DIRECT.RIGHT);
         jLabelNoticeNotPermissions.setVisible(false);
         manager.requestFillTableSessions();
+        manager.requestFillTableSales();
     }//GEN-LAST:event_jLabelReportesMouseClicked
 
     private void jLabelUserMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelUserMouseClicked
@@ -2369,6 +2433,18 @@ public class VistaAdmin extends javax.swing.JFrame implements Runnable {
         manager.calculateCashChange();
     }//GEN-LAST:event_jTextFieldEfectivoKeyReleased
 
+    private void jTableUsersSalesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTableUsersSalesMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTableUsersSalesMouseClicked
+
+    private void jTextFieldBuscarUserSessions1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldBuscarUserSessions1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldBuscarUserSessions1ActionPerformed
+
+    private void jTextFieldBuscarUserSessions1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextFieldBuscarUserSessions1KeyReleased
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldBuscarUserSessions1KeyReleased
+
     /**
      * @param args the command line arguments
      */
@@ -2457,6 +2533,7 @@ public class VistaAdmin extends javax.swing.JFrame implements Runnable {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel31;
+    private javax.swing.JLabel jLabel32;
     private javax.swing.JLabel jLabel34;
     private javax.swing.JLabel jLabel35;
     private javax.swing.JLabel jLabel36;
@@ -2481,11 +2558,13 @@ public class VistaAdmin extends javax.swing.JFrame implements Runnable {
     public javax.swing.JLabel jLabelEscogerImagen;
     private javax.swing.JLabel jLabelHome;
     public javax.swing.JLabel jLabelNoticeNotPermissions;
+    public javax.swing.JLabel jLabelNoticeNotPermissions1;
     private javax.swing.JLabel jLabelReportes;
     public javax.swing.JLabel jLabelRutaArchivo;
     private javax.swing.JLabel jLabelUser;
     public javax.swing.JLabel jLabelUserNamePerm;
     public javax.swing.JLabel jLabelUserNamePerm1;
+    public javax.swing.JLabel jLabelUserNamePerm2;
     public javax.swing.JLabel jLabelUsernameSales;
     private javax.swing.JLabel jLabelX;
     private javax.swing.JLabel jLabelX1;
@@ -2500,6 +2579,7 @@ public class VistaAdmin extends javax.swing.JFrame implements Runnable {
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
+    private javax.swing.JPanel jPanel9;
     private javax.swing.JPanel jPanelGestionInterfaz;
     private javax.swing.JPanel jPanelHeader;
     private javax.swing.JPanel jPanelHeaderIndex;
@@ -2524,8 +2604,10 @@ public class VistaAdmin extends javax.swing.JFrame implements Runnable {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator10;
+    private javax.swing.JSeparator jSeparator11;
     private javax.swing.JSeparator jSeparator12;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
@@ -2536,12 +2618,14 @@ public class VistaAdmin extends javax.swing.JFrame implements Runnable {
     private javax.swing.JSeparator jSeparator8;
     private javax.swing.JSeparator jSeparator9;
     public javax.swing.JTable jTableUsers;
+    public javax.swing.JTable jTableUsersSales;
     public javax.swing.JTable jTableUsersSessions;
     public javax.swing.JTable jTableUsersToTickets;
     public javax.swing.JTextField jTextFieldActivo;
     public javax.swing.JTextField jTextFieldApellido;
     public javax.swing.JTextField jTextFieldBuscarUser;
     public javax.swing.JTextField jTextFieldBuscarUserSessions;
+    public javax.swing.JTextField jTextFieldBuscarUserSessions1;
     public javax.swing.JTextField jTextFieldBuscarUserToTicket;
     public javax.swing.JTextField jTextFieldCambio;
     public javax.swing.JTextField jTextFieldCantidadTickets;
