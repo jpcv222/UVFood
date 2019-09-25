@@ -2046,6 +2046,7 @@ public class VistaAdmin extends javax.swing.JFrame implements Runnable {
         resetColor(jLabelUser, "GestionUser.jpg");
         changeImage("Ticket-clic.jpg", jLabelticket);
         rSPanelsSlider1.setPanelSlider(15, jPanelModuleTickets, RSPanelsSlider.DIRECT.RIGHT);
+        manager.requestFillTableUsersToTickets();
     }//GEN-LAST:event_jLabelticketMouseClicked
 
     private void jPanelUserRegisterItemMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelUserRegisterItemMouseEntered
