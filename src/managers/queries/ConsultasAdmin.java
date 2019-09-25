@@ -847,5 +847,160 @@ public class ConsultasAdmin extends ConexionBD {
 
         return result;
     }
+    
+        public String getFecha() {
+        java.util.Date myDate = new java.util.Date();
+
+        String fecha = new SimpleDateFormat("yyyy-MM-dd").format(myDate);
+
+        return fecha;
+    }
+    
+    
+
+    public String guardarMenu(String img, VistaAdmin vista) {
+        String result = "";
+        String nameType = vista.tipoImg;
+        String newDate = vista.jTextFieldNewDate.getText();
+        int idType = 0;
+        try {
+
+            PreparedStatement ps = null;
+            ResultSet rs = null;
+
+            Connection conn = Conexion();
+            if (!newDate.equals("")) {
+                String getFecha = "SELECT file_image FROM uvfood_images WHERE publication_date = '" + newDate + "' AND type_image = 2;";
+                ps = conn.prepareStatement(getFecha);
+                rs = ps.executeQuery();
+                if (rs.next()) {
+                    result = "error.fecha.esta";
+                } else {
+                    String getIdTipo = "SELECT idtype FROM uvfood_type_image WHERE name_type = '" + nameType + "';";
+                    ps = conn.prepareStatement(getIdTipo);
+                    rs = ps.executeQuery();
+                    if (rs.next()) {
+                        idType = rs.getInt(1);
+
+                        String inserImg = "INSERT INTO uvfood_images (file_image, type_image, publication_date) VALUES('" + img + "','" + idType + "','" + newDate + "');";
+                        ps = conn.prepareStatement(inserImg);
+                        rs = ps.executeQuery();
+                        int res = ps.executeUpdate();
+                        if (res > 0) {
+                            result = "success.dato.insertado";
+
+                        } else {
+                            result = "error.dato.no.insertado";
+                        }
+
+                    }
+                }
+
+            } else {
+
+                String getFecha = "SELECT file_image FROM uvfood_images WHERE publication_date = '" + getFecha() + "' AND type_image = 2;";
+                ps = conn.prepareStatement(getFecha);
+                rs = ps.executeQuery();
+                if (rs.next()) {
+                    result = "error.fecha.esta";
+                } else {
+                    String getIdTipo = "SELECT idtype FROM uvfood_type_image WHERE name_type = '" + nameType + "';";
+                    ps = conn.prepareStatement(getIdTipo);
+                    rs = ps.executeQuery();
+                    if (rs.next()) {
+                        idType = rs.getInt(1);
+
+                        String inserImg = "INSERT INTO uvfood_images (file_image, type_image) VALUES('" + img + "','" + idType + "');";
+                        ps = conn.prepareStatement(inserImg);
+                        rs = ps.executeQuery();
+                        int res = ps.executeUpdate();
+                        if (res > 0) {
+                            result = "success.dato.insertado";
+
+                        } else {
+                            result = "error.dato.no.insertado";
+                        }
+
+                    }
+                }
+            }
+
+            rs.close();
+            ps.close();
+
+        } catch (SQLException ex) {
+            logs.escribirExceptionLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// " + ex.getMessage() + " " + ex.toString());
+            result = "error.sql.error";
+        } catch (NullPointerException np) {
+            logs.escribirExceptionLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// " + np.getMessage() + " " + np.toString());
+            result = "error.NP.error";
+        }
+        return result;
+    }
+
+    public String traerMenu(String fecha) {
+        String result = "";
+        try {
+
+            PreparedStatement ps = null;
+            ResultSet rs = null;
+
+            Connection conn = Conexion();
+
+            String inserImg = "SELECT file_image FROM uvfood_images WHERE publication_date = '" + fecha + "' AND type_image = 2;";
+
+            ps = conn.prepareStatement(inserImg);
+            rs = ps.executeQuery();
+            if (rs.next()) {
+                result = rs.getString(1);
+
+            } else {
+                result = "error.img.no.encontrada";
+            }
+
+            rs.close();
+            ps.close();
+
+        } catch (SQLException ex) {
+            logs.escribirExceptionLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// " + ex.getMessage() + " " + ex.toString());
+            result = "error.sql.error";
+        } catch (NullPointerException np) {
+            logs.escribirExceptionLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// " + np.getMessage() + " " + np.toString());
+            result = "error.NP.error";
+        }
+        return result;
+    }
+    
+        public boolean fillComboImgTipo(VistaAdmin vista) {
+        vista.jComboBoxTipoImg.removeAllItems();
+        Statement ps = null;
+        ResultSet rs = null;
+
+        try {
+            Connection conn = Conexion();
+
+            String sql = "SELECT * FROM uvfood_type_image;";
+            ps = conn.createStatement();
+            rs = ps.executeQuery(sql);
+
+            while (rs.next()) {
+
+                vista.jComboBoxTipoImg.addItem(rs.getString(2));
+            }
+            rs.close();
+            ps.close();
+            return true;
+        } catch (SQLException ex) {
+            logs.escribirExceptionLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// " + ex.getMessage() + " " + ex.toString());
+            return false;
+        } catch (NullPointerException np) {
+            logs.escribirExceptionLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// " + np.getMessage() + " " + np.toString());
+            return false;
+        } catch (ArrayIndexOutOfBoundsException ai) {
+            logs.escribirExceptionLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// " + ai.getMessage() + " " + ai.toString());
+            return false;
+        }
+
+    }
 
 }

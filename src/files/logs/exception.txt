@@ -142,3 +142,33 @@ managers.queries.ConsultasLogin//insert_session_record// No results were returne
 managers.queries.ConsultasAdmin//insertConsumption// ERROR: duplicate key value violates unique constraint "unique_consumption_date_user"
   Detail: Key (iduser, date_consumption)=(21, 2019-09-23) already exists. org.postgresql.util.PSQLException: ERROR: duplicate key value violates unique constraint "unique_consumption_date_user"
   Detail: Key (iduser, date_consumption)=(21, 2019-09-23) already exists.// 2019-09-25T14:00:10.884
+classes.ConexionBD//Conexion// FATAL: password authentication failed for user "postgres" org.postgresql.util.PSQLException: FATAL: password authentication failed for user "postgres"// 2019-09-25T15:33:02.389
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-25T15:33:56.802
+managers.queries.ConsultasAdmin//insertConsumption// ERROR: duplicate key value violates unique constraint "unique_consumption_date_user"
+  Detail: Key (iduser, date_consumption)=(20, 2019-09-23) already exists. org.postgresql.util.PSQLException: ERROR: duplicate key value violates unique constraint "unique_consumption_date_user"
+  Detail: Key (iduser, date_consumption)=(20, 2019-09-23) already exists.// 2019-09-25T15:35:09.619
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-25T15:49:20.138
+managers.queries.ConsultasAdmin//guardarMenu// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-25T15:50:43.474
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-25T15:55:41.754
+managers.queries.ConsultasAdmin//guardarMenu// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-25T15:56:24.074
+managers.queries.ConsultasAdmin//guardarMenu// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-25T15:56:55.450
+managers.queries.ConsultasAdmin//llenarAcciones// -1 java.lang.ArrayIndexOutOfBoundsException: -1// 2019-09-25T15:58:16.083
+managers.queries.ConsultasAdmin//disableUser// null java.lang.NullPointerException// 2019-09-25T15:58:16.103
+classes.ConexionBD//Conexion// FATAL: sorry, too many clients already org.postgresql.util.PSQLException: FATAL: sorry, too many clients already// 2019-09-25T16:03:35.072
+classes.ConexionBD//Conexion// FATAL: sorry, too many clients already org.postgresql.util.PSQLException: FATAL: sorry, too many clients already// 2019-09-25T16:03:35.188
+classes.ConexionBD//Conexion// FATAL: sorry, too many clients already org.postgresql.util.PSQLException: FATAL: sorry, too many clients already// 2019-09-25T16:04:12.323
+classes.ConexionBD//Conexion// FATAL: sorry, too many clients already org.postgresql.util.PSQLException: FATAL: sorry, too many clients already// 2019-09-25T16:04:12.483
+classes.ConexionBD//Conexion// FATAL: sorry, too many clients already org.postgresql.util.PSQLException: FATAL: sorry, too many clients already// 2019-09-25T16:04:12.666
+classes.ConexionBD//Conexion// FATAL: sorry, too many clients already org.postgresql.util.PSQLException: FATAL: sorry, too many clients already// 2019-09-25T16:04:12.826
+managers.queries.ConsultasAdmin//insertConsumption// ERROR: duplicate key value violates unique constraint "unique_consumption_date_user"
+  Detail: Key (iduser, date_consumption)=(18, 2019-09-23) already exists. org.postgresql.util.PSQLException: ERROR: duplicate key value violates unique constraint "unique_consumption_date_user"
+  Detail: Key (iduser, date_consumption)=(18, 2019-09-23) already exists.// 2019-09-25T16:06:17.233
+managers.queries.ConsultasAdmin//insertConsumption// ERROR: duplicate key value violates unique constraint "unique_consumption_date_user"
+  Detail: Key (iduser, date_consumption)=(20, 2019-09-23) already exists. org.postgresql.util.PSQLException: ERROR: duplicate key value violates unique constraint "unique_consumption_date_user"
+  Detail: Key (iduser, date_consumption)=(20, 2019-09-23) already exists.// 2019-09-25T16:06:32.330
+managers.queries.ConsultasAdmin//insertConsumption// ERROR: duplicate key value violates unique constraint "unique_consumption_date_user"
+  Detail: Key (iduser, date_consumption)=(21, 2019-09-23) already exists. org.postgresql.util.PSQLException: ERROR: duplicate key value violates unique constraint "unique_consumption_date_user"
+  Detail: Key (iduser, date_consumption)=(21, 2019-09-23) already exists.// 2019-09-25T16:06:35.165
+managers.queries.ConsultasAdmin//insertConsumption// ERROR: duplicate key value violates unique constraint "unique_consumption_date_user"
+  Detail: Key (iduser, date_consumption)=(19, 2019-09-23) already exists. org.postgresql.util.PSQLException: ERROR: duplicate key value violates unique constraint "unique_consumption_date_user"
+  Detail: Key (iduser, date_consumption)=(19, 2019-09-23) already exists.// 2019-09-25T16:06:44.301
