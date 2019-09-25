@@ -1457,7 +1457,7 @@ public class VistaAdmin extends javax.swing.JFrame implements Runnable {
                             .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 399, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanelModuleUserRegisterLayout.createSequentialGroup()
                                 .addGroup(jPanelModuleUserRegisterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 392, Short.MAX_VALUE)
+                                    .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 392, Short.MAX_VALUE)
                                     .addComponent(jPanelSelectCSVUser, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jButtonCargar, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -2639,8 +2639,8 @@ public class VistaAdmin extends javax.swing.JFrame implements Runnable {
     public javax.swing.JTextField jTextFieldRol;
     public javax.swing.JTextField jTextFieldTotalVenta;
     public javax.swing.JTextField jTextFieldUser;
-    private javax.swing.JLabel jlFecha;
-    private javax.swing.JLabel jlHora;
+    public javax.swing.JLabel jlFecha;
+    public javax.swing.JLabel jlHora;
     public javax.swing.JLabel jlSessionsGraph;
     public javax.swing.JLabel jlUsersGraph;
     private rojerusan.RSPanelsSlider rSPanelsSlider1;

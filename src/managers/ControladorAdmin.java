@@ -418,7 +418,12 @@ public class ControladorAdmin {
     }
     
     public void createFactura(){
-        
+        factura.jLabelNameVendedor.setText(user.getFirstname()+" "+user.getSurname());
+        factura.jLabelFecha.setText(interfazPrincipalAdmin.jlFecha.getText()+" "+interfazPrincipalAdmin.jlHora.getText());
+        factura.jLabelTicketsComprados.setText(interfazPrincipalAdmin.jTextFieldCantidadTickets.getText());
+        factura.jLabelTotal.setText(interfazPrincipalAdmin.jTextFieldTotalVenta.getText());
+        factura.jLabelEfectivo.setText(interfazPrincipalAdmin.jTextFieldEfectivo.getText());
+        factura.jLabelCambio.setText(interfazPrincipalAdmin.jTextFieldCambio.getText());
         factura.setVisible(true);
     }
     
