@@ -12,6 +12,9 @@ import java.awt.print.PageFormat;
 import java.awt.print.Printable;
 import static java.awt.print.Printable.NO_SUCH_PAGE;
 import static java.awt.print.Printable.PAGE_EXISTS;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import javax.swing.JPanel;
 
 /**
  *
@@ -68,7 +71,7 @@ public class Factura extends javax.swing.JFrame implements Printable {
         jSeparator10 = new javax.swing.JSeparator();
         jLabel32 = new javax.swing.JLabel();
         jLabelFecha = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
+        btPrint = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -178,13 +181,13 @@ public class Factura extends javax.swing.JFrame implements Printable {
         jLabelFecha.setText("Value");
         jPanel.add(jLabelFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 530, 400, 40));
 
-        jButton2.setText("Print");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        btPrint.setText("Print");
+        btPrint.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                btPrintActionPerformed(evt);
             }
         });
-        jPanel.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 630, -1, -1));
+        jPanel.add(btPrint, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 630, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -207,10 +210,10 @@ public class Factura extends javax.swing.JFrame implements Printable {
         this.dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void btPrintActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btPrintActionPerformed
         // TODO add your handling code here:
-                printSale();
-    }//GEN-LAST:event_jButton2ActionPerformed
+        printSale();
+    }//GEN-LAST:event_btPrintActionPerformed
 
     /**
      * @param args the command line arguments
@@ -248,8 +251,8 @@ public class Factura extends javax.swing.JFrame implements Printable {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btPrint;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel27;
@@ -282,44 +285,44 @@ public class Factura extends javax.swing.JFrame implements Printable {
     private javax.swing.JSeparator jSeparator9;
     // End of variables declaration//GEN-END:variables
 
-    
-
     public void printSale() {
-        try
-    	{
-    	 // create a PDF Printer Job
-    	 PDFPrinterJob printer = (PDFPrinterJob)PDFPrinterJob.getPrinterJob ();
-    	 // set the printable object 
-    	 printer.setPrintable (this);
-    	 // set number of copies to 1 
-    	 printer.setCopies (1);
-    	 // print and save the document
-    	 printer.print(".\\src\\files\\facturas\\factura"+jLabelFecha+".pdf");
-    	 // output done message 
-    	 System.out.println("Done!");
-    	}
-    	catch (Throwable t)
-    	{
-    	 t.printStackTrace();
-    	}
+        try {
+            // create a PDF Printer Job
+            PDFPrinterJob printer = (PDFPrinterJob) PDFPrinterJob.getPrinterJob();
+            // set the printable object 
+            printer.setPrintable(this);
+            // set number of copies to 1 
+            printer.setCopies(1);
+            // print and save the document
+            Date d1 = new Date();
+            SimpleDateFormat df = new SimpleDateFormat("MMddYYYYHHmma");
+            String formattedDate = df.format(d1);
+            printer.print(".\\src\\files\\facturas\\factura" +formattedDate+ ".pdf");
+            // output done message 
+            System.out.println("Done!");
+        } catch (Throwable t) {
+            t.printStackTrace();
+        }
     }
-    
+
     @Override
-     public int print (Graphics g, PageFormat pf, int pageIndex) 
-    {
-    	if (pageIndex == 0)
-    	{
- 
-          // translate the graphics for margins
-    	  g.translate(100, 100);
- 
-    	 // print the panel to the graphics on page 0
-    	 jPanel.print (g);
-    	 return Printable.PAGE_EXISTS;
-    	}
-    	else
-    	{
-    	 return Printable.NO_SUCH_PAGE;
-    	}
+    public int print(Graphics g, PageFormat pf, int pageIndex) {
+        try {
+            if (pageIndex == 0) {
+
+                // translate the graphics for margins
+                g.translate(100, 100);
+
+                // print the panel to the graphics on page 0
+                btPrint.setVisible(false);
+                jPanel.print(g);
+                btPrint.setVisible(true);
+                return Printable.PAGE_EXISTS;
+            } else {
+                return Printable.NO_SUCH_PAGE;
+            }
+        } catch (Exception e) {
+            return Printable.NO_SUCH_PAGE;
+        }
     }
 }

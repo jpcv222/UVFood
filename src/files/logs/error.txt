@@ -141,3 +141,11 @@ managers.ControladorAdmin//printSale/error./ imprimiento factura// 2019-09-25T03
 managers.ControladorLogin//insert_session_record// Error desconocido.// 2019-09-25T03:09:55.155
 managers.ControladorAdmin//printSale/error./ imprimiento factura// 2019-09-25T03:10:17.478
 managers.ControladorLogin//insert_session_record// Error desconocido.// 2019-09-25T03:16:13.678
+managers.ControladorLogin//insert_session_record// Error desconocido.// 2019-09-25T13:34:45.196
+managers.ControladorLogin//insert_session_record// Error desconocido.// 2019-09-25T13:43:11.580
+managers.ControladorLogin//insert_session_record// Error desconocido.// 2019-09-25T13:52:03.869
+managers.ControladorLogin//insert_session_record// Error desconocido.// 2019-09-25T13:53:00.781
+managers.ControladorLogin//request_login// La contraseña no coincide con el usuario.// 2019-09-25T13:54:08.481
+managers.ControladorLogin//insert_session_record// Error desconocido.// 2019-09-25T13:54:17.847
+managers.ControladorLogin//insert_session_record// Error desconocido.// 2019-09-25T13:55:56.719
+managers.ControladorLogin//insert_session_record// Error desconocido.// 2019-09-25T13:58:49.187
