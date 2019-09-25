@@ -677,3 +677,59 @@ managers.queries.KeyValidate//resultHaveKey// Permiso concedido.// 2019-09-24T19
 managers.queries.KeyValidate//resultHaveKey// Permiso concedido.// 2019-09-24T19:38:10.185
 managers.queries.KeyValidate//resultHaveKey// Permiso concedido.// 2019-09-24T19:38:21.565
 managers.queries.KeyValidate//resultHaveKey// Permiso concedido.// 2019-09-24T19:38:26.330
+managers.queries.KeyValidate//resultHaveKey// Permiso concedido.// 2019-09-25T10:13:03.802
+managers.ControladorAdmin//createJFreeChartCount// Se genera gráfica con 3 registros.// 2019-09-25T10:13:04.012
+managers.queries.KeyValidate//resultHaveKey// Permiso concedido.// 2019-09-25T10:13:13.511
+managers.ControladorAdmin//createJFreeChartCount// Se genera gráfica con 7 registros.// 2019-09-25T10:13:13.598
+managers.ControladorLogin//define_view// Acceso a vista admin.// 2019-09-25T10:13:13.610
+managers.ControladorLogin//request_login// Usuario existente.// 2019-09-25T10:13:13.775
+managers.queries.KeyValidate//resultHaveKey// Permiso concedido.// 2019-09-25T10:13:26.447
+managers.ControladorAdmin//createJFreeChartCount// Se genera gráfica con 3 registros.// 2019-09-25T10:13:26.474
+managers.queries.KeyValidate//resultHaveKey// Permiso concedido.// 2019-09-25T10:13:26.504
+managers.ControladorAdmin//createJFreeChartCount// Se genera gráfica con 8 registros.// 2019-09-25T10:13:26.529
+managers.queries.KeyValidate//resultHaveKey// Permiso concedido.// 2019-09-25T10:13:43.481
+managers.ControladorAdmin//createJFreeChartCount// Se genera gráfica con 3 registros.// 2019-09-25T10:13:43.509
+managers.queries.KeyValidate//resultHaveKey// Permiso concedido.// 2019-09-25T10:13:43.539
+managers.ControladorAdmin//createJFreeChartCount// Se genera gráfica con 8 registros.// 2019-09-25T10:13:43.564
+managers.queries.KeyValidate//resultHaveKey// Permiso concedido.// 2019-09-25T10:31:28.986
+managers.ControladorAdmin//createJFreeChartCount// Se genera gráfica con 3 registros.// 2019-09-25T10:31:29.016
+managers.queries.KeyValidate//resultHaveKey// Permiso concedido.// 2019-09-25T10:31:29.188
+managers.ControladorAdmin//createJFreeChartCount// Se genera gráfica con 8 registros.// 2019-09-25T10:31:29.237
+managers.ControladorLogin//define_view// Acceso a vista admin.// 2019-09-25T10:31:29.251
+managers.ControladorLogin//request_login// Usuario existente.// 2019-09-25T10:31:29.293
+managers.queries.KeyValidate//resultHaveKey// Permiso concedido.// 2019-09-25T10:31:39.715
+managers.ControladorAdmin//createJFreeChartCount// Se genera gráfica con 3 registros.// 2019-09-25T10:31:39.741
+managers.queries.KeyValidate//resultHaveKey// Permiso concedido.// 2019-09-25T10:31:39.771
+managers.ControladorAdmin//createJFreeChartCount// Se genera gráfica con 9 registros.// 2019-09-25T10:31:39.797
+managers.queries.KeyValidate//resultHaveKey// Permiso concedido.// 2019-09-25T10:40:18.625
+managers.ControladorAdmin//createJFreeChartCount// Se genera gráfica con 3 registros.// 2019-09-25T10:40:18.654
+managers.queries.KeyValidate//resultHaveKey// Permiso concedido.// 2019-09-25T10:40:18.827
+managers.ControladorAdmin//createJFreeChartCount// Se genera gráfica con 9 registros.// 2019-09-25T10:40:18.856
+managers.ControladorLogin//define_view// Acceso a vista admin.// 2019-09-25T10:40:18.868
+managers.ControladorLogin//request_login// Usuario existente.// 2019-09-25T10:40:18.903
+managers.queries.KeyValidate//resultHaveKey// Permiso concedido.// 2019-09-25T10:45:24.163
+managers.ControladorAdmin//createJFreeChartCount// Se genera gráfica con 3 registros.// 2019-09-25T10:45:24.193
+managers.queries.KeyValidate//resultHaveKey// Permiso concedido.// 2019-09-25T10:45:24.351
+managers.ControladorAdmin//createJFreeChartCount// Se genera gráfica con 10 registros.// 2019-09-25T10:45:24.378
+managers.ControladorLogin//define_view// Acceso a vista admin.// 2019-09-25T10:45:24.390
+managers.ControladorLogin//request_login// Usuario existente.// 2019-09-25T10:45:24.449
+managers.queries.KeyValidate//resultHaveKey// Permiso concedido.// 2019-09-25T11:13:26.896
+managers.ControladorAdmin//createJFreeChartCount// Se genera gráfica con 3 registros.// 2019-09-25T11:13:26.929
+managers.queries.KeyValidate//resultHaveKey// Permiso concedido.// 2019-09-25T11:13:27.078
+managers.ControladorAdmin//createJFreeChartCount// Se genera gráfica con 11 registros.// 2019-09-25T11:13:27.103
+managers.ControladorLogin//define_view// Acceso a vista admin.// 2019-09-25T11:13:27.117
+managers.ControladorLogin//request_login// Usuario existente.// 2019-09-25T11:13:27.151
+managers.queries.KeyValidate//resultHaveKey// Permiso concedido.// 2019-09-25T11:37:57.568
+managers.ControladorAdmin//createJFreeChartCount// Se genera gráfica con 9 registros.// 2019-09-25T11:37:57.596
+managers.queries.KeyValidate//resultHaveKey// Permiso concedido.// 2019-09-25T11:37:57.776
+managers.ControladorAdmin//createJFreeChartCount// Se genera gráfica con 127 registros.// 2019-09-25T11:37:57.802
+managers.ControladorLogin//define_view// Acceso a vista admin.// 2019-09-25T11:37:57.818
+managers.ControladorLogin//request_login// Usuario existente.// 2019-09-25T11:37:57.854
+managers.ControladorLogin//define_view// Acceso a vista cliente.// 2019-09-25T11:39:10.875
+managers.ControladorLogin//request_login// Usuario existente.// 2019-09-25T11:39:10.928
+managers.queries.KeyValidate//resultHaveKey// Permiso concedido.// 2019-09-25T11:50:45.303
+managers.ControladorAdmin//createJFreeChartCount// Se genera gráfica con 10 registros.// 2019-09-25T11:50:45.330
+managers.queries.KeyValidate//resultHaveKey// Permiso concedido.// 2019-09-25T11:50:45.474
+managers.ControladorAdmin//createJFreeChartCount// Se genera gráfica con 129 registros.// 2019-09-25T11:50:45.499
+managers.ControladorLogin//define_view// Acceso a vista admin.// 2019-09-25T11:50:45.516
+managers.ControladorLogin//request_login// Usuario existente.// 2019-09-25T11:50:45.581

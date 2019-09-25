@@ -85,7 +85,7 @@ public class VistaAdmin extends javax.swing.JFrame implements Runnable {
         jLabelHome.setIcon(icono1);
         this.repaint();
 
-        ImageIcon imagen2 = new ImageIcon("src/images/Perfil.jpg");
+        ImageIcon imagen2 = new ImageIcon("src/images/reportes.jpg");
         Icon icono2 = new ImageIcon(imagen2.getImage().getScaledInstance(jLabelReportes.getWidth(), jLabelReportes.getHeight(), Image.SCALE_DEFAULT));
         jLabelReportes.setIcon(icono2);
         this.repaint();
@@ -1976,7 +1976,7 @@ public class VistaAdmin extends javax.swing.JFrame implements Runnable {
         /* setColor(jLabelPerfil);
         resetColor(jLabelUser);
         resetColor(jLabelinterfaz);*/
-        changeImage("perfil-clic.jpg", jLabelReportes);
+        changeImage("reportes-clic.jpg", jLabelReportes);
 
         rSPanelsSlider1.setPanelSlider(15, jPanelReportes, RSPanelsSlider.DIRECT.RIGHT);
         jLabelNoticeNotPermissions.setVisible(false);

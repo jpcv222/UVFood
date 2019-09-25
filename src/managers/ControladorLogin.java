@@ -14,6 +14,7 @@ import validations.FormValidations;
 import views.VistaAdmin;
 import views.VistaCliente;
 import views.VistaLogin;
+import views.Index;
 
 /**
  *
@@ -22,6 +23,7 @@ import views.VistaLogin;
 public class ControladorLogin {
 
     private  VistaLogin vistaLogin;
+    private Index index;
     private final FormValidations validations;
     private Usuario user;
     private ConsultasLogin loginQueries;
@@ -49,6 +51,7 @@ public class ControladorLogin {
             String result = loginQueries.login(user, vistaLogin);
             switch (result) {
                 case "success":
+      
                     vistaLogin.dispose();
                     define_view();
                     insert_session_record();
@@ -103,6 +106,7 @@ public class ControladorLogin {
 
         switch (result) {
             case "success.admin":
+            
                 vistaLogin.dispose();
                 VistaAdmin home_admin = new VistaAdmin();
                 home_admin.manager.user = this.user;

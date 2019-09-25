@@ -511,6 +511,7 @@ public class Index extends javax.swing.JFrame {
             
             login = new VistaLogin();
             login.setVisible(true);
+            this.dispose();
         }
     }//GEN-LAST:event_btnSobreNosotrosActionPerformed
 

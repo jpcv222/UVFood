@@ -34,5 +34,19 @@ public class ControladorCliente {
         this.validaciones = new FormValidations();
         this.keyvalidate = new KeyValidate(modal);
     }
+    
+        public void requestFillTableShopping() {
+        String namekey = "reports.generate.user.sessions";
+        String result = keyvalidate.haveKey(namekey, user.getIdUser());
+        boolean validate = keyvalidate.resultHaveKey(result);
+        interfazPrincipalCliente.jLabelNoticeNotPermissions.setVisible(!validate);
+        interfazPrincipalCliente.jTextFieldBuscarUserSessions.setEnabled(validate);
+        if (validate) {
+            if (!consultasCliente.llenarTablaSales(interfazPrincipalCliente)) {
+                modal.error_message("Error", "Algo anda mal", "No se pueden mostrar registros de la Base de datos", "Por Favor intenta mas tarde", "O reportanos que ocurre");
+            }
+        }
+    }
+    
 
 }

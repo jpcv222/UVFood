@@ -118,3 +118,24 @@ managers.queries.ConsultasAdmin//llenarTablaSales// The column index is out of r
 managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-24T19:13:48.799
 managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-24T19:14:29.636
 managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-24T19:31:15.036
+managers.ControladorAdmin//createJFreeChartCount// null java.lang.NullPointerException// 2019-09-24T23:57:59.562
+managers.ControladorAdmin//createJFreeChartCount// null java.lang.NullPointerException// 2019-09-24T23:57:59.585
+managers.ControladorAdmin//createJFreeChartCount// null java.lang.NullPointerException// 2019-09-25T09:29:02.213
+managers.ControladorAdmin//createJFreeChartCount// null java.lang.NullPointerException// 2019-09-25T09:29:02.234
+managers.ControladorAdmin//createJFreeChartCount// null java.lang.NullPointerException// 2019-09-25T09:53:21.702
+managers.ControladorAdmin//createJFreeChartCount// null java.lang.NullPointerException// 2019-09-25T09:53:21.709
+classes.ConexionBD//Conexion// FATAL: la autentificación password falló para el usuario «postgres» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf) org.postgresql.util.PSQLException: FATAL: la autentificación password falló para el usuario «postgres» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf)// 2019-09-25T10:03:14.013
+managers.queries.ConsultasLogin//insert_session_record// La consulta no retornó ningún resultado. org.postgresql.util.PSQLException: La consulta no retornó ningún resultado.// 2019-09-25T10:13:13.752
+managers.queries.ConsultasLogin//insert_session_record// La consulta no retornó ningún resultado. org.postgresql.util.PSQLException: La consulta no retornó ningún resultado.// 2019-09-25T10:31:29.291
+managers.queries.ConsultasLogin//insert_session_record// La consulta no retornó ningún resultado. org.postgresql.util.PSQLException: La consulta no retornó ningún resultado.// 2019-09-25T10:40:18.902
+managers.queries.ConsultasLogin//insert_session_record// La consulta no retornó ningún resultado. org.postgresql.util.PSQLException: La consulta no retornó ningún resultado.// 2019-09-25T10:45:24.448
+managers.queries.ConsultasLogin//insert_session_record// La consulta no retornó ningún resultado. org.postgresql.util.PSQLException: La consulta no retornó ningún resultado.// 2019-09-25T11:13:27.150
+managers.queries.ConsultasAdmin//crearUsuario// ERROR: llave duplicada viola restricción de unicidad «uvfood_user_password_user_key»
+  Detail: Ya existe la llave (password_user)=(123). org.postgresql.util.PSQLException: ERROR: llave duplicada viola restricción de unicidad «uvfood_user_password_user_key»
+  Detail: Ya existe la llave (password_user)=(123).// 2019-09-25T11:15:07.173
+managers.queries.ConsultasAdmin//crearUsuario// ERROR: llave duplicada viola restricción de unicidad «uvfood_user_password_user_key»
+  Detail: Ya existe la llave (password_user)=(123). org.postgresql.util.PSQLException: ERROR: llave duplicada viola restricción de unicidad «uvfood_user_password_user_key»
+  Detail: Ya existe la llave (password_user)=(123).// 2019-09-25T11:15:30.446
+managers.queries.ConsultasLogin//insert_session_record// La consulta no retornó ningún resultado. org.postgresql.util.PSQLException: La consulta no retornó ningún resultado.// 2019-09-25T11:37:57.853
+managers.queries.ConsultasLogin//insert_session_record// La consulta no retornó ningún resultado. org.postgresql.util.PSQLException: La consulta no retornó ningún resultado.// 2019-09-25T11:39:10.927
+managers.queries.ConsultasLogin//insert_session_record// La consulta no retornó ningún resultado. org.postgresql.util.PSQLException: La consulta no retornó ningún resultado.// 2019-09-25T11:50:45.580

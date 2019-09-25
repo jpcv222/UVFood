@@ -9,6 +9,7 @@ import java.awt.Color;
 import java.awt.Frame;
 import java.awt.event.KeyEvent;
 import managers.ControladorLogin;
+import views.Index;
 
 /**
  *
@@ -22,7 +23,7 @@ public class VistaLogin extends javax.swing.JFrame {
     //variables para mover el frame con el teclado
     int xMouse;
     int yMouse;
-    
+    private Index index;
     private final ControladorLogin login_manager;
     
 
@@ -89,6 +90,9 @@ public class VistaLogin extends javax.swing.JFrame {
         jButtonIniciarSesion.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jButtonIniciarSesion.setFocusPainted(false);
         jButtonIniciarSesion.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButtonIniciarSesionMouseClicked(evt);
+            }
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 jButtonIniciarSesionMousePressed(evt);
             }
@@ -364,6 +368,10 @@ public class VistaLogin extends javax.swing.JFrame {
         if(evt.getKeyCode() == KeyEvent.VK_ENTER)
             jButtonIniciarSesion.doClick();
     }//GEN-LAST:event_jTextField1KeyPressed
+
+    private void jButtonIniciarSesionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonIniciarSesionMouseClicked
+        
+    }//GEN-LAST:event_jButtonIniciarSesionMouseClicked
 
     /**
      * @param args the command line arguments

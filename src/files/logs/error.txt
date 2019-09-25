@@ -131,3 +131,26 @@ managers.ControladorGestionPermisos//existInputModule// Consulta no arroja resul
 managers.ControladorGestionPermisos//existInputKey// Consulta no arroja resultados.// 2019-09-24T19:36:28.418
 managers.ControladorGestionPermisos//existInputModule// Consulta no arroja resultados.// 2019-09-24T19:36:34.466
 managers.ControladorGestionPermisos//existInputKey// Consulta no arroja resultados.// 2019-09-24T19:36:37.450
+managers.ControladorLogin//insert_session_record// Error desconocido.// 2019-09-25T10:13:13.753
+managers.queries.KeyValidate//resultHaveKey// Permisos denegados.// 2019-09-25T10:13:27.324
+managers.queries.KeyValidate//resultHaveKey// Permisos denegados.// 2019-09-25T10:13:27.352
+managers.ControladorLogin//insert_session_record// Error desconocido.// 2019-09-25T10:31:29.293
+managers.queries.KeyValidate//resultHaveKey// Permisos denegados.// 2019-09-25T10:31:36.869
+managers.queries.KeyValidate//resultHaveKey// Permisos denegados.// 2019-09-25T10:31:36.919
+managers.queries.KeyValidate//resultHaveKey// Permisos denegados.// 2019-09-25T10:32:23.918
+managers.queries.KeyValidate//resultHaveKey// Permisos denegados.// 2019-09-25T10:32:23.946
+managers.ControladorLogin//insert_session_record// Error desconocido.// 2019-09-25T10:40:18.902
+managers.ControladorLogin//insert_session_record// Error desconocido.// 2019-09-25T10:45:24.449
+managers.ControladorLogin//request_login// Campos obligatorios vacíos.// 2019-09-25T10:55:37.318
+managers.ControladorLogin//insert_session_record// Error desconocido.// 2019-09-25T11:13:27.150
+managers.queries.KeyValidate//resultHaveKey// Permisos denegados.// 2019-09-25T11:13:35.742
+managers.queries.KeyValidate//resultHaveKey// Permisos denegados.// 2019-09-25T11:13:35.773
+managers.ControladorAdmin//requestValidationsInsertUser//fecha ingresada no es valida// 2019-09-25T11:14:46.622
+managers.ControladorAdmin//requestValidationsInsertUser//fecha ingresada no es valida// 2019-09-25T11:14:58.981
+managers.ControladorAdmin//requestInsertUser/error./ validando campos // 2019-09-25T11:15:07.179
+managers.ControladorAdmin//requestInsertUser/error./ validando campos // 2019-09-25T11:15:30.451
+managers.ControladorLogin//insert_session_record// Error desconocido.// 2019-09-25T11:37:57.854
+managers.ControladorLogin//insert_session_record// Error desconocido.// 2019-09-25T11:39:10.928
+managers.ControladorLogin//insert_session_record// Error desconocido.// 2019-09-25T11:50:45.581
+managers.queries.KeyValidate//resultHaveKey// Permisos denegados.// 2019-09-25T11:50:49.114
+managers.queries.KeyValidate//resultHaveKey// Permisos denegados.// 2019-09-25T11:50:49.258
