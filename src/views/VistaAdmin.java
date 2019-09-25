@@ -42,8 +42,11 @@ public class VistaAdmin extends javax.swing.JFrame implements Runnable {
     int xMouse;
     int yMouse;
     public JPopupMenu popup = new JPopupMenu();
+
     public JFileChooser fileImg = new JFileChooser();
     public File nombreImg;
+
+    public String tipoImg;
 
     public ControladorAdmin manager;
     private UVFoodDialogs modal;
@@ -109,6 +112,12 @@ public class VistaAdmin extends javax.swing.JFrame implements Runnable {
         jTextFieldIdUser.setVisible(false);
         jTextFieldActivo.setVisible(false);
         jTextFieldNumActi.setVisible(false);
+
+        jPanelFechaMenu.setVisible(false);
+
+        manager.requestFillCombo();
+        manager.requestFillComboImgType();
+        manager.requestTraerMenu();
     }
 
     public void hora() {
@@ -284,18 +293,19 @@ public class VistaAdmin extends javax.swing.JFrame implements Runnable {
         jPanelGestionInterfaz = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         btnEscogerImg = new javax.swing.JButton();
-        btnGuardarImg = new javax.swing.JButton();
         jLabelEscogerImagen = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        jPanel8 = new javax.swing.JPanel();
-        jLabel8 = new javax.swing.JLabel();
-        jLabelUserNamePerm1 = new javax.swing.JLabel();
-        jLabel35 = new javax.swing.JLabel();
+        jComboBoxTipoImg = new javax.swing.JComboBox<>();
         jLabel36 = new javax.swing.JLabel();
+        btnGuardarImg = new javax.swing.JButton();
+        jPanelFechaMenu = new javax.swing.JPanel();
+        jLabel35 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jTextFieldNewDate = new javax.swing.JTextField();
+        jSeparator14 = new javax.swing.JSeparator();
         jLabel37 = new javax.swing.JLabel();
-        jLabel38 = new javax.swing.JLabel();
-        jLabel39 = new javax.swing.JLabel();
-        jLabel40 = new javax.swing.JLabel();
+        jPanel8 = new javax.swing.JPanel();
+        jLabelMenuActual = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
         jPanelModuleTickets = new javax.swing.JPanel();
         jPanelMenuOptionsModuleTickets = new javax.swing.JPanel();
         jPanelTicketRegisterItem = new javax.swing.JPanel();
@@ -325,6 +335,33 @@ public class VistaAdmin extends javax.swing.JFrame implements Runnable {
         jLabel24 = new javax.swing.JLabel();
         jLabel41 = new javax.swing.JLabel();
         jPanelModuleConfigTickets = new javax.swing.JPanel();
+        jPanelModuleTickets1 = new javax.swing.JPanel();
+        jPanelMenuOptionsModuleTickets1 = new javax.swing.JPanel();
+        jPanelTicketRegisterItem1 = new javax.swing.JPanel();
+        jLabel40 = new javax.swing.JLabel();
+        btnConfigTickets1 = new javax.swing.JButton();
+        jPanelModuleTicketsUser1 = new javax.swing.JPanel();
+        jPanel11 = new javax.swing.JPanel();
+        jLabel38 = new javax.swing.JLabel();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        jTableUsersToTickets1 = new javax.swing.JTable();
+        jTextFieldBuscarUserToTicket1 = new javax.swing.JTextField();
+        jLabel39 = new javax.swing.JLabel();
+        jPanelSale1 = new javax.swing.JPanel();
+        jLabelUsernameSales1 = new javax.swing.JLabel();
+        jSeparator13 = new javax.swing.JSeparator();
+        jLabel42 = new javax.swing.JLabel();
+        jTextFieldCantidadTickets1 = new javax.swing.JTextField();
+        jLabel54 = new javax.swing.JLabel();
+        jTextFieldTotalVenta1 = new javax.swing.JTextField();
+        jLabel55 = new javax.swing.JLabel();
+        jTextFieldEfectivo1 = new javax.swing.JTextField();
+        jSeparator15 = new javax.swing.JSeparator();
+        btnFacturar1 = new javax.swing.JButton();
+        jLabel56 = new javax.swing.JLabel();
+        jTextFieldCambio1 = new javax.swing.JTextField();
+        jLabel57 = new javax.swing.JLabel();
+        jPanelModuleConfigTickets1 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -486,7 +523,7 @@ public class VistaAdmin extends javax.swing.JFrame implements Runnable {
             jPanelHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelHeaderLayout.createSequentialGroup()
                 .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 323, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 543, Short.MAX_VALUE)
                 .addComponent(jlHora)
                 .addGap(30, 30, 30)
                 .addComponent(jlFecha)
@@ -531,7 +568,7 @@ public class VistaAdmin extends javax.swing.JFrame implements Runnable {
             .addGroup(jPanelHeaderIndexLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabelBienvenida, javax.swing.GroupLayout.PREFERRED_SIZE, 909, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(80, Short.MAX_VALUE))
+                .addContainerGap(89, Short.MAX_VALUE))
         );
         jPanelHeaderIndexLayout.setVerticalGroup(
             jPanelHeaderIndexLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -541,7 +578,7 @@ public class VistaAdmin extends javax.swing.JFrame implements Runnable {
                 .addContainerGap())
         );
 
-        jPanelIndexAdmin.add(jPanelHeaderIndex, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1001, -1));
+        jPanelIndexAdmin.add(jPanelHeaderIndex, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1010, -1));
 
         P_GraficaUsers_content.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         P_GraficaUsers_content.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -1514,6 +1551,15 @@ public class VistaAdmin extends javax.swing.JFrame implements Runnable {
             }
         });
 
+        jComboBoxTipoImg.setEnabled(false);
+        jComboBoxTipoImg.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBoxTipoImgActionPerformed(evt);
+            }
+        });
+
+        jLabel36.setText("Tipo imagen");
+
         btnGuardarImg.setBackground(new java.awt.Color(255, 255, 255));
         btnGuardarImg.setText("Guardar imagen");
         btnGuardarImg.setBorder(javax.swing.BorderFactory.createEtchedBorder());
@@ -1535,95 +1581,135 @@ public class VistaAdmin extends javax.swing.JFrame implements Runnable {
             }
         });
 
+        jPanelFechaMenu.setBackground(new java.awt.Color(255, 255, 255));
+
+        jLabel35.setText("Si el menu es para un dia diferente de hoy debes especificar la fecha");
+
+        jLabel8.setText("Fecha");
+
+        jTextFieldNewDate.setBorder(null);
+
+        javax.swing.GroupLayout jPanelFechaMenuLayout = new javax.swing.GroupLayout(jPanelFechaMenu);
+        jPanelFechaMenu.setLayout(jPanelFechaMenuLayout);
+        jPanelFechaMenuLayout.setHorizontalGroup(
+            jPanelFechaMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelFechaMenuLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanelFechaMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jSeparator14)
+                    .addComponent(jTextFieldNewDate, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelFechaMenuLayout.createSequentialGroup()
+                        .addGap(0, 11, Short.MAX_VALUE)
+                        .addGroup(jPanelFechaMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(jLabel8, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel35, javax.swing.GroupLayout.PREFERRED_SIZE, 335, Short.MAX_VALUE))))
+                .addContainerGap())
+        );
+        jPanelFechaMenuLayout.setVerticalGroup(
+            jPanelFechaMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelFechaMenuLayout.createSequentialGroup()
+                .addGap(35, 35, 35)
+                .addComponent(jLabel35, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel8)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jTextFieldNewDate, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(9, 9, 9)
+                .addComponent(jSeparator14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(50, 50, 50)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnEscogerImg, javax.swing.GroupLayout.PREFERRED_SIZE, 258, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnGuardarImg, javax.swing.GroupLayout.PREFERRED_SIZE, 258, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabelEscogerImagen, javax.swing.GroupLayout.PREFERRED_SIZE, 278, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(62, 62, 62))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(23, 23, 23)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(jComboBoxTipoImg, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnEscogerImg, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 335, Short.MAX_VALUE)
+                            .addComponent(jLabel36, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jPanelFechaMenu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(30, 30, 30)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabelEscogerImagen, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 581, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnGuardarImg, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 274, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(19, 19, 19))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jLabelEscogerImagen, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jLabelEscogerImagen, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnGuardarImg, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(btnEscogerImg, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnGuardarImg, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(15, 15, 15)
+                        .addComponent(jLabel36)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jComboBoxTipoImg, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jPanelFechaMenu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addContainerGap())
+        );
+
+        jLabel37.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel37.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel37.setText("Imagenes Slider y menu");
+
+        jPanel8.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel8.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(205, 31, 50), 1, true));
+
+        javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
+        jPanel8.setLayout(jPanel8Layout);
+        jPanel8Layout.setHorizontalGroup(
+            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabelMenuActual, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        jPanel8Layout.setVerticalGroup(
+            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabelMenuActual, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 280, Short.MAX_VALUE)
         );
 
         jLabel9.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel9.setText("Imagenes Slider Pagina Principal");
-
-        jPanel8.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icon.png"))); // NOI18N
-        jPanel8.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 90, 80, 120));
-
-        jLabelUserNamePerm1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jLabelUserNamePerm1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jLabelUserNamePerm1.setText("Módulo en construcción.");
-        jPanel8.add(jLabelUserNamePerm1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 10, -1, -1));
-
-        jLabel35.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/nut-icon.png"))); // NOI18N
-        jPanel8.add(jLabel35, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 10, 80, 130));
-
-        jLabel36.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/screw.png"))); // NOI18N
-        jPanel8.add(jLabel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 80, 80, 130));
-
-        jLabel37.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/nut-icon.png"))); // NOI18N
-        jPanel8.add(jLabel37, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 100, 80, 130));
-
-        jLabel38.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/screw.png"))); // NOI18N
-        jPanel8.add(jLabel38, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 10, 80, 130));
-
-        jLabel39.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icon.png"))); // NOI18N
-        jPanel8.add(jLabel39, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 0, 80, 120));
-
-        jLabel40.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/nut-icon.png"))); // NOI18N
-        jPanel8.add(jLabel40, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, 80, 130));
+        jLabel9.setText("Menu actual");
 
         javax.swing.GroupLayout jPanelGestionInterfazLayout = new javax.swing.GroupLayout(jPanelGestionInterfaz);
         jPanelGestionInterfaz.setLayout(jPanelGestionInterfazLayout);
         jPanelGestionInterfazLayout.setHorizontalGroup(
             jPanelGestionInterfazLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelGestionInterfazLayout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(jPanelGestionInterfazLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel8, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanelGestionInterfazLayout.createSequentialGroup()
-                        .addGap(20, 20, 20)
-                        .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 278, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 693, Short.MAX_VALUE))
-                    .addGroup(jPanelGestionInterfazLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addGroup(jPanelGestionInterfazLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel37, javax.swing.GroupLayout.PREFERRED_SIZE, 278, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 278, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelGestionInterfazLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, 410, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(277, 277, 277))
         );
         jPanelGestionInterfazLayout.setVerticalGroup(
             jPanelGestionInterfazLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelGestionInterfazLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(12, 12, 12)
+                .addComponent(jLabel37, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(97, 97, 97)
-                .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(130, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(31, 31, 31))
         );
 
         rSPanelsSlider1.add(jPanelGestionInterfaz, "card5");
@@ -1940,6 +2026,277 @@ public class VistaAdmin extends javax.swing.JFrame implements Runnable {
 
         rSPanelsSlider1.add(jPanelModuleTickets, "card3");
 
+        jPanelModuleTickets1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanelModuleTickets1.setName("jPanelModuleUserAdmin"); // NOI18N
+        jPanelModuleTickets1.setPreferredSize(new java.awt.Dimension(961, 704));
+        jPanelModuleTickets1.setRequestFocusEnabled(false);
+        jPanelModuleTickets1.setVerifyInputWhenFocusTarget(false);
+        jPanelModuleTickets1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanelMenuOptionsModuleTickets1.setBackground(new java.awt.Color(205, 31, 50));
+
+        jPanelTicketRegisterItem1.setBackground(new java.awt.Color(205, 31, 50));
+        jPanelTicketRegisterItem1.setName("jPanelUserRegisterItem"); // NOI18N
+        jPanelTicketRegisterItem1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jPanelTicketRegisterItemMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jPanelTicketRegisterItemMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jPanelTicketRegisterItemMouseExited(evt);
+            }
+        });
+
+        jLabel40.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jLabel40.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel40.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel40.setText("Venta tickets");
+        jLabel40.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel23MouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanelTicketRegisterItem1Layout = new javax.swing.GroupLayout(jPanelTicketRegisterItem1);
+        jPanelTicketRegisterItem1.setLayout(jPanelTicketRegisterItem1Layout);
+        jPanelTicketRegisterItem1Layout.setHorizontalGroup(
+            jPanelTicketRegisterItem1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelTicketRegisterItem1Layout.createSequentialGroup()
+                .addContainerGap(40, Short.MAX_VALUE)
+                .addComponent(jLabel40, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(34, 34, 34))
+        );
+        jPanelTicketRegisterItem1Layout.setVerticalGroup(
+            jPanelTicketRegisterItem1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelTicketRegisterItem1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel40, javax.swing.GroupLayout.DEFAULT_SIZE, 39, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
+        jPanelMenuOptionsModuleTickets1.add(jPanelTicketRegisterItem1);
+
+        btnConfigTickets1.setBackground(new java.awt.Color(205, 31, 50));
+        btnConfigTickets1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        btnConfigTickets1.setForeground(new java.awt.Color(255, 255, 255));
+        btnConfigTickets1.setText("Configuración tickets");
+        btnConfigTickets1.setContentAreaFilled(false);
+        btnConfigTickets1.setOpaque(true);
+        btnConfigTickets1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnConfigTicketsMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnConfigTicketsMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnConfigTicketsMouseExited(evt);
+            }
+        });
+        btnConfigTickets1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnConfigTicketsActionPerformed(evt);
+            }
+        });
+        jPanelMenuOptionsModuleTickets1.add(btnConfigTickets1);
+
+        jPanelModuleTickets1.add(jPanelMenuOptionsModuleTickets1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1010, -1));
+
+        jPanelModuleTicketsUser1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanelModuleTicketsUser1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 0, 0), 2));
+        jPanelModuleTicketsUser1.setAlignmentY(1.0F);
+        jPanelModuleTicketsUser1.setPreferredSize(new java.awt.Dimension(977, 635));
+        jPanelModuleTicketsUser1.setRequestFocusEnabled(false);
+        jPanelModuleTicketsUser1.setVerifyInputWhenFocusTarget(false);
+
+        jPanel11.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel11.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(205, 31, 50), 1, true));
+        jPanel11.setMinimumSize(new java.awt.Dimension(936, 165));
+        jPanel11.setPreferredSize(new java.awt.Dimension(949, 165));
+        jPanel11.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel38.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jLabel38.setText("Clientes habilitados");
+        jPanel11.add(jLabel38, new org.netbeans.lib.awtextra.AbsoluteConstraints(13, 1, 399, 39));
+
+        jTableUsersToTickets1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Id", "Usuario", "Nombre", "Apellido", "Tickets acumulados", "Descuento"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.Integer.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jTableUsersToTickets1.getTableHeader().setReorderingAllowed(false);
+        jTableUsersToTickets1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTableUsersToTicketsMouseClicked(evt);
+            }
+        });
+        jScrollPane5.setViewportView(jTableUsersToTickets1);
+        if (jTableUsersToTickets1.getColumnModel().getColumnCount() > 0) {
+            jTableUsersToTickets1.getColumnModel().getColumn(0).setResizable(false);
+            jTableUsersToTickets1.getColumnModel().getColumn(1).setResizable(false);
+            jTableUsersToTickets1.getColumnModel().getColumn(2).setResizable(false);
+            jTableUsersToTickets1.getColumnModel().getColumn(3).setResizable(false);
+            jTableUsersToTickets1.getColumnModel().getColumn(4).setResizable(false);
+            jTableUsersToTickets1.getColumnModel().getColumn(5).setResizable(false);
+        }
+
+        jPanel11.add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(13, 47, 923, 90));
+
+        jTextFieldBuscarUserToTicket1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldBuscarUserToTicketActionPerformed(evt);
+            }
+        });
+        jTextFieldBuscarUserToTicket1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                jTextFieldBuscarUserToTicketKeyReleased(evt);
+            }
+        });
+        jPanel11.add(jTextFieldBuscarUserToTicket1, new org.netbeans.lib.awtextra.AbsoluteConstraints(752, 14, 184, -1));
+
+        jLabel39.setText("Buscar");
+        jPanel11.add(jLabel39, new org.netbeans.lib.awtextra.AbsoluteConstraints(688, 17, 52, -1));
+
+        jPanelModuleTicketsUser1.add(jPanel11);
+
+        jPanelSale1.setMinimumSize(new java.awt.Dimension(949, 418));
+        jPanelSale1.setPreferredSize(new java.awt.Dimension(949, 418));
+        jPanelSale1.setRequestFocusEnabled(false);
+        jPanelSale1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabelUsernameSales1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jLabelUsernameSales1.setForeground(new java.awt.Color(255, 51, 51));
+        jLabelUsernameSales1.setText("Username");
+        jPanelSale1.add(jLabelUsernameSales1, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 0, 630, 50));
+        jPanelSale1.add(jSeparator13, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 120, 925, 10));
+
+        jLabel42.setText("Cambio");
+        jPanelSale1.add(jLabel42, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 50, 110, 30));
+
+        jTextFieldCantidadTickets1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldCantidadTicketsActionPerformed(evt);
+            }
+        });
+        jTextFieldCantidadTickets1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                jTextFieldCantidadTicketsKeyReleased(evt);
+            }
+        });
+        jPanelSale1.add(jTextFieldCantidadTickets1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 80, 90, 30));
+
+        jLabel54.setText("Cantidad tickets");
+        jPanelSale1.add(jLabel54, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 50, 100, 30));
+
+        jTextFieldTotalVenta1.setEnabled(false);
+        jTextFieldTotalVenta1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldTotalVentaActionPerformed(evt);
+            }
+        });
+        jPanelSale1.add(jTextFieldTotalVenta1, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 80, 100, 30));
+
+        jLabel55.setText("Efectivo");
+        jPanelSale1.add(jLabel55, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 50, 60, 30));
+
+        jTextFieldEfectivo1.setEnabled(false);
+        jTextFieldEfectivo1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldEfectivoActionPerformed(evt);
+            }
+        });
+        jTextFieldEfectivo1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                jTextFieldEfectivoKeyReleased(evt);
+            }
+        });
+        jPanelSale1.add(jTextFieldEfectivo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 80, 100, 30));
+        jPanelSale1.add(jSeparator15, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 925, 10));
+
+        btnFacturar1.setBackground(new java.awt.Color(205, 31, 50));
+        btnFacturar1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        btnFacturar1.setForeground(new java.awt.Color(255, 255, 255));
+        btnFacturar1.setText("Facturar");
+        btnFacturar1.setContentAreaFilled(false);
+        btnFacturar1.setOpaque(true);
+        btnFacturar1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnFacturarMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnFacturarMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnFacturarMouseExited(evt);
+            }
+        });
+        btnFacturar1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnFacturarActionPerformed(evt);
+            }
+        });
+        jPanelSale1.add(btnFacturar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 70, -1, -1));
+
+        jLabel56.setText("Total venta");
+        jPanelSale1.add(jLabel56, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 50, 120, 30));
+
+        jTextFieldCambio1.setEnabled(false);
+        jTextFieldCambio1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldCambioActionPerformed(evt);
+            }
+        });
+        jPanelSale1.add(jTextFieldCambio1, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 80, 100, 30));
+
+        jLabel57.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jLabel57.setText("Vender ticket a usuario: ");
+        jPanelSale1.add(jLabel57, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 280, 50));
+
+        jPanelModuleTicketsUser1.add(jPanelSale1);
+
+        jPanelModuleTickets1.add(jPanelModuleTicketsUser1, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 72, -1, 620));
+
+        jPanelModuleConfigTickets1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanelModuleConfigTickets1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 0, 0), 2, true));
+        jPanelModuleConfigTickets1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jPanelModuleConfigTickets1.setRequestFocusEnabled(false);
+        jPanelModuleConfigTickets1.setVerifyInputWhenFocusTarget(false);
+
+        javax.swing.GroupLayout jPanelModuleConfigTickets1Layout = new javax.swing.GroupLayout(jPanelModuleConfigTickets1);
+        jPanelModuleConfigTickets1.setLayout(jPanelModuleConfigTickets1Layout);
+        jPanelModuleConfigTickets1Layout.setHorizontalGroup(
+            jPanelModuleConfigTickets1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 976, Short.MAX_VALUE)
+        );
+        jPanelModuleConfigTickets1Layout.setVerticalGroup(
+            jPanelModuleConfigTickets1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 606, Short.MAX_VALUE)
+        );
+
+        jPanelModuleTickets1.add(jPanelModuleConfigTickets1, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 83, 980, 610));
+
+        rSPanelsSlider1.add(jPanelModuleTickets1, "card3");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -1947,9 +2304,9 @@ public class VistaAdmin extends javax.swing.JFrame implements Runnable {
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanelMenu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
-                .addComponent(rSPanelsSlider1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(rSPanelsSlider1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
             .addComponent(jPanelbtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jPanelHeader, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanelHeader, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1957,7 +2314,7 @@ public class VistaAdmin extends javax.swing.JFrame implements Runnable {
                 .addComponent(jPanelbtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
                 .addComponent(jPanelHeader, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 10, Short.MAX_VALUE)
+                .addGap(0, 0, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(rSPanelsSlider1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanelMenu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
@@ -2059,7 +2416,6 @@ public class VistaAdmin extends javax.swing.JFrame implements Runnable {
         resetColor(jLabelUser, "GestionUser.jpg");
         changeImage("Ticket-clic.jpg", jLabelticket);
         rSPanelsSlider1.setPanelSlider(15, jPanelModuleTickets, RSPanelsSlider.DIRECT.RIGHT);
-        manager.requestFillTableUsersToTickets();
     }//GEN-LAST:event_jLabelticketMouseClicked
 
     private void jPanelUserRegisterItemMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelUserRegisterItemMouseEntered
@@ -2149,47 +2505,6 @@ public class VistaAdmin extends javax.swing.JFrame implements Runnable {
 
 
     }//GEN-LAST:event_btnConsultaUserActionPerformed
-
-    private void btnGuardarImgActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarImgActionPerformed
-        // TODO add your handling code here:
-        manager.guardarImg();
-
-    }//GEN-LAST:event_btnGuardarImgActionPerformed
-
-    private void btnEscogerImgActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEscogerImgActionPerformed
-        // TODO add your handling code here:
-        fileImg.showOpenDialog(this);
-        nombreImg = fileImg.getSelectedFile();
-        if (manager.validarImg()) {
-            String rutaImagen = fileImg.getSelectedFile().toString();
-            //metodo de libreria importada RSScaleLabel para mostrar la imagen seleccionada
-            rsscalelabel.RSScaleLabel.setScaleLabel(jLabelEscogerImagen, rutaImagen);
-        } else {
-
-        }
-
-
-    }//GEN-LAST:event_btnEscogerImgActionPerformed
-
-    private void btnEscogerImgMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnEscogerImgMouseEntered
-        // TODO add your handling code here:
-        btnEscogerImg.setBackground(new Color(250, 250, 250));
-    }//GEN-LAST:event_btnEscogerImgMouseEntered
-
-    private void btnEscogerImgMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnEscogerImgMouseExited
-        // TODO add your handling code here:
-        btnEscogerImg.setBackground(new Color(255, 255, 255));
-    }//GEN-LAST:event_btnEscogerImgMouseExited
-
-    private void btnGuardarImgMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnGuardarImgMouseEntered
-        // TODO add your handling code here:
-        btnGuardarImg.setBackground(new Color(250, 250, 250));
-    }//GEN-LAST:event_btnGuardarImgMouseEntered
-
-    private void btnGuardarImgMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnGuardarImgMouseExited
-        // TODO add your handling code here:
-        btnGuardarImg.setBackground(new Color(255, 255, 255));
-    }//GEN-LAST:event_btnGuardarImgMouseExited
 
     private void jTableUsersMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTableUsersMouseClicked
         if (evt.getButton() == java.awt.event.MouseEvent.BUTTON1) {
@@ -2459,6 +2774,56 @@ public class VistaAdmin extends javax.swing.JFrame implements Runnable {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextFieldBuscarUserSessions1KeyReleased
 
+    private void btnEscogerImgMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnEscogerImgMouseEntered
+        // TODO add your handling code here:
+        btnEscogerImg.setBackground(new Color(250, 250, 250));
+    }//GEN-LAST:event_btnEscogerImgMouseEntered
+
+    private void btnEscogerImgMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnEscogerImgMouseExited
+        // TODO add your handling code here:
+        btnEscogerImg.setBackground(new Color(255, 255, 255));
+    }//GEN-LAST:event_btnEscogerImgMouseExited
+
+    private void btnEscogerImgActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEscogerImgActionPerformed
+        // TODO add your handling code here:
+        fileImg.showOpenDialog(this);
+        nombreImg = fileImg.getSelectedFile();
+        if (manager.validarImg()) {
+            btnGuardarImg.setEnabled(true);
+            String rutaImagen = fileImg.getSelectedFile().toString();
+            //metodo de libreria importada RSScaleLabel para mostrar la imagen seleccionada
+            rsscalelabel.RSScaleLabel.setScaleLabel(jLabelEscogerImagen, rutaImagen);
+        } else {
+        }
+
+    }//GEN-LAST:event_btnEscogerImgActionPerformed
+
+    private void jComboBoxTipoImgActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxTipoImgActionPerformed
+        // TODO add your handling code here:
+        tipoImg = jComboBoxTipoImg.getSelectedItem().toString();
+        if (tipoImg.equals("Menu")) {
+            jPanelFechaMenu.setVisible(true);
+        } else {
+            jPanelFechaMenu.setVisible(false);
+        }
+    }//GEN-LAST:event_jComboBoxTipoImgActionPerformed
+
+    private void btnGuardarImgMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnGuardarImgMouseEntered
+        // TODO add your handling code here:
+        btnGuardarImg.setBackground(new Color(250, 250, 250));
+    }//GEN-LAST:event_btnGuardarImgMouseEntered
+
+    private void btnGuardarImgMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnGuardarImgMouseExited
+        // TODO add your handling code here:
+        btnGuardarImg.setBackground(new Color(255, 255, 255));
+    }//GEN-LAST:event_btnGuardarImgMouseExited
+
+    private void btnGuardarImgActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarImgActionPerformed
+        // TODO add your handling code here:
+        manager.requestGuardarImg(tipoImg);
+        manager.requestTraerMenu();
+    }//GEN-LAST:event_btnGuardarImgActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -2509,11 +2874,13 @@ public class VistaAdmin extends javax.swing.JFrame implements Runnable {
     public javax.swing.JPanel P_GraficaUsers_content;
     private javax.swing.JButton btnCerrar;
     public javax.swing.JButton btnConfigTickets;
+    public javax.swing.JButton btnConfigTickets1;
     public javax.swing.JButton btnConsultaUser;
     public javax.swing.JButton btnCrearUser;
     public javax.swing.JButton btnEliminarUser;
     public javax.swing.JButton btnEscogerImg;
     public javax.swing.JButton btnFacturar;
+    public javax.swing.JButton btnFacturar1;
     public javax.swing.JButton btnGuardarImg;
     public javax.swing.JButton btnHabilitarEdicion;
     public javax.swing.JButton btnLimpiar;
@@ -2522,6 +2889,7 @@ public class VistaAdmin extends javax.swing.JFrame implements Runnable {
     public javax.swing.JButton btnhabilitarUser;
     public javax.swing.JButton jButtonCargar;
     public javax.swing.JComboBox<String> jComboBoxRoles;
+    public javax.swing.JComboBox<String> jComboBoxTipoImg;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -2558,6 +2926,7 @@ public class VistaAdmin extends javax.swing.JFrame implements Runnable {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel40;
     private javax.swing.JLabel jLabel41;
+    private javax.swing.JLabel jLabel42;
     private javax.swing.JLabel jLabel48;
     private javax.swing.JLabel jLabel49;
     private javax.swing.JLabel jLabel5;
@@ -2565,6 +2934,10 @@ public class VistaAdmin extends javax.swing.JFrame implements Runnable {
     private javax.swing.JLabel jLabel51;
     private javax.swing.JLabel jLabel52;
     private javax.swing.JLabel jLabel53;
+    private javax.swing.JLabel jLabel54;
+    private javax.swing.JLabel jLabel55;
+    private javax.swing.JLabel jLabel56;
+    private javax.swing.JLabel jLabel57;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
@@ -2573,21 +2946,23 @@ public class VistaAdmin extends javax.swing.JFrame implements Runnable {
     public javax.swing.JLabel jLabelBienvenida1;
     public javax.swing.JLabel jLabelEscogerImagen;
     private javax.swing.JLabel jLabelHome;
+    public javax.swing.JLabel jLabelMenuActual;
     public javax.swing.JLabel jLabelNoticeNotPermissions;
     public javax.swing.JLabel jLabelNoticeNotPermissions1;
     private javax.swing.JLabel jLabelReportes;
     public javax.swing.JLabel jLabelRutaArchivo;
     private javax.swing.JLabel jLabelUser;
     public javax.swing.JLabel jLabelUserNamePerm;
-    public javax.swing.JLabel jLabelUserNamePerm1;
     public javax.swing.JLabel jLabelUserNamePerm2;
     public javax.swing.JLabel jLabelUsernameSales;
+    public javax.swing.JLabel jLabelUsernameSales1;
     private javax.swing.JLabel jLabelX;
     private javax.swing.JLabel jLabelX1;
     private javax.swing.JLabel jLabelinterfaz;
     private javax.swing.JLabel jLabelticket;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
+    private javax.swing.JPanel jPanel11;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
@@ -2596,6 +2971,7 @@ public class VistaAdmin extends javax.swing.JFrame implements Runnable {
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
+    private javax.swing.JPanel jPanelFechaMenu;
     private javax.swing.JPanel jPanelGestionInterfaz;
     private javax.swing.JPanel jPanelHeader;
     private javax.swing.JPanel jPanelHeaderIndex;
@@ -2603,17 +2979,23 @@ public class VistaAdmin extends javax.swing.JFrame implements Runnable {
     private javax.swing.JPanel jPanelIndexAdmin;
     private javax.swing.JPanel jPanelMenu;
     private javax.swing.JPanel jPanelMenuOptionsModuleTickets;
+    private javax.swing.JPanel jPanelMenuOptionsModuleTickets1;
     private javax.swing.JPanel jPanelMenuOptionsModuleUser;
     public javax.swing.JPanel jPanelModuleConfigTickets;
+    public javax.swing.JPanel jPanelModuleConfigTickets1;
     private javax.swing.JPanel jPanelModuleTickets;
+    private javax.swing.JPanel jPanelModuleTickets1;
     public javax.swing.JPanel jPanelModuleTicketsUser;
+    public javax.swing.JPanel jPanelModuleTicketsUser1;
     private javax.swing.JPanel jPanelModuleUserAdmin;
     public javax.swing.JPanel jPanelModuleUserRegister;
     public javax.swing.JPanel jPanelModuleUserReports;
     private javax.swing.JPanel jPanelReportes;
     private javax.swing.JPanel jPanelSale;
+    private javax.swing.JPanel jPanelSale1;
     public javax.swing.JPanel jPanelSelectCSVUser;
     private javax.swing.JPanel jPanelTicketRegisterItem;
+    private javax.swing.JPanel jPanelTicketRegisterItem1;
     private javax.swing.JPanel jPanelUserRegisterItem;
     private javax.swing.JPanel jPanelbtn;
     public javax.swing.JPasswordField jPasswordField;
@@ -2621,10 +3003,14 @@ public class VistaAdmin extends javax.swing.JFrame implements Runnable {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator10;
     private javax.swing.JSeparator jSeparator11;
     private javax.swing.JSeparator jSeparator12;
+    private javax.swing.JSeparator jSeparator13;
+    private javax.swing.JSeparator jSeparator14;
+    private javax.swing.JSeparator jSeparator15;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JSeparator jSeparator4;
@@ -2637,23 +3023,30 @@ public class VistaAdmin extends javax.swing.JFrame implements Runnable {
     public javax.swing.JTable jTableUsersSales;
     public javax.swing.JTable jTableUsersSessions;
     public javax.swing.JTable jTableUsersToTickets;
+    public javax.swing.JTable jTableUsersToTickets1;
     public javax.swing.JTextField jTextFieldActivo;
     public javax.swing.JTextField jTextFieldApellido;
     public javax.swing.JTextField jTextFieldBuscarUser;
     public javax.swing.JTextField jTextFieldBuscarUserSessions;
     public javax.swing.JTextField jTextFieldBuscarUserSessions1;
     public javax.swing.JTextField jTextFieldBuscarUserToTicket;
+    public javax.swing.JTextField jTextFieldBuscarUserToTicket1;
     public javax.swing.JTextField jTextFieldCambio;
+    public javax.swing.JTextField jTextFieldCambio1;
     public javax.swing.JTextField jTextFieldCantidadTickets;
+    public javax.swing.JTextField jTextFieldCantidadTickets1;
     public javax.swing.JTextField jTextFieldEfectivo;
+    public javax.swing.JTextField jTextFieldEfectivo1;
     public javax.swing.JTextField jTextFieldEmail;
     public javax.swing.JTextField jTextFieldFecNa;
     public javax.swing.JTextField jTextFieldIdRol;
     public javax.swing.JTextField jTextFieldIdUser;
     public javax.swing.JTextField jTextFieldName;
+    public javax.swing.JTextField jTextFieldNewDate;
     public javax.swing.JTextField jTextFieldNumActi;
     public javax.swing.JTextField jTextFieldRol;
     public javax.swing.JTextField jTextFieldTotalVenta;
+    public javax.swing.JTextField jTextFieldTotalVenta1;
     public javax.swing.JTextField jTextFieldUser;
     public javax.swing.JLabel jlFecha;
     public javax.swing.JLabel jlHora;
