@@ -9,6 +9,7 @@ import classes.ConexionBD;
 import classes.Logs;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.Array;
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
@@ -18,6 +19,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Locale;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -88,6 +90,187 @@ public class ConsultasAdmin extends ConexionBD {
                 modelo.addRow(filas);
             }
             vista.jTableUsers.setModel(modelo);
+            rs.close();
+            ps.close();
+            return true;
+        } catch (SQLException ex) {
+            logs.escribirExceptionLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// " + ex.getMessage() + " " + ex.toString());
+            return false;
+        } catch (NullPointerException np) {
+            logs.escribirExceptionLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// " + np.getMessage() + " " + np.toString());
+            return false;
+        }
+
+    }
+
+    public boolean llenarTablaUsersToTickets(VistaAdmin vista) {
+        DefaultTableModel modelo = new DefaultTableModel() {
+            @Override
+            public boolean isCellEditable(int row, int col) {
+                return false;
+            }
+        };
+        try {
+            Statement ps = null, psaux = null;
+            Connection conn = null;
+            ResultSet rs = null, rsaux = null;
+
+            String sqlUsersToTickets = "SELECT uvfood_user.iduser,  uvfood_user.username, uvfood_user.firstname, uvfood_user.surname, uvfood_user_tickets.count_tickets\n"
+                    + "FROM uvfood_user \n"
+                    + "INNER JOIN uvfood_user_tickets ON uvfood_user.iduser = uvfood_user_tickets.iduser\n"
+                    + "WHERE uvfood_user.is_active = 1 AND uvfood_user.iduser IN \n"
+                    + "	(SELECT iduser FROM uvfood_user_extended WHERE uvfood_user_extended.iduser = uvfood_user.iduser AND id_typeuser IN\n"
+                    + "	(SELECT id_typeuser FROM uvfood_typeuser WHERE type_user = 'Cliente'));";
+
+            conn = Conexion();
+            ps = conn.createStatement();
+            rs = ps.executeQuery(sqlUsersToTickets);
+
+            ResultSetMetaData rsMd = rs.getMetaData();
+            int cantidadCol = rsMd.getColumnCount();
+
+            modelo.addColumn("Id");
+            modelo.addColumn("Usuario");
+            modelo.addColumn("Nombre");
+            modelo.addColumn("Apellido");
+            modelo.addColumn("Tickets acumulados");
+            modelo.addColumn("Descuento");
+
+            while (rs.next()) {
+
+                Object[] filas = new Object[cantidadCol + 1];
+
+                filas[0] = rs.getObject(1);
+                filas[1] = rs.getObject(2);
+                filas[2] = rs.getObject(3);
+                filas[3] = rs.getObject(4);
+                filas[4] = rs.getObject(5);
+                filas[5] = 0;
+                String sqlUserWithDiscount = "SELECT  uvfood_discount.price_discount\n"
+                        + "FROM uvfood_user_discount \n"
+                        + "INNER JOIN uvfood_discount ON uvfood_user_discount.iddiscount = uvfood_discount.iddiscount\n"
+                        + "WHERE uvfood_user_discount.iduser = '" + rs.getObject(1) + "';";
+
+                psaux = conn.createStatement();
+                rsaux = psaux.executeQuery(sqlUserWithDiscount);
+
+                while (rsaux.next()) {
+                    filas[5] = rsaux.getObject(1);
+                }
+
+                modelo.addRow(filas);
+            }
+            vista.jTableUsersToTickets.setModel(modelo);
+            rs.close();
+            ps.close();
+            return true;
+        } catch (SQLException ex) {
+            logs.escribirExceptionLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// " + ex.getMessage() + " " + ex.toString());
+            return false;
+        } catch (NullPointerException np) {
+            logs.escribirExceptionLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// " + np.getMessage() + " " + np.toString());
+            return false;
+        }
+
+    }
+
+    public boolean llenarTablaSessions(VistaAdmin vista) {
+        DefaultTableModel modelo = new DefaultTableModel() {
+            @Override
+            public boolean isCellEditable(int row, int col) {
+                return false;
+            }
+        };
+        try {
+            Statement ps = null;
+            Connection conn = null;
+            ResultSet rs = null;
+
+            String sql = "SELECT uvfood_user.username, uvfood_user.firstname, uvfood_user.surname, count(\"idsession\") AS cant FROM uvfood_sessions \n"
+                    + "INNER JOIN uvfood_user ON uvfood_sessions.iduser = uvfood_user.iduser\n"
+                    + "GROUP BY uvfood_user.iduser;";
+
+            conn = Conexion();
+            ps = conn.createStatement();
+            rs = ps.executeQuery(sql);
+
+            ResultSetMetaData rsMd = rs.getMetaData();
+            int cantidadCol = rsMd.getColumnCount();
+
+            modelo.addColumn("Usuario");
+            modelo.addColumn("Nombre");
+            modelo.addColumn("Apellido");
+            modelo.addColumn("Sesiones");
+
+            while (rs.next()) {
+
+                Object[] filas = new Object[cantidadCol];
+
+                filas[0] = rs.getObject(1);
+                filas[1] = rs.getObject(2);
+                filas[2] = rs.getObject(3);
+                filas[3] = rs.getObject(4);
+
+                modelo.addRow(filas);
+            }
+            vista.jTableUsersSessions.setModel(modelo);
+            rs.close();
+            ps.close();
+            return true;
+        } catch (SQLException ex) {
+            logs.escribirExceptionLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// " + ex.getMessage() + " " + ex.toString());
+            return false;
+        } catch (NullPointerException np) {
+            logs.escribirExceptionLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// " + np.getMessage() + " " + np.toString());
+            return false;
+        }
+
+    }
+
+    public boolean llenarTablaSales(VistaAdmin vista) {
+        DefaultTableModel modelo = new DefaultTableModel() {
+            @Override
+            public boolean isCellEditable(int row, int col) {
+                return false;
+            }
+        };
+        try {
+            Statement ps = null;
+            Connection conn = null;
+            ResultSet rs = null;
+
+            String sql = "SELECT uvfood_user.username, uvfood_user.firstname,  uvfood_user.surname, uvfood_sales.tickets, uvfood_sales.total_price, uvfood_sales.sale_date\n"
+                    + "FROM uvfood_sales \n"
+                    + "INNER JOIN uvfood_user ON uvfood_sales.created_to = uvfood_user.iduser;";
+
+            conn = Conexion();
+            ps = conn.createStatement();
+            rs = ps.executeQuery(sql);
+
+            ResultSetMetaData rsMd = rs.getMetaData();
+            int cantidadCol = rsMd.getColumnCount();
+
+            modelo.addColumn("Usuario");
+            modelo.addColumn("Nombre");
+            modelo.addColumn("Apellido");
+            modelo.addColumn("Tickets");
+            modelo.addColumn("Total");
+            modelo.addColumn("Fecha");
+
+            while (rs.next()) {
+
+                Object[] filas = new Object[cantidadCol];
+
+                filas[0] = rs.getObject(1);
+                filas[1] = rs.getObject(2);
+                filas[2] = rs.getObject(3);
+                filas[3] = rs.getObject(4);
+                filas[4] = rs.getObject(5);
+                filas[5] = rs.getObject(6);
+
+                modelo.addRow(filas);
+            }
+            vista.jTableUsersSales.setModel(modelo);
             rs.close();
             ps.close();
             return true;
@@ -276,43 +459,77 @@ public class ConsultasAdmin extends ConexionBD {
 
     }
 
-    public boolean fillComboImgTipo(VistaAdmin vista) {
-        vista.jComboBoxTipoImg.removeAllItems();
-        Statement ps = null;
-        ResultSet rs = null;
-
-        try {
-            Connection conn = Conexion();
-
-            String sql = "SELECT * FROM uvfood_type_image;";
-            ps = conn.createStatement();
-            rs = ps.executeQuery(sql);
-
-            while (rs.next()) {
-
-                vista.jComboBoxTipoImg.addItem(rs.getString(2));
-            }
-            rs.close();
-            ps.close();
-            return true;
-        } catch (SQLException ex) {
-            logs.escribirExceptionLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// " + ex.getMessage() + " " + ex.toString());
-            return false;
-        } catch (NullPointerException np) {
-            logs.escribirExceptionLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// " + np.getMessage() + " " + np.toString());
-            return false;
-        } catch (ArrayIndexOutOfBoundsException ai) {
-            logs.escribirExceptionLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// " + ai.getMessage() + " " + ai.toString());
-            return false;
-        }
-
-    }
-
     public int get_count_record(String table, String atrib) {
 
         int result = db_core.get_count_record(table, atrib);
         return result;
 
+    }
+
+    public boolean insertSale(VistaAdmin vista) {
+        boolean result = false;
+        try {
+
+            PreparedStatement ps = null;
+
+            int created_by = vista.manager.user.getIdUser();
+            int fila = vista.jTableUsersToTickets.getSelectedRow();
+            int created_to = (int) vista.jTableUsersToTickets.getValueAt(fila, 0);
+            int tickets = Integer.parseInt(vista.jTextFieldCantidadTickets.getText());
+            int total_price = Integer.parseInt(vista.jTextFieldTotalVenta.getText());
+            int cash = Integer.parseInt(vista.jTextFieldEfectivo.getText());
+            int cash_change = Integer.parseInt(vista.jTextFieldCambio.getText());
+
+            Connection conn = Conexion();
+
+            String insertQuery = "INSERT INTO uvfood_sales (created_by, created_to, tickets, total_price, cash, cash_change) VALUES "
+                    + "('" + created_by + "', '" + created_to + "', '" + tickets + "', '" + total_price + "', '" + cash + "', '" + cash_change + "')";
+
+            ps = conn.prepareStatement(insertQuery);
+            int res = ps.executeUpdate();
+            if (res > 0) {
+                result = true;
+            } else {
+                result = false;
+            }
+
+            ps.close();
+
+        } catch (SQLException | NullPointerException | IllegalArgumentException | ClassCastException ex) {
+            logs.escribirExceptionLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// " + ex.getMessage() + " " + ex.toString());
+            result = false;
+        }
+        return result;
+    }
+
+    public boolean insertConsumption(VistaAdmin vista, int row) {
+        boolean result = false;
+        try {
+
+            PreparedStatement ps = null;
+
+            int iduser = (int) vista.jTableUsersToTickets.getValueAt(row, 0);
+
+            Connection conn = Conexion();
+
+            String insertQuery = "INSERT INTO uvfood_consumption_user_ticket (iduser) VALUES "
+                    + "('" + iduser + "');";
+
+            ps = conn.prepareStatement(insertQuery);
+            int res = ps.executeUpdate();
+            if (res > 0) {
+                result = true;
+            } else {
+                result = false;
+            }
+
+            ps.close();
+
+        } catch (SQLException | NullPointerException | IllegalArgumentException | ClassCastException ex) {
+            logs.escribirExceptionLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// " + ex.getMessage() + " " + ex.toString());
+            result = false;
+        }
+        return result;
     }
 
     public String crearUsuario(VistaAdmin vista) {
@@ -353,7 +570,6 @@ public class ConsultasAdmin extends ConexionBD {
                     ps = conn.prepareStatement(insertQuery);
                     int res = ps.executeUpdate();
                     if (res > 0) {
-                        result = "success.dato.insertado";
 
                         ps = conn.prepareStatement(getIdQuery);
                         rs = ps.executeQuery();
@@ -388,7 +604,7 @@ public class ConsultasAdmin extends ConexionBD {
         } catch (SQLException ex) {
             logs.escribirExceptionLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// " + ex.getMessage() + " " + ex.toString());
             result = "error.sql.error";
-        } catch (NullPointerException np) {
+        } catch (NullPointerException | IllegalArgumentException np) {
             logs.escribirExceptionLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// " + np.getMessage() + " " + np.toString());
             result = "error.NP.error";
         }
@@ -601,8 +817,8 @@ public class ConsultasAdmin extends ConexionBD {
 
         return result;
     }
-
-    public String getFecha() {
+    
+        public String getFecha() {
         java.util.Date myDate = new java.util.Date();
 
         String fecha = new SimpleDateFormat("yyyy-MM-dd").format(myDate);
@@ -636,7 +852,7 @@ public class ConsultasAdmin extends ConexionBD {
                     if (rs.next()) {
                         idType = rs.getInt(1);
 
-                        String inserImg = "INSERT INTO uvfood_images (file_image, type_image) VALUES('" + img + "','" + idType + "');";
+                        String inserImg = "INSERT INTO uvfood_images (file_image, type_image, publication_date) VALUES('" + img + "','" + idType + "','" + newDate + "');";
                         ps = conn.prepareStatement(inserImg);
                         rs = ps.executeQuery();
                         int res = ps.executeUpdate();
@@ -692,7 +908,7 @@ public class ConsultasAdmin extends ConexionBD {
         return result;
     }
 
-    public String traerMenu(Date fecha) {
+    public String traerMenu(String fecha) {
         String result = "";
         try {
 
@@ -701,7 +917,7 @@ public class ConsultasAdmin extends ConexionBD {
 
             Connection conn = Conexion();
 
-            String inserImg = "SELECT nombre_img FROM uvfood_img_menu WHERE fecha_menu = '" + fecha + "';";
+            String inserImg = "SELECT file_image FROM uvfood_images WHERE publication_date = '" + fecha + "' AND type_image = 2;";
 
             ps = conn.prepareStatement(inserImg);
             rs = ps.executeQuery();
@@ -723,6 +939,38 @@ public class ConsultasAdmin extends ConexionBD {
             result = "error.NP.error";
         }
         return result;
+    }
+    
+        public boolean fillComboImgTipo(VistaAdmin vista) {
+        vista.jComboBoxTipoImg.removeAllItems();
+        Statement ps = null;
+        ResultSet rs = null;
+
+        try {
+            Connection conn = Conexion();
+
+            String sql = "SELECT * FROM uvfood_type_image;";
+            ps = conn.createStatement();
+            rs = ps.executeQuery(sql);
+
+            while (rs.next()) {
+
+                vista.jComboBoxTipoImg.addItem(rs.getString(2));
+            }
+            rs.close();
+            ps.close();
+            return true;
+        } catch (SQLException ex) {
+            logs.escribirExceptionLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// " + ex.getMessage() + " " + ex.toString());
+            return false;
+        } catch (NullPointerException np) {
+            logs.escribirExceptionLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// " + np.getMessage() + " " + np.toString());
+            return false;
+        } catch (ArrayIndexOutOfBoundsException ai) {
+            logs.escribirExceptionLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// " + ai.getMessage() + " " + ai.toString());
+            return false;
+        }
+
     }
 
 }
