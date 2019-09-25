@@ -150,3 +150,138 @@ managers.ControladorAdmin//validarImg// null java.lang.NullPointerException// 20
 managers.queries.ConsultasAdmin//guardarMenu// La consulta no retornó ningún resultado. org.postgresql.util.PSQLException: La consulta no retornó ningún resultado.// 2019-09-25T13:22:32.716
 managers.queries.ConsultasAdmin//guardarMenu// La consulta no retornó ningún resultado. org.postgresql.util.PSQLException: La consulta no retornó ningún resultado.// 2019-09-25T13:26:11.359
 managers.queries.ConsultasAdmin//guardarMenu// La consulta no retornó ningún resultado. org.postgresql.util.PSQLException: La consulta no retornó ningún resultado.// 2019-09-25T13:30:00.972
+﻿managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-24T01:07:21.512
+managers.queries.ConsultasPermissions//insertModule// ERROR: column "prueba" does not exist
+  Position: 36 org.postgresql.util.PSQLException: ERROR: column "prueba" does not exist
+  Position: 36// 2019-09-24T01:07:35.720
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-24T01:12:46.249
+managers.queries.ConsultasPermissions//insertModule// ERROR: invalid input syntax for integer: "prueba"
+  Position: 36 org.postgresql.util.PSQLException: ERROR: invalid input syntax for integer: "prueba"
+  Position: 36// 2019-09-24T01:13:33.538
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-24T01:14:20.140
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-24T01:49:31.954
+managers.queries.ConsultasPermissions//insertKey// ERROR: null value in column "idmodule" violates not-null constraint
+  Detail: Failing row contains (9, null, asdad). org.postgresql.util.PSQLException: ERROR: null value in column "idmodule" violates not-null constraint
+  Detail: Failing row contains (9, null, asdad).// 2019-09-24T01:49:59.216
+managers.queries.ConsultasPermissions//insertKey// ERROR: null value in column "idmodule" violates not-null constraint
+  Detail: Failing row contains (10, null, asdad). org.postgresql.util.PSQLException: ERROR: null value in column "idmodule" violates not-null constraint
+  Detail: Failing row contains (10, null, asdad).// 2019-09-24T01:50:03.354
+managers.queries.ConsultasPermissions//insertKey// ERROR: null value in column "idmodule" violates not-null constraint
+  Detail: Failing row contains (11, null, permissions.create.keys). org.postgresql.util.PSQLException: ERROR: null value in column "idmodule" violates not-null constraint
+  Detail: Failing row contains (11, null, permissions.create.keys).// 2019-09-24T01:50:54.398
+managers.queries.ConsultasPermissions//insertKey// ERROR: null value in column "idmodule" violates not-null constraint
+  Detail: Failing row contains (12, null, permissions.create.keys). org.postgresql.util.PSQLException: ERROR: null value in column "idmodule" violates not-null constraint
+  Detail: Failing row contains (12, null, permissions.create.keys).// 2019-09-24T01:52:06.454
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-24T01:55:08.425
+managers.queries.ConsultasPermissions//insertKey// ERROR: column "idmodulo" of relation "uvfood_keys" does not exist
+  Position: 26 org.postgresql.util.PSQLException: ERROR: column "idmodulo" of relation "uvfood_keys" does not exist
+  Position: 26// 2019-09-24T01:55:51.916
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-24T01:56:29.300
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-24T02:26:10.382
+classes.FileManage//calcularRutaArchivo// null java.lang.NullPointerException// 2019-09-24T02:38:38.258
+managers.queries.ConsultasPermissions//update_user_keys// ERROR: missing FROM-clause entry for table "create"
+  Position: 39 org.postgresql.util.PSQLException: ERROR: missing FROM-clause entry for table "create"
+  Position: 39// 2019-09-24T02:44:33.964
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-24T03:29:23.841
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-24T03:38:50.421
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-24T03:45:50.410
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-24T03:47:42.090
+managers.ControladorAdmin//createJFreeChartCount// null java.lang.NullPointerException// 2019-09-24T06:07:15.460
+managers.ControladorAdmin//createJFreeChartCount// null java.lang.NullPointerException// 2019-09-24T06:07:15.867
+managers.ControladorAdmin//createJFreeChartCount// null java.lang.NullPointerException// 2019-09-24T06:07:56.698
+managers.ControladorAdmin//createJFreeChartCount// null java.lang.NullPointerException// 2019-09-24T06:07:56.718
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-24T13:46:15.177
+managers.queries.ConsultasAdmin//llenarTablaUsersToTickets// Operation requires a scrollable ResultSet, but this ResultSet is FORWARD_ONLY. org.postgresql.util.PSQLException: Operation requires a scrollable ResultSet, but this ResultSet is FORWARD_ONLY.// 2019-09-24T13:46:19.119
+managers.queries.ConsultasAdmin//llenarTablaUsersToTickets// Operation requires a scrollable ResultSet, but this ResultSet is FORWARD_ONLY. org.postgresql.util.PSQLException: Operation requires a scrollable ResultSet, but this ResultSet is FORWARD_ONLY.// 2019-09-24T13:46:24.935
+managers.queries.ConsultasAdmin//llenarTablaUsersToTickets// Operation requires a scrollable ResultSet, but this ResultSet is FORWARD_ONLY. org.postgresql.util.PSQLException: Operation requires a scrollable ResultSet, but this ResultSet is FORWARD_ONLY.// 2019-09-24T13:46:32.431
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-24T13:52:28.167
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-24T13:53:15.327
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-24T14:27:00.133
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-24T15:06:53.259
+managers.ControladorAdmin//requestFillFieldsSales// -1 java.lang.ArrayIndexOutOfBoundsException: -1// 2019-09-24T15:07:48.805
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-24T15:08:36.334
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-24T15:26:49.048
+managers.ControladorAdmin//calculatePriceTicket// 6 >= 6 java.lang.ArrayIndexOutOfBoundsException: 6 >= 6// 2019-09-24T15:26:58.951
+managers.ControladorAdmin//calculatePriceTicket// 6 >= 6 java.lang.ArrayIndexOutOfBoundsException: 6 >= 6// 2019-09-24T15:27:01.224
+managers.ControladorAdmin//calculatePriceTicket// 6 >= 6 java.lang.ArrayIndexOutOfBoundsException: 6 >= 6// 2019-09-24T15:27:02.550
+managers.ControladorAdmin//calculatePriceTicket// 6 >= 6 java.lang.ArrayIndexOutOfBoundsException: 6 >= 6// 2019-09-24T15:27:03.525
+managers.ControladorAdmin//calculatePriceTicket// 6 >= 6 java.lang.ArrayIndexOutOfBoundsException: 6 >= 6// 2019-09-24T15:27:06.523
+managers.ControladorAdmin//calculatePriceTicket// 6 >= 6 java.lang.ArrayIndexOutOfBoundsException: 6 >= 6// 2019-09-24T15:27:08.967
+managers.ControladorAdmin//calculatePriceTicket// 6 >= 6 java.lang.ArrayIndexOutOfBoundsException: 6 >= 6// 2019-09-24T15:27:19.605
+managers.ControladorAdmin//calculatePriceTicket// 6 >= 6 java.lang.ArrayIndexOutOfBoundsException: 6 >= 6// 2019-09-24T15:27:22.948
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-24T15:34:14.887
+managers.ControladorAdmin//calculatePriceTicket// 6 >= 6 java.lang.ArrayIndexOutOfBoundsException: 6 >= 6// 2019-09-24T15:34:21.267
+managers.ControladorAdmin//calculatePriceTicket// 6 >= 6 java.lang.ArrayIndexOutOfBoundsException: 6 >= 6// 2019-09-24T15:34:23.520
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-24T15:35:25.021
+managers.ControladorAdmin//calculatePriceTicket// 6 >= 6 java.lang.ArrayIndexOutOfBoundsException: 6 >= 6// 2019-09-24T15:35:33.417
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-24T15:39:10.370
+managers.ControladorAdmin//calculatePriceTicket// 6 >= 6 java.lang.ArrayIndexOutOfBoundsException: 6 >= 6// 2019-09-24T15:39:15.303
+managers.ControladorAdmin//calculatePriceTicket// 6 >= 6 java.lang.ArrayIndexOutOfBoundsException: 6 >= 6// 2019-09-24T15:39:15.786
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-24T15:49:36.110
+managers.ControladorAdmin//calculatePriceTicket// 6 >= 6 java.lang.ArrayIndexOutOfBoundsException: 6 >= 6// 2019-09-24T15:49:42.594
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-24T15:51:57.651
+managers.ControladorAdmin//calculatePriceTicket// 6 >= 6 java.lang.ArrayIndexOutOfBoundsException: 6 >= 6// 2019-09-24T15:52:02.389
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-24T15:52:42.082
+managers.ControladorAdmin//calculatePriceTicket// 6 >= 6 java.lang.ArrayIndexOutOfBoundsException: 6 >= 6// 2019-09-24T15:52:47.627
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-24T16:08:18.429
+managers.ControladorAdmin//calculatePriceTicket// 6 >= 6 java.lang.ArrayIndexOutOfBoundsException: 6 >= 6// 2019-09-24T16:08:23.865
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-24T16:10:03.353
+managers.queries.ConsultasAdmin//insertSale// null java.lang.NullPointerException// 2019-09-24T16:10:15.569
+managers.queries.ConsultasAdmin//insertSale// null java.lang.NullPointerException// 2019-09-24T16:11:18.009
+managers.queries.ConsultasAdmin//insertSale// null java.lang.NullPointerException// 2019-09-24T16:11:33.755
+managers.ControladorAdmin//calculatePriceTicket// -1 java.lang.ArrayIndexOutOfBoundsException: -1// 2019-09-24T16:11:39.222
+managers.queries.ConsultasAdmin//insertSale// null java.lang.NullPointerException// 2019-09-24T16:11:48.767
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-24T16:13:18.385
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-24T16:14:29.429
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-24T16:24:58.454
+managers.queries.ConsultasAdmin//llenarTablaUsersToTickets// Unterminated string literal started at position 194 in SQL SELECT  uvfood_discount.price_discount
+FROM uvfood_user_discount 
+INNER JOIN uvfood_discount ON uvfood_user_discount.iddiscount = uvfood_discount.iddiscount
+WHERE uvfood_user_discount.iduser = 6';. Expected  char org.postgresql.util.PSQLException: Unterminated string literal started at position 194 in SQL SELECT  uvfood_discount.price_discount
+FROM uvfood_user_discount 
+INNER JOIN uvfood_discount ON uvfood_user_discount.iddiscount = uvfood_discount.iddiscount
+WHERE uvfood_user_discount.iduser = 6';. Expected  char// 2019-09-24T16:25:01.574
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-24T16:26:19.893
+managers.queries.ConsultasAdmin//llenarTablaUsersToTickets// The column index is out of range: 0, number of columns: 1. org.postgresql.util.PSQLException: The column index is out of range: 0, number of columns: 1.// 2019-09-24T16:26:22.122
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-24T16:27:07.116
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-24T16:42:17.442
+managers.queries.ConsultasAdmin//insertConsumption// ERROR: syntax error at or near ";"
+  Position: 58 org.postgresql.util.PSQLException: ERROR: syntax error at or near ";"
+  Position: 58// 2019-09-24T16:42:23.691
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-24T16:43:18.866
+managers.queries.ConsultasAdmin//insertConsumption// ERROR: relation "uvfood_consumption_user" does not exist
+  Position: 13 org.postgresql.util.PSQLException: ERROR: relation "uvfood_consumption_user" does not exist
+  Position: 13// 2019-09-24T16:43:25.130
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-24T16:44:02.339
+managers.queries.ConsultasAdmin//insertConsumption// ERROR: duplicate key value violates unique constraint "unique_consumption_date_user"
+  Detail: Key (iduser, date_consumption)=(17, 2019-09-23) already exists. org.postgresql.util.PSQLException: ERROR: duplicate key value violates unique constraint "unique_consumption_date_user"
+  Detail: Key (iduser, date_consumption)=(17, 2019-09-23) already exists.// 2019-09-24T16:44:07.456
+managers.queries.ConsultasAdmin//insertConsumption// ERROR: duplicate key value violates unique constraint "unique_consumption_date_user"
+  Detail: Key (iduser, date_consumption)=(18, 2019-09-23) already exists. org.postgresql.util.PSQLException: ERROR: duplicate key value violates unique constraint "unique_consumption_date_user"
+  Detail: Key (iduser, date_consumption)=(18, 2019-09-23) already exists.// 2019-09-24T16:44:38.583
+classes.FileManage//calcularRutaArchivo// null java.lang.NullPointerException// 2019-09-24T16:51:39.136
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-24T18:48:50.697
+classes.FileManage//calcularRutaArchivo// null java.lang.NullPointerException// 2019-09-24T18:49:27.914
+managers.queries.ConsultasAdmin//insertConsumption// ERROR: duplicate key value violates unique constraint "unique_consumption_date_user"
+  Detail: Key (iduser, date_consumption)=(18, 2019-09-23) already exists. org.postgresql.util.PSQLException: ERROR: duplicate key value violates unique constraint "unique_consumption_date_user"
+  Detail: Key (iduser, date_consumption)=(18, 2019-09-23) already exists.// 2019-09-24T18:51:27.911
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-24T19:12:42.683
+managers.queries.ConsultasAdmin//llenarTablaSales// The column index is out of range: 4, number of columns: 3. org.postgresql.util.PSQLException: The column index is out of range: 4, number of columns: 3.// 2019-09-24T19:12:49.097
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-24T19:13:48.799
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-24T19:14:29.636
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-24T19:31:15.036
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-25T02:07:55.230
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-25T02:47:56.820
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-25T02:59:06.058
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-25T03:01:25.167
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-25T03:03:23.182
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-25T03:05:15.630
+managers.ControladorAdmin//printSale// The requested operation cannot be performed on a file with a user-mapped section open.
+ java.awt.print.PrinterException: The requested operation cannot be performed on a file with a user-mapped section open.
+// 2019-09-25T03:05:34.240
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-25T03:09:55.140
+managers.ControladorAdmin//printSale// The requested operation cannot be performed on a file with a user-mapped section open.
+ java.awt.print.PrinterException: The requested operation cannot be performed on a file with a user-mapped section open.
+// 2019-09-25T03:10:17.468
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-25T03:16:13.662
+managers.ControladorAdmin//validarImg// null java.lang.NullPointerException// 2019-09-25T13:53:08.335
