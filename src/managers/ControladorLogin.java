@@ -113,6 +113,7 @@ public class ControladorLogin {
             case "success.cliente":
                 vistaLogin.dispose();
                 VistaCliente home_cliente = new VistaCliente();
+                home_cliente.manager.user = this.user;
                 home_cliente.setVisible(true);
                 logs.escribirAccessLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// Acceso a vista cliente.");
                 break;

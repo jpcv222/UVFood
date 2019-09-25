@@ -15,6 +15,7 @@ import java.util.GregorianCalendar;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
+import managers.ControladorCliente;
 import rojerusan.RSPanelsSlider;
 
 /**
@@ -31,11 +32,12 @@ public class VistaCliente extends javax.swing.JFrame implements Runnable{
     
     String hora, minutos, segundos;
     Thread hilo;
-    
+    public ControladorCliente manager;
     
     public VistaCliente() {
         initComponents();
         
+         manager = new ControladorCliente(this);
         
         jlFecha.setText(fecha());
         hilo = new Thread(this);
