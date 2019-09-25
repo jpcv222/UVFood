@@ -1683,6 +1683,7 @@ public class VistaAdmin extends javax.swing.JFrame implements Runnable {
         btnConfigTickets.setForeground(new java.awt.Color(255, 255, 255));
         btnConfigTickets.setText("Configuración tickets");
         btnConfigTickets.setContentAreaFilled(false);
+        btnConfigTickets.setEnabled(false);
         btnConfigTickets.setOpaque(true);
         btnConfigTickets.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {

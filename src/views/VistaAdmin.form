@@ -2630,6 +2630,7 @@
                     </Property>
                     <Property name="text" type="java.lang.String" value="Configuraci&#xf3;n tickets"/>
                     <Property name="contentAreaFilled" type="boolean" value="false"/>
+                    <Property name="enabled" type="boolean" value="false"/>
                     <Property name="opaque" type="boolean" value="true"/>
                   </Properties>
                   <Events>
