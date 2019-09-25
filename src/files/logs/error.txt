@@ -331,3 +331,9 @@ managers.ControladorGestionPermisos//createKeysModule// Consulta no arroja resul
 managers.ControladorGestionPermisos//createKeysModule// Consulta no arroja resultados.// 2019-09-25T16:02:04.688
 managers.ControladorGestionPermisos//createKeysModule// Consulta no arroja resultados.// 2019-09-25T16:02:08.036
 managers.ControladorGestionPermisos//existInputKey// Consulta no arroja resultados.// 2019-09-25T16:02:31.878
+managers.ControladorLogin//insert_session_record// Error desconocido.// 2019-09-25T18:04:17.025
+managers.ControladorLogin//request_login// El usuario no existe.// 2019-09-25T18:07:06.076
+managers.ControladorLogin//insert_session_record// Error desconocido.// 2019-09-25T18:07:16.964
+managers.ControladorLogin//insert_session_record// Error desconocido.// 2019-09-25T18:12:32.423
+managers.ControladorLogin//insert_session_record// Error desconocido.// 2019-09-25T18:13:42.100
+managers.ControladorLogin//insert_session_record// Error desconocido.// 2019-09-25T18:28:08.424

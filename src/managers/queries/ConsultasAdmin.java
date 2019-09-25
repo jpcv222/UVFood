@@ -847,16 +847,14 @@ public class ConsultasAdmin extends ConexionBD {
 
         return result;
     }
-    
-        public String getFecha() {
+
+    public String getFecha() {
         java.util.Date myDate = new java.util.Date();
 
         String fecha = new SimpleDateFormat("yyyy-MM-dd").format(myDate);
 
         return fecha;
     }
-    
-    
 
     public String guardarMenu(String img, VistaAdmin vista) {
         String result = "";
@@ -970,8 +968,8 @@ public class ConsultasAdmin extends ConexionBD {
         }
         return result;
     }
-    
-        public boolean fillComboImgTipo(VistaAdmin vista) {
+
+    public boolean fillComboImgTipo(VistaAdmin vista) {
         vista.jComboBoxTipoImg.removeAllItems();
         Statement ps = null;
         ResultSet rs = null;
