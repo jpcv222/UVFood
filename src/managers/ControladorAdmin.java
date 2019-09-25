@@ -375,6 +375,16 @@ public class ControladorAdmin {
 
     public void createFactura() {
 
+        factura.jLabelNameCliente.setText(interfazPrincipalAdmin.jLabelUsernameSales.getText());
+        factura.jLabelNameVendedor.setText(user.getFirstname() + " " + user.getSurname());
+        factura.jLabelFecha.setText(interfazPrincipalAdmin.jlFecha.getText()+ " "+ interfazPrincipalAdmin.jlHora.getText());
+        factura.jLabelTicketsComprados.setText(interfazPrincipalAdmin.jTextFieldCantidadTickets.getText());
+        factura.jLabelTotal.setText(interfazPrincipalAdmin.jTextFieldTotalVenta.getText());
+        factura.jLabelEfectivo.setText(interfazPrincipalAdmin.jTextFieldEfectivo.getText());
+        factura.jLabelCambio.setText(interfazPrincipalAdmin.jTextFieldCambio.getText());
+        if (!consultasAdmin.getCurrentCountTickets(interfazPrincipalAdmin)) {
+            factura.jLabelTicketsAcum.setText("Error");
+        }
         factura.setVisible(true);
     }
 

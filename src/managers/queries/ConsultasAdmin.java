@@ -103,6 +103,36 @@ public class ConsultasAdmin extends ConexionBD {
 
     }
 
+    public boolean getCurrentCountTickets(VistaAdmin vista) {
+
+        try {
+            Statement ps = null, psaux = null;
+            Connection conn = null;
+            ResultSet rs = null, rsaux = null;
+
+            String sqlUsersTickets = "SELECT count_tickets FROM uvfood_user_tickets WHERE iduser IN (\n"
+                    + "	SELECT iduser FROM uvfood_user WHERE username = '" + vista.jLabelUsernameSales.getText() + "');";
+
+            conn = Conexion();
+            ps = conn.createStatement();
+            rs = ps.executeQuery(sqlUsersTickets);
+
+            while (rs.next()) {
+                vista.manager.factura.jLabelTicketsAcum.setText(rs.getString(1));
+            }
+            rs.close();
+            ps.close();
+            return true;
+        } catch (SQLException ex) {
+            logs.escribirExceptionLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// " + ex.getMessage() + " " + ex.toString());
+            return false;
+        } catch (NullPointerException np) {
+            logs.escribirExceptionLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// " + np.getMessage() + " " + np.toString());
+            return false;
+        }
+
+    }
+
     public boolean llenarTablaUsersToTickets(VistaAdmin vista) {
         DefaultTableModel modelo = new DefaultTableModel() {
             @Override
