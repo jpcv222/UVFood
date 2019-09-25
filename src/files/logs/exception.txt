@@ -108,3 +108,13 @@ managers.queries.ConsultasAdmin//insertConsumption// ERROR: duplicate key value 
   Detail: Key (iduser, date_consumption)=(18, 2019-09-23) already exists. org.postgresql.util.PSQLException: ERROR: duplicate key value violates unique constraint "unique_consumption_date_user"
   Detail: Key (iduser, date_consumption)=(18, 2019-09-23) already exists.// 2019-09-24T16:44:38.583
 classes.FileManage//calcularRutaArchivo// null java.lang.NullPointerException// 2019-09-24T16:51:39.136
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-24T18:48:50.697
+classes.FileManage//calcularRutaArchivo// null java.lang.NullPointerException// 2019-09-24T18:49:27.914
+managers.queries.ConsultasAdmin//insertConsumption// ERROR: duplicate key value violates unique constraint "unique_consumption_date_user"
+  Detail: Key (iduser, date_consumption)=(18, 2019-09-23) already exists. org.postgresql.util.PSQLException: ERROR: duplicate key value violates unique constraint "unique_consumption_date_user"
+  Detail: Key (iduser, date_consumption)=(18, 2019-09-23) already exists.// 2019-09-24T18:51:27.911
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-24T19:12:42.683
+managers.queries.ConsultasAdmin//llenarTablaSales// The column index is out of range: 4, number of columns: 3. org.postgresql.util.PSQLException: The column index is out of range: 4, number of columns: 3.// 2019-09-24T19:12:49.097
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-24T19:13:48.799
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-24T19:14:29.636
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-24T19:31:15.036

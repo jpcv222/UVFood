@@ -344,6 +344,19 @@ public class ControladorAdmin {
             }
         }
     }
+    
+    public void requestFillTableSales() {
+        String namekey = "reports.generate.user.sessions";
+        String result = keyvalidate.haveKey(namekey, user.getIdUser());
+        boolean validate = keyvalidate.resultHaveKey(result);
+        interfazPrincipalAdmin.jLabelNoticeNotPermissions.setVisible(!validate);
+        interfazPrincipalAdmin.jTextFieldBuscarUserSessions.setEnabled(validate);
+        if (validate) {
+            if (!consultasAdmin.llenarTablaSales(interfazPrincipalAdmin)) {
+                modal.error_message("Error", "Algo anda mal", "No se pueden mostrar registros de la Base de datos", "Por Favor intenta mas tarde", "O reportanos que ocurre");
+            }
+        }
+    }
 
     public void requestFillTableUsersToTickets() {
         String namekey = "sales.generate.user.graph";
