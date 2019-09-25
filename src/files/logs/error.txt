@@ -131,3 +131,13 @@ managers.ControladorGestionPermisos//existInputModule// Consulta no arroja resul
 managers.ControladorGestionPermisos//existInputKey// Consulta no arroja resultados.// 2019-09-24T19:36:28.418
 managers.ControladorGestionPermisos//existInputModule// Consulta no arroja resultados.// 2019-09-24T19:36:34.466
 managers.ControladorGestionPermisos//existInputKey// Consulta no arroja resultados.// 2019-09-24T19:36:37.450
+managers.ControladorLogin//insert_session_record// Error desconocido.// 2019-09-25T02:07:55.266
+managers.ControladorLogin//insert_session_record// Error desconocido.// 2019-09-25T02:47:56.828
+managers.ControladorLogin//insert_session_record// Error desconocido.// 2019-09-25T02:59:06.073
+managers.ControladorLogin//insert_session_record// Error desconocido.// 2019-09-25T03:01:25.167
+managers.ControladorLogin//insert_session_record// Error desconocido.// 2019-09-25T03:03:23.182
+managers.ControladorLogin//insert_session_record// Error desconocido.// 2019-09-25T03:05:15.630
+managers.ControladorAdmin//printSale/error./ imprimiento factura// 2019-09-25T03:05:34.249
+managers.ControladorLogin//insert_session_record// Error desconocido.// 2019-09-25T03:09:55.155
+managers.ControladorAdmin//printSale/error./ imprimiento factura// 2019-09-25T03:10:17.478
+managers.ControladorLogin//insert_session_record// Error desconocido.// 2019-09-25T03:16:13.678

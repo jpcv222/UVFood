@@ -13,17 +13,25 @@ import classes.Logs;
 import classes.Usuario;
 import components.UVFoodDialogs;
 import java.awt.BorderLayout;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
 import java.awt.MouseInfo;
 import java.awt.Point;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import static java.awt.image.ImageObserver.WIDTH;
+import java.awt.print.PageFormat;
+import java.awt.print.Printable;
+import static java.awt.print.Printable.NO_SUCH_PAGE;
+import static java.awt.print.Printable.PAGE_EXISTS;
+import java.awt.print.PrinterJob;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import static java.nio.file.StandardCopyOption.REPLACE_EXISTING;
+import javax.print.PrintException;
 import javax.swing.ImageIcon;
 import javax.swing.JMenuItem;
 import javax.swing.JTable;
@@ -33,6 +41,7 @@ import org.jfree.data.category.DefaultCategoryDataset;
 import views.GestionPermisos;
 import validations.FormValidations;
 import views.ConfirmMessage;
+import views.Factura;
 
 /**
  *
@@ -49,6 +58,7 @@ public class ControladorAdmin {
     private ConsultasAdmin consultasAdmin;
     private ConfirmMessage confirmation_message;
     public Usuario user;
+    public Factura factura;
 
     private Logs logs = new Logs(Thread.currentThread().getStackTrace()[1].getClassName());
 
@@ -61,7 +71,7 @@ public class ControladorAdmin {
         this.confirmation_message = confirmation_message;
         this.consultasAdmin = new ConsultasAdmin();
         this.validaciones = new FormValidations();
-
+        this.factura = new Factura();
     }
 
     public void set_init_conf() {
@@ -344,7 +354,7 @@ public class ControladorAdmin {
             }
         }
     }
-    
+
     public void requestFillTableSales() {
         String namekey = "reports.generate.user.sessions";
         String result = keyvalidate.haveKey(namekey, user.getIdUser());
@@ -398,6 +408,7 @@ public class ControladorAdmin {
         boolean validate = keyvalidate.resultHaveKey(result);
         if (validate) {
             if (consultasAdmin.insertSale(interfazPrincipalAdmin)) {
+                createFactura();
                 modal.success_message("Exito.", "Venta realizada.", "La venta se ha realizado con exito", "", "");
             } else {
                 modal.error_message("Error", "Algo anda mal", "No se pueden mostrar registros de la Base de datos", "Por Favor intenta mas tarde", "O reportanos que ocurre");
@@ -406,6 +417,12 @@ public class ControladorAdmin {
         }
     }
     
+    public void createFactura(){
+        
+        factura.setVisible(true);
+    }
+    
+
     public void consumptionTicket(int row) {
         String namekey = "sales.generate.user.sale";
         String result = keyvalidate.haveKey(namekey, user.getIdUser());
