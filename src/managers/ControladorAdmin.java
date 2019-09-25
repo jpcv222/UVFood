@@ -19,11 +19,14 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import static java.awt.image.ImageObserver.WIDTH;
+import java.awt.print.Printable;
+import java.awt.print.PrinterJob;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import static java.nio.file.StandardCopyOption.REPLACE_EXISTING;
+import javax.print.PrintException;
 import javax.swing.ImageIcon;
 import javax.swing.JMenuItem;
 import javax.swing.JTable;
@@ -344,7 +347,7 @@ public class ControladorAdmin {
             }
         }
     }
-    
+
     public void requestFillTableSales() {
         String namekey = "reports.generate.user.sessions";
         String result = keyvalidate.haveKey(namekey, user.getIdUser());
@@ -399,13 +402,29 @@ public class ControladorAdmin {
         if (validate) {
             if (consultasAdmin.insertSale(interfazPrincipalAdmin)) {
                 modal.success_message("Exito.", "Venta realizada.", "La venta se ha realizado con exito", "", "");
+                printSale();
             } else {
                 modal.error_message("Error", "Algo anda mal", "No se pueden mostrar registros de la Base de datos", "Por Favor intenta mas tarde", "O reportanos que ocurre");
 
             }
         }
     }
-    
+
+    public void printSale() {
+        try {
+            PrinterJob impr = PrinterJob.getPrinterJob();
+            impr.setPrintable((Printable) interfazPrincipalAdmin);
+            boolean validate = impr.printDialog();
+            if (validate) {
+                impr.print();
+            }
+
+        } catch (java.awt.print.PrinterException ex) {
+            logs.escribirExceptionLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// " + ex.getMessage() + " " + ex.toString());
+            logs.escribirErrorLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "/error./ imprimiento factura");
+        }
+    }
+
     public void consumptionTicket(int row) {
         String namekey = "sales.generate.user.sale";
         String result = keyvalidate.haveKey(namekey, user.getIdUser());
