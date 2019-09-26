@@ -380,6 +380,73 @@ public class ConsultasAdmin extends ConexionBD {
             return false;
         }
     }
+    
+    public boolean buscarUserSales(VistaAdmin vista) {
+        DefaultTableModel modelo = new DefaultTableModel() {
+            @Override
+            public boolean isCellEditable(int row, int col) {
+                return false;
+            }
+        };
+
+        Statement ps = null;
+        Connection conn = Conexion();
+        ResultSet rs = null;
+        String filtro = "'%" + vista.jTextFieldBuscarUser.getText() + "%'";
+
+        //$query = "SELECT * FROM imagenesproductos WHERE nombre LIKE '%$q%' OR descripcion LIKE '%$q%' OR precio LIKE '%$q%' OR categoria LIKE '%$q%'";
+        String sql = "SELECT * FROM uvfood_user where idUser::text LIKE" + filtro + " OR username::text LIKE" + filtro + " OR firstname::text LIKE" + filtro + " OR surname::text LIKE" + filtro;
+        try {
+            ps = conn.createStatement();
+            rs = ps.executeQuery(sql);
+
+            ResultSetMetaData rsMd = rs.getMetaData();
+            int cantidadCol = rsMd.getColumnCount();
+
+            modelo.addColumn("Id");
+            modelo.addColumn("Usuario");
+            modelo.addColumn("Nombre");
+            modelo.addColumn("Apellido");
+            modelo.addColumn("Fecha de Nacimiento");
+            modelo.addColumn("Email");
+            modelo.addColumn("Fecha de creacion");
+            modelo.addColumn("Estado");
+
+            while (rs.next()) {
+
+                Object[] filas = new Object[cantidadCol];
+
+                filas[0] = rs.getObject(1);
+                filas[1] = rs.getObject(2);
+                filas[2] = rs.getObject(3);
+                filas[3] = rs.getObject(4);
+                filas[4] = rs.getObject(5);
+                filas[5] = rs.getObject(6);
+                filas[6] = rs.getObject(8);
+
+                if (rs.getInt(9) == 1) {
+                    filas[7] = "Activo";
+                } else {
+                    filas[7] = "No activo";
+                }
+
+                modelo.addRow(filas);
+            }
+            vista.jTableUsers.setModel(modelo);
+            rs.close();
+            ps.close();
+            return true;
+        } catch (SQLException ex) {
+            logs.escribirExceptionLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// " + ex.getMessage() + " " + ex.toString());
+            //modal.error_message("Error", "Algo anda mal", "El servidor esta presentado problemas", "Por Favor intenta mas tarde", "O reportanos que ocurre");
+
+            return false;
+        } catch (NullPointerException np) {
+            logs.escribirExceptionLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// " + np.getMessage() + " " + np.toString());
+            //modal.error_message("Error", "Algo anda mal", "El servidor esta presentado problemas", "Por Favor intenta mas tarde", "O reportanos que ocurre");
+            return false;
+        }
+    }
 
     public static String sqlDateToString(java.sql.Date date) {
         if (date != null) {

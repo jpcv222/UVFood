@@ -1185,7 +1185,7 @@ public class VistaAdmin extends javax.swing.JFrame implements Runnable {
         });
 
         jLabel50.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel50.setText("La clave solo se modificara se se escribe algo en el campo, si queda en blanco se mantendra la clave actual.");
+        jLabel50.setText("La clave solo se modificara si se escribe algo en el campo, si queda en blanco se mantendra la clave actual.");
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -1257,7 +1257,7 @@ public class VistaAdmin extends javax.swing.JFrame implements Runnable {
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel50, javax.swing.GroupLayout.PREFERRED_SIZE, 818, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                        .addGap(0, 109, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel4Layout.setVerticalGroup(
@@ -1346,7 +1346,7 @@ public class VistaAdmin extends javax.swing.JFrame implements Runnable {
                 .addGap(28, 28, 28))
         );
 
-        jLabel49.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel49.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel49.setText("Puede seleccionar un usuario: click izquierdo para llenar campos, derecho para asignar permisos.");
 
         javax.swing.GroupLayout jPanelModuleUserReportsLayout = new javax.swing.GroupLayout(jPanelModuleUserReports);
@@ -1356,23 +1356,21 @@ public class VistaAdmin extends javax.swing.JFrame implements Runnable {
             .addGroup(jPanelModuleUserReportsLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanelModuleUserReportsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanelModuleUserReportsLayout.createSequentialGroup()
-                        .addGap(10, 10, 10)
-                        .addComponent(jLabel49, javax.swing.GroupLayout.PREFERRED_SIZE, 818, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(jPanelModuleUserReportsLayout.createSequentialGroup()
-                        .addGroup(jPanelModuleUserReportsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jPanel4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addContainerGap())))
+                    .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
+            .addGroup(jPanelModuleUserReportsLayout.createSequentialGroup()
+                .addGap(22, 22, 22)
+                .addComponent(jLabel49, javax.swing.GroupLayout.PREFERRED_SIZE, 923, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanelModuleUserReportsLayout.setVerticalGroup(
             jPanelModuleUserReportsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelModuleUserReportsLayout.createSequentialGroup()
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(4, 4, 4)
-                .addComponent(jLabel49, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel49, javax.swing.GroupLayout.DEFAULT_SIZE, 31, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
@@ -1469,7 +1467,7 @@ public class VistaAdmin extends javax.swing.JFrame implements Runnable {
                             .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 399, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanelModuleUserRegisterLayout.createSequentialGroup()
                                 .addGroup(jPanelModuleUserRegisterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 392, Short.MAX_VALUE)
+                                    .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 392, Short.MAX_VALUE)
                                     .addComponent(jPanelSelectCSVUser, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jButtonCargar, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -2475,6 +2473,7 @@ public class VistaAdmin extends javax.swing.JFrame implements Runnable {
 
     private void jTextFieldBuscarUserSalesKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextFieldBuscarUserSalesKeyReleased
         // TODO add your handling code here:
+        manager.requestSearchUserSales();
     }//GEN-LAST:event_jTextFieldBuscarUserSalesKeyReleased
 
     private void btnEscogerImgMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnEscogerImgMouseEntered
