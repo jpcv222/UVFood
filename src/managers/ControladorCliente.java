@@ -11,6 +11,7 @@ import managers.queries.KeyValidate;
 import classes.Usuario;
 import managers.queries.ConsultasLogin;
 import components.UVFoodDialogs;
+import java.io.File;
 import managers.queries.ConsultasCliente;
 import validations.FormValidations;
 import views.ConfirmMessage;
@@ -36,24 +37,42 @@ public class ControladorCliente {
         this.modal = new UVFoodDialogs();
         this.validaciones = new FormValidations();
         this.keyvalidate = new KeyValidate(modal);
+
     }
 
     public void requestTraerMenu() {
         try {
             String image = consultasCliente.traerMenu();
-            
+
             System.out.println(image);
 
             if (image.equals("error.img.no.encontrada")) {
                 rsscalelabel.RSScaleLabel.setScaleLabel(interfazPrincipalCliente.jLabelMenuActual, System.getProperty("user.dir") + "/src/ImgMenu/menuNoDisponible.png");
             } else {
-                rsscalelabel.RSScaleLabel.setScaleLabel(interfazPrincipalCliente.jLabelMenuActual, System.getProperty("user.dir") + "/src/ImgMenu/" + image);
+                File archivo = new File("image");
+                if (!archivo.exists()) {
+                    rsscalelabel.RSScaleLabel.setScaleLabel(interfazPrincipalCliente.jLabelMenuActual, System.getProperty("user.dir") + "/src/ImgMenu/menuNoDisponible.png");
+                } else {
+                    rsscalelabel.RSScaleLabel.setScaleLabel(interfazPrincipalCliente.jLabelMenuActual, System.getProperty("user.dir") + "/src/ImgMenu/" + image);
+                }
             }
 
         } catch (NullPointerException e) {
             logs.escribirExceptionLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// " + e.getMessage() + " " + e.toString());
         }
 
+    }
+
+
+    public void requestCountTicket() {
+        String result = consultasCliente.countTicekt(interfazPrincipalCliente);
+        System.out.println(result);
+
+        if (result.equals("error.consulta")) {
+            logs.escribirErrorLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// error.consulta ");
+        } else {
+            interfazPrincipalCliente.jLabelTickets.setText("Su cantidad de tickets es: "+result);
+        }
     }
 
 }

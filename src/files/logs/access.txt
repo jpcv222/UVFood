@@ -919,3 +919,21 @@ managers.ControladorLogin//define_view// Acceso a vista admin.// 2019-09-25T18:1
 managers.ControladorLogin//request_login// Usuario existente.// 2019-09-25T18:13:42.103
 managers.ControladorLogin//define_view// Acceso a vista cliente.// 2019-09-25T18:28:08.304
 managers.ControladorLogin//request_login// Usuario existente.// 2019-09-25T18:28:08.447
+managers.ControladorLogin//define_view// Acceso a vista cliente.// 2019-09-25T20:59:43.049
+managers.ControladorLogin//request_login// Usuario existente.// 2019-09-25T20:59:43.158
+managers.ControladorLogin//define_view// Acceso a vista cliente.// 2019-09-25T21:02:28.049
+managers.ControladorLogin//request_login// Usuario existente.// 2019-09-25T21:02:28.268
+managers.ControladorLogin//define_view// Acceso a vista cliente.// 2019-09-25T21:17:55.723
+managers.ControladorLogin//request_login// Usuario existente.// 2019-09-25T21:17:55.801
+managers.ControladorLogin//define_view// Acceso a vista cliente.// 2019-09-25T21:21:39.047
+managers.ControladorLogin//request_login// Usuario existente.// 2019-09-25T21:21:39.132
+managers.ControladorLogin//define_view// Acceso a vista cliente.// 2019-09-25T21:23:33.206
+managers.ControladorLogin//request_login// Usuario existente.// 2019-09-25T21:23:33.290
+managers.ControladorLogin//define_view// Acceso a vista cliente.// 2019-09-25T21:24:50.727
+managers.ControladorLogin//request_login// Usuario existente.// 2019-09-25T21:24:50.807
+managers.ControladorLogin//define_view// Acceso a vista cliente.// 2019-09-25T21:26:32.610
+managers.ControladorLogin//request_login// Usuario existente.// 2019-09-25T21:26:32.695
+managers.ControladorLogin//define_view// Acceso a vista cliente.// 2019-09-25T21:37:43.289
+managers.ControladorLogin//request_login// Usuario existente.// 2019-09-25T21:37:43.399
+managers.ControladorLogin//define_view// Acceso a vista cliente.// 2019-09-25T21:39:16.988
+managers.ControladorLogin//request_login// Usuario existente.// 2019-09-25T21:39:17.083

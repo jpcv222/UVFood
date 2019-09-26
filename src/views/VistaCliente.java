@@ -52,17 +52,12 @@ public class VistaCliente extends javax.swing.JFrame implements Runnable{
         jLabel1.setIcon(icono1);
         this.repaint();
        
-        ImageIcon imagen2 = new ImageIcon("src/images/Perfil.jpg");
-        Icon icono2 = new ImageIcon(imagen2.getImage().getScaledInstance(jLabel2.getWidth(), jLabel2.getHeight(), Image.SCALE_DEFAULT));
-        jLabel2.setIcon(icono2);
-        this.repaint();
         
-        ImageIcon imagen4 = new ImageIcon("src/images/compraTicket.jpg");
-        Icon icono4 = new ImageIcon(imagen4.getImage().getScaledInstance(jLabel4.getWidth(), jLabel4.getHeight(), Image.SCALE_DEFAULT));
-        jLabel4.setIcon(icono4);
-        this.repaint();
-        
+        changeImage("inicio-clic.jpg",jLabel1);
         manager.requestTraerMenu();
+        manager.requestCountTicket();
+        
+        //jLabel2.setText(manager.user.getFirstname());
         
     }
     
@@ -124,9 +119,7 @@ public class VistaCliente extends javax.swing.JFrame implements Runnable{
 
         jPanelMenu = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         rSPanelsSlider1 = new rojerusan.RSPanelsSlider();
         jPanelIndexCliente = new javax.swing.JPanel();
@@ -134,6 +127,7 @@ public class VistaCliente extends javax.swing.JFrame implements Runnable{
         jLabel7 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabelMenuActual = new javax.swing.JLabel();
+        jLabelTickets = new javax.swing.JLabel();
         jPanelPerfilCliente = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
         jPanelbtn = new javax.swing.JPanel();
@@ -142,9 +136,9 @@ public class VistaCliente extends javax.swing.JFrame implements Runnable{
         jPanelHeader = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        jLabelNombreUser = new javax.swing.JLabel();
         jlFecha = new javax.swing.JLabel();
         jlHora = new javax.swing.JLabel();
+        jLabelNombreUser = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -159,28 +153,12 @@ public class VistaCliente extends javax.swing.JFrame implements Runnable{
             }
         });
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel2MouseClicked(evt);
-            }
-        });
-
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("   Cerrar Sesion");
         jLabel3.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel3MouseClicked(evt);
-            }
-        });
-
-        jLabel4.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel4MouseClicked(evt);
             }
         });
 
@@ -198,20 +176,14 @@ public class VistaCliente extends javax.swing.JFrame implements Runnable{
         jPanelMenuLayout.setHorizontalGroup(
             jPanelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 212, Short.MAX_VALUE)
-            .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 212, Short.MAX_VALUE)
             .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanelMenuLayout.setVerticalGroup(
             jPanelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelMenuLayout.createSequentialGroup()
-                .addGap(252, 252, 252)
+                .addGap(296, 296, 296)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -260,13 +232,21 @@ public class VistaCliente extends javax.swing.JFrame implements Runnable{
                 .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
+        jLabelTickets.setForeground(new java.awt.Color(102, 102, 102));
+        jLabelTickets.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+
         javax.swing.GroupLayout jPanelIndexClienteLayout = new javax.swing.GroupLayout(jPanelIndexCliente);
         jPanelIndexCliente.setLayout(jPanelIndexClienteLayout);
         jPanelIndexClienteLayout.setHorizontalGroup(
             jPanelIndexClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelIndexClienteLayout.createSequentialGroup()
-                .addGap(99, 99, 99)
-                .addComponent(jPanelMenuDiaPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanelIndexClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanelIndexClienteLayout.createSequentialGroup()
+                        .addGap(99, 99, 99)
+                        .addComponent(jPanelMenuDiaPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanelIndexClienteLayout.createSequentialGroup()
+                        .addGap(38, 38, 38)
+                        .addComponent(jLabelTickets, javax.swing.GroupLayout.PREFERRED_SIZE, 414, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(111, Short.MAX_VALUE))
         );
         jPanelIndexClienteLayout.setVerticalGroup(
@@ -274,7 +254,9 @@ public class VistaCliente extends javax.swing.JFrame implements Runnable{
             .addGroup(jPanelIndexClienteLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanelMenuDiaPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(463, Short.MAX_VALUE))
+                .addGap(59, 59, 59)
+                .addComponent(jLabelTickets, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(371, Short.MAX_VALUE))
         );
 
         rSPanelsSlider1.add(jPanelIndexCliente, "card2");
@@ -373,8 +355,6 @@ public class VistaCliente extends javax.swing.JFrame implements Runnable{
 
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/univalle.jpg"))); // NOI18N
 
-        jLabelNombreUser.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-
         jlFecha.setFont(new java.awt.Font("Roboto Light", 0, 18)); // NOI18N
         jlFecha.setForeground(new java.awt.Color(205, 31, 50));
         jlFecha.setText("DD/MM/YYYY");
@@ -383,34 +363,38 @@ public class VistaCliente extends javax.swing.JFrame implements Runnable{
         jlHora.setForeground(new java.awt.Color(205, 31, 50));
         jlHora.setText("00:00:00");
 
+        jLabelNombreUser.setForeground(new java.awt.Color(102, 102, 102));
+        jLabelNombreUser.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+
         javax.swing.GroupLayout jPanelHeaderLayout = new javax.swing.GroupLayout(jPanelHeader);
         jPanelHeader.setLayout(jPanelHeaderLayout);
         jPanelHeaderLayout.setHorizontalGroup(
             jPanelHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelHeaderLayout.createSequentialGroup()
                 .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 323, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabelNombreUser, javax.swing.GroupLayout.PREFERRED_SIZE, 489, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanelHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelHeaderLayout.createSequentialGroup()
-                        .addComponent(jlHora)
-                        .addGap(30, 30, 30)
-                        .addComponent(jlFecha)
-                        .addGap(54, 54, 54)
-                        .addComponent(jLabel5)
-                        .addContainerGap())
-                    .addComponent(jLabelNombreUser, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addComponent(jlHora)
+                .addGap(30, 30, 30)
+                .addComponent(jlFecha)
+                .addGap(54, 54, 54)
+                .addComponent(jLabel5)
+                .addContainerGap())
         );
         jPanelHeaderLayout.setVerticalGroup(
             jPanelHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
             .addGroup(jPanelHeaderLayout.createSequentialGroup()
                 .addGroup(jPanelHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanelHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jlFecha)
                         .addComponent(jlHora))
                     .addComponent(jLabel5))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 13, Short.MAX_VALUE)
-                .addComponent(jLabelNombreUser, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                .addGap(0, 38, Short.MAX_VALUE))
+            .addGroup(jPanelHeaderLayout.createSequentialGroup()
+                .addComponent(jLabelNombreUser, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -475,36 +459,20 @@ public class VistaCliente extends javax.swing.JFrame implements Runnable{
     }//GEN-LAST:event_jPanelbtnMousePressed
 
     private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
-        resetColor(jLabel2, "Perfil.jpg" );
-        resetColor(jLabel4, "compraTicket.jpg" );
+        //resetColor(jLabel2, "Perfil.jpg" );
+        //resetColor(jLabel4, "compraTicket.jpg" );
         //resetColor(jLabel2);
         //setColor(jLabel1);
         //resetColor(jLabel3);
         //resetColor(jLabel4);
-        changeImage("inicio-clic.jpg",jLabel1);
+        
         rSPanelsSlider1.setPanelSlider(5, jPanelIndexCliente, RSPanelsSlider.DIRECT.RIGHT);
         
     }//GEN-LAST:event_jLabel1MouseClicked
 
-    private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
-        resetColor(jLabel1, "inicio.jpg");
-        resetColor(jLabel4, "compraTicket.jpg" );
-        setColor(jLabel2);
-       // resetColor(jLabel3);
-        //resetColor(jLabel4);
-        changeImage("perfil-clic.jpg",jLabel2);
-        rSPanelsSlider1.setPanelSlider(5, jPanelPerfilCliente, RSPanelsSlider.DIRECT.RIGHT);
-    }//GEN-LAST:event_jLabel2MouseClicked
-
     private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
         
     }//GEN-LAST:event_jLabel3MouseClicked
-
-    private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
-        resetColor(jLabel2, "Perfil.jpg" );
-        resetColor(jLabel1, "inicio.jpg");
-        changeImage("compra-clic.jpg",jLabel4);
-    }//GEN-LAST:event_jLabel4MouseClicked
 
     private void jLabel9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel9MouseClicked
         // TODO add your handling code here:
@@ -549,9 +517,7 @@ public class VistaCliente extends javax.swing.JFrame implements Runnable{
     private javax.swing.JButton btnCerrar;
     private javax.swing.JButton btnMiminize;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
@@ -559,6 +525,7 @@ public class VistaCliente extends javax.swing.JFrame implements Runnable{
     private javax.swing.JLabel jLabel9;
     public javax.swing.JLabel jLabelMenuActual;
     public javax.swing.JLabel jLabelNombreUser;
+    public javax.swing.JLabel jLabelTickets;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanelHeader;
     private javax.swing.JPanel jPanelIndexCliente;

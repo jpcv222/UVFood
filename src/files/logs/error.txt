@@ -337,3 +337,14 @@ managers.ControladorLogin//insert_session_record// Error desconocido.// 2019-09-
 managers.ControladorLogin//insert_session_record// Error desconocido.// 2019-09-25T18:12:32.423
 managers.ControladorLogin//insert_session_record// Error desconocido.// 2019-09-25T18:13:42.100
 managers.ControladorLogin//insert_session_record// Error desconocido.// 2019-09-25T18:28:08.424
+managers.ControladorLogin//insert_session_record// Error desconocido.// 2019-09-25T20:59:43.143
+managers.ControladorLogin//insert_session_record// Error desconocido.// 2019-09-25T21:02:28.253
+managers.ControladorLogin//insert_session_record// Error desconocido.// 2019-09-25T21:17:55.801
+managers.ControladorLogin//insert_session_record// Error desconocido.// 2019-09-25T21:21:39.132
+managers.ControladorLogin//insert_session_record// Error desconocido.// 2019-09-25T21:23:33.282
+managers.ControladorLogin//insert_session_record// Error desconocido.// 2019-09-25T21:24:50.800
+managers.ControladorLogin//insert_session_record// Error desconocido.// 2019-09-25T21:26:32.688
+managers.ControladorCliente//requestCountTicket// error.consulta // 2019-09-25T21:37:43.274
+managers.ControladorLogin//insert_session_record// Error desconocido.// 2019-09-25T21:37:43.383
+managers.ControladorCliente//requestCountTicket// error.consulta // 2019-09-25T21:39:16.972
+managers.ControladorLogin//insert_session_record// Error desconocido.// 2019-09-25T21:39:17.075
