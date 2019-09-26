@@ -172,3 +172,29 @@ managers.queries.ConsultasAdmin//insertConsumption// ERROR: duplicate key value 
 managers.queries.ConsultasAdmin//insertConsumption// ERROR: duplicate key value violates unique constraint "unique_consumption_date_user"
   Detail: Key (iduser, date_consumption)=(19, 2019-09-23) already exists. org.postgresql.util.PSQLException: ERROR: duplicate key value violates unique constraint "unique_consumption_date_user"
   Detail: Key (iduser, date_consumption)=(19, 2019-09-23) already exists.// 2019-09-25T16:06:44.301
+classes.ConexionBD//Conexion// FATAL: la autentificación password falló para el usuario «postgres» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf) org.postgresql.util.PSQLException: FATAL: la autentificación password falló para el usuario «postgres» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf)// 2019-09-25T18:01:41.980
+managers.queries.ConsultasLogin//insert_session_record// La consulta no retornó ningún resultado. org.postgresql.util.PSQLException: La consulta no retornó ningún resultado.// 2019-09-25T18:04:17.015
+managers.queries.ConsultasLogin//insert_session_record// La consulta no retornó ningún resultado. org.postgresql.util.PSQLException: La consulta no retornó ningún resultado.// 2019-09-25T18:07:16.957
+managers.ControladorCliente//requestTraerMenu// null java.lang.NullPointerException// 2019-09-25T18:12:32.311
+managers.queries.ConsultasLogin//insert_session_record// La consulta no retornó ningún resultado. org.postgresql.util.PSQLException: La consulta no retornó ningún resultado.// 2019-09-25T18:12:32.423
+managers.queries.ConsultasLogin//insert_session_record// La consulta no retornó ningún resultado. org.postgresql.util.PSQLException: La consulta no retornó ningún resultado.// 2019-09-25T18:13:42.090
+managers.ControladorCliente//requestTraerMenu// null java.lang.NullPointerException// 2019-09-25T18:18:18.443
+managers.ControladorCliente//requestTraerMenu// null java.lang.NullPointerException// 2019-09-25T18:21:23.975
+managers.ControladorCliente//requestTraerMenu// null java.lang.NullPointerException// 2019-09-25T18:26:17.126
+managers.ControladorCliente//requestTraerMenu// null java.lang.NullPointerException// 2019-09-25T18:28:08.273
+managers.queries.ConsultasLogin//insert_session_record// La consulta no retornó ningún resultado. org.postgresql.util.PSQLException: La consulta no retornó ningún resultado.// 2019-09-25T18:28:08.419
+managers.ControladorCliente//requestTraerMenu// null java.lang.NullPointerException// 2019-09-25T18:28:41.759
+managers.ControladorCliente//requestTraerMenu// null java.lang.NullPointerException// 2019-09-25T18:28:58.148
+managers.queries.ConsultasLogin//insert_session_record// La consulta no retornó ningún resultado. org.postgresql.util.PSQLException: La consulta no retornó ningún resultado.// 2019-09-25T20:59:43.127
+managers.queries.ConsultasLogin//insert_session_record// La consulta no retornó ningún resultado. org.postgresql.util.PSQLException: La consulta no retornó ningún resultado.// 2019-09-25T21:02:28.237
+managers.queries.ConsultasLogin//insert_session_record// La consulta no retornó ningún resultado. org.postgresql.util.PSQLException: La consulta no retornó ningún resultado.// 2019-09-25T21:17:55.785
+managers.queries.ConsultasCliente//countTicekt// null java.lang.NullPointerException// 2019-09-25T21:21:39.031
+managers.queries.ConsultasLogin//insert_session_record// La consulta no retornó ningún resultado. org.postgresql.util.PSQLException: La consulta no retornó ningún resultado.// 2019-09-25T21:21:39.116
+managers.queries.ConsultasCliente//countTicekt// null java.lang.NullPointerException// 2019-09-25T21:23:33.186
+managers.queries.ConsultasLogin//insert_session_record// La consulta no retornó ningún resultado. org.postgresql.util.PSQLException: La consulta no retornó ningún resultado.// 2019-09-25T21:23:33.274
+managers.queries.ConsultasCliente//countTicekt// null java.lang.NullPointerException// 2019-09-25T21:24:50.707
+managers.queries.ConsultasLogin//insert_session_record// La consulta no retornó ningún resultado. org.postgresql.util.PSQLException: La consulta no retornó ningún resultado.// 2019-09-25T21:24:50.792
+managers.queries.ConsultasCliente//countTicekt// null java.lang.NullPointerException// 2019-09-25T21:26:32.590
+managers.queries.ConsultasLogin//insert_session_record// La consulta no retornó ningún resultado. org.postgresql.util.PSQLException: La consulta no retornó ningún resultado.// 2019-09-25T21:26:32.680
+managers.queries.ConsultasLogin//insert_session_record// La consulta no retornó ningún resultado. org.postgresql.util.PSQLException: La consulta no retornó ningún resultado.// 2019-09-25T21:37:43.383
+managers.queries.ConsultasLogin//insert_session_record// La consulta no retornó ningún resultado. org.postgresql.util.PSQLException: La consulta no retornó ningún resultado.// 2019-09-25T21:39:17.067
