@@ -270,3 +270,6 @@ managers.queries.ConsultasCliente//countTicekt// null java.lang.NullPointerExcep
 managers.queries.ConsultasLogin//insert_session_record// La consulta no retornó ningún resultado. org.postgresql.util.PSQLException: La consulta no retornó ningún resultado.// 2019-09-25T21:26:32.680
 managers.queries.ConsultasLogin//insert_session_record// La consulta no retornó ningún resultado. org.postgresql.util.PSQLException: La consulta no retornó ningún resultado.// 2019-09-25T21:37:43.383
 managers.queries.ConsultasLogin//insert_session_record// La consulta no retornó ningún resultado. org.postgresql.util.PSQLException: La consulta no retornó ningún resultado.// 2019-09-25T21:39:17.067
+classes.ConexionBD//Conexion// FATAL: password authentication failed for user "postgres" org.postgresql.util.PSQLException: FATAL: password authentication failed for user "postgres"// 2019-09-25T22:23:31.748
+managers.queries.ConsultasCliente//countTicekt// null java.lang.NullPointerException// 2019-09-25T22:27:32.041
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-25T22:27:32.216

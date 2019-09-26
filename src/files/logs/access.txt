@@ -1052,3 +1052,5 @@ managers.ControladorLogin//define_view// Acceso a vista cliente.// 2019-09-25T21
 managers.ControladorLogin//request_login// Usuario existente.// 2019-09-25T21:37:43.399
 managers.ControladorLogin//define_view// Acceso a vista cliente.// 2019-09-25T21:39:16.988
 managers.ControladorLogin//request_login// Usuario existente.// 2019-09-25T21:39:17.083
+managers.ControladorLogin//define_view// Acceso a vista cliente.// 2019-09-25T22:27:32.061
+managers.ControladorLogin//request_login// Usuario existente.// 2019-09-25T22:27:32.236

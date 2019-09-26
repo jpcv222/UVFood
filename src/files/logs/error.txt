@@ -361,3 +361,4 @@ managers.ControladorCliente//requestCountTicket// error.consulta // 2019-09-25T2
 managers.ControladorLogin//insert_session_record// Error desconocido.// 2019-09-25T21:37:43.383
 managers.ControladorCliente//requestCountTicket// error.consulta // 2019-09-25T21:39:16.972
 managers.ControladorLogin//insert_session_record// Error desconocido.// 2019-09-25T21:39:17.075
+managers.ControladorLogin//insert_session_record// Error desconocido.// 2019-09-25T22:27:32.224

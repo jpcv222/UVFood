@@ -40,6 +40,7 @@ public class ControladorCliente {
 
     }
 
+    
     public void requestTraerMenu() {
         try {
             String image = consultasCliente.traerMenu();
@@ -49,7 +50,7 @@ public class ControladorCliente {
             if (image.equals("error.img.no.encontrada")) {
                 rsscalelabel.RSScaleLabel.setScaleLabel(interfazPrincipalCliente.jLabelMenuActual, System.getProperty("user.dir") + "/src/ImgMenu/menuNoDisponible.png");
             } else {
-                File archivo = new File("image");
+                File archivo = new File(image);
                 if (!archivo.exists()) {
                     rsscalelabel.RSScaleLabel.setScaleLabel(interfazPrincipalCliente.jLabelMenuActual, System.getProperty("user.dir") + "/src/ImgMenu/menuNoDisponible.png");
                 } else {
