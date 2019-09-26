@@ -362,3 +362,14 @@ managers.ControladorLogin//insert_session_record// Error desconocido.// 2019-09-
 managers.ControladorCliente//requestCountTicket// error.consulta // 2019-09-25T21:39:16.972
 managers.ControladorLogin//insert_session_record// Error desconocido.// 2019-09-25T21:39:17.075
 managers.ControladorLogin//insert_session_record// Error desconocido.// 2019-09-25T22:27:32.224
+managers.ControladorLogin//insert_session_record// Error desconocido.// 2019-09-25T22:58:33.652
+managers.ControladorLogin//insert_session_record// Error desconocido.// 2019-09-25T22:59:37.409
+managers.queries.KeyValidate//resultHaveKey// Permisos denegados.// 2019-09-25T23:09:19.846
+managers.ControladorLogin//insert_session_record// Error desconocido.// 2019-09-25T23:09:20.094
+managers.queries.KeyValidate//resultHaveKey// Permisos denegados.// 2019-09-25T23:11:25.942
+managers.ControladorLogin//insert_session_record// Error desconocido.// 2019-09-25T23:11:26.082
+managers.ControladorLogin//insert_session_record// Error desconocido.// 2019-09-25T23:11:58.558
+managers.ControladorGestionPermisos//getCurrentUserKeys// Consulta no arroja resultados.// 2019-09-25T23:12:15.200
+managers.ControladorLogin//insert_session_record// Error desconocido.// 2019-09-25T23:12:38.025
+managers.ControladorLogin//insert_session_record// Error desconocido.// 2019-09-25T23:15:47.730
+managers.ControladorLogin//insert_session_record// Error desconocido.// 2019-09-25T23:18:28.055

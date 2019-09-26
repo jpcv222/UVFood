@@ -50,12 +50,12 @@ public class ConsultasLogin extends ConexionBD {
                     ahora los datos que trae la consulta se los pasamos al modelo
                     para luego acceder a ellos
                      */
-                    modeloCliente.setIdUser(rs.getInt(1));
-                    modeloCliente.setUsername(rs.getString(2));
-                    modeloCliente.setFirstname(rs.getString(3));
-                    modeloCliente.setSurname(rs.getString(4));
-                    modeloCliente.setBirth_date(rs.getDate(5));
-                    modeloCliente.setEmail(rs.getString(6));
+                    vista.login_manager.user.setIdUser(rs.getInt(1));
+                    vista.login_manager.user.setUsername(rs.getString(2));
+                    vista.login_manager.user.setFirstname(rs.getString(3));
+                    vista.login_manager.user.setSurname(rs.getString(4));
+                    vista.login_manager.user.setBirth_date(rs.getDate(5));
+                    vista.login_manager.user.setEmail(rs.getString(6));
 
                     result = "success";
                 } else {
