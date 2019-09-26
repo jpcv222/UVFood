@@ -8,9 +8,7 @@ package uvfood;
 import java.sql.Connection;
 import classes.ConexionBD;
 import components.UVFoodDialogs;
-import managers.ControladorCliente;
 import views.Index;
-import views.VistaLogin;
 
 /**
  *
@@ -25,7 +23,6 @@ public class UVFood extends ConexionBD {
         if (miconexion != null) {
             System.out.println("Conexion exitosa");
         } else {
-
             modal.error_message("Error", "Algo anda mal", "El servidor esta presentado problemas", "Por Favor intenta mas tarde", "O reportanos que ocurre");
         }
 

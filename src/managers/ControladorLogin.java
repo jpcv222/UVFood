@@ -23,7 +23,7 @@ public class ControladorLogin {
 
     private  VistaLogin vistaLogin;
     private final FormValidations validations;
-    private Usuario user;
+    public Usuario user;
     private ConsultasLogin loginQueries;
     private final UVFoodDialogs modal;
     
@@ -113,12 +113,17 @@ public class ControladorLogin {
             case "success.cliente":
                 vistaLogin.dispose();
                 VistaCliente home_cliente = new VistaCliente();
+                home_cliente.manager.user = this.user;
+                home_cliente.manager.set_init_conf();
                 home_cliente.setVisible(true);
                 logs.escribirAccessLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// Acceso a vista cliente.");
                 break;
             case "success.vendedor":
-                modal.error_message("Error.", "Algo anda mal.", "Vista vendedor no disponible.", null, null);
-                logs.escribirErrorLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// Vista vendedor no disponible.");
+                VistaAdmin home_admin2 = new VistaAdmin();
+                home_admin2.manager.user = this.user;
+                home_admin2.manager.set_init_conf();
+                home_admin2.setVisible(true);
+                logs.escribirAccessLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// Acceso a vista admin.");
                 break;
             case "success.notfound":
                 modal.error_message("Error.", "Algo anda mal.", "El rol no está definido.", null, null);

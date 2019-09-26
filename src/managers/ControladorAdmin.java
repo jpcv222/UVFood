@@ -13,21 +13,37 @@ import classes.Logs;
 import classes.Usuario;
 import components.UVFoodDialogs;
 import java.awt.BorderLayout;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
 import java.awt.MouseInfo;
 import java.awt.Point;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import static java.awt.image.ImageObserver.WIDTH;
+import java.awt.print.PageFormat;
+import java.awt.print.Printable;
+import static java.awt.print.Printable.NO_SUCH_PAGE;
+import static java.awt.print.Printable.PAGE_EXISTS;
+import java.awt.print.PrinterJob;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import static java.nio.file.StandardCopyOption.REPLACE_EXISTING;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import javax.print.PrintException;
 import javax.swing.ImageIcon;
 import javax.swing.JMenuItem;
 import javax.swing.JTable;
 import org.jfree.chart.*;
 import org.jfree.chart.plot.PlotOrientation;
 import org.jfree.data.category.DefaultCategoryDataset;
+import views.GestionPermisos;
+import validations.FormValidations;
+import views.ConfirmMessage;
+import views.Factura;
 
 /**
  *
@@ -37,21 +53,27 @@ import org.jfree.data.category.DefaultCategoryDataset;
 public class ControladorAdmin {
 
     private VistaAdmin interfazPrincipalAdmin;
+    private FormValidations validaciones;
     private final FileManage file;
     private final KeyValidate keyvalidate;
-    private final UVFoodDialogs modal;
+    private UVFoodDialogs modal;
     private ConsultasAdmin consultasAdmin;
+    private ConfirmMessage confirmation_message;
     public Usuario user;
+    public Factura factura;
 
     private Logs logs = new Logs(Thread.currentThread().getStackTrace()[1].getClassName());
 
     //private Cliente modeloCliente;
-    public ControladorAdmin(VistaAdmin interfazPrincipalAdmin) {
+    public ControladorAdmin(VistaAdmin interfazPrincipalAdmin, ConfirmMessage confirmation_message) {
         this.interfazPrincipalAdmin = interfazPrincipalAdmin;
         this.modal = new UVFoodDialogs();
         this.keyvalidate = new KeyValidate(modal);
         this.file = new FileManage();
+        this.confirmation_message = confirmation_message;
         this.consultasAdmin = new ConsultasAdmin();
+        this.validaciones = new FormValidations();
+        this.factura = new Factura();
     }
 
     public void set_init_conf() {
@@ -60,17 +82,41 @@ public class ControladorAdmin {
         createIndexView();
     }
 
-    public void showPermissionsView() {
+    public void showPermissionsView(int row) {
+        String namekey = "permissions.show.view.asign";
+
         try {
-            modal.show_permissions_view(user.getUsername(), user.getFirstname(), user.getSurname());
+
+            String username = interfazPrincipalAdmin.jTableUsers.getValueAt(row, 1).toString();
+            String firstname = interfazPrincipalAdmin.jTableUsers.getValueAt(row, 2).toString();
+            String surname = interfazPrincipalAdmin.jTableUsers.getValueAt(row, 3).toString();
+
+            String result = keyvalidate.haveKey(namekey, user.getIdUser());
+            boolean validate = keyvalidate.resultHaveKey(result);
+            if (validate) {
+                show_permissions_view(username, firstname, surname);
+            } else {
+                modal.error_message("Error de validación.", "Permisos denegados.", "El rol actual no tiene accesos a esta opción.", null, null);
+            }
         } catch (Exception ex) {
-            modal.error_message("Error fatal.", "Error en servidor.", "Se ha generado una excepción.", null, null);
+            modal.error_message("Error fatal.", "Error en servidor.", "Se ha generado un error inesperado.", null, null);
+            logs.escribirExceptionLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// " + ex.getMessage() + " " + ex.toString());
             logs.escribirErrorLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// Consulta no arroja resultados.");
         }
     }
 
-    public void selectFile(String namekey) {
+    public void show_permissions_view(String username, String firstname, String surname) {
+        GestionPermisos view_permissions = new GestionPermisos();
+        view_permissions.manager.setUser(user);
+        view_permissions.jLabelUserNamePerm1.setText(firstname + " " + surname);
+        view_permissions.jLabelUserName.setText(username);
+        view_permissions.manager.set_init_conf();
+        view_permissions.setVisible(true);
 
+    }
+
+    public void selectFile() {
+        String namekey = "users.select.csv";
         String result = keyvalidate.haveKey(namekey, user.getIdUser());
         boolean validate = keyvalidate.resultHaveKey(result);
         if (validate) {
@@ -142,7 +188,7 @@ public class ControladorAdmin {
             DefaultCategoryDataset data = new DefaultCategoryDataset();
             data.addValue(sessions, "Todas las sesiones", "");
 
-            JFreeChart grafica = ChartFactory.createBarChart3D("Sesiones", "", "Total", data, PlotOrientation.VERTICAL, true, true, false);
+            JFreeChart grafica = ChartFactory.createBarChart3D("Sesiones totales", "", "Total", data, PlotOrientation.VERTICAL, true, true, false);
 
             ChartPanel contenedor = new ChartPanel(grafica);
             interfazPrincipalAdmin.P_GraficaSessions.removeAll();
@@ -176,8 +222,8 @@ public class ControladorAdmin {
         }
     }
 
-    public void readCSVFile(String namekey) {
-
+    public void readCSVFile() {
+        String namekey = "users.upload.csv";
         String result = keyvalidate.haveKey(namekey, user.getIdUser());
         boolean validate = keyvalidate.resultHaveKey(result);
         if (validate) {
@@ -216,37 +262,6 @@ public class ControladorAdmin {
         }
     }
 
-    public void guardarImg() {
-
-        if (interfazPrincipalAdmin.nombreImg != null) {
-            interfazPrincipalAdmin.btnGuardarImg.setEnabled(true);
-            try {
-                //definimos el destino de la imagen
-                String dest = System.getProperty("user.dir") + "/src/ImgSlider/" + interfazPrincipalAdmin.nombreImg.getName();
-                Path destino = Paths.get(dest);
-
-                //defininimos el origen
-                String orig = interfazPrincipalAdmin.nombreImg.getPath();
-                Path origen = Paths.get(orig);
-
-                //copiamos el archivo
-                Files.copy(origen, destino, REPLACE_EXISTING);
-
-                System.out.println("archivo copiado con exito en: " + dest);
-
-            } catch (IOException ex) {
-                logs.escribirExceptionLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// " + ex.getMessage() + " " + ex.toString());
-                logs.escribirErrorLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// Carga de imagen a /src/ImgSlider errónea");
-                modal.error_message("Error fatal.", "Carga de imagen erronea.", "Intente con otra imagen o", "Comuníquese con el área de sistemas.", null);
-
-            }
-
-        } else {
-            interfazPrincipalAdmin.btnGuardarImg.setEnabled(false);
-        }
-
-    }
-
     public void createPopupmenu() {
         try {
 
@@ -271,23 +286,26 @@ public class ControladorAdmin {
         }
     }
 
-    public boolean validarImg() {
-
-        if (interfazPrincipalAdmin.nombreImg.getName().contains(".jpg")) {
-            interfazPrincipalAdmin.btnGuardarImg.setEnabled(true);
-            return true;
-        } else if (interfazPrincipalAdmin.nombreImg.getName().contains(".png")) {
-            interfazPrincipalAdmin.btnGuardarImg.setEnabled(true);
-            return true;
-        } else {
-            interfazPrincipalAdmin.btnGuardarImg.setEnabled(false);
-            return false;
-        }
-
-    }
-
     public void requestSearchUser() {
         if (!consultasAdmin.buscarUser(interfazPrincipalAdmin)) {
+            modal.error_message("Error", "Algo anda mal", "No fue exitosa la busqueda", "Por Favor intenta mas tarde", "O reportanos que ocurre");
+        }
+    }
+    
+    public void requestSearchUserSales() {
+        if (!consultasAdmin.buscarUserSales(interfazPrincipalAdmin)) {
+            modal.error_message("Error", "Algo anda mal", "No fue exitosa la busqueda", "Por Favor intenta mas tarde", "O reportanos que ocurre");
+        }
+    }
+    
+    public void requestSearchUsersToTickets() {
+        if (!consultasAdmin.buscarUserToTickets(interfazPrincipalAdmin)) {
+            modal.error_message("Error", "Algo anda mal", "No fue exitosa la busqueda", "Por Favor intenta mas tarde", "O reportanos que ocurre");
+        }
+    }
+    
+    public void requestSearchUserSessions() {
+        if (!consultasAdmin.buscarUserSessions(interfazPrincipalAdmin)) {
             modal.error_message("Error", "Algo anda mal", "No fue exitosa la busqueda", "Por Favor intenta mas tarde", "O reportanos que ocurre");
         }
     }
@@ -298,9 +316,113 @@ public class ControladorAdmin {
         }
     }
 
+    public void requestFillTableSessions() {
+        String namekey = "reports.generate.user.sessions";
+        String result = keyvalidate.haveKey(namekey, user.getIdUser());
+        boolean validate = keyvalidate.resultHaveKey(result);
+        interfazPrincipalAdmin.jLabelNoticeNotPermissions.setVisible(!validate);
+        interfazPrincipalAdmin.jTextFieldBuscarUserSessions.setEnabled(validate);
+        if (validate) {
+            if (!consultasAdmin.llenarTablaSessions(interfazPrincipalAdmin)) {
+                modal.error_message("Error", "Algo anda mal", "No se pueden mostrar registros de la Base de datos", "Por Favor intenta mas tarde", "O reportanos que ocurre");
+            }
+        }
+    }
+
+    public void requestFillTableSales() {
+        String namekey = "reports.generate.user.sessions";
+        String result = keyvalidate.haveKey(namekey, user.getIdUser());
+        boolean validate = keyvalidate.resultHaveKey(result);
+        interfazPrincipalAdmin.jLabelNoticeNotPermissions1.setVisible(!validate);
+        interfazPrincipalAdmin.jTextFieldBuscarUserSales.setEnabled(validate);
+        if (validate) {
+            if (!consultasAdmin.llenarTablaSales(interfazPrincipalAdmin)) {
+                modal.error_message("Error", "Algo anda mal", "No se pueden mostrar registros de la Base de datos", "Por Favor intenta mas tarde", "O reportanos que ocurre");
+            }
+        }
+    }
+
+    public void requestFillTableUsersToTickets() {
+        String namekey = "sales.generate.user.graph";
+        String result = keyvalidate.haveKey(namekey, user.getIdUser());
+        boolean validate = keyvalidate.resultHaveKey(result);
+        interfazPrincipalAdmin.jTextFieldBuscarUserToTicket.setEnabled(validate);
+        if (validate) {
+            if (!consultasAdmin.llenarTablaUsersToTickets(interfazPrincipalAdmin)) {
+                modal.error_message("Error", "Algo anda mal", "No se pueden mostrar registros de la Base de datos", "Por Favor intenta mas tarde", "O reportanos que ocurre");
+            }
+        }
+    }
+
     public void requestFillFields() {
         if (!consultasAdmin.llenarAcciones(interfazPrincipalAdmin)) {
             modal.error_message("Error", "Algo anda mal", "No se pueden mostrar registros de la Base de datos", "Por Favor intenta mas tarde", "O reportanos que ocurre");
+        }
+    }
+
+    public void requestFillFieldsSales() {
+        String namekey = "sales.generate.user.sale";
+        String result = keyvalidate.haveKey(namekey, user.getIdUser());
+        boolean validate = keyvalidate.resultHaveKey(result);
+        if (validate) {
+            try {
+                int fila = interfazPrincipalAdmin.jTableUsersToTickets.getSelectedRow();
+                String username = interfazPrincipalAdmin.jTableUsersToTickets.getValueAt(fila, 1).toString();
+                interfazPrincipalAdmin.jLabelUsernameSales.setText(username);
+            } catch (Exception ai) {
+                logs.escribirExceptionLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// " + ai.getMessage() + " " + ai.toString());
+                modal.error_message("Error", "Algo anda mal", "No se pueden mostrar registros de la Base de datos", "Por Favor intenta mas tarde", "O reportanos que ocurre");
+            }
+        }
+    }
+
+    public void vender() {
+        String namekey = "sales.generate.user.sale";
+        String result = keyvalidate.haveKey(namekey, user.getIdUser());
+        boolean validate = keyvalidate.resultHaveKey(result);
+        if (validate) {
+            if(validateBtFacturar()){
+            if (consultasAdmin.insertSale(interfazPrincipalAdmin)) {
+                createFactura();
+                modal.success_message("Exito.", "Venta realizada.", "La venta se ha realizado con exito", "", "");
+            } else {
+                modal.error_message("Error", "Algo anda mal", "No se puede crear la venta.", "Por Favor intenta mas tarde", "O reportanos que ocurre");
+
+            }
+            }else {
+                modal.error_message("Error", "Algo anda mal", "No se puede crear la venta", "Datos inválidos.", "Revise datos enviados.");
+
+            }
+            
+        }
+    }
+
+    public void createFactura() {
+
+        factura.jLabelNameCliente.setText(interfazPrincipalAdmin.jLabelUsernameSales.getText());
+        factura.jLabelNameVendedor.setText(user.getFirstname() + " " + user.getSurname());
+        factura.jLabelFecha.setText(interfazPrincipalAdmin.jlFecha.getText()+ " "+ interfazPrincipalAdmin.jlHora.getText());
+        factura.jLabelTicketsComprados.setText(interfazPrincipalAdmin.jTextFieldCantidadTickets.getText());
+        factura.jLabelTotal.setText(interfazPrincipalAdmin.jTextFieldTotalVenta.getText());
+        factura.jLabelEfectivo.setText(interfazPrincipalAdmin.jTextFieldEfectivo.getText());
+        factura.jLabelCambio.setText(interfazPrincipalAdmin.jTextFieldCambio.getText());
+        if (!consultasAdmin.getCurrentCountTickets(interfazPrincipalAdmin)) {
+            factura.jLabelTicketsAcum.setText("Error");
+        }
+        factura.setVisible(true);
+    }
+
+    public void consumptionTicket(int row) {
+        String namekey = "sales.generate.user.sale";
+        String result = keyvalidate.haveKey(namekey, user.getIdUser());
+        boolean validate = keyvalidate.resultHaveKey(result);
+        if (validate) {
+            if (consultasAdmin.insertConsumption(interfazPrincipalAdmin, row)) {
+                modal.success_message("Exito.", "Consumo de ticket realizado.", "El ticket se descontará.", "", "");
+            } else {
+                modal.error_message("Error", "Viola restricción.", "No se realizó consumo de ticket.", "Por Favor intenta más tarde.", "Ticket diario consumido.");
+
+            }
         }
     }
 
@@ -311,17 +433,124 @@ public class ControladorAdmin {
     }
 
     public void requestInsertUser() {
+
         String result = consultasAdmin.crearUsuario(interfazPrincipalAdmin);
 
         switch (result) {
             case "error.usuario.existe":
-                modal.error_message("Error", "Algo anda mal", "El usuario ya esta registrado", "Por Favor intenta con otro", "O reportanos que ocurre");
+                modal.error_message("Error", "Algo anda mal", "El usuario ya esta registrado", "Por Favor intenta con otro", "");
+                logs.escribirErrorLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "/error.usuario ya existe/ ");
+                break;
+            case "error.email.existe":
+                modal.error_message("Error", "Algo anda mal", "El email ya esta registrado", "Por Favor intenta con otro", "");
+                logs.escribirErrorLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "/error.email ya existe/ ");
+                break;
+            case "error.dato.no.insertado":
+                modal.error_message("Error", "Algo anda mal", "Ocurrio un error al registrar", "Por Favor verifica los datos", "O reportanos que ocurre");
+                logs.escribirErrorLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "/error./ ");
                 break;
             case "success.dato.insertado":
-                modal.error_message("Exito", "", "El usuario se registro con exito", "", "");
+                modal.success_message("Exito", "", "El usuario se registro con exito", "", "");
+                limpiarCampos();
+                break;
+            case "error.NP.error":
+                modal.error_message("Error", "Algo anda mal", "Ocurrio un error al registrar", "Es posible que los campos", "tengan formato incorrecto.");
+                logs.escribirErrorLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "/error./ validando campos ");
+                break;
+            case "error.sql.error":
+                modal.error_message("Error", "Algo anda mal", "Ocurrio un error al registrar", "Error en el servidor.", "Consulte al área de sistemas.");
+                logs.escribirErrorLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "/error./ validando campos ");
+                break;
+            default:
+                logs.escribirErrorLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// Respuesta a petición inválida.");
                 break;
 
         }
+
+    }
+
+    public void requestValidationsInsertUser() {
+        String validation = validaciones.validarInsert(interfazPrincipalAdmin);
+
+        switch (validation) {
+            case "error.emptyField":
+                modal.error_message("Error.", "Todos los campos son obligatorios.", "", null, null);
+                logs.escribirErrorLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "//Error de campos obligatorios");
+                break;
+            case "error.email":
+                modal.error_message("Error.", "El email ingresado no es valido", "Example@Example.com", null, null);
+                logs.escribirErrorLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "//Error de email incorrecto");
+                break;
+            case "error.date":
+                modal.error_message("Error.", "la fecha ingresada no es valida", "yyyy-MM-dd", null, null);
+                logs.escribirErrorLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "//fecha ingresada no es valida");
+                break;
+            case "success":
+                requestInsertUser();
+                break;
+            default:
+                logs.escribirErrorLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// Respuesta a petición inválida.");
+                break;
+
+        }
+
+    }
+
+    public void requestUpdateUser() {
+
+        String result = consultasAdmin.updateUser(interfazPrincipalAdmin);
+
+        switch (result) {
+            case "error.usuario.existe":
+                modal.error_message("Error", "Algo anda mal", "El usuario ya esta registrado", "Por Favor intenta con otro", "");
+                logs.escribirErrorLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "/error.usuario ya existe/ ");
+                break;
+            case "error.email.existe":
+                modal.error_message("Error", "Algo anda mal", "El email ya esta registrado", "Por Favor intenta con otro", "");
+                logs.escribirErrorLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "/error.email ya existe/ ");
+                break;
+            case "error.dato.no.actualizado":
+                modal.error_message("Error", "Algo anda mal", "Ocurrio un error al actualizar", "Por Favor verifica los datos", "O reportanos que ocurre");
+                logs.escribirErrorLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "/error./ ");
+                break;
+            case "success.dato.actualizado":
+                modal.success_message("Exito", "", "El usuario se actualizo con exito", "", "");
+                logs.escribirAccessLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + " Se realiza actualización de usuario con éxito.");
+                limpiarCampos();
+                break;
+            default:
+                logs.escribirErrorLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// Respuesta a petición inválida.");
+                break;
+
+        }
+
+    }
+
+    public void requestValidationsUpdateUser() {
+        String validation = validaciones.validarUpdate(interfazPrincipalAdmin);
+
+        switch (validation) {
+            case "error.emptyField":
+                modal.error_message("Error.", "Todos los campos son obligatorios.", "", null, null);
+                logs.escribirErrorLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "//Error de campos obligatorios");
+                break;
+            case "error.email":
+                modal.error_message("Error.", "El email ingresado no es valido", "Example@Example.com", null, null);
+                logs.escribirErrorLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "//Error de email incorrecto");
+                break;
+            case "error.date":
+                modal.error_message("Error.", "la fecha ingresada no es valida", "yyyy-MM-dd", null, null);
+                logs.escribirErrorLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "//fecha ingresada no es valida");
+                break;
+            case "success":
+                requestUpdateUser();
+                break;
+            default:
+                logs.escribirErrorLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// Respuesta a petición inválida.");
+                break;
+
+        }
+
     }
 
     public void hablitarEdicionTotal() {
@@ -332,7 +561,9 @@ public class ControladorAdmin {
                 interfazPrincipalAdmin.btnEliminarUser.setEnabled(true);
 
                 interfazPrincipalAdmin.btnHabilitarEdicion.setEnabled(true);
+                interfazPrincipalAdmin.btnCrearUser.setEnabled(false);
                 desHablitarEdicion();
+
                 break;
             case "eliminar_modificar":
                 interfazPrincipalAdmin.btnCrearUser.setEnabled(false);
@@ -343,6 +574,8 @@ public class ControladorAdmin {
                 HablitarEdicion();
                 break;
             case "solo_crear":
+                //interfazPrincipalAdmin.jComboBoxRoles.removeAllItems();
+                //requestFillCombo();
                 interfazPrincipalAdmin.btnCrearUser.setEnabled(true);
                 interfazPrincipalAdmin.btnModificarUser.setEnabled(false);
                 interfazPrincipalAdmin.btnEliminarUser.setEnabled(false);
@@ -350,7 +583,7 @@ public class ControladorAdmin {
                 interfazPrincipalAdmin.jTextFieldRol.removeAll();
                 interfazPrincipalAdmin.jTextFieldRol.repaint();
                 interfazPrincipalAdmin.jTextFieldRol.revalidate();
-                requestFillCombo();
+
                 interfazPrincipalAdmin.btnHabilitarEdicion.setEnabled(false);
                 interfazPrincipalAdmin.jTextFieldRol.setEditable(false);
 
@@ -367,6 +600,13 @@ public class ControladorAdmin {
                 interfazPrincipalAdmin.btnHabilitarEdicion.setEnabled(false);
                 interfazPrincipalAdmin.jTextFieldRol.setEditable(false);
 
+                HablitarEdicion();
+
+                break;
+            case "soloHabilitar":
+                interfazPrincipalAdmin.btnHabilitarEdicion.setEnabled(true);
+                interfazPrincipalAdmin.btnCrearUser.setEnabled(false);
+                interfazPrincipalAdmin.btnEliminarUser.setEnabled(false);
                 break;
             default:
                 break;
@@ -415,6 +655,292 @@ public class ControladorAdmin {
         interfazPrincipalAdmin.jTextFieldUser.setText("");
         interfazPrincipalAdmin.jTextFieldIdRol.setText("");
         interfazPrincipalAdmin.jTextFieldIdUser.setText("");
+    }
+
+    public void limpiarCamposSales() {
+        interfazPrincipalAdmin.jTextFieldCantidadTickets.setText("0");
+        interfazPrincipalAdmin.jTextFieldEfectivo.setText("0");
+        interfazPrincipalAdmin.jTextFieldCambio.setText("0");
+        interfazPrincipalAdmin.jTextFieldTotalVenta.setText("0");
+    }
+
+    public void requestDisableUser() {
+        String res = consultasAdmin.disableUser(interfazPrincipalAdmin);
+
+        switch (res) {
+            case "success":
+                modal.success_message("Éxito", "", "El usuario fue deshabilitado con exito", "", "");
+                break;
+            case "error":
+                modal.error_message("Error", "", "Intentalo de nuevo por favor", "", "");
+                break;
+            default:
+                modal.error_message("Error", "Servidor no envía respuesta", "Intentalo de nuevo por favor", "", "");
+                break;
+
+        }
+
+    }
+
+    public void calculatePrice() {
+        String value = interfazPrincipalAdmin.jTextFieldCantidadTickets.getText();
+        if (validaciones.isNumeric(value)) {
+            if (validaciones.isNegativeOrZero(value)) {
+                int price_ticket = calculatePriceTicket();
+                int price = Integer.parseInt(value) * price_ticket;
+                interfazPrincipalAdmin.jTextFieldTotalVenta.setText(String.valueOf(price));
+            }
+        }
+
+    }
+
+    public void calculateCashChange() {
+        String value = interfazPrincipalAdmin.jTextFieldEfectivo.getText();
+        if (validaciones.isNumeric(value)) {
+
+            if (validaciones.isNegativeOrZero(value)) {
+                int venta = Integer.parseInt(interfazPrincipalAdmin.jTextFieldTotalVenta.getText());
+                int cash = Integer.parseInt(value);
+                if (cash >= venta) {
+                    int cash_change = cash - venta;
+                    interfazPrincipalAdmin.jTextFieldCambio.setText(String.valueOf(cash_change));
+                }else{
+                     interfazPrincipalAdmin.jTextFieldCambio.setText("Error.");
+                }
+            }
+        }
+
+    }
+
+    public boolean  validateBtFacturar() {
+        String cash_change = interfazPrincipalAdmin.jTextFieldCambio.getText();
+        String tickets = interfazPrincipalAdmin.jTextFieldCantidadTickets.getText();
+        String price = interfazPrincipalAdmin.jTextFieldTotalVenta.getText();
+        String efectivo = interfazPrincipalAdmin.jTextFieldEfectivo.getText();
+        if (validaciones.isNumeric(cash_change) && validaciones.isNumeric(tickets) && validaciones.isNumeric(price) && validaciones.isNumeric(efectivo)) {
+            int cash_change_aux = Integer.parseInt(cash_change);
+            int tickets_aux = Integer.parseInt(tickets);
+            int price_aux = Integer.parseInt(price);
+            int efectivo_aux = Integer.parseInt(efectivo);
+
+            return (cash_change_aux >= 0 && tickets_aux >= 0 && efectivo_aux >= price_aux);
+
+        }else {
+        return false;
+        }
+    }
+
+    public void validateCantTickets() {
+        String value = interfazPrincipalAdmin.jTextFieldCantidadTickets.getText();
+        interfazPrincipalAdmin.jTextFieldEfectivo.setEnabled(validaciones.isNumeric(value) && validaciones.isNegativeOrZero(value));
+    }
+
+    public int calculatePriceTicket() {
+
+        int result = 2100;
+
+        try {
+            int fila = interfazPrincipalAdmin.jTableUsersToTickets.getSelectedRow();
+            int discount = (int) interfazPrincipalAdmin.jTableUsersToTickets.getValueAt(fila, 5);
+            result = result - discount;
+        } catch (Exception ai) {
+            logs.escribirExceptionLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// " + ai.getMessage() + " " + ai.toString());
+            //modal.error_message("Error", "Algo anda mal", "No se pueden mostrar registros de la Base de datos", "Por Favor intenta mas tarde", "O reportanos que ocurre");
+
+        }
+        return result;
+    }
+
+    public void validateDisableUser() {
+        modal.confirmation_message("Confirmacion", "¿Desea deshabilitar este usuario?");
+        if (modal.confirmation_message.confirm_action) {
+            requestDisableUser();
+            interfazPrincipalAdmin.btnhabilitarUser.setEnabled(true);
+            interfazPrincipalAdmin.btnEliminarUser.setEnabled(false);
+        }
+    }
+
+    public void requestEnableUser() {
+        consultasAdmin.enableUser(interfazPrincipalAdmin);
+        interfazPrincipalAdmin.btnhabilitarUser.setEnabled(false);
+        interfazPrincipalAdmin.btnEliminarUser.setEnabled(true);
+    }
+
+    public void requestFillComboImgType() {
+        if (!consultasAdmin.fillComboImgTipo(interfazPrincipalAdmin)) {
+            modal.error_message("Error", "Algo anda mal", "No se pueden mostrar registros de la Base de datos", "Por Favor intenta mas tarde", "O reportanos que ocurre");
+        }
+    }
+
+    public void requestGuardarImg(String tipo) {
+        try {
+            switch (tipo) {
+                case "Slider":
+                    guardarImg();
+                    break;
+                case "Menu":
+                    guardarImgMenu();
+                    break;
+                default:
+                    logs.escribirErrorLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// Respuesta a petición inválida.");
+                    break;
+
+            }
+
+        } catch (NullPointerException e) {
+        }
+
+    }
+
+    public void guardarImg() {
+
+        if (interfazPrincipalAdmin.nombreImg != null) {
+            interfazPrincipalAdmin.btnGuardarImg.setEnabled(true);
+            try {
+                //definimos el destino de la imagen
+                String dest = System.getProperty("user.dir") + "/src/ImgSlider/" + interfazPrincipalAdmin.nombreImg.getName();
+                Path destino = Paths.get(dest);
+
+                //defininimos el origen
+                String orig = interfazPrincipalAdmin.nombreImg.getPath();
+                Path origen = Paths.get(orig);
+
+                //copiamos el archivo
+                Files.copy(origen, destino, REPLACE_EXISTING);
+
+                System.out.println("archivo copiado con exito en: " + dest);
+
+            } catch (IOException ex) {
+                logs.escribirExceptionLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// " + ex.getMessage() + " " + ex.toString());
+                logs.escribirErrorLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// Carga de imagen a /src/ImgSlider errónea");
+                modal.error_message("Error fatal.", "Carga de imagen erronea.", "Intente con otra imagen o", "Comuníquese con el área de sistemas.", null);
+
+            }
+
+        } else {
+            interfazPrincipalAdmin.btnGuardarImg.setEnabled(false);
+        }
+
+    }
+
+    public String getFecha() {
+        Date myDate = new Date();
+
+        String fecha = new SimpleDateFormat("yyyy-MM-dd").format(myDate);
+
+        return fecha;
+    }
+
+    public void requestInsertImgBD(String nombreImg) {
+        String result = consultasAdmin.guardarMenu(nombreImg, interfazPrincipalAdmin);
+
+        try {
+            switch (result) {
+                case "success.dato.insertado":
+                    modal.success_message("Éxito", "Menu guardado", "", "", "");
+                    break;
+                case "error.dato.no.insertado":
+                    modal.error_message("Error", "Algo anda mal", "El menu no se inserto", "Por favor intenta de nuevo", "O comunicate con nosotros");
+                    logs.escribirErrorLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "/error.Imagen no insertada/ ");
+                    break;
+                case "error.fecha.esta":
+                    modal.error_message("Error", "Algo anda mal", "Ya hay un menu con la fecha de hoy", "Por Favor intenta modificando", "O eliminando");
+                    logs.escribirErrorLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "/error.fecha ya esta/ ");
+                    break;
+                default:
+                    logs.escribirErrorLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// Respuesta a petición inválida.");
+                    break;
+
+            }
+
+        } catch (NullPointerException e) {
+        }
+    }
+
+    public void guardarImgMenu() {
+
+        if (interfazPrincipalAdmin.nombreImg != null) {
+            interfazPrincipalAdmin.btnGuardarImg.setEnabled(true);
+            try {
+                String nombreImg = "";
+
+                //copiamos el archivo
+                if (!interfazPrincipalAdmin.jTextFieldNewDate.getText().equals("")) {
+                    if (validaciones.isDate(interfazPrincipalAdmin.jTextFieldNewDate.getText())) {
+                        //definimos el destino de la imagen
+                        nombreImg = interfazPrincipalAdmin.jTextFieldNewDate.getText()+"_"+interfazPrincipalAdmin.nombreImg.getName();
+                        String dest = System.getProperty("user.dir") + "/src/ImgMenu/" + nombreImg;
+                        Path destino = Paths.get(dest);
+
+                        //defininimos el origen
+                        String orig = interfazPrincipalAdmin.nombreImg.getPath();
+                        Path origen = Paths.get(orig);
+
+                        Files.copy(origen, destino, REPLACE_EXISTING);
+                        System.out.println("archivo copiado con exito en: " + dest);
+                        requestInsertImgBD(nombreImg);
+                    } else {
+                        modal.error_message("Error", "Algo anda mal", "formato de fecha no permitido", "Por Favor intenta modificando", "O eliminando");
+                        logs.escribirErrorLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "/error.fecha ya esta/ ");
+                    }
+                } else {
+                    nombreImg = getFecha()+"_"+interfazPrincipalAdmin.nombreImg.getName();
+                    String dest = System.getProperty("user.dir") + "/src/ImgMenu/" + nombreImg;
+                    Path destino = Paths.get(dest);
+
+                    //defininimos el origen
+                    String orig = interfazPrincipalAdmin.nombreImg.getPath();
+                    Path origen = Paths.get(orig);
+                    Files.copy(origen, destino, REPLACE_EXISTING);
+                    System.out.println("archivo copiado con exito en: " + dest);
+                    requestInsertImgBD(nombreImg);
+                }
+
+                
+
+            } catch (IOException ex) {
+                logs.escribirExceptionLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// " + ex.getMessage() + " " + ex.toString());
+                modal.error_message("Error fatal.", "Carga de imagen erronea.", "Intente con otra imagen o", "Comuníquese con el área de sistemas.", null);
+
+            }
+
+        } else {
+            interfazPrincipalAdmin.btnGuardarImg.setEnabled(false);
+        }
+
+    }
+
+    public boolean validarImg() {
+        try {
+            if (interfazPrincipalAdmin.nombreImg.getName().contains(".jpg")) {
+                interfazPrincipalAdmin.btnGuardarImg.setEnabled(true);
+                interfazPrincipalAdmin.jComboBoxTipoImg.setEnabled(true);
+                return true;
+            } else if (interfazPrincipalAdmin.nombreImg.getName().contains(".png")) {
+                interfazPrincipalAdmin.btnGuardarImg.setEnabled(true);
+                interfazPrincipalAdmin.jComboBoxTipoImg.setEnabled(true);
+                return true;
+            } else {
+                interfazPrincipalAdmin.btnGuardarImg.setEnabled(false);
+                interfazPrincipalAdmin.jComboBoxTipoImg.setEnabled(false);
+                return false;
+            }
+        } catch (NullPointerException e) {
+            logs.escribirExceptionLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// " + e.getMessage() + " " + e.toString());
+            return false;
+        }
+
+    }
+
+    public void requestTraerMenu() {
+        String image = consultasAdmin.traerMenu(getFecha());
+
+        if (image.equals("error.img.no.encontrada")) {
+            modal.error_message("Error", "No hay menu asignado para hoy", "dirigete a gestion interfaz", "y asigna uno", "");
+        } else {
+            System.out.println(image);
+            rsscalelabel.RSScaleLabel.setScaleLabel(interfazPrincipalAdmin.jLabelMenuActual, System.getProperty("user.dir") + "/src/ImgMenu/" + image);
+        }
     }
 
 }

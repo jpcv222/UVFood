@@ -1,666 +1,288 @@
-managers.ControladorAdmin//readCSVFile// null java.lang.NullPointerException// 2019-08-18T18:50:10.122
-managers.ControladorAdmin//readCSVFile// null java.lang.NullPointerException// 2019-08-18T18:50:10.667
-managers.ControladorAdmin//readCSVFile// null java.lang.NullPointerException// 2019-08-18T18:50:10.962
-managers.ControladorAdmin//readCSVFile// null java.lang.NullPointerException// 2019-08-19T02:54:57.422
-managers.ControladorAdmin//readCSVFile// null java.lang.NullPointerException// 2019-08-19T02:55:31.705
-managers.ControladorAdmin//readCSVFile// null java.lang.NullPointerException// 2019-08-19T02:55:34.165
-managers.ControladorAdmin//readCSVFile// null java.lang.NullPointerException// 2019-08-19T02:55:40.516
-managers.ControladorAdmin//readCSVFile// null java.lang.NullPointerException// 2019-08-19T02:55:42.367
-managers.ControladorAdmin//readCSVFile// null java.lang.NullPointerException// 2019-08-19T02:55:44.156
-managers.ControladorAdmin//readCSVFile// null java.lang.NullPointerException// 2019-08-19T03:19:25.644
-managers.ControladorAdmin//readCSVFile// null java.lang.NullPointerException// 2019-08-19T03:19:31.913
-managers.ControladorAdmin//readCSVFile// null java.lang.NullPointerException// 2019-08-19T03:23:46.226
-classes.FileChooser//calcularRutaArchivo// null java.lang.NullPointerException// 2019-08-19T03:34:22.152
-classes.ConexionBD//Conexion// FATAL: database "pruebauvfood" does not exist org.postgresql.util.PSQLException: FATAL: database "pruebauvfood" does not exist// 2019-08-19T04:02:27.141
-classes.ConexionBD//Conexion// FATAL: database "pruebauvfood" does not exist org.postgresql.util.PSQLException: FATAL: database "pruebauvfood" does not exist// 2019-08-19T04:02:32.991
-classes.ConexionBD//Conexion// FATAL: database "pruebauvfood" does not exist org.postgresql.util.PSQLException: FATAL: database "pruebauvfood" does not exist// 2019-08-19T04:05:55.436
-classes.ConexionBD//Conexion// FATAL: database "pruebauvfood" does not exist org.postgresql.util.PSQLException: FATAL: database "pruebauvfood" does not exist// 2019-08-19T04:06:00.391
-classes.ConsultasCliente//login// ERROR: relation "uvfood_usuario" does not exist
-  Position: 15 org.postgresql.util.PSQLException: ERROR: relation "uvfood_usuario" does not exist
-  Position: 15// 2019-08-19T04:09:50.079
-classes.ConexionBD//Conexion// FATAL: la autentificación password falló para el usuario «postgres» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf) org.postgresql.util.PSQLException: FATAL: la autentificación password falló para el usuario «postgres» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf)// 2019-08-19T16:00:38.013
-classes.ConexionBD//Conexion// FATAL: la autentificación password falló para el usuario «postgres» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf) org.postgresql.util.PSQLException: FATAL: la autentificación password falló para el usuario «postgres» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf)// 2019-08-19T16:03:48.113
-classes.ConexionBD//Conexion// FATAL: la autentificación password falló para el usuario «postgres» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf) org.postgresql.util.PSQLException: FATAL: la autentificación password falló para el usuario «postgres» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf)// 2019-08-19T16:05:23.672
-classes.ConexionBD//Conexion// FATAL: la autentificación password falló para el usuario «postgres» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf) org.postgresql.util.PSQLException: FATAL: la autentificación password falló para el usuario «postgres» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf)// 2019-08-19T16:08:12.242
-classes.ConsultasCliente//login// ERROR: no existe la relación «uvfood_usuario»
-  Position: 15 org.postgresql.util.PSQLException: ERROR: no existe la relación «uvfood_usuario»
-  Position: 15// 2019-08-19T16:24:34.045
-classes.ConsultasCliente//login// ERROR: no existe la relación «uvfood_usuario»
-  Position: 15 org.postgresql.util.PSQLException: ERROR: no existe la relación «uvfood_usuario»
-  Position: 15// 2019-08-19T16:27:39.561
-classes.ConsultasCliente//login// ERROR: no existe la relación «uvfood_usuario»
-  Position: 15 org.postgresql.util.PSQLException: ERROR: no existe la relación «uvfood_usuario»
-  Position: 15// 2019-08-19T16:27:41.864
-classes.ConsultasCliente//login// ERROR: no existe la relación «uvfood_usuario»
-  Position: 15 org.postgresql.util.PSQLException: ERROR: no existe la relación «uvfood_usuario»
-  Position: 15// 2019-08-19T16:27:45.154
-classes.ConexionBD//Conexion// FATAL: la autentificación password falló para el usuario «postgres» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf) org.postgresql.util.PSQLException: FATAL: la autentificación password falló para el usuario «postgres» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf)// 2019-08-20T08:56:52.048
-classes.ConexionBD//Conexion// FATAL: la autentificación password falló para el usuario «postgres» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf) org.postgresql.util.PSQLException: FATAL: la autentificación password falló para el usuario «postgres» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf)// 2019-08-20T11:30:59.135
-classes.ConsultasAdmin//buscarUser// ERROR: error de sintaxis en o cerca de «,»
-  Position: 40 org.postgresql.util.PSQLException: ERROR: error de sintaxis en o cerca de «,»
-  Position: 40// 2019-08-21T09:24:16.865
-classes.ConsultasAdmin//buscarUser// ERROR: error de sintaxis en o cerca de «,»
-  Position: 40 org.postgresql.util.PSQLException: ERROR: error de sintaxis en o cerca de «,»
-  Position: 40// 2019-08-21T09:24:32.076
-classes.ConsultasAdmin//buscarUser// ERROR: error de sintaxis en o cerca de «,»
-  Position: 40 org.postgresql.util.PSQLException: ERROR: error de sintaxis en o cerca de «,»
-  Position: 40// 2019-08-21T09:25:55
-classes.ConsultasAdmin//buscarUser// ERROR: error de sintaxis en o cerca de «,»
-  Position: 40 org.postgresql.util.PSQLException: ERROR: error de sintaxis en o cerca de «,»
-  Position: 40// 2019-08-21T09:35:42.681
-classes.ConsultasAdmin//buscarUser// ERROR: error de sintaxis en o cerca de «,»
-  Position: 40 org.postgresql.util.PSQLException: ERROR: error de sintaxis en o cerca de «,»
-  Position: 40// 2019-08-21T09:36:46.290
-classes.ConsultasAdmin//buscarUser// ERROR: error de sintaxis en o cerca de «,»
-  Position: 40 org.postgresql.util.PSQLException: ERROR: error de sintaxis en o cerca de «,»
-  Position: 40// 2019-08-21T09:36:51.999
-classes.ConsultasAdmin//buscarUser// ERROR: error de sintaxis en o cerca de «,»
-  Position: 40 org.postgresql.util.PSQLException: ERROR: error de sintaxis en o cerca de «,»
-  Position: 40// 2019-08-21T09:37:23.446
-classes.ConsultasAdmin//buscarUser// ERROR: error de sintaxis en o cerca de «,»
-  Position: 40 org.postgresql.util.PSQLException: ERROR: error de sintaxis en o cerca de «,»
-  Position: 40// 2019-08-21T09:37:41.378
-classes.ConsultasAdmin//buscarUser// ERROR: error de sintaxis en o cerca de «,»
-  Position: 40 org.postgresql.util.PSQLException: ERROR: error de sintaxis en o cerca de «,»
-  Position: 40// 2019-08-21T09:37:41.595
-classes.ConsultasAdmin//buscarUser// ERROR: error de sintaxis en o cerca de «,»
-  Position: 40 org.postgresql.util.PSQLException: ERROR: error de sintaxis en o cerca de «,»
-  Position: 40// 2019-08-21T09:45:51.949
-classes.ConsultasAdmin//buscarUser// ERROR: error de sintaxis en o cerca de «,»
-  Position: 40 org.postgresql.util.PSQLException: ERROR: error de sintaxis en o cerca de «,»
-  Position: 40// 2019-08-21T09:45:57.688
-classes.ConsultasAdmin//buscarUser// ERROR: error de sintaxis en o cerca de «,»
-  Position: 40 org.postgresql.util.PSQLException: ERROR: error de sintaxis en o cerca de «,»
-  Position: 40// 2019-08-21T09:46:01.062
-classes.ConsultasAdmin//buscarUser// ERROR: error de sintaxis en o cerca de «,»
-  Position: 40 org.postgresql.util.PSQLException: ERROR: error de sintaxis en o cerca de «,»
-  Position: 40// 2019-08-21T09:46:01.366
-classes.ConsultasAdmin//buscarUser// ERROR: error de sintaxis en o cerca de «,»
-  Position: 40 org.postgresql.util.PSQLException: ERROR: error de sintaxis en o cerca de «,»
-  Position: 40// 2019-08-21T09:46:01.870
-classes.ConsultasAdmin//buscarUser// ERROR: error de sintaxis en o cerca de «,»
-  Position: 40 org.postgresql.util.PSQLException: ERROR: error de sintaxis en o cerca de «,»
-  Position: 40// 2019-08-21T09:46:02.061
-classes.ConsultasAdmin//buscarUser// ERROR: error de sintaxis en o cerca de «,»
-  Position: 40 org.postgresql.util.PSQLException: ERROR: error de sintaxis en o cerca de «,»
-  Position: 40// 2019-08-21T09:46:03.077
-classes.ConsultasAdmin//buscarUser// ERROR: error de sintaxis en o cerca de «,»
-  Position: 40 org.postgresql.util.PSQLException: ERROR: error de sintaxis en o cerca de «,»
-  Position: 40// 2019-08-21T09:46:03.213
-classes.ConsultasAdmin//buscarUser// ERROR: error de sintaxis en o cerca de «,»
-  Position: 40 org.postgresql.util.PSQLException: ERROR: error de sintaxis en o cerca de «,»
-  Position: 40// 2019-08-21T09:46:03.310
-classes.ConsultasAdmin//buscarUser// ERROR: error de sintaxis en o cerca de «,»
-  Position: 40 org.postgresql.util.PSQLException: ERROR: error de sintaxis en o cerca de «,»
-  Position: 40// 2019-08-21T09:46:03.534
-classes.ConsultasAdmin//buscarUser// ERROR: error de sintaxis en o cerca de «,»
-  Position: 40 org.postgresql.util.PSQLException: ERROR: error de sintaxis en o cerca de «,»
-  Position: 40// 2019-08-21T09:46:03.663
-classes.ConsultasAdmin//buscarUser// ERROR: error de sintaxis en o cerca de «,»
-  Position: 40 org.postgresql.util.PSQLException: ERROR: error de sintaxis en o cerca de «,»
-  Position: 40// 2019-08-21T09:46:55.712
-classes.ConsultasAdmin//buscarUser// ERROR: error de sintaxis en o cerca de «,»
-  Position: 40 org.postgresql.util.PSQLException: ERROR: error de sintaxis en o cerca de «,»
-  Position: 40// 2019-08-21T09:46:57.479
-classes.ConsultasAdmin//buscarUser// ERROR: error de sintaxis en o cerca de «,»
-  Position: 40 org.postgresql.util.PSQLException: ERROR: error de sintaxis en o cerca de «,»
-  Position: 40// 2019-08-21T09:47:43.842
-classes.ConsultasCliente//login// ERROR: no existe la relación «uvfood_usuario»
-  Position: 15 org.postgresql.util.PSQLException: ERROR: no existe la relación «uvfood_usuario»
-  Position: 15// 2019-08-21T09:59:49.650
-classes.ConsultasCliente//login// ERROR: no existe la relación «uvfood_usuario»
-  Position: 15 org.postgresql.util.PSQLException: ERROR: no existe la relación «uvfood_usuario»
-  Position: 15// 2019-08-21T10:00:00.991
-classes.ConsultasCliente//login// ERROR: no existe la relación «uvfood_usuario»
-  Position: 15 org.postgresql.util.PSQLException: ERROR: no existe la relación «uvfood_usuario»
-  Position: 15// 2019-08-21T10:00:05.148
-classes.ConsultasAdmin//buscarUser// ERROR: error de sintaxis en o cerca de «,»
-  Position: 39 org.postgresql.util.PSQLException: ERROR: error de sintaxis en o cerca de «,»
-  Position: 39// 2019-08-21T10:45:21.281
-classes.ConsultasAdmin//buscarUser// ERROR: error de sintaxis en o cerca de «%»
-  Position: 51 org.postgresql.util.PSQLException: ERROR: error de sintaxis en o cerca de «%»
-  Position: 51// 2019-08-21T10:46:18.281
-classes.ConsultasAdmin//buscarUser// ERROR: error de sintaxis en o cerca de «%»
-  Position: 51 org.postgresql.util.PSQLException: ERROR: error de sintaxis en o cerca de «%»
-  Position: 51// 2019-08-21T10:46:57.297
-classes.ConsultasAdmin//buscarUser// ERROR: error de sintaxis en o cerca de «%»
-  Position: 51 org.postgresql.util.PSQLException: ERROR: error de sintaxis en o cerca de «%»
-  Position: 51// 2019-08-21T10:46:58.966
-classes.ConsultasAdmin//buscarUser// ERROR: error de sintaxis en o cerca de «%»
-  Position: 51 org.postgresql.util.PSQLException: ERROR: error de sintaxis en o cerca de «%»
-  Position: 51// 2019-08-21T10:46:59.719
-classes.ConsultasAdmin//buscarUser// ERROR: error de sintaxis en o cerca de «%»
-  Position: 51 org.postgresql.util.PSQLException: ERROR: error de sintaxis en o cerca de «%»
-  Position: 51// 2019-08-21T10:47:00.271
-classes.ConsultasAdmin//buscarUser// ERROR: error de sintaxis en o cerca de «%»
-  Position: 51 org.postgresql.util.PSQLException: ERROR: error de sintaxis en o cerca de «%»
-  Position: 51// 2019-08-21T10:47:56.010
-classes.ConsultasAdmin//buscarUser// ERROR: error de sintaxis en o cerca de «%»
-  Position: 51 org.postgresql.util.PSQLException: ERROR: error de sintaxis en o cerca de «%»
-  Position: 51// 2019-08-21T10:48:21.639
-classes.ConsultasAdmin//buscarUser// ERROR: error de sintaxis al final de la entrada
-  Position: 57 org.postgresql.util.PSQLException: ERROR: error de sintaxis al final de la entrada
-  Position: 57// 2019-08-21T10:49:36.725
-classes.ConsultasAdmin//buscarUser// ERROR: error de sintaxis al final de la entrada
-  Position: 56 org.postgresql.util.PSQLException: ERROR: error de sintaxis al final de la entrada
-  Position: 56// 2019-08-21T10:49:44.834
-classes.ConsultasAdmin//buscarUser// ERROR: error de sintaxis en o cerca de «,»
-  Position: 39 org.postgresql.util.PSQLException: ERROR: error de sintaxis en o cerca de «,»
-  Position: 39// 2019-08-21T10:55:10.999
-classes.ConsultasAdmin//buscarUser// ERROR: error de sintaxis en o cerca de «,»
-  Position: 39 org.postgresql.util.PSQLException: ERROR: error de sintaxis en o cerca de «,»
-  Position: 39// 2019-08-21T10:58:57.118
-classes.ConsultasAdmin//buscarUser// ERROR: error de sintaxis en o cerca de «,»
-  Position: 39 org.postgresql.util.PSQLException: ERROR: error de sintaxis en o cerca de «,»
-  Position: 39// 2019-08-21T10:58:58.694
-classes.ConsultasAdmin//buscarUser// ERROR: error de sintaxis en o cerca de «LIKEG»
-  Position: 40 org.postgresql.util.PSQLException: ERROR: error de sintaxis en o cerca de «LIKEG»
-  Position: 40// 2019-08-21T11:03:59.477
-classes.ConsultasAdmin//buscarUser// ERROR: error de sintaxis en o cerca de «creation_date»
-  Position: 159 org.postgresql.util.PSQLException: ERROR: error de sintaxis en o cerca de «creation_date»
-  Position: 159// 2019-08-21T11:05:10.259
-classes.ConsultasAdmin//buscarUser// ERROR: error de sintaxis en o cerca de «creation_date»
-  Position: 153 org.postgresql.util.PSQLException: ERROR: error de sintaxis en o cerca de «creation_date»
-  Position: 153// 2019-08-21T11:05:18.273
-classes.ConsultasAdmin//buscarUser// ERROR: error de sintaxis en o cerca de «creation_date»
-  Position: 159 org.postgresql.util.PSQLException: ERROR: error de sintaxis en o cerca de «creation_date»
-  Position: 159// 2019-08-21T11:05:19.298
-classes.ConsultasAdmin//buscarUser// ERROR: el operador no existe: integer ~~ unknown
-  Hint: Ningún operador coincide en el nombre y tipos de argumentos. Puede ser necesario agregar conversión explícita de tipos.
-  Position: 40 org.postgresql.util.PSQLException: ERROR: el operador no existe: integer ~~ unknown
-  Hint: Ningún operador coincide en el nombre y tipos de argumentos. Puede ser necesario agregar conversión explícita de tipos.
-  Position: 40// 2019-08-21T11:05:48.885
-classes.ConsultasAdmin//buscarUser// ERROR: el operador no existe: integer ~~ unknown
-  Hint: Ningún operador coincide en el nombre y tipos de argumentos. Puede ser necesario agregar conversión explícita de tipos.
-  Position: 40 org.postgresql.util.PSQLException: ERROR: el operador no existe: integer ~~ unknown
-  Hint: Ningún operador coincide en el nombre y tipos de argumentos. Puede ser necesario agregar conversión explícita de tipos.
-  Position: 40// 2019-08-21T11:05:50.917
-classes.ConexionBD//Conexion// FATAL: no existe la base de datos «uvfood» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf) org.postgresql.util.PSQLException: FATAL: no existe la base de datos «uvfood» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf)// 2019-08-21T12:56:32.901
-classes.ConexionBD//Conexion// FATAL: no existe la base de datos «uvfood» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf) org.postgresql.util.PSQLException: FATAL: no existe la base de datos «uvfood» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf)// 2019-08-21T12:58:02.230
-classes.ConexionBD//Conexion// FATAL: no existe la base de datos «uvfood» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf) org.postgresql.util.PSQLException: FATAL: no existe la base de datos «uvfood» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf)// 2019-08-21T12:58:39.511
-classes.ConexionBD//Conexion// FATAL: no existe la base de datos «uvfood» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf) org.postgresql.util.PSQLException: FATAL: no existe la base de datos «uvfood» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf)// 2019-08-21T12:58:58.202
-classes.ConsultasAdmin//llenarTabla// null java.lang.NullPointerException// 2019-08-21T12:58:58.204
-classes.ConexionBD//Conexion// FATAL: no existe la base de datos «uvfood» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf) org.postgresql.util.PSQLException: FATAL: no existe la base de datos «uvfood» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf)// 2019-08-21T12:59:02.634
-classes.ConsultasAdmin//buscarUser// null java.lang.NullPointerException// 2019-08-21T12:59:02.635
-classes.ConexionBD//Conexion// FATAL: no existe la base de datos «uvfood» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf) org.postgresql.util.PSQLException: FATAL: no existe la base de datos «uvfood» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf)// 2019-08-21T12:59:09.008
-classes.ConsultasAdmin//buscarUser// null java.lang.NullPointerException// 2019-08-21T12:59:09.022
-classes.ConexionBD//Conexion// FATAL: no existe la base de datos «uvfood» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf) org.postgresql.util.PSQLException: FATAL: no existe la base de datos «uvfood» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf)// 2019-08-21T12:59:11.634
-classes.ConsultasAdmin//buscarUser// null java.lang.NullPointerException// 2019-08-21T12:59:11.636
-classes.ConexionBD//Conexion// FATAL: no existe la base de datos «uvfood» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf) org.postgresql.util.PSQLException: FATAL: no existe la base de datos «uvfood» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf)// 2019-08-21T12:59:13.569
-classes.ConsultasAdmin//buscarUser// null java.lang.NullPointerException// 2019-08-21T12:59:13.570
-classes.ConexionBD//Conexion// FATAL: no existe la base de datos «uvfood» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf) org.postgresql.util.PSQLException: FATAL: no existe la base de datos «uvfood» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf)// 2019-08-21T12:59:14.775
-classes.ConsultasAdmin//buscarUser// null java.lang.NullPointerException// 2019-08-21T12:59:14.776
-classes.ConexionBD//Conexion// FATAL: la autentificación password falló para el usuario «postgres» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf) org.postgresql.util.PSQLException: FATAL: la autentificación password falló para el usuario «postgres» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf)// 2019-08-21T21:36:54.426
-classes.ConexionBD//Conexion// FATAL: la autentificación password falló para el usuario «postgres» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf) org.postgresql.util.PSQLException: FATAL: la autentificación password falló para el usuario «postgres» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf)// 2019-08-21T21:37:03.621
-classes.ConexionBD//Conexion// FATAL: la autentificación password falló para el usuario «postgres» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf) org.postgresql.util.PSQLException: FATAL: la autentificación password falló para el usuario «postgres» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf)// 2019-08-21T21:42:53.249
-classes.ConsultasAdmin//llenarTabla// null java.lang.NullPointerException// 2019-08-21T21:42:53.256
-classes.ConexionBD//Conexion// FATAL: la autentificación password falló para el usuario «postgres» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf) org.postgresql.util.PSQLException: FATAL: la autentificación password falló para el usuario «postgres» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf)// 2019-08-21T21:42:56.150
-classes.ConexionBD//Conexion// FATAL: la autentificación password falló para el usuario «postgres» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf) org.postgresql.util.PSQLException: FATAL: la autentificación password falló para el usuario «postgres» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf)// 2019-08-21T21:45:02.685
-classes.ConsultasAdmin//llenarTabla// null java.lang.NullPointerException// 2019-08-21T21:45:02.692
-classes.ConexionBD//Conexion// FATAL: la autentificación password falló para el usuario «postgres» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf) org.postgresql.util.PSQLException: FATAL: la autentificación password falló para el usuario «postgres» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf)// 2019-08-21T21:45:05.514
-classes.ConsultasAdmin//buscarUser// null java.lang.NullPointerException// 2019-08-21T21:45:05.521
-classes.ConexionBD//Conexion// FATAL: la autentificación password falló para el usuario «postgres» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf) org.postgresql.util.PSQLException: FATAL: la autentificación password falló para el usuario «postgres» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf)// 2019-08-21T21:46:59.574
-classes.ConsultasAdmin//llenarTabla// null java.lang.NullPointerException// 2019-08-21T21:46:59.632
-classes.ConexionBD//Conexion// FATAL: la autentificación password falló para el usuario «postgres» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf) org.postgresql.util.PSQLException: FATAL: la autentificación password falló para el usuario «postgres» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf)// 2019-08-21T21:47:02.971
-classes.ConsultasAdmin//buscarUser// null java.lang.NullPointerException// 2019-08-21T21:47:02.979
-classes.ConexionBD//Conexion// FATAL: la autentificación password falló para el usuario «postgres» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf) org.postgresql.util.PSQLException: FATAL: la autentificación password falló para el usuario «postgres» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf)// 2019-08-21T21:47:46.524
-classes.ConsultasAdmin//buscarUser// null java.lang.NullPointerException// 2019-08-21T21:47:46.531
-classes.ConexionBD//Conexion// FATAL: la autentificación password falló para el usuario «postgres» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf) org.postgresql.util.PSQLException: FATAL: la autentificación password falló para el usuario «postgres» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf)// 2019-08-21T21:47:53.992
-classes.ConsultasAdmin//buscarUser// null java.lang.NullPointerException// 2019-08-21T21:47:53.998
-classes.ConexionBD//Conexion// FATAL: la autentificación password falló para el usuario «postgres» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf) org.postgresql.util.PSQLException: FATAL: la autentificación password falló para el usuario «postgres» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf)// 2019-08-21T21:48:07.670
-classes.ConsultasAdmin//llenarTabla// null java.lang.NullPointerException// 2019-08-21T21:48:07.679
-classes.FileManage//readCSVFile// null java.lang.NullPointerException// 2019-08-26T00:43:56.165
-classes.FileManage//calcularRutaArchivo// null java.lang.NullPointerException// 2019-08-26T00:46:32.483
-FileManageTest//testLogin// null java.lang.NullPointerException// 2019-08-26T00:53:53.501
-FileManageTest//testLogin// null java.lang.NullPointerException// 2019-08-26T00:54:13.023
-classes.FileManage//readCSVFile// null java.lang.NullPointerException// 2019-08-26T01:52:10.443
-classes.ConexionBD//Conexion// FATAL: la autentificación password falló para el usuario «postgres» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf) org.postgresql.util.PSQLException: FATAL: la autentificación password falló para el usuario «postgres» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf)// 2019-08-26T08:38:12.507
-managers.ControladorAdmin//guardarImg// C:\Users\STH_1F_MCB_PC\Pictures\CIER\CierLV.jpg -> C:\Users\STH_1F_MCB_PC\Desktop\UVFood\ImgSlider\CierLV.jpg java.nio.file.NoSuchFileException: C:\Users\STH_1F_MCB_PC\Pictures\CIER\CierLV.jpg -> C:\Users\STH_1F_MCB_PC\Desktop\UVFood\ImgSlider\CierLV.jpg// 2019-08-26T11:00:26.410
-classes.ConexionBD//Conexion// FATAL: la autentificación password falló para el usuario «postgres» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf) org.postgresql.util.PSQLException: FATAL: la autentificación password falló para el usuario «postgres» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf)// 2019-08-27T09:15:18.884
-classes.ConexionBD//Conexion// FATAL: la autentificación password falló para el usuario «postgres» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf) org.postgresql.util.PSQLException: FATAL: la autentificación password falló para el usuario «postgres» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf)// 2019-08-27T09:25:18.445
-classes.ConexionBD//Conexion// FATAL: la autentificación password falló para el usuario «postgres» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf) org.postgresql.util.PSQLException: FATAL: la autentificación password falló para el usuario «postgres» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf)// 2019-08-27T09:26:19.501
-managers.ControladorAdmin//readCSVFile// null java.lang.NullPointerException// 2019-08-18T18:50:10.122
-managers.ControladorAdmin//readCSVFile// null java.lang.NullPointerException// 2019-08-18T18:50:10.667
-managers.ControladorAdmin//readCSVFile// null java.lang.NullPointerException// 2019-08-18T18:50:10.962
-managers.ControladorAdmin//readCSVFile// null java.lang.NullPointerException// 2019-08-19T02:54:57.422
-managers.ControladorAdmin//readCSVFile// null java.lang.NullPointerException// 2019-08-19T02:55:31.705
-managers.ControladorAdmin//readCSVFile// null java.lang.NullPointerException// 2019-08-19T02:55:34.165
-managers.ControladorAdmin//readCSVFile// null java.lang.NullPointerException// 2019-08-19T02:55:40.516
-managers.ControladorAdmin//readCSVFile// null java.lang.NullPointerException// 2019-08-19T02:55:42.367
-managers.ControladorAdmin//readCSVFile// null java.lang.NullPointerException// 2019-08-19T02:55:44.156
-managers.ControladorAdmin//readCSVFile// null java.lang.NullPointerException// 2019-08-19T03:19:25.644
-managers.ControladorAdmin//readCSVFile// null java.lang.NullPointerException// 2019-08-19T03:19:31.913
-managers.ControladorAdmin//readCSVFile// null java.lang.NullPointerException// 2019-08-19T03:23:46.226
-classes.FileChooser//calcularRutaArchivo// null java.lang.NullPointerException// 2019-08-19T03:34:22.152
-classes.ConexionBD//Conexion// FATAL: database "pruebauvfood" does not exist org.postgresql.util.PSQLException: FATAL: database "pruebauvfood" does not exist// 2019-08-19T04:02:27.141
-classes.ConexionBD//Conexion// FATAL: database "pruebauvfood" does not exist org.postgresql.util.PSQLException: FATAL: database "pruebauvfood" does not exist// 2019-08-19T04:02:32.991
-classes.ConexionBD//Conexion// FATAL: database "pruebauvfood" does not exist org.postgresql.util.PSQLException: FATAL: database "pruebauvfood" does not exist// 2019-08-19T04:05:55.436
-classes.ConexionBD//Conexion// FATAL: database "pruebauvfood" does not exist org.postgresql.util.PSQLException: FATAL: database "pruebauvfood" does not exist// 2019-08-19T04:06:00.391
-classes.ConsultasCliente//login// ERROR: relation "uvfood_usuario" does not exist
-  Position: 15 org.postgresql.util.PSQLException: ERROR: relation "uvfood_usuario" does not exist
-  Position: 15// 2019-08-19T04:09:50.079
-classes.ConexionBD//Conexion// FATAL: la autentificación password falló para el usuario «postgres» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf) org.postgresql.util.PSQLException: FATAL: la autentificación password falló para el usuario «postgres» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf)// 2019-08-19T16:00:38.013
-classes.ConexionBD//Conexion// FATAL: la autentificación password falló para el usuario «postgres» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf) org.postgresql.util.PSQLException: FATAL: la autentificación password falló para el usuario «postgres» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf)// 2019-08-19T16:03:48.113
-classes.ConexionBD//Conexion// FATAL: la autentificación password falló para el usuario «postgres» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf) org.postgresql.util.PSQLException: FATAL: la autentificación password falló para el usuario «postgres» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf)// 2019-08-19T16:05:23.672
-classes.ConexionBD//Conexion// FATAL: la autentificación password falló para el usuario «postgres» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf) org.postgresql.util.PSQLException: FATAL: la autentificación password falló para el usuario «postgres» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf)// 2019-08-19T16:08:12.242
-classes.ConsultasCliente//login// ERROR: no existe la relación «uvfood_usuario»
-  Position: 15 org.postgresql.util.PSQLException: ERROR: no existe la relación «uvfood_usuario»
-  Position: 15// 2019-08-19T16:24:34.045
-classes.ConsultasCliente//login// ERROR: no existe la relación «uvfood_usuario»
-  Position: 15 org.postgresql.util.PSQLException: ERROR: no existe la relación «uvfood_usuario»
-  Position: 15// 2019-08-19T16:27:39.561
-classes.ConsultasCliente//login// ERROR: no existe la relación «uvfood_usuario»
-  Position: 15 org.postgresql.util.PSQLException: ERROR: no existe la relación «uvfood_usuario»
-  Position: 15// 2019-08-19T16:27:41.864
-classes.ConsultasCliente//login// ERROR: no existe la relación «uvfood_usuario»
-  Position: 15 org.postgresql.util.PSQLException: ERROR: no existe la relación «uvfood_usuario»
-  Position: 15// 2019-08-19T16:27:45.154
-classes.ConexionBD//Conexion// FATAL: la autentificación password falló para el usuario «postgres» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf) org.postgresql.util.PSQLException: FATAL: la autentificación password falló para el usuario «postgres» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf)// 2019-08-20T08:56:52.048
-classes.ConexionBD//Conexion// FATAL: la autentificación password falló para el usuario «postgres» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf) org.postgresql.util.PSQLException: FATAL: la autentificación password falló para el usuario «postgres» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf)// 2019-08-20T11:30:59.135
-classes.ConsultasAdmin//buscarUser// ERROR: error de sintaxis en o cerca de «,»
-  Position: 40 org.postgresql.util.PSQLException: ERROR: error de sintaxis en o cerca de «,»
-  Position: 40// 2019-08-21T09:24:16.865
-classes.ConsultasAdmin//buscarUser// ERROR: error de sintaxis en o cerca de «,»
-  Position: 40 org.postgresql.util.PSQLException: ERROR: error de sintaxis en o cerca de «,»
-  Position: 40// 2019-08-21T09:24:32.076
-classes.ConsultasAdmin//buscarUser// ERROR: error de sintaxis en o cerca de «,»
-  Position: 40 org.postgresql.util.PSQLException: ERROR: error de sintaxis en o cerca de «,»
-  Position: 40// 2019-08-21T09:25:55
-classes.ConsultasAdmin//buscarUser// ERROR: error de sintaxis en o cerca de «,»
-  Position: 40 org.postgresql.util.PSQLException: ERROR: error de sintaxis en o cerca de «,»
-  Position: 40// 2019-08-21T09:35:42.681
-classes.ConsultasAdmin//buscarUser// ERROR: error de sintaxis en o cerca de «,»
-  Position: 40 org.postgresql.util.PSQLException: ERROR: error de sintaxis en o cerca de «,»
-  Position: 40// 2019-08-21T09:36:46.290
-classes.ConsultasAdmin//buscarUser// ERROR: error de sintaxis en o cerca de «,»
-  Position: 40 org.postgresql.util.PSQLException: ERROR: error de sintaxis en o cerca de «,»
-  Position: 40// 2019-08-21T09:36:51.999
-classes.ConsultasAdmin//buscarUser// ERROR: error de sintaxis en o cerca de «,»
-  Position: 40 org.postgresql.util.PSQLException: ERROR: error de sintaxis en o cerca de «,»
-  Position: 40// 2019-08-21T09:37:23.446
-classes.ConsultasAdmin//buscarUser// ERROR: error de sintaxis en o cerca de «,»
-  Position: 40 org.postgresql.util.PSQLException: ERROR: error de sintaxis en o cerca de «,»
-  Position: 40// 2019-08-21T09:37:41.378
-classes.ConsultasAdmin//buscarUser// ERROR: error de sintaxis en o cerca de «,»
-  Position: 40 org.postgresql.util.PSQLException: ERROR: error de sintaxis en o cerca de «,»
-  Position: 40// 2019-08-21T09:37:41.595
-classes.ConsultasAdmin//buscarUser// ERROR: error de sintaxis en o cerca de «,»
-  Position: 40 org.postgresql.util.PSQLException: ERROR: error de sintaxis en o cerca de «,»
-  Position: 40// 2019-08-21T09:45:51.949
-classes.ConsultasAdmin//buscarUser// ERROR: error de sintaxis en o cerca de «,»
-  Position: 40 org.postgresql.util.PSQLException: ERROR: error de sintaxis en o cerca de «,»
-  Position: 40// 2019-08-21T09:45:57.688
-classes.ConsultasAdmin//buscarUser// ERROR: error de sintaxis en o cerca de «,»
-  Position: 40 org.postgresql.util.PSQLException: ERROR: error de sintaxis en o cerca de «,»
-  Position: 40// 2019-08-21T09:46:01.062
-classes.ConsultasAdmin//buscarUser// ERROR: error de sintaxis en o cerca de «,»
-  Position: 40 org.postgresql.util.PSQLException: ERROR: error de sintaxis en o cerca de «,»
-  Position: 40// 2019-08-21T09:46:01.366
-classes.ConsultasAdmin//buscarUser// ERROR: error de sintaxis en o cerca de «,»
-  Position: 40 org.postgresql.util.PSQLException: ERROR: error de sintaxis en o cerca de «,»
-  Position: 40// 2019-08-21T09:46:01.870
-classes.ConsultasAdmin//buscarUser// ERROR: error de sintaxis en o cerca de «,»
-  Position: 40 org.postgresql.util.PSQLException: ERROR: error de sintaxis en o cerca de «,»
-  Position: 40// 2019-08-21T09:46:02.061
-classes.ConsultasAdmin//buscarUser// ERROR: error de sintaxis en o cerca de «,»
-  Position: 40 org.postgresql.util.PSQLException: ERROR: error de sintaxis en o cerca de «,»
-  Position: 40// 2019-08-21T09:46:03.077
-classes.ConsultasAdmin//buscarUser// ERROR: error de sintaxis en o cerca de «,»
-  Position: 40 org.postgresql.util.PSQLException: ERROR: error de sintaxis en o cerca de «,»
-  Position: 40// 2019-08-21T09:46:03.213
-classes.ConsultasAdmin//buscarUser// ERROR: error de sintaxis en o cerca de «,»
-  Position: 40 org.postgresql.util.PSQLException: ERROR: error de sintaxis en o cerca de «,»
-  Position: 40// 2019-08-21T09:46:03.310
-classes.ConsultasAdmin//buscarUser// ERROR: error de sintaxis en o cerca de «,»
-  Position: 40 org.postgresql.util.PSQLException: ERROR: error de sintaxis en o cerca de «,»
-  Position: 40// 2019-08-21T09:46:03.534
-classes.ConsultasAdmin//buscarUser// ERROR: error de sintaxis en o cerca de «,»
-  Position: 40 org.postgresql.util.PSQLException: ERROR: error de sintaxis en o cerca de «,»
-  Position: 40// 2019-08-21T09:46:03.663
-classes.ConsultasAdmin//buscarUser// ERROR: error de sintaxis en o cerca de «,»
-  Position: 40 org.postgresql.util.PSQLException: ERROR: error de sintaxis en o cerca de «,»
-  Position: 40// 2019-08-21T09:46:55.712
-classes.ConsultasAdmin//buscarUser// ERROR: error de sintaxis en o cerca de «,»
-  Position: 40 org.postgresql.util.PSQLException: ERROR: error de sintaxis en o cerca de «,»
-  Position: 40// 2019-08-21T09:46:57.479
-classes.ConsultasAdmin//buscarUser// ERROR: error de sintaxis en o cerca de «,»
-  Position: 40 org.postgresql.util.PSQLException: ERROR: error de sintaxis en o cerca de «,»
-  Position: 40// 2019-08-21T09:47:43.842
-classes.ConsultasCliente//login// ERROR: no existe la relación «uvfood_usuario»
-  Position: 15 org.postgresql.util.PSQLException: ERROR: no existe la relación «uvfood_usuario»
-  Position: 15// 2019-08-21T09:59:49.650
-classes.ConsultasCliente//login// ERROR: no existe la relación «uvfood_usuario»
-  Position: 15 org.postgresql.util.PSQLException: ERROR: no existe la relación «uvfood_usuario»
-  Position: 15// 2019-08-21T10:00:00.991
-classes.ConsultasCliente//login// ERROR: no existe la relación «uvfood_usuario»
-  Position: 15 org.postgresql.util.PSQLException: ERROR: no existe la relación «uvfood_usuario»
-  Position: 15// 2019-08-21T10:00:05.148
-classes.ConsultasAdmin//buscarUser// ERROR: error de sintaxis en o cerca de «,»
-  Position: 39 org.postgresql.util.PSQLException: ERROR: error de sintaxis en o cerca de «,»
-  Position: 39// 2019-08-21T10:45:21.281
-classes.ConsultasAdmin//buscarUser// ERROR: error de sintaxis en o cerca de «%»
-  Position: 51 org.postgresql.util.PSQLException: ERROR: error de sintaxis en o cerca de «%»
-  Position: 51// 2019-08-21T10:46:18.281
-classes.ConsultasAdmin//buscarUser// ERROR: error de sintaxis en o cerca de «%»
-  Position: 51 org.postgresql.util.PSQLException: ERROR: error de sintaxis en o cerca de «%»
-  Position: 51// 2019-08-21T10:46:57.297
-classes.ConsultasAdmin//buscarUser// ERROR: error de sintaxis en o cerca de «%»
-  Position: 51 org.postgresql.util.PSQLException: ERROR: error de sintaxis en o cerca de «%»
-  Position: 51// 2019-08-21T10:46:58.966
-classes.ConsultasAdmin//buscarUser// ERROR: error de sintaxis en o cerca de «%»
-  Position: 51 org.postgresql.util.PSQLException: ERROR: error de sintaxis en o cerca de «%»
-  Position: 51// 2019-08-21T10:46:59.719
-classes.ConsultasAdmin//buscarUser// ERROR: error de sintaxis en o cerca de «%»
-  Position: 51 org.postgresql.util.PSQLException: ERROR: error de sintaxis en o cerca de «%»
-  Position: 51// 2019-08-21T10:47:00.271
-classes.ConsultasAdmin//buscarUser// ERROR: error de sintaxis en o cerca de «%»
-  Position: 51 org.postgresql.util.PSQLException: ERROR: error de sintaxis en o cerca de «%»
-  Position: 51// 2019-08-21T10:47:56.010
-classes.ConsultasAdmin//buscarUser// ERROR: error de sintaxis en o cerca de «%»
-  Position: 51 org.postgresql.util.PSQLException: ERROR: error de sintaxis en o cerca de «%»
-  Position: 51// 2019-08-21T10:48:21.639
-classes.ConsultasAdmin//buscarUser// ERROR: error de sintaxis al final de la entrada
-  Position: 57 org.postgresql.util.PSQLException: ERROR: error de sintaxis al final de la entrada
-  Position: 57// 2019-08-21T10:49:36.725
-classes.ConsultasAdmin//buscarUser// ERROR: error de sintaxis al final de la entrada
-  Position: 56 org.postgresql.util.PSQLException: ERROR: error de sintaxis al final de la entrada
-  Position: 56// 2019-08-21T10:49:44.834
-classes.ConsultasAdmin//buscarUser// ERROR: error de sintaxis en o cerca de «,»
-  Position: 39 org.postgresql.util.PSQLException: ERROR: error de sintaxis en o cerca de «,»
-  Position: 39// 2019-08-21T10:55:10.999
-classes.ConsultasAdmin//buscarUser// ERROR: error de sintaxis en o cerca de «,»
-  Position: 39 org.postgresql.util.PSQLException: ERROR: error de sintaxis en o cerca de «,»
-  Position: 39// 2019-08-21T10:58:57.118
-classes.ConsultasAdmin//buscarUser// ERROR: error de sintaxis en o cerca de «,»
-  Position: 39 org.postgresql.util.PSQLException: ERROR: error de sintaxis en o cerca de «,»
-  Position: 39// 2019-08-21T10:58:58.694
-classes.ConsultasAdmin//buscarUser// ERROR: error de sintaxis en o cerca de «LIKEG»
-  Position: 40 org.postgresql.util.PSQLException: ERROR: error de sintaxis en o cerca de «LIKEG»
-  Position: 40// 2019-08-21T11:03:59.477
-classes.ConsultasAdmin//buscarUser// ERROR: error de sintaxis en o cerca de «creation_date»
-  Position: 159 org.postgresql.util.PSQLException: ERROR: error de sintaxis en o cerca de «creation_date»
-  Position: 159// 2019-08-21T11:05:10.259
-classes.ConsultasAdmin//buscarUser// ERROR: error de sintaxis en o cerca de «creation_date»
-  Position: 153 org.postgresql.util.PSQLException: ERROR: error de sintaxis en o cerca de «creation_date»
-  Position: 153// 2019-08-21T11:05:18.273
-classes.ConsultasAdmin//buscarUser// ERROR: error de sintaxis en o cerca de «creation_date»
-  Position: 159 org.postgresql.util.PSQLException: ERROR: error de sintaxis en o cerca de «creation_date»
-  Position: 159// 2019-08-21T11:05:19.298
-classes.ConsultasAdmin//buscarUser// ERROR: el operador no existe: integer ~~ unknown
-  Hint: Ningún operador coincide en el nombre y tipos de argumentos. Puede ser necesario agregar conversión explícita de tipos.
-  Position: 40 org.postgresql.util.PSQLException: ERROR: el operador no existe: integer ~~ unknown
-  Hint: Ningún operador coincide en el nombre y tipos de argumentos. Puede ser necesario agregar conversión explícita de tipos.
-  Position: 40// 2019-08-21T11:05:48.885
-classes.ConsultasAdmin//buscarUser// ERROR: el operador no existe: integer ~~ unknown
-  Hint: Ningún operador coincide en el nombre y tipos de argumentos. Puede ser necesario agregar conversión explícita de tipos.
-  Position: 40 org.postgresql.util.PSQLException: ERROR: el operador no existe: integer ~~ unknown
-  Hint: Ningún operador coincide en el nombre y tipos de argumentos. Puede ser necesario agregar conversión explícita de tipos.
-  Position: 40// 2019-08-21T11:05:50.917
-classes.ConexionBD//Conexion// FATAL: no existe la base de datos «uvfood» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf) org.postgresql.util.PSQLException: FATAL: no existe la base de datos «uvfood» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf)// 2019-08-21T12:56:32.901
-classes.ConexionBD//Conexion// FATAL: no existe la base de datos «uvfood» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf) org.postgresql.util.PSQLException: FATAL: no existe la base de datos «uvfood» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf)// 2019-08-21T12:58:02.230
-classes.ConexionBD//Conexion// FATAL: no existe la base de datos «uvfood» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf) org.postgresql.util.PSQLException: FATAL: no existe la base de datos «uvfood» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf)// 2019-08-21T12:58:39.511
-classes.ConexionBD//Conexion// FATAL: no existe la base de datos «uvfood» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf) org.postgresql.util.PSQLException: FATAL: no existe la base de datos «uvfood» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf)// 2019-08-21T12:58:58.202
-classes.ConsultasAdmin//llenarTabla// null java.lang.NullPointerException// 2019-08-21T12:58:58.204
-classes.ConexionBD//Conexion// FATAL: no existe la base de datos «uvfood» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf) org.postgresql.util.PSQLException: FATAL: no existe la base de datos «uvfood» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf)// 2019-08-21T12:59:02.634
-classes.ConsultasAdmin//buscarUser// null java.lang.NullPointerException// 2019-08-21T12:59:02.635
-classes.ConexionBD//Conexion// FATAL: no existe la base de datos «uvfood» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf) org.postgresql.util.PSQLException: FATAL: no existe la base de datos «uvfood» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf)// 2019-08-21T12:59:09.008
-classes.ConsultasAdmin//buscarUser// null java.lang.NullPointerException// 2019-08-21T12:59:09.022
-classes.ConexionBD//Conexion// FATAL: no existe la base de datos «uvfood» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf) org.postgresql.util.PSQLException: FATAL: no existe la base de datos «uvfood» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf)// 2019-08-21T12:59:11.634
-classes.ConsultasAdmin//buscarUser// null java.lang.NullPointerException// 2019-08-21T12:59:11.636
-classes.ConexionBD//Conexion// FATAL: no existe la base de datos «uvfood» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf) org.postgresql.util.PSQLException: FATAL: no existe la base de datos «uvfood» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf)// 2019-08-21T12:59:13.569
-classes.ConsultasAdmin//buscarUser// null java.lang.NullPointerException// 2019-08-21T12:59:13.570
-classes.ConexionBD//Conexion// FATAL: no existe la base de datos «uvfood» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf) org.postgresql.util.PSQLException: FATAL: no existe la base de datos «uvfood» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf)// 2019-08-21T12:59:14.775
-classes.ConsultasAdmin//buscarUser// null java.lang.NullPointerException// 2019-08-21T12:59:14.776
-classes.ConexionBD//Conexion// FATAL: la autentificación password falló para el usuario «postgres» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf) org.postgresql.util.PSQLException: FATAL: la autentificación password falló para el usuario «postgres» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf)// 2019-08-21T21:36:54.426
-classes.ConexionBD//Conexion// FATAL: la autentificación password falló para el usuario «postgres» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf) org.postgresql.util.PSQLException: FATAL: la autentificación password falló para el usuario «postgres» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf)// 2019-08-21T21:37:03.621
-classes.ConexionBD//Conexion// FATAL: la autentificación password falló para el usuario «postgres» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf) org.postgresql.util.PSQLException: FATAL: la autentificación password falló para el usuario «postgres» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf)// 2019-08-21T21:42:53.249
-classes.ConsultasAdmin//llenarTabla// null java.lang.NullPointerException// 2019-08-21T21:42:53.256
-classes.ConexionBD//Conexion// FATAL: la autentificación password falló para el usuario «postgres» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf) org.postgresql.util.PSQLException: FATAL: la autentificación password falló para el usuario «postgres» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf)// 2019-08-21T21:42:56.150
-classes.ConexionBD//Conexion// FATAL: la autentificación password falló para el usuario «postgres» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf) org.postgresql.util.PSQLException: FATAL: la autentificación password falló para el usuario «postgres» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf)// 2019-08-21T21:45:02.685
-classes.ConsultasAdmin//llenarTabla// null java.lang.NullPointerException// 2019-08-21T21:45:02.692
-classes.ConexionBD//Conexion// FATAL: la autentificación password falló para el usuario «postgres» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf) org.postgresql.util.PSQLException: FATAL: la autentificación password falló para el usuario «postgres» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf)// 2019-08-21T21:45:05.514
-classes.ConsultasAdmin//buscarUser// null java.lang.NullPointerException// 2019-08-21T21:45:05.521
-classes.ConexionBD//Conexion// FATAL: la autentificación password falló para el usuario «postgres» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf) org.postgresql.util.PSQLException: FATAL: la autentificación password falló para el usuario «postgres» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf)// 2019-08-21T21:46:59.574
-classes.ConsultasAdmin//llenarTabla// null java.lang.NullPointerException// 2019-08-21T21:46:59.632
-classes.ConexionBD//Conexion// FATAL: la autentificación password falló para el usuario «postgres» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf) org.postgresql.util.PSQLException: FATAL: la autentificación password falló para el usuario «postgres» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf)// 2019-08-21T21:47:02.971
-classes.ConsultasAdmin//buscarUser// null java.lang.NullPointerException// 2019-08-21T21:47:02.979
-classes.ConexionBD//Conexion// FATAL: la autentificación password falló para el usuario «postgres» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf) org.postgresql.util.PSQLException: FATAL: la autentificación password falló para el usuario «postgres» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf)// 2019-08-21T21:47:46.524
-classes.ConsultasAdmin//buscarUser// null java.lang.NullPointerException// 2019-08-21T21:47:46.531
-classes.ConexionBD//Conexion// FATAL: la autentificación password falló para el usuario «postgres» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf) org.postgresql.util.PSQLException: FATAL: la autentificación password falló para el usuario «postgres» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf)// 2019-08-21T21:47:53.992
-classes.ConsultasAdmin//buscarUser// null java.lang.NullPointerException// 2019-08-21T21:47:53.998
-classes.ConexionBD//Conexion// FATAL: la autentificación password falló para el usuario «postgres» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf) org.postgresql.util.PSQLException: FATAL: la autentificación password falló para el usuario «postgres» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf)// 2019-08-21T21:48:07.670
-classes.ConsultasAdmin//llenarTabla// null java.lang.NullPointerException// 2019-08-21T21:48:07.679
-classes.FileManage//readCSVFile// null java.lang.NullPointerException// 2019-08-26T00:43:56.165
-classes.FileManage//calcularRutaArchivo// null java.lang.NullPointerException// 2019-08-26T00:46:32.483
-FileManageTest//testLogin// null java.lang.NullPointerException// 2019-08-26T00:53:53.501
-FileManageTest//testLogin// null java.lang.NullPointerException// 2019-08-26T00:54:13.023
-classes.FileManage//readCSVFile// null java.lang.NullPointerException// 2019-08-26T01:52:10.443
-classes.ConexionBD//Conexion// FATAL: la autentificación password falló para el usuario «postgres» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf) org.postgresql.util.PSQLException: FATAL: la autentificación password falló para el usuario «postgres» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf)// 2019-08-26T08:38:12.507
-managers.ControladorAdmin//guardarImg// C:\Users\STH_1F_MCB_PC\Pictures\CIER\CierLV.jpg -> C:\Users\STH_1F_MCB_PC\Desktop\UVFood\ImgSlider\CierLV.jpg java.nio.file.NoSuchFileException: C:\Users\STH_1F_MCB_PC\Pictures\CIER\CierLV.jpg -> C:\Users\STH_1F_MCB_PC\Desktop\UVFood\ImgSlider\CierLV.jpg// 2019-08-26T11:00:26.410
-classes.ConexionBD//Conexion// FATAL: la autentificación password falló para el usuario «postgres» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf) org.postgresql.util.PSQLException: FATAL: la autentificación password falló para el usuario «postgres» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf)// 2019-08-27T09:15:18.884
-classes.ConexionBD//Conexion// FATAL: la autentificación password falló para el usuario «postgres» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf) org.postgresql.util.PSQLException: FATAL: la autentificación password falló para el usuario «postgres» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf)// 2019-08-27T09:25:18.445
-classes.ConexionBD//Conexion// FATAL: la autentificación password falló para el usuario «postgres» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf) org.postgresql.util.PSQLException: FATAL: la autentificación password falló para el usuario «postgres» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf)// 2019-08-27T09:26:19.501
-classes.ConsultasAdmin//llenarAcciones// ERROR: el operador no existe: integer = character varying
-  Hint: Ningún operador coincide en el nombre y tipos de argumentos. Puede ser necesario agregar conversión explícita de tipos.
-  Position: 39 org.postgresql.util.PSQLException: ERROR: el operador no existe: integer = character varying
-  Hint: Ningún operador coincide en el nombre y tipos de argumentos. Puede ser necesario agregar conversión explícita de tipos.
-  Position: 39// 2019-08-27T11:53:42.039
-classes.ConsultasAdmin//llenarAcciones// ERROR: el operador no existe: integer = character varying
-  Hint: Ningún operador coincide en el nombre y tipos de argumentos. Puede ser necesario agregar conversión explícita de tipos.
-  Position: 39 org.postgresql.util.PSQLException: ERROR: el operador no existe: integer = character varying
-  Hint: Ningún operador coincide en el nombre y tipos de argumentos. Puede ser necesario agregar conversión explícita de tipos.
-  Position: 39// 2019-08-27T12:00:08.473
-classes.ConexionBD//Conexion// FATAL: password authentication failed for user "postgres" org.postgresql.util.PSQLException: FATAL: password authentication failed for user "postgres"// 2019-08-27T18:04:10.821
-managers.queries.ConsultasLogin//get_view// The column index is out of range: 1, number of columns: 0. org.postgresql.util.PSQLException: The column index is out of range: 1, number of columns: 0.// 2019-08-27T18:38:25.952
-managers.queries.ConsultasLogin//get_view// The column index is out of range: 1, number of columns: 0. org.postgresql.util.PSQLException: The column index is out of range: 1, number of columns: 0.// 2019-08-27T18:47:58.053
-managers.queries.ConsultasLogin//get_view// ERROR: column "sistemasuvfood" does not exist
-  Position: 172 org.postgresql.util.PSQLException: ERROR: column "sistemasuvfood" does not exist
-  Position: 172// 2019-08-27T18:51:57.456
-managers.queries.ConsultasLogin//get_view// ERROR: column "sistemasuvfood" does not exist
-  Position: 172 org.postgresql.util.PSQLException: ERROR: column "sistemasuvfood" does not exist
-  Position: 172// 2019-08-27T18:53:42.437
-managers.queries.ConsultasLogin//get_view// The column index is out of range: 1, number of columns: 0. org.postgresql.util.PSQLException: The column index is out of range: 1, number of columns: 0.// 2019-08-27T18:57:10.055
-managers.queries.ConsultasLogin//get_view// ERROR: column "sistemasuvfood" does not exist
-  Position: 172 org.postgresql.util.PSQLException: ERROR: column "sistemasuvfood" does not exist
-  Position: 172// 2019-08-27T18:59:54.338
-managers.queries.ConsultasLogin//get_view// ERROR: column "sistemasuvfood" does not exist
-  Position: 172 org.postgresql.util.PSQLException: ERROR: column "sistemasuvfood" does not exist
-  Position: 172// 2019-08-27T19:01:14.616
-managers.queries.ConsultasLogin//get_view// The column index is out of range: 0, number of columns: 1. org.postgresql.util.PSQLException: The column index is out of range: 0, number of columns: 1.// 2019-08-27T19:02:25.075
-managers.queries.KeyValidate//haveKey// ERROR: syntax error at or near ";"
-  Position: 131 org.postgresql.util.PSQLException: ERROR: syntax error at or near ";"
-  Position: 131// 2019-08-28T00:15:21.802
-managers.queries.KeyValidate//haveKey// ERROR: syntax error at or near ";"
-  Position: 131 org.postgresql.util.PSQLException: ERROR: syntax error at or near ";"
-  Position: 131// 2019-08-28T00:15:29.640
-classes.FileManage//calcularRutaArchivo// null java.lang.NullPointerException// 2019-08-28T01:41:23.284
-managers.queries.KeyValidate//resultHaveKey// null java.lang.NullPointerException// 2019-08-28T01:50:32.558
-classes.FileManage//calcularRutaArchivo// null java.lang.NullPointerException// 2019-08-28T13:33:36.887
-managers.queries.ConsultasAdmin//llenarAcciones// ERROR: el operador no existe: integer = character varying
-  Hint: Ningún operador coincide en el nombre y tipos de argumentos. Puede ser necesario agregar conversión explícita de tipos.
-  Position: 39 org.postgresql.util.PSQLException: ERROR: el operador no existe: integer = character varying
-  Hint: Ningún operador coincide en el nombre y tipos de argumentos. Puede ser necesario agregar conversión explícita de tipos.
-  Position: 39// 2019-08-28T10:28:59.904
-managers.queries.ConsultasAdmin//llenarAcciones// ERROR: el operador no existe: integer = character varying
-  Hint: Ningún operador coincide en el nombre y tipos de argumentos. Puede ser necesario agregar conversión explícita de tipos.
-  Position: 39 org.postgresql.util.PSQLException: ERROR: el operador no existe: integer = character varying
-  Hint: Ningún operador coincide en el nombre y tipos de argumentos. Puede ser necesario agregar conversión explícita de tipos.
-  Position: 39// 2019-08-28T10:30:31.630
-managers.queries.ConsultasAdmin//llenarAcciones// ERROR: el operador no existe: integer = character varying
-  Hint: Ningún operador coincide en el nombre y tipos de argumentos. Puede ser necesario agregar conversión explícita de tipos.
-  Position: 39 org.postgresql.util.PSQLException: ERROR: el operador no existe: integer = character varying
-  Hint: Ningún operador coincide en el nombre y tipos de argumentos. Puede ser necesario agregar conversión explícita de tipos.
-  Position: 39// 2019-08-28T10:30:37.875
-managers.queries.ConsultasAdmin//llenarAcciones// ERROR: el operador no existe: integer = character varying
-  Hint: Ningún operador coincide en el nombre y tipos de argumentos. Puede ser necesario agregar conversión explícita de tipos.
-  Position: 39 org.postgresql.util.PSQLException: ERROR: el operador no existe: integer = character varying
-  Hint: Ningún operador coincide en el nombre y tipos de argumentos. Puede ser necesario agregar conversión explícita de tipos.
-  Position: 39// 2019-08-28T10:30:42.140
-managers.queries.ConsultasAdmin//llenarAcciones// ERROR: el operador no existe: integer = character varying
-  Hint: Ningún operador coincide en el nombre y tipos de argumentos. Puede ser necesario agregar conversión explícita de tipos.
-  Position: 39 org.postgresql.util.PSQLException: ERROR: el operador no existe: integer = character varying
-  Hint: Ningún operador coincide en el nombre y tipos de argumentos. Puede ser necesario agregar conversión explícita de tipos.
-  Position: 39// 2019-08-28T10:30:42.347
-managers.queries.ConsultasAdmin//llenarAcciones// ERROR: el operador no existe: integer = character varying
-  Hint: Ningún operador coincide en el nombre y tipos de argumentos. Puede ser necesario agregar conversión explícita de tipos.
-  Position: 39 org.postgresql.util.PSQLException: ERROR: el operador no existe: integer = character varying
-  Hint: Ningún operador coincide en el nombre y tipos de argumentos. Puede ser necesario agregar conversión explícita de tipos.
-  Position: 39// 2019-08-28T10:30:43.125
-managers.queries.ConsultasAdmin//llenarAcciones// ERROR: el operador no existe: integer = character varying
-  Hint: Ningún operador coincide en el nombre y tipos de argumentos. Puede ser necesario agregar conversión explícita de tipos.
-  Position: 39 org.postgresql.util.PSQLException: ERROR: el operador no existe: integer = character varying
-  Hint: Ningún operador coincide en el nombre y tipos de argumentos. Puede ser necesario agregar conversión explícita de tipos.
-  Position: 39// 2019-08-28T10:33:13.381
-managers.queries.ConsultasAdmin//llenarAcciones// -1 java.lang.ArrayIndexOutOfBoundsException: -1// 2019-08-28T11:53:37.073
-managers.queries.ConsultasAdmin//llenarAcciones// ERROR: no existe la relación «uvfood_typeuseras»
-  Position: 102 org.postgresql.util.PSQLException: ERROR: no existe la relación «uvfood_typeuseras»
-  Position: 102// 2019-08-28T14:10:26.656
-managers.queries.ConsultasAdmin//llenarAcciones// ERROR: no existe la relación «uvfood_typeuseras»
-  Position: 102 org.postgresql.util.PSQLException: ERROR: no existe la relación «uvfood_typeuseras»
-  Position: 102// 2019-08-28T14:10:33.287
-managers.queries.ConsultasAdmin//llenarAcciones// ERROR: no existe la relación «uvfood_typeuseras»
-  Position: 102 org.postgresql.util.PSQLException: ERROR: no existe la relación «uvfood_typeuseras»
-  Position: 102// 2019-08-28T14:10:35.877
-managers.queries.ConsultasAdmin//llenarAcciones// ERROR: error de sintaxis en o cerca de «WHERE»
-  Position: 31 org.postgresql.util.PSQLException: ERROR: error de sintaxis en o cerca de «WHERE»
-  Position: 31// 2019-08-28T14:44:24.886
-managers.queries.ConsultasAdmin//llenarAcciones// ERROR: error de sintaxis en o cerca de «WHERE»
-  Position: 31 org.postgresql.util.PSQLException: ERROR: error de sintaxis en o cerca de «WHERE»
-  Position: 31// 2019-08-28T14:44:30.498
-managers.queries.ConsultasAdmin//llenarAcciones// ERROR: error de sintaxis en o cerca de «WHERE»
-  Position: 31 org.postgresql.util.PSQLException: ERROR: error de sintaxis en o cerca de «WHERE»
-  Position: 31// 2019-08-28T14:44:34.578
-managers.queries.ConsultasAdmin//llenarAcciones// El índice de la columna está fuera de rango: 4, número de columnas: 1. org.postgresql.util.PSQLException: El índice de la columna está fuera de rango: 4, número de columnas: 1.// 2019-08-28T14:46:13.165
-managers.queries.ConsultasAdmin//llenarAcciones// El índice de la columna está fuera de rango: 4, número de columnas: 1. org.postgresql.util.PSQLException: El índice de la columna está fuera de rango: 4, número de columnas: 1.// 2019-08-28T14:46:19.881
-classes.ConexionBD//Conexion// FATAL: password authentication failed for user "postgres" org.postgresql.util.PSQLException: FATAL: password authentication failed for user "postgres"// 2019-08-28T22:56:15.069
-managers.queries.ConsultasAdmin//get_count_users// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-08-29T01:03:50.478
-managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-08-29T01:38:23.613
-managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-08-29T01:40:29.575
-managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-08-29T01:44:52.409
-classes.ConexionBD//Conexion// FATAL: la autentificación password falló para el usuario «postgres» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf) org.postgresql.util.PSQLException: FATAL: la autentificación password falló para el usuario «postgres» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf)// 2019-08-28T23:11:47.099
-classes.ConexionBD//Conexion// FATAL: la autentificación password falló para el usuario «postgres» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf) org.postgresql.util.PSQLException: FATAL: la autentificación password falló para el usuario «postgres» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf)// 2019-08-28T23:12:01.484
-managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-08-29T02:14:08.520
-managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-08-29T02:15:26.687
-managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-08-29T02:17:12.755
-managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-08-29T02:19:17.573
-managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-08-29T02:38:43.540
-<<<<<<< HEAD
-managers.queries.ConsultasAdmin//llenarAcciones// -1 java.lang.ArrayIndexOutOfBoundsException: -1// 2019-08-29T17:19:58.290
-=======
-classes.ConexionBD//Conexion// FATAL: la autentificación password falló para el usuario «postgres» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf) org.postgresql.util.PSQLException: FATAL: la autentificación password falló para el usuario «postgres» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf)// 2019-08-29T09:43:53.443
-managers.queries.ConsultasLogin//insert_session_record// La consulta no retornó ningún resultado. org.postgresql.util.PSQLException: La consulta no retornó ningún resultado.// 2019-08-29T09:44:27.742
-managers.queries.ConsultasLogin//insert_session_record// La consulta no retornó ningún resultado. org.postgresql.util.PSQLException: La consulta no retornó ningún resultado.// 2019-08-29T09:50:07.693
-managers.queries.ConsultasLogin//insert_session_record// La consulta no retornó ningún resultado. org.postgresql.util.PSQLException: La consulta no retornó ningún resultado.// 2019-08-29T09:51:21.731
-classes.ConexionBD//Conexion// FATAL: no existe la base de datos «uvfood» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf) org.postgresql.util.PSQLException: FATAL: no existe la base de datos «uvfood» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf)// 2019-08-29T15:20:06.097
-managers.queries.ConsultasAdmin//llenarTabla// null java.lang.NullPointerException// 2019-08-29T15:20:06.099
-classes.ConexionBD//Conexion// FATAL: no existe la base de datos «uvfood» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf) org.postgresql.util.PSQLException: FATAL: no existe la base de datos «uvfood» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf)// 2019-08-29T15:20:06.134
-managers.queries.ConsultasAdmin//fillCombo// null java.lang.NullPointerException// 2019-08-29T15:20:06.136
-classes.ConexionBD//Conexion// FATAL: no existe la base de datos «uvfood» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf) org.postgresql.util.PSQLException: FATAL: no existe la base de datos «uvfood» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf)// 2019-08-29T15:20:25.220
-managers.queries.ConsultasAdmin//fillCombo// null java.lang.NullPointerException// 2019-08-29T15:20:25.221
-classes.ConexionBD//Conexion// FATAL: no existe la base de datos «uvfood» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf) org.postgresql.util.PSQLException: FATAL: no existe la base de datos «uvfood» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf)// 2019-08-29T15:22:14.848
-managers.queries.ConsultasAdmin//llenarTabla// null java.lang.NullPointerException// 2019-08-29T15:22:14.850
-classes.ConexionBD//Conexion// FATAL: no existe la base de datos «uvfood» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf) org.postgresql.util.PSQLException: FATAL: no existe la base de datos «uvfood» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf)// 2019-08-29T15:22:14.881
-managers.queries.ConsultasAdmin//fillCombo// null java.lang.NullPointerException// 2019-08-29T15:22:14.883
-managers.queries.ConsultasAdmin//fillCombo// null java.lang.NullPointerException// 2019-08-29T15:49:45.599
-managers.queries.ConsultasAdmin//fillCombo// null java.lang.NullPointerException// 2019-08-29T15:50:20.278
-managers.queries.ConsultasAdmin//llenarAcciones// -1 java.lang.ArrayIndexOutOfBoundsException: -1// 2019-08-29T16:17:15.388
-managers.queries.ConsultasAdmin//crearUsuario// La consulta no retornó ningún resultado. org.postgresql.util.PSQLException: La consulta no retornó ningún resultado.// 2019-08-29T16:18:38.078
-managers.queries.ConsultasAdmin//crearUsuario// ERROR: la sintaxis de entrada no es válida para tipo date: «jhhjhj»
-  Position: 127 org.postgresql.util.PSQLException: ERROR: la sintaxis de entrada no es válida para tipo date: «jhhjhj»
-  Position: 127// 2019-08-29T16:34:13.045
-managers.queries.ConsultasAdmin//crearUsuario// ERROR: la sintaxis de entrada no es válida para tipo date: «»
-  Position: 110 org.postgresql.util.PSQLException: ERROR: la sintaxis de entrada no es válida para tipo date: «»
-  Position: 110// 2019-08-29T16:40:38.657
-managers.queries.ConsultasAdmin//crearUsuario// La consulta no retornó ningún resultado. org.postgresql.util.PSQLException: La consulta no retornó ningún resultado.// 2019-08-29T16:41:53.952
-managers.queries.ConsultasAdmin//crearUsuario// ERROR: el valor de hora/fecha está fuera de rango: «1222-56-96»
-  Hint: Quizás necesite una configuración diferente de «datestyle».
-  Position: 142 org.postgresql.util.PSQLException: ERROR: el valor de hora/fecha está fuera de rango: «1222-56-96»
-  Hint: Quizás necesite una configuración diferente de «datestyle».
-  Position: 142// 2019-08-29T16:44:56.677
-managers.queries.ConsultasAdmin//crearUsuario// ERROR: el valor de hora/fecha está fuera de rango: «1222-56-96»
-  Hint: Quizás necesite una configuración diferente de «datestyle».
-  Position: 142 org.postgresql.util.PSQLException: ERROR: el valor de hora/fecha está fuera de rango: «1222-56-96»
-  Hint: Quizás necesite una configuración diferente de «datestyle».
-  Position: 142// 2019-08-29T16:45:09.586
-managers.queries.ConsultasAdmin//crearUsuario// La consulta no retornó ningún resultado. org.postgresql.util.PSQLException: La consulta no retornó ningún resultado.// 2019-08-29T16:47:57.512
-managers.queries.ConsultasAdmin//crearUsuario// ERROR: el valor es demasiado largo para el tipo character(20) org.postgresql.util.PSQLException: ERROR: el valor es demasiado largo para el tipo character(20)// 2019-08-29T16:49:58.618
-managers.queries.ConsultasAdmin//crearUsuario// ERROR: el valor es demasiado largo para el tipo character(20) org.postgresql.util.PSQLException: ERROR: el valor es demasiado largo para el tipo character(20)// 2019-08-29T16:51:00.232
-managers.queries.ConsultasAdmin//crearUsuario// ERROR: el valor es demasiado largo para el tipo character(20) org.postgresql.util.PSQLException: ERROR: el valor es demasiado largo para el tipo character(20)// 2019-08-29T16:53:03.470
-managers.queries.ConsultasAdmin//crearUsuario// ERROR: el valor es demasiado largo para el tipo character(20) org.postgresql.util.PSQLException: ERROR: el valor es demasiado largo para el tipo character(20)// 2019-08-29T16:53:15.084
-managers.queries.ConsultasAdmin//crearUsuario// La consulta no retornó ningún resultado. org.postgresql.util.PSQLException: La consulta no retornó ningún resultado.// 2019-08-29T16:54:47.058
-managers.queries.ConsultasAdmin//crearUsuario// ERROR: la sintaxis de entrada no es válida para tipo date: «»
-  Position: 110 org.postgresql.util.PSQLException: ERROR: la sintaxis de entrada no es válida para tipo date: «»
-  Position: 110// 2019-08-29T17:25:56.974
->>>>>>> c197adefe21143c93a8b0f356d0a4080cb7ea034
-managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-08-29T18:29:36.801
-managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-08-29T18:29:36.942
-managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-08-29T18:29:38.613
-managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-08-29T18:29:46.737
-managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-08-29T18:29:47.393
-managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-08-29T18:34:50.083
-managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-08-29T18:34:50.114
-managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-08-29T18:36:56.080
-managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-08-29T18:36:56.315
-managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-08-29T18:36:57.502
-managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-08-29T18:37:04.646
-managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-08-29T18:37:05.302
-managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-08-29T18:39:06.279
-managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-08-29T18:39:06.529
-managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-08-29T18:39:07.888
-managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-08-29T18:39:13.880
-managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-08-29T18:39:14.239
-managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-08-29T18:41:39.459
-managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-08-29T18:41:39.569
-managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-08-29T18:41:40.444
-managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-08-29T18:41:46.461
-managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-08-29T18:41:46.774
-managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-08-29T18:45:59.910
-managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-08-29T18:45:59.925
-managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-08-29T18:48:43.825
-managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-08-29T18:48:43.856
-managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-08-29T18:51:19.279
-managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-08-29T18:51:19.310
-managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-08-29T18:52:20.094
-managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-08-29T18:52:20.125
-managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-08-29T18:52:48.738
-managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-08-29T18:52:48.753
-managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-08-29T18:58:25.989
-managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-08-29T18:58:26.020
-managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-08-29T19:00:26.995
-managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-08-29T19:00:27.104
-managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-08-29T19:00:28.401
-managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-08-29T19:00:34.957
-managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-08-29T19:00:35.298
-managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-08-29T19:02:15.060
-managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-08-29T19:02:15.198
-managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-08-29T19:02:17.920
-managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-08-29T19:02:25.745
-managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-08-29T19:02:26.089
-managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-08-29T19:12:05.662
-managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-08-29T19:12:05.787
-managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-08-29T19:12:07.084
-managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-08-29T19:12:19.939
-managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-08-29T19:12:20.461
-managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-08-29T19:14:49.389
-managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-08-29T19:14:49.498
-managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-08-29T19:14:51.372
-managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-08-29T19:14:58.366
-managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-08-29T19:14:58.726
-managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-08-30T23:01:28.779
-managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-08-30T23:01:28.857
-managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-08-30T23:30:22.194
-managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-08-30T23:30:22.241
-managers.ControladorAdmin//createJFreeChartCount// null java.lang.NullPointerException// 2019-08-30T23:30:34.378
-managers.ControladorAdmin//createJFreeChartCount// null java.lang.NullPointerException// 2019-08-30T23:30:34.394
-managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-08-30T23:37:42.113
-managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-08-30T23:37:42.128
-managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-08-30T23:39:31.060
-managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-08-30T23:39:31.326
-managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-08-30T23:39:33.762
-managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-08-30T23:39:45.775
-managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-08-30T23:39:55.262
-managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-08-30T23:39:56.150
-managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-08-30T23:41:24.750
-managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-08-30T23:41:24.781
-managers.ControladorGestionPermisos//createSelectModules// null java.lang.NullPointerException// 2019-08-30T23:41:32.941
-managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-08-30T23:41:33.347
+﻿managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-24T01:07:21.512
+managers.queries.ConsultasPermissions//insertModule// ERROR: column "prueba" does not exist
+  Position: 36 org.postgresql.util.PSQLException: ERROR: column "prueba" does not exist
+  Position: 36// 2019-09-24T01:07:35.720
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-24T01:12:46.249
+managers.queries.ConsultasPermissions//insertModule// ERROR: invalid input syntax for integer: "prueba"
+  Position: 36 org.postgresql.util.PSQLException: ERROR: invalid input syntax for integer: "prueba"
+  Position: 36// 2019-09-24T01:13:33.538
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-24T01:14:20.140
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-24T01:49:31.954
+managers.queries.ConsultasPermissions//insertKey// ERROR: null value in column "idmodule" violates not-null constraint
+  Detail: Failing row contains (9, null, asdad). org.postgresql.util.PSQLException: ERROR: null value in column "idmodule" violates not-null constraint
+  Detail: Failing row contains (9, null, asdad).// 2019-09-24T01:49:59.216
+managers.queries.ConsultasPermissions//insertKey// ERROR: null value in column "idmodule" violates not-null constraint
+  Detail: Failing row contains (10, null, asdad). org.postgresql.util.PSQLException: ERROR: null value in column "idmodule" violates not-null constraint
+  Detail: Failing row contains (10, null, asdad).// 2019-09-24T01:50:03.354
+managers.queries.ConsultasPermissions//insertKey// ERROR: null value in column "idmodule" violates not-null constraint
+  Detail: Failing row contains (11, null, permissions.create.keys). org.postgresql.util.PSQLException: ERROR: null value in column "idmodule" violates not-null constraint
+  Detail: Failing row contains (11, null, permissions.create.keys).// 2019-09-24T01:50:54.398
+managers.queries.ConsultasPermissions//insertKey// ERROR: null value in column "idmodule" violates not-null constraint
+  Detail: Failing row contains (12, null, permissions.create.keys). org.postgresql.util.PSQLException: ERROR: null value in column "idmodule" violates not-null constraint
+  Detail: Failing row contains (12, null, permissions.create.keys).// 2019-09-24T01:52:06.454
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-24T01:55:08.425
+managers.queries.ConsultasPermissions//insertKey// ERROR: column "idmodulo" of relation "uvfood_keys" does not exist
+  Position: 26 org.postgresql.util.PSQLException: ERROR: column "idmodulo" of relation "uvfood_keys" does not exist
+  Position: 26// 2019-09-24T01:55:51.916
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-24T01:56:29.300
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-24T02:26:10.382
+classes.FileManage//calcularRutaArchivo// null java.lang.NullPointerException// 2019-09-24T02:38:38.258
+managers.queries.ConsultasPermissions//update_user_keys// ERROR: missing FROM-clause entry for table "create"
+  Position: 39 org.postgresql.util.PSQLException: ERROR: missing FROM-clause entry for table "create"
+  Position: 39// 2019-09-24T02:44:33.964
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-24T03:29:23.841
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-24T03:38:50.421
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-24T03:45:50.410
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-24T03:47:42.090
+managers.ControladorAdmin//createJFreeChartCount// null java.lang.NullPointerException// 2019-09-24T06:07:15.460
+managers.ControladorAdmin//createJFreeChartCount// null java.lang.NullPointerException// 2019-09-24T06:07:15.867
+managers.ControladorAdmin//createJFreeChartCount// null java.lang.NullPointerException// 2019-09-24T06:07:56.698
+managers.ControladorAdmin//createJFreeChartCount// null java.lang.NullPointerException// 2019-09-24T06:07:56.718
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-24T13:46:15.177
+managers.queries.ConsultasAdmin//llenarTablaUsersToTickets// Operation requires a scrollable ResultSet, but this ResultSet is FORWARD_ONLY. org.postgresql.util.PSQLException: Operation requires a scrollable ResultSet, but this ResultSet is FORWARD_ONLY.// 2019-09-24T13:46:19.119
+managers.queries.ConsultasAdmin//llenarTablaUsersToTickets// Operation requires a scrollable ResultSet, but this ResultSet is FORWARD_ONLY. org.postgresql.util.PSQLException: Operation requires a scrollable ResultSet, but this ResultSet is FORWARD_ONLY.// 2019-09-24T13:46:24.935
+managers.queries.ConsultasAdmin//llenarTablaUsersToTickets// Operation requires a scrollable ResultSet, but this ResultSet is FORWARD_ONLY. org.postgresql.util.PSQLException: Operation requires a scrollable ResultSet, but this ResultSet is FORWARD_ONLY.// 2019-09-24T13:46:32.431
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-24T13:52:28.167
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-24T13:53:15.327
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-24T14:27:00.133
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-24T15:06:53.259
+managers.ControladorAdmin//requestFillFieldsSales// -1 java.lang.ArrayIndexOutOfBoundsException: -1// 2019-09-24T15:07:48.805
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-24T15:08:36.334
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-24T15:26:49.048
+managers.ControladorAdmin//calculatePriceTicket// 6 >= 6 java.lang.ArrayIndexOutOfBoundsException: 6 >= 6// 2019-09-24T15:26:58.951
+managers.ControladorAdmin//calculatePriceTicket// 6 >= 6 java.lang.ArrayIndexOutOfBoundsException: 6 >= 6// 2019-09-24T15:27:01.224
+managers.ControladorAdmin//calculatePriceTicket// 6 >= 6 java.lang.ArrayIndexOutOfBoundsException: 6 >= 6// 2019-09-24T15:27:02.550
+managers.ControladorAdmin//calculatePriceTicket// 6 >= 6 java.lang.ArrayIndexOutOfBoundsException: 6 >= 6// 2019-09-24T15:27:03.525
+managers.ControladorAdmin//calculatePriceTicket// 6 >= 6 java.lang.ArrayIndexOutOfBoundsException: 6 >= 6// 2019-09-24T15:27:06.523
+managers.ControladorAdmin//calculatePriceTicket// 6 >= 6 java.lang.ArrayIndexOutOfBoundsException: 6 >= 6// 2019-09-24T15:27:08.967
+managers.ControladorAdmin//calculatePriceTicket// 6 >= 6 java.lang.ArrayIndexOutOfBoundsException: 6 >= 6// 2019-09-24T15:27:19.605
+managers.ControladorAdmin//calculatePriceTicket// 6 >= 6 java.lang.ArrayIndexOutOfBoundsException: 6 >= 6// 2019-09-24T15:27:22.948
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-24T15:34:14.887
+managers.ControladorAdmin//calculatePriceTicket// 6 >= 6 java.lang.ArrayIndexOutOfBoundsException: 6 >= 6// 2019-09-24T15:34:21.267
+managers.ControladorAdmin//calculatePriceTicket// 6 >= 6 java.lang.ArrayIndexOutOfBoundsException: 6 >= 6// 2019-09-24T15:34:23.520
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-24T15:35:25.021
+managers.ControladorAdmin//calculatePriceTicket// 6 >= 6 java.lang.ArrayIndexOutOfBoundsException: 6 >= 6// 2019-09-24T15:35:33.417
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-24T15:39:10.370
+managers.ControladorAdmin//calculatePriceTicket// 6 >= 6 java.lang.ArrayIndexOutOfBoundsException: 6 >= 6// 2019-09-24T15:39:15.303
+managers.ControladorAdmin//calculatePriceTicket// 6 >= 6 java.lang.ArrayIndexOutOfBoundsException: 6 >= 6// 2019-09-24T15:39:15.786
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-24T15:49:36.110
+managers.ControladorAdmin//calculatePriceTicket// 6 >= 6 java.lang.ArrayIndexOutOfBoundsException: 6 >= 6// 2019-09-24T15:49:42.594
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-24T15:51:57.651
+managers.ControladorAdmin//calculatePriceTicket// 6 >= 6 java.lang.ArrayIndexOutOfBoundsException: 6 >= 6// 2019-09-24T15:52:02.389
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-24T15:52:42.082
+managers.ControladorAdmin//calculatePriceTicket// 6 >= 6 java.lang.ArrayIndexOutOfBoundsException: 6 >= 6// 2019-09-24T15:52:47.627
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-24T16:08:18.429
+managers.ControladorAdmin//calculatePriceTicket// 6 >= 6 java.lang.ArrayIndexOutOfBoundsException: 6 >= 6// 2019-09-24T16:08:23.865
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-24T16:10:03.353
+managers.queries.ConsultasAdmin//insertSale// null java.lang.NullPointerException// 2019-09-24T16:10:15.569
+managers.queries.ConsultasAdmin//insertSale// null java.lang.NullPointerException// 2019-09-24T16:11:18.009
+managers.queries.ConsultasAdmin//insertSale// null java.lang.NullPointerException// 2019-09-24T16:11:33.755
+managers.ControladorAdmin//calculatePriceTicket// -1 java.lang.ArrayIndexOutOfBoundsException: -1// 2019-09-24T16:11:39.222
+managers.queries.ConsultasAdmin//insertSale// null java.lang.NullPointerException// 2019-09-24T16:11:48.767
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-24T16:13:18.385
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-24T16:14:29.429
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-24T16:24:58.454
+managers.queries.ConsultasAdmin//llenarTablaUsersToTickets// Unterminated string literal started at position 194 in SQL SELECT  uvfood_discount.price_discount
+FROM uvfood_user_discount 
+INNER JOIN uvfood_discount ON uvfood_user_discount.iddiscount = uvfood_discount.iddiscount
+WHERE uvfood_user_discount.iduser = 6';. Expected  char org.postgresql.util.PSQLException: Unterminated string literal started at position 194 in SQL SELECT  uvfood_discount.price_discount
+FROM uvfood_user_discount 
+INNER JOIN uvfood_discount ON uvfood_user_discount.iddiscount = uvfood_discount.iddiscount
+WHERE uvfood_user_discount.iduser = 6';. Expected  char// 2019-09-24T16:25:01.574
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-24T16:26:19.893
+managers.queries.ConsultasAdmin//llenarTablaUsersToTickets// The column index is out of range: 0, number of columns: 1. org.postgresql.util.PSQLException: The column index is out of range: 0, number of columns: 1.// 2019-09-24T16:26:22.122
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-24T16:27:07.116
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-24T16:42:17.442
+managers.queries.ConsultasAdmin//insertConsumption// ERROR: syntax error at or near ";"
+  Position: 58 org.postgresql.util.PSQLException: ERROR: syntax error at or near ";"
+  Position: 58// 2019-09-24T16:42:23.691
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-24T16:43:18.866
+managers.queries.ConsultasAdmin//insertConsumption// ERROR: relation "uvfood_consumption_user" does not exist
+  Position: 13 org.postgresql.util.PSQLException: ERROR: relation "uvfood_consumption_user" does not exist
+  Position: 13// 2019-09-24T16:43:25.130
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-24T16:44:02.339
+managers.queries.ConsultasAdmin//insertConsumption// ERROR: duplicate key value violates unique constraint "unique_consumption_date_user"
+  Detail: Key (iduser, date_consumption)=(17, 2019-09-23) already exists. org.postgresql.util.PSQLException: ERROR: duplicate key value violates unique constraint "unique_consumption_date_user"
+  Detail: Key (iduser, date_consumption)=(17, 2019-09-23) already exists.// 2019-09-24T16:44:07.456
+managers.queries.ConsultasAdmin//insertConsumption// ERROR: duplicate key value violates unique constraint "unique_consumption_date_user"
+  Detail: Key (iduser, date_consumption)=(18, 2019-09-23) already exists. org.postgresql.util.PSQLException: ERROR: duplicate key value violates unique constraint "unique_consumption_date_user"
+  Detail: Key (iduser, date_consumption)=(18, 2019-09-23) already exists.// 2019-09-24T16:44:38.583
+classes.FileManage//calcularRutaArchivo// null java.lang.NullPointerException// 2019-09-24T16:51:39.136
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-24T18:48:50.697
+classes.FileManage//calcularRutaArchivo// null java.lang.NullPointerException// 2019-09-24T18:49:27.914
+managers.queries.ConsultasAdmin//insertConsumption// ERROR: duplicate key value violates unique constraint "unique_consumption_date_user"
+  Detail: Key (iduser, date_consumption)=(18, 2019-09-23) already exists. org.postgresql.util.PSQLException: ERROR: duplicate key value violates unique constraint "unique_consumption_date_user"
+  Detail: Key (iduser, date_consumption)=(18, 2019-09-23) already exists.// 2019-09-24T18:51:27.911
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-24T19:12:42.683
+managers.queries.ConsultasAdmin//llenarTablaSales// The column index is out of range: 4, number of columns: 3. org.postgresql.util.PSQLException: The column index is out of range: 4, number of columns: 3.// 2019-09-24T19:12:49.097
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-24T19:13:48.799
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-24T19:14:29.636
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-24T19:31:15.036
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-25T02:07:55.230
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-25T02:47:56.820
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-25T02:59:06.058
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-25T03:01:25.167
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-25T03:03:23.182
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-25T03:05:15.630
+managers.ControladorAdmin//printSale// The requested operation cannot be performed on a file with a user-mapped section open.
+ java.awt.print.PrinterException: The requested operation cannot be performed on a file with a user-mapped section open.
+// 2019-09-25T03:05:34.240
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-25T03:09:55.140
+managers.ControladorAdmin//printSale// The requested operation cannot be performed on a file with a user-mapped section open.
+ java.awt.print.PrinterException: The requested operation cannot be performed on a file with a user-mapped section open.
+// 2019-09-25T03:10:17.468
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-25T03:16:13.662
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-25T13:34:45.181
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-25T13:43:11.548
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-25T13:52:03.838
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-25T13:53:00.765
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-25T13:54:17.832
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-25T13:55:56.704
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-25T13:58:49.156
+managers.queries.ConsultasAdmin//insertConsumption// ERROR: duplicate key value violates unique constraint "unique_consumption_date_user"
+  Detail: Key (iduser, date_consumption)=(21, 2019-09-23) already exists. org.postgresql.util.PSQLException: ERROR: duplicate key value violates unique constraint "unique_consumption_date_user"
+  Detail: Key (iduser, date_consumption)=(21, 2019-09-23) already exists.// 2019-09-25T14:00:10.884
+classes.ConexionBD//Conexion// FATAL: password authentication failed for user "postgres" org.postgresql.util.PSQLException: FATAL: password authentication failed for user "postgres"// 2019-09-25T15:33:02.389
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-25T15:33:56.802
+managers.queries.ConsultasAdmin//insertConsumption// ERROR: duplicate key value violates unique constraint "unique_consumption_date_user"
+  Detail: Key (iduser, date_consumption)=(20, 2019-09-23) already exists. org.postgresql.util.PSQLException: ERROR: duplicate key value violates unique constraint "unique_consumption_date_user"
+  Detail: Key (iduser, date_consumption)=(20, 2019-09-23) already exists.// 2019-09-25T15:35:09.619
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-25T15:49:20.138
+managers.queries.ConsultasAdmin//guardarMenu// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-25T15:50:43.474
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-25T15:55:41.754
+managers.queries.ConsultasAdmin//guardarMenu// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-25T15:56:24.074
+managers.queries.ConsultasAdmin//guardarMenu// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-25T15:56:55.450
+managers.queries.ConsultasAdmin//llenarAcciones// -1 java.lang.ArrayIndexOutOfBoundsException: -1// 2019-09-25T15:58:16.083
+managers.queries.ConsultasAdmin//disableUser// null java.lang.NullPointerException// 2019-09-25T15:58:16.103
+classes.ConexionBD//Conexion// FATAL: sorry, too many clients already org.postgresql.util.PSQLException: FATAL: sorry, too many clients already// 2019-09-25T16:03:35.072
+classes.ConexionBD//Conexion// FATAL: sorry, too many clients already org.postgresql.util.PSQLException: FATAL: sorry, too many clients already// 2019-09-25T16:03:35.188
+classes.ConexionBD//Conexion// FATAL: sorry, too many clients already org.postgresql.util.PSQLException: FATAL: sorry, too many clients already// 2019-09-25T16:04:12.323
+classes.ConexionBD//Conexion// FATAL: sorry, too many clients already org.postgresql.util.PSQLException: FATAL: sorry, too many clients already// 2019-09-25T16:04:12.483
+classes.ConexionBD//Conexion// FATAL: sorry, too many clients already org.postgresql.util.PSQLException: FATAL: sorry, too many clients already// 2019-09-25T16:04:12.666
+classes.ConexionBD//Conexion// FATAL: sorry, too many clients already org.postgresql.util.PSQLException: FATAL: sorry, too many clients already// 2019-09-25T16:04:12.826
+managers.queries.ConsultasAdmin//insertConsumption// ERROR: duplicate key value violates unique constraint "unique_consumption_date_user"
+  Detail: Key (iduser, date_consumption)=(18, 2019-09-23) already exists. org.postgresql.util.PSQLException: ERROR: duplicate key value violates unique constraint "unique_consumption_date_user"
+  Detail: Key (iduser, date_consumption)=(18, 2019-09-23) already exists.// 2019-09-25T16:06:17.233
+managers.queries.ConsultasAdmin//insertConsumption// ERROR: duplicate key value violates unique constraint "unique_consumption_date_user"
+  Detail: Key (iduser, date_consumption)=(20, 2019-09-23) already exists. org.postgresql.util.PSQLException: ERROR: duplicate key value violates unique constraint "unique_consumption_date_user"
+  Detail: Key (iduser, date_consumption)=(20, 2019-09-23) already exists.// 2019-09-25T16:06:32.330
+managers.queries.ConsultasAdmin//insertConsumption// ERROR: duplicate key value violates unique constraint "unique_consumption_date_user"
+  Detail: Key (iduser, date_consumption)=(21, 2019-09-23) already exists. org.postgresql.util.PSQLException: ERROR: duplicate key value violates unique constraint "unique_consumption_date_user"
+  Detail: Key (iduser, date_consumption)=(21, 2019-09-23) already exists.// 2019-09-25T16:06:35.165
+managers.queries.ConsultasAdmin//insertConsumption// ERROR: duplicate key value violates unique constraint "unique_consumption_date_user"
+  Detail: Key (iduser, date_consumption)=(19, 2019-09-23) already exists. org.postgresql.util.PSQLException: ERROR: duplicate key value violates unique constraint "unique_consumption_date_user"
+  Detail: Key (iduser, date_consumption)=(19, 2019-09-23) already exists.// 2019-09-25T16:06:44.301
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-25T16:47:56.820
+managers.queries.ConsultasAdmin//insertConsumption// ERROR: duplicate key value violates unique constraint "unique_consumption_date_user"
+  Detail: Key (iduser, date_consumption)=(19, 2019-09-23) already exists. org.postgresql.util.PSQLException: ERROR: duplicate key value violates unique constraint "unique_consumption_date_user"
+  Detail: Key (iduser, date_consumption)=(19, 2019-09-23) already exists.// 2019-09-25T16:48:56.311
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-25T16:53:23.452
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-25T20:25:47.729
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-25T20:48:28.287
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-25T20:53:19.441
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-25T21:24:07.941
+managers.queries.ConsultasAdmin//buscarUserSales// Unterminated string literal started at position 730 in SQL SELECT * FROM (SELECT uvfood_user.iduser,  uvfood_user.username, uvfood_user.firstname, uvfood_user.surname, uvfood_user_tickets.count_tickets
+FROM uvfood_user 
+ INNER JOIN uvfood_user_tickets ON uvfood_user.iduser = uvfood_user_tickets.iduser
+WHERE uvfood_user.is_active = 1 AND uvfood_user.iduser IN 
+ (SELECT iduser FROM uvfood_user_extended WHERE uvfood_user_extended.iduser = uvfood_user.iduser AND id_typeuser IN
+	 (SELECT id_typeuser FROM uvfood_typeuser WHERE type_user = 'Cliente'))) AS result_sales 
+	 WHERE result_sales.iduser::text LIKE '%%' OR result_sales.username::text  LIKE '%%'
+	 OR result_sales.firstname::text  LIKE '%%' OR result_sales.surname::text  LIKE '%%''
+	 OR result_sales.count_tickets::text  LIKE '%%';. Expected  char org.postgresql.util.PSQLException: Unterminated string literal started at position 730 in SQL SELECT * FROM (SELECT uvfood_user.iduser,  uvfood_user.username, uvfood_user.firstname, uvfood_user.surname, uvfood_user_tickets.count_tickets
+FROM uvfood_user 
+ INNER JOIN uvfood_user_tickets ON uvfood_user.iduser = uvfood_user_tickets.iduser
+WHERE uvfood_user.is_active = 1 AND uvfood_user.iduser IN 
+ (SELECT iduser FROM uvfood_user_extended WHERE uvfood_user_extended.iduser = uvfood_user.iduser AND id_typeuser IN
+	 (SELECT id_typeuser FROM uvfood_typeuser WHERE type_user = 'Cliente'))) AS result_sales 
+	 WHERE result_sales.iduser::text LIKE '%%' OR result_sales.username::text  LIKE '%%'
+	 OR result_sales.firstname::text  LIKE '%%' OR result_sales.surname::text  LIKE '%%''
+	 OR result_sales.count_tickets::text  LIKE '%%';. Expected  char// 2019-09-25T21:24:14.851
+managers.queries.ConsultasAdmin//buscarUserSales// Unterminated string literal started at position 740 in SQL SELECT * FROM (SELECT uvfood_user.iduser,  uvfood_user.username, uvfood_user.firstname, uvfood_user.surname, uvfood_user_tickets.count_tickets
+FROM uvfood_user 
+ INNER JOIN uvfood_user_tickets ON uvfood_user.iduser = uvfood_user_tickets.iduser
+WHERE uvfood_user.is_active = 1 AND uvfood_user.iduser IN 
+ (SELECT iduser FROM uvfood_user_extended WHERE uvfood_user_extended.iduser = uvfood_user.iduser AND id_typeuser IN
+	 (SELECT id_typeuser FROM uvfood_typeuser WHERE type_user = 'Cliente'))) AS result_sales 
+	 WHERE result_sales.iduser::text LIKE '%NU%' OR result_sales.username::text  LIKE '%NU%'
+	 OR result_sales.firstname::text  LIKE '%NU%' OR result_sales.surname::text  LIKE '%NU%''
+	 OR result_sales.count_tickets::text  LIKE '%NU%';. Expected  char org.postgresql.util.PSQLException: Unterminated string literal started at position 740 in SQL SELECT * FROM (SELECT uvfood_user.iduser,  uvfood_user.username, uvfood_user.firstname, uvfood_user.surname, uvfood_user_tickets.count_tickets
+FROM uvfood_user 
+ INNER JOIN uvfood_user_tickets ON uvfood_user.iduser = uvfood_user_tickets.iduser
+WHERE uvfood_user.is_active = 1 AND uvfood_user.iduser IN 
+ (SELECT iduser FROM uvfood_user_extended WHERE uvfood_user_extended.iduser = uvfood_user.iduser AND id_typeuser IN
+	 (SELECT id_typeuser FROM uvfood_typeuser WHERE type_user = 'Cliente'))) AS result_sales 
+	 WHERE result_sales.iduser::text LIKE '%NU%' OR result_sales.username::text  LIKE '%NU%'
+	 OR result_sales.firstname::text  LIKE '%NU%' OR result_sales.surname::text  LIKE '%NU%''
+	 OR result_sales.count_tickets::text  LIKE '%NU%';. Expected  char// 2019-09-25T21:26:23.968
+managers.queries.ConsultasAdmin//buscarUserSales// Unterminated string literal started at position 745 in SQL SELECT * FROM (SELECT uvfood_user.iduser,  uvfood_user.username, uvfood_user.firstname, uvfood_user.surname, uvfood_user_tickets.count_tickets
+FROM uvfood_user 
+ INNER JOIN uvfood_user_tickets ON uvfood_user.iduser = uvfood_user_tickets.iduser
+WHERE uvfood_user.is_active = 1 AND uvfood_user.iduser IN 
+ (SELECT iduser FROM uvfood_user_extended WHERE uvfood_user_extended.iduser = uvfood_user.iduser AND id_typeuser IN
+	 (SELECT id_typeuser FROM uvfood_typeuser WHERE type_user = 'Cliente'))) AS result_sales 
+	 WHERE result_sales.iduser::text LIKE '%RNU%' OR result_sales.username::text  LIKE '%RNU%'
+	 OR result_sales.firstname::text  LIKE '%RNU%' OR result_sales.surname::text  LIKE '%RNU%''
+	 OR result_sales.count_tickets::text  LIKE '%RNU%';. Expected  char org.postgresql.util.PSQLException: Unterminated string literal started at position 745 in SQL SELECT * FROM (SELECT uvfood_user.iduser,  uvfood_user.username, uvfood_user.firstname, uvfood_user.surname, uvfood_user_tickets.count_tickets
+FROM uvfood_user 
+ INNER JOIN uvfood_user_tickets ON uvfood_user.iduser = uvfood_user_tickets.iduser
+WHERE uvfood_user.is_active = 1 AND uvfood_user.iduser IN 
+ (SELECT iduser FROM uvfood_user_extended WHERE uvfood_user_extended.iduser = uvfood_user.iduser AND id_typeuser IN
+	 (SELECT id_typeuser FROM uvfood_typeuser WHERE type_user = 'Cliente'))) AS result_sales 
+	 WHERE result_sales.iduser::text LIKE '%RNU%' OR result_sales.username::text  LIKE '%RNU%'
+	 OR result_sales.firstname::text  LIKE '%RNU%' OR result_sales.surname::text  LIKE '%RNU%''
+	 OR result_sales.count_tickets::text  LIKE '%RNU%';. Expected  char// 2019-09-25T21:33:20.462
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-25T21:34:15.855
+managers.queries.ConsultasAdmin//buscarUserSales// The column index is out of range: 6, number of columns: 5. org.postgresql.util.PSQLException: The column index is out of range: 6, number of columns: 5.// 2019-09-25T21:34:29.343
+managers.queries.ConsultasAdmin//buscarUserSales// The column index is out of range: 6, number of columns: 5. org.postgresql.util.PSQLException: The column index is out of range: 6, number of columns: 5.// 2019-09-25T21:34:29.405
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-25T21:40:59.805
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-25T21:47:05.664
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-25T21:56:04.011
+managers.queries.ConsultasAdmin//buscarUserToTickets// The column index is out of range: 6, number of columns: 5. org.postgresql.util.PSQLException: The column index is out of range: 6, number of columns: 5.// 2019-09-25T21:56:38.818
+managers.queries.ConsultasAdmin//buscarUserToTickets// The column index is out of range: 6, number of columns: 5. org.postgresql.util.PSQLException: The column index is out of range: 6, number of columns: 5.// 2019-09-25T21:56:38.902
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-25T21:58:29.391
+managers.queries.ConsultasAdmin//buscarUserToTickets// null java.lang.NullPointerException// 2019-09-25T21:58:33.798
+managers.queries.ConsultasAdmin//buscarUserToTickets// null java.lang.NullPointerException// 2019-09-25T21:58:57.170
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-25T22:02:21.264
+classes.ConexionBD//Conexion// FATAL: la autentificación password falló para el usuario «postgres» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf) org.postgresql.util.PSQLException: FATAL: la autentificación password falló para el usuario «postgres» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf)// 2019-09-25T18:01:41.980
+managers.queries.ConsultasLogin//insert_session_record// La consulta no retornó ningún resultado. org.postgresql.util.PSQLException: La consulta no retornó ningún resultado.// 2019-09-25T18:04:17.015
+managers.queries.ConsultasLogin//insert_session_record// La consulta no retornó ningún resultado. org.postgresql.util.PSQLException: La consulta no retornó ningún resultado.// 2019-09-25T18:07:16.957
+managers.ControladorCliente//requestTraerMenu// null java.lang.NullPointerException// 2019-09-25T18:12:32.311
+managers.queries.ConsultasLogin//insert_session_record// La consulta no retornó ningún resultado. org.postgresql.util.PSQLException: La consulta no retornó ningún resultado.// 2019-09-25T18:12:32.423
+managers.queries.ConsultasLogin//insert_session_record// La consulta no retornó ningún resultado. org.postgresql.util.PSQLException: La consulta no retornó ningún resultado.// 2019-09-25T18:13:42.090
+managers.ControladorCliente//requestTraerMenu// null java.lang.NullPointerException// 2019-09-25T18:18:18.443
+managers.ControladorCliente//requestTraerMenu// null java.lang.NullPointerException// 2019-09-25T18:21:23.975
+managers.ControladorCliente//requestTraerMenu// null java.lang.NullPointerException// 2019-09-25T18:26:17.126
+managers.ControladorCliente//requestTraerMenu// null java.lang.NullPointerException// 2019-09-25T18:28:08.273
+managers.queries.ConsultasLogin//insert_session_record// La consulta no retornó ningún resultado. org.postgresql.util.PSQLException: La consulta no retornó ningún resultado.// 2019-09-25T18:28:08.419
+managers.ControladorCliente//requestTraerMenu// null java.lang.NullPointerException// 2019-09-25T18:28:41.759
+managers.ControladorCliente//requestTraerMenu// null java.lang.NullPointerException// 2019-09-25T18:28:58.148
+managers.queries.ConsultasLogin//insert_session_record// La consulta no retornó ningún resultado. org.postgresql.util.PSQLException: La consulta no retornó ningún resultado.// 2019-09-25T20:59:43.127
+managers.queries.ConsultasLogin//insert_session_record// La consulta no retornó ningún resultado. org.postgresql.util.PSQLException: La consulta no retornó ningún resultado.// 2019-09-25T21:02:28.237
+managers.queries.ConsultasLogin//insert_session_record// La consulta no retornó ningún resultado. org.postgresql.util.PSQLException: La consulta no retornó ningún resultado.// 2019-09-25T21:17:55.785
+managers.queries.ConsultasCliente//countTicekt// null java.lang.NullPointerException// 2019-09-25T21:21:39.031
+managers.queries.ConsultasLogin//insert_session_record// La consulta no retornó ningún resultado. org.postgresql.util.PSQLException: La consulta no retornó ningún resultado.// 2019-09-25T21:21:39.116
+managers.queries.ConsultasCliente//countTicekt// null java.lang.NullPointerException// 2019-09-25T21:23:33.186
+managers.queries.ConsultasLogin//insert_session_record// La consulta no retornó ningún resultado. org.postgresql.util.PSQLException: La consulta no retornó ningún resultado.// 2019-09-25T21:23:33.274
+managers.queries.ConsultasCliente//countTicekt// null java.lang.NullPointerException// 2019-09-25T21:24:50.707
+managers.queries.ConsultasLogin//insert_session_record// La consulta no retornó ningún resultado. org.postgresql.util.PSQLException: La consulta no retornó ningún resultado.// 2019-09-25T21:24:50.792
+managers.queries.ConsultasCliente//countTicekt// null java.lang.NullPointerException// 2019-09-25T21:26:32.590
+managers.queries.ConsultasLogin//insert_session_record// La consulta no retornó ningún resultado. org.postgresql.util.PSQLException: La consulta no retornó ningún resultado.// 2019-09-25T21:26:32.680
+managers.queries.ConsultasLogin//insert_session_record// La consulta no retornó ningún resultado. org.postgresql.util.PSQLException: La consulta no retornó ningún resultado.// 2019-09-25T21:37:43.383
+managers.queries.ConsultasLogin//insert_session_record// La consulta no retornó ningún resultado. org.postgresql.util.PSQLException: La consulta no retornó ningún resultado.// 2019-09-25T21:39:17.067
+classes.ConexionBD//Conexion// FATAL: password authentication failed for user "postgres" org.postgresql.util.PSQLException: FATAL: password authentication failed for user "postgres"// 2019-09-25T22:23:31.748
+managers.queries.ConsultasCliente//countTicekt// null java.lang.NullPointerException// 2019-09-25T22:27:32.041
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-25T22:27:32.216
+managers.queries.ConsultasCliente//countTicekt// null java.lang.NullPointerException// 2019-09-25T22:41:05.743
+managers.queries.ConsultasCliente//countTicekt// null java.lang.NullPointerException// 2019-09-25T22:46:07.356
+managers.queries.ConsultasCliente//countTicekt// null java.lang.NullPointerException// 2019-09-25T22:57:01.555
+managers.queries.ConsultasCliente//countTicekt// null java.lang.NullPointerException// 2019-09-25T22:58:33.455
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-25T22:58:33.645
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-25T22:59:37.401
+managers.queries.ConsultasCliente//countTicekt// null java.lang.NullPointerException// 2019-09-25T23:02:03.300
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-25T23:09:20.086
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-25T23:11:26.067
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-25T23:11:58.558
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-25T23:12:38.010
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-25T23:15:47.718
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-25T23:18:28.047

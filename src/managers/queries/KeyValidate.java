@@ -28,7 +28,7 @@ public class KeyValidate extends ConexionBD {
 
     public static String haveKey(String namekey, int iduser) {
         String result = "error.unknow";
-
+        try {
         Statement ps = null;
         Connection conn = Conexion();
         ResultSet rs = null;
@@ -36,7 +36,7 @@ public class KeyValidate extends ConexionBD {
         String sql = "SELECT * FROM uvfood_user_key WHERE iduser = '" + iduser + "' AND idkey IN "
                 + "	(SELECT idkey FROM uvfood_keys WHERE namekey = '" + namekey + "');";
 
-        try {
+
 
             ps = conn.createStatement();
             rs = ps.executeQuery(sql);
@@ -47,7 +47,7 @@ public class KeyValidate extends ConexionBD {
                 result = "error.notfound_key";
             }
 
-        } catch (SQLException e) {
+        } catch (SQLException | NullPointerException e) {
             logs.escribirExceptionLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// " + e.getMessage() + " " + e.toString());
             result = "error.server";
         }
