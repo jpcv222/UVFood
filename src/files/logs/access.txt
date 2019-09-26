@@ -966,3 +966,27 @@ managers.ControladorLogin//define_view// Acceso a vista admin.// 2019-09-25T20:5
 managers.ControladorLogin//request_login// Usuario existente.// 2019-09-25T20:53:19.454
 managers.queries.KeyValidate//resultHaveKey// Permiso concedido.// 2019-09-25T20:53:30.156
 managers.queries.KeyValidate//resultHaveKey// Permiso concedido.// 2019-09-25T20:53:30.338
+managers.queries.KeyValidate//resultHaveKey// Permiso concedido.// 2019-09-25T21:24:07.318
+managers.ControladorAdmin//createJFreeChartCount// Se genera gráfica con 12 registros.// 2019-09-25T21:24:07.383
+managers.queries.KeyValidate//resultHaveKey// Permiso concedido.// 2019-09-25T21:24:07.557
+managers.ControladorAdmin//createJFreeChartCount// Se genera gráfica con 158 registros.// 2019-09-25T21:24:07.670
+managers.ControladorLogin//define_view// Acceso a vista admin.// 2019-09-25T21:24:07.707
+managers.ControladorLogin//request_login// Usuario existente.// 2019-09-25T21:24:07.958
+managers.queries.KeyValidate//resultHaveKey// Permiso concedido.// 2019-09-25T21:24:10.167
+managers.queries.KeyValidate//resultHaveKey// Permiso concedido.// 2019-09-25T21:24:10.273
+managers.queries.KeyValidate//resultHaveKey// Permiso concedido.// 2019-09-25T21:34:15.392
+managers.ControladorAdmin//createJFreeChartCount// Se genera gráfica con 12 registros.// 2019-09-25T21:34:15.452
+managers.queries.KeyValidate//resultHaveKey// Permiso concedido.// 2019-09-25T21:34:15.644
+managers.ControladorAdmin//createJFreeChartCount// Se genera gráfica con 159 registros.// 2019-09-25T21:34:15.732
+managers.ControladorLogin//define_view// Acceso a vista admin.// 2019-09-25T21:34:15.762
+managers.ControladorLogin//request_login// Usuario existente.// 2019-09-25T21:34:15.869
+managers.queries.KeyValidate//resultHaveKey// Permiso concedido.// 2019-09-25T21:34:26.326
+managers.queries.KeyValidate//resultHaveKey// Permiso concedido.// 2019-09-25T21:34:26.439
+managers.queries.KeyValidate//resultHaveKey// Permiso concedido.// 2019-09-25T21:40:59.403
+managers.ControladorAdmin//createJFreeChartCount// Se genera gráfica con 12 registros.// 2019-09-25T21:40:59.460
+managers.queries.KeyValidate//resultHaveKey// Permiso concedido.// 2019-09-25T21:40:59.618
+managers.ControladorAdmin//createJFreeChartCount// Se genera gráfica con 160 registros.// 2019-09-25T21:40:59.681
+managers.ControladorLogin//define_view// Acceso a vista admin.// 2019-09-25T21:40:59.709
+managers.ControladorLogin//request_login// Usuario existente.// 2019-09-25T21:40:59.819
+managers.queries.KeyValidate//resultHaveKey// Permiso concedido.// 2019-09-25T21:41:08.148
+managers.queries.KeyValidate//resultHaveKey// Permiso concedido.// 2019-09-25T21:41:08.305

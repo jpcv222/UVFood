@@ -336,3 +336,7 @@ managers.ControladorLogin//insert_session_record// Error desconocido.// 2019-09-
 managers.ControladorLogin//insert_session_record// Error desconocido.// 2019-09-25T20:25:47.738
 managers.ControladorLogin//insert_session_record// Error desconocido.// 2019-09-25T20:48:28.322
 managers.ControladorLogin//insert_session_record// Error desconocido.// 2019-09-25T20:53:19.448
+managers.ControladorLogin//insert_session_record// Error desconocido.// 2019-09-25T21:24:07.949
+managers.ControladorLogin//request_login// La contraseña no coincide con el usuario.// 2019-09-25T21:34:10.182
+managers.ControladorLogin//insert_session_record// Error desconocido.// 2019-09-25T21:34:15.861
+managers.ControladorLogin//insert_session_record// Error desconocido.// 2019-09-25T21:40:59.811

@@ -380,7 +380,7 @@ public class ConsultasAdmin extends ConexionBD {
             return false;
         }
     }
-    
+
     public boolean buscarUserSales(VistaAdmin vista) {
         DefaultTableModel modelo = new DefaultTableModel() {
             @Override
@@ -388,29 +388,35 @@ public class ConsultasAdmin extends ConexionBD {
                 return false;
             }
         };
-
-        Statement ps = null;
-        Connection conn = Conexion();
-        ResultSet rs = null;
-        String filtro = "'%" + vista.jTextFieldBuscarUser.getText() + "%'";
-
-        //$query = "SELECT * FROM imagenesproductos WHERE nombre LIKE '%$q%' OR descripcion LIKE '%$q%' OR precio LIKE '%$q%' OR categoria LIKE '%$q%'";
-        String sql = "SELECT * FROM uvfood_user where idUser::text LIKE" + filtro + " OR username::text LIKE" + filtro + " OR firstname::text LIKE" + filtro + " OR surname::text LIKE" + filtro;
         try {
+            Statement ps = null;
+            Connection conn = Conexion();
+            ResultSet rs = null;
+            String filtro = "'%" + vista.jTextFieldBuscarUserSales.getText() + "%'";
+
+            //$query = "SELECT * FROM imagenesproductos WHERE nombre LIKE '%$q%' OR descripcion LIKE '%$q%' OR precio LIKE '%$q%' OR categoria LIKE '%$q%'";
+            String sql = "SELECT * FROM (\n"
+                    + "	SELECT uvfood_user.username, uvfood_user.firstname,  uvfood_user.surname, uvfood_sales.tickets,\n"
+                    + "	uvfood_sales.total_price, uvfood_sales.sale_date\n"
+                    + "	FROM uvfood_sales\n"
+                    + "			   INNER JOIN uvfood_user ON uvfood_sales.created_to = uvfood_user.iduser) AS result_sales \n"
+                    + "	 WHERE result_sales.username::text  LIKE "+filtro+"\n"
+                    + "	 OR result_sales.firstname::text  LIKE "+filtro+" OR result_sales.surname::text  LIKE "+filtro+"\n"
+                    + "	 OR result_sales.tickets::text  LIKE "+filtro+" OR result_sales.total_price::text  LIKE "+filtro+" \n"
+                    + "	 OR result_sales.sale_date::text  LIKE "+filtro+";";
+
             ps = conn.createStatement();
             rs = ps.executeQuery(sql);
 
             ResultSetMetaData rsMd = rs.getMetaData();
             int cantidadCol = rsMd.getColumnCount();
 
-            modelo.addColumn("Id");
             modelo.addColumn("Usuario");
             modelo.addColumn("Nombre");
             modelo.addColumn("Apellido");
-            modelo.addColumn("Fecha de Nacimiento");
-            modelo.addColumn("Email");
-            modelo.addColumn("Fecha de creacion");
-            modelo.addColumn("Estado");
+            modelo.addColumn("Tickets");
+            modelo.addColumn("Total");
+            modelo.addColumn("Fecha");
 
             while (rs.next()) {
 
@@ -422,17 +428,11 @@ public class ConsultasAdmin extends ConexionBD {
                 filas[3] = rs.getObject(4);
                 filas[4] = rs.getObject(5);
                 filas[5] = rs.getObject(6);
-                filas[6] = rs.getObject(8);
-
-                if (rs.getInt(9) == 1) {
-                    filas[7] = "Activo";
-                } else {
-                    filas[7] = "No activo";
-                }
 
                 modelo.addRow(filas);
             }
-            vista.jTableUsers.setModel(modelo);
+            vista.jTableUsersSales.setModel(modelo);
+
             rs.close();
             ps.close();
             return true;
@@ -914,16 +914,14 @@ public class ConsultasAdmin extends ConexionBD {
 
         return result;
     }
-    
-        public String getFecha() {
+
+    public String getFecha() {
         java.util.Date myDate = new java.util.Date();
 
         String fecha = new SimpleDateFormat("yyyy-MM-dd").format(myDate);
 
         return fecha;
     }
-    
-    
 
     public String guardarMenu(String img, VistaAdmin vista) {
         String result = "";
@@ -1037,8 +1035,8 @@ public class ConsultasAdmin extends ConexionBD {
         }
         return result;
     }
-    
-        public boolean fillComboImgTipo(VistaAdmin vista) {
+
+    public boolean fillComboImgTipo(VistaAdmin vista) {
         vista.jComboBoxTipoImg.removeAllItems();
         Statement ps = null;
         ResultSet rs = null;

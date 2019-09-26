@@ -180,3 +180,59 @@ managers.queries.ConsultasLogin//insert_session_record// No results were returne
 managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-25T20:25:47.729
 managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-25T20:48:28.287
 managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-25T20:53:19.441
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-25T21:24:07.941
+managers.queries.ConsultasAdmin//buscarUserSales// Unterminated string literal started at position 730 in SQL SELECT * FROM (SELECT uvfood_user.iduser,  uvfood_user.username, uvfood_user.firstname, uvfood_user.surname, uvfood_user_tickets.count_tickets
+FROM uvfood_user 
+ INNER JOIN uvfood_user_tickets ON uvfood_user.iduser = uvfood_user_tickets.iduser
+WHERE uvfood_user.is_active = 1 AND uvfood_user.iduser IN 
+ (SELECT iduser FROM uvfood_user_extended WHERE uvfood_user_extended.iduser = uvfood_user.iduser AND id_typeuser IN
+	 (SELECT id_typeuser FROM uvfood_typeuser WHERE type_user = 'Cliente'))) AS result_sales 
+	 WHERE result_sales.iduser::text LIKE '%%' OR result_sales.username::text  LIKE '%%'
+	 OR result_sales.firstname::text  LIKE '%%' OR result_sales.surname::text  LIKE '%%''
+	 OR result_sales.count_tickets::text  LIKE '%%';. Expected  char org.postgresql.util.PSQLException: Unterminated string literal started at position 730 in SQL SELECT * FROM (SELECT uvfood_user.iduser,  uvfood_user.username, uvfood_user.firstname, uvfood_user.surname, uvfood_user_tickets.count_tickets
+FROM uvfood_user 
+ INNER JOIN uvfood_user_tickets ON uvfood_user.iduser = uvfood_user_tickets.iduser
+WHERE uvfood_user.is_active = 1 AND uvfood_user.iduser IN 
+ (SELECT iduser FROM uvfood_user_extended WHERE uvfood_user_extended.iduser = uvfood_user.iduser AND id_typeuser IN
+	 (SELECT id_typeuser FROM uvfood_typeuser WHERE type_user = 'Cliente'))) AS result_sales 
+	 WHERE result_sales.iduser::text LIKE '%%' OR result_sales.username::text  LIKE '%%'
+	 OR result_sales.firstname::text  LIKE '%%' OR result_sales.surname::text  LIKE '%%''
+	 OR result_sales.count_tickets::text  LIKE '%%';. Expected  char// 2019-09-25T21:24:14.851
+managers.queries.ConsultasAdmin//buscarUserSales// Unterminated string literal started at position 740 in SQL SELECT * FROM (SELECT uvfood_user.iduser,  uvfood_user.username, uvfood_user.firstname, uvfood_user.surname, uvfood_user_tickets.count_tickets
+FROM uvfood_user 
+ INNER JOIN uvfood_user_tickets ON uvfood_user.iduser = uvfood_user_tickets.iduser
+WHERE uvfood_user.is_active = 1 AND uvfood_user.iduser IN 
+ (SELECT iduser FROM uvfood_user_extended WHERE uvfood_user_extended.iduser = uvfood_user.iduser AND id_typeuser IN
+	 (SELECT id_typeuser FROM uvfood_typeuser WHERE type_user = 'Cliente'))) AS result_sales 
+	 WHERE result_sales.iduser::text LIKE '%NU%' OR result_sales.username::text  LIKE '%NU%'
+	 OR result_sales.firstname::text  LIKE '%NU%' OR result_sales.surname::text  LIKE '%NU%''
+	 OR result_sales.count_tickets::text  LIKE '%NU%';. Expected  char org.postgresql.util.PSQLException: Unterminated string literal started at position 740 in SQL SELECT * FROM (SELECT uvfood_user.iduser,  uvfood_user.username, uvfood_user.firstname, uvfood_user.surname, uvfood_user_tickets.count_tickets
+FROM uvfood_user 
+ INNER JOIN uvfood_user_tickets ON uvfood_user.iduser = uvfood_user_tickets.iduser
+WHERE uvfood_user.is_active = 1 AND uvfood_user.iduser IN 
+ (SELECT iduser FROM uvfood_user_extended WHERE uvfood_user_extended.iduser = uvfood_user.iduser AND id_typeuser IN
+	 (SELECT id_typeuser FROM uvfood_typeuser WHERE type_user = 'Cliente'))) AS result_sales 
+	 WHERE result_sales.iduser::text LIKE '%NU%' OR result_sales.username::text  LIKE '%NU%'
+	 OR result_sales.firstname::text  LIKE '%NU%' OR result_sales.surname::text  LIKE '%NU%''
+	 OR result_sales.count_tickets::text  LIKE '%NU%';. Expected  char// 2019-09-25T21:26:23.968
+managers.queries.ConsultasAdmin//buscarUserSales// Unterminated string literal started at position 745 in SQL SELECT * FROM (SELECT uvfood_user.iduser,  uvfood_user.username, uvfood_user.firstname, uvfood_user.surname, uvfood_user_tickets.count_tickets
+FROM uvfood_user 
+ INNER JOIN uvfood_user_tickets ON uvfood_user.iduser = uvfood_user_tickets.iduser
+WHERE uvfood_user.is_active = 1 AND uvfood_user.iduser IN 
+ (SELECT iduser FROM uvfood_user_extended WHERE uvfood_user_extended.iduser = uvfood_user.iduser AND id_typeuser IN
+	 (SELECT id_typeuser FROM uvfood_typeuser WHERE type_user = 'Cliente'))) AS result_sales 
+	 WHERE result_sales.iduser::text LIKE '%RNU%' OR result_sales.username::text  LIKE '%RNU%'
+	 OR result_sales.firstname::text  LIKE '%RNU%' OR result_sales.surname::text  LIKE '%RNU%''
+	 OR result_sales.count_tickets::text  LIKE '%RNU%';. Expected  char org.postgresql.util.PSQLException: Unterminated string literal started at position 745 in SQL SELECT * FROM (SELECT uvfood_user.iduser,  uvfood_user.username, uvfood_user.firstname, uvfood_user.surname, uvfood_user_tickets.count_tickets
+FROM uvfood_user 
+ INNER JOIN uvfood_user_tickets ON uvfood_user.iduser = uvfood_user_tickets.iduser
+WHERE uvfood_user.is_active = 1 AND uvfood_user.iduser IN 
+ (SELECT iduser FROM uvfood_user_extended WHERE uvfood_user_extended.iduser = uvfood_user.iduser AND id_typeuser IN
+	 (SELECT id_typeuser FROM uvfood_typeuser WHERE type_user = 'Cliente'))) AS result_sales 
+	 WHERE result_sales.iduser::text LIKE '%RNU%' OR result_sales.username::text  LIKE '%RNU%'
+	 OR result_sales.firstname::text  LIKE '%RNU%' OR result_sales.surname::text  LIKE '%RNU%''
+	 OR result_sales.count_tickets::text  LIKE '%RNU%';. Expected  char// 2019-09-25T21:33:20.462
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-25T21:34:15.855
+managers.queries.ConsultasAdmin//buscarUserSales// The column index is out of range: 6, number of columns: 5. org.postgresql.util.PSQLException: The column index is out of range: 6, number of columns: 5.// 2019-09-25T21:34:29.343
+managers.queries.ConsultasAdmin//buscarUserSales// The column index is out of range: 6, number of columns: 5. org.postgresql.util.PSQLException: The column index is out of range: 6, number of columns: 5.// 2019-09-25T21:34:29.405
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-25T21:40:59.805
