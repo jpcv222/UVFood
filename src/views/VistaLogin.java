@@ -23,7 +23,7 @@ public class VistaLogin extends javax.swing.JFrame {
     int xMouse;
     int yMouse;
     
-    private final ControladorLogin login_manager;
+    public ControladorLogin login_manager;
     
 
     public VistaLogin() {

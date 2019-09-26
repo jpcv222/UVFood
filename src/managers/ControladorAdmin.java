@@ -291,6 +291,24 @@ public class ControladorAdmin {
             modal.error_message("Error", "Algo anda mal", "No fue exitosa la busqueda", "Por Favor intenta mas tarde", "O reportanos que ocurre");
         }
     }
+    
+    public void requestSearchUserSales() {
+        if (!consultasAdmin.buscarUserSales(interfazPrincipalAdmin)) {
+            modal.error_message("Error", "Algo anda mal", "No fue exitosa la busqueda", "Por Favor intenta mas tarde", "O reportanos que ocurre");
+        }
+    }
+    
+    public void requestSearchUsersToTickets() {
+        if (!consultasAdmin.buscarUserToTickets(interfazPrincipalAdmin)) {
+            modal.error_message("Error", "Algo anda mal", "No fue exitosa la busqueda", "Por Favor intenta mas tarde", "O reportanos que ocurre");
+        }
+    }
+    
+    public void requestSearchUserSessions() {
+        if (!consultasAdmin.buscarUserSessions(interfazPrincipalAdmin)) {
+            modal.error_message("Error", "Algo anda mal", "No fue exitosa la busqueda", "Por Favor intenta mas tarde", "O reportanos que ocurre");
+        }
+    }
 
     public void requestFillTable() {
         if (!consultasAdmin.llenarTabla(interfazPrincipalAdmin)) {
@@ -315,8 +333,8 @@ public class ControladorAdmin {
         String namekey = "reports.generate.user.sessions";
         String result = keyvalidate.haveKey(namekey, user.getIdUser());
         boolean validate = keyvalidate.resultHaveKey(result);
-        interfazPrincipalAdmin.jLabelNoticeNotPermissions.setVisible(!validate);
-        interfazPrincipalAdmin.jTextFieldBuscarUserSessions.setEnabled(validate);
+        interfazPrincipalAdmin.jLabelNoticeNotPermissions1.setVisible(!validate);
+        interfazPrincipalAdmin.jTextFieldBuscarUserSales.setEnabled(validate);
         if (validate) {
             if (!consultasAdmin.llenarTablaSales(interfazPrincipalAdmin)) {
                 modal.error_message("Error", "Algo anda mal", "No se pueden mostrar registros de la Base de datos", "Por Favor intenta mas tarde", "O reportanos que ocurre");
@@ -363,13 +381,19 @@ public class ControladorAdmin {
         String result = keyvalidate.haveKey(namekey, user.getIdUser());
         boolean validate = keyvalidate.resultHaveKey(result);
         if (validate) {
+            if(validateBtFacturar()){
             if (consultasAdmin.insertSale(interfazPrincipalAdmin)) {
                 createFactura();
                 modal.success_message("Exito.", "Venta realizada.", "La venta se ha realizado con exito", "", "");
             } else {
-                modal.error_message("Error", "Algo anda mal", "No se pueden mostrar registros de la Base de datos", "Por Favor intenta mas tarde", "O reportanos que ocurre");
+                modal.error_message("Error", "Algo anda mal", "No se puede crear la venta.", "Por Favor intenta mas tarde", "O reportanos que ocurre");
 
             }
+            }else {
+                modal.error_message("Error", "Algo anda mal", "No se puede crear la venta", "Datos inválidos.", "Revise datos enviados.");
+
+            }
+            
         }
     }
 
@@ -680,13 +704,15 @@ public class ControladorAdmin {
                 if (cash >= venta) {
                     int cash_change = cash - venta;
                     interfazPrincipalAdmin.jTextFieldCambio.setText(String.valueOf(cash_change));
+                }else{
+                     interfazPrincipalAdmin.jTextFieldCambio.setText("Error.");
                 }
             }
         }
 
     }
 
-    public void validateBtFacturar() {
+    public boolean  validateBtFacturar() {
         String cash_change = interfazPrincipalAdmin.jTextFieldCambio.getText();
         String tickets = interfazPrincipalAdmin.jTextFieldCantidadTickets.getText();
         String price = interfazPrincipalAdmin.jTextFieldTotalVenta.getText();
@@ -697,8 +723,10 @@ public class ControladorAdmin {
             int price_aux = Integer.parseInt(price);
             int efectivo_aux = Integer.parseInt(efectivo);
 
-            interfazPrincipalAdmin.btnFacturar.setEnabled(cash_change_aux >= 0 && tickets_aux >= 0 && efectivo_aux >= price_aux);
+            return (cash_change_aux >= 0 && tickets_aux >= 0 && efectivo_aux >= price_aux);
 
+        }else {
+        return false;
         }
     }
 

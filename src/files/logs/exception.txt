@@ -172,6 +172,78 @@ managers.queries.ConsultasAdmin//insertConsumption// ERROR: duplicate key value 
 managers.queries.ConsultasAdmin//insertConsumption// ERROR: duplicate key value violates unique constraint "unique_consumption_date_user"
   Detail: Key (iduser, date_consumption)=(19, 2019-09-23) already exists. org.postgresql.util.PSQLException: ERROR: duplicate key value violates unique constraint "unique_consumption_date_user"
   Detail: Key (iduser, date_consumption)=(19, 2019-09-23) already exists.// 2019-09-25T16:06:44.301
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-25T16:47:56.820
+managers.queries.ConsultasAdmin//insertConsumption// ERROR: duplicate key value violates unique constraint "unique_consumption_date_user"
+  Detail: Key (iduser, date_consumption)=(19, 2019-09-23) already exists. org.postgresql.util.PSQLException: ERROR: duplicate key value violates unique constraint "unique_consumption_date_user"
+  Detail: Key (iduser, date_consumption)=(19, 2019-09-23) already exists.// 2019-09-25T16:48:56.311
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-25T16:53:23.452
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-25T20:25:47.729
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-25T20:48:28.287
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-25T20:53:19.441
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-25T21:24:07.941
+managers.queries.ConsultasAdmin//buscarUserSales// Unterminated string literal started at position 730 in SQL SELECT * FROM (SELECT uvfood_user.iduser,  uvfood_user.username, uvfood_user.firstname, uvfood_user.surname, uvfood_user_tickets.count_tickets
+FROM uvfood_user 
+ INNER JOIN uvfood_user_tickets ON uvfood_user.iduser = uvfood_user_tickets.iduser
+WHERE uvfood_user.is_active = 1 AND uvfood_user.iduser IN 
+ (SELECT iduser FROM uvfood_user_extended WHERE uvfood_user_extended.iduser = uvfood_user.iduser AND id_typeuser IN
+	 (SELECT id_typeuser FROM uvfood_typeuser WHERE type_user = 'Cliente'))) AS result_sales 
+	 WHERE result_sales.iduser::text LIKE '%%' OR result_sales.username::text  LIKE '%%'
+	 OR result_sales.firstname::text  LIKE '%%' OR result_sales.surname::text  LIKE '%%''
+	 OR result_sales.count_tickets::text  LIKE '%%';. Expected  char org.postgresql.util.PSQLException: Unterminated string literal started at position 730 in SQL SELECT * FROM (SELECT uvfood_user.iduser,  uvfood_user.username, uvfood_user.firstname, uvfood_user.surname, uvfood_user_tickets.count_tickets
+FROM uvfood_user 
+ INNER JOIN uvfood_user_tickets ON uvfood_user.iduser = uvfood_user_tickets.iduser
+WHERE uvfood_user.is_active = 1 AND uvfood_user.iduser IN 
+ (SELECT iduser FROM uvfood_user_extended WHERE uvfood_user_extended.iduser = uvfood_user.iduser AND id_typeuser IN
+	 (SELECT id_typeuser FROM uvfood_typeuser WHERE type_user = 'Cliente'))) AS result_sales 
+	 WHERE result_sales.iduser::text LIKE '%%' OR result_sales.username::text  LIKE '%%'
+	 OR result_sales.firstname::text  LIKE '%%' OR result_sales.surname::text  LIKE '%%''
+	 OR result_sales.count_tickets::text  LIKE '%%';. Expected  char// 2019-09-25T21:24:14.851
+managers.queries.ConsultasAdmin//buscarUserSales// Unterminated string literal started at position 740 in SQL SELECT * FROM (SELECT uvfood_user.iduser,  uvfood_user.username, uvfood_user.firstname, uvfood_user.surname, uvfood_user_tickets.count_tickets
+FROM uvfood_user 
+ INNER JOIN uvfood_user_tickets ON uvfood_user.iduser = uvfood_user_tickets.iduser
+WHERE uvfood_user.is_active = 1 AND uvfood_user.iduser IN 
+ (SELECT iduser FROM uvfood_user_extended WHERE uvfood_user_extended.iduser = uvfood_user.iduser AND id_typeuser IN
+	 (SELECT id_typeuser FROM uvfood_typeuser WHERE type_user = 'Cliente'))) AS result_sales 
+	 WHERE result_sales.iduser::text LIKE '%NU%' OR result_sales.username::text  LIKE '%NU%'
+	 OR result_sales.firstname::text  LIKE '%NU%' OR result_sales.surname::text  LIKE '%NU%''
+	 OR result_sales.count_tickets::text  LIKE '%NU%';. Expected  char org.postgresql.util.PSQLException: Unterminated string literal started at position 740 in SQL SELECT * FROM (SELECT uvfood_user.iduser,  uvfood_user.username, uvfood_user.firstname, uvfood_user.surname, uvfood_user_tickets.count_tickets
+FROM uvfood_user 
+ INNER JOIN uvfood_user_tickets ON uvfood_user.iduser = uvfood_user_tickets.iduser
+WHERE uvfood_user.is_active = 1 AND uvfood_user.iduser IN 
+ (SELECT iduser FROM uvfood_user_extended WHERE uvfood_user_extended.iduser = uvfood_user.iduser AND id_typeuser IN
+	 (SELECT id_typeuser FROM uvfood_typeuser WHERE type_user = 'Cliente'))) AS result_sales 
+	 WHERE result_sales.iduser::text LIKE '%NU%' OR result_sales.username::text  LIKE '%NU%'
+	 OR result_sales.firstname::text  LIKE '%NU%' OR result_sales.surname::text  LIKE '%NU%''
+	 OR result_sales.count_tickets::text  LIKE '%NU%';. Expected  char// 2019-09-25T21:26:23.968
+managers.queries.ConsultasAdmin//buscarUserSales// Unterminated string literal started at position 745 in SQL SELECT * FROM (SELECT uvfood_user.iduser,  uvfood_user.username, uvfood_user.firstname, uvfood_user.surname, uvfood_user_tickets.count_tickets
+FROM uvfood_user 
+ INNER JOIN uvfood_user_tickets ON uvfood_user.iduser = uvfood_user_tickets.iduser
+WHERE uvfood_user.is_active = 1 AND uvfood_user.iduser IN 
+ (SELECT iduser FROM uvfood_user_extended WHERE uvfood_user_extended.iduser = uvfood_user.iduser AND id_typeuser IN
+	 (SELECT id_typeuser FROM uvfood_typeuser WHERE type_user = 'Cliente'))) AS result_sales 
+	 WHERE result_sales.iduser::text LIKE '%RNU%' OR result_sales.username::text  LIKE '%RNU%'
+	 OR result_sales.firstname::text  LIKE '%RNU%' OR result_sales.surname::text  LIKE '%RNU%''
+	 OR result_sales.count_tickets::text  LIKE '%RNU%';. Expected  char org.postgresql.util.PSQLException: Unterminated string literal started at position 745 in SQL SELECT * FROM (SELECT uvfood_user.iduser,  uvfood_user.username, uvfood_user.firstname, uvfood_user.surname, uvfood_user_tickets.count_tickets
+FROM uvfood_user 
+ INNER JOIN uvfood_user_tickets ON uvfood_user.iduser = uvfood_user_tickets.iduser
+WHERE uvfood_user.is_active = 1 AND uvfood_user.iduser IN 
+ (SELECT iduser FROM uvfood_user_extended WHERE uvfood_user_extended.iduser = uvfood_user.iduser AND id_typeuser IN
+	 (SELECT id_typeuser FROM uvfood_typeuser WHERE type_user = 'Cliente'))) AS result_sales 
+	 WHERE result_sales.iduser::text LIKE '%RNU%' OR result_sales.username::text  LIKE '%RNU%'
+	 OR result_sales.firstname::text  LIKE '%RNU%' OR result_sales.surname::text  LIKE '%RNU%''
+	 OR result_sales.count_tickets::text  LIKE '%RNU%';. Expected  char// 2019-09-25T21:33:20.462
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-25T21:34:15.855
+managers.queries.ConsultasAdmin//buscarUserSales// The column index is out of range: 6, number of columns: 5. org.postgresql.util.PSQLException: The column index is out of range: 6, number of columns: 5.// 2019-09-25T21:34:29.343
+managers.queries.ConsultasAdmin//buscarUserSales// The column index is out of range: 6, number of columns: 5. org.postgresql.util.PSQLException: The column index is out of range: 6, number of columns: 5.// 2019-09-25T21:34:29.405
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-25T21:40:59.805
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-25T21:47:05.664
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-25T21:56:04.011
+managers.queries.ConsultasAdmin//buscarUserToTickets// The column index is out of range: 6, number of columns: 5. org.postgresql.util.PSQLException: The column index is out of range: 6, number of columns: 5.// 2019-09-25T21:56:38.818
+managers.queries.ConsultasAdmin//buscarUserToTickets// The column index is out of range: 6, number of columns: 5. org.postgresql.util.PSQLException: The column index is out of range: 6, number of columns: 5.// 2019-09-25T21:56:38.902
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-25T21:58:29.391
+managers.queries.ConsultasAdmin//buscarUserToTickets// null java.lang.NullPointerException// 2019-09-25T21:58:33.798
+managers.queries.ConsultasAdmin//buscarUserToTickets// null java.lang.NullPointerException// 2019-09-25T21:58:57.170
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-25T22:02:21.264
 classes.ConexionBD//Conexion// FATAL: la autentificación password falló para el usuario «postgres» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf) org.postgresql.util.PSQLException: FATAL: la autentificación password falló para el usuario «postgres» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf)// 2019-09-25T18:01:41.980
 managers.queries.ConsultasLogin//insert_session_record// La consulta no retornó ningún resultado. org.postgresql.util.PSQLException: La consulta no retornó ningún resultado.// 2019-09-25T18:04:17.015
 managers.queries.ConsultasLogin//insert_session_record// La consulta no retornó ningún resultado. org.postgresql.util.PSQLException: La consulta no retornó ningún resultado.// 2019-09-25T18:07:16.957
@@ -198,3 +270,19 @@ managers.queries.ConsultasCliente//countTicekt// null java.lang.NullPointerExcep
 managers.queries.ConsultasLogin//insert_session_record// La consulta no retornó ningún resultado. org.postgresql.util.PSQLException: La consulta no retornó ningún resultado.// 2019-09-25T21:26:32.680
 managers.queries.ConsultasLogin//insert_session_record// La consulta no retornó ningún resultado. org.postgresql.util.PSQLException: La consulta no retornó ningún resultado.// 2019-09-25T21:37:43.383
 managers.queries.ConsultasLogin//insert_session_record// La consulta no retornó ningún resultado. org.postgresql.util.PSQLException: La consulta no retornó ningún resultado.// 2019-09-25T21:39:17.067
+classes.ConexionBD//Conexion// FATAL: password authentication failed for user "postgres" org.postgresql.util.PSQLException: FATAL: password authentication failed for user "postgres"// 2019-09-25T22:23:31.748
+managers.queries.ConsultasCliente//countTicekt// null java.lang.NullPointerException// 2019-09-25T22:27:32.041
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-25T22:27:32.216
+managers.queries.ConsultasCliente//countTicekt// null java.lang.NullPointerException// 2019-09-25T22:41:05.743
+managers.queries.ConsultasCliente//countTicekt// null java.lang.NullPointerException// 2019-09-25T22:46:07.356
+managers.queries.ConsultasCliente//countTicekt// null java.lang.NullPointerException// 2019-09-25T22:57:01.555
+managers.queries.ConsultasCliente//countTicekt// null java.lang.NullPointerException// 2019-09-25T22:58:33.455
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-25T22:58:33.645
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-25T22:59:37.401
+managers.queries.ConsultasCliente//countTicekt// null java.lang.NullPointerException// 2019-09-25T23:02:03.300
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-25T23:09:20.086
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-25T23:11:26.067
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-25T23:11:58.558
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-25T23:12:38.010
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-25T23:15:47.718
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-25T23:18:28.047

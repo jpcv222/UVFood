@@ -37,7 +37,34 @@ public class ControladorCliente {
         this.modal = new UVFoodDialogs();
         this.validaciones = new FormValidations();
         this.keyvalidate = new KeyValidate(modal);
+    }
 
+    public void set_init_conf() {
+
+        interfazPrincipalCliente.jLabelNombreUser.setText("Bienvenido al Servicio de Restaurante Universitario, " + user.getFirstname());
+        requestTraerMenu();
+        requestCountTicket();
+        requestFillTableSales();
+    }
+
+    public void requestSearchUserSales() {
+        if (!consultasCliente.buscarUserSales(interfazPrincipalCliente)) {
+            modal.error_message("Error", "Algo anda mal", "No fue exitosa la busqueda", "Por Favor intenta mas tarde", "O reportanos que ocurre");
+        }
+    }
+
+    public void requestFillTableSales() {
+        String namekey = "reports.generate.user.sessions";
+        System.out.println(user.getIdUser());
+        String result = keyvalidate.haveKey(namekey, user.getIdUser());
+        boolean validate = keyvalidate.resultHaveKey(result);
+        interfazPrincipalCliente.jLabelNoticeNotPermissions1.setVisible(!validate);
+        interfazPrincipalCliente.jTextFieldBuscarUserSales.setEnabled(validate);
+        if (validate) {
+            if (!consultasCliente.llenarTablaSales(interfazPrincipalCliente)) {
+                modal.error_message("Error", "Algo anda mal", "No se pueden mostrar registros de la Base de datos", "Por Favor intenta mas tarde", "O reportanos que ocurre");
+            }
+        }
     }
 
     public void requestTraerMenu() {
@@ -49,7 +76,7 @@ public class ControladorCliente {
             if (image.equals("error.img.no.encontrada")) {
                 rsscalelabel.RSScaleLabel.setScaleLabel(interfazPrincipalCliente.jLabelMenuActual, System.getProperty("user.dir") + "/src/ImgMenu/menuNoDisponible.png");
             } else {
-                File archivo = new File("image");
+                File archivo = new File(image);
                 if (!archivo.exists()) {
                     rsscalelabel.RSScaleLabel.setScaleLabel(interfazPrincipalCliente.jLabelMenuActual, System.getProperty("user.dir") + "/src/ImgMenu/menuNoDisponible.png");
                 } else {
@@ -63,7 +90,6 @@ public class ControladorCliente {
 
     }
 
-
     public void requestCountTicket() {
         String result = consultasCliente.countTicekt(interfazPrincipalCliente);
         System.out.println(result);
@@ -71,7 +97,7 @@ public class ControladorCliente {
         if (result.equals("error.consulta")) {
             logs.escribirErrorLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// error.consulta ");
         } else {
-            interfazPrincipalCliente.jLabelTickets.setText("Su cantidad de tickets es: "+result);
+            interfazPrincipalCliente.jLabelTickets.setText("Su cantidad de tickets es: " + result);
         }
     }
 

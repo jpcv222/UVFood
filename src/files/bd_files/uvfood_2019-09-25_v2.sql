@@ -1406,15 +1406,6 @@ COPY public.uvfood_sessions (idsession, iduser, date_session) FROM stdin;
 163	5	2019-09-25 21:56:04.002287
 164	5	2019-09-25 21:58:29.383883
 165	5	2019-09-25 22:02:21.254079
-166	18	2019-09-25 22:27:32.136399
-167	18	2019-09-25 22:58:33.619328
-168	5	2019-09-25 22:59:37.394738
-169	18	2019-09-25 23:09:20.070168
-170	18	2019-09-25 23:11:26.057578
-171	5	2019-09-25 23:11:58.550217
-172	18	2019-09-25 23:12:38.013592
-173	18	2019-09-25 23:15:47.697677
-174	18	2019-09-25 23:18:28.018259
 \.
 
 
@@ -1512,7 +1503,6 @@ COPY public.uvfood_user_key (iduser, idkey) FROM stdin;
 5	17
 5	14
 5	18
-18	18
 \.
 
 
@@ -1611,7 +1601,7 @@ SELECT pg_catalog.setval('public.uvfood_sede_idsede_seq', 1, true);
 -- Name: uvfood_sessions_idsession_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.uvfood_sessions_idsession_seq', 174, true);
+SELECT pg_catalog.setval('public.uvfood_sessions_idsession_seq', 165, true);
 
 
 --
