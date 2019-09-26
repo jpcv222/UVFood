@@ -334,3 +334,4 @@ managers.ControladorGestionPermisos//existInputKey// Consulta no arroja resultad
 managers.ControladorLogin//insert_session_record// Error desconocido.// 2019-09-25T16:47:56.840
 managers.ControladorLogin//insert_session_record// Error desconocido.// 2019-09-25T16:53:23.472
 managers.ControladorLogin//insert_session_record// Error desconocido.// 2019-09-25T20:25:47.738
+managers.ControladorLogin//insert_session_record// Error desconocido.// 2019-09-25T20:48:28.322
