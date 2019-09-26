@@ -298,6 +298,12 @@ public class ControladorAdmin {
         }
     }
     
+    public void requestSearchUsersToTickets() {
+        if (!consultasAdmin.buscarUserToTickets(interfazPrincipalAdmin)) {
+            modal.error_message("Error", "Algo anda mal", "No fue exitosa la busqueda", "Por Favor intenta mas tarde", "O reportanos que ocurre");
+        }
+    }
+    
     public void requestSearchUserSessions() {
         if (!consultasAdmin.buscarUserSessions(interfazPrincipalAdmin)) {
             modal.error_message("Error", "Algo anda mal", "No fue exitosa la busqueda", "Por Favor intenta mas tarde", "O reportanos que ocurre");

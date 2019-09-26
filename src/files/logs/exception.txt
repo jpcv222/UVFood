@@ -237,3 +237,10 @@ managers.queries.ConsultasAdmin//buscarUserSales// The column index is out of ra
 managers.queries.ConsultasAdmin//buscarUserSales// The column index is out of range: 6, number of columns: 5. org.postgresql.util.PSQLException: The column index is out of range: 6, number of columns: 5.// 2019-09-25T21:34:29.405
 managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-25T21:40:59.805
 managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-25T21:47:05.664
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-25T21:56:04.011
+managers.queries.ConsultasAdmin//buscarUserToTickets// The column index is out of range: 6, number of columns: 5. org.postgresql.util.PSQLException: The column index is out of range: 6, number of columns: 5.// 2019-09-25T21:56:38.818
+managers.queries.ConsultasAdmin//buscarUserToTickets// The column index is out of range: 6, number of columns: 5. org.postgresql.util.PSQLException: The column index is out of range: 6, number of columns: 5.// 2019-09-25T21:56:38.902
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-25T21:58:29.391
+managers.queries.ConsultasAdmin//buscarUserToTickets// null java.lang.NullPointerException// 2019-09-25T21:58:33.798
+managers.queries.ConsultasAdmin//buscarUserToTickets// null java.lang.NullPointerException// 2019-09-25T21:58:57.170
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-25T22:02:21.264

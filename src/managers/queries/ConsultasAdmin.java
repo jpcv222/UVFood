@@ -509,6 +509,86 @@ public class ConsultasAdmin extends ConexionBD {
         }
     }
 
+    public boolean buscarUserToTickets(VistaAdmin vista) {
+        DefaultTableModel modelo = new DefaultTableModel() {
+            @Override
+            public boolean isCellEditable(int row, int col) {
+                return false;
+            }
+        };
+        try {
+            Statement ps = null, psaux = null;
+            Connection conn = null;
+            ResultSet rs = null, rsaux = null;
+            String filtro = "'%" + vista.jTextFieldBuscarUserToTicket.getText() + "%'";
+
+            //$query = "SELECT * FROM imagenesproductos WHERE nombre LIKE '%$q%' OR descripcion LIKE '%$q%' OR precio LIKE '%$q%' OR categoria LIKE '%$q%'";
+            String sqlUsersToTickets = "SELECT * FROM (\n"
+                    + "	SELECT uvfood_user.iduser,  uvfood_user.username, uvfood_user.firstname, uvfood_user.surname, uvfood_user_tickets.count_tickets\n"
+                    + "	FROM uvfood_user\n"
+                    + "	INNER JOIN uvfood_user_tickets ON uvfood_user.iduser = uvfood_user_tickets.iduser\n"
+                    + "	WHERE uvfood_user.is_active = 1 AND uvfood_user.iduser IN \n"
+                    + "	(SELECT iduser FROM uvfood_user_extended WHERE uvfood_user_extended.iduser = uvfood_user.iduser AND id_typeuser IN\n"
+                    + "		 (SELECT id_typeuser FROM uvfood_typeuser WHERE type_user = 'Cliente'))) AS result_sales \n"
+                    + "	 WHERE result_sales.iduser::text  LIKE " + filtro + " OR result_sales.username::text  LIKE " + filtro + "\n"
+                    + "	 OR result_sales.firstname::text  LIKE " + filtro + " OR result_sales.surname::text  LIKE " + filtro + "\n"
+                    + "	 OR result_sales.count_tickets::text  LIKE " + filtro + ";";
+
+            conn = Conexion();
+            ps = conn.createStatement();
+            rs = ps.executeQuery(sqlUsersToTickets);
+
+           ResultSetMetaData rsMd = rs.getMetaData();
+            int cantidadCol = rsMd.getColumnCount();
+
+            modelo.addColumn("Id");
+            modelo.addColumn("Usuario");
+            modelo.addColumn("Nombre");
+            modelo.addColumn("Apellido");
+            modelo.addColumn("Tickets acumulados");
+            modelo.addColumn("Descuento");
+
+            while (rs.next()) {
+
+                Object[] filas = new Object[cantidadCol + 1];
+
+                filas[0] = rs.getObject(1);
+                filas[1] = rs.getObject(2);
+                filas[2] = rs.getObject(3);
+                filas[3] = rs.getObject(4);
+                filas[4] = rs.getObject(5);
+                filas[5] = 0;
+                String sqlUserWithDiscount = "SELECT  uvfood_discount.price_discount\n"
+                        + "FROM uvfood_user_discount \n"
+                        + "INNER JOIN uvfood_discount ON uvfood_user_discount.iddiscount = uvfood_discount.iddiscount\n"
+                        + "WHERE uvfood_user_discount.iduser = '" + rs.getObject(1) + "';";
+
+                psaux = conn.createStatement();
+                rsaux = psaux.executeQuery(sqlUserWithDiscount);
+
+                while (rsaux.next()) {
+                    filas[5] = rsaux.getObject(1);
+                }
+
+                modelo.addRow(filas);
+            }
+            vista.jTableUsersToTickets.setModel(modelo);
+
+            rs.close();
+            ps.close();
+            return true;
+        } catch (SQLException ex) {
+            logs.escribirExceptionLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// " + ex.getMessage() + " " + ex.toString());
+            //modal.error_message("Error", "Algo anda mal", "El servidor esta presentado problemas", "Por Favor intenta mas tarde", "O reportanos que ocurre");
+
+            return false;
+        } catch (NullPointerException np) {
+            logs.escribirExceptionLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// " + np.getMessage() + " " + np.toString());
+            //modal.error_message("Error", "Algo anda mal", "El servidor esta presentado problemas", "Por Favor intenta mas tarde", "O reportanos que ocurre");
+            return false;
+        }
+    }
+
     public static String sqlDateToString(java.sql.Date date) {
         if (date != null) {
             java.util.Date utilDate = new java.util.Date(date.getTime());

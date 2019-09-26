@@ -341,3 +341,6 @@ managers.ControladorLogin//request_login// La contraseña no coincide con el usu
 managers.ControladorLogin//insert_session_record// Error desconocido.// 2019-09-25T21:34:15.861
 managers.ControladorLogin//insert_session_record// Error desconocido.// 2019-09-25T21:40:59.811
 managers.ControladorLogin//insert_session_record// Error desconocido.// 2019-09-25T21:47:05.674
+managers.ControladorLogin//insert_session_record// Error desconocido.// 2019-09-25T21:56:04.018
+managers.ControladorLogin//insert_session_record// Error desconocido.// 2019-09-25T21:58:29.398
+managers.ControladorLogin//insert_session_record// Error desconocido.// 2019-09-25T22:02:21.271
