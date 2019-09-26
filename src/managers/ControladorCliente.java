@@ -39,6 +39,12 @@ public class ControladorCliente {
         this.keyvalidate = new KeyValidate(modal);
 
     }
+    
+    public void requestSearchUserSales() {
+        if (!consultasCliente.buscarUserSales(interfazPrincipalCliente)) {
+            modal.error_message("Error", "Algo anda mal", "No fue exitosa la busqueda", "Por Favor intenta mas tarde", "O reportanos que ocurre");
+        }
+    }
 
     
     public void requestTraerMenu() {

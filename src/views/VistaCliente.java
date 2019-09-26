@@ -128,6 +128,14 @@ public class VistaCliente extends javax.swing.JFrame implements Runnable{
         jPanel2 = new javax.swing.JPanel();
         jLabelMenuActual = new javax.swing.JLabel();
         jLabelTickets = new javax.swing.JLabel();
+        jPanel9 = new javax.swing.JPanel();
+        jLabelUserNamePerm2 = new javax.swing.JLabel();
+        jSeparator11 = new javax.swing.JSeparator();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        jTableUsersSales = new javax.swing.JTable();
+        jLabel32 = new javax.swing.JLabel();
+        jTextFieldBuscarUserSales = new javax.swing.JTextField();
+        jLabelNoticeNotPermissions1 = new javax.swing.JLabel();
         jPanelPerfilCliente = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
         jPanelbtn = new javax.swing.JPanel();
@@ -194,6 +202,7 @@ public class VistaCliente extends javax.swing.JFrame implements Runnable{
 
         jPanelIndexCliente.setBackground(new java.awt.Color(255, 255, 255));
         jPanelIndexCliente.setName("jPanelIndexCliente"); // NOI18N
+        jPanelIndexCliente.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanelMenuDiaPrincipal.setBackground(new java.awt.Color(205, 31, 50));
 
@@ -232,32 +241,75 @@ public class VistaCliente extends javax.swing.JFrame implements Runnable{
                 .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jLabelTickets.setForeground(new java.awt.Color(102, 102, 102));
-        jLabelTickets.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jPanelIndexCliente.add(jPanelMenuDiaPrincipal, new org.netbeans.lib.awtextra.AbsoluteConstraints(99, 13, -1, -1));
 
-        javax.swing.GroupLayout jPanelIndexClienteLayout = new javax.swing.GroupLayout(jPanelIndexCliente);
-        jPanelIndexCliente.setLayout(jPanelIndexClienteLayout);
-        jPanelIndexClienteLayout.setHorizontalGroup(
-            jPanelIndexClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelIndexClienteLayout.createSequentialGroup()
-                .addGroup(jPanelIndexClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanelIndexClienteLayout.createSequentialGroup()
-                        .addGap(99, 99, 99)
-                        .addComponent(jPanelMenuDiaPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanelIndexClienteLayout.createSequentialGroup()
-                        .addGap(38, 38, 38)
-                        .addComponent(jLabelTickets, javax.swing.GroupLayout.PREFERRED_SIZE, 414, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(111, Short.MAX_VALUE))
-        );
-        jPanelIndexClienteLayout.setVerticalGroup(
-            jPanelIndexClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelIndexClienteLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanelMenuDiaPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(59, 59, 59)
-                .addComponent(jLabelTickets, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(371, Short.MAX_VALUE))
-        );
+        jLabelTickets.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabelTickets.setForeground(new java.awt.Color(204, 0, 0));
+        jLabelTickets.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jPanelIndexCliente.add(jLabelTickets, new org.netbeans.lib.awtextra.AbsoluteConstraints(38, 328, 414, 33));
+
+        jPanel9.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabelUserNamePerm2.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jLabelUserNamePerm2.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabelUserNamePerm2.setText("Usted ha realizado las siguientes compras");
+        jPanel9.add(jLabelUserNamePerm2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 560, 30));
+        jPanel9.add(jSeparator11, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, 680, 10));
+
+        jTableUsersSales.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Usuario", "Nombre", "Apellido", "Tickets", "Total", "Fecha"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.Integer.class, java.lang.String.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jTableUsersSales.getTableHeader().setReorderingAllowed(false);
+        jTableUsersSales.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTableUsersSalesMouseClicked(evt);
+            }
+        });
+        jScrollPane4.setViewportView(jTableUsersSales);
+
+        jPanel9.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(8, 71, 880, 120));
+
+        jLabel32.setText("Buscar");
+        jPanel9.add(jLabel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 10, 50, 30));
+
+        jTextFieldBuscarUserSales.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldBuscarUserSalesActionPerformed(evt);
+            }
+        });
+        jTextFieldBuscarUserSales.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                jTextFieldBuscarUserSalesKeyReleased(evt);
+            }
+        });
+        jPanel9.add(jTextFieldBuscarUserSales, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 10, 180, 30));
+
+        jLabelNoticeNotPermissions1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jLabelNoticeNotPermissions1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabelNoticeNotPermissions1.setText("Permisos denegados");
+        jPanel9.add(jLabelNoticeNotPermissions1, new org.netbeans.lib.awtextra.AbsoluteConstraints(8, 190, 880, 40));
+
+        jPanelIndexCliente.add(jPanel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 450, 900, -1));
 
         rSPanelsSlider1.add(jPanelIndexCliente, "card2");
 
@@ -478,6 +530,19 @@ public class VistaCliente extends javax.swing.JFrame implements Runnable{
         // TODO add your handling code here:
     }//GEN-LAST:event_jLabel9MouseClicked
 
+    private void jTableUsersSalesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTableUsersSalesMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTableUsersSalesMouseClicked
+
+    private void jTextFieldBuscarUserSalesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldBuscarUserSalesActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldBuscarUserSalesActionPerformed
+
+    private void jTextFieldBuscarUserSalesKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextFieldBuscarUserSalesKeyReleased
+        // TODO add your handling code here:
+        manager.requestSearchUserSales();
+    }//GEN-LAST:event_jTextFieldBuscarUserSalesKeyReleased
+
     /**
      * @param args the command line arguments
      */
@@ -518,6 +583,7 @@ public class VistaCliente extends javax.swing.JFrame implements Runnable{
     private javax.swing.JButton btnMiminize;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel32;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
@@ -525,14 +591,21 @@ public class VistaCliente extends javax.swing.JFrame implements Runnable{
     private javax.swing.JLabel jLabel9;
     public javax.swing.JLabel jLabelMenuActual;
     public javax.swing.JLabel jLabelNombreUser;
+    public javax.swing.JLabel jLabelNoticeNotPermissions1;
     public javax.swing.JLabel jLabelTickets;
+    public javax.swing.JLabel jLabelUserNamePerm2;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel9;
     private javax.swing.JPanel jPanelHeader;
     private javax.swing.JPanel jPanelIndexCliente;
     private javax.swing.JPanel jPanelMenu;
     private javax.swing.JPanel jPanelMenuDiaPrincipal;
     private javax.swing.JPanel jPanelPerfilCliente;
     private javax.swing.JPanel jPanelbtn;
+    private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JSeparator jSeparator11;
+    public javax.swing.JTable jTableUsersSales;
+    public javax.swing.JTextField jTextFieldBuscarUserSales;
     private javax.swing.JLabel jlFecha;
     private javax.swing.JLabel jlHora;
     private rojerusan.RSPanelsSlider rSPanelsSlider1;
