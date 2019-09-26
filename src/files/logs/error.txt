@@ -331,3 +331,6 @@ managers.ControladorGestionPermisos//createKeysModule// Consulta no arroja resul
 managers.ControladorGestionPermisos//createKeysModule// Consulta no arroja resultados.// 2019-09-25T16:02:04.688
 managers.ControladorGestionPermisos//createKeysModule// Consulta no arroja resultados.// 2019-09-25T16:02:08.036
 managers.ControladorGestionPermisos//existInputKey// Consulta no arroja resultados.// 2019-09-25T16:02:31.878
+managers.ControladorLogin//insert_session_record// Error desconocido.// 2019-09-25T16:47:56.840
+managers.ControladorLogin//insert_session_record// Error desconocido.// 2019-09-25T16:53:23.472
+managers.ControladorLogin//insert_session_record// Error desconocido.// 2019-09-25T20:25:47.738
