@@ -453,7 +453,7 @@ ALTER SEQUENCE public.uvfood_faculty_idfaculty_seq OWNED BY public.uvfood_facult
 CREATE TABLE public.uvfood_images (
     idimage integer NOT NULL,
     file_image character varying(250),
-    publication_date date DEFAULT CURRENT_DATE,
+    publication_date date DEFAULT '2019-09-23'::date,
     type_image integer NOT NULL
 );
 
@@ -1057,9 +1057,6 @@ ALTER TABLE ONLY public.uvfood_user ALTER COLUMN iduser SET DEFAULT nextval('pub
 COPY public.uvfood_consumption_user_ticket (id_consumption, iduser, date_consumption, time_consumption) FROM stdin;
 1	17	2019-09-23	2019-09-23 21:40:57.235042
 4	18	2019-09-23	2019-09-24 16:44:24.330524
-7	21	2019-09-23	2019-09-24 19:38:26.446086
-8	20	2019-09-23	2019-09-25 13:59:52.814442
-14	19	2019-09-23	2019-09-25 16:06:38.285404
 \.
 
 
@@ -1105,8 +1102,6 @@ COPY public.uvfood_keys (idkey, idmodule, namekey) FROM stdin;
 15	5	prueba.prueba1
 16	2	sales.generate.user.graph
 17	2	sales.generate.user.sale
-18	6	reports.generate.user.sessions
-19	7	permiso1
 \.
 
 
@@ -1144,10 +1139,6 @@ COPY public.uvfood_logs (idlog, actionbd, whatsdone, date_insert) FROM stdin;
 27	INSERT	INSERT INTO uvfood_user Nuevo3              	2019-09-23 20:43:18.274499
 28	INSERT	INSERT INTO uvfood_user Nuevo4              	2019-09-23 20:52:33.07213
 29	INSERT	INSERT INTO uvfood_user 1740792             	2019-09-24 14:06:06.696735
-30	INSERT	INSERT INTO uvfood_user 1740755             	2019-09-24 16:48:46.355696
-31	INSERT	INSERT INTO uvfood_user 174099              	2019-09-24 16:56:34.587275
-32	INSERT	INSERT INTO uvfood_user prueba              	2019-09-24 19:34:54.895373
-33	UPDATE	UPDATE uvfood_user SET  kcopper             	2019-09-25 15:58:15.579185
 \.
 
 
@@ -1161,8 +1152,6 @@ COPY public.uvfood_modules (idmodule, namemodule) FROM stdin;
 3	index
 4	permissions
 5	prueba
-6	reports
-7	prueba2
 \.
 
 
@@ -1199,31 +1188,6 @@ COPY public.uvfood_sales (idticket, sale_date, created_by, created_to, tickets, 
 11	2019-09-24 16:14:43.008786	5	18	1	2100	2100	0
 12	2019-09-24 16:14:47.098109	5	18	1	2100	2100	0
 13	2019-09-24 16:27:19.278811	5	17	1	2000	2000	0
-14	2019-09-24 16:55:44.043186	5	19	3	6300	7000	700
-15	2019-09-24 18:52:03.562141	5	18	3	6300	6300	0
-16	2019-09-24 19:38:06.654892	5	21	3	6300	7000	700
-17	2019-09-25 02:08:26.485739	5	20	2	4200	5000	800
-18	2019-09-25 02:49:11.374593	5	20	1	2100	2100	0
-19	2019-09-25 02:59:18.758803	5	18	2	4200	5000	800
-20	2019-09-25 03:01:42.367503	5	21	2	4200	5000	800
-21	2019-09-25 03:03:39.266198	5	20	2	4200	5000	800
-22	2019-09-25 03:05:27.055503	5	18	1	2100	3000	900
-23	2019-09-25 03:10:06.509381	5	21	1	2100	2100	0
-24	2019-09-25 03:16:26.55825	5	20	1	2100	2100	0
-25	2019-09-25 13:34:56.922582	5	20	1	2100	2100	0
-26	2019-09-25 13:43:23.884941	5	18	2	4200	5000	800
-27	2019-09-25 13:52:12.247806	5	21	1	2100	2100	0
-28	2019-09-25 13:53:21.294216	5	20	1	2100	2100	0
-29	2019-09-25 13:54:26.284067	5	18	1	2100	2100	0
-30	2019-09-25 13:56:08.884929	5	21	1	2100	2100	0
-31	2019-09-25 13:59:17.478154	5	20	1	2100	3000	900
-32	2019-09-25 15:34:24.040532	5	20	1	2100	2100	0
-33	2019-09-25 16:05:39.390137	5	20	2	4200	5000	800
-34	2019-09-25 16:48:27.41357	5	19	1	2100	1	0
-35	2019-09-25 16:53:43.430106	5	20	1	2100	3000	900
-36	2019-09-25 16:55:24.080302	5	20	1	2100	2000	900
-37	2019-09-25 20:27:32.138997	5	21	1	2100	2100	0
-38	2019-09-25 20:28:11.86999	5	19	1	2100	2100	0
 \.
 
 
@@ -1368,44 +1332,6 @@ COPY public.uvfood_sessions (idsession, iduser, date_session) FROM stdin;
 125	5	2019-09-24 16:42:17.43589
 126	5	2019-09-24 16:43:18.867564
 127	5	2019-09-24 16:44:02.335442
-128	5	2019-09-24 18:48:50.561631
-129	5	2019-09-24 19:12:42.662884
-130	5	2019-09-24 19:13:48.791589
-131	5	2019-09-24 19:14:29.628783
-132	5	2019-09-24 19:31:14.955455
-133	5	2019-09-25 02:07:54.82878
-134	5	2019-09-25 02:47:56.773978
-135	5	2019-09-25 02:59:05.985973
-136	5	2019-09-25 03:01:25.153161
-137	5	2019-09-25 03:03:23.119319
-138	5	2019-09-25 03:05:15.600522
-139	5	2019-09-25 03:09:55.102429
-140	5	2019-09-25 03:16:13.570107
-141	5	2019-09-25 13:34:45.038046
-142	5	2019-09-25 13:43:11.52749
-143	5	2019-09-25 13:52:03.721531
-144	5	2019-09-25 13:53:00.747994
-145	5	2019-09-25 13:54:17.809354
-146	5	2019-09-25 13:55:56.686705
-147	5	2019-09-25 13:58:49.130738
-148	5	2019-09-25 14:04:23.260556
-149	5	2019-09-25 14:05:58.166809
-150	5	2019-09-25 14:09:55.970572
-151	5	2019-09-25 15:33:56.673907
-152	5	2019-09-25 15:49:20.09372
-153	5	2019-09-25 15:55:41.722437
-154	5	2019-09-25 16:47:56.756062
-155	5	2019-09-25 16:53:23.431969
-156	5	2019-09-25 20:25:47.432045
-157	5	2019-09-25 20:48:28.188395
-158	5	2019-09-25 20:53:19.432931
-159	5	2019-09-25 21:24:07.901861
-160	5	2019-09-25 21:34:15.828038
-161	5	2019-09-25 21:40:59.781987
-162	5	2019-09-25 21:47:05.653263
-163	5	2019-09-25 21:56:04.002287
-164	5	2019-09-25 21:58:29.383883
-165	5	2019-09-25 22:02:21.254079
 \.
 
 
@@ -1445,16 +1371,13 @@ COPY public.uvfood_typeuser (id_typeuser, type_user) FROM stdin;
 COPY public.uvfood_user (iduser, username, firstname, surname, birth_date, email, password_user, creation_date, is_active) FROM stdin;
 5	sistemasUVFood      	Oficina de sistemas	UVFood	2000-12-12	uvfood.sistemas@gmail.com	sistemas	2019-08-27	1
 7	vendedor1           	Vendedor	UVFood	2000-12-12	vendedor.uvfood@gmail.com	vendedor	2019-08-28	1
+6	kcopper             	Hanier	Pena	1900-12-12	kcopper.uvfood@gmail.com	123	2019-08-27	1
 8	jp                  	Juan	Pablo	2000-10-10	jp@gmail.com	jp	2019-09-19	0
 14	nuevo               	Nuevo	Usuario	1999-10-10	juan@gmail.com	1234	2019-09-23	1
 15	nuevo2              	Nuevo2	Usuario2	1999-10-12	nuevo2@gmail.com	1234	2019-09-23	1
 16	Nuevo3              	Nuevo3	Usuario3	1999-10-12	nn@sdasd.com	1234	2019-09-23	1
 17	Nuevo4              	Nuevo4	Usuario4	1999-12-12	jp@sd.co	1234	2019-09-23	1
 18	1740792             	Juan Pablo	Castro	2000-02-02	juan.castro@correounivalle.edu.co	123	2019-09-24	1
-19	1740755             	Pepito	Perez	2000-10-10	pepito@gmail.com	123	2019-09-24	1
-20	174099              	Pepito2	Perez2	2000-10-10	pepito2@gmail.com	123	2019-09-24	1
-21	prueba              	prueba	prueba	2000-12-12	prueba@prurba.com	1234566u	2019-09-24	1
-6	kcopper             	Hanier	Pena	1900-12-12	kcopper.uvfood@gmail.com	123	2019-08-27	0
 \.
 
 
@@ -1481,9 +1404,6 @@ COPY public.uvfood_user_extended (iduser, id_typeuser, status) FROM stdin;
 16	3	1
 17	3	1
 18	3	1
-19	3	1
-20	3	1
-21	3	1
 \.
 
 
@@ -1501,8 +1421,6 @@ COPY public.uvfood_user_key (iduser, idkey) FROM stdin;
 5	13
 5	16
 5	17
-5	14
-5	18
 \.
 
 
@@ -1513,10 +1431,7 @@ COPY public.uvfood_user_key (iduser, idkey) FROM stdin;
 COPY public.uvfood_user_tickets (iduser, count_tickets) FROM stdin;
 6	0
 17	3
-18	15
-20	13
-21	8
-19	4
+18	6
 \.
 
 
@@ -1524,7 +1439,7 @@ COPY public.uvfood_user_tickets (iduser, count_tickets) FROM stdin;
 -- Name: uvfood_consumption_user_ticket_id_consumption_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.uvfood_consumption_user_ticket_id_consumption_seq', 16, true);
+SELECT pg_catalog.setval('public.uvfood_consumption_user_ticket_id_consumption_seq', 5, true);
 
 
 --
@@ -1545,28 +1460,28 @@ SELECT pg_catalog.setval('public.uvfood_faculty_idfaculty_seq', 1, false);
 -- Name: uvfood_images_idimage_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.uvfood_images_idimage_seq', 3, true);
+SELECT pg_catalog.setval('public.uvfood_images_idimage_seq', 1, false);
 
 
 --
 -- Name: uvfood_keys_idkey_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.uvfood_keys_idkey_seq', 19, true);
+SELECT pg_catalog.setval('public.uvfood_keys_idkey_seq', 17, true);
 
 
 --
 -- Name: uvfood_logs_idlog_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.uvfood_logs_idlog_seq', 33, true);
+SELECT pg_catalog.setval('public.uvfood_logs_idlog_seq', 29, true);
 
 
 --
 -- Name: uvfood_modules_idmodule_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.uvfood_modules_idmodule_seq', 7, true);
+SELECT pg_catalog.setval('public.uvfood_modules_idmodule_seq', 5, true);
 
 
 --
@@ -1587,7 +1502,7 @@ SELECT pg_catalog.setval('public.uvfood_program_idprogram_seq', 1, false);
 -- Name: uvfood_sales_idticket_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.uvfood_sales_idticket_seq', 38, true);
+SELECT pg_catalog.setval('public.uvfood_sales_idticket_seq', 13, true);
 
 
 --
@@ -1601,7 +1516,7 @@ SELECT pg_catalog.setval('public.uvfood_sede_idsede_seq', 1, true);
 -- Name: uvfood_sessions_idsession_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.uvfood_sessions_idsession_seq', 165, true);
+SELECT pg_catalog.setval('public.uvfood_sessions_idsession_seq', 127, true);
 
 
 --
@@ -1622,7 +1537,7 @@ SELECT pg_catalog.setval('public.uvfood_typeuser_id_typeuser_seq', 3, true);
 -- Name: uvfood_user_iduser_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.uvfood_user_iduser_seq', 21, true);
+SELECT pg_catalog.setval('public.uvfood_user_iduser_seq', 18, true);
 
 
 --
