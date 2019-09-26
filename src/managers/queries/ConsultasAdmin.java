@@ -400,10 +400,10 @@ public class ConsultasAdmin extends ConexionBD {
                     + "	uvfood_sales.total_price, uvfood_sales.sale_date\n"
                     + "	FROM uvfood_sales\n"
                     + "			   INNER JOIN uvfood_user ON uvfood_sales.created_to = uvfood_user.iduser) AS result_sales \n"
-                    + "	 WHERE result_sales.username::text  LIKE "+filtro+"\n"
-                    + "	 OR result_sales.firstname::text  LIKE "+filtro+" OR result_sales.surname::text  LIKE "+filtro+"\n"
-                    + "	 OR result_sales.tickets::text  LIKE "+filtro+" OR result_sales.total_price::text  LIKE "+filtro+" \n"
-                    + "	 OR result_sales.sale_date::text  LIKE "+filtro+";";
+                    + "	 WHERE result_sales.username::text  LIKE " + filtro + "\n"
+                    + "	 OR result_sales.firstname::text  LIKE " + filtro + " OR result_sales.surname::text  LIKE " + filtro + "\n"
+                    + "	 OR result_sales.tickets::text  LIKE " + filtro + " OR result_sales.total_price::text  LIKE " + filtro + " \n"
+                    + "	 OR result_sales.sale_date::text  LIKE " + filtro + ";";
 
             ps = conn.createStatement();
             rs = ps.executeQuery(sql);
@@ -432,6 +432,67 @@ public class ConsultasAdmin extends ConexionBD {
                 modelo.addRow(filas);
             }
             vista.jTableUsersSales.setModel(modelo);
+
+            rs.close();
+            ps.close();
+            return true;
+        } catch (SQLException ex) {
+            logs.escribirExceptionLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// " + ex.getMessage() + " " + ex.toString());
+            //modal.error_message("Error", "Algo anda mal", "El servidor esta presentado problemas", "Por Favor intenta mas tarde", "O reportanos que ocurre");
+
+            return false;
+        } catch (NullPointerException np) {
+            logs.escribirExceptionLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// " + np.getMessage() + " " + np.toString());
+            //modal.error_message("Error", "Algo anda mal", "El servidor esta presentado problemas", "Por Favor intenta mas tarde", "O reportanos que ocurre");
+            return false;
+        }
+    }
+
+    public boolean buscarUserSessions(VistaAdmin vista) {
+        DefaultTableModel modelo = new DefaultTableModel() {
+            @Override
+            public boolean isCellEditable(int row, int col) {
+                return false;
+            }
+        };
+        try {
+            Statement ps = null;
+            Connection conn = Conexion();
+            ResultSet rs = null;
+            String filtro = "'%" + vista.jTextFieldBuscarUserSessions.getText() + "%'";
+
+            //$query = "SELECT * FROM imagenesproductos WHERE nombre LIKE '%$q%' OR descripcion LIKE '%$q%' OR precio LIKE '%$q%' OR categoria LIKE '%$q%'";
+            String sql = "SELECT * FROM (\n"
+                    + "	SELECT uvfood_user.username, uvfood_user.firstname, uvfood_user.surname, count(idsession) AS cant FROM uvfood_sessions \n"
+                    + "	INNER JOIN uvfood_user ON uvfood_sessions.iduser = uvfood_user.iduser\n"
+                    + "	GROUP BY uvfood_user.iduser) AS result_sales \n"
+                    + "	 WHERE result_sales.username::text  LIKE " + filtro + "\n"
+                    + "	 OR result_sales.firstname::text  LIKE " + filtro + " OR result_sales.surname::text  LIKE " + filtro + "\n"
+                    + "	 OR result_sales.cant::text  LIKE " + filtro + " ;";
+
+            ps = conn.createStatement();
+            rs = ps.executeQuery(sql);
+
+            ResultSetMetaData rsMd = rs.getMetaData();
+            int cantidadCol = rsMd.getColumnCount();
+
+            modelo.addColumn("Usuario");
+            modelo.addColumn("Nombre");
+            modelo.addColumn("Apellido");
+            modelo.addColumn("Sesiones");
+
+            while (rs.next()) {
+
+                Object[] filas = new Object[cantidadCol];
+
+                filas[0] = rs.getObject(1);
+                filas[1] = rs.getObject(2);
+                filas[2] = rs.getObject(3);
+                filas[3] = rs.getObject(4);
+
+                modelo.addRow(filas);
+            }
+            vista.jTableUsersSessions.setModel(modelo);
 
             rs.close();
             ps.close();

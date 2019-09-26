@@ -2347,6 +2347,7 @@ public class VistaAdmin extends javax.swing.JFrame implements Runnable {
 
     private void jTextFieldBuscarUserSessionsKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextFieldBuscarUserSessionsKeyReleased
         // TODO add your handling code here:
+        manager.requestSearchUserSessions();
     }//GEN-LAST:event_jTextFieldBuscarUserSessionsKeyReleased
 
     private void jLabel23MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel23MouseClicked

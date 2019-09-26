@@ -236,3 +236,4 @@ managers.queries.ConsultasLogin//insert_session_record// No results were returne
 managers.queries.ConsultasAdmin//buscarUserSales// The column index is out of range: 6, number of columns: 5. org.postgresql.util.PSQLException: The column index is out of range: 6, number of columns: 5.// 2019-09-25T21:34:29.343
 managers.queries.ConsultasAdmin//buscarUserSales// The column index is out of range: 6, number of columns: 5. org.postgresql.util.PSQLException: The column index is out of range: 6, number of columns: 5.// 2019-09-25T21:34:29.405
 managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-25T21:40:59.805
+managers.queries.ConsultasLogin//insert_session_record// No results were returned by the query. org.postgresql.util.PSQLException: No results were returned by the query.// 2019-09-25T21:47:05.664
