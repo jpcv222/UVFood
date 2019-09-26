@@ -114,6 +114,7 @@ public class ControladorLogin {
                 vistaLogin.dispose();
                 VistaCliente home_cliente = new VistaCliente();
                 home_cliente.manager.user = this.user;
+                home_cliente.jLabelNombreUser.setText("Bienvenido "+home_cliente.manager.user.getFirstname());
                 home_cliente.setVisible(true);
                 logs.escribirAccessLogs(Thread.currentThread().getStackTrace()[1].getMethodName() + "// Acceso a vista cliente.");
                 break;
