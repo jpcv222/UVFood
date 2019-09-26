@@ -230,7 +230,7 @@ public class VistaAdmin extends javax.swing.JFrame implements Runnable {
         jScrollPane4 = new javax.swing.JScrollPane();
         jTableUsersSales = new javax.swing.JTable();
         jLabel32 = new javax.swing.JLabel();
-        jTextFieldBuscarUserSessions1 = new javax.swing.JTextField();
+        jTextFieldBuscarUserSales = new javax.swing.JTextField();
         jLabelNoticeNotPermissions1 = new javax.swing.JLabel();
         jPanelModuleUserAdmin = new javax.swing.JPanel();
         jPanelMenuOptionsModuleUser = new javax.swing.JPanel();
@@ -815,17 +815,17 @@ public class VistaAdmin extends javax.swing.JFrame implements Runnable {
         jLabel32.setText("Buscar");
         jPanel9.add(jLabel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 10, 50, 30));
 
-        jTextFieldBuscarUserSessions1.addActionListener(new java.awt.event.ActionListener() {
+        jTextFieldBuscarUserSales.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFieldBuscarUserSessions1ActionPerformed(evt);
+                jTextFieldBuscarUserSalesActionPerformed(evt);
             }
         });
-        jTextFieldBuscarUserSessions1.addKeyListener(new java.awt.event.KeyAdapter() {
+        jTextFieldBuscarUserSales.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
-                jTextFieldBuscarUserSessions1KeyReleased(evt);
+                jTextFieldBuscarUserSalesKeyReleased(evt);
             }
         });
-        jPanel9.add(jTextFieldBuscarUserSessions1, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 10, 180, 30));
+        jPanel9.add(jTextFieldBuscarUserSales, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 10, 180, 30));
 
         jLabelNoticeNotPermissions1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jLabelNoticeNotPermissions1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -2052,6 +2052,7 @@ public class VistaAdmin extends javax.swing.JFrame implements Runnable {
 
         rSPanelsSlider1.setPanelSlider(15, jPanelReportes, RSPanelsSlider.DIRECT.RIGHT);
         jLabelNoticeNotPermissions.setVisible(false);
+        jLabelNoticeNotPermissions1.setVisible(false);
         manager.requestFillTableSessions();
         manager.requestFillTableSales();
     }//GEN-LAST:event_jLabelReportesMouseClicked
@@ -2468,13 +2469,13 @@ public class VistaAdmin extends javax.swing.JFrame implements Runnable {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTableUsersSalesMouseClicked
 
-    private void jTextFieldBuscarUserSessions1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldBuscarUserSessions1ActionPerformed
+    private void jTextFieldBuscarUserSalesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldBuscarUserSalesActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextFieldBuscarUserSessions1ActionPerformed
+    }//GEN-LAST:event_jTextFieldBuscarUserSalesActionPerformed
 
-    private void jTextFieldBuscarUserSessions1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextFieldBuscarUserSessions1KeyReleased
+    private void jTextFieldBuscarUserSalesKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextFieldBuscarUserSalesKeyReleased
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextFieldBuscarUserSessions1KeyReleased
+    }//GEN-LAST:event_jTextFieldBuscarUserSalesKeyReleased
 
     private void btnEscogerImgMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnEscogerImgMouseEntered
         // TODO add your handling code here:
@@ -2707,8 +2708,8 @@ public class VistaAdmin extends javax.swing.JFrame implements Runnable {
     public javax.swing.JTextField jTextFieldActivo;
     public javax.swing.JTextField jTextFieldApellido;
     public javax.swing.JTextField jTextFieldBuscarUser;
+    public javax.swing.JTextField jTextFieldBuscarUserSales;
     public javax.swing.JTextField jTextFieldBuscarUserSessions;
-    public javax.swing.JTextField jTextFieldBuscarUserSessions1;
     public javax.swing.JTextField jTextFieldBuscarUserToTicket;
     public javax.swing.JTextField jTextFieldCambio;
     public javax.swing.JTextField jTextFieldCantidadTickets;
